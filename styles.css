@@ -558,7 +558,7 @@ footer {
         display: block;
         position: relative;
         width: 100%;
-        min-height: 500px;
+        min-height: 450px;
         padding: 20px 10px;
         touch-action: manipulation;
     }
@@ -575,7 +575,7 @@ footer {
     }
 
     .mobile-map .tenerife-img-mobile {
-        width: 80px;
+        width: 70px;
         height: auto;
         filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.2));
         transition: transform 0.3s ease;
@@ -585,7 +585,7 @@ footer {
         display: block;
         margin-top: 8px;
         color: #4a7c7e;
-        font-size: 0.7rem;
+        font-size: 0.65rem;
         font-weight: 600;
         letter-spacing: 1px;
     }
@@ -593,17 +593,16 @@ footer {
     .mobile-map .click-hint-mobile {
         display: block;
         margin-top: 8px;
-        font-size: 0.65rem;
+        font-size: 0.6rem;
         color: #6a7a7c;
         animation: pulse-hint 2s ease-in-out infinite;
     }
 
-    .mobile-map[data-state="categories"] .click-hint-mobile,
-    .mobile-map[data-state="subcategories"] .click-hint-mobile {
+    .mobile-map[data-state="categories"] .click-hint-mobile {
         display: none;
     }
 
-    /* Mobile nodes */
+    /* Mobile primary nodes */
     .mobile-node {
         position: absolute;
         border-radius: 50%;
@@ -613,7 +612,7 @@ footer {
         text-decoration: none;
         cursor: pointer;
         opacity: 0;
-        transform: scale(0.3);
+        transform: translate(-50%, -50%) scale(0.3);
         transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
         pointer-events: none;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
@@ -624,23 +623,13 @@ footer {
         text-align: center;
         line-height: 1.1;
         font-weight: 500;
-        font-size: 0.6rem;
+        font-size: 0.55rem;
         padding: 5px;
     }
 
     .mobile-node-primary {
-        width: 58px;
-        height: 58px;
-    }
-
-    .mobile-node-secondary {
-        width: 45px;
-        height: 45px;
-    }
-
-    .mobile-node-tertiary {
-        width: 38px;
-        height: 38px;
+        width: 60px;
+        height: 60px;
     }
 
     .mobile-node-primary span {
@@ -648,16 +637,10 @@ footer {
         font-weight: 600;
     }
 
-    .mobile-node-secondary span,
-    .mobile-node-tertiary span {
-        font-size: 0.45rem;
-    }
-
     /* Show primary nodes */
-    .mobile-map[data-state="categories"] .mobile-node-primary,
-    .mobile-map[data-state="subcategories"] .mobile-node-primary {
+    .mobile-map[data-state="categories"] .mobile-node-primary {
         opacity: 1;
-        transform: scale(1);
+        transform: translate(-50%, -50%) scale(1);
         pointer-events: auto;
     }
 
@@ -667,40 +650,6 @@ footer {
     .mobile-map[data-state="categories"] .mobile-node-primary:nth-child(3) { transition-delay: 0.1s; }
     .mobile-map[data-state="categories"] .mobile-node-primary:nth-child(4) { transition-delay: 0.12s; }
     .mobile-map[data-state="categories"] .mobile-node-primary:nth-child(5) { transition-delay: 0.14s; }
-
-    /* Show sub-nodes when expanded */
-    .mobile-sub-nodes {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-    }
-
-    .mobile-sub-nodes.visible .mobile-node {
-        opacity: 1;
-        transform: scale(1);
-        pointer-events: auto;
-    }
-
-    .mobile-sub-nodes.visible .mobile-node:nth-child(1) { transition-delay: 0s; }
-    .mobile-sub-nodes.visible .mobile-node:nth-child(2) { transition-delay: 0.05s; }
-    .mobile-sub-nodes.visible .mobile-node:nth-child(3) { transition-delay: 0.1s; }
-    .mobile-sub-nodes.visible .mobile-node:nth-child(4) { transition-delay: 0.15s; }
-    .mobile-sub-nodes.visible .mobile-node:nth-child(5) { transition-delay: 0.2s; }
-    .mobile-sub-nodes.visible .mobile-node:nth-child(6) { transition-delay: 0.25s; }
-
-    /* Expanded state - altri nodi rimangono visibili ma più piccoli */
-    .mobile-map[data-state="subcategories"] .mobile-node-primary:not(.expanded) {
-        opacity: 0.6;
-        transform: translate(-50%, -50%) scale(0.7);
-    }
-
-    .mobile-node-primary.expanded {
-        transform: translate(-50%, -50%) scale(1) !important;
-        z-index: 15;
-    }
 
     /* Mobile node colors */
     .mobile-party {
@@ -723,31 +672,6 @@ footer {
         background: linear-gradient(145deg, #b4cce4, #98b0c8);
         color: #3a3a3a;
     }
-
-    /* Sub-node colors */
-    .mobile-daytime { background: linear-gradient(145deg, #e5c4ac, #d0a890); color: #3a3a3a; }
-    .mobile-nightlife { background: linear-gradient(145deg, #d5c4b4, #baa898); color: #3a3a3a; }
-    .mobile-hmc { background: linear-gradient(145deg, #e0f4e0, #c4d8c4); color: #3a3a3a; }
-    .mobile-terraceo { background: linear-gradient(145deg, #f4e4d4, #d8c8b8); color: #4a4a4a; }
-    .mobile-elbarco { background: linear-gradient(145deg, #e7d4c4, #cbb8a8); color: #4a4a4a; }
-    .mobile-finca { background: linear-gradient(145deg, #e4f4e4, #c8d8c8); color: #4a4a4a; }
-
-    .mobile-aperitivo { background: linear-gradient(145deg, #b4c4a4, #98a888); color: #3a3a3a; }
-    .mobile-brunch { background: linear-gradient(145deg, #c4d4b4, #a8b898); color: #3a3a3a; }
-    .mobile-ristorante { background: linear-gradient(145deg, #d4c4b4, #b8a898); color: #3a3a3a; }
-
-    .mobile-staying-villa { background: linear-gradient(145deg, #fce0ec, #e0c4d0); color: #4a4a4a; }
-    .mobile-hotel { background: linear-gradient(145deg, #fce4ec, #e0c8d0); color: #4a4a4a; }
-    .mobile-apartment { background: linear-gradient(145deg, #fcdce4, #e0c0c8); color: #4a4a4a; }
-
-    .mobile-action { background: linear-gradient(145deg, #f4e4cc, #d8c8b0); color: #4a4a4a; }
-    .mobile-chill { background: linear-gradient(145deg, #ecdccc, #d0c0b0); color: #4a4a4a; }
-
-    .mobile-private { background: linear-gradient(145deg, #d4e4f4, #b8c8d8); color: #4a4a4a; }
-    .mobile-artists { background: linear-gradient(145deg, #ecdcd4, #d0c0b8); color: #4a4a4a; }
-    .mobile-venue { background: linear-gradient(145deg, #dcd4cc, #c0b8b0); color: #4a4a4a; }
-    .mobile-boat { background: linear-gradient(145deg, #e4f4fc, #c8d8e0); color: #4a4a4a; }
-    .mobile-villa-private { background: linear-gradient(145deg, #e4fce8, #c8e0cc); color: #4a4a4a; }
 
     /* Mobile SVG lines */
     .mobile-svg {
@@ -795,8 +719,7 @@ footer {
         -webkit-tap-highlight-color: transparent;
     }
 
-    .mobile-map[data-state="categories"] .mobile-back-btn,
-    .mobile-map[data-state="subcategories"] .mobile-back-btn {
+    .mobile-map[data-state="categories"] .mobile-back-btn {
         opacity: 1;
         pointer-events: auto;
     }
@@ -806,4 +729,151 @@ footer {
         background: #4a7c7e;
         color: white;
     }
+
+    /* ===== RADIAL POPUP ===== */
+    .radial-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+    }
+
+    .radial-overlay.visible {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .radial-popup {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 280px;
+        height: 280px;
+    }
+
+    .radial-center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+        z-index: 10;
+    }
+
+    .radial-center span {
+        font-size: 0.6rem;
+        font-weight: 600;
+        text-align: center;
+        line-height: 1.2;
+    }
+
+    .radial-node {
+        position: absolute;
+        width: 58px;
+        height: 58px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        cursor: pointer;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.3);
+        transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .radial-node span {
+        font-size: 0.5rem;
+        font-weight: 500;
+        text-align: center;
+        line-height: 1.1;
+        padding: 4px;
+    }
+
+    .radial-overlay.visible .radial-node {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    .radial-overlay.visible .radial-node:nth-child(2) { transition-delay: 0.05s; }
+    .radial-overlay.visible .radial-node:nth-child(3) { transition-delay: 0.1s; }
+    .radial-overlay.visible .radial-node:nth-child(4) { transition-delay: 0.15s; }
+    .radial-overlay.visible .radial-node:nth-child(5) { transition-delay: 0.2s; }
+    .radial-overlay.visible .radial-node:nth-child(6) { transition-delay: 0.25s; }
+    .radial-overlay.visible .radial-node:nth-child(7) { transition-delay: 0.3s; }
+
+    .radial-node:active {
+        transform: translate(-50%, -50%) scale(0.9) !important;
+    }
+
+    .radial-close {
+        position: absolute;
+        bottom: -60px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 12px 30px;
+        background: white;
+        border: none;
+        border-radius: 25px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: #4a4a4a;
+        cursor: pointer;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .radial-close:active {
+        transform: translateX(-50%) scale(0.95);
+        background: #f0f0f0;
+    }
+
+    /* Radial node colors */
+    .radial-party { background: linear-gradient(145deg, #d4ad2b, #b89520); color: #1a1a1a; }
+    .radial-food { background: linear-gradient(145deg, #96a688, #7a8a6c); color: white; }
+    .radial-staying { background: linear-gradient(145deg, #f4c4d4, #d8a8b8); color: #3a3a3a; }
+    .radial-excursion { background: linear-gradient(145deg, #d4c4ac, #b8a890); color: #3a3a3a; }
+    .radial-events { background: linear-gradient(145deg, #b4cce4, #98b0c8); color: #3a3a3a; }
+
+    .radial-daytime { background: linear-gradient(145deg, #e5c4ac, #d0a890); color: #3a3a3a; }
+    .radial-nightlife { background: linear-gradient(145deg, #d5c4b4, #baa898); color: #3a3a3a; }
+    .radial-hmc { background: linear-gradient(145deg, #e0f4e0, #c4d8c4); color: #3a3a3a; }
+    .radial-terraceo { background: linear-gradient(145deg, #f4e4d4, #d8c8b8); color: #4a4a4a; }
+    .radial-elbarco { background: linear-gradient(145deg, #e7d4c4, #cbb8a8); color: #4a4a4a; }
+    .radial-finca { background: linear-gradient(145deg, #e4f4e4, #c8d8c8); color: #4a4a4a; }
+
+    .radial-aperitivo { background: linear-gradient(145deg, #b4c4a4, #98a888); color: #3a3a3a; }
+    .radial-brunch { background: linear-gradient(145deg, #c4d4b4, #a8b898); color: #3a3a3a; }
+    .radial-ristorante { background: linear-gradient(145deg, #d4c4b4, #b8a898); color: #3a3a3a; }
+
+    .radial-staying-villa { background: linear-gradient(145deg, #fce0ec, #e0c4d0); color: #4a4a4a; }
+    .radial-hotel { background: linear-gradient(145deg, #fce4ec, #e0c8d0); color: #4a4a4a; }
+    .radial-apartment { background: linear-gradient(145deg, #fcdce4, #e0c0c8); color: #4a4a4a; }
+
+    .radial-action { background: linear-gradient(145deg, #f4e4cc, #d8c8b0); color: #4a4a4a; }
+    .radial-chill { background: linear-gradient(145deg, #ecdccc, #d0c0b0); color: #4a4a4a; }
+
+    .radial-private { background: linear-gradient(145deg, #d4e4f4, #b8c8d8); color: #4a4a4a; }
+    .radial-artists { background: linear-gradient(145deg, #ecdcd4, #d0c0b8); color: #4a4a4a; }
+    .radial-venue { background: linear-gradient(145deg, #dcd4cc, #c0b8b0); color: #4a4a4a; }
+    .radial-boat { background: linear-gradient(145deg, #e4f4fc, #c8d8e0); color: #4a4a4a; }
+    .radial-villa-private { background: linear-gradient(145deg, #e4fce8, #c8e0cc); color: #4a4a4a; }
 }

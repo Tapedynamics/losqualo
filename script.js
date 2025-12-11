@@ -228,9 +228,61 @@ function goBack() {
     }
 }
 
-// ===== MOBILE MINI-MAP =====
+// ===== MOBILE MINI-MAP WITH RADIAL POPUP =====
 let mobileState = 'initial';
-let mobileExpandedCategory = null;
+
+// Dati sotto-categorie per radial popup
+const categorySubNodes = {
+    party: {
+        name: 'PARTY',
+        class: 'radial-party',
+        subs: [
+            { id: 'daytime', name: 'Daytime<br>& Sunset', class: 'radial-daytime', href: 'party.html#daytime' },
+            { id: 'nightlife', name: 'Nightlife', class: 'radial-nightlife', href: 'party.html#nightlife' },
+            { id: 'hmc', name: 'H.m.c.', class: 'radial-hmc', href: 'party.html#hmc' },
+            { id: 'terraceo', name: 'Terraceo', class: 'radial-terraceo', href: 'party.html#terraceo' },
+            { id: 'elbarco', name: 'El Barco', class: 'radial-elbarco', href: 'party.html#elbarco' },
+            { id: 'finca', name: 'Finca', class: 'radial-finca', href: 'party.html#finca' }
+        ]
+    },
+    food: {
+        name: 'FOOD &<br>DRINK',
+        class: 'radial-food',
+        subs: [
+            { id: 'aperitivo', name: 'Aperitivo', class: 'radial-aperitivo', href: 'food-drink.html#aperitivo' },
+            { id: 'brunch', name: 'Brunch', class: 'radial-brunch', href: 'food-drink.html#brunch' },
+            { id: 'ristorante', name: 'Ristorante', class: 'radial-ristorante', href: 'food-drink.html#ristorante' }
+        ]
+    },
+    staying: {
+        name: 'STAYING',
+        class: 'radial-staying',
+        subs: [
+            { id: 'villa', name: 'Villa', class: 'radial-staying-villa', href: 'staying.html#villa' },
+            { id: 'hotel', name: 'Hotel', class: 'radial-hotel', href: 'staying.html#hotel' },
+            { id: 'apartment', name: 'Apartment', class: 'radial-apartment', href: 'staying.html#apartment' }
+        ]
+    },
+    excursion: {
+        name: 'EXCURSIÓN',
+        class: 'radial-excursion',
+        subs: [
+            { id: 'action', name: 'Action', class: 'radial-action', href: 'excursion.html#action' },
+            { id: 'chill', name: 'Chill', class: 'radial-chill', href: 'excursion.html#chill' }
+        ]
+    },
+    events: {
+        name: 'Events<br>Services',
+        class: 'radial-events',
+        subs: [
+            { id: 'private', name: 'Private', class: 'radial-private', href: 'events.html#private' },
+            { id: 'artists', name: 'Artists<br>booking', class: 'radial-artists', href: 'events.html#artists' },
+            { id: 'venue', name: 'Venue<br>& More', class: 'radial-venue', href: 'events.html#venue' },
+            { id: 'boat', name: 'Boat', class: 'radial-boat', href: 'events.html#boat' },
+            { id: 'villa-private', name: 'Villa', class: 'radial-villa-private', href: 'events.html#villa-private' }
+        ]
+    }
+};
 
 function initMobileMenu() {
     if (window.innerWidth <= 768) {
@@ -245,12 +297,13 @@ function initMobileMenu() {
         } else {
             const mobileMap = document.querySelector('.mobile-map');
             if (mobileMap) mobileMap.remove();
+            const overlay = document.querySelector('.radial-overlay');
+            if (overlay) overlay.remove();
         }
     });
 }
 
 function createMobileMiniMap() {
-    const container = document.querySelector('.container');
     const main = document.querySelector('.mind-map');
 
     if (document.querySelector('.mobile-map')) return;
@@ -273,25 +326,6 @@ function createMobileMiniMap() {
         svg.appendChild(line);
     });
 
-    // Linee sub-categorie
-    const subLines = {
-        party: ['daytime', 'nightlife', 'hmc', 'terraceo', 'elbarco', 'finca'],
-        food: ['aperitivo', 'brunch', 'ristorante'],
-        staying: ['staying-villa', 'hotel', 'apartment'],
-        excursion: ['action', 'chill'],
-        events: ['private', 'artists', 'venue', 'boat', 'villa-private']
-    };
-
-    Object.keys(subLines).forEach(cat => {
-        subLines[cat].forEach(sub => {
-            const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-            line.classList.add('mobile-line', 'mobile-sub-line');
-            line.dataset.category = cat;
-            line.id = `mobile-line-${cat}-${sub}`;
-            svg.appendChild(line);
-        });
-    });
-
     mobileMap.appendChild(svg);
 
     // Centro - Tenerife
@@ -305,13 +339,13 @@ function createMobileMiniMap() {
     `;
     mobileMap.appendChild(center);
 
-    // Nodi primari - posizioni relative al centro
+    // Nodi primari - posizioni
     const primaryPositions = {
-        party: { top: '25%', left: '18%' },
-        food: { top: '18%', left: '55%' },
-        staying: { top: '40%', left: '82%' },
+        party: { top: '28%', left: '20%' },
+        food: { top: '20%', left: '55%' },
+        staying: { top: '45%', left: '82%' },
         excursion: { top: '75%', left: '70%' },
-        events: { top: '75%', left: '25%' }
+        events: { top: '75%', left: '28%' }
     };
 
     const primaryNodes = [
@@ -330,71 +364,7 @@ function createMobileMiniMap() {
         el.innerHTML = `<span>${node.name}</span>`;
         el.style.top = primaryPositions[node.id].top;
         el.style.left = primaryPositions[node.id].left;
-        el.style.transform = 'translate(-50%, -50%) scale(0.3)';
         mobileMap.appendChild(el);
-    });
-
-    // Sub-nodi per categoria
-    const subNodeData = {
-        party: {
-            positions: [
-                { id: 'daytime', name: 'Daytime<br>& Sunset', top: '12%', left: '8%', type: 'secondary', href: 'party.html#daytime' },
-                { id: 'nightlife', name: 'Nightlife', top: '38%', left: '5%', type: 'secondary', href: 'party.html#nightlife' },
-                { id: 'hmc', name: 'H.m.c.', top: '55%', left: '8%', type: 'secondary', href: 'party.html#hmc' },
-                { id: 'terraceo', name: 'Terraceo', top: '5%', left: '22%', type: 'tertiary', href: 'party.html#terraceo' },
-                { id: 'elbarco', name: 'El Barco', top: '8%', left: '35%', type: 'tertiary', href: 'party.html#elbarco' },
-                { id: 'finca', name: 'Finca', top: '18%', left: '30%', type: 'tertiary', href: 'party.html#finca' }
-            ]
-        },
-        food: {
-            positions: [
-                { id: 'aperitivo', name: 'Aperitivo', top: '5%', left: '42%', type: 'secondary', href: 'food-drink.html#aperitivo' },
-                { id: 'brunch', name: 'Brunch', top: '5%', left: '58%', type: 'secondary', href: 'food-drink.html#brunch' },
-                { id: 'ristorante', name: 'Ristorante', top: '12%', left: '72%', type: 'secondary', href: 'food-drink.html#ristorante' }
-            ]
-        },
-        staying: {
-            positions: [
-                { id: 'staying-villa', name: 'Villa', top: '22%', left: '90%', type: 'secondary', href: 'staying.html#villa' },
-                { id: 'hotel', name: 'Hotel', top: '38%', left: '95%', type: 'secondary', href: 'staying.html#hotel' },
-                { id: 'apartment', name: 'Apartment', top: '55%', left: '92%', type: 'secondary', href: 'staying.html#apartment' }
-            ]
-        },
-        excursion: {
-            positions: [
-                { id: 'action', name: 'Action', top: '88%', left: '60%', type: 'secondary', href: 'excursion.html#action' },
-                { id: 'chill', name: 'Chill', top: '88%', left: '80%', type: 'secondary', href: 'excursion.html#chill' }
-            ]
-        },
-        events: {
-            positions: [
-                { id: 'private', name: 'Private', top: '62%', left: '12%', type: 'secondary', href: 'events.html#private' },
-                { id: 'artists', name: 'Artists<br>booking', top: '88%', left: '12%', type: 'secondary', href: 'events.html#artists' },
-                { id: 'venue', name: 'Venue<br>& More', top: '88%', left: '38%', type: 'secondary', href: 'events.html#venue' },
-                { id: 'boat', name: 'Boat', top: '55%', left: '5%', type: 'tertiary', href: 'events.html#boat' },
-                { id: 'villa-private', name: 'Villa', top: '72%', left: '5%', type: 'tertiary', href: 'events.html#villa-private' }
-            ]
-        }
-    };
-
-    Object.keys(subNodeData).forEach(cat => {
-        const subContainer = document.createElement('div');
-        subContainer.classList.add('mobile-sub-nodes');
-        subContainer.dataset.parent = cat;
-
-        subNodeData[cat].positions.forEach(sub => {
-            const el = document.createElement('a');
-            el.href = sub.href;
-            el.classList.add('mobile-node', `mobile-node-${sub.type}`, `mobile-${sub.id}`);
-            el.id = `mobile-node-${sub.id}`;
-            el.innerHTML = `<span>${sub.name}</span>`;
-            el.style.top = sub.top;
-            el.style.left = sub.left;
-            el.style.transform = 'translate(-50%, -50%) scale(0.3)';
-            subContainer.appendChild(el);
-        });
-
-        mobileMap.appendChild(subContainer);
     });
 
     // Pulsante indietro
@@ -405,12 +375,91 @@ function createMobileMiniMap() {
 
     main.parentNode.insertBefore(mobileMap, main.nextSibling);
 
+    // Crea overlay radiale (una volta sola)
+    createRadialOverlay();
+
     // Event listeners
     initMobileMapEvents(mobileMap);
 
     // Aggiorna linee
     setTimeout(() => updateMobileLines(), 100);
     setInterval(updateMobileLines, 100);
+}
+
+function createRadialOverlay() {
+    if (document.querySelector('.radial-overlay')) return;
+
+    const overlay = document.createElement('div');
+    overlay.classList.add('radial-overlay');
+    overlay.id = 'radial-overlay';
+
+    const popup = document.createElement('div');
+    popup.classList.add('radial-popup');
+    popup.id = 'radial-popup';
+
+    overlay.appendChild(popup);
+    document.body.appendChild(overlay);
+
+    // Chiudi cliccando fuori
+    overlay.addEventListener('click', function(e) {
+        if (e.target === overlay) {
+            closeRadialPopup();
+        }
+    });
+}
+
+function openRadialPopup(category) {
+    const overlay = document.getElementById('radial-overlay');
+    const popup = document.getElementById('radial-popup');
+    const data = categorySubNodes[category];
+
+    if (!data) return;
+
+    // Pulisci popup
+    popup.innerHTML = '';
+
+    // Centro con nome categoria
+    const center = document.createElement('div');
+    center.classList.add('radial-center', data.class);
+    center.innerHTML = `<span>${data.name}</span>`;
+    popup.appendChild(center);
+
+    // Calcola posizioni radiali
+    const numSubs = data.subs.length;
+    const radius = 100; // distanza dal centro
+    const startAngle = -90; // parte dall'alto
+
+    data.subs.forEach((sub, index) => {
+        const angle = startAngle + (360 / numSubs) * index;
+        const radian = angle * (Math.PI / 180);
+        const x = 50 + (radius / 280 * 100) * Math.cos(radian);
+        const y = 50 + (radius / 280 * 100) * Math.sin(radian);
+
+        const node = document.createElement('a');
+        node.href = sub.href;
+        node.classList.add('radial-node', sub.class);
+        node.innerHTML = `<span>${sub.name}</span>`;
+        node.style.top = `${y}%`;
+        node.style.left = `${x}%`;
+        popup.appendChild(node);
+    });
+
+    // Pulsante chiudi
+    const closeBtn = document.createElement('button');
+    closeBtn.classList.add('radial-close');
+    closeBtn.textContent = '✕ Chiudi';
+    closeBtn.addEventListener('click', closeRadialPopup);
+    popup.appendChild(closeBtn);
+
+    // Mostra
+    overlay.classList.add('visible');
+}
+
+function closeRadialPopup() {
+    const overlay = document.getElementById('radial-overlay');
+    if (overlay) {
+        overlay.classList.remove('visible');
+    }
 }
 
 function initMobileMapEvents(mobileMap) {
@@ -425,24 +474,12 @@ function initMobileMapEvents(mobileMap) {
         }
     });
 
-    // Tap su categorie
+    // Tap su categorie → apri radial popup
     primaryNodes.forEach(node => {
         node.addEventListener('click', function() {
             const category = this.dataset.category;
-
             if (mobileState === 'categories') {
-                showMobileSubcategories(mobileMap, category);
-                this.classList.add('expanded');
-            } else if (mobileState === 'subcategories') {
-                if (mobileExpandedCategory !== category) {
-                    hideMobileCurrentSubcategories(mobileMap);
-                    mobileMap.querySelectorAll('.mobile-node-primary').forEach(n => n.classList.remove('expanded'));
-
-                    setTimeout(() => {
-                        showMobileSubcategories(mobileMap, category);
-                        this.classList.add('expanded');
-                    }, 200);
-                }
+                openRadialPopup(category);
             }
         });
     });
@@ -463,39 +500,8 @@ function showMobileCategories(mobileMap) {
     });
 }
 
-function showMobileSubcategories(mobileMap, category) {
-    mobileMap.dataset.state = 'subcategories';
-    mobileState = 'subcategories';
-    mobileExpandedCategory = category;
-
-    const subNodes = mobileMap.querySelector(`.mobile-sub-nodes[data-parent="${category}"]`);
-    if (subNodes) subNodes.classList.add('visible');
-
-    // Mostra linee della categoria
-    mobileMap.querySelectorAll(`.mobile-sub-line[data-category="${category}"]`).forEach(line => {
-        line.classList.add('visible');
-    });
-}
-
-function hideMobileCurrentSubcategories(mobileMap) {
-    if (mobileExpandedCategory) {
-        const subNodes = mobileMap.querySelector(`.mobile-sub-nodes[data-parent="${mobileExpandedCategory}"]`);
-        if (subNodes) subNodes.classList.remove('visible');
-
-        mobileMap.querySelectorAll(`.mobile-sub-line[data-category="${mobileExpandedCategory}"]`).forEach(line => {
-            line.classList.remove('visible');
-        });
-    }
-}
-
 function goMobileBack(mobileMap) {
-    if (mobileState === 'subcategories') {
-        hideMobileCurrentSubcategories(mobileMap);
-        mobileMap.querySelectorAll('.mobile-node-primary').forEach(n => n.classList.remove('expanded'));
-        mobileMap.dataset.state = 'categories';
-        mobileState = 'categories';
-        mobileExpandedCategory = null;
-    } else if (mobileState === 'categories') {
+    if (mobileState === 'categories') {
         mobileMap.dataset.state = 'initial';
         mobileState = 'initial';
 
@@ -541,53 +547,5 @@ function updateMobileLines() {
             line.setAttribute('x2', to.x);
             line.setAttribute('y2', to.y);
         }
-    });
-
-    // Linee sub-categorie
-    const subConnections = {
-        party: [
-            { line: 'mobile-line-party-daytime', from: 'mobile-node-party', to: 'mobile-node-daytime' },
-            { line: 'mobile-line-party-nightlife', from: 'mobile-node-party', to: 'mobile-node-nightlife' },
-            { line: 'mobile-line-party-hmc', from: 'mobile-node-party', to: 'mobile-node-hmc' },
-            { line: 'mobile-line-party-terraceo', from: 'mobile-node-daytime', to: 'mobile-node-terraceo' },
-            { line: 'mobile-line-party-elbarco', from: 'mobile-node-daytime', to: 'mobile-node-elbarco' },
-            { line: 'mobile-line-party-finca', from: 'mobile-node-daytime', to: 'mobile-node-finca' }
-        ],
-        food: [
-            { line: 'mobile-line-food-aperitivo', from: 'mobile-node-food', to: 'mobile-node-aperitivo' },
-            { line: 'mobile-line-food-brunch', from: 'mobile-node-food', to: 'mobile-node-brunch' },
-            { line: 'mobile-line-food-ristorante', from: 'mobile-node-food', to: 'mobile-node-ristorante' }
-        ],
-        staying: [
-            { line: 'mobile-line-staying-staying-villa', from: 'mobile-node-staying', to: 'mobile-node-staying-villa' },
-            { line: 'mobile-line-staying-hotel', from: 'mobile-node-staying', to: 'mobile-node-hotel' },
-            { line: 'mobile-line-staying-apartment', from: 'mobile-node-staying', to: 'mobile-node-apartment' }
-        ],
-        excursion: [
-            { line: 'mobile-line-excursion-action', from: 'mobile-node-excursion', to: 'mobile-node-action' },
-            { line: 'mobile-line-excursion-chill', from: 'mobile-node-excursion', to: 'mobile-node-chill' }
-        ],
-        events: [
-            { line: 'mobile-line-events-private', from: 'mobile-node-events', to: 'mobile-node-private' },
-            { line: 'mobile-line-events-artists', from: 'mobile-node-events', to: 'mobile-node-artists' },
-            { line: 'mobile-line-events-venue', from: 'mobile-node-events', to: 'mobile-node-venue' },
-            { line: 'mobile-line-events-boat', from: 'mobile-node-private', to: 'mobile-node-boat' },
-            { line: 'mobile-line-events-villa-private', from: 'mobile-node-private', to: 'mobile-node-villa-private' }
-        ]
-    };
-
-    Object.keys(subConnections).forEach(cat => {
-        subConnections[cat].forEach(conn => {
-            const line = document.getElementById(conn.line);
-            if (!line) return;
-            const from = getMobileCenter(conn.from);
-            const to = getMobileCenter(conn.to);
-            if (from && to) {
-                line.setAttribute('x1', from.x);
-                line.setAttribute('y1', from.y);
-                line.setAttribute('x2', to.x);
-                line.setAttribute('y2', to.y);
-            }
-        });
     });
 }
