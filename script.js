@@ -426,14 +426,14 @@ function openRadialPopup(category) {
 
     // Calcola posizioni radiali
     const numSubs = data.subs.length;
-    const radius = 115; // distanza dal centro
+    const radius = 125; // distanza dal centro
     const startAngle = -90; // parte dall'alto
 
     data.subs.forEach((sub, index) => {
         const angle = startAngle + (360 / numSubs) * index;
         const radian = angle * (Math.PI / 180);
-        const x = 50 + (radius / 320 * 100) * Math.cos(radian);
-        const y = 50 + (radius / 320 * 100) * Math.sin(radian);
+        const x = 50 + (radius / 340 * 100) * Math.cos(radian);
+        const y = 50 + (radius / 340 * 100) * Math.sin(radian);
 
         const node = document.createElement('a');
         node.href = sub.href;
