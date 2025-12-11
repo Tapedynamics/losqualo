@@ -575,7 +575,7 @@ footer {
     }
 
     .mobile-map .tenerife-img-mobile {
-        width: 70px;
+        width: 90px;
         height: auto;
         filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.2));
         transition: transform 0.3s ease;
@@ -583,17 +583,17 @@ footer {
 
     .mobile-map .center-text-mobile {
         display: block;
-        margin-top: 8px;
+        margin-top: 10px;
         color: #4a7c7e;
-        font-size: 0.65rem;
+        font-size: 0.8rem;
         font-weight: 600;
         letter-spacing: 1px;
     }
 
     .mobile-map .click-hint-mobile {
         display: block;
-        margin-top: 8px;
-        font-size: 0.6rem;
+        margin-top: 10px;
+        font-size: 0.75rem;
         color: #6a7a7c;
         animation: pulse-hint 2s ease-in-out infinite;
     }
@@ -628,12 +628,12 @@ footer {
     }
 
     .mobile-node-primary {
-        width: 60px;
-        height: 60px;
+        width: 72px;
+        height: 72px;
     }
 
     .mobile-node-primary span {
-        font-size: 0.5rem;
+        font-size: 0.6rem;
         font-weight: 600;
     }
 
@@ -756,8 +756,8 @@ footer {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 280px;
-        height: 280px;
+        width: 320px;
+        height: 320px;
     }
 
     .radial-center {
@@ -765,8 +765,8 @@ footer {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 70px;
-        height: 70px;
+        width: 85px;
+        height: 85px;
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -776,7 +776,7 @@ footer {
     }
 
     .radial-center span {
-        font-size: 0.6rem;
+        font-size: 0.75rem;
         font-weight: 600;
         text-align: center;
         line-height: 1.2;
@@ -784,8 +784,8 @@ footer {
 
     .radial-node {
         position: absolute;
-        width: 58px;
-        height: 58px;
+        width: 70px;
+        height: 70px;
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -800,11 +800,11 @@ footer {
     }
 
     .radial-node span {
-        font-size: 0.5rem;
+        font-size: 0.6rem;
         font-weight: 500;
         text-align: center;
-        line-height: 1.1;
-        padding: 4px;
+        line-height: 1.15;
+        padding: 5px;
     }
 
     .radial-overlay.visible .radial-node {
