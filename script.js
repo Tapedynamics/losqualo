@@ -1,16 +1,17 @@
 // Lo Squalo - Tenerife Experience
-// Interactive Mind Map - Progressive Expansion
+// Interactive 3D Mind Map
 
 document.addEventListener('DOMContentLoaded', function() {
     initProgressiveMap();
+    initParallax3D();
     initMobileMenu();
 });
 
-// Stato corrente della mappa
+// Stato corrente
 let currentState = 'initial';
 let expandedCategory = null;
 
-// Inizializza la mappa progressiva
+// ===== MAPPA PROGRESSIVA =====
 function initProgressiveMap() {
     const mindMap = document.querySelector('.mind-map');
     const tenerife = document.getElementById('tenerife-trigger');
@@ -33,7 +34,6 @@ function initProgressiveMap() {
                 showSubcategories(category);
                 this.classList.add('expanded');
             } else if (currentState === 'subcategories') {
-                // Se clicco su un'altra categoria, cambia
                 if (expandedCategory !== category) {
                     hideCurrentSubcategories();
                     document.querySelectorAll('.node-primary').forEach(n => n.classList.remove('expanded'));
@@ -41,7 +41,7 @@ function initProgressiveMap() {
                     setTimeout(() => {
                         showSubcategories(category);
                         this.classList.add('expanded');
-                    }, 200);
+                    }, 250);
                 }
             }
         });
@@ -52,7 +52,7 @@ function initProgressiveMap() {
         goBack();
     });
 
-    // Tasto ESC per tornare indietro
+    // Tasto ESC
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') {
             goBack();
@@ -60,64 +60,116 @@ function initProgressiveMap() {
     });
 }
 
-// Mostra le 5 categorie principali
 function showCategories() {
     const mindMap = document.querySelector('.mind-map');
     mindMap.dataset.state = 'categories';
     currentState = 'categories';
 }
 
-// Mostra le sottocategorie di una categoria
 function showSubcategories(category) {
     const mindMap = document.querySelector('.mind-map');
     mindMap.dataset.state = 'subcategories';
     currentState = 'subcategories';
     expandedCategory = category;
 
-    // Mostra le sotto-bolle
     const subNodes = document.querySelector(`.sub-nodes[data-parent="${category}"]`);
-    if (subNodes) {
-        subNodes.classList.add('visible');
-    }
+    if (subNodes) subNodes.classList.add('visible');
 
-    // Mostra le linee di connessione
     const subLines = document.querySelector(`.sub-lines[data-category="${category}"]`);
-    if (subLines) {
-        subLines.classList.add('visible');
-    }
+    if (subLines) subLines.classList.add('visible');
 }
 
-// Nascondi sottocategorie correnti
 function hideCurrentSubcategories() {
     if (expandedCategory) {
         const subNodes = document.querySelector(`.sub-nodes[data-parent="${expandedCategory}"]`);
-        if (subNodes) {
-            subNodes.classList.remove('visible');
-        }
+        if (subNodes) subNodes.classList.remove('visible');
 
         const subLines = document.querySelector(`.sub-lines[data-category="${expandedCategory}"]`);
-        if (subLines) {
-            subLines.classList.remove('visible');
-        }
+        if (subLines) subLines.classList.remove('visible');
     }
 }
 
-// Torna indietro
 function goBack() {
     const mindMap = document.querySelector('.mind-map');
 
     if (currentState === 'subcategories') {
-        // Torna alle categorie
         hideCurrentSubcategories();
         document.querySelectorAll('.node-primary').forEach(n => n.classList.remove('expanded'));
         mindMap.dataset.state = 'categories';
         currentState = 'categories';
         expandedCategory = null;
     } else if (currentState === 'categories') {
-        // Torna allo stato iniziale
         mindMap.dataset.state = 'initial';
         currentState = 'initial';
     }
+}
+
+// ===== PARALLAX 3D =====
+function initParallax3D() {
+    const scene = document.querySelector('.scene-3d');
+    const floatingElements = document.querySelectorAll('.floating-3d');
+
+    let mouseX = 0;
+    let mouseY = 0;
+    let targetX = 0;
+    let targetY = 0;
+
+    document.addEventListener('mousemove', function(e) {
+        if (window.innerWidth <= 768) return;
+
+        // Normalizza la posizione del mouse (-1 a 1)
+        mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
+        mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
+    });
+
+    // Animazione fluida con requestAnimationFrame
+    function animate() {
+        // Lerp per movimento fluido
+        targetX += (mouseX - targetX) * 0.08;
+        targetY += (mouseY - targetY) * 0.08;
+
+        // Applica rotazione alla scena 3D
+        if (scene) {
+            const rotateX = targetY * 8; // Inclinazione verticale
+            const rotateY = targetX * 12; // Inclinazione orizzontale
+
+            scene.style.transform = `
+                rotateX(${-rotateX}deg)
+                rotateY(${rotateY}deg)
+            `;
+        }
+
+        // Parallax individuale sugli elementi basato sulla profondità
+        floatingElements.forEach(el => {
+            const depth = parseInt(el.dataset.depth) || 1;
+            const intensity = depth * 5;
+
+            const moveX = targetX * intensity;
+            const moveY = targetY * intensity;
+            const moveZ = Math.abs(targetX + targetY) * depth * 3;
+
+            // Aggiungi movimento parallax senza sovrascrivere le animazioni
+            el.style.setProperty('--parallax-x', `${moveX}px`);
+            el.style.setProperty('--parallax-y', `${moveY}px`);
+            el.style.setProperty('--parallax-z', `${moveZ}px`);
+        });
+
+        requestAnimationFrame(animate);
+    }
+
+    animate();
+
+    // Aggiungi stili per il parallax
+    const parallaxStyles = document.createElement('style');
+    parallaxStyles.textContent = `
+        .floating-3d {
+            transform:
+                translateX(var(--parallax-x, 0))
+                translateY(var(--parallax-y, 0))
+                translateZ(var(--parallax-z, 0));
+        }
+    `;
+    document.head.appendChild(parallaxStyles);
 }
 
 // ===== MENU MOBILE =====
@@ -133,9 +185,7 @@ function initMobileMenu() {
             }
         } else {
             const mobileMenu = document.querySelector('.mobile-menu');
-            if (mobileMenu) {
-                mobileMenu.remove();
-            }
+            if (mobileMenu) mobileMenu.remove();
         }
     });
 }
@@ -149,13 +199,12 @@ function createMobileMenu() {
     const mobileMenu = document.createElement('nav');
     mobileMenu.classList.add('mobile-menu');
 
-    // Logo Tenerife per mobile
+    // Logo Tenerife mobile
     const mobileLogo = document.createElement('div');
     mobileLogo.classList.add('mobile-logo');
     mobileLogo.innerHTML = `
-        <div class="mobile-tenerife">
-            <span>TENERIFE<br>EXPERIENCE</span>
-        </div>
+        <img src="tenerife.png" alt="Tenerife" class="mobile-tenerife-img">
+        <span class="mobile-title">TENERIFE EXPERIENCE</span>
     `;
     mobileMenu.appendChild(mobileLogo);
 
@@ -217,7 +266,7 @@ function createMobileMenu() {
 
         const header = document.createElement('div');
         header.classList.add('mobile-header');
-        header.style.backgroundColor = cat.color;
+        header.style.background = `linear-gradient(145deg, ${cat.color}, ${adjustColor(cat.color, -20)})`;
         header.innerHTML = `
             <span class="mobile-text">${cat.name}</span>
             <span class="mobile-arrow">+</span>
@@ -233,7 +282,6 @@ function createMobileMenu() {
         });
 
         header.addEventListener('click', function() {
-            // Chiudi altri item aperti
             document.querySelectorAll('.mobile-item.expanded').forEach(openItem => {
                 if (openItem !== item) {
                     openItem.classList.remove('expanded');
@@ -254,6 +302,15 @@ function createMobileMenu() {
     addMobileStyles();
 }
 
+// Funzione per scurire/schiarire colori
+function adjustColor(color, amount) {
+    const hex = color.replace('#', '');
+    const r = Math.max(0, Math.min(255, parseInt(hex.substring(0, 2), 16) + amount));
+    const g = Math.max(0, Math.min(255, parseInt(hex.substring(2, 4), 16) + amount));
+    const b = Math.max(0, Math.min(255, parseInt(hex.substring(4, 6), 16) + amount));
+    return `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;
+}
+
 function addMobileStyles() {
     if (document.querySelector('#mobile-styles')) return;
 
@@ -269,32 +326,35 @@ function addMobileStyles() {
 
         .mobile-logo {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
-        .mobile-tenerife {
-            display: inline-block;
-            padding: 25px 35px;
-            background-color: #4a7c7e;
-            clip-path: polygon(50% 0%, 85% 10%, 100% 40%, 95% 70%, 100% 100%, 50% 90%, 0% 100%, 5% 70%, 0% 40%, 15% 10%);
-            color: white;
+        .mobile-tenerife-img {
+            width: 100px;
+            height: auto;
+            filter: brightness(0) saturate(100%) invert(35%) sepia(15%) saturate(600%) hue-rotate(140deg);
+            margin-bottom: 10px;
+        }
+
+        .mobile-title {
+            display: block;
+            font-size: 1rem;
             font-weight: 600;
-            font-size: 0.9rem;
-            text-align: center;
-            line-height: 1.3;
+            color: #4a7c7e;
+            letter-spacing: 2px;
         }
 
         .mobile-item {
-            border-radius: 12px;
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
         .mobile-header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 16px 20px;
+            padding: 18px 22px;
             cursor: pointer;
             font-weight: 600;
             font-size: 0.95rem;
@@ -303,7 +363,7 @@ function addMobileStyles() {
         }
 
         .mobile-arrow {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-weight: 300;
             transition: transform 0.3s ease;
         }
@@ -312,26 +372,27 @@ function addMobileStyles() {
             max-height: 0;
             overflow: hidden;
             background: rgba(255, 255, 255, 0.95);
-            transition: max-height 0.35s ease;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .mobile-item.expanded .mobile-submenu {
-            max-height: 400px;
+            max-height: 500px;
         }
 
         .mobile-submenu a {
             display: block;
-            padding: 14px 25px;
+            padding: 15px 25px;
             text-decoration: none;
             color: #4a4a4a;
             font-size: 0.9rem;
-            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            border-top: 1px solid rgba(0, 0, 0, 0.06);
             transition: all 0.2s ease;
         }
 
         .mobile-submenu a:hover {
             background: rgba(74, 124, 126, 0.1);
-            padding-left: 30px;
+            padding-left: 32px;
+            color: #4a7c7e;
         }
 
         @media (min-width: 769px) {
