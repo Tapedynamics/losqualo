@@ -6,7 +6,11 @@
       "Bash(git commit:*)",
       "Bash(git remote add:*)",
       "Bash(git branch:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "WebSearch",
+      "WebFetch(domain:www.cssscript.com)",
+      "WebFetch(domain:gist.github.com)",
+      "WebFetch(domain:blog.greggant.com)"
     ]
   }
 }

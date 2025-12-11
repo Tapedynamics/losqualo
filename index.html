@@ -14,165 +14,150 @@
         </header>
 
         <main class="mind-map" data-state="initial">
-            <!-- Container 3D -->
-            <div class="scene-3d">
-                <!-- SVG per le linee di connessione -->
-                <svg class="connections" viewBox="0 0 1000 700" preserveAspectRatio="xMidYMid meet">
-                    <!-- Linee principali dal centro -->
-                    <g class="main-lines">
-                        <line class="line line-party" x1="500" y1="350" x2="200" y2="280" />
-                        <line class="line line-food" x1="500" y1="350" x2="380" y2="140" />
-                        <line class="line line-staying" x1="500" y1="350" x2="800" y2="220" />
-                        <line class="line line-excursion" x1="500" y1="350" x2="750" y2="520" />
-                        <line class="line line-events" x1="500" y1="350" x2="320" y2="530" />
-                    </g>
+            <!-- SVG per le linee - verrà popolato dinamicamente -->
+            <svg class="connections" id="svg-connections">
+                <!-- Linee principali -->
+                <line class="line main-line" id="line-tenerife-party"></line>
+                <line class="line main-line" id="line-tenerife-food"></line>
+                <line class="line main-line" id="line-tenerife-staying"></line>
+                <line class="line main-line" id="line-tenerife-excursion"></line>
+                <line class="line main-line" id="line-tenerife-events"></line>
 
-                    <!-- Linee sottocategorie Party -->
-                    <g class="sub-lines" data-category="party">
-                        <line class="line-secondary" x1="200" y1="280" x2="240" y2="130" />
-                        <line class="line-secondary" x1="200" y1="280" x2="80" y2="280" />
-                        <line class="line-secondary" x1="200" y1="280" x2="80" y2="400" />
-                        <line class="line-tertiary" x1="240" y1="130" x2="160" y2="50" />
-                        <line class="line-tertiary" x1="240" y1="130" x2="80" y2="130" />
-                        <line class="line-tertiary" x1="240" y1="130" x2="80" y2="210" />
-                    </g>
+                <!-- Linee Party -->
+                <line class="line sub-line" data-category="party" id="line-party-daytime"></line>
+                <line class="line sub-line" data-category="party" id="line-party-nightlife"></line>
+                <line class="line sub-line" data-category="party" id="line-party-hmc"></line>
+                <line class="line sub-line tertiary" data-category="party" id="line-daytime-terraceo"></line>
+                <line class="line sub-line tertiary" data-category="party" id="line-daytime-elbarco"></line>
+                <line class="line sub-line tertiary" data-category="party" id="line-daytime-finca"></line>
 
-                    <!-- Linee sottocategorie Food -->
-                    <g class="sub-lines" data-category="food">
-                        <line class="line-secondary" x1="380" y1="140" x2="300" y2="50" />
-                        <line class="line-secondary" x1="380" y1="140" x2="420" y2="50" />
-                        <line class="line-secondary" x1="380" y1="140" x2="540" y2="80" />
-                    </g>
+                <!-- Linee Food -->
+                <line class="line sub-line" data-category="food" id="line-food-aperitivo"></line>
+                <line class="line sub-line" data-category="food" id="line-food-brunch"></line>
+                <line class="line sub-line" data-category="food" id="line-food-ristorante"></line>
 
-                    <!-- Linee sottocategorie Staying -->
-                    <g class="sub-lines" data-category="staying">
-                        <line class="line-secondary" x1="800" y1="220" x2="870" y2="100" />
-                        <line class="line-secondary" x1="800" y1="220" x2="920" y2="220" />
-                        <line class="line-secondary" x1="800" y1="220" x2="900" y2="340" />
-                    </g>
+                <!-- Linee Staying -->
+                <line class="line sub-line" data-category="staying" id="line-staying-villa"></line>
+                <line class="line sub-line" data-category="staying" id="line-staying-hotel"></line>
+                <line class="line sub-line" data-category="staying" id="line-staying-apartment"></line>
 
-                    <!-- Linee sottocategorie Excursion -->
-                    <g class="sub-lines" data-category="excursion">
-                        <line class="line-secondary" x1="750" y1="520" x2="650" y2="620" />
-                        <line class="line-secondary" x1="750" y1="520" x2="850" y2="620" />
-                    </g>
+                <!-- Linee Excursion -->
+                <line class="line sub-line" data-category="excursion" id="line-excursion-action"></line>
+                <line class="line sub-line" data-category="excursion" id="line-excursion-chill"></line>
 
-                    <!-- Linee sottocategorie Events -->
-                    <g class="sub-lines" data-category="events">
-                        <line class="line-secondary" x1="320" y1="530" x2="200" y2="480" />
-                        <line class="line-secondary" x1="320" y1="530" x2="180" y2="620" />
-                        <line class="line-secondary" x1="320" y1="530" x2="380" y2="650" />
-                        <line class="line-tertiary" x1="200" y1="480" x2="280" y2="420" />
-                        <line class="line-tertiary" x1="200" y1="480" x2="100" y2="520" />
-                    </g>
-                </svg>
+                <!-- Linee Events -->
+                <line class="line sub-line" data-category="events" id="line-events-private"></line>
+                <line class="line sub-line" data-category="events" id="line-events-artists"></line>
+                <line class="line sub-line" data-category="events" id="line-events-venue"></line>
+                <line class="line sub-line tertiary" data-category="events" id="line-private-boat"></line>
+                <line class="line sub-line tertiary" data-category="events" id="line-private-villaprivate"></line>
+            </svg>
 
-                <!-- Centro - Tenerife -->
-                <div class="center-node floating-3d" id="tenerife-trigger" data-depth="0">
-                    <img src="tenerife.png" alt="Tenerife" class="tenerife-img">
-                    <span class="center-text">TENERIFE<br>EXPERIENCE</span>
-                    <span class="click-hint">Clicca per esplorare</span>
+            <!-- Centro - Tenerife -->
+            <div class="center-node" id="tenerife-trigger">
+                <img src="tenerife.png" alt="Tenerife" class="tenerife-img">
+                <span class="center-text">TENERIFE<br>EXPERIENCE</span>
+                <span class="click-hint">Clicca per esplorare</span>
+            </div>
+
+            <!-- ===== CATEGORIE PRINCIPALI ===== -->
+            <div class="primary-nodes">
+                <div class="node node-primary party" id="node-party" data-category="party">
+                    <span>PARTY</span>
                 </div>
 
-                <!-- ===== CATEGORIE PRINCIPALI ===== -->
-                <div class="primary-nodes">
-                    <div class="node node-primary party floating-3d" data-category="party" data-depth="1">
-                        <span>PARTY</span>
-                    </div>
-
-                    <div class="node node-primary food-drink floating-3d" data-category="food" data-depth="2">
-                        <span>FOOD &<br>DRINK</span>
-                    </div>
-
-                    <div class="node node-primary staying floating-3d" data-category="staying" data-depth="1">
-                        <span>STAYING</span>
-                    </div>
-
-                    <div class="node node-primary excursion floating-3d" data-category="excursion" data-depth="2">
-                        <span>EXCURSIÓN</span>
-                    </div>
-
-                    <div class="node node-primary events floating-3d" data-category="events" data-depth="1">
-                        <span>Events<br>Services</span>
-                    </div>
+                <div class="node node-primary food-drink" id="node-food" data-category="food">
+                    <span>FOOD &<br>DRINK</span>
                 </div>
 
-                <!-- ===== SOTTO-CATEGORIE PARTY ===== -->
-                <div class="sub-nodes" data-parent="party">
-                    <a href="party.html#daytime" class="node node-secondary daytime floating-3d" data-depth="3">
-                        <span>Daytime<br>& Sunset</span>
-                    </a>
-                    <a href="party.html#nightlife" class="node node-secondary nightlife floating-3d" data-depth="2">
-                        <span>Nightlife</span>
-                    </a>
-                    <a href="party.html#hmc" class="node node-secondary hmc floating-3d" data-depth="3">
-                        <span>H.m.c.</span>
-                    </a>
-                    <a href="party.html#terraceo" class="node node-tertiary terraceo floating-3d" data-depth="4">
-                        <span>Terraceo</span>
-                    </a>
-                    <a href="party.html#elbarco" class="node node-tertiary elbarco floating-3d" data-depth="3">
-                        <span>El Barco</span>
-                    </a>
-                    <a href="party.html#finca" class="node node-tertiary finca floating-3d" data-depth="4">
-                        <span>Finca</span>
-                    </a>
+                <div class="node node-primary staying" id="node-staying" data-category="staying">
+                    <span>STAYING</span>
                 </div>
 
-                <!-- ===== SOTTO-CATEGORIE FOOD & DRINK ===== -->
-                <div class="sub-nodes" data-parent="food">
-                    <a href="food-drink.html#aperitivo" class="node node-secondary aperitivo floating-3d" data-depth="3">
-                        <span>Aperitivo</span>
-                    </a>
-                    <a href="food-drink.html#brunch" class="node node-secondary brunch floating-3d" data-depth="2">
-                        <span>Brunch</span>
-                    </a>
-                    <a href="food-drink.html#ristorante" class="node node-secondary ristorante floating-3d" data-depth="3">
-                        <span>Ristorante</span>
-                    </a>
+                <div class="node node-primary excursion" id="node-excursion" data-category="excursion">
+                    <span>EXCURSIÓN</span>
                 </div>
 
-                <!-- ===== SOTTO-CATEGORIE STAYING ===== -->
-                <div class="sub-nodes" data-parent="staying">
-                    <a href="staying.html#villa" class="node node-secondary staying-villa floating-3d" data-depth="2">
-                        <span>Villa</span>
-                    </a>
-                    <a href="staying.html#hotel" class="node node-secondary hotel floating-3d" data-depth="3">
-                        <span>Hotel</span>
-                    </a>
-                    <a href="staying.html#apartment" class="node node-secondary apartment floating-3d" data-depth="2">
-                        <span>Apartment</span>
-                    </a>
+                <div class="node node-primary events" id="node-events" data-category="events">
+                    <span>Events<br>Services</span>
                 </div>
+            </div>
 
-                <!-- ===== SOTTO-CATEGORIE EXCURSIÓN ===== -->
-                <div class="sub-nodes" data-parent="excursion">
-                    <a href="excursion.html#action" class="node node-secondary action floating-3d" data-depth="3">
-                        <span>Action</span>
-                    </a>
-                    <a href="excursion.html#chill" class="node node-secondary chill floating-3d" data-depth="2">
-                        <span>Chill</span>
-                    </a>
-                </div>
+            <!-- ===== SOTTO-CATEGORIE PARTY ===== -->
+            <div class="sub-nodes" data-parent="party">
+                <a href="party.html#daytime" class="node node-secondary daytime" id="node-daytime">
+                    <span>Daytime<br>& Sunset</span>
+                </a>
+                <a href="party.html#nightlife" class="node node-secondary nightlife" id="node-nightlife">
+                    <span>Nightlife</span>
+                </a>
+                <a href="party.html#hmc" class="node node-secondary hmc" id="node-hmc">
+                    <span>H.m.c.</span>
+                </a>
+                <a href="party.html#terraceo" class="node node-tertiary terraceo" id="node-terraceo">
+                    <span>Terraceo</span>
+                </a>
+                <a href="party.html#elbarco" class="node node-tertiary elbarco" id="node-elbarco">
+                    <span>El Barco</span>
+                </a>
+                <a href="party.html#finca" class="node node-tertiary finca" id="node-finca">
+                    <span>Finca</span>
+                </a>
+            </div>
 
-                <!-- ===== SOTTO-CATEGORIE EVENTS SERVICES ===== -->
-                <div class="sub-nodes" data-parent="events">
-                    <a href="events.html#private" class="node node-secondary private floating-3d" data-depth="2">
-                        <span>Private</span>
-                    </a>
-                    <a href="events.html#artists" class="node node-secondary artists floating-3d" data-depth="3">
-                        <span>Artists<br>booking</span>
-                    </a>
-                    <a href="events.html#venue" class="node node-secondary venue floating-3d" data-depth="2">
-                        <span>Venue<br>& More</span>
-                    </a>
-                    <a href="events.html#boat" class="node node-tertiary boat floating-3d" data-depth="4">
-                        <span>Boat</span>
-                    </a>
-                    <a href="events.html#villa-private" class="node node-tertiary villa-private floating-3d" data-depth="3">
-                        <span>Villa</span>
-                    </a>
-                </div>
+            <!-- ===== SOTTO-CATEGORIE FOOD & DRINK ===== -->
+            <div class="sub-nodes" data-parent="food">
+                <a href="food-drink.html#aperitivo" class="node node-secondary aperitivo" id="node-aperitivo">
+                    <span>Aperitivo</span>
+                </a>
+                <a href="food-drink.html#brunch" class="node node-secondary brunch" id="node-brunch">
+                    <span>Brunch</span>
+                </a>
+                <a href="food-drink.html#ristorante" class="node node-secondary ristorante" id="node-ristorante">
+                    <span>Ristorante</span>
+                </a>
+            </div>
+
+            <!-- ===== SOTTO-CATEGORIE STAYING ===== -->
+            <div class="sub-nodes" data-parent="staying">
+                <a href="staying.html#villa" class="node node-secondary staying-villa" id="node-staying-villa">
+                    <span>Villa</span>
+                </a>
+                <a href="staying.html#hotel" class="node node-secondary hotel" id="node-hotel">
+                    <span>Hotel</span>
+                </a>
+                <a href="staying.html#apartment" class="node node-secondary apartment" id="node-apartment">
+                    <span>Apartment</span>
+                </a>
+            </div>
+
+            <!-- ===== SOTTO-CATEGORIE EXCURSIÓN ===== -->
+            <div class="sub-nodes" data-parent="excursion">
+                <a href="excursion.html#action" class="node node-secondary action" id="node-action">
+                    <span>Action</span>
+                </a>
+                <a href="excursion.html#chill" class="node node-secondary chill" id="node-chill">
+                    <span>Chill</span>
+                </a>
+            </div>
+
+            <!-- ===== SOTTO-CATEGORIE EVENTS SERVICES ===== -->
+            <div class="sub-nodes" data-parent="events">
+                <a href="events.html#private" class="node node-secondary private" id="node-private">
+                    <span>Private</span>
+                </a>
+                <a href="events.html#artists" class="node node-secondary artists" id="node-artists">
+                    <span>Artists<br>booking</span>
+                </a>
+                <a href="events.html#venue" class="node node-secondary venue" id="node-venue">
+                    <span>Venue<br>& More</span>
+                </a>
+                <a href="events.html#boat" class="node node-tertiary boat" id="node-boat">
+                    <span>Boat</span>
+                </a>
+                <a href="events.html#villa-private" class="node node-tertiary villa-private" id="node-villa-private">
+                    <span>Villa</span>
+                </a>
             </div>
 
             <!-- Pulsante indietro -->

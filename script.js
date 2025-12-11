@@ -1,15 +1,125 @@
 // Lo Squalo - Tenerife Experience
-// Interactive 3D Mind Map
+// Interactive Mind Map with Dynamic SVG Lines
 
 document.addEventListener('DOMContentLoaded', function() {
     initProgressiveMap();
-    initParallax3D();
+    initDynamicLines();
     initMobileMenu();
 });
 
 // Stato corrente
 let currentState = 'initial';
 let expandedCategory = null;
+
+// ===== LINEE DINAMICHE SVG =====
+const lineConnections = {
+    // Linee principali: Tenerife -> Categorie
+    main: [
+        { line: 'line-tenerife-party', from: 'tenerife-trigger', to: 'node-party' },
+        { line: 'line-tenerife-food', from: 'tenerife-trigger', to: 'node-food' },
+        { line: 'line-tenerife-staying', from: 'tenerife-trigger', to: 'node-staying' },
+        { line: 'line-tenerife-excursion', from: 'tenerife-trigger', to: 'node-excursion' },
+        { line: 'line-tenerife-events', from: 'tenerife-trigger', to: 'node-events' }
+    ],
+    // Sotto-linee per categoria
+    party: [
+        { line: 'line-party-daytime', from: 'node-party', to: 'node-daytime' },
+        { line: 'line-party-nightlife', from: 'node-party', to: 'node-nightlife' },
+        { line: 'line-party-hmc', from: 'node-party', to: 'node-hmc' },
+        { line: 'line-daytime-terraceo', from: 'node-daytime', to: 'node-terraceo' },
+        { line: 'line-daytime-elbarco', from: 'node-daytime', to: 'node-elbarco' },
+        { line: 'line-daytime-finca', from: 'node-daytime', to: 'node-finca' }
+    ],
+    food: [
+        { line: 'line-food-aperitivo', from: 'node-food', to: 'node-aperitivo' },
+        { line: 'line-food-brunch', from: 'node-food', to: 'node-brunch' },
+        { line: 'line-food-ristorante', from: 'node-food', to: 'node-ristorante' }
+    ],
+    staying: [
+        { line: 'line-staying-villa', from: 'node-staying', to: 'node-staying-villa' },
+        { line: 'line-staying-hotel', from: 'node-staying', to: 'node-hotel' },
+        { line: 'line-staying-apartment', from: 'node-staying', to: 'node-apartment' }
+    ],
+    excursion: [
+        { line: 'line-excursion-action', from: 'node-excursion', to: 'node-action' },
+        { line: 'line-excursion-chill', from: 'node-excursion', to: 'node-chill' }
+    ],
+    events: [
+        { line: 'line-events-private', from: 'node-events', to: 'node-private' },
+        { line: 'line-events-artists', from: 'node-events', to: 'node-artists' },
+        { line: 'line-events-venue', from: 'node-events', to: 'node-venue' },
+        { line: 'line-private-boat', from: 'node-private', to: 'node-boat' },
+        { line: 'line-private-villaprivate', from: 'node-private', to: 'node-villa-private' }
+    ]
+};
+
+function initDynamicLines() {
+    // Disegna le linee iniziali
+    updateAllLines();
+
+    // Aggiorna le linee al resize
+    window.addEventListener('resize', debounce(updateAllLines, 100));
+
+    // Aggiorna periodicamente per gestire animazioni
+    setInterval(updateAllLines, 50);
+}
+
+function getElementCenter(elementId) {
+    const el = document.getElementById(elementId);
+    if (!el) return null;
+
+    const rect = el.getBoundingClientRect();
+    const svg = document.getElementById('svg-connections');
+    const svgRect = svg.getBoundingClientRect();
+
+    return {
+        x: rect.left + rect.width / 2 - svgRect.left,
+        y: rect.top + rect.height / 2 - svgRect.top
+    };
+}
+
+function drawLine(lineId, fromId, toId) {
+    const line = document.getElementById(lineId);
+    if (!line) return;
+
+    const from = getElementCenter(fromId);
+    const to = getElementCenter(toId);
+
+    if (from && to) {
+        line.setAttribute('x1', from.x);
+        line.setAttribute('y1', from.y);
+        line.setAttribute('x2', to.x);
+        line.setAttribute('y2', to.y);
+    }
+}
+
+function updateAllLines() {
+    // Linee principali
+    lineConnections.main.forEach(conn => {
+        drawLine(conn.line, conn.from, conn.to);
+    });
+
+    // Linee per ogni categoria
+    Object.keys(lineConnections).forEach(category => {
+        if (category !== 'main') {
+            lineConnections[category].forEach(conn => {
+                drawLine(conn.line, conn.from, conn.to);
+            });
+        }
+    });
+}
+
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
 
 // ===== MAPPA PROGRESSIVA =====
 function initProgressiveMap() {
@@ -64,6 +174,11 @@ function showCategories() {
     const mindMap = document.querySelector('.mind-map');
     mindMap.dataset.state = 'categories';
     currentState = 'categories';
+
+    // Mostra le linee principali
+    document.querySelectorAll('.main-line').forEach(line => {
+        line.classList.add('visible');
+    });
 }
 
 function showSubcategories(category) {
@@ -75,8 +190,10 @@ function showSubcategories(category) {
     const subNodes = document.querySelector(`.sub-nodes[data-parent="${category}"]`);
     if (subNodes) subNodes.classList.add('visible');
 
-    const subLines = document.querySelector(`.sub-lines[data-category="${category}"]`);
-    if (subLines) subLines.classList.add('visible');
+    // Mostra le linee della categoria
+    document.querySelectorAll(`.sub-line[data-category="${category}"]`).forEach(line => {
+        line.classList.add('visible');
+    });
 }
 
 function hideCurrentSubcategories() {
@@ -84,8 +201,10 @@ function hideCurrentSubcategories() {
         const subNodes = document.querySelector(`.sub-nodes[data-parent="${expandedCategory}"]`);
         if (subNodes) subNodes.classList.remove('visible');
 
-        const subLines = document.querySelector(`.sub-lines[data-category="${expandedCategory}"]`);
-        if (subLines) subLines.classList.remove('visible');
+        // Nascondi le linee della categoria
+        document.querySelectorAll(`.sub-line[data-category="${expandedCategory}"]`).forEach(line => {
+            line.classList.remove('visible');
+        });
     }
 }
 
@@ -101,75 +220,12 @@ function goBack() {
     } else if (currentState === 'categories') {
         mindMap.dataset.state = 'initial';
         currentState = 'initial';
-    }
-}
 
-// ===== PARALLAX 3D =====
-function initParallax3D() {
-    const scene = document.querySelector('.scene-3d');
-    const floatingElements = document.querySelectorAll('.floating-3d');
-
-    let mouseX = 0;
-    let mouseY = 0;
-    let targetX = 0;
-    let targetY = 0;
-
-    document.addEventListener('mousemove', function(e) {
-        if (window.innerWidth <= 768) return;
-
-        // Normalizza la posizione del mouse (-1 a 1)
-        mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
-        mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
-    });
-
-    // Animazione fluida con requestAnimationFrame
-    function animate() {
-        // Lerp per movimento fluido
-        targetX += (mouseX - targetX) * 0.08;
-        targetY += (mouseY - targetY) * 0.08;
-
-        // Applica rotazione alla scena 3D
-        if (scene) {
-            const rotateX = targetY * 8; // Inclinazione verticale
-            const rotateY = targetX * 12; // Inclinazione orizzontale
-
-            scene.style.transform = `
-                rotateX(${-rotateX}deg)
-                rotateY(${rotateY}deg)
-            `;
-        }
-
-        // Parallax individuale sugli elementi basato sulla profondità
-        floatingElements.forEach(el => {
-            const depth = parseInt(el.dataset.depth) || 1;
-            const intensity = depth * 5;
-
-            const moveX = targetX * intensity;
-            const moveY = targetY * intensity;
-            const moveZ = Math.abs(targetX + targetY) * depth * 3;
-
-            // Aggiungi movimento parallax senza sovrascrivere le animazioni
-            el.style.setProperty('--parallax-x', `${moveX}px`);
-            el.style.setProperty('--parallax-y', `${moveY}px`);
-            el.style.setProperty('--parallax-z', `${moveZ}px`);
+        // Nascondi le linee principali
+        document.querySelectorAll('.main-line').forEach(line => {
+            line.classList.remove('visible');
         });
-
-        requestAnimationFrame(animate);
     }
-
-    animate();
-
-    // Aggiungi stili per il parallax
-    const parallaxStyles = document.createElement('style');
-    parallaxStyles.textContent = `
-        .floating-3d {
-            transform:
-                translateX(var(--parallax-x, 0))
-                translateY(var(--parallax-y, 0))
-                translateZ(var(--parallax-z, 0));
-        }
-    `;
-    document.head.appendChild(parallaxStyles);
 }
 
 // ===== MENU MOBILE =====
@@ -302,7 +358,6 @@ function createMobileMenu() {
     addMobileStyles();
 }
 
-// Funzione per scurire/schiarire colori
 function adjustColor(color, amount) {
     const hex = color.replace('#', '');
     const r = Math.max(0, Math.min(255, parseInt(hex.substring(0, 2), 16) + amount));
@@ -332,7 +387,6 @@ function addMobileStyles() {
         .mobile-tenerife-img {
             width: 100px;
             height: auto;
-            filter: brightness(0) saturate(100%) invert(35%) sepia(15%) saturate(600%) hue-rotate(140deg);
             margin-bottom: 10px;
         }
 

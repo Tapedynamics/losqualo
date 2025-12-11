@@ -10,7 +10,6 @@ body {
     background: linear-gradient(135deg, #f5f3ed 0%, #e8e4db 100%);
     min-height: 100vh;
     overflow-x: hidden;
-    perspective: 1000px;
 }
 
 .container {
@@ -42,57 +41,9 @@ header {
     width: 100%;
     height: 80vh;
     min-height: 700px;
-    perspective: 1200px;
 }
 
-/* ===== SCENA 3D ===== */
-.scene-3d {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    transition: transform 0.1s ease-out;
-}
-
-/* ===== EFFETTO FLUTTUANTE 3D ===== */
-.floating-3d {
-    transform-style: preserve-3d;
-    will-change: transform;
-}
-
-/* Animazioni fluttuanti con diverse velocità e ampiezze basate sulla profondità */
-@keyframes float-depth-0 {
-    0%, 100% { transform: translateZ(0px) translateY(0px) rotateX(0deg) rotateY(0deg); }
-    25% { transform: translateZ(15px) translateY(-8px) rotateX(2deg) rotateY(-2deg); }
-    50% { transform: translateZ(5px) translateY(-12px) rotateX(0deg) rotateY(2deg); }
-    75% { transform: translateZ(20px) translateY(-5px) rotateX(-2deg) rotateY(0deg); }
-}
-
-@keyframes float-depth-1 {
-    0%, 100% { transform: translateZ(0px) translateY(0px); }
-    33% { transform: translateZ(25px) translateY(-15px); }
-    66% { transform: translateZ(10px) translateY(-8px); }
-}
-
-@keyframes float-depth-2 {
-    0%, 100% { transform: translateZ(0px) translateY(0px); }
-    50% { transform: translateZ(35px) translateY(-20px); }
-}
-
-@keyframes float-depth-3 {
-    0%, 100% { transform: translateZ(0px) translateY(0px); }
-    25% { transform: translateZ(20px) translateY(-12px); }
-    75% { transform: translateZ(40px) translateY(-18px); }
-}
-
-@keyframes float-depth-4 {
-    0%, 100% { transform: translateZ(0px) translateY(0px); }
-    50% { transform: translateZ(50px) translateY(-25px); }
-}
-
-/* SVG Connections */
+/* ===== SVG LINEE ===== */
 .connections {
     position: absolute;
     top: 0;
@@ -105,49 +56,27 @@ header {
 
 .line {
     stroke: #b8b4a8;
-    stroke-width: 2.5;
-    fill: none;
-    opacity: 0;
-    transition: opacity 0.6s ease;
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
-}
-
-.line-secondary {
-    stroke: #c8c4b8;
     stroke-width: 2;
     fill: none;
-    filter: drop-shadow(0 1px 3px rgba(0,0,0,0.08));
-}
-
-.line-tertiary {
-    stroke: #d8d4c8;
-    stroke-width: 1.5;
-    fill: none;
-}
-
-/* Linee nascoste inizialmente */
-.main-lines {
-    opacity: 0;
-    transition: opacity 0.6s ease;
-}
-
-.sub-lines {
     opacity: 0;
     transition: opacity 0.5s ease;
 }
 
-/* Stati visibili linee */
-.mind-map[data-state="categories"] .main-lines,
-.mind-map[data-state="subcategories"] .main-lines {
-    opacity: 1;
+.line.main-line {
+    stroke-width: 2.5;
 }
 
-.mind-map[data-state="categories"] .main-lines .line,
-.mind-map[data-state="subcategories"] .main-lines .line {
-    opacity: 1;
+.line.sub-line {
+    stroke: #c8c4b8;
+    stroke-width: 2;
 }
 
-.sub-lines.visible {
+.line.tertiary {
+    stroke: #d8d4c8;
+    stroke-width: 1.5;
+}
+
+.line.visible {
     opacity: 1;
 }
 
@@ -160,46 +89,45 @@ header {
     z-index: 10;
     cursor: pointer;
     text-align: center;
-    transform-style: preserve-3d;
 }
 
 .tenerife-img {
-    width: 180px;
+    width: 150px;
     height: auto;
-    filter: brightness(0) saturate(100%) invert(35%) sepia(15%) saturate(600%) hue-rotate(140deg) brightness(95%) contrast(90%);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    filter: drop-shadow(0 15px 35px rgba(74, 124, 126, 0.4));
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.2));
 }
 
 .center-node:hover .tenerife-img {
-    transform: scale(1.08) translateZ(30px);
-    filter: brightness(0) saturate(100%) invert(35%) sepia(15%) saturate(700%) hue-rotate(140deg) brightness(100%) contrast(95%);
-    filter: drop-shadow(0 25px 50px rgba(74, 124, 126, 0.5));
+    transform: scale(1.08);
+    filter: drop-shadow(0 15px 40px rgba(0, 0, 0, 0.25));
 }
 
 .center-text {
     display: block;
-    margin-top: -30px;
-    color: white;
-    font-size: 0.85rem;
+    margin-top: 10px;
+    color: #4a7c7e;
+    font-size: 0.9rem;
     font-weight: 600;
     text-align: center;
     line-height: 1.3;
     letter-spacing: 1px;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
-    position: relative;
-    z-index: 5;
 }
 
 /* Animazione Tenerife nello stato iniziale */
 .mind-map[data-state="initial"] .center-node {
-    animation: float-depth-0 6s ease-in-out infinite;
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translate(-50%, -50%) translateY(0); }
+    50% { transform: translate(-50%, -50%) translateY(-15px); }
 }
 
 /* Hint per cliccare */
 .click-hint {
     display: block;
-    margin-top: 20px;
+    margin-top: 15px;
     font-size: 0.8rem;
     color: #6a7a7c;
     opacity: 0.8;
@@ -207,8 +135,8 @@ header {
 }
 
 @keyframes pulse-hint {
-    0%, 100% { opacity: 0.4; transform: translateY(0); }
-    50% { opacity: 1; transform: translateY(-3px); }
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
 }
 
 .mind-map:not([data-state="initial"]) .click-hint {
@@ -225,7 +153,6 @@ header {
     height: 100%;
     pointer-events: none;
     z-index: 5;
-    transform-style: preserve-3d;
 }
 
 .node {
@@ -237,59 +164,43 @@ header {
     text-decoration: none;
     cursor: pointer;
     opacity: 0;
-    transform: scale(0.3) translateZ(0);
+    transform: scale(0.5);
     transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
     pointer-events: none;
     box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.15),
-        0 5px 15px rgba(0, 0, 0, 0.1),
-        inset 0 -5px 20px rgba(0, 0, 0, 0.1),
-        inset 0 5px 20px rgba(255, 255, 255, 0.2);
-    transform-style: preserve-3d;
+        0 8px 25px rgba(0, 0, 0, 0.15),
+        inset 0 -3px 10px rgba(0, 0, 0, 0.1),
+        inset 0 3px 10px rgba(255, 255, 255, 0.2);
 }
 
 .node span {
     text-align: center;
     line-height: 1.2;
     font-weight: 500;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
 }
 
-/* Nodi visibili con animazione fluttuante */
+/* Nodi visibili */
 .mind-map[data-state="categories"] .primary-nodes .node,
 .mind-map[data-state="subcategories"] .primary-nodes .node {
     opacity: 1;
-    transform: scale(1) translateZ(0);
+    transform: scale(1);
     pointer-events: auto;
 }
 
-/* Animazioni fluttuanti per nodi visibili */
-.mind-map[data-state="categories"] .primary-nodes .node[data-depth="1"],
-.mind-map[data-state="subcategories"] .primary-nodes .node[data-depth="1"] {
-    animation: float-depth-1 5s ease-in-out infinite;
-}
-
-.mind-map[data-state="categories"] .primary-nodes .node[data-depth="2"],
-.mind-map[data-state="subcategories"] .primary-nodes .node[data-depth="2"] {
-    animation: float-depth-2 6s ease-in-out infinite;
-}
-
 .node:hover {
-    transform: scale(1.2) translateZ(50px) !important;
+    transform: scale(1.15) !important;
     box-shadow:
-        0 25px 50px rgba(0, 0, 0, 0.25),
-        0 15px 30px rgba(0, 0, 0, 0.15),
-        inset 0 -5px 20px rgba(0, 0, 0, 0.1),
-        inset 0 5px 20px rgba(255, 255, 255, 0.3);
+        0 15px 40px rgba(0, 0, 0, 0.2),
+        inset 0 -3px 10px rgba(0, 0, 0, 0.1),
+        inset 0 3px 10px rgba(255, 255, 255, 0.3);
     z-index: 20;
-    animation-play-state: paused !important;
 }
 
 /* Nodi Primari */
 .node-primary {
-    width: 120px;
-    height: 120px;
-    font-size: 0.95rem;
+    width: 110px;
+    height: 110px;
+    font-size: 0.9rem;
 }
 
 .node-primary span {
@@ -313,16 +224,16 @@ header {
 
 /* Nodi Secondari */
 .node-secondary {
-    width: 90px;
-    height: 90px;
-    font-size: 0.75rem;
+    width: 85px;
+    height: 85px;
+    font-size: 0.72rem;
 }
 
 /* Nodi Terziari */
 .node-tertiary {
-    width: 70px;
-    height: 70px;
-    font-size: 0.7rem;
+    width: 65px;
+    height: 65px;
+    font-size: 0.68rem;
 }
 
 /* ===== SOTTO-NODI ===== */
@@ -334,12 +245,11 @@ header {
     height: 100%;
     pointer-events: none;
     z-index: 4;
-    transform-style: preserve-3d;
 }
 
 .sub-nodes .node {
     opacity: 0;
-    transform: scale(0.3) translateZ(-50px);
+    transform: scale(0.3);
     pointer-events: none;
 }
 
@@ -349,42 +259,24 @@ header {
 
 .sub-nodes.visible .node {
     opacity: 1;
-    transform: scale(1) translateZ(0);
+    transform: scale(1);
     pointer-events: auto;
 }
 
-/* Animazioni per sotto-nodi visibili */
-.sub-nodes.visible .node[data-depth="2"] {
-    animation: float-depth-2 5.5s ease-in-out infinite;
-}
-
-.sub-nodes.visible .node[data-depth="3"] {
-    animation: float-depth-3 6.5s ease-in-out infinite;
-}
-
-.sub-nodes.visible .node[data-depth="4"] {
-    animation: float-depth-4 7s ease-in-out infinite;
-}
-
 /* Delay a cascata */
-.sub-nodes.visible .node:nth-child(1) { transition-delay: 0s; animation-delay: 0s; }
-.sub-nodes.visible .node:nth-child(2) { transition-delay: 0.08s; animation-delay: 0.3s; }
-.sub-nodes.visible .node:nth-child(3) { transition-delay: 0.16s; animation-delay: 0.6s; }
-.sub-nodes.visible .node:nth-child(4) { transition-delay: 0.24s; animation-delay: 0.9s; }
-.sub-nodes.visible .node:nth-child(5) { transition-delay: 0.32s; animation-delay: 1.2s; }
-.sub-nodes.visible .node:nth-child(6) { transition-delay: 0.40s; animation-delay: 1.5s; }
+.sub-nodes.visible .node:nth-child(1) { transition-delay: 0s; }
+.sub-nodes.visible .node:nth-child(2) { transition-delay: 0.06s; }
+.sub-nodes.visible .node:nth-child(3) { transition-delay: 0.12s; }
+.sub-nodes.visible .node:nth-child(4) { transition-delay: 0.18s; }
+.sub-nodes.visible .node:nth-child(5) { transition-delay: 0.24s; }
+.sub-nodes.visible .node:nth-child(6) { transition-delay: 0.30s; }
 
 /* Delay nodi primari */
-.mind-map[data-state="categories"] .primary-nodes .node:nth-child(1),
-.mind-map[data-state="subcategories"] .primary-nodes .node:nth-child(1) { transition-delay: 0s; animation-delay: 0s; }
-.mind-map[data-state="categories"] .primary-nodes .node:nth-child(2),
-.mind-map[data-state="subcategories"] .primary-nodes .node:nth-child(2) { transition-delay: 0.1s; animation-delay: 0.4s; }
-.mind-map[data-state="categories"] .primary-nodes .node:nth-child(3),
-.mind-map[data-state="subcategories"] .primary-nodes .node:nth-child(3) { transition-delay: 0.2s; animation-delay: 0.8s; }
-.mind-map[data-state="categories"] .primary-nodes .node:nth-child(4),
-.mind-map[data-state="subcategories"] .primary-nodes .node:nth-child(4) { transition-delay: 0.3s; animation-delay: 1.2s; }
-.mind-map[data-state="categories"] .primary-nodes .node:nth-child(5),
-.mind-map[data-state="subcategories"] .primary-nodes .node:nth-child(5) { transition-delay: 0.4s; animation-delay: 1.6s; }
+.mind-map[data-state="categories"] .primary-nodes .node:nth-child(1) { transition-delay: 0s; }
+.mind-map[data-state="categories"] .primary-nodes .node:nth-child(2) { transition-delay: 0.08s; }
+.mind-map[data-state="categories"] .primary-nodes .node:nth-child(3) { transition-delay: 0.16s; }
+.mind-map[data-state="categories"] .primary-nodes .node:nth-child(4) { transition-delay: 0.24s; }
+.mind-map[data-state="categories"] .primary-nodes .node:nth-child(5) { transition-delay: 0.32s; }
 
 /* ===== POSIZIONI E COLORI ===== */
 
@@ -392,173 +284,173 @@ header {
 .party {
     background: linear-gradient(145deg, #d4ad2b, #b89520);
     color: #1a1a1a;
-    top: 40%;
-    left: 20%;
+    top: 38%;
+    left: 15%;
 }
 
 .daytime {
     background: linear-gradient(145deg, #e5c4ac, #d0a890);
     color: #3a3a3a;
-    top: 18%;
-    left: 24%;
+    top: 16%;
+    left: 20%;
 }
 
 .nightlife {
     background: linear-gradient(145deg, #d5c4b4, #baa898);
     color: #3a3a3a;
-    top: 40%;
-    left: 8%;
+    top: 38%;
+    left: 4%;
 }
 
 .hmc {
     background: linear-gradient(145deg, #e0f4e0, #c4d8c4);
     color: #3a3a3a;
-    top: 57%;
-    left: 8%;
+    top: 58%;
+    left: 4%;
 }
 
 .terraceo {
     background: linear-gradient(145deg, #f4e4d4, #d8c8b8);
     color: #4a4a4a;
-    top: 7%;
-    left: 16%;
+    top: 5%;
+    left: 12%;
 }
 
 .elbarco {
     background: linear-gradient(145deg, #e7d4c4, #cbb8a8);
     color: #4a4a4a;
-    top: 18%;
-    left: 8%;
+    top: 16%;
+    left: 4%;
 }
 
 .finca {
     background: linear-gradient(145deg, #e4f4e4, #c8d8c8);
     color: #4a4a4a;
-    top: 30%;
-    left: 8%;
+    top: 28%;
+    left: 4%;
 }
 
 /* FOOD & DRINK */
 .food-drink {
     background: linear-gradient(145deg, #96a688, #7a8a6c);
     color: white;
-    top: 20%;
-    left: 38%;
+    top: 16%;
+    left: 35%;
 }
 
 .aperitivo {
     background: linear-gradient(145deg, #b4c4a4, #98a888);
     color: #3a3a3a;
-    top: 7%;
-    left: 30%;
+    top: 4%;
+    left: 27%;
 }
 
 .brunch {
     background: linear-gradient(145deg, #c4d4b4, #a8b898);
     color: #3a3a3a;
-    top: 7%;
-    left: 42%;
+    top: 4%;
+    left: 40%;
 }
 
 .ristorante {
     background: linear-gradient(145deg, #d4c4b4, #b8a898);
     color: #3a3a3a;
-    top: 11%;
-    left: 54%;
+    top: 8%;
+    left: 52%;
 }
 
 /* STAYING */
 .staying {
     background: linear-gradient(145deg, #f4c4d4, #d8a8b8);
     color: #3a3a3a;
-    top: 31%;
-    left: 80%;
+    top: 28%;
+    left: 78%;
 }
 
 .staying-villa {
     background: linear-gradient(145deg, #fce0ec, #e0c4d0);
     color: #4a4a4a;
-    top: 14%;
-    left: 87%;
+    top: 12%;
+    left: 84%;
 }
 
 .hotel {
     background: linear-gradient(145deg, #fce4ec, #e0c8d0);
     color: #4a4a4a;
-    top: 31%;
-    left: 92%;
+    top: 28%;
+    left: 91%;
 }
 
 .apartment {
     background: linear-gradient(145deg, #fcdce4, #e0c0c8);
     color: #4a4a4a;
-    top: 48%;
-    left: 90%;
+    top: 45%;
+    left: 87%;
 }
 
 /* EXCURSIÓN */
 .excursion {
     background: linear-gradient(145deg, #d4c4ac, #b8a890);
     color: #3a3a3a;
-    top: 74%;
-    left: 75%;
+    top: 70%;
+    left: 72%;
 }
 
 .action {
     background: linear-gradient(145deg, #f4e4cc, #d8c8b0);
     color: #4a4a4a;
-    top: 88%;
-    left: 65%;
+    top: 85%;
+    left: 62%;
 }
 
 .chill {
     background: linear-gradient(145deg, #ecdccc, #d0c0b0);
     color: #4a4a4a;
-    top: 88%;
-    left: 85%;
+    top: 85%;
+    left: 80%;
 }
 
 /* EVENTS SERVICES */
 .events {
     background: linear-gradient(145deg, #b4cce4, #98b0c8);
     color: #3a3a3a;
-    top: 76%;
-    left: 32%;
+    top: 72%;
+    left: 28%;
 }
 
 .private {
     background: linear-gradient(145deg, #d4e4f4, #b8c8d8);
     color: #4a4a4a;
-    top: 68%;
-    left: 20%;
+    top: 62%;
+    left: 16%;
 }
 
 .artists {
     background: linear-gradient(145deg, #ecdcd4, #d0c0b8);
     color: #4a4a4a;
-    top: 88%;
-    left: 18%;
+    top: 85%;
+    left: 14%;
 }
 
 .venue {
     background: linear-gradient(145deg, #dcd4cc, #c0b8b0);
     color: #4a4a4a;
-    top: 93%;
-    left: 38%;
+    top: 88%;
+    left: 35%;
 }
 
 .boat {
     background: linear-gradient(145deg, #e4f4fc, #c8d8e0);
     color: #4a4a4a;
-    top: 60%;
-    left: 28%;
+    top: 52%;
+    left: 6%;
 }
 
 .villa-private {
     background: linear-gradient(145deg, #e4fce8, #c8e0cc);
     color: #4a4a4a;
-    top: 74%;
-    left: 10%;
+    top: 72%;
+    left: 6%;
 }
 
 /* ===== PULSANTE INDIETRO ===== */
@@ -566,7 +458,7 @@ header {
     position: absolute;
     bottom: 30px;
     left: 50%;
-    transform: translateX(-50%) translateZ(60px);
+    transform: translateX(-50%);
     padding: 12px 30px;
     background: white;
     border: 2px solid #ddd;
@@ -587,7 +479,7 @@ header {
     background: #4a7c7e;
     border-color: #4a7c7e;
     color: white;
-    transform: translateX(-50%) translateZ(70px) scale(1.05);
+    transform: translateX(-50%) scale(1.05);
     box-shadow: 0 10px 30px rgba(74, 124, 126, 0.3);
 }
 
@@ -606,44 +498,49 @@ footer {
 }
 
 /* ===== EFFETTI GLOW ===== */
-.party:hover { box-shadow: 0 0 50px rgba(201, 162, 39, 0.6), 0 20px 40px rgba(0,0,0,0.2); }
-.food-drink:hover { box-shadow: 0 0 50px rgba(138, 154, 124, 0.6), 0 20px 40px rgba(0,0,0,0.2); }
-.staying:hover { box-shadow: 0 0 50px rgba(232, 184, 200, 0.6), 0 20px 40px rgba(0,0,0,0.2); }
-.excursion:hover { box-shadow: 0 0 50px rgba(200, 184, 160, 0.6), 0 20px 40px rgba(0,0,0,0.2); }
-.events:hover { box-shadow: 0 0 50px rgba(168, 192, 216, 0.6), 0 20px 40px rgba(0,0,0,0.2); }
+.party:hover { box-shadow: 0 0 40px rgba(201, 162, 39, 0.5), 0 15px 35px rgba(0,0,0,0.15); }
+.food-drink:hover { box-shadow: 0 0 40px rgba(138, 154, 124, 0.5), 0 15px 35px rgba(0,0,0,0.15); }
+.staying:hover { box-shadow: 0 0 40px rgba(232, 184, 200, 0.5), 0 15px 35px rgba(0,0,0,0.15); }
+.excursion:hover { box-shadow: 0 0 40px rgba(200, 184, 160, 0.5), 0 15px 35px rgba(0,0,0,0.15); }
+.events:hover { box-shadow: 0 0 40px rgba(168, 192, 216, 0.5), 0 15px 35px rgba(0,0,0,0.15); }
 
 /* Stato espanso */
 .node-primary.expanded {
-    transform: scale(1.15) translateZ(40px) !important;
-    box-shadow: 0 0 60px rgba(0, 0, 0, 0.3), 0 25px 50px rgba(0,0,0,0.2);
+    transform: scale(1.12) !important;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.25), 0 20px 40px rgba(0,0,0,0.15);
     z-index: 15;
-    animation-play-state: paused !important;
 }
 
 /* Dimming altri nodi */
 .mind-map[data-state="subcategories"] .node-primary:not(.expanded) {
     opacity: 0.35;
-    filter: grayscale(50%) blur(1px);
-    transform: scale(0.9) translateZ(-30px) !important;
+    filter: grayscale(40%);
+    transform: scale(0.9) !important;
 }
 
 .mind-map[data-state="subcategories"] .node-primary:not(.expanded):hover {
     opacity: 0.7;
-    filter: grayscale(0%) blur(0);
-    transform: scale(1) translateZ(0) !important;
+    filter: grayscale(0%);
+    transform: scale(1) !important;
 }
 
 /* ===== RESPONSIVE ===== */
-@media (max-width: 1200px) {
-    .scene-3d {
-        transform: scale(0.85);
+@media (max-width: 1400px) {
+    .mind-map {
+        transform: scale(0.9);
         transform-origin: center center;
     }
 }
 
+@media (max-width: 1200px) {
+    .mind-map {
+        transform: scale(0.8);
+    }
+}
+
 @media (max-width: 992px) {
-    .scene-3d {
-        transform: scale(0.7);
+    .mind-map {
+        transform: scale(0.65);
     }
 }
 
