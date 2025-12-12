@@ -1,0 +1,93 @@
+LO SQUALO - TENERIFE EXPERIENCE
+================================
+Mappa Concettuale Interattiva
+
+REPOSITORY: https://github.com/Tapedynamics/losqualo.git
+SITO LIVE: https://losqualo.netlify.app/
+
+
+STRUTTURA PROGETTO
+------------------
+- index.html      → Pagina principale con mind map
+- styles.css      → Stili desktop e mobile
+- script.js       → Logica interattiva e linee SVG dinamiche
+- tenerife.png    → Sagoma isola di Tenerife
+
+
+FUNZIONALITA' IMPLEMENTATE
+--------------------------
+
+DESKTOP:
+- Mind map interattiva con Tenerife al centro
+- Apertura progressiva: Tenerife → 5 categorie → sotto-categorie
+- Linee SVG dinamiche che collegano i nodi (calcolate in tempo reale)
+- Animazioni fluide con transizioni CSS
+- Effetto hover sui nodi con glow
+- Pulsante "Indietro" per tornare allo stato precedente
+- Supporto tasto ESC per navigare indietro
+- Responsive scaling per schermi fino a 992px
+
+MOBILE (< 768px):
+- Mini-mappa semplificata con Tenerife e 5 categorie
+- Tap su Tenerife → appaiono le 5 categorie con linee
+- Tap su categoria → popup radiale con sotto-categorie disposte a cerchio
+- Sfondo sfocato (blur) quando il popup e' aperto
+- Chiusura popup toccando fuori o pulsante "X Chiudi"
+- Elementi ottimizzati per touch (dimensioni generose)
+
+
+CATEGORIE E SOTTO-CATEGORIE
+---------------------------
+1. PARTY
+   - Daytime & Sunset
+   - Nightlife
+   - H.m.c.
+   - Terraceo
+   - El Barco
+   - Finca
+
+2. FOOD & DRINK
+   - Aperitivo
+   - Brunch
+   - Ristorante
+
+3. STAYING
+   - Villa
+   - Hotel
+   - Apartment
+
+4. EXCURSION
+   - Action
+   - Chill
+
+5. EVENTS SERVICES
+   - Private
+   - Artists booking
+   - Venue & More
+   - Boat
+   - Villa
+
+
+DA FARE (PROSSIME SESSIONI)
+---------------------------
+- Creare le pagine interne per ogni categoria:
+  * party.html
+  * food-drink.html
+  * staying.html
+  * excursion.html
+  * events.html
+- Aggiungere contenuti reali (foto, descrizioni, contatti)
+- Eventuale form di contatto
+- SEO e meta tag
+
+
+NOTE TECNICHE
+-------------
+- Le linee SVG sono calcolate dinamicamente con getBoundingClientRect()
+- Aggiornamento linee ogni 50ms per seguire le animazioni
+- Il popup radiale calcola le posizioni con trigonometria (seno/coseno)
+- CSS media queries per responsive design
+- Nessuna libreria esterna (vanilla JS)
+
+
+Data ultimo aggiornamento: 12 Dicembre 2024
