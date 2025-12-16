@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escursioni & Attivita - Lo Squalo Tenerife</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="pages.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="page-escursioni">
+    <div class="container">
+        <header>
+            <a href="index.html" class="back-home">&larr; Home</a>
+            <h1 class="logo">LO SQUALO</h1>
+            <span class="tagline">since 2009</span>
+        </header>
+
+        <main class="page-map" data-state="initial">
+            <!-- SVG per le linee dinamiche -->
+            <svg class="connections" id="svg-connections">
+                <!-- Linee: Centro -> Sotto-categorie -->
+                <line class="line main-line" id="line-center-teide"></line>
+                <line class="line main-line" id="line-center-oceano"></line>
+                <line class="line main-line" id="line-center-sky"></line>
+                <line class="line main-line" id="line-center-sport"></line>
+                <line class="line main-line" id="line-center-private"></line>
+                <line class="line main-line" id="line-center-fooddrink"></line>
+
+                <!-- Linee Teide -->
+                <line class="line sub-line" data-category="teide" id="line-teide-jeep"></line>
+                <line class="line sub-line" data-category="teide" id="line-teide-stargazing"></line>
+                <line class="line sub-line" data-category="teide" id="line-teide-quad"></line>
+                <line class="line sub-line" data-category="teide" id="line-teide-bike"></line>
+                <line class="line sub-line" data-category="teide" id="line-teide-buggy"></line>
+
+                <!-- Linee Oceano -->
+                <line class="line sub-line" data-category="oceano" id="line-oceano-jetcar"></line>
+                <line class="line sub-line" data-category="oceano" id="line-oceano-jetsky"></line>
+                <line class="line sub-line" data-category="oceano" id="line-oceano-cetacei"></line>
+
+                <!-- Linee Sky -->
+                <line class="line sub-line" data-category="sky" id="line-sky-parapente"></line>
+                <line class="line sub-line" data-category="sky" id="line-sky-paratrike"></line>
+
+                <!-- Linee Sport -->
+                <line class="line sub-line" data-category="sport" id="line-sport-kite"></line>
+                <line class="line sub-line" data-category="sport" id="line-sport-wind"></line>
+                <line class="line sub-line" data-category="sport" id="line-sport-surf"></line>
+                <line class="line sub-line" data-category="sport" id="line-sport-fishing"></line>
+                <line class="line sub-line" data-category="sport" id="line-sport-diving"></line>
+
+                <!-- Linee Private -->
+                <line class="line sub-line" data-category="private" id="line-private-catamarano"></line>
+                <line class="line sub-line" data-category="private" id="line-private-barco"></line>
+                <line class="line sub-line" data-category="private" id="line-private-yacht"></line>
+
+                <!-- Linee Food & Drink -->
+                <line class="line sub-line" data-category="fooddrink" id="line-fooddrink-bodegas"></line>
+                <line class="line sub-line" data-category="fooddrink" id="line-fooddrink-guacinches"></line>
+            </svg>
+
+            <!-- Centro - Categoria -->
+            <div class="center-node category-center" id="category-trigger">
+                <div class="category-icon escursioni-bg">
+                    <span>ESCURSIONI<br>& ATTIVITA</span>
+                </div>
+                <span class="click-hint">Clicca per esplorare</span>
+            </div>
+
+            <!-- Sotto-categorie (Livello 2) -->
+            <div class="primary-nodes">
+                <div class="node node-primary teide-node" id="node-teide" data-category="teide">
+                    <span>Teide</span>
+                </div>
+                <div class="node node-primary oceano-node" id="node-oceano" data-category="oceano">
+                    <span>Oceano</span>
+                </div>
+                <div class="node node-primary sky-node" id="node-sky" data-category="sky">
+                    <span>Sky</span>
+                </div>
+                <div class="node node-primary sport-node" id="node-sport" data-category="sport">
+                    <span>Sport</span>
+                </div>
+                <div class="node node-primary private-node" id="node-private" data-category="private">
+                    <span>Private</span>
+                </div>
+                <div class="node node-primary fooddrink-node" id="node-fooddrink" data-category="fooddrink">
+                    <span>Food &<br>Drink</span>
+                </div>
+            </div>
+
+            <!-- Elementi Livello 3 - TEIDE -->
+            <div class="sub-nodes" data-parent="teide">
+                <a href="#jeep" class="node node-secondary item-jeep" id="node-jeep">
+                    <span>Jeep</span>
+                </a>
+                <a href="#stargazing" class="node node-secondary item-stargazing" id="node-stargazing">
+                    <span>Star<br>Gazing</span>
+                </a>
+                <a href="#quad" class="node node-secondary item-quad" id="node-quad">
+                    <span>Quad</span>
+                </a>
+                <a href="#bike" class="node node-secondary item-bike" id="node-bike">
+                    <span>Bike</span>
+                </a>
+                <a href="#buggy" class="node node-secondary item-buggy" id="node-buggy">
+                    <span>Buggy</span>
+                </a>
+            </div>
+
+            <!-- Elementi Livello 3 - OCEANO -->
+            <div class="sub-nodes" data-parent="oceano">
+                <a href="#jetcar" class="node node-secondary item-jetcar" id="node-jetcar">
+                    <span>Jet Car</span>
+                </a>
+                <a href="#jetsky" class="node node-secondary item-jetsky" id="node-jetsky">
+                    <span>Jet Sky</span>
+                </a>
+                <a href="#cetacei" class="node node-secondary item-cetacei" id="node-cetacei">
+                    <span>Cetacei</span>
+                </a>
+            </div>
+
+            <!-- Elementi Livello 3 - SKY -->
+            <div class="sub-nodes" data-parent="sky">
+                <a href="#parapente" class="node node-secondary item-parapente" id="node-parapente">
+                    <span>Parapente</span>
+                </a>
+                <a href="#paratrike" class="node node-secondary item-paratrike" id="node-paratrike">
+                    <span>Paratrike</span>
+                </a>
+            </div>
+
+            <!-- Elementi Livello 3 - SPORT -->
+            <div class="sub-nodes" data-parent="sport">
+                <a href="#kite" class="node node-secondary item-kite" id="node-kite">
+                    <span>Kite</span>
+                </a>
+                <a href="#wind" class="node node-secondary item-wind" id="node-wind">
+                    <span>Wind</span>
+                </a>
+                <a href="#surf" class="node node-secondary item-surf" id="node-surf">
+                    <span>Surf</span>
+                </a>
+                <a href="#fishing" class="node node-secondary item-fishing" id="node-fishing">
+                    <span>Fishing</span>
+                </a>
+                <a href="#diving" class="node node-secondary item-diving" id="node-diving">
+                    <span>Diving</span>
+                </a>
+            </div>
+
+            <!-- Elementi Livello 3 - PRIVATE -->
+            <div class="sub-nodes" data-parent="private">
+                <a href="#catamarano" class="node node-secondary item-catamarano" id="node-catamarano">
+                    <span>Catamarano</span>
+                </a>
+                <a href="#barco" class="node node-secondary item-barco" id="node-barco">
+                    <span>Barco sin<br>Licencia</span>
+                </a>
+                <a href="#yacht" class="node node-secondary item-yacht" id="node-yacht">
+                    <span>Yacht</span>
+                </a>
+            </div>
+
+            <!-- Elementi Livello 3 - FOOD & DRINK -->
+            <div class="sub-nodes" data-parent="fooddrink">
+                <a href="#bodegas" class="node node-secondary item-bodegas" id="node-bodegas">
+                    <span>Bodegas</span>
+                </a>
+                <a href="#guacinches" class="node node-secondary item-guacinches" id="node-guacinches">
+                    <span>Guacinches</span>
+                </a>
+            </div>
+
+            <!-- Pulsante indietro -->
+            <button class="back-btn" id="back-btn">
+                <span>&larr;</span> Indietro
+            </button>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Lo Squalo - Tenerife Experience | Since 2009</p>
+        </footer>
+    </div>
+
+    <script src="pages.js"></script>
+</body>
+</html>

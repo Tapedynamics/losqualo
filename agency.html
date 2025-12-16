@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agency B2B - Lo Squalo Tenerife</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="pages.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="page-agency">
+    <div class="container">
+        <header>
+            <a href="index.html" class="back-home">&larr; Home</a>
+            <h1 class="logo">LO SQUALO</h1>
+            <span class="tagline">since 2009</span>
+        </header>
+
+        <main class="page-map" data-state="initial">
+            <!-- SVG per le linee dinamiche -->
+            <svg class="connections" id="svg-connections">
+                <!-- Linee: Centro -> Sotto-categorie -->
+                <line class="line main-line" id="line-center-smm"></line>
+                <line class="line main-line" id="line-center-grafic"></line>
+                <line class="line main-line" id="line-center-artists"></line>
+                <line class="line main-line" id="line-center-start"></line>
+
+                <!-- Linee SMM & Marketing -->
+                <line class="line sub-line" data-category="smm" id="line-smm-marketing"></line>
+                <line class="line sub-line" data-category="smm" id="line-smm-consulenza"></line>
+                <line class="line sub-line" data-category="smm" id="line-smm-gestione"></line>
+                <line class="line sub-line" data-category="smm" id="line-smm-ads"></line>
+                <line class="line sub-line" data-category="smm" id="line-smm-web"></line>
+
+                <!-- Linee Grafic Design -->
+                <line class="line sub-line" data-category="grafic" id="line-grafic-flyer"></line>
+                <line class="line sub-line" data-category="grafic" id="line-grafic-fotovideo"></line>
+                <line class="line sub-line" data-category="grafic" id="line-grafic-logo"></line>
+                <line class="line sub-line" data-category="grafic" id="line-grafic-kitmarca"></line>
+
+                <!-- Linee Artists Management -->
+                <line class="line sub-line" data-category="artists" id="line-artists-livemusic"></line>
+                <line class="line sub-line" data-category="artists" id="line-artists-djs"></line>
+                <line class="line sub-line" data-category="artists" id="line-artists-shows"></line>
+                <line class="line sub-line" data-category="artists" id="line-artists-setrecording"></line>
+                <line class="line sub-line" data-category="artists" id="line-artists-djschool"></line>
+
+                <!-- Linee Start Business -->
+                <line class="line sub-line" data-category="start" id="line-start-consulenza"></line>
+                <line class="line sub-line" data-category="start" id="line-start-affiancamento"></line>
+                <line class="line sub-line" data-category="start" id="line-start-modelli"></line>
+                <line class="line sub-line" data-category="start" id="line-start-tavolacalda"></line>
+            </svg>
+
+            <!-- Centro - Categoria -->
+            <div class="center-node category-center" id="category-trigger">
+                <div class="category-icon agency-bg">
+                    <span>AGENCY<br>B2B</span>
+                </div>
+                <span class="click-hint">Clicca per esplorare</span>
+            </div>
+
+            <!-- Sotto-categorie (Livello 2) -->
+            <div class="primary-nodes">
+                <div class="node node-primary smm-node" id="node-smm" data-category="smm">
+                    <span>SMM &<br>Marketing</span>
+                </div>
+                <div class="node node-primary grafic-node" id="node-grafic" data-category="grafic">
+                    <span>Grafic<br>Design</span>
+                </div>
+                <div class="node node-primary artists-node" id="node-artists" data-category="artists">
+                    <span>Artists<br>Management</span>
+                </div>
+                <div class="node node-primary start-node" id="node-start" data-category="start">
+                    <span>Start<br>Business</span>
+                </div>
+            </div>
+
+            <!-- Elementi Livello 3 - SMM & MARKETING -->
+            <div class="sub-nodes" data-parent="smm">
+                <a href="#marketing" class="node node-secondary item-marketing" id="node-marketing">
+                    <span>Marketing</span>
+                </a>
+                <a href="#smm-consulenza" class="node node-secondary item-smm-consulenza" id="node-smm-consulenza">
+                    <span>Consulenza</span>
+                </a>
+                <a href="#gestione" class="node node-secondary item-gestione" id="node-gestione">
+                    <span>Gestione</span>
+                </a>
+                <a href="#ads" class="node node-secondary item-ads" id="node-ads">
+                    <span>Ads</span>
+                </a>
+                <a href="#web" class="node node-secondary item-web" id="node-web">
+                    <span>Web</span>
+                </a>
+            </div>
+
+            <!-- Elementi Livello 3 - GRAFIC DESIGN -->
+            <div class="sub-nodes" data-parent="grafic">
+                <a href="#flyer" class="node node-secondary item-flyer" id="node-flyer">
+                    <span>Flyer<br>Menu</span>
+                </a>
+                <a href="#fotovideo" class="node node-secondary item-fotovideo" id="node-fotovideo">
+                    <span>Foto<br>Video</span>
+                </a>
+                <a href="#logo" class="node node-secondary item-logo" id="node-logo">
+                    <span>Logo</span>
+                </a>
+                <a href="#kitmarca" class="node node-secondary item-kitmarca" id="node-kitmarca">
+                    <span>Kit<br>Marca</span>
+                </a>
+            </div>
+
+            <!-- Elementi Livello 3 - ARTISTS MANAGEMENT -->
+            <div class="sub-nodes" data-parent="artists">
+                <a href="#livemusic" class="node node-secondary item-livemusic" id="node-livemusic">
+                    <span>Live<br>Music</span>
+                </a>
+                <a href="#djs" class="node node-secondary item-djs" id="node-djs">
+                    <span>DJs</span>
+                </a>
+                <a href="#agency-shows" class="node node-secondary item-agency-shows" id="node-agency-shows">
+                    <span>Shows</span>
+                </a>
+                <a href="#setrecording" class="node node-secondary item-setrecording" id="node-setrecording">
+                    <span>Set<br>Recording</span>
+                </a>
+                <a href="#djschool" class="node node-secondary item-djschool" id="node-djschool">
+                    <span>DJ<br>School</span>
+                </a>
+            </div>
+
+            <!-- Elementi Livello 3 - START BUSINESS -->
+            <div class="sub-nodes" data-parent="start">
+                <a href="#start-consulenza" class="node node-secondary item-start-consulenza" id="node-start-consulenza">
+                    <span>Consulenza</span>
+                </a>
+                <a href="#affiancamento" class="node node-secondary item-affiancamento" id="node-affiancamento">
+                    <span>Affiancamento</span>
+                </a>
+                <a href="#modelli" class="node node-secondary item-modelli" id="node-modelli">
+                    <span>Modelli</span>
+                </a>
+                <a href="#tavolacalda" class="node node-secondary item-tavolacalda" id="node-tavolacalda">
+                    <span>Tavola<br>Calda</span>
+                </a>
+            </div>
+
+            <!-- Pulsante indietro -->
+            <button class="back-btn" id="back-btn">
+                <span>&larr;</span> Indietro
+            </button>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Lo Squalo - Tenerife Experience | Since 2009</p>
+        </footer>
+    </div>
+
+    <script src="pages.js"></script>
+</body>
+</html>

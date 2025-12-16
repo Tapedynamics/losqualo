@@ -1,0 +1,1086 @@
+/* =============================================
+   LO SQUALO - PAGINE CATEGORIA (Livello 2)
+   Stili specifici per le pagine interne
+   ============================================= */
+
+/* ===== HEADER PAGINE INTERNE ===== */
+.back-home {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--blu-squalo);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 8px 15px;
+    border: 2px solid var(--blu-squalo);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.back-home:hover {
+    background: var(--blu-squalo);
+    color: white;
+}
+
+header {
+    position: relative;
+}
+
+/* ===== PAGE MAP (simile a mind-map) ===== */
+.page-map {
+    flex: 1;
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    min-height: 700px;
+}
+
+/* ===== CENTRO CATEGORIA ===== */
+.category-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    cursor: pointer;
+    text-align: center;
+}
+
+.category-icon {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
+}
+
+.category-icon span {
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.category-center:hover .category-icon {
+    transform: scale(1.08);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.25);
+}
+
+/* Animazione floating stato iniziale */
+.page-map[data-state="initial"] .category-center {
+    animation: float 4s ease-in-out infinite;
+}
+
+/* ===== COLORI CENTRO PER CATEGORIA ===== */
+.eventi-bg {
+    background: linear-gradient(145deg, var(--eventi-main), #c49a30);
+    color: var(--text-primary);
+}
+
+.alloggio-bg {
+    background: linear-gradient(145deg, var(--alloggio-main), #d4a8b2);
+    color: var(--text-primary);
+}
+
+.escursioni-bg {
+    background: linear-gradient(145deg, var(--escursioni-main), #3f7a7a);
+    color: white;
+}
+
+.surfing-bg {
+    background: linear-gradient(145deg, var(--surfing-main), #4a92b2);
+    color: white;
+}
+
+.agency-bg {
+    background: linear-gradient(145deg, var(--agency-main), #2e4a5a);
+    color: white;
+}
+
+.alessandro-bg {
+    background: linear-gradient(145deg, var(--alessandro-main), #5a7585);
+    color: white;
+}
+
+/* =============================================
+   PAGINA EVENTI - Posizioni e Colori
+   ============================================= */
+
+/* Sotto-categorie (Livello 2) - 4 nodi */
+.page-eventi .showcases-node {
+    background: linear-gradient(145deg, var(--eventi-showcases), #b88520);
+    color: var(--text-primary);
+    top: 20%;
+    left: 25%;
+}
+
+.page-eventi .consigliati-node {
+    background: linear-gradient(145deg, var(--eventi-tips), #d4b358);
+    color: var(--text-primary);
+    top: 20%;
+    left: 68%;
+}
+
+.page-eventi .movida-node {
+    background: linear-gradient(145deg, var(--eventi-main), #c49a30);
+    color: var(--text-primary);
+    top: 72%;
+    left: 22%;
+}
+
+.page-eventi .servizi-node {
+    background: linear-gradient(145deg, var(--eventi-servizi), #a87a2a);
+    color: white;
+    top: 72%;
+    left: 70%;
+}
+
+/* Elementi SHOWCASES (Livello 3) */
+.page-eventi .item-boatparty {
+    background: linear-gradient(145deg, #e8c060, #d4ac4c);
+    color: var(--text-primary);
+    top: 5%;
+    left: 10%;
+}
+
+.page-eventi .item-terraceo {
+    background: linear-gradient(145deg, #dbb44a, #c7a036);
+    color: var(--text-primary);
+    top: 5%;
+    left: 25%;
+}
+
+.page-eventi .item-hmc {
+    background: linear-gradient(145deg, #e0b850, #ccaa3c);
+    color: var(--text-primary);
+    top: 18%;
+    left: 8%;
+}
+
+.page-eventi .item-exotica {
+    background: linear-gradient(145deg, #d5a83e, #c1942a);
+    color: var(--text-primary);
+    top: 32%;
+    left: 10%;
+}
+
+.page-eventi .item-brunch {
+    background: linear-gradient(145deg, #e2bc55, #cea841);
+    color: var(--text-primary);
+    top: 32%;
+    left: 25%;
+}
+
+/* Elementi CONSIGLIATI (Livello 3) */
+.page-eventi .item-festival {
+    background: linear-gradient(145deg, #ecd080, #d8bc6c);
+    color: var(--text-primary);
+    top: 5%;
+    left: 60%;
+}
+
+.page-eventi .item-folklore {
+    background: linear-gradient(145deg, #e6c870, #d2b45c);
+    color: var(--text-primary);
+    top: 5%;
+    left: 78%;
+}
+
+/* Elementi MOVIDA (Livello 3) */
+.page-eventi .item-club {
+    background: linear-gradient(145deg, #daa835, #c69421);
+    color: var(--text-primary);
+    top: 60%;
+    left: 5%;
+}
+
+.page-eventi .item-poolparty {
+    background: linear-gradient(145deg, #e0b040, #cca02c);
+    color: var(--text-primary);
+    top: 75%;
+    left: 5%;
+}
+
+.page-eventi .item-beachclub {
+    background: linear-gradient(145deg, #d8a830, #c4941c);
+    color: var(--text-primary);
+    top: 88%;
+    left: 12%;
+}
+
+.page-eventi .item-rooftop {
+    background: linear-gradient(145deg, #dcac38, #c89824);
+    color: var(--text-primary);
+    top: 88%;
+    left: 28%;
+}
+
+.page-eventi .item-vip {
+    background: linear-gradient(145deg, #d4a430, #c0901c);
+    color: var(--text-primary);
+    top: 75%;
+    left: 38%;
+}
+
+/* Elementi SERVIZI (Livello 3) */
+.page-eventi .item-graphic {
+    background: linear-gradient(145deg, #c8922a, #b47e16);
+    color: white;
+    top: 60%;
+    left: 88%;
+}
+
+.page-eventi .item-photo {
+    background: linear-gradient(145deg, #c08828, #ac7414);
+    color: white;
+    top: 75%;
+    left: 88%;
+}
+
+.page-eventi .item-venue {
+    background: linear-gradient(145deg, #b88020, #a46c0c);
+    color: white;
+    top: 88%;
+    left: 82%;
+}
+
+.page-eventi .item-decoration {
+    background: linear-gradient(145deg, #c48a25, #b07611);
+    color: white;
+    top: 88%;
+    left: 68%;
+}
+
+.page-eventi .item-shows {
+    background: linear-gradient(145deg, #bc8222, #a86e0e);
+    color: white;
+    top: 75%;
+    left: 55%;
+}
+
+.page-eventi .item-sound {
+    background: linear-gradient(145deg, #c89028, #b47c14);
+    color: white;
+    top: 60%;
+    left: 58%;
+}
+
+.page-eventi .item-catering {
+    background: linear-gradient(145deg, #d09830, #bc841c);
+    color: var(--text-primary);
+    top: 48%;
+    left: 85%;
+}
+
+/* =============================================
+   PAGINA ALLOGGIO - Posizioni e Colori
+   ============================================= */
+
+/* Sotto-categorie (Livello 2) - 5 nodi */
+.page-alloggio .ostello-node {
+    background: linear-gradient(145deg, var(--alloggio-ostello), #dcc0c8);
+    color: var(--text-primary);
+    top: 18%;
+    left: 20%;
+}
+
+.page-alloggio .villa-node {
+    background: linear-gradient(145deg, var(--alloggio-villa), #c99ea8);
+    color: var(--text-primary);
+    top: 18%;
+    left: 72%;
+}
+
+.page-alloggio .surfhouse-node {
+    background: linear-gradient(145deg, var(--alloggio-surfhouse), #d1b6a8);
+    color: var(--text-primary);
+    top: 50%;
+    left: 85%;
+}
+
+.page-alloggio .rurale-node {
+    background: linear-gradient(145deg, var(--alloggio-rurale), #bf9991);
+    color: var(--text-primary);
+    top: 78%;
+    left: 65%;
+}
+
+.page-alloggio .apartamento-node {
+    background: linear-gradient(145deg, var(--alloggio-glamping), #d8b49e);
+    color: var(--text-primary);
+    top: 78%;
+    left: 28%;
+}
+
+/* Elementi OSTELLO */
+.page-alloggio .item-tortuga {
+    background: linear-gradient(145deg, #f0dce4, #dcc0c8);
+    color: var(--text-primary);
+    top: 5%;
+    left: 8%;
+}
+
+.page-alloggio .item-callemexico-ost {
+    background: linear-gradient(145deg, #ecd8e0, #d8bcc4);
+    color: var(--text-primary);
+    top: 5%;
+    left: 22%;
+}
+
+.page-alloggio .item-gotademar {
+    background: linear-gradient(145deg, #e8d4dc, #d4b8c0);
+    color: var(--text-primary);
+    top: 18%;
+    left: 5%;
+}
+
+/* Elementi VILLA FINCA */
+.page-alloggio .item-casatata {
+    background: linear-gradient(145deg, #e4b8c2, #d09ca6);
+    color: var(--text-primary);
+    top: 5%;
+    left: 65%;
+}
+
+.page-alloggio .item-biofinca {
+    background: linear-gradient(145deg, #e0b4be, #cc98a2);
+    color: var(--text-primary);
+    top: 5%;
+    left: 80%;
+}
+
+.page-alloggio .item-fortaleza {
+    background: linear-gradient(145deg, #dcb0ba, #c8949e);
+    color: var(--text-primary);
+    top: 18%;
+    left: 88%;
+}
+
+.page-alloggio .item-casadolores {
+    background: linear-gradient(145deg, #d8acb6, #c49098);
+    color: var(--text-primary);
+    top: 32%;
+    left: 85%;
+}
+
+.page-alloggio .item-beachhouse {
+    background: linear-gradient(145deg, #e2b8c4, #ce9ca8);
+    color: var(--text-primary);
+    top: 32%;
+    left: 70%;
+}
+
+/* Elementi SURF HOUSE */
+.page-alloggio .item-cama {
+    background: linear-gradient(145deg, #edd0c2, #d9bca8);
+    color: var(--text-primary);
+    top: 45%;
+    left: 92%;
+}
+
+.page-alloggio .item-habitacion {
+    background: linear-gradient(145deg, #e9ccbe, #d5b8a4);
+    color: var(--text-primary);
+    top: 58%;
+    left: 92%;
+}
+
+/* Elementi RURALE GLAMPING */
+.page-alloggio .item-hotelbubble {
+    background: linear-gradient(145deg, #dbb4ac, #c79890);
+    color: var(--text-primary);
+    top: 88%;
+    left: 72%;
+}
+
+.page-alloggio .item-tresroques {
+    background: linear-gradient(145deg, #d7b0a8, #c3948c);
+    color: var(--text-primary);
+    top: 88%;
+    left: 58%;
+}
+
+/* Elementi APARTAMENTO */
+.page-alloggio .item-diana {
+    background: linear-gradient(145deg, #f0ceb8, #dcba9c);
+    color: var(--text-primary);
+    top: 88%;
+    left: 18%;
+}
+
+.page-alloggio .item-castelharbour {
+    background: linear-gradient(145deg, #eccab4, #d8b698);
+    color: var(--text-primary);
+    top: 88%;
+    left: 35%;
+}
+
+.page-alloggio .item-alcala {
+    background: linear-gradient(145deg, #e8c6b0, #d4b294);
+    color: var(--text-primary);
+    top: 78%;
+    left: 12%;
+}
+
+/* =============================================
+   PAGINA ESCURSIONI - Posizioni e Colori
+   ============================================= */
+
+/* Sotto-categorie (Livello 2) - 6 nodi */
+.page-escursioni .teide-node {
+    background: linear-gradient(145deg, var(--escursioni-teide), #5f7e6c);
+    color: white;
+    top: 15%;
+    left: 25%;
+}
+
+.page-escursioni .oceano-node {
+    background: linear-gradient(145deg, var(--escursioni-oceano), #2f6f8e);
+    color: white;
+    top: 15%;
+    left: 68%;
+}
+
+.page-escursioni .sky-node {
+    background: linear-gradient(145deg, var(--escursioni-sky), #6f99b4);
+    color: var(--text-primary);
+    top: 50%;
+    left: 10%;
+}
+
+.page-escursioni .sport-node {
+    background: linear-gradient(145deg, var(--escursioni-main), #3f7a7a);
+    color: white;
+    top: 50%;
+    left: 82%;
+}
+
+.page-escursioni .private-node {
+    background: linear-gradient(145deg, #5a9a9a, #4a8a8a);
+    color: white;
+    top: 80%;
+    left: 25%;
+}
+
+.page-escursioni .fooddrink-node {
+    background: linear-gradient(145deg, var(--escursioni-food), #7f9f8a);
+    color: var(--text-primary);
+    top: 80%;
+    left: 68%;
+}
+
+/* Elementi TEIDE */
+.page-escursioni .item-jeep {
+    background: linear-gradient(145deg, #7f9e8c, #6b8a78);
+    color: white;
+    top: 3%;
+    left: 12%;
+}
+
+.page-escursioni .item-stargazing {
+    background: linear-gradient(145deg, #7b9a88, #678674);
+    color: white;
+    top: 3%;
+    left: 28%;
+}
+
+.page-escursioni .item-quad {
+    background: linear-gradient(145deg, #779686, #638270);
+    color: white;
+    top: 15%;
+    left: 8%;
+}
+
+.page-escursioni .item-bike {
+    background: linear-gradient(145deg, #839e90, #6f8a7c);
+    color: white;
+    top: 28%;
+    left: 10%;
+}
+
+.page-escursioni .item-buggy {
+    background: linear-gradient(145deg, #7b9a8a, #678676);
+    color: white;
+    top: 28%;
+    left: 25%;
+}
+
+/* Elementi OCEANO */
+.page-escursioni .item-jetcar {
+    background: linear-gradient(145deg, #4f8fae, #3b7b9a);
+    color: white;
+    top: 3%;
+    left: 58%;
+}
+
+.page-escursioni .item-jetsky {
+    background: linear-gradient(145deg, #4b8baa, #377796);
+    color: white;
+    top: 3%;
+    left: 75%;
+}
+
+.page-escursioni .item-cetacei {
+    background: linear-gradient(145deg, #5393b2, #3f7f9e);
+    color: white;
+    top: 15%;
+    left: 85%;
+}
+
+/* Elementi SKY */
+.page-escursioni .item-parapente {
+    background: linear-gradient(145deg, #8fb9d4, #7ba5c0);
+    color: var(--text-primary);
+    top: 38%;
+    left: 3%;
+}
+
+.page-escursioni .item-paratrike {
+    background: linear-gradient(145deg, #8bb5d0, #77a1bc);
+    color: var(--text-primary);
+    top: 55%;
+    left: 3%;
+}
+
+/* Elementi SPORT */
+.page-escursioni .item-kite {
+    background: linear-gradient(145deg, #5f9c9c, #4b8888);
+    color: white;
+    top: 38%;
+    left: 92%;
+}
+
+.page-escursioni .item-wind {
+    background: linear-gradient(145deg, #5b9898, #478484);
+    color: white;
+    top: 50%;
+    left: 94%;
+}
+
+.page-escursioni .item-surf {
+    background: linear-gradient(145deg, #579494, #438080);
+    color: white;
+    top: 62%;
+    left: 92%;
+}
+
+.page-escursioni .item-fishing {
+    background: linear-gradient(145deg, #539090, #3f7c7c);
+    color: white;
+    top: 55%;
+    left: 70%;
+}
+
+.page-escursioni .item-diving {
+    background: linear-gradient(145deg, #4f8c8c, #3b7878);
+    color: white;
+    top: 38%;
+    left: 72%;
+}
+
+/* Elementi PRIVATE */
+.page-escursioni .item-catamarano {
+    background: linear-gradient(145deg, #6aaaaa, #569696);
+    color: white;
+    top: 88%;
+    left: 10%;
+}
+
+.page-escursioni .item-barco {
+    background: linear-gradient(145deg, #66a6a6, #529292);
+    color: white;
+    top: 88%;
+    left: 28%;
+}
+
+.page-escursioni .item-yacht {
+    background: linear-gradient(145deg, #62a2a2, #4e8e8e);
+    color: white;
+    top: 78%;
+    left: 8%;
+}
+
+/* Elementi FOOD & DRINK */
+.page-escursioni .item-bodegas {
+    background: linear-gradient(145deg, #9fbfaa, #8bab96);
+    color: var(--text-primary);
+    top: 88%;
+    left: 58%;
+}
+
+.page-escursioni .item-guacinches {
+    background: linear-gradient(145deg, #9bbbA6, #87a792);
+    color: var(--text-primary);
+    top: 88%;
+    left: 78%;
+}
+
+/* =============================================
+   PAGINA SURFING - Posizioni e Colori
+   ============================================= */
+
+/* Sotto-categorie (Livello 2) - 6 nodi */
+.page-surfing .surfbar-node {
+    background: linear-gradient(145deg, var(--surfing-surfbar), #1f5f7f);
+    color: white;
+    top: 15%;
+    left: 20%;
+}
+
+.page-surfing .surfhouse-node {
+    background: linear-gradient(145deg, var(--surfing-surfhouse), #6faecb);
+    color: var(--text-primary);
+    top: 15%;
+    left: 72%;
+}
+
+.page-surfing .elmedano-node {
+    background: linear-gradient(145deg, var(--surfing-elmedano), #2f7fa0);
+    color: white;
+    top: 50%;
+    left: 10%;
+}
+
+.page-surfing .spots-node {
+    background: linear-gradient(145deg, var(--surfing-spots), #5fa6c6);
+    color: var(--text-primary);
+    top: 50%;
+    left: 82%;
+}
+
+.page-surfing .callemexico-node {
+    background: linear-gradient(145deg, var(--surfing-callemexico), #3e8ba8);
+    color: white;
+    top: 80%;
+    left: 25%;
+}
+
+.page-surfing .school-node {
+    background: linear-gradient(145deg, var(--surfing-camp), #5a9ec6);
+    color: var(--text-primary);
+    top: 80%;
+    left: 68%;
+}
+
+/* Elementi SURF HOUSE */
+.page-surfing .item-b2b {
+    background: linear-gradient(145deg, #8fc6e0, #7bb2cc);
+    color: var(--text-primary);
+    top: 3%;
+    left: 62%;
+}
+
+.page-surfing .item-surfcamp {
+    background: linear-gradient(145deg, #8bc2dc, #77aec8);
+    color: var(--text-primary);
+    top: 3%;
+    left: 78%;
+}
+
+.page-surfing .item-reservacama {
+    background: linear-gradient(145deg, #87bed8, #73aac4);
+    color: var(--text-primary);
+    top: 15%;
+    left: 88%;
+}
+
+.page-surfing .item-reservahab {
+    background: linear-gradient(145deg, #83bad4, #6fa6c0);
+    color: var(--text-primary);
+    top: 28%;
+    left: 85%;
+}
+
+.page-surfing .item-gallery {
+    background: linear-gradient(145deg, #7fb6d0, #6ba2bc);
+    color: var(--text-primary);
+    top: 28%;
+    left: 70%;
+}
+
+/* Elementi EL MEDANO */
+.page-surfing .item-elmedano-rentshop {
+    background: linear-gradient(145deg, #4f9fc0, #3b8bac);
+    color: white;
+    top: 38%;
+    left: 3%;
+}
+
+.page-surfing .item-elmedano-school {
+    background: linear-gradient(145deg, #4b9bbc, #3787a8);
+    color: white;
+    top: 52%;
+    left: 3%;
+}
+
+.page-surfing .item-elmedano-fooddrink {
+    background: linear-gradient(145deg, #5399ba, #3f85a6);
+    color: white;
+    top: 62%;
+    left: 8%;
+}
+
+/* Elementi CALLE MEXICO */
+.page-surfing .item-callemexico-rentshop {
+    background: linear-gradient(145deg, #5eabb8, #4a97a4);
+    color: white;
+    top: 88%;
+    left: 10%;
+}
+
+.page-surfing .item-callemexico-fooddrink {
+    background: linear-gradient(145deg, #5aa7b4, #4693a0);
+    color: white;
+    top: 88%;
+    left: 28%;
+}
+
+.page-surfing .item-callemexico-artevents {
+    background: linear-gradient(145deg, #56a3b0, #428f9c);
+    color: white;
+    top: 78%;
+    left: 8%;
+}
+
+/* Elementi SCHOOL */
+.page-surfing .item-kontraola {
+    background: linear-gradient(145deg, #7ac0d8, #66acc4);
+    color: var(--text-primary);
+    top: 88%;
+    left: 55%;
+}
+
+.page-surfing .item-k16 {
+    background: linear-gradient(145deg, #76bcd4, #62a8c0);
+    color: var(--text-primary);
+    top: 88%;
+    left: 72%;
+}
+
+.page-surfing .item-ikaika {
+    background: linear-gradient(145deg, #72b8d0, #5ea4bc);
+    color: var(--text-primary);
+    top: 88%;
+    left: 88%;
+}
+
+.page-surfing .item-franz {
+    background: linear-gradient(145deg, #6eb4cc, #5aa0b8);
+    color: var(--text-primary);
+    top: 78%;
+    left: 82%;
+}
+
+.page-surfing .item-vils {
+    background: linear-gradient(145deg, #6ab0c8, #569cb4);
+    color: var(--text-primary);
+    top: 65%;
+    left: 88%;
+}
+
+/* =============================================
+   PAGINA AGENCY - Posizioni e Colori
+   ============================================= */
+
+/* Sotto-categorie (Livello 2) - 4 nodi */
+.page-agency .smm-node {
+    background: linear-gradient(145deg, var(--agency-smm), #3f5f70);
+    color: white;
+    top: 20%;
+    left: 25%;
+}
+
+.page-agency .grafic-node {
+    background: linear-gradient(145deg, var(--agency-start), #4a6474);
+    color: white;
+    top: 20%;
+    left: 68%;
+}
+
+.page-agency .artists-node {
+    background: linear-gradient(145deg, var(--agency-artists), #1f3e4f);
+    color: white;
+    top: 72%;
+    left: 22%;
+}
+
+.page-agency .start-node {
+    background: linear-gradient(145deg, var(--agency-main), #2e4a5a);
+    color: white;
+    top: 72%;
+    left: 70%;
+}
+
+/* Elementi SMM & MARKETING */
+.page-agency .item-marketing {
+    background: linear-gradient(145deg, #5f7f90, #4b6b7c);
+    color: white;
+    top: 5%;
+    left: 10%;
+}
+
+.page-agency .item-smm-consulenza {
+    background: linear-gradient(145deg, #5b7b8c, #476778);
+    color: white;
+    top: 5%;
+    left: 25%;
+}
+
+.page-agency .item-gestione {
+    background: linear-gradient(145deg, #577788, #436374);
+    color: white;
+    top: 18%;
+    left: 8%;
+}
+
+.page-agency .item-ads {
+    background: linear-gradient(145deg, #537384, #3f5f70);
+    color: white;
+    top: 32%;
+    left: 10%;
+}
+
+.page-agency .item-web {
+    background: linear-gradient(145deg, #4f6f80, #3b5b6c);
+    color: white;
+    top: 32%;
+    left: 25%;
+}
+
+/* Elementi GRAFIC DESIGN */
+.page-agency .item-flyer {
+    background: linear-gradient(145deg, #6a8494, #567080);
+    color: white;
+    top: 5%;
+    left: 60%;
+}
+
+.page-agency .item-fotovideo {
+    background: linear-gradient(145deg, #668090, #526c7c);
+    color: white;
+    top: 5%;
+    left: 78%;
+}
+
+.page-agency .item-logo {
+    background: linear-gradient(145deg, #627c8c, #4e6878);
+    color: white;
+    top: 18%;
+    left: 85%;
+}
+
+.page-agency .item-kitmarca {
+    background: linear-gradient(145deg, #5e7888, #4a6474);
+    color: white;
+    top: 32%;
+    left: 82%;
+}
+
+/* Elementi ARTISTS MANAGEMENT */
+.page-agency .item-livemusic {
+    background: linear-gradient(145deg, #3f5e6f, #2b4a5b);
+    color: white;
+    top: 60%;
+    left: 5%;
+}
+
+.page-agency .item-djs {
+    background: linear-gradient(145deg, #3b5a6b, #274657);
+    color: white;
+    top: 75%;
+    left: 5%;
+}
+
+.page-agency .item-agency-shows {
+    background: linear-gradient(145deg, #375667, #234253);
+    color: white;
+    top: 88%;
+    left: 12%;
+}
+
+.page-agency .item-setrecording {
+    background: linear-gradient(145deg, #335263, #1f3e4f);
+    color: white;
+    top: 88%;
+    left: 28%;
+}
+
+.page-agency .item-djschool {
+    background: linear-gradient(145deg, #2f4e5f, #1b3a4b);
+    color: white;
+    top: 75%;
+    left: 38%;
+}
+
+/* Elementi START BUSINESS */
+.page-agency .item-start-consulenza {
+    background: linear-gradient(145deg, #4e6c7e, #3a586a);
+    color: white;
+    top: 60%;
+    left: 88%;
+}
+
+.page-agency .item-affiancamento {
+    background: linear-gradient(145deg, #4a687a, #365466);
+    color: white;
+    top: 75%;
+    left: 88%;
+}
+
+.page-agency .item-modelli {
+    background: linear-gradient(145deg, #466476, #324e62);
+    color: white;
+    top: 88%;
+    left: 82%;
+}
+
+.page-agency .item-tavolacalda {
+    background: linear-gradient(145deg, #426072, #2e4c5e);
+    color: white;
+    top: 88%;
+    left: 65%;
+}
+
+/* =============================================
+   PAGINA ALESSANDRO - Posizioni e Colori
+   ============================================= */
+
+/* Sotto-categorie (Livello 2) - 5 nodi */
+.page-alessandro .chisono-node {
+    background: linear-gradient(145deg, var(--alessandro-main), #5a7585);
+    color: white;
+    top: 18%;
+    left: 50%;
+}
+
+.page-alessandro .perche-node {
+    background: linear-gradient(145deg, #7b97a6, #6a8695);
+    color: white;
+    top: 45%;
+    left: 18%;
+}
+
+.page-alessandro .esperienza-node {
+    background: linear-gradient(145deg, #8ba7b6, #7a96a5);
+    color: var(--text-primary);
+    top: 45%;
+    left: 75%;
+}
+
+.page-alessandro .ruolo-node {
+    background: linear-gradient(145deg, #7b97a6, #6a8695);
+    color: white;
+    top: 78%;
+    left: 30%;
+}
+
+.page-alessandro .highlights-node {
+    background: linear-gradient(145deg, var(--alessandro-main), #5a7585);
+    color: white;
+    top: 78%;
+    left: 65%;
+}
+
+/* =============================================
+   RESPONSIVE - DESKTOP
+   ============================================= */
+@media (max-width: 1400px) {
+    .page-map {
+        transform: scale(0.9);
+        transform-origin: center center;
+    }
+}
+
+@media (max-width: 1200px) {
+    .page-map {
+        transform: scale(0.8);
+    }
+}
+
+@media (max-width: 992px) {
+    .page-map {
+        transform: scale(0.65);
+    }
+
+    .back-home {
+        position: static;
+        display: block;
+        width: fit-content;
+        margin: 0 auto 10px;
+        transform: none;
+    }
+}
+
+/* =============================================
+   RESPONSIVE - MOBILE
+   ============================================= */
+@media (max-width: 768px) {
+    .page-map {
+        display: none;
+    }
+
+    .back-home {
+        position: static;
+        display: block;
+        width: fit-content;
+        margin: 0 auto 10px;
+        transform: none;
+        font-size: 0.75rem;
+        padding: 6px 12px;
+    }
+
+    /* Mobile Page Map */
+    .mobile-page-map {
+        display: block;
+        position: relative;
+        width: 100%;
+        min-height: 480px;
+        padding: 20px 10px;
+        touch-action: manipulation;
+    }
+
+    .mobile-page-map .category-center-mobile {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        cursor: pointer;
+        z-index: 10;
+    }
+
+    .mobile-page-map .category-icon-mobile {
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        margin: 0 auto;
+    }
+
+    .mobile-page-map .category-icon-mobile span {
+        font-size: 0.7rem;
+        font-weight: 600;
+        text-align: center;
+        line-height: 1.2;
+    }
+
+    .mobile-page-map .click-hint-mobile {
+        display: block;
+        margin-top: 10px;
+        font-size: 0.65rem;
+        color: var(--text-secondary);
+        animation: pulse-hint 2s ease-in-out infinite;
+    }
+
+    .mobile-page-map[data-state="categories"] .click-hint-mobile {
+        display: none;
+    }
+}

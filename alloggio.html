@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alloggio - Lo Squalo Tenerife</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="pages.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="page-alloggio">
+    <div class="container">
+        <header>
+            <a href="index.html" class="back-home">&larr; Home</a>
+            <h1 class="logo">LO SQUALO</h1>
+            <span class="tagline">since 2009</span>
+        </header>
+
+        <main class="page-map" data-state="initial">
+            <!-- SVG per le linee dinamiche -->
+            <svg class="connections" id="svg-connections">
+                <!-- Linee: Centro -> Sotto-categorie -->
+                <line class="line main-line" id="line-center-ostello"></line>
+                <line class="line main-line" id="line-center-villa"></line>
+                <line class="line main-line" id="line-center-surfhouse"></line>
+                <line class="line main-line" id="line-center-rurale"></line>
+                <line class="line main-line" id="line-center-apartamento"></line>
+
+                <!-- Linee Ostello -->
+                <line class="line sub-line" data-category="ostello" id="line-ostello-tortuga"></line>
+                <line class="line sub-line" data-category="ostello" id="line-ostello-callemexico"></line>
+                <line class="line sub-line" data-category="ostello" id="line-ostello-gotademar"></line>
+
+                <!-- Linee Villa Finca -->
+                <line class="line sub-line" data-category="villa" id="line-villa-casatata"></line>
+                <line class="line sub-line" data-category="villa" id="line-villa-biofinca"></line>
+                <line class="line sub-line" data-category="villa" id="line-villa-fortaleza"></line>
+                <line class="line sub-line" data-category="villa" id="line-villa-casadolores"></line>
+                <line class="line sub-line" data-category="villa" id="line-villa-beachhouse"></line>
+
+                <!-- Linee Surf House -->
+                <line class="line sub-line" data-category="surfhouse" id="line-surfhouse-cama"></line>
+                <line class="line sub-line" data-category="surfhouse" id="line-surfhouse-habitacion"></line>
+
+                <!-- Linee Rurale Glamping -->
+                <line class="line sub-line" data-category="rurale" id="line-rurale-hotelbubble"></line>
+                <line class="line sub-line" data-category="rurale" id="line-rurale-tresroques"></line>
+
+                <!-- Linee Apartamento -->
+                <line class="line sub-line" data-category="apartamento" id="line-apartamento-diana"></line>
+                <line class="line sub-line" data-category="apartamento" id="line-apartamento-castelharbour"></line>
+                <line class="line sub-line" data-category="apartamento" id="line-apartamento-alcala"></line>
+            </svg>
+
+            <!-- Centro - Categoria -->
+            <div class="center-node category-center" id="category-trigger">
+                <div class="category-icon alloggio-bg">
+                    <span>ALLOGGIO</span>
+                </div>
+                <span class="click-hint">Clicca per esplorare</span>
+            </div>
+
+            <!-- Sotto-categorie (Livello 2) -->
+            <div class="primary-nodes">
+                <div class="node node-primary ostello-node" id="node-ostello" data-category="ostello">
+                    <span>Ostello</span>
+                </div>
+                <div class="node node-primary villa-node" id="node-villa" data-category="villa">
+                    <span>Villa<br>Finca</span>
+                </div>
+                <div class="node node-primary surfhouse-node" id="node-surfhouse" data-category="surfhouse">
+                    <span>Surf<br>House</span>
+                </div>
+                <div class="node node-primary rurale-node" id="node-rurale" data-category="rurale">
+                    <span>Rurale<br>Glamping</span>
+                </div>
+                <div class="node node-primary apartamento-node" id="node-apartamento" data-category="apartamento">
+                    <span>Apartamento</span>
+                </div>
+            </div>
+
+            <!-- Elementi Livello 3 - OSTELLO -->
+            <div class="sub-nodes" data-parent="ostello">
+                <a href="#tortuga" class="node node-secondary item-tortuga" id="node-tortuga">
+                    <span>Tortuga</span>
+                </a>
+                <a href="#callemexico-ost" class="node node-secondary item-callemexico-ost" id="node-callemexico-ost">
+                    <span>Calle<br>Mexico</span>
+                </a>
+                <a href="#gotademar" class="node node-secondary item-gotademar" id="node-gotademar">
+                    <span>Gota<br>de Mar</span>
+                </a>
+            </div>
+
+            <!-- Elementi Livello 3 - VILLA FINCA -->
+            <div class="sub-nodes" data-parent="villa">
+                <a href="#casatata" class="node node-secondary item-casatata" id="node-casatata">
+                    <span>Casa<br>Tata</span>
+                </a>
+                <a href="#biofinca" class="node node-secondary item-biofinca" id="node-biofinca">
+                    <span>Biofinca</span>
+                </a>
+                <a href="#fortaleza" class="node node-secondary item-fortaleza" id="node-fortaleza">
+                    <span>Finca La<br>Fortaleza</span>
+                </a>
+                <a href="#casadolores" class="node node-secondary item-casadolores" id="node-casadolores">
+                    <span>Casa<br>Dolores</span>
+                </a>
+                <a href="#beachhouse" class="node node-secondary item-beachhouse" id="node-beachhouse">
+                    <span>Beach<br>House</span>
+                </a>
+            </div>
+
+            <!-- Elementi Livello 3 - SURF HOUSE -->
+            <div class="sub-nodes" data-parent="surfhouse">
+                <a href="#cama" class="node node-secondary item-cama" id="node-cama">
+                    <span>Cama</span>
+                </a>
+                <a href="#habitacion" class="node node-secondary item-habitacion" id="node-habitacion">
+                    <span>Habitacion</span>
+                </a>
+            </div>
+
+            <!-- Elementi Livello 3 - RURALE GLAMPING -->
+            <div class="sub-nodes" data-parent="rurale">
+                <a href="#hotelbubble" class="node node-secondary item-hotelbubble" id="node-hotelbubble">
+                    <span>Hotel<br>Bubble</span>
+                </a>
+                <a href="#tresroques" class="node node-secondary item-tresroques" id="node-tresroques">
+                    <span>Tres<br>Roques</span>
+                </a>
+            </div>
+
+            <!-- Elementi Livello 3 - APARTAMENTO -->
+            <div class="sub-nodes" data-parent="apartamento">
+                <a href="#diana" class="node node-secondary item-diana" id="node-diana">
+                    <span>Diana</span>
+                </a>
+                <a href="#castelharbour" class="node node-secondary item-castelharbour" id="node-castelharbour">
+                    <span>Castel<br>Harbour</span>
+                </a>
+                <a href="#alcala" class="node node-secondary item-alcala" id="node-alcala">
+                    <span>Alcala</span>
+                </a>
+            </div>
+
+            <!-- Pulsante indietro -->
+            <button class="back-btn" id="back-btn">
+                <span>&larr;</span> Indietro
+            </button>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Lo Squalo - Tenerife Experience | Since 2009</p>
+        </footer>
+    </div>
+
+    <script src="pages.js"></script>
+</body>
+</html>

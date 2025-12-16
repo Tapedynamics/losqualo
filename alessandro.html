@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alessandro - Lo Squalo Tenerife</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="pages.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="page-alessandro">
+    <div class="container">
+        <header>
+            <a href="index.html" class="back-home">&larr; Home</a>
+            <h1 class="logo">LO SQUALO</h1>
+            <span class="tagline">since 2009</span>
+        </header>
+
+        <main class="page-map" data-state="initial">
+            <!-- SVG per le linee dinamiche -->
+            <svg class="connections" id="svg-connections">
+                <!-- Linee: Centro -> Sotto-categorie -->
+                <line class="line main-line" id="line-center-chisono"></line>
+                <line class="line main-line" id="line-center-perche"></line>
+                <line class="line main-line" id="line-center-esperienza"></line>
+                <line class="line main-line" id="line-center-ruolo"></line>
+                <line class="line main-line" id="line-center-highlights"></line>
+            </svg>
+
+            <!-- Centro - Categoria -->
+            <div class="center-node category-center" id="category-trigger">
+                <div class="category-icon alessandro-bg">
+                    <span>ALESSANDRO</span>
+                </div>
+                <span class="click-hint">Clicca per esplorare</span>
+            </div>
+
+            <!-- Sotto-categorie (Livello 2) - No livello 3 per questa pagina -->
+            <div class="primary-nodes">
+                <a href="#chisono" class="node node-primary chisono-node" id="node-chisono" data-category="chisono">
+                    <span>Chi Sono</span>
+                </a>
+                <a href="#perche" class="node node-primary perche-node" id="node-perche" data-category="perche">
+                    <span>Perche<br>Tenerife</span>
+                </a>
+                <a href="#esperienza" class="node node-primary esperienza-node" id="node-esperienza" data-category="esperienza">
+                    <span>La Mia<br>Esperienza</span>
+                </a>
+                <a href="#ruolo" class="node node-primary ruolo-node" id="node-ruolo" data-category="ruolo">
+                    <span>Il Mio<br>Ruolo Oggi</span>
+                </a>
+                <a href="#highlights" class="node node-primary highlights-node" id="node-highlights" data-category="highlights">
+                    <span>Highlights</span>
+                </a>
+            </div>
+
+            <!-- Pulsante indietro -->
+            <button class="back-btn" id="back-btn">
+                <span>&larr;</span> Indietro
+            </button>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Lo Squalo - Tenerife Experience | Since 2009</p>
+        </footer>
+    </div>
+
+    <script src="pages.js"></script>
+</body>
+</html>

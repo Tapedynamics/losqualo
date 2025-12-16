@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventi - Lo Squalo Tenerife</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="pages.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="page-eventi">
+    <div class="container">
+        <header>
+            <a href="index.html" class="back-home">← Home</a>
+            <h1 class="logo">LO SQUALO</h1>
+            <span class="tagline">since 2009</span>
+        </header>
+
+        <main class="page-map" data-state="initial">
+            <!-- SVG per le linee dinamiche -->
+            <svg class="connections" id="svg-connections">
+                <!-- Linee: Centro -> Sotto-categorie -->
+                <line class="line main-line" id="line-center-showcases"></line>
+                <line class="line main-line" id="line-center-consigliati"></line>
+                <line class="line main-line" id="line-center-movida"></line>
+                <line class="line main-line" id="line-center-servizi"></line>
+
+                <!-- Linee Showcases -->
+                <line class="line sub-line" data-category="showcases" id="line-showcases-boatparty"></line>
+                <line class="line sub-line" data-category="showcases" id="line-showcases-terraceo"></line>
+                <line class="line sub-line" data-category="showcases" id="line-showcases-hmc"></line>
+                <line class="line sub-line" data-category="showcases" id="line-showcases-exotica"></line>
+                <line class="line sub-line" data-category="showcases" id="line-showcases-brunch"></line>
+
+                <!-- Linee Consigliati -->
+                <line class="line sub-line" data-category="consigliati" id="line-consigliati-festival"></line>
+                <line class="line sub-line" data-category="consigliati" id="line-consigliati-folklore"></line>
+
+                <!-- Linee Movida -->
+                <line class="line sub-line" data-category="movida" id="line-movida-club"></line>
+                <line class="line sub-line" data-category="movida" id="line-movida-poolparty"></line>
+                <line class="line sub-line" data-category="movida" id="line-movida-beachclub"></line>
+                <line class="line sub-line" data-category="movida" id="line-movida-rooftop"></line>
+                <line class="line sub-line" data-category="movida" id="line-movida-vip"></line>
+
+                <!-- Linee Servizi -->
+                <line class="line sub-line" data-category="servizi" id="line-servizi-graphic"></line>
+                <line class="line sub-line" data-category="servizi" id="line-servizi-photo"></line>
+                <line class="line sub-line" data-category="servizi" id="line-servizi-venue"></line>
+                <line class="line sub-line" data-category="servizi" id="line-servizi-decoration"></line>
+                <line class="line sub-line" data-category="servizi" id="line-servizi-shows"></line>
+                <line class="line sub-line" data-category="servizi" id="line-servizi-sound"></line>
+                <line class="line sub-line" data-category="servizi" id="line-servizi-catering"></line>
+            </svg>
+
+            <!-- Centro - Categoria -->
+            <div class="center-node category-center" id="category-trigger">
+                <div class="category-icon eventi-bg">
+                    <span>EVENTI</span>
+                </div>
+                <span class="click-hint">Clicca per esplorare</span>
+            </div>
+
+            <!-- Sotto-categorie (Livello 2) -->
+            <div class="primary-nodes">
+                <div class="node node-primary showcases-node" id="node-showcases" data-category="showcases">
+                    <span>Showcases</span>
+                </div>
+                <div class="node node-primary consigliati-node" id="node-consigliati" data-category="consigliati">
+                    <span>Consigliati</span>
+                </div>
+                <div class="node node-primary movida-node" id="node-movida" data-category="movida">
+                    <span>Movida &<br>Nightlife</span>
+                </div>
+                <div class="node node-primary servizi-node" id="node-servizi" data-category="servizi">
+                    <span>Privati<br>Servizi</span>
+                </div>
+            </div>
+
+            <!-- Elementi Livello 3 - SHOWCASES -->
+            <div class="sub-nodes" data-parent="showcases">
+                <a href="#boatparty" class="node node-secondary item-boatparty" id="node-boatparty">
+                    <span>Boat<br>Party</span>
+                </a>
+                <a href="#terraceo" class="node node-secondary item-terraceo" id="node-terraceo">
+                    <span>Terraceo</span>
+                </a>
+                <a href="#hmc" class="node node-secondary item-hmc" id="node-hmc">
+                    <span>H.M.C</span>
+                </a>
+                <a href="#exotica" class="node node-secondary item-exotica" id="node-exotica">
+                    <span>Exotica</span>
+                </a>
+                <a href="#brunch" class="node node-secondary item-brunch" id="node-brunch">
+                    <span>Let's<br>Brunch</span>
+                </a>
+            </div>
+
+            <!-- Elementi Livello 3 - CONSIGLIATI -->
+            <div class="sub-nodes" data-parent="consigliati">
+                <a href="#festival" class="node node-secondary item-festival" id="node-festival">
+                    <span>Festival</span>
+                </a>
+                <a href="#folklore" class="node node-secondary item-folklore" id="node-folklore">
+                    <span>Folklore</span>
+                </a>
+            </div>
+
+            <!-- Elementi Livello 3 - MOVIDA & NIGHTLIFE -->
+            <div class="sub-nodes" data-parent="movida">
+                <a href="#club" class="node node-secondary item-club" id="node-club">
+                    <span>Club</span>
+                </a>
+                <a href="#poolparty" class="node node-secondary item-poolparty" id="node-poolparty">
+                    <span>Pool<br>Party</span>
+                </a>
+                <a href="#beachclub" class="node node-secondary item-beachclub" id="node-beachclub">
+                    <span>Beach<br>Club</span>
+                </a>
+                <a href="#rooftop" class="node node-secondary item-rooftop" id="node-rooftop">
+                    <span>Rooftop</span>
+                </a>
+                <a href="#vip" class="node node-secondary item-vip" id="node-vip">
+                    <span>VIP<br>Service</span>
+                </a>
+            </div>
+
+            <!-- Elementi Livello 3 - PRIVATI SERVIZI -->
+            <div class="sub-nodes" data-parent="servizi">
+                <a href="#graphic" class="node node-secondary item-graphic" id="node-graphic">
+                    <span>Graphic<br>Design</span>
+                </a>
+                <a href="#photo" class="node node-secondary item-photo" id="node-photo">
+                    <span>Photo<br>Video</span>
+                </a>
+                <a href="#venue" class="node node-secondary item-venue" id="node-venue">
+                    <span>Venue</span>
+                </a>
+                <a href="#decoration" class="node node-secondary item-decoration" id="node-decoration">
+                    <span>Decoration</span>
+                </a>
+                <a href="#shows" class="node node-secondary item-shows" id="node-shows">
+                    <span>Shows</span>
+                </a>
+                <a href="#sound" class="node node-secondary item-sound" id="node-sound">
+                    <span>Sound &<br>Lights</span>
+                </a>
+                <a href="#catering" class="node node-secondary item-catering" id="node-catering">
+                    <span>Catering</span>
+                </a>
+            </div>
+
+            <!-- Pulsante indietro -->
+            <button class="back-btn" id="back-btn">
+                <span>←</span> Indietro
+            </button>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Lo Squalo - Tenerife Experience | Since 2009</p>
+        </footer>
+    </div>
+
+    <script src="pages.js"></script>
+</body>
+</html>
