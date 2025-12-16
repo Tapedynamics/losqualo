@@ -80,7 +80,7 @@ header {
 /* Primary nodes nascosti di default */
 .page-map .primary-nodes .node {
     opacity: 0;
-    transform: translate(-50%, -50%) scale(0.5);
+    transform: scale(0.5);
     pointer-events: none;
 }
 
@@ -88,7 +88,7 @@ header {
 .page-map[data-state="categories"] .primary-nodes .node,
 .page-map[data-state="subcategories"] .primary-nodes .node {
     opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
+    transform: scale(1);
     pointer-events: auto;
 }
 
@@ -113,7 +113,7 @@ header {
 
 .page-map .sub-nodes .node {
     opacity: 0;
-    transform: translate(-50%, -50%) scale(0.5);
+    transform: scale(0.3);
     pointer-events: none;
 }
 
@@ -124,7 +124,7 @@ header {
 
 .page-map .sub-nodes.visible .node {
     opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
+    transform: scale(1);
     pointer-events: auto;
 }
 
