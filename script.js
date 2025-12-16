@@ -1,5 +1,5 @@
 // Lo Squalo - Tenerife Experience
-// Interactive Mind Map with Dynamic SVG Lines
+// Interactive Mind Map - 6 Categorie + Mobile Radial Popup
 
 document.addEventListener('DOMContentLoaded', function() {
     initProgressiveMap();
@@ -13,54 +13,68 @@ let expandedCategory = null;
 
 // ===== LINEE DINAMICHE SVG =====
 const lineConnections = {
-    // Linee principali: Tenerife -> Categorie
+    // Linee principali: Tenerife -> 6 Categorie
     main: [
-        { line: 'line-tenerife-party', from: 'tenerife-trigger', to: 'node-party' },
-        { line: 'line-tenerife-food', from: 'tenerife-trigger', to: 'node-food' },
-        { line: 'line-tenerife-staying', from: 'tenerife-trigger', to: 'node-staying' },
-        { line: 'line-tenerife-excursion', from: 'tenerife-trigger', to: 'node-excursion' },
-        { line: 'line-tenerife-events', from: 'tenerife-trigger', to: 'node-events' }
+        { line: 'line-tenerife-eventi', from: 'tenerife-trigger', to: 'node-eventi' },
+        { line: 'line-tenerife-alloggio', from: 'tenerife-trigger', to: 'node-alloggio' },
+        { line: 'line-tenerife-escursioni', from: 'tenerife-trigger', to: 'node-escursioni' },
+        { line: 'line-tenerife-surfing', from: 'tenerife-trigger', to: 'node-surfing' },
+        { line: 'line-tenerife-agency', from: 'tenerife-trigger', to: 'node-agency' },
+        { line: 'line-tenerife-alessandro', from: 'tenerife-trigger', to: 'node-alessandro' }
     ],
-    // Sotto-linee per categoria
-    party: [
-        { line: 'line-party-daytime', from: 'node-party', to: 'node-daytime' },
-        { line: 'line-party-nightlife', from: 'node-party', to: 'node-nightlife' },
-        { line: 'line-party-hmc', from: 'node-party', to: 'node-hmc' },
-        { line: 'line-daytime-terraceo', from: 'node-daytime', to: 'node-terraceo' },
-        { line: 'line-daytime-elbarco', from: 'node-daytime', to: 'node-elbarco' },
-        { line: 'line-daytime-finca', from: 'node-daytime', to: 'node-finca' }
+    // Sotto-linee EVENTI
+    eventi: [
+        { line: 'line-eventi-showcases', from: 'node-eventi', to: 'node-showcases' },
+        { line: 'line-eventi-consigliati', from: 'node-eventi', to: 'node-consigliati' },
+        { line: 'line-eventi-movida', from: 'node-eventi', to: 'node-movida' },
+        { line: 'line-eventi-servizi', from: 'node-eventi', to: 'node-servizi' }
     ],
-    food: [
-        { line: 'line-food-aperitivo', from: 'node-food', to: 'node-aperitivo' },
-        { line: 'line-food-brunch', from: 'node-food', to: 'node-brunch' },
-        { line: 'line-food-ristorante', from: 'node-food', to: 'node-ristorante' }
+    // Sotto-linee ALLOGGIO
+    alloggio: [
+        { line: 'line-alloggio-ostello', from: 'node-alloggio', to: 'node-ostello' },
+        { line: 'line-alloggio-villa', from: 'node-alloggio', to: 'node-villa' },
+        { line: 'line-alloggio-surfhouse', from: 'node-alloggio', to: 'node-surfhouse-alloggio' },
+        { line: 'line-alloggio-rurale', from: 'node-alloggio', to: 'node-rurale' },
+        { line: 'line-alloggio-apartamento', from: 'node-alloggio', to: 'node-apartamento' }
     ],
-    staying: [
-        { line: 'line-staying-villa', from: 'node-staying', to: 'node-staying-villa' },
-        { line: 'line-staying-hotel', from: 'node-staying', to: 'node-hotel' },
-        { line: 'line-staying-apartment', from: 'node-staying', to: 'node-apartment' }
+    // Sotto-linee ESCURSIONI
+    escursioni: [
+        { line: 'line-escursioni-teide', from: 'node-escursioni', to: 'node-teide' },
+        { line: 'line-escursioni-oceano', from: 'node-escursioni', to: 'node-oceano' },
+        { line: 'line-escursioni-sky', from: 'node-escursioni', to: 'node-sky' },
+        { line: 'line-escursioni-sport', from: 'node-escursioni', to: 'node-sport' },
+        { line: 'line-escursioni-private', from: 'node-escursioni', to: 'node-private-escursioni' },
+        { line: 'line-escursioni-fooddrink', from: 'node-escursioni', to: 'node-fooddrink-escursioni' }
     ],
-    excursion: [
-        { line: 'line-excursion-action', from: 'node-excursion', to: 'node-action' },
-        { line: 'line-excursion-chill', from: 'node-excursion', to: 'node-chill' }
+    // Sotto-linee SURFING
+    surfing: [
+        { line: 'line-surfing-surfbar', from: 'node-surfing', to: 'node-surfbar' },
+        { line: 'line-surfing-surfhouse', from: 'node-surfing', to: 'node-surfhouse' },
+        { line: 'line-surfing-elmedano', from: 'node-surfing', to: 'node-elmedano' },
+        { line: 'line-surfing-spots', from: 'node-surfing', to: 'node-surfspots' },
+        { line: 'line-surfing-callemexico', from: 'node-surfing', to: 'node-callemexico' },
+        { line: 'line-surfing-school', from: 'node-surfing', to: 'node-school' }
     ],
-    events: [
-        { line: 'line-events-private', from: 'node-events', to: 'node-private' },
-        { line: 'line-events-artists', from: 'node-events', to: 'node-artists' },
-        { line: 'line-events-venue', from: 'node-events', to: 'node-venue' },
-        { line: 'line-private-boat', from: 'node-private', to: 'node-boat' },
-        { line: 'line-private-villaprivate', from: 'node-private', to: 'node-villa-private' }
+    // Sotto-linee AGENCY
+    agency: [
+        { line: 'line-agency-smm', from: 'node-agency', to: 'node-smm' },
+        { line: 'line-agency-grafic', from: 'node-agency', to: 'node-grafic' },
+        { line: 'line-agency-artists', from: 'node-agency', to: 'node-artists-agency' },
+        { line: 'line-agency-start', from: 'node-agency', to: 'node-start' }
+    ],
+    // Sotto-linee ALESSANDRO
+    alessandro: [
+        { line: 'line-alessandro-chisono', from: 'node-alessandro', to: 'node-chisono' },
+        { line: 'line-alessandro-perche', from: 'node-alessandro', to: 'node-perche' },
+        { line: 'line-alessandro-esperienza', from: 'node-alessandro', to: 'node-esperienza' },
+        { line: 'line-alessandro-ruolo', from: 'node-alessandro', to: 'node-ruolo' },
+        { line: 'line-alessandro-highlights', from: 'node-alessandro', to: 'node-highlights' }
     ]
 };
 
 function initDynamicLines() {
-    // Disegna le linee iniziali
     updateAllLines();
-
-    // Aggiorna le linee al resize
     window.addEventListener('resize', debounce(updateAllLines, 100));
-
-    // Aggiorna periodicamente per gestire animazioni
     setInterval(updateAllLines, 50);
 }
 
@@ -231,55 +245,72 @@ function goBack() {
 // ===== MOBILE MINI-MAP WITH RADIAL POPUP =====
 let mobileState = 'initial';
 
-// Dati sotto-categorie per radial popup
+// Dati sotto-categorie per radial popup - 6 categorie
 const categorySubNodes = {
-    party: {
-        name: 'PARTY',
-        class: 'radial-party',
+    eventi: {
+        name: 'EVENTI',
+        class: 'radial-eventi',
         subs: [
-            { id: 'daytime', name: 'Daytime<br>& Sunset', class: 'radial-daytime', href: 'party.html#daytime' },
-            { id: 'nightlife', name: 'Nightlife', class: 'radial-nightlife', href: 'party.html#nightlife' },
-            { id: 'hmc', name: 'H.m.c.', class: 'radial-hmc', href: 'party.html#hmc' },
-            { id: 'terraceo', name: 'Terraceo', class: 'radial-terraceo', href: 'party.html#terraceo' },
-            { id: 'elbarco', name: 'El Barco', class: 'radial-elbarco', href: 'party.html#elbarco' },
-            { id: 'finca', name: 'Finca', class: 'radial-finca', href: 'party.html#finca' }
+            { id: 'showcases', name: 'Showcases', class: 'radial-showcases', href: 'eventi.html#showcases' },
+            { id: 'consigliati', name: 'Consigliati', class: 'radial-consigliati', href: 'eventi.html#consigliati' },
+            { id: 'movida', name: 'Movida &<br>Nightlife', class: 'radial-movida', href: 'eventi.html#movida' },
+            { id: 'servizi', name: 'Privati<br>Servizi', class: 'radial-servizi', href: 'eventi.html#servizi' }
         ]
     },
-    food: {
-        name: 'FOOD &<br>DRINK',
-        class: 'radial-food',
+    alloggio: {
+        name: 'ALLOGGIO',
+        class: 'radial-alloggio',
         subs: [
-            { id: 'aperitivo', name: 'Aperitivo', class: 'radial-aperitivo', href: 'food-drink.html#aperitivo' },
-            { id: 'brunch', name: 'Brunch', class: 'radial-brunch', href: 'food-drink.html#brunch' },
-            { id: 'ristorante', name: 'Ristorante', class: 'radial-ristorante', href: 'food-drink.html#ristorante' }
+            { id: 'ostello', name: 'Ostello', class: 'radial-ostello', href: 'alloggio.html#ostello' },
+            { id: 'villa', name: 'Villa<br>Finca', class: 'radial-villa', href: 'alloggio.html#villa' },
+            { id: 'surfhouse', name: 'Surf<br>House', class: 'radial-surfhouse-alloggio', href: 'alloggio.html#surfhouse' },
+            { id: 'rurale', name: 'Rurale<br>Glamping', class: 'radial-rurale', href: 'alloggio.html#rurale' },
+            { id: 'apartamento', name: 'Apartamento', class: 'radial-apartamento', href: 'alloggio.html#apartamento' }
         ]
     },
-    staying: {
-        name: 'STAYING',
-        class: 'radial-staying',
+    escursioni: {
+        name: 'ESCURSIONI<br>& ATTIVITÀ',
+        class: 'radial-escursioni',
         subs: [
-            { id: 'villa', name: 'Villa', class: 'radial-staying-villa', href: 'staying.html#villa' },
-            { id: 'hotel', name: 'Hotel', class: 'radial-hotel', href: 'staying.html#hotel' },
-            { id: 'apartment', name: 'Apartment', class: 'radial-apartment', href: 'staying.html#apartment' }
+            { id: 'teide', name: 'Teide', class: 'radial-teide', href: 'escursioni.html#teide' },
+            { id: 'oceano', name: 'Oceano', class: 'radial-oceano', href: 'escursioni.html#oceano' },
+            { id: 'sky', name: 'Sky', class: 'radial-sky', href: 'escursioni.html#sky' },
+            { id: 'sport', name: 'Sport', class: 'radial-sport', href: 'escursioni.html#sport' },
+            { id: 'private', name: 'Private', class: 'radial-private-escursioni', href: 'escursioni.html#private' },
+            { id: 'fooddrink', name: 'Food &<br>Drink', class: 'radial-fooddrink', href: 'escursioni.html#fooddrink' }
         ]
     },
-    excursion: {
-        name: 'EXCURSIÓN',
-        class: 'radial-excursion',
+    surfing: {
+        name: 'SURFING<br>TENERIFE',
+        class: 'radial-surfing',
         subs: [
-            { id: 'action', name: 'Action', class: 'radial-action', href: 'excursion.html#action' },
-            { id: 'chill', name: 'Chill', class: 'radial-chill', href: 'excursion.html#chill' }
+            { id: 'surfbar', name: 'Surfbar<br>Franchise', class: 'radial-surfbar', href: 'surfing.html#surfbar' },
+            { id: 'surfhouse', name: 'Surf<br>House', class: 'radial-surfhouse', href: 'surfing.html#surfhouse' },
+            { id: 'elmedano', name: 'El Médano<br>Surf/Kite', class: 'radial-elmedano', href: 'surfing.html#elmedano' },
+            { id: 'spots', name: 'Surf<br>Spots', class: 'radial-surfspots', href: 'surfing.html#spots' },
+            { id: 'callemexico', name: 'Calle<br>México', class: 'radial-callemexico', href: 'surfing.html#callemexico' },
+            { id: 'school', name: 'School', class: 'radial-school', href: 'surfing.html#school' }
         ]
     },
-    events: {
-        name: 'Events<br>Services',
-        class: 'radial-events',
+    agency: {
+        name: 'AGENCY',
+        class: 'radial-agency',
         subs: [
-            { id: 'private', name: 'Private', class: 'radial-private', href: 'events.html#private' },
-            { id: 'artists', name: 'Artists<br>booking', class: 'radial-artists', href: 'events.html#artists' },
-            { id: 'venue', name: 'Venue<br>& More', class: 'radial-venue', href: 'events.html#venue' },
-            { id: 'boat', name: 'Boat', class: 'radial-boat', href: 'events.html#boat' },
-            { id: 'villa-private', name: 'Villa', class: 'radial-villa-private', href: 'events.html#villa-private' }
+            { id: 'smm', name: 'SMM &<br>Marketing', class: 'radial-smm', href: 'agency.html#smm' },
+            { id: 'grafic', name: 'Grafic<br>Design', class: 'radial-grafic', href: 'agency.html#grafic' },
+            { id: 'artists', name: 'Artists<br>Management', class: 'radial-artists-agency', href: 'agency.html#artists' },
+            { id: 'start', name: 'Start<br>Business', class: 'radial-start', href: 'agency.html#start' }
+        ]
+    },
+    alessandro: {
+        name: 'ALESSANDRO',
+        class: 'radial-alessandro',
+        subs: [
+            { id: 'chisono', name: 'Chi Sono', class: 'radial-chisono', href: 'alessandro.html#chisono' },
+            { id: 'perche', name: 'Perché<br>Tenerife', class: 'radial-perche', href: 'alessandro.html#perche' },
+            { id: 'esperienza', name: 'La Mia<br>Esperienza', class: 'radial-esperienza', href: 'alessandro.html#esperienza' },
+            { id: 'ruolo', name: 'Il Mio<br>Ruolo Oggi', class: 'radial-ruolo', href: 'alessandro.html#ruolo' },
+            { id: 'highlights', name: 'Highlights', class: 'radial-highlights', href: 'alessandro.html#highlights' }
         ]
     }
 };
@@ -317,9 +348,9 @@ function createMobileMiniMap() {
     svg.classList.add('mobile-svg');
     svg.id = 'mobile-svg-connections';
 
-    // Linee principali
-    const mainLines = ['party', 'food', 'staying', 'excursion', 'events'];
-    mainLines.forEach(cat => {
+    // Linee principali - 6 categorie
+    const categories = ['eventi', 'alloggio', 'escursioni', 'surfing', 'agency', 'alessandro'];
+    categories.forEach(cat => {
         const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
         line.classList.add('mobile-line', 'mobile-main-line');
         line.id = `mobile-line-center-${cat}`;
@@ -339,21 +370,23 @@ function createMobileMiniMap() {
     `;
     mobileMap.appendChild(center);
 
-    // Nodi primari - posizioni
+    // Posizioni 6 nodi in esagono attorno al centro
     const primaryPositions = {
-        party: { top: '28%', left: '20%' },
-        food: { top: '20%', left: '55%' },
-        staying: { top: '45%', left: '82%' },
-        excursion: { top: '75%', left: '70%' },
-        events: { top: '75%', left: '28%' }
+        eventi: { top: '22%', left: '25%' },      // Alto sinistra
+        alloggio: { top: '22%', left: '75%' },    // Alto destra
+        escursioni: { top: '50%', left: '12%' },  // Centro sinistra
+        surfing: { top: '50%', left: '88%' },     // Centro destra
+        agency: { top: '78%', left: '25%' },      // Basso sinistra
+        alessandro: { top: '78%', left: '75%' }   // Basso destra
     };
 
     const primaryNodes = [
-        { id: 'party', name: 'PARTY', class: 'mobile-party' },
-        { id: 'food', name: 'FOOD &<br>DRINK', class: 'mobile-food' },
-        { id: 'staying', name: 'STAYING', class: 'mobile-staying' },
-        { id: 'excursion', name: 'EXCURSIÓN', class: 'mobile-excursion' },
-        { id: 'events', name: 'Events<br>Services', class: 'mobile-events' }
+        { id: 'eventi', name: 'EVENTI', class: 'mobile-eventi' },
+        { id: 'alloggio', name: 'ALLOGGIO', class: 'mobile-alloggio' },
+        { id: 'escursioni', name: 'ESCURSIONI<br>& ATTIVITÀ', class: 'mobile-escursioni' },
+        { id: 'surfing', name: 'SURFING<br>TENERIFE', class: 'mobile-surfing' },
+        { id: 'agency', name: 'AGENCY', class: 'mobile-agency' },
+        { id: 'alessandro', name: 'ALESSANDRO', class: 'mobile-alessandro' }
     ];
 
     primaryNodes.forEach(node => {
@@ -375,7 +408,7 @@ function createMobileMiniMap() {
 
     main.parentNode.insertBefore(mobileMap, main.nextSibling);
 
-    // Crea overlay radiale (una volta sola)
+    // Crea overlay radiale
     createRadialOverlay();
 
     // Event listeners
@@ -426,14 +459,14 @@ function openRadialPopup(category) {
 
     // Calcola posizioni radiali
     const numSubs = data.subs.length;
-    const radius = 125; // distanza dal centro
+    const radius = 115; // distanza dal centro
     const startAngle = -90; // parte dall'alto
 
     data.subs.forEach((sub, index) => {
         const angle = startAngle + (360 / numSubs) * index;
         const radian = angle * (Math.PI / 180);
-        const x = 50 + (radius / 340 * 100) * Math.cos(radian);
-        const y = 50 + (radius / 340 * 100) * Math.sin(radian);
+        const x = 50 + (radius / 320 * 100) * Math.cos(radian);
+        const y = 50 + (radius / 320 * 100) * Math.sin(radian);
 
         const node = document.createElement('a');
         node.href = sub.href;
@@ -527,13 +560,14 @@ function updateMobileLines() {
         };
     }
 
-    // Linee principali
+    // Linee principali - 6 categorie
     const mainConnections = [
-        { line: 'mobile-line-center-party', from: 'mobile-center', to: 'mobile-node-party' },
-        { line: 'mobile-line-center-food', from: 'mobile-center', to: 'mobile-node-food' },
-        { line: 'mobile-line-center-staying', from: 'mobile-center', to: 'mobile-node-staying' },
-        { line: 'mobile-line-center-excursion', from: 'mobile-center', to: 'mobile-node-excursion' },
-        { line: 'mobile-line-center-events', from: 'mobile-center', to: 'mobile-node-events' }
+        { line: 'mobile-line-center-eventi', from: 'mobile-center', to: 'mobile-node-eventi' },
+        { line: 'mobile-line-center-alloggio', from: 'mobile-center', to: 'mobile-node-alloggio' },
+        { line: 'mobile-line-center-escursioni', from: 'mobile-center', to: 'mobile-node-escursioni' },
+        { line: 'mobile-line-center-surfing', from: 'mobile-center', to: 'mobile-node-surfing' },
+        { line: 'mobile-line-center-agency', from: 'mobile-center', to: 'mobile-node-agency' },
+        { line: 'mobile-line-center-alessandro', from: 'mobile-center', to: 'mobile-node-alessandro' }
     ];
 
     mainConnections.forEach(conn => {

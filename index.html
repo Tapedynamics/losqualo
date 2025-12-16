@@ -11,46 +11,61 @@
     <div class="container">
         <header>
             <h1 class="logo">LO SQUALO</h1>
+            <span class="tagline">since 2009</span>
         </header>
 
         <main class="mind-map" data-state="initial">
-            <!-- SVG per le linee - verrà popolato dinamicamente -->
+            <!-- SVG per le linee dinamiche -->
             <svg class="connections" id="svg-connections">
-                <!-- Linee principali -->
-                <line class="line main-line" id="line-tenerife-party"></line>
-                <line class="line main-line" id="line-tenerife-food"></line>
-                <line class="line main-line" id="line-tenerife-staying"></line>
-                <line class="line main-line" id="line-tenerife-excursion"></line>
-                <line class="line main-line" id="line-tenerife-events"></line>
+                <!-- Linee principali: Tenerife -> Categorie -->
+                <line class="line main-line" id="line-tenerife-eventi"></line>
+                <line class="line main-line" id="line-tenerife-alloggio"></line>
+                <line class="line main-line" id="line-tenerife-escursioni"></line>
+                <line class="line main-line" id="line-tenerife-surfing"></line>
+                <line class="line main-line" id="line-tenerife-agency"></line>
+                <line class="line main-line" id="line-tenerife-alessandro"></line>
 
-                <!-- Linee Party -->
-                <line class="line sub-line" data-category="party" id="line-party-daytime"></line>
-                <line class="line sub-line" data-category="party" id="line-party-nightlife"></line>
-                <line class="line sub-line" data-category="party" id="line-party-hmc"></line>
-                <line class="line sub-line tertiary" data-category="party" id="line-daytime-terraceo"></line>
-                <line class="line sub-line tertiary" data-category="party" id="line-daytime-elbarco"></line>
-                <line class="line sub-line tertiary" data-category="party" id="line-daytime-finca"></line>
+                <!-- Linee EVENTI -->
+                <line class="line sub-line" data-category="eventi" id="line-eventi-showcases"></line>
+                <line class="line sub-line" data-category="eventi" id="line-eventi-consigliati"></line>
+                <line class="line sub-line" data-category="eventi" id="line-eventi-movida"></line>
+                <line class="line sub-line" data-category="eventi" id="line-eventi-servizi"></line>
 
-                <!-- Linee Food -->
-                <line class="line sub-line" data-category="food" id="line-food-aperitivo"></line>
-                <line class="line sub-line" data-category="food" id="line-food-brunch"></line>
-                <line class="line sub-line" data-category="food" id="line-food-ristorante"></line>
+                <!-- Linee ALLOGGIO -->
+                <line class="line sub-line" data-category="alloggio" id="line-alloggio-ostello"></line>
+                <line class="line sub-line" data-category="alloggio" id="line-alloggio-villa"></line>
+                <line class="line sub-line" data-category="alloggio" id="line-alloggio-surfhouse"></line>
+                <line class="line sub-line" data-category="alloggio" id="line-alloggio-rurale"></line>
+                <line class="line sub-line" data-category="alloggio" id="line-alloggio-apartamento"></line>
 
-                <!-- Linee Staying -->
-                <line class="line sub-line" data-category="staying" id="line-staying-villa"></line>
-                <line class="line sub-line" data-category="staying" id="line-staying-hotel"></line>
-                <line class="line sub-line" data-category="staying" id="line-staying-apartment"></line>
+                <!-- Linee ESCURSIONI -->
+                <line class="line sub-line" data-category="escursioni" id="line-escursioni-teide"></line>
+                <line class="line sub-line" data-category="escursioni" id="line-escursioni-oceano"></line>
+                <line class="line sub-line" data-category="escursioni" id="line-escursioni-sky"></line>
+                <line class="line sub-line" data-category="escursioni" id="line-escursioni-sport"></line>
+                <line class="line sub-line" data-category="escursioni" id="line-escursioni-private"></line>
+                <line class="line sub-line" data-category="escursioni" id="line-escursioni-fooddrink"></line>
 
-                <!-- Linee Excursion -->
-                <line class="line sub-line" data-category="excursion" id="line-excursion-action"></line>
-                <line class="line sub-line" data-category="excursion" id="line-excursion-chill"></line>
+                <!-- Linee SURFING -->
+                <line class="line sub-line" data-category="surfing" id="line-surfing-surfbar"></line>
+                <line class="line sub-line" data-category="surfing" id="line-surfing-surfhouse"></line>
+                <line class="line sub-line" data-category="surfing" id="line-surfing-elmedano"></line>
+                <line class="line sub-line" data-category="surfing" id="line-surfing-spots"></line>
+                <line class="line sub-line" data-category="surfing" id="line-surfing-callemexico"></line>
+                <line class="line sub-line" data-category="surfing" id="line-surfing-school"></line>
 
-                <!-- Linee Events -->
-                <line class="line sub-line" data-category="events" id="line-events-private"></line>
-                <line class="line sub-line" data-category="events" id="line-events-artists"></line>
-                <line class="line sub-line" data-category="events" id="line-events-venue"></line>
-                <line class="line sub-line tertiary" data-category="events" id="line-private-boat"></line>
-                <line class="line sub-line tertiary" data-category="events" id="line-private-villaprivate"></line>
+                <!-- Linee AGENCY -->
+                <line class="line sub-line" data-category="agency" id="line-agency-smm"></line>
+                <line class="line sub-line" data-category="agency" id="line-agency-grafic"></line>
+                <line class="line sub-line" data-category="agency" id="line-agency-artists"></line>
+                <line class="line sub-line" data-category="agency" id="line-agency-start"></line>
+
+                <!-- Linee ALESSANDRO -->
+                <line class="line sub-line" data-category="alessandro" id="line-alessandro-chisono"></line>
+                <line class="line sub-line" data-category="alessandro" id="line-alessandro-perche"></line>
+                <line class="line sub-line" data-category="alessandro" id="line-alessandro-esperienza"></line>
+                <line class="line sub-line" data-category="alessandro" id="line-alessandro-ruolo"></line>
+                <line class="line sub-line" data-category="alessandro" id="line-alessandro-highlights"></line>
             </svg>
 
             <!-- Centro - Tenerife -->
@@ -60,103 +75,150 @@
                 <span class="click-hint">Clicca per esplorare</span>
             </div>
 
-            <!-- ===== CATEGORIE PRINCIPALI ===== -->
+            <!-- ===== 6 CATEGORIE PRINCIPALI ===== -->
             <div class="primary-nodes">
-                <div class="node node-primary party" id="node-party" data-category="party">
-                    <span>PARTY</span>
+                <!-- EVENTI - Giallo/Oro -->
+                <div class="node node-primary eventi" id="node-eventi" data-category="eventi">
+                    <span>EVENTI</span>
                 </div>
 
-                <div class="node node-primary food-drink" id="node-food" data-category="food">
-                    <span>FOOD &<br>DRINK</span>
+                <!-- ALLOGGIO - Rosa -->
+                <div class="node node-primary alloggio" id="node-alloggio" data-category="alloggio">
+                    <span>ALLOGGIO</span>
                 </div>
 
-                <div class="node node-primary staying" id="node-staying" data-category="staying">
-                    <span>STAYING</span>
+                <!-- ESCURSIONI & ATTIVITÀ - Verde acqua -->
+                <div class="node node-primary escursioni" id="node-escursioni" data-category="escursioni">
+                    <span>ESCURSIONI<br>& ATTIVITÀ</span>
                 </div>
 
-                <div class="node node-primary excursion" id="node-excursion" data-category="excursion">
-                    <span>EXCURSIÓN</span>
+                <!-- SURFING TENERIFE - Blu oceano -->
+                <div class="node node-primary surfing" id="node-surfing" data-category="surfing">
+                    <span>SURFING<br>TENERIFE</span>
                 </div>
 
-                <div class="node node-primary events" id="node-events" data-category="events">
-                    <span>Events<br>Services</span>
+                <!-- AGENCY B2B - Blu scuro -->
+                <div class="node node-primary agency" id="node-agency" data-category="agency">
+                    <span>AGENCY</span>
+                </div>
+
+                <!-- ALESSANDRO - Grigio blu -->
+                <div class="node node-primary alessandro" id="node-alessandro" data-category="alessandro">
+                    <span>ALESSANDRO</span>
                 </div>
             </div>
 
-            <!-- ===== SOTTO-CATEGORIE PARTY ===== -->
-            <div class="sub-nodes" data-parent="party">
-                <a href="party.html#daytime" class="node node-secondary daytime" id="node-daytime">
-                    <span>Daytime<br>& Sunset</span>
+            <!-- ===== SOTTO-CATEGORIE EVENTI ===== -->
+            <div class="sub-nodes" data-parent="eventi">
+                <a href="eventi.html#showcases" class="node node-secondary showcases" id="node-showcases">
+                    <span>Showcases</span>
                 </a>
-                <a href="party.html#nightlife" class="node node-secondary nightlife" id="node-nightlife">
-                    <span>Nightlife</span>
+                <a href="eventi.html#consigliati" class="node node-secondary consigliati" id="node-consigliati">
+                    <span>Consigliati</span>
                 </a>
-                <a href="party.html#hmc" class="node node-secondary hmc" id="node-hmc">
-                    <span>H.m.c.</span>
+                <a href="eventi.html#movida" class="node node-secondary movida" id="node-movida">
+                    <span>Movida &<br>Nightlife</span>
                 </a>
-                <a href="party.html#terraceo" class="node node-tertiary terraceo" id="node-terraceo">
-                    <span>Terraceo</span>
-                </a>
-                <a href="party.html#elbarco" class="node node-tertiary elbarco" id="node-elbarco">
-                    <span>El Barco</span>
-                </a>
-                <a href="party.html#finca" class="node node-tertiary finca" id="node-finca">
-                    <span>Finca</span>
+                <a href="eventi.html#servizi" class="node node-secondary servizi-eventi" id="node-servizi">
+                    <span>Privati<br>Servizi</span>
                 </a>
             </div>
 
-            <!-- ===== SOTTO-CATEGORIE FOOD & DRINK ===== -->
-            <div class="sub-nodes" data-parent="food">
-                <a href="food-drink.html#aperitivo" class="node node-secondary aperitivo" id="node-aperitivo">
-                    <span>Aperitivo</span>
+            <!-- ===== SOTTO-CATEGORIE ALLOGGIO ===== -->
+            <div class="sub-nodes" data-parent="alloggio">
+                <a href="alloggio.html#ostello" class="node node-secondary ostello" id="node-ostello">
+                    <span>Ostello</span>
                 </a>
-                <a href="food-drink.html#brunch" class="node node-secondary brunch" id="node-brunch">
-                    <span>Brunch</span>
+                <a href="alloggio.html#villa" class="node node-secondary villa-finca" id="node-villa">
+                    <span>Villa<br>Finca</span>
                 </a>
-                <a href="food-drink.html#ristorante" class="node node-secondary ristorante" id="node-ristorante">
-                    <span>Ristorante</span>
+                <a href="alloggio.html#surfhouse" class="node node-secondary surfhouse-alloggio" id="node-surfhouse-alloggio">
+                    <span>Surf<br>House</span>
                 </a>
-            </div>
-
-            <!-- ===== SOTTO-CATEGORIE STAYING ===== -->
-            <div class="sub-nodes" data-parent="staying">
-                <a href="staying.html#villa" class="node node-secondary staying-villa" id="node-staying-villa">
-                    <span>Villa</span>
+                <a href="alloggio.html#rurale" class="node node-secondary rurale" id="node-rurale">
+                    <span>Rurale<br>Glamping</span>
                 </a>
-                <a href="staying.html#hotel" class="node node-secondary hotel" id="node-hotel">
-                    <span>Hotel</span>
-                </a>
-                <a href="staying.html#apartment" class="node node-secondary apartment" id="node-apartment">
-                    <span>Apartment</span>
+                <a href="alloggio.html#apartamento" class="node node-secondary apartamento" id="node-apartamento">
+                    <span>Apartamento</span>
                 </a>
             </div>
 
-            <!-- ===== SOTTO-CATEGORIE EXCURSIÓN ===== -->
-            <div class="sub-nodes" data-parent="excursion">
-                <a href="excursion.html#action" class="node node-secondary action" id="node-action">
-                    <span>Action</span>
+            <!-- ===== SOTTO-CATEGORIE ESCURSIONI ===== -->
+            <div class="sub-nodes" data-parent="escursioni">
+                <a href="escursioni.html#teide" class="node node-secondary teide" id="node-teide">
+                    <span>Teide</span>
                 </a>
-                <a href="excursion.html#chill" class="node node-secondary chill" id="node-chill">
-                    <span>Chill</span>
+                <a href="escursioni.html#oceano" class="node node-secondary oceano" id="node-oceano">
+                    <span>Oceano</span>
                 </a>
-            </div>
-
-            <!-- ===== SOTTO-CATEGORIE EVENTS SERVICES ===== -->
-            <div class="sub-nodes" data-parent="events">
-                <a href="events.html#private" class="node node-secondary private" id="node-private">
+                <a href="escursioni.html#sky" class="node node-secondary sky" id="node-sky">
+                    <span>Sky</span>
+                </a>
+                <a href="escursioni.html#sport" class="node node-secondary sport" id="node-sport">
+                    <span>Sport</span>
+                </a>
+                <a href="escursioni.html#private" class="node node-secondary private-escursioni" id="node-private-escursioni">
                     <span>Private</span>
                 </a>
-                <a href="events.html#artists" class="node node-secondary artists" id="node-artists">
-                    <span>Artists<br>booking</span>
+                <a href="escursioni.html#fooddrink" class="node node-secondary fooddrink-escursioni" id="node-fooddrink-escursioni">
+                    <span>Food &<br>Drink</span>
                 </a>
-                <a href="events.html#venue" class="node node-secondary venue" id="node-venue">
-                    <span>Venue<br>& More</span>
+            </div>
+
+            <!-- ===== SOTTO-CATEGORIE SURFING ===== -->
+            <div class="sub-nodes" data-parent="surfing">
+                <a href="surfing.html#surfbar" class="node node-secondary surfbar" id="node-surfbar">
+                    <span>Surfbar<br>Franchise</span>
                 </a>
-                <a href="events.html#boat" class="node node-tertiary boat" id="node-boat">
-                    <span>Boat</span>
+                <a href="surfing.html#surfhouse" class="node node-secondary surfhouse" id="node-surfhouse">
+                    <span>Surf<br>House</span>
                 </a>
-                <a href="events.html#villa-private" class="node node-tertiary villa-private" id="node-villa-private">
-                    <span>Villa</span>
+                <a href="surfing.html#elmedano" class="node node-secondary elmedano" id="node-elmedano">
+                    <span>El Médano<br>Surf/Kite</span>
+                </a>
+                <a href="surfing.html#spots" class="node node-secondary surfspots" id="node-surfspots">
+                    <span>Surf<br>Spots</span>
+                </a>
+                <a href="surfing.html#callemexico" class="node node-secondary callemexico" id="node-callemexico">
+                    <span>Calle<br>México</span>
+                </a>
+                <a href="surfing.html#school" class="node node-secondary school" id="node-school">
+                    <span>School</span>
+                </a>
+            </div>
+
+            <!-- ===== SOTTO-CATEGORIE AGENCY ===== -->
+            <div class="sub-nodes" data-parent="agency">
+                <a href="agency.html#smm" class="node node-secondary smm" id="node-smm">
+                    <span>SMM &<br>Marketing</span>
+                </a>
+                <a href="agency.html#grafic" class="node node-secondary grafic" id="node-grafic">
+                    <span>Grafic<br>Design</span>
+                </a>
+                <a href="agency.html#artists" class="node node-secondary artists-agency" id="node-artists-agency">
+                    <span>Artists<br>Management</span>
+                </a>
+                <a href="agency.html#start" class="node node-secondary start" id="node-start">
+                    <span>Start<br>Business</span>
+                </a>
+            </div>
+
+            <!-- ===== SOTTO-CATEGORIE ALESSANDRO ===== -->
+            <div class="sub-nodes" data-parent="alessandro">
+                <a href="alessandro.html#chisono" class="node node-secondary chisono" id="node-chisono">
+                    <span>Chi Sono</span>
+                </a>
+                <a href="alessandro.html#perche" class="node node-secondary perche" id="node-perche">
+                    <span>Perché<br>Tenerife</span>
+                </a>
+                <a href="alessandro.html#esperienza" class="node node-secondary esperienza" id="node-esperienza">
+                    <span>La Mia<br>Esperienza</span>
+                </a>
+                <a href="alessandro.html#ruolo" class="node node-secondary ruolo" id="node-ruolo">
+                    <span>Il Mio<br>Ruolo Oggi</span>
+                </a>
+                <a href="alessandro.html#highlights" class="node node-secondary highlights" id="node-highlights">
+                    <span>Highlights</span>
                 </a>
             </div>
 
@@ -167,7 +229,7 @@
         </main>
 
         <footer>
-            <p>&copy; 2024 Lo Squalo - Tenerife Experience</p>
+            <p>&copy; 2024 Lo Squalo - Tenerife Experience | Since 2009</p>
         </footer>
     </div>
 

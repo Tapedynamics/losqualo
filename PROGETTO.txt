@@ -1,6 +1,6 @@
 LO SQUALO - TENERIFE EXPERIENCE
 ================================
-Mappa Concettuale Interattiva
+Mappa Concettuale Interattiva - Since 2009
 
 REPOSITORY: https://github.com/Tapedynamics/losqualo.git
 SITO LIVE: https://losqualo.netlify.app/
@@ -8,10 +8,34 @@ SITO LIVE: https://losqualo.netlify.app/
 
 STRUTTURA PROGETTO
 ------------------
-- index.html      → Pagina principale con mind map
-- styles.css      → Stili desktop e mobile
-- script.js       → Logica interattiva e linee SVG dinamiche
-- tenerife.png    → Sagoma isola di Tenerife
+- index.html                          → Pagina principale con mind map
+- styles.css                          → Stili desktop e mobile + palette colori
+- script.js                           → Logica interattiva e linee SVG dinamiche
+- tenerife.png                        → Sagoma isola di Tenerife
+- Lo Squalo Concept Map.pdf           → Mappa concettuale completa
+- PALETTE COLORI CONCEPT MAP.docx     → Guida palette colori ufficiale
+
+
+PALETTE COLORI UFFICIALE
+------------------------
+FONDO:           #F6F4EF (bianco sporco/sabbia)
+BLU LO SQUALO:   #2F6F8F (asse principale - linee, hover, titoli)
+TESTO:           #2E2E2E (principale) / #6B6B6B (secondario)
+
+MACROCATEGORIE:
+- EVENTI:              #D4A93C (giallo/oro - unico colore caldo)
+- ALLOGGIO:            #E6BFC7 (rosa soft)
+- ESCURSIONI:          #4F8C8C (verde acqua)
+- SURFING TENERIFE:    #5FA6C6 (blu oceano)
+- AGENCY:              #3E5C6E (blu scuro professionale)
+- ALESSANDRO:          #6B8796 (grigio blu)
+
+REGOLE:
+- Un colore = una macro
+- Sotto-voci = variazioni dello stesso colore
+- Hover: +10% saturazione
+- Active: +10% scuro
+- Niente gradienti casuali / ombre colorate
 
 
 FUNZIONALITA' IMPLEMENTATE
@@ -19,63 +43,80 @@ FUNZIONALITA' IMPLEMENTATE
 
 DESKTOP:
 - Mind map interattiva con Tenerife al centro
-- Apertura progressiva: Tenerife → 5 categorie → sotto-categorie
+- Apertura progressiva: Tenerife → 6 categorie → sotto-categorie
 - Linee SVG dinamiche che collegano i nodi (calcolate in tempo reale)
+- Disposizione a esagono delle 6 categorie attorno al centro
 - Animazioni fluide con transizioni CSS
-- Effetto hover sui nodi con glow
+- Effetto hover sui nodi con glow colorato per categoria
 - Pulsante "Indietro" per tornare allo stato precedente
 - Supporto tasto ESC per navigare indietro
 - Responsive scaling per schermi fino a 992px
 
 MOBILE (< 768px):
-- Mini-mappa semplificata con Tenerife e 5 categorie
-- Tap su Tenerife → appaiono le 5 categorie con linee
+- Mini-mappa semplificata con Tenerife e 6 categorie in esagono
+- Tap su Tenerife → appaiono le 6 categorie con linee
 - Tap su categoria → popup radiale con sotto-categorie disposte a cerchio
 - Sfondo sfocato (blur) quando il popup e' aperto
 - Chiusura popup toccando fuori o pulsante "X Chiudi"
 - Elementi ottimizzati per touch (dimensioni generose)
+- Supporto schermi piccoli (< 480px)
 
 
-CATEGORIE E SOTTO-CATEGORIE
----------------------------
-1. PARTY
-   - Daytime & Sunset
-   - Nightlife
-   - H.m.c.
-   - Terraceo
-   - El Barco
-   - Finca
+6 CATEGORIE E SOTTO-CATEGORIE
+-----------------------------
 
-2. FOOD & DRINK
-   - Aperitivo
-   - Brunch
-   - Ristorante
+1. EVENTI (#D4A93C - Giallo/Oro)
+   - Showcases (Boat Party, Terraceo, H.M.C, Exotica, Let's Brunch)
+   - Consigliati (Festival, Folklore)
+   - Movida & Nightlife (Club, Pool Party, Beach Club, Rooftop, VIP Service)
+   - Privati Servizi (Graphic Design, Photo Video, Venue, Decoration, Shows, etc.)
 
-3. STAYING
-   - Villa
-   - Hotel
-   - Apartment
+2. ALLOGGIO (#E6BFC7 - Rosa)
+   - Ostello (Tortuga, Calle Mexico, Gota de Mar)
+   - Villa Finca (Casa Tata, Biofinca, Finca La Fortaleza, Casa Dolores, Beach House)
+   - Surf House (Cama, Habitacion)
+   - Rurale Glamping (Hotel Bubble, Tres Roques)
+   - Apartamento (Diana, Castel Harbour, Alcala)
 
-4. EXCURSION
-   - Action
-   - Chill
+3. ESCURSIONI & ATTIVITA' (#4F8C8C - Verde acqua)
+   - Teide (Jeep, Star Gazing, Quad, Bike, Buggy)
+   - Oceano (Jet Car, Jet Sky, Cetacei)
+   - Sky (Parapente, Paratrike)
+   - Sport (Kite, Wind, Surf, Fishing, Diving)
+   - Private (Catamarano, Barco sin Licencia, Yacht)
+   - Food & Drink (Bodegas, Guacinches)
 
-5. EVENTS SERVICES
-   - Private
-   - Artists booking
-   - Venue & More
-   - Boat
-   - Villa
+4. SURFING TENERIFE (#5FA6C6 - Blu oceano)
+   - Surfbar Franchise
+   - Surf House (B2B, Surf Camp, Reserva Cama, Reserva Habitacion, Gallery)
+   - El Medano Surf/Kite (Rent Shop, School, Food & Drink)
+   - Surf Spots
+   - Calle Mexico (Rent Shop, Food & Drink, Art & Events)
+   - School (Kontraola, K16, Ika Ika, Franz, Vil's)
+
+5. AGENCY B2B (#3E5C6E - Blu scuro)
+   - SMM & Marketing (Marketing, Consulenza, Gestione, Ads, Web, etc.)
+   - Grafic Design (Flyer Menu, Foto Video, Logo, Kit Marca)
+   - Artists Management (Live Music, DJs, Shows, Set Recording, DJ School, etc.)
+   - Start Business (Consulenza, Affinacamento, Modelli, Tavola Calda, etc.)
+
+6. ALESSANDRO - Behind the Brand (#6B8796 - Grigio blu)
+   - Chi Sono
+   - Perche' Tenerife
+   - La Mia Esperienza
+   - Il Mio Ruolo Oggi
+   - Highlights
 
 
 DA FARE (PROSSIME SESSIONI)
 ---------------------------
 - Creare le pagine interne per ogni categoria:
-  * party.html
-  * food-drink.html
-  * staying.html
-  * excursion.html
-  * events.html
+  * eventi.html
+  * alloggio.html
+  * escursioni.html
+  * surfing.html
+  * agency.html
+  * alessandro.html
 - Aggiungere contenuti reali (foto, descrizioni, contatti)
 - Eventuale form di contatto
 - SEO e meta tag
@@ -86,8 +127,9 @@ NOTE TECNICHE
 - Le linee SVG sono calcolate dinamicamente con getBoundingClientRect()
 - Aggiornamento linee ogni 50ms per seguire le animazioni
 - Il popup radiale calcola le posizioni con trigonometria (seno/coseno)
+- CSS variables per gestire la palette colori centralmente
 - CSS media queries per responsive design
 - Nessuna libreria esterna (vanilla JS)
 
 
-Data ultimo aggiornamento: 12 Dicembre 2024
+Data ultimo aggiornamento: 16 Dicembre 2024
