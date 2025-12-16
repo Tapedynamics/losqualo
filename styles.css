@@ -134,7 +134,6 @@ header {
 .line.main-line {
     stroke: var(--blu-squalo);
     stroke-width: 2.5;
-    opacity: 0.6;
 }
 
 .line.sub-line {
