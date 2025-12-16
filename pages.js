@@ -659,11 +659,24 @@ function initMobilePageMenu() {
             if (!document.querySelector('.mobile-page-map')) {
                 createMobilePageMap();
             }
+            // Aggiorna linee mobile su resize
+            const mobileMap = document.querySelector('.mobile-page-map');
+            if (mobileMap) {
+                setTimeout(() => updateMobileLines(mobileMap), 100);
+            }
         } else {
             const mobileMap = document.querySelector('.mobile-page-map');
             if (mobileMap) mobileMap.remove();
         }
     });
+
+    // Aggiorna linee mobile periodicamente
+    setInterval(() => {
+        const mobileMap = document.querySelector('.mobile-page-map');
+        if (mobileMap && window.innerWidth <= 768) {
+            updateMobileLines(mobileMap);
+        }
+    }, 100);
 }
 
 function createMobilePageMap() {
@@ -725,11 +738,62 @@ function createMobilePageMap() {
 
     main.parentNode.insertBefore(mobileMap, main.nextSibling);
 
+    // Crea SVG per le linee mobile
+    createMobileSVGLines(mobileMap, subcatNodes.length);
+
     // Crea overlay radiale
     createPageRadialOverlay();
 
     // Event listeners
     initMobilePageEvents(mobileMap, currentPage);
+
+    // Aggiorna linee dopo rendering
+    setTimeout(() => updateMobileLines(mobileMap), 100);
+}
+
+function createMobileSVGLines(mobileMap, nodeCount) {
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.classList.add('mobile-connections');
+    svg.id = 'mobile-svg-connections';
+
+    for (let i = 0; i < nodeCount; i++) {
+        const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+        line.classList.add('mobile-line');
+        line.id = `mobile-line-${i}`;
+        svg.appendChild(line);
+    }
+
+    // Inserisci SVG all'inizio del mobile map
+    mobileMap.insertBefore(svg, mobileMap.firstChild);
+}
+
+function updateMobileLines(mobileMap) {
+    const svg = mobileMap.querySelector('.mobile-connections');
+    if (!svg) return;
+
+    const center = mobileMap.querySelector('.category-center-mobile');
+    const nodes = mobileMap.querySelectorAll('.mobile-node-primary');
+
+    if (!center) return;
+
+    const svgRect = svg.getBoundingClientRect();
+    const centerRect = center.getBoundingClientRect();
+    const centerX = centerRect.left + centerRect.width / 2 - svgRect.left;
+    const centerY = centerRect.top + centerRect.height / 2 - svgRect.top;
+
+    nodes.forEach((node, index) => {
+        const line = svg.querySelector(`#mobile-line-${index}`);
+        if (!line) return;
+
+        const nodeRect = node.getBoundingClientRect();
+        const nodeX = nodeRect.left + nodeRect.width / 2 - svgRect.left;
+        const nodeY = nodeRect.top + nodeRect.height / 2 - svgRect.top;
+
+        line.setAttribute('x1', centerX);
+        line.setAttribute('y1', centerY);
+        line.setAttribute('x2', nodeX);
+        line.setAttribute('y2', nodeY);
+    });
 }
 
 function getSubcategoryPositions(page) {

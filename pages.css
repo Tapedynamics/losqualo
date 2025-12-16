@@ -1275,4 +1275,69 @@ header {
         cursor: pointer;
         z-index: 20;
     }
+
+    /* ===== MOBILE SVG LINES ===== */
+    .mobile-page-map .mobile-connections {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    .mobile-page-map .mobile-line {
+        stroke: var(--blu-squalo);
+        stroke-width: 2;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+    }
+
+    .mobile-page-map[data-state="categories"] .mobile-line {
+        opacity: 0.4;
+    }
+
+    /* ===== RADIAL POPUP COLORS FOR PAGES ===== */
+    /* Radial nodes default styling */
+    .radial-node {
+        background: linear-gradient(145deg, #3d5a80, #2c4a6e);
+        color: white;
+    }
+
+    /* EVENTI level 3 nodes */
+    .page-eventi .radial-node {
+        background: linear-gradient(145deg, #e8c060, #d4a840);
+        color: var(--text-primary);
+    }
+
+    /* ALLOGGIO level 3 nodes */
+    .page-alloggio .radial-node {
+        background: linear-gradient(145deg, #e8c8d0, #d4a8b8);
+        color: var(--text-primary);
+    }
+
+    /* ESCURSIONI level 3 nodes */
+    .page-escursioni .radial-node {
+        background: linear-gradient(145deg, #5f9a9a, #4a8686);
+        color: white;
+    }
+
+    /* SURFING level 3 nodes */
+    .page-surfing .radial-node {
+        background: linear-gradient(145deg, #5ab2d6, #4698bc);
+        color: white;
+    }
+
+    /* AGENCY level 3 nodes */
+    .page-agency .radial-node {
+        background: linear-gradient(145deg, #4a6a82, #36566e);
+        color: white;
+    }
+
+    /* ALESSANDRO level 3 nodes */
+    .page-alessandro .radial-node {
+        background: linear-gradient(145deg, #7a96a6, #668290);
+        color: white;
+    }
 }
