@@ -76,6 +76,85 @@ header {
     animation: float 4s ease-in-out infinite;
 }
 
+/* ===== VISIBILITA' NODI PAGINE ===== */
+/* Primary nodes nascosti di default */
+.page-map .primary-nodes .node {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+    pointer-events: none;
+}
+
+/* Mostra primary nodes quando stato = categories o subcategories */
+.page-map[data-state="categories"] .primary-nodes .node,
+.page-map[data-state="subcategories"] .primary-nodes .node {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    pointer-events: auto;
+}
+
+/* Animazione staggered per primary nodes */
+.page-map[data-state="categories"] .primary-nodes .node:nth-child(1),
+.page-map[data-state="subcategories"] .primary-nodes .node:nth-child(1) { transition-delay: 0s; }
+.page-map[data-state="categories"] .primary-nodes .node:nth-child(2),
+.page-map[data-state="subcategories"] .primary-nodes .node:nth-child(2) { transition-delay: 0.07s; }
+.page-map[data-state="categories"] .primary-nodes .node:nth-child(3),
+.page-map[data-state="subcategories"] .primary-nodes .node:nth-child(3) { transition-delay: 0.14s; }
+.page-map[data-state="categories"] .primary-nodes .node:nth-child(4),
+.page-map[data-state="subcategories"] .primary-nodes .node:nth-child(4) { transition-delay: 0.21s; }
+.page-map[data-state="categories"] .primary-nodes .node:nth-child(5),
+.page-map[data-state="subcategories"] .primary-nodes .node:nth-child(5) { transition-delay: 0.28s; }
+.page-map[data-state="categories"] .primary-nodes .node:nth-child(6),
+.page-map[data-state="subcategories"] .primary-nodes .node:nth-child(6) { transition-delay: 0.35s; }
+
+/* Sub-nodes nascosti di default */
+.page-map .sub-nodes {
+    pointer-events: none;
+}
+
+.page-map .sub-nodes .node {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+    pointer-events: none;
+}
+
+/* Mostra sub-nodes quando hanno classe visible */
+.page-map .sub-nodes.visible {
+    pointer-events: auto;
+}
+
+.page-map .sub-nodes.visible .node {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    pointer-events: auto;
+}
+
+/* Animazione staggered per sub-nodes */
+.page-map .sub-nodes.visible .node:nth-child(1) { transition-delay: 0s; }
+.page-map .sub-nodes.visible .node:nth-child(2) { transition-delay: 0.05s; }
+.page-map .sub-nodes.visible .node:nth-child(3) { transition-delay: 0.1s; }
+.page-map .sub-nodes.visible .node:nth-child(4) { transition-delay: 0.15s; }
+.page-map .sub-nodes.visible .node:nth-child(5) { transition-delay: 0.2s; }
+.page-map .sub-nodes.visible .node:nth-child(6) { transition-delay: 0.25s; }
+.page-map .sub-nodes.visible .node:nth-child(7) { transition-delay: 0.3s; }
+
+/* Nascondi hint quando stato != initial */
+.page-map[data-state="categories"] .click-hint,
+.page-map[data-state="subcategories"] .click-hint {
+    display: none;
+}
+
+/* Pulsante indietro visibile solo quando non initial */
+.page-map .back-btn {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.page-map[data-state="categories"] .back-btn,
+.page-map[data-state="subcategories"] .back-btn {
+    opacity: 1;
+    pointer-events: auto;
+}
+
 /* ===== COLORI CENTRO PER CATEGORIA ===== */
 .eventi-bg {
     background: linear-gradient(145deg, var(--eventi-main), #c49a30);
