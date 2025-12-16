@@ -397,7 +397,7 @@ function goPageBack() {
 }
 
 // ===== MOBILE PAGE MENU =====
-let mobilePageState = 'initial';
+let mobilePageState = 'categories';  // Mobile parte con categorie visibili
 
 // Dati per popup radiale mobile per pagina
 const pageSubNodesData = {
@@ -677,7 +677,7 @@ function createMobilePageMap() {
 
     const mobileMap = document.createElement('div');
     mobileMap.classList.add('mobile-page-map');
-    mobileMap.dataset.state = 'initial';
+    mobileMap.dataset.state = 'categories';  // Parte con categorie visibili
 
     // Determina colore e nome della categoria
     const categoryInfo = {
@@ -691,7 +691,7 @@ function createMobilePageMap() {
 
     const info = categoryInfo[currentPage];
 
-    // Centro - Categoria
+    // Centro - Categoria (senza hint perché categorie già visibili)
     const center = document.createElement('div');
     center.classList.add('category-center-mobile');
     center.id = 'mobile-category-center';
@@ -699,7 +699,6 @@ function createMobilePageMap() {
         <div class="category-icon-mobile ${info.class}">
             <span>${info.name}</span>
         </div>
-        <span class="click-hint-mobile">Tocca per esplorare</span>
     `;
     mobileMap.appendChild(center);
 
@@ -931,7 +930,7 @@ function showMobilePageCategories(mobileMap) {
 
 function goMobilePageBack(mobileMap) {
     if (mobilePageState === 'categories') {
-        mobileMap.dataset.state = 'initial';
-        mobilePageState = 'initial';
+        // Torna alla home
+        window.location.href = 'index.html';
     }
 }
