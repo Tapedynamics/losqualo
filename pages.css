@@ -158,23 +158,16 @@ header {
 .page-map .sub-nodes.visible .node:nth-child(6) { transition-delay: 0.25s; }
 .page-map .sub-nodes.visible .node:nth-child(7) { transition-delay: 0.3s; }
 
-/* Nascondi hint quando stato != initial */
-.page-map[data-state="categories"] .click-hint,
-.page-map[data-state="subcategories"] .click-hint {
+/* Nascondi hint - pagine partono con categories */
+.page-map .click-hint {
     display: none;
 }
 
-/* Pulsante indietro visibile solo quando non initial */
+/* Pulsante indietro - sempre visibile dato che pagine partono con categories */
 .page-map .back-btn {
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-}
-
-.page-map[data-state="categories"] .back-btn,
-.page-map[data-state="subcategories"] .back-btn {
     opacity: 1;
     pointer-events: auto;
+    transition: opacity 0.3s ease;
 }
 
 /* ===== COLORI CENTRO PER CATEGORIA ===== */

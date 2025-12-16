@@ -10,7 +10,8 @@
       "WebSearch",
       "WebFetch(domain:www.cssscript.com)",
       "WebFetch(domain:gist.github.com)",
-      "WebFetch(domain:blog.greggant.com)"
+      "WebFetch(domain:blog.greggant.com)",
+      "Bash(dir:*)"
     ]
   }
 }

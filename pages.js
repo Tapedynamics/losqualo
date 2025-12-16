@@ -5,10 +5,15 @@ document.addEventListener('DOMContentLoaded', function() {
     initPageMap();
     initPageLines();
     initMobilePageMenu();
+
+    // Mostra linee principali all'avvio (pagine partono con categories)
+    document.querySelectorAll('.main-line').forEach(line => {
+        line.classList.add('visible');
+    });
 });
 
 // Stato corrente
-let pageState = 'initial';
+let pageState = 'categories';  // Pagine partono con categorie visibili
 let expandedSubcategory = null;
 
 // ===== CONFIGURAZIONE LINEE PER PAGINA =====
@@ -386,13 +391,8 @@ function goPageBack() {
         pageState = 'categories';
         expandedSubcategory = null;
     } else if (pageState === 'categories') {
-        pageMap.dataset.state = 'initial';
-        pageState = 'initial';
-
-        // Nascondi le linee principali
-        document.querySelectorAll('.main-line').forEach(line => {
-            line.classList.remove('visible');
-        });
+        // Torna alla home
+        window.location.href = 'index.html';
     }
 }
 
