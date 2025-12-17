@@ -108,28 +108,81 @@ MOBILE (< 768px):
    - Highlights
 
 
+PAGINE CATEGORIA (LIVELLO 2) - COMPLETATE
+-----------------------------------------
+Ogni categoria ha ora la propria pagina con mini mind-map:
+
+STRUTTURA FILE:
+- eventi.html      → Pagina Eventi con 4 sotto-categorie
+- alloggio.html    → Pagina Alloggio con 5 sotto-categorie
+- escursioni.html  → Pagina Escursioni con 6 sotto-categorie
+- surfing.html     → Pagina Surfing con 6 sotto-categorie
+- agency.html      → Pagina Agency con 4 sotto-categorie
+- alessandro.html  → Pagina Alessandro con 5 sotto-categorie (no livello 3)
+- pages.css        → Stili specifici per le pagine categoria
+- pages.js         → Logica interattiva per le pagine categoria
+
+NAVIGAZIONE:
+- Home (index.html): click su categoria → va direttamente alla pagina
+- Pagina categoria: nodi livello 2 visibili immediatamente
+- Click su nodo livello 2 → mostra elementi livello 3
+- Pulsante "Indietro" / ESC → torna al livello precedente o alla home
+
+DESKTOP (pagine categoria):
+- Mini mind-map con centro categoria
+- Linee SVG dinamiche dal centro ai nodi livello 2
+- Click su nodo livello 2 → espande elementi livello 3 con linee
+- Nodi posizionati con percentuali (responsive)
+- Colori specifici per ogni categoria/sotto-categoria
+
+MOBILE (pagine categoria):
+- Nodi livello 2 visibili subito attorno al centro
+- Linee SVG dinamiche dal centro ai nodi
+- Tap su nodo livello 2 → popup radiale con livello 3
+- Colori popup ottimizzati per leggibilita':
+  * Eventi: sfondo dorato, testo scuro
+  * Alloggio: sfondo rosa, testo scuro
+  * Escursioni: sfondo teal, testo bianco
+  * Surfing: sfondo azzurro, testo bianco
+  * Agency: sfondo blu scuro, testo bianco
+  * Alessandro: sfondo grigio-blu, testo bianco
+
+
 DA FARE (PROSSIME SESSIONI)
 ---------------------------
-- Creare le pagine interne per ogni categoria:
-  * eventi.html
-  * alloggio.html
-  * escursioni.html
-  * surfing.html
-  * agency.html
-  * alessandro.html
 - Aggiungere contenuti reali (foto, descrizioni, contatti)
+- Creare pagine dettaglio per ogni elemento livello 3
 - Eventuale form di contatto
 - SEO e meta tag
+- Ottimizzazione performance
 
 
 NOTE TECNICHE
 -------------
 - Le linee SVG sono calcolate dinamicamente con getBoundingClientRect()
-- Aggiornamento linee ogni 50ms per seguire le animazioni
+- Aggiornamento linee ogni 50ms (desktop) / 100ms (mobile)
 - Il popup radiale calcola le posizioni con trigonometria (seno/coseno)
 - CSS variables per gestire la palette colori centralmente
 - CSS media queries per responsive design
+- data-state attribute per gestire visibilita' nodi
 - Nessuna libreria esterna (vanilla JS)
 
 
-Data ultimo aggiornamento: 16 Dicembre 2024
+CRONOLOGIA MODIFICHE
+--------------------
+17 Dicembre 2024:
+- Creato pagine categoria (eventi, alloggio, escursioni, surfing, agency, alessandro)
+- Creato pages.css e pages.js per gestione pagine categoria
+- Semplificato home page: click su categoria va direttamente alla pagina
+- Pagine partono con nodi visibili (data-state="categories")
+- Fix mobile: nodi visibili immediatamente su pagine categoria
+- Aggiunto linee SVG su mobile per pagine categoria
+- Fix colori popup radiale livello 3 per leggibilita'
+
+16 Dicembre 2024:
+- Creazione progetto iniziale
+- Mind map interattiva con 6 categorie
+- Versione desktop e mobile funzionanti
+
+
+Data ultimo aggiornamento: 17 Dicembre 2024
