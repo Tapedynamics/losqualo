@@ -20,36 +20,34 @@
             <!-- SVG per le linee dinamiche -->
             <svg class="connections" id="svg-connections">
                 <!-- Linee: Centro -> Sotto-categorie -->
+                <line class="line main-line" id="line-center-appartamento"></line>
                 <line class="line main-line" id="line-center-ostello"></line>
-                <line class="line main-line" id="line-center-villa"></line>
-                <line class="line main-line" id="line-center-surfhouse"></line>
                 <line class="line main-line" id="line-center-rurale"></line>
-                <line class="line main-line" id="line-center-apartamento"></line>
+                <line class="line main-line" id="line-center-surfhouse"></line>
+                <line class="line main-line" id="line-center-villa"></line>
+
+                <!-- Linee Appartamento -->
+                <line class="line sub-line" data-category="appartamento" id="line-appartamento-alcala"></line>
+                <line class="line sub-line" data-category="appartamento" id="line-appartamento-lasamericas"></line>
+                <line class="line sub-line" data-category="appartamento" id="line-appartamento-loscristianos"></line>
 
                 <!-- Linee Ostello -->
-                <line class="line sub-line" data-category="ostello" id="line-ostello-tortuga"></line>
-                <line class="line sub-line" data-category="ostello" id="line-ostello-callemexico"></line>
                 <line class="line sub-line" data-category="ostello" id="line-ostello-gotademar"></line>
 
-                <!-- Linee Villa Finca -->
-                <line class="line sub-line" data-category="villa" id="line-villa-casatata"></line>
-                <line class="line sub-line" data-category="villa" id="line-villa-biofinca"></line>
-                <line class="line sub-line" data-category="villa" id="line-villa-fortaleza"></line>
-                <line class="line sub-line" data-category="villa" id="line-villa-casadolores"></line>
-                <line class="line sub-line" data-category="villa" id="line-villa-beachhouse"></line>
+                <!-- Linee Rurale/Glamping -->
+                <line class="line sub-line" data-category="rurale" id="line-rurale-cueva"></line>
+                <line class="line sub-line" data-category="rurale" id="line-rurale-dome"></line>
+                <line class="line sub-line" data-category="rurale" id="line-rurale-hotelrural"></line>
 
                 <!-- Linee Surf House -->
-                <line class="line sub-line" data-category="surfhouse" id="line-surfhouse-cama"></line>
-                <line class="line sub-line" data-category="surfhouse" id="line-surfhouse-habitacion"></line>
+                <line class="line sub-line" data-category="surfhouse" id="line-surfhouse-main"></line>
 
-                <!-- Linee Rurale Glamping -->
-                <line class="line sub-line" data-category="rurale" id="line-rurale-hotelbubble"></line>
-                <line class="line sub-line" data-category="rurale" id="line-rurale-tresroques"></line>
-
-                <!-- Linee Apartamento -->
-                <line class="line sub-line" data-category="apartamento" id="line-apartamento-diana"></line>
-                <line class="line sub-line" data-category="apartamento" id="line-apartamento-castelharbour"></line>
-                <line class="line sub-line" data-category="apartamento" id="line-apartamento-alcala"></line>
+                <!-- Linee Villa/Finca -->
+                <line class="line sub-line" data-category="villa" id="line-villa-beachhouse"></line>
+                <line class="line sub-line" data-category="villa" id="line-villa-atogo"></line>
+                <line class="line sub-line" data-category="villa" id="line-villa-taucho"></line>
+                <line class="line sub-line" data-category="villa" id="line-villa-fortaleza"></line>
+                <line class="line sub-line" data-category="villa" id="line-villa-playaparaiso"></line>
             </svg>
 
             <!-- Centro - Categoria -->
@@ -62,85 +60,79 @@
 
             <!-- Sotto-categorie (Livello 2) -->
             <div class="primary-nodes">
+                <div class="node node-primary apartamento-node" id="node-appartamento" data-category="appartamento">
+                    <span>Appartamento</span>
+                </div>
                 <div class="node node-primary ostello-node" id="node-ostello" data-category="ostello">
                     <span>Ostello</span>
-                </div>
-                <div class="node node-primary villa-node" id="node-villa" data-category="villa">
-                    <span>Villa<br>Finca</span>
-                </div>
-                <div class="node node-primary surfhouse-node" id="node-surfhouse" data-category="surfhouse">
-                    <span>Surf<br>House</span>
                 </div>
                 <div class="node node-primary rurale-node" id="node-rurale" data-category="rurale">
                     <span>Rurale<br>Glamping</span>
                 </div>
-                <div class="node node-primary apartamento-node" id="node-apartamento" data-category="apartamento">
-                    <span>Apartamento</span>
+                <div class="node node-primary surfhouse-node" id="node-surfhouse" data-category="surfhouse">
+                    <span>Surf<br>House</span>
                 </div>
+                <div class="node node-primary villa-node" id="node-villa" data-category="villa">
+                    <span>Villa<br>Finca</span>
+                </div>
+            </div>
+
+            <!-- Elementi Livello 3 - APPARTAMENTO -->
+            <div class="sub-nodes" data-parent="appartamento">
+                <a href="alloggio/alcala.html" class="node node-secondary item-alcala" id="node-alcala">
+                    <span>Alcalá</span>
+                </a>
+                <a href="alloggio/studio-las-americas.html" class="node node-secondary item-lasamericas" id="node-lasamericas">
+                    <span>Studio<br>Las Américas</span>
+                </a>
+                <a href="alloggio/studio-los-cristianos.html" class="node node-secondary item-loscristianos" id="node-loscristianos">
+                    <span>Studio<br>Los Cristianos</span>
+                </a>
             </div>
 
             <!-- Elementi Livello 3 - OSTELLO -->
             <div class="sub-nodes" data-parent="ostello">
-                <a href="#tortuga" class="node node-secondary item-tortuga" id="node-tortuga">
-                    <span>Tortuga</span>
-                </a>
-                <a href="#callemexico-ost" class="node node-secondary item-callemexico-ost" id="node-callemexico-ost">
-                    <span>Calle<br>Mexico</span>
-                </a>
-                <a href="#gotademar" class="node node-secondary item-gotademar" id="node-gotademar">
+                <a href="alloggio/gota-de-mar.html" class="node node-secondary item-gotademar" id="node-gotademar">
                     <span>Gota<br>de Mar</span>
-                </a>
-            </div>
-
-            <!-- Elementi Livello 3 - VILLA FINCA -->
-            <div class="sub-nodes" data-parent="villa">
-                <a href="#casatata" class="node node-secondary item-casatata" id="node-casatata">
-                    <span>Casa<br>Tata</span>
-                </a>
-                <a href="#biofinca" class="node node-secondary item-biofinca" id="node-biofinca">
-                    <span>Biofinca</span>
-                </a>
-                <a href="#fortaleza" class="node node-secondary item-fortaleza" id="node-fortaleza">
-                    <span>Finca La<br>Fortaleza</span>
-                </a>
-                <a href="#casadolores" class="node node-secondary item-casadolores" id="node-casadolores">
-                    <span>Casa<br>Dolores</span>
-                </a>
-                <a href="#beachhouse" class="node node-secondary item-beachhouse" id="node-beachhouse">
-                    <span>Beach<br>House</span>
-                </a>
-            </div>
-
-            <!-- Elementi Livello 3 - SURF HOUSE -->
-            <div class="sub-nodes" data-parent="surfhouse">
-                <a href="#cama" class="node node-secondary item-cama" id="node-cama">
-                    <span>Cama</span>
-                </a>
-                <a href="#habitacion" class="node node-secondary item-habitacion" id="node-habitacion">
-                    <span>Habitacion</span>
                 </a>
             </div>
 
             <!-- Elementi Livello 3 - RURALE GLAMPING -->
             <div class="sub-nodes" data-parent="rurale">
-                <a href="#hotelbubble" class="node node-secondary item-hotelbubble" id="node-hotelbubble">
-                    <span>Hotel<br>Bubble</span>
+                <a href="alloggio/cueva-san-miguel.html" class="node node-secondary item-cueva" id="node-cueva">
+                    <span>Cueva<br>San Miguel</span>
                 </a>
-                <a href="#tresroques" class="node node-secondary item-tresroques" id="node-tresroques">
-                    <span>Tres<br>Roques</span>
+                <a href="alloggio/dome-ifonche.html" class="node node-secondary item-dome" id="node-dome">
+                    <span>Dome<br>Experience</span>
+                </a>
+                <a href="alloggio/hotel-rural-arona.html" class="node node-secondary item-hotelrural" id="node-hotelrural">
+                    <span>Hotel<br>Rural</span>
                 </a>
             </div>
 
-            <!-- Elementi Livello 3 - APARTAMENTO -->
-            <div class="sub-nodes" data-parent="apartamento">
-                <a href="#diana" class="node node-secondary item-diana" id="node-diana">
-                    <span>Diana</span>
+            <!-- Elementi Livello 3 - SURF HOUSE -->
+            <div class="sub-nodes" data-parent="surfhouse">
+                <a href="alloggio/surf-house.html" class="node node-secondary item-surfhouse-main" id="node-surfhouse-main">
+                    <span>Surf<br>House</span>
                 </a>
-                <a href="#castelharbour" class="node node-secondary item-castelharbour" id="node-castelharbour">
-                    <span>Castel<br>Harbour</span>
+            </div>
+
+            <!-- Elementi Livello 3 - VILLA FINCA -->
+            <div class="sub-nodes" data-parent="villa">
+                <a href="alloggio/beach-house.html" class="node node-secondary item-beachhouse" id="node-beachhouse">
+                    <span>Beach<br>House</span>
                 </a>
-                <a href="#alcala" class="node node-secondary item-alcala" id="node-alcala">
-                    <span>Alcala</span>
+                <a href="alloggio/casa-rural-atogo.html" class="node node-secondary item-atogo" id="node-atogo">
+                    <span>Casa<br>Atogo</span>
+                </a>
+                <a href="alloggio/casa-rural-taucho.html" class="node node-secondary item-taucho" id="node-taucho">
+                    <span>Casa<br>Dolores</span>
+                </a>
+                <a href="alloggio/finca-la-fortaleza.html" class="node node-secondary item-fortaleza" id="node-fortaleza">
+                    <span>Finca La<br>Fortaleza</span>
+                </a>
+                <a href="alloggio/villa-playa-paraiso.html" class="node node-secondary item-playaparaiso" id="node-playaparaiso">
+                    <span>Villa<br>Playa Paraíso</span>
                 </a>
             </div>
 

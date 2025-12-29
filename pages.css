@@ -412,113 +412,99 @@ header {
 }
 
 /* Elementi OSTELLO */
-.page-alloggio .item-tortuga {
-    background: linear-gradient(145deg, #f0dce4, #dcc0c8);
-    color: var(--text-primary);
-    top: 5%;
-    left: 8%;
-}
-
-.page-alloggio .item-callemexico-ost {
-    background: linear-gradient(145deg, #ecd8e0, #d8bcc4);
-    color: var(--text-primary);
-    top: 5%;
-    left: 22%;
-}
-
 .page-alloggio .item-gotademar {
     background: linear-gradient(145deg, #e8d4dc, #d4b8c0);
     color: var(--text-primary);
-    top: 18%;
-    left: 5%;
+    top: 5%;
+    left: 15%;
+}
+
+/* Elementi APPARTAMENTO */
+.page-alloggio .item-alcala {
+    background: linear-gradient(145deg, #f0ceb8, #dcba9c);
+    color: var(--text-primary);
+    top: 88%;
+    left: 15%;
+}
+
+.page-alloggio .item-lasamericas {
+    background: linear-gradient(145deg, #eccab4, #d8b698);
+    color: var(--text-primary);
+    top: 88%;
+    left: 30%;
+}
+
+.page-alloggio .item-loscristianos {
+    background: linear-gradient(145deg, #e8c6b0, #d4b294);
+    color: var(--text-primary);
+    top: 88%;
+    left: 45%;
+}
+
+/* Elementi RURALE GLAMPING */
+.page-alloggio .item-cueva {
+    background: linear-gradient(145deg, #dbb4ac, #c79890);
+    color: var(--text-primary);
+    top: 88%;
+    left: 55%;
+}
+
+.page-alloggio .item-dome {
+    background: linear-gradient(145deg, #d7b0a8, #c3948c);
+    color: var(--text-primary);
+    top: 88%;
+    left: 70%;
+}
+
+.page-alloggio .item-hotelrural {
+    background: linear-gradient(145deg, #d3aca4, #bf9088);
+    color: var(--text-primary);
+    top: 88%;
+    left: 85%;
+}
+
+/* Elementi SURF HOUSE */
+.page-alloggio .item-surfhouse-main {
+    background: linear-gradient(145deg, #edd0c2, #d9bca8);
+    color: var(--text-primary);
+    top: 50%;
+    left: 92%;
 }
 
 /* Elementi VILLA FINCA */
-.page-alloggio .item-casatata {
+.page-alloggio .item-beachhouse {
     background: linear-gradient(145deg, #e4b8c2, #d09ca6);
     color: var(--text-primary);
     top: 5%;
-    left: 65%;
+    left: 60%;
 }
 
-.page-alloggio .item-biofinca {
+.page-alloggio .item-atogo {
     background: linear-gradient(145deg, #e0b4be, #cc98a2);
     color: var(--text-primary);
     top: 5%;
-    left: 80%;
+    left: 75%;
+}
+
+.page-alloggio .item-taucho {
+    background: linear-gradient(145deg, #dcb0ba, #c8949e);
+    color: var(--text-primary);
+    top: 5%;
+    left: 88%;
 }
 
 .page-alloggio .item-fortaleza {
-    background: linear-gradient(145deg, #dcb0ba, #c8949e);
+    background: linear-gradient(145deg, #d8acb6, #c49098);
     color: var(--text-primary);
     top: 18%;
     left: 88%;
 }
 
-.page-alloggio .item-casadolores {
-    background: linear-gradient(145deg, #d8acb6, #c49098);
-    color: var(--text-primary);
-    top: 32%;
-    left: 85%;
-}
-
-.page-alloggio .item-beachhouse {
+.page-alloggio .item-playaparaiso {
     background: linear-gradient(145deg, #e2b8c4, #ce9ca8);
     color: var(--text-primary);
     top: 32%;
-    left: 70%;
-}
-
-/* Elementi SURF HOUSE */
-.page-alloggio .item-cama {
-    background: linear-gradient(145deg, #edd0c2, #d9bca8);
-    color: var(--text-primary);
-    top: 45%;
-    left: 92%;
-}
-
-.page-alloggio .item-habitacion {
-    background: linear-gradient(145deg, #e9ccbe, #d5b8a4);
-    color: var(--text-primary);
-    top: 58%;
-    left: 92%;
-}
-
-/* Elementi RURALE GLAMPING */
-.page-alloggio .item-hotelbubble {
-    background: linear-gradient(145deg, #dbb4ac, #c79890);
-    color: var(--text-primary);
-    top: 88%;
-    left: 72%;
-}
-
-.page-alloggio .item-tresroques {
-    background: linear-gradient(145deg, #d7b0a8, #c3948c);
-    color: var(--text-primary);
-    top: 88%;
-    left: 58%;
-}
-
-/* Elementi APARTAMENTO */
-.page-alloggio .item-diana {
-    background: linear-gradient(145deg, #f0ceb8, #dcba9c);
-    color: var(--text-primary);
-    top: 88%;
-    left: 18%;
-}
-
-.page-alloggio .item-castelharbour {
-    background: linear-gradient(145deg, #eccab4, #d8b698);
-    color: var(--text-primary);
-    top: 88%;
-    left: 35%;
-}
-
-.page-alloggio .item-alcala {
-    background: linear-gradient(145deg, #e8c6b0, #d4b294);
-    color: var(--text-primary);
-    top: 78%;
-    left: 12%;
+    left: 85%;
 }
 
 /* =============================================
