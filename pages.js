@@ -55,36 +55,34 @@ const pageLineConfig = {
     },
     alloggio: {
         main: [
+            { line: 'line-center-appartamento', from: 'category-trigger', to: 'node-appartamento' },
             { line: 'line-center-ostello', from: 'category-trigger', to: 'node-ostello' },
-            { line: 'line-center-villa', from: 'category-trigger', to: 'node-villa' },
-            { line: 'line-center-surfhouse', from: 'category-trigger', to: 'node-surfhouse' },
             { line: 'line-center-rurale', from: 'category-trigger', to: 'node-rurale' },
-            { line: 'line-center-apartamento', from: 'category-trigger', to: 'node-apartamento' }
+            { line: 'line-center-surfhouse', from: 'category-trigger', to: 'node-surfhouse' },
+            { line: 'line-center-villa', from: 'category-trigger', to: 'node-villa' }
+        ],
+        appartamento: [
+            { line: 'line-appartamento-alcala', from: 'node-appartamento', to: 'node-alcala' },
+            { line: 'line-appartamento-lasamericas', from: 'node-appartamento', to: 'node-lasamericas' },
+            { line: 'line-appartamento-loscristianos', from: 'node-appartamento', to: 'node-loscristianos' }
         ],
         ostello: [
-            { line: 'line-ostello-tortuga', from: 'node-ostello', to: 'node-tortuga' },
-            { line: 'line-ostello-callemexico', from: 'node-ostello', to: 'node-callemexico-ost' },
             { line: 'line-ostello-gotademar', from: 'node-ostello', to: 'node-gotademar' }
         ],
-        villa: [
-            { line: 'line-villa-casatata', from: 'node-villa', to: 'node-casatata' },
-            { line: 'line-villa-biofinca', from: 'node-villa', to: 'node-biofinca' },
-            { line: 'line-villa-fortaleza', from: 'node-villa', to: 'node-fortaleza' },
-            { line: 'line-villa-casadolores', from: 'node-villa', to: 'node-casadolores' },
-            { line: 'line-villa-beachhouse', from: 'node-villa', to: 'node-beachhouse' }
+        rurale: [
+            { line: 'line-rurale-cueva', from: 'node-rurale', to: 'node-cueva' },
+            { line: 'line-rurale-dome', from: 'node-rurale', to: 'node-dome' },
+            { line: 'line-rurale-hotelrural', from: 'node-rurale', to: 'node-hotelrural' }
         ],
         surfhouse: [
-            { line: 'line-surfhouse-cama', from: 'node-surfhouse', to: 'node-cama' },
-            { line: 'line-surfhouse-habitacion', from: 'node-surfhouse', to: 'node-habitacion' }
+            { line: 'line-surfhouse-main', from: 'node-surfhouse', to: 'node-surfhouse-main' }
         ],
-        rurale: [
-            { line: 'line-rurale-hotelbubble', from: 'node-rurale', to: 'node-hotelbubble' },
-            { line: 'line-rurale-tresroques', from: 'node-rurale', to: 'node-tresroques' }
-        ],
-        apartamento: [
-            { line: 'line-apartamento-diana', from: 'node-apartamento', to: 'node-diana' },
-            { line: 'line-apartamento-castelharbour', from: 'node-apartamento', to: 'node-castelharbour' },
-            { line: 'line-apartamento-alcala', from: 'node-apartamento', to: 'node-alcala' }
+        villa: [
+            { line: 'line-villa-beachhouse', from: 'node-villa', to: 'node-beachhouse' },
+            { line: 'line-villa-atogo', from: 'node-villa', to: 'node-atogo' },
+            { line: 'line-villa-taucho', from: 'node-villa', to: 'node-taucho' },
+            { line: 'line-villa-fortaleza', from: 'node-villa', to: 'node-fortaleza' },
+            { line: 'line-villa-playaparaiso', from: 'node-villa', to: 'node-playaparaiso' }
         ]
     },
     escursioni: {
@@ -447,49 +445,47 @@ const pageSubNodesData = {
         }
     },
     alloggio: {
+        appartamento: {
+            name: 'Appartamento',
+            class: 'radial-appartamento',
+            subs: [
+                { id: 'alcala', name: 'Alcalá', href: 'alloggio/alcala.html' },
+                { id: 'lasamericas', name: 'Studio Las Américas', href: 'alloggio/studio-las-americas.html' },
+                { id: 'loscristianos', name: 'Studio Los Cristianos', href: 'alloggio/studio-los-cristianos.html' }
+            ]
+        },
         ostello: {
             name: 'Ostello',
             class: 'radial-ostello',
             subs: [
-                { id: 'tortuga', name: 'Tortuga', href: '#tortuga' },
-                { id: 'callemexico-ost', name: 'Calle Mexico', href: '#callemexico-ost' },
-                { id: 'gotademar', name: 'Gota de Mar', href: '#gotademar' }
-            ]
-        },
-        villa: {
-            name: 'Villa Finca',
-            class: 'radial-villa',
-            subs: [
-                { id: 'casatata', name: 'Casa Tata', href: '#casatata' },
-                { id: 'biofinca', name: 'Biofinca', href: '#biofinca' },
-                { id: 'fortaleza', name: 'Finca La Fortaleza', href: '#fortaleza' },
-                { id: 'casadolores', name: 'Casa Dolores', href: '#casadolores' },
-                { id: 'beachhouse', name: 'Beach House', href: '#beachhouse' }
-            ]
-        },
-        surfhouse: {
-            name: 'Surf House',
-            class: 'radial-surfhouse',
-            subs: [
-                { id: 'cama', name: 'Cama', href: '#cama' },
-                { id: 'habitacion', name: 'Habitacion', href: '#habitacion' }
+                { id: 'gotademar', name: 'Gota de Mar', href: 'alloggio/gota-de-mar.html' }
             ]
         },
         rurale: {
             name: 'Rurale<br>Glamping',
             class: 'radial-rurale',
             subs: [
-                { id: 'hotelbubble', name: 'Hotel Bubble', href: '#hotelbubble' },
-                { id: 'tresroques', name: 'Tres Roques', href: '#tresroques' }
+                { id: 'cueva', name: 'Cueva San Miguel', href: 'alloggio/cueva-san-miguel.html' },
+                { id: 'dome', name: 'Dome Experience', href: 'alloggio/dome-ifonche.html' },
+                { id: 'hotelrural', name: 'Hotel Rural', href: 'alloggio/hotel-rural-arona.html' }
             ]
         },
-        apartamento: {
-            name: 'Apartamento',
-            class: 'radial-apartamento',
+        surfhouse: {
+            name: 'Surf House',
+            class: 'radial-surfhouse',
             subs: [
-                { id: 'diana', name: 'Diana', href: '#diana' },
-                { id: 'castelharbour', name: 'Castel Harbour', href: '#castelharbour' },
-                { id: 'alcala', name: 'Alcala', href: '#alcala' }
+                { id: 'surfhouse-main', name: 'Surf House', href: 'alloggio/surf-house.html' }
+            ]
+        },
+        villa: {
+            name: 'Villa Finca',
+            class: 'radial-villa',
+            subs: [
+                { id: 'beachhouse', name: 'Beach House', href: 'alloggio/beach-house.html' },
+                { id: 'atogo', name: 'Casa Atogo', href: 'alloggio/casa-rural-atogo.html' },
+                { id: 'taucho', name: 'Casa Dolores', href: 'alloggio/casa-rural-taucho.html' },
+                { id: 'fortaleza', name: 'Finca La Fortaleza', href: 'alloggio/finca-la-fortaleza.html' },
+                { id: 'playaparaiso', name: 'Villa Playa Paraíso', href: 'alloggio/villa-playa-paraiso.html' }
             ]
         }
     },
@@ -846,11 +842,11 @@ function getSubcategoryNodes(page) {
             { id: 'servizi', name: 'Privati<br>Servizi', class: 'mobile-servizi' }
         ],
         alloggio: [
+            { id: 'appartamento', name: 'Appartamento', class: 'mobile-apartamento' },
             { id: 'ostello', name: 'Ostello', class: 'mobile-ostello' },
-            { id: 'villa', name: 'Villa Finca', class: 'mobile-villa' },
-            { id: 'surfhouse', name: 'Surf House', class: 'mobile-surfhouse-alloggio' },
             { id: 'rurale', name: 'Rurale<br>Glamping', class: 'mobile-rurale' },
-            { id: 'apartamento', name: 'Apartamento', class: 'mobile-apartamento' }
+            { id: 'surfhouse', name: 'Surf House', class: 'mobile-surfhouse-alloggio' },
+            { id: 'villa', name: 'Villa Finca', class: 'mobile-villa' }
         ],
         escursioni: [
             { id: 'teide', name: 'Teide', class: 'mobile-teide' },
