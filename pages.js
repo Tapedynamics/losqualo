@@ -2,6 +2,7 @@
 // Mini Mind Map per ogni categoria
 
 document.addEventListener('DOMContentLoaded', function() {
+    convertLinesToPaths();
     initPageMap();
     initPageLines();
     initMobilePageMenu();
@@ -15,6 +16,21 @@ document.addEventListener('DOMContentLoaded', function() {
 // Stato corrente
 let pageState = 'categories';  // Pagine partono con categorie visibili
 let expandedSubcategory = null;
+
+// ===== CONVERT LINE TO PATH =====
+function convertLinesToPaths() {
+    const svg = document.getElementById('svg-connections');
+    if (!svg) return;
+    svg.querySelectorAll('line').forEach(line => {
+        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        path.id = line.id;
+        for (const cls of line.classList) {
+            path.classList.add(cls);
+        }
+        if (line.dataset.category) path.dataset.category = line.dataset.category;
+        line.parentNode.replaceChild(path, line);
+    });
+}
 
 // ===== CONFIGURAZIONE LINEE PER PAGINA =====
 const pageLineConfig = {
@@ -218,41 +234,69 @@ function getCurrentPage() {
     return null;
 }
 
-// ===== LINEE DINAMICHE =====
+// ===== LINEE DINAMICHE (curve) =====
+let rafId = null;
+
 function initPageLines() {
     updatePageLines();
-    window.addEventListener('resize', debounce(updatePageLines, 100));
-    setInterval(updatePageLines, 50);
+
+    const observer = new ResizeObserver(() => scheduleUpdate());
+    observer.observe(document.querySelector('.page-map') || document.body);
+    window.addEventListener('scroll', scheduleUpdate, { passive: true });
+
+    // Initial continuous updates for animations, then settle
+    let frames = 0;
+    function animLoop() {
+        updatePageLines();
+        frames++;
+        if (frames < 120) requestAnimationFrame(animLoop);
+    }
+    requestAnimationFrame(animLoop);
+}
+
+function scheduleUpdate() {
+    if (rafId) return;
+    rafId = requestAnimationFrame(() => {
+        updatePageLines();
+        rafId = null;
+    });
 }
 
 function getElementCenter(elementId) {
     const el = document.getElementById(elementId);
     if (!el) return null;
-
     const rect = el.getBoundingClientRect();
     const svg = document.getElementById('svg-connections');
     if (!svg) return null;
     const svgRect = svg.getBoundingClientRect();
-
     return {
         x: rect.left + rect.width / 2 - svgRect.left,
         y: rect.top + rect.height / 2 - svgRect.top
     };
 }
 
-function drawLine(lineId, fromId, toId) {
-    const line = document.getElementById(lineId);
-    if (!line) return;
+function drawCurve(pathId, fromId, toId) {
+    const path = document.getElementById(pathId);
+    if (!path) return;
 
     const from = getElementCenter(fromId);
     const to = getElementCenter(toId);
+    if (!from || !to) return;
 
-    if (from && to) {
-        line.setAttribute('x1', from.x);
-        line.setAttribute('y1', from.y);
-        line.setAttribute('x2', to.x);
-        line.setAttribute('y2', to.y);
-    }
+    const midX = (from.x + to.x) / 2;
+    const midY = (from.y + to.y) / 2;
+    const dx = to.x - from.x;
+    const dy = to.y - from.y;
+    const dist = Math.sqrt(dx * dx + dy * dy);
+    const offset = dist * 0.12;
+
+    // Perpendicular offset for gentle curve
+    const nx = -dy / dist;
+    const ny = dx / dist;
+    const cpX = midX + nx * offset;
+    const cpY = midY + ny * offset;
+
+    path.setAttribute('d', `M ${from.x} ${from.y} Q ${cpX} ${cpY} ${to.x} ${to.y}`);
 }
 
 function updatePageLines() {
@@ -264,7 +308,7 @@ function updatePageLines() {
     // Linee principali
     if (config.main) {
         config.main.forEach(conn => {
-            drawLine(conn.line, conn.from, conn.to);
+            drawCurve(conn.line, conn.from, conn.to);
         });
     }
 
@@ -272,22 +316,10 @@ function updatePageLines() {
     Object.keys(config).forEach(category => {
         if (category !== 'main') {
             config[category].forEach(conn => {
-                drawLine(conn.line, conn.from, conn.to);
+                drawCurve(conn.line, conn.from, conn.to);
             });
         }
     });
-}
-
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
 }
 
 // ===== NAVIGAZIONE PAGE MAP =====
@@ -299,14 +331,14 @@ function initPageMap() {
     const backBtn = document.getElementById('back-btn');
     const primaryNodes = document.querySelectorAll('.node-primary');
 
-    // Click sul centro → mostra sotto-categorie
+    // Click sul centro
     categoryTrigger.addEventListener('click', function() {
         if (pageState === 'initial') {
             showPageCategories();
         }
     });
 
-    // Click sulle sotto-categorie → mostra elementi livello 3
+    // Click sulle sotto-categorie
     primaryNodes.forEach(node => {
         node.addEventListener('click', function() {
             const category = this.dataset.category;
@@ -328,12 +360,10 @@ function initPageMap() {
         });
     });
 
-    // Pulsante indietro
     backBtn.addEventListener('click', function() {
         goPageBack();
     });
 
-    // Tasto ESC
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') {
             goPageBack();
@@ -346,10 +376,17 @@ function showPageCategories() {
     pageMap.dataset.state = 'categories';
     pageState = 'categories';
 
-    // Mostra le linee principali
     document.querySelectorAll('.main-line').forEach(line => {
         line.classList.add('visible');
     });
+
+    // Animate lines into position
+    let frames = 0;
+    function update() {
+        updatePageLines();
+        if (++frames < 30) requestAnimationFrame(update);
+    }
+    requestAnimationFrame(update);
 }
 
 function showPageSubcategories(category) {
@@ -361,10 +398,17 @@ function showPageSubcategories(category) {
     const subNodes = document.querySelector(`.sub-nodes[data-parent="${category}"]`);
     if (subNodes) subNodes.classList.add('visible');
 
-    // Mostra le linee della categoria
     document.querySelectorAll(`.sub-line[data-category="${category}"]`).forEach(line => {
         line.classList.add('visible');
     });
+
+    // Animate lines into position
+    let frames = 0;
+    function update() {
+        updatePageLines();
+        if (++frames < 30) requestAnimationFrame(update);
+    }
+    requestAnimationFrame(update);
 }
 
 function hideCurrentPageSubcategories() {
@@ -372,7 +416,6 @@ function hideCurrentPageSubcategories() {
         const subNodes = document.querySelector(`.sub-nodes[data-parent="${expandedSubcategory}"]`);
         if (subNodes) subNodes.classList.remove('visible');
 
-        // Nascondi le linee della categoria
         document.querySelectorAll(`.sub-line[data-category="${expandedSubcategory}"]`).forEach(line => {
             line.classList.remove('visible');
         });
@@ -389,13 +432,12 @@ function goPageBack() {
         pageState = 'categories';
         expandedSubcategory = null;
     } else if (pageState === 'categories') {
-        // Torna alla home
         window.location.href = 'index.html';
     }
 }
 
 // ===== MOBILE PAGE MENU =====
-let mobilePageState = 'categories';  // Mobile parte con categorie visibili
+let mobilePageState = 'categories';
 
 // Dati per popup radiale mobile per pagina
 const pageSubNodesData = {
@@ -449,8 +491,8 @@ const pageSubNodesData = {
             name: 'Appartamento',
             class: 'radial-appartamento',
             subs: [
-                { id: 'alcala', name: 'Alcalá', href: 'alloggio/alcala.html' },
-                { id: 'lasamericas', name: 'Studio Las Américas', href: 'alloggio/studio-las-americas.html' },
+                { id: 'alcala', name: 'Alcala', href: 'alloggio/alcala.html' },
+                { id: 'lasamericas', name: 'Studio Las Americas', href: 'alloggio/studio-las-americas.html' },
                 { id: 'loscristianos', name: 'Studio Los Cristianos', href: 'alloggio/studio-los-cristianos.html' }
             ]
         },
@@ -485,7 +527,7 @@ const pageSubNodesData = {
                 { id: 'atogo', name: 'Casa Atogo', href: 'alloggio/casa-rural-atogo.html' },
                 { id: 'taucho', name: 'Casa Dolores', href: 'alloggio/casa-rural-taucho.html' },
                 { id: 'fortaleza', name: 'Finca La Fortaleza', href: 'alloggio/finca-la-fortaleza.html' },
-                { id: 'playaparaiso', name: 'Villa Playa Paraíso', href: 'alloggio/villa-playa-paraiso.html' }
+                { id: 'playaparaiso', name: 'Villa Playa Paraiso', href: 'alloggio/villa-playa-paraiso.html' }
             ]
         }
     },
@@ -551,7 +593,9 @@ const pageSubNodesData = {
         surfbar: {
             name: 'Surfbar<br>Franchise',
             class: 'radial-surfbar',
-            subs: []
+            subs: [
+                { id: 'surfbar-franchise', name: 'Surf Bar Franchise', href: 'surfing/surf-bar-franchise.html' }
+            ]
         },
         surfhouse: {
             name: 'Surf House',
@@ -593,7 +637,7 @@ const pageSubNodesData = {
             subs: [
                 { id: 'kontraola', name: 'Kontraola', href: '#kontraola' },
                 { id: 'k16', name: 'K16', href: '#k16' },
-                { id: 'ikaika', name: 'Ika Ika', href: '#ikaika' },
+                { id: 'ikaika', name: 'Ika Ika', href: 'surfing/ika-ika.html' },
                 { id: 'franz', name: 'Franz', href: '#franz' },
                 { id: 'vils', name: "Vil's", href: '#vils' }
             ]
@@ -655,7 +699,6 @@ function initMobilePageMenu() {
             if (!document.querySelector('.mobile-page-map')) {
                 createMobilePageMap();
             }
-            // Aggiorna linee mobile su resize
             const mobileMap = document.querySelector('.mobile-page-map');
             if (mobileMap) {
                 setTimeout(() => updateMobileLines(mobileMap), 100);
@@ -665,14 +708,6 @@ function initMobilePageMenu() {
             if (mobileMap) mobileMap.remove();
         }
     });
-
-    // Aggiorna linee mobile periodicamente
-    setInterval(() => {
-        const mobileMap = document.querySelector('.mobile-page-map');
-        if (mobileMap && window.innerWidth <= 768) {
-            updateMobileLines(mobileMap);
-        }
-    }, 100);
 }
 
 function createMobilePageMap() {
@@ -686,13 +721,12 @@ function createMobilePageMap() {
 
     const mobileMap = document.createElement('div');
     mobileMap.classList.add('mobile-page-map');
-    mobileMap.dataset.state = 'categories';  // Parte con categorie visibili
+    mobileMap.dataset.state = 'categories';
 
-    // Determina colore e nome della categoria
     const categoryInfo = {
         eventi: { name: 'EVENTI', class: 'eventi-bg' },
         alloggio: { name: 'ALLOGGIO', class: 'alloggio-bg' },
-        escursioni: { name: 'ESCURSIONI<br>& ATTIVITÀ', class: 'escursioni-bg' },
+        escursioni: { name: 'ESCURSIONI<br>& ATTIVITA', class: 'escursioni-bg' },
         surfing: { name: 'SURFING<br>TENERIFE', class: 'surfing-bg' },
         agency: { name: 'AGENCY', class: 'agency-bg' },
         alessandro: { name: 'ALESSANDRO', class: 'alessandro-bg' }
@@ -700,7 +734,6 @@ function createMobilePageMap() {
 
     const info = categoryInfo[currentPage];
 
-    // Centro - Categoria (senza hint perché categorie già visibili)
     const center = document.createElement('div');
     center.classList.add('category-center-mobile');
     center.id = 'mobile-category-center';
@@ -711,7 +744,6 @@ function createMobilePageMap() {
     `;
     mobileMap.appendChild(center);
 
-    // Nodi sotto-categorie per questa pagina
     const subcatPositions = getSubcategoryPositions(currentPage);
     const subcatNodes = getSubcategoryNodes(currentPage);
 
@@ -726,25 +758,28 @@ function createMobilePageMap() {
         mobileMap.appendChild(el);
     });
 
-    // Pulsante indietro
     const backBtn = document.createElement('button');
     backBtn.classList.add('mobile-back-btn');
-    backBtn.innerHTML = '← Indietro';
+    backBtn.innerHTML = '&larr; Indietro';
     mobileMap.appendChild(backBtn);
 
     main.parentNode.insertBefore(mobileMap, main.nextSibling);
 
-    // Crea SVG per le linee mobile
+    // Create SVG with path elements (not line)
     createMobileSVGLines(mobileMap, subcatNodes.length);
-
-    // Crea overlay radiale
     createPageRadialOverlay();
-
-    // Event listeners
     initMobilePageEvents(mobileMap, currentPage);
 
-    // Aggiorna linee dopo rendering
     setTimeout(() => updateMobileLines(mobileMap), 100);
+
+    // Animate mobile lines on load
+    let frames = 0;
+    function animLoop() {
+        updateMobileLines(mobileMap);
+        frames++;
+        if (frames < 60) requestAnimationFrame(animLoop);
+    }
+    requestAnimationFrame(animLoop);
 }
 
 function createMobileSVGLines(mobileMap, nodeCount) {
@@ -753,13 +788,12 @@ function createMobileSVGLines(mobileMap, nodeCount) {
     svg.id = 'mobile-svg-connections';
 
     for (let i = 0; i < nodeCount; i++) {
-        const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-        line.classList.add('mobile-line');
-        line.id = `mobile-line-${i}`;
-        svg.appendChild(line);
+        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        path.classList.add('mobile-line');
+        path.id = `mobile-line-${i}`;
+        svg.appendChild(path);
     }
 
-    // Inserisci SVG all'inizio del mobile map
     mobileMap.insertBefore(svg, mobileMap.firstChild);
 }
 
@@ -778,22 +812,27 @@ function updateMobileLines(mobileMap) {
     const centerY = centerRect.top + centerRect.height / 2 - svgRect.top;
 
     nodes.forEach((node, index) => {
-        const line = svg.querySelector(`#mobile-line-${index}`);
-        if (!line) return;
+        const path = svg.querySelector(`#mobile-line-${index}`);
+        if (!path) return;
 
         const nodeRect = node.getBoundingClientRect();
         const nodeX = nodeRect.left + nodeRect.width / 2 - svgRect.left;
         const nodeY = nodeRect.top + nodeRect.height / 2 - svgRect.top;
 
-        line.setAttribute('x1', centerX);
-        line.setAttribute('y1', centerY);
-        line.setAttribute('x2', nodeX);
-        line.setAttribute('y2', nodeY);
+        const midX = (centerX + nodeX) / 2;
+        const midY = (centerY + nodeY) / 2;
+        const dx = nodeX - centerX;
+        const dy = nodeY - centerY;
+        const dist = Math.sqrt(dx * dx + dy * dy) || 1;
+        const offset = dist * 0.1;
+        const nx = -dy / dist;
+        const ny = dx / dist;
+
+        path.setAttribute('d', `M ${centerX} ${centerY} Q ${midX + nx * offset} ${midY + ny * offset} ${nodeX} ${nodeY}`);
     });
 }
 
 function getSubcategoryPositions(page) {
-    // Posizioni per 4-6 nodi attorno al centro
     const positions4 = [
         { top: '22%', left: '25%' },
         { top: '22%', left: '75%' },
@@ -859,9 +898,9 @@ function getSubcategoryNodes(page) {
         surfing: [
             { id: 'surfbar', name: 'Surfbar<br>Franchise', class: 'mobile-surfbar' },
             { id: 'surfhouse', name: 'Surf House', class: 'mobile-surfhouse' },
-            { id: 'elmedano', name: 'El Médano', class: 'mobile-elmedano' },
+            { id: 'elmedano', name: 'El Medano', class: 'mobile-elmedano' },
             { id: 'spots', name: 'Surf Spots', class: 'mobile-spots' },
-            { id: 'callemexico', name: 'Calle México', class: 'mobile-callemexico' },
+            { id: 'callemexico', name: 'Calle Mexico', class: 'mobile-callemexico' },
             { id: 'school', name: 'School', class: 'mobile-school' }
         ],
         agency: [
@@ -872,7 +911,7 @@ function getSubcategoryNodes(page) {
         ],
         alessandro: [
             { id: 'chisono', name: 'Chi Sono', class: 'mobile-chisono' },
-            { id: 'perche', name: 'Perché<br>Tenerife', class: 'mobile-perche' },
+            { id: 'perche', name: 'Perche<br>Tenerife', class: 'mobile-perche' },
             { id: 'esperienza', name: 'La Mia<br>Esperienza', class: 'mobile-esperienza' },
             { id: 'ruolo', name: 'Il Mio<br>Ruolo', class: 'mobile-ruolo' },
             { id: 'highlights', name: 'Highlights', class: 'mobile-highlights' }
@@ -908,7 +947,6 @@ function openPageRadialPopup(page, category) {
     const popup = document.getElementById('radial-popup');
 
     if (!pageSubNodesData[page] || !pageSubNodesData[page][category]) {
-        // Se non ci sono dati, mostra un messaggio semplice
         popup.innerHTML = `<div class="radial-center"><span>Coming<br>Soon</span></div>`;
         overlay.classList.add('visible');
         return;
@@ -944,7 +982,7 @@ function openPageRadialPopup(page, category) {
 
     const closeBtn = document.createElement('button');
     closeBtn.classList.add('radial-close');
-    closeBtn.textContent = '✕ Chiudi';
+    closeBtn.textContent = 'X Chiudi';
     closeBtn.addEventListener('click', closePageRadialPopup);
     popup.appendChild(closeBtn);
 
@@ -990,7 +1028,6 @@ function showMobilePageCategories(mobileMap) {
 
 function goMobilePageBack(mobileMap) {
     if (mobilePageState === 'categories') {
-        // Torna alla home
         window.location.href = 'index.html';
     }
 }
