@@ -287,7 +287,7 @@ function drawCurve(pathId, fromId, toId) {
     const midY = (from.y + to.y) / 2;
     const dx = to.x - from.x;
     const dy = to.y - from.y;
-    const dist = Math.sqrt(dx * dx + dy * dy);
+    const dist = Math.sqrt(dx * dx + dy * dy) || 1;
     const offset = dist * 0.12;
 
     // Perpendicular offset for gentle curve
@@ -329,6 +329,7 @@ function initPageMap() {
 
     const categoryTrigger = document.getElementById('category-trigger');
     const backBtn = document.getElementById('back-btn');
+    if (!categoryTrigger || !backBtn) return;
     const primaryNodes = document.querySelectorAll('.node-primary');
 
     // Click sul centro

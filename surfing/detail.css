@@ -450,6 +450,13 @@
     text-decoration: none;
 }
 
+/* ===== QUICK INFO INLINE VARIANT ===== */
+.quick-info--inline {
+    margin: 0 0 20px 0;
+    box-shadow: none;
+    background: var(--detail-accent-light);
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
     .detail-hero {
