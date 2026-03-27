@@ -25,11 +25,13 @@
                 <line class="line main-line" id="line-center-rurale"></line>
                 <line class="line main-line" id="line-center-surfhouse"></line>
                 <line class="line main-line" id="line-center-villa"></line>
+                <line class="line main-line" id="line-center-fincawedding"></line>
 
                 <!-- Linee Appartamento -->
                 <line class="line sub-line" data-category="appartamento" id="line-appartamento-alcala"></line>
                 <line class="line sub-line" data-category="appartamento" id="line-appartamento-lasamericas"></line>
                 <line class="line sub-line" data-category="appartamento" id="line-appartamento-loscristianos"></line>
+                <line class="line sub-line" data-category="appartamento" id="line-appartamento-penthouse"></line>
 
                 <!-- Linee Ostello -->
                 <line class="line sub-line" data-category="ostello" id="line-ostello-gotademar"></line>
@@ -38,9 +40,11 @@
                 <line class="line sub-line" data-category="rurale" id="line-rurale-cueva"></line>
                 <line class="line sub-line" data-category="rurale" id="line-rurale-dome"></line>
                 <line class="line sub-line" data-category="rurale" id="line-rurale-hotelrural"></line>
+                <line class="line sub-line" data-category="rurale" id="line-rurale-chimiche"></line>
 
                 <!-- Linee Surf House -->
-                <line class="line sub-line" data-category="surfhouse" id="line-surfhouse-main"></line>
+                <line class="line sub-line" data-category="surfhouse" id="line-surfhouse-luxury"></line>
+                <line class="line sub-line" data-category="surfhouse" id="line-surfhouse-rurale"></line>
 
                 <!-- Linee Villa/Finca -->
                 <line class="line sub-line" data-category="villa" id="line-villa-beachhouse"></line>
@@ -48,6 +52,12 @@
                 <line class="line sub-line" data-category="villa" id="line-villa-taucho"></line>
                 <line class="line sub-line" data-category="villa" id="line-villa-fortaleza"></line>
                 <line class="line sub-line" data-category="villa" id="line-villa-playaparaiso"></line>
+                <line class="line sub-line" data-category="villa" id="line-villa-ciguaña"></line>
+                <line class="line sub-line" data-category="villa" id="line-villa-costaadeje"></line>
+                <line class="line sub-line" data-category="villa" id="line-villa-torviscas"></line>
+
+                <!-- Linee Finca Wedding -->
+                <line class="line sub-line" data-category="fincawedding" id="line-fincawedding-retreat"></line>
             </svg>
 
             <!-- Centro - Categoria -->
@@ -60,7 +70,7 @@
 
             <!-- Sotto-categorie (Livello 2) -->
             <div class="primary-nodes">
-                <div class="node node-primary apartamento-node" id="node-appartamento" data-category="appartamento">
+                <div class="node node-primary appartamento-node" id="node-appartamento" data-category="appartamento">
                     <span>Appartamento</span>
                 </div>
                 <div class="node node-primary ostello-node" id="node-ostello" data-category="ostello">
@@ -75,6 +85,9 @@
                 <div class="node node-primary villa-node" id="node-villa" data-category="villa">
                     <span>Villa<br>Finca</span>
                 </div>
+                <div class="node node-primary fincawedding-node" id="node-fincawedding" data-category="fincawedding">
+                    <span>Finca<br>Wedding</span>
+                </div>
             </div>
 
             <!-- Elementi Livello 3 - APPARTAMENTO -->
@@ -87,6 +100,9 @@
                 </a>
                 <a href="alloggio/studio-los-cristianos.html" class="node node-secondary item-loscristianos" id="node-loscristianos">
                     <span>Studio<br>Los Cristianos</span>
+                </a>
+                <a href="alloggio/penthouse-los-cristianos.html" class="node node-secondary item-penthouse" id="node-penthouse">
+                    <span>Penthouse<br>Los Cristianos</span>
                 </a>
             </div>
 
@@ -108,12 +124,18 @@
                 <a href="alloggio/hotel-rural-arona.html" class="node node-secondary item-hotelrural" id="node-hotelrural">
                     <span>Hotel<br>Rural</span>
                 </a>
+                <a href="alloggio/finca-chimiche.html" class="node node-secondary item-chimiche" id="node-chimiche">
+                    <span>Finca<br>Chimiche</span>
+                </a>
             </div>
 
             <!-- Elementi Livello 3 - SURF HOUSE -->
             <div class="sub-nodes" data-parent="surfhouse">
-                <a href="alloggio/surf-house.html" class="node node-secondary item-surfhouse-main" id="node-surfhouse-main">
-                    <span>Surf<br>House</span>
+                <a href="alloggio/surf-house-luxury.html" class="node node-secondary item-surfhouse-luxury" id="node-surfhouse-luxury">
+                    <span>Surf House<br>Luxury</span>
+                </a>
+                <a href="alloggio/surf-house-rurale.html" class="node node-secondary item-surfhouse-rurale" id="node-surfhouse-rurale">
+                    <span>Surf House<br>Rurale</span>
                 </a>
             </div>
 
@@ -133,6 +155,22 @@
                 </a>
                 <a href="alloggio/villa-playa-paraiso.html" class="node node-secondary item-playaparaiso" id="node-playaparaiso">
                     <span>Villa<br>Playa Paraíso</span>
+                </a>
+                <a href="alloggio/finca-ciguaña.html" class="node node-secondary item-ciguaña" id="node-ciguaña">
+                    <span>Finca<br>Ciguaña</span>
+                </a>
+                <a href="alloggio/villa-costa-adeje.html" class="node node-secondary item-costaadeje" id="node-costaadeje">
+                    <span>Villa<br>Costa Adeje</span>
+                </a>
+                <a href="alloggio/villa-torviscas.html" class="node node-secondary item-torviscas" id="node-torviscas">
+                    <span>Villa<br>Torviscas</span>
+                </a>
+            </div>
+
+            <!-- Elementi Livello 3 - FINCA WEDDING -->
+            <div class="sub-nodes" data-parent="fincawedding">
+                <a href="alloggio/finca-wedding-retreat.html" class="node node-secondary item-wedding-retreat" id="node-wedding-retreat">
+                    <span>Wedding<br>Retreat</span>
                 </a>
             </div>
 

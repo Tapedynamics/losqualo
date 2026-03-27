@@ -378,7 +378,7 @@ header {
    PAGINA ALLOGGIO - Posizioni e Colori
    ============================================= */
 
-/* Sotto-categorie (Livello 2) - 5 nodi */
+/* Sotto-categorie (Livello 2) - 6 nodi */
 .page-alloggio .ostello-node {
     background: linear-gradient(145deg, var(--alloggio-ostello), #dcc0c8);
     color: var(--text-primary);
@@ -407,7 +407,7 @@ header {
     left: 65%;
 }
 
-.page-alloggio .apartamento-node {
+.page-alloggio .appartamento-node {
     background: linear-gradient(145deg, var(--alloggio-glamping), #d8b49e);
     color: var(--text-primary);
     top: 78%;
@@ -466,14 +466,6 @@ header {
     left: 85%;
 }
 
-/* Elementi SURF HOUSE */
-.page-alloggio .item-surfhouse-main {
-    background: linear-gradient(145deg, #edd0c2, #d9bca8);
-    color: var(--text-primary);
-    top: 50%;
-    left: 92%;
-}
-
 /* Elementi VILLA FINCA */
 .page-alloggio .item-beachhouse {
     background: linear-gradient(145deg, #e4b8c2, #d09ca6);
@@ -508,6 +500,75 @@ header {
     color: var(--text-primary);
     top: 32%;
     left: 85%;
+}
+
+/* Elementi APPARTAMENTO - Nuovo */
+.page-alloggio .item-penthouse {
+    background: linear-gradient(145deg, #e4c2ac, #d0ae98);
+    color: var(--text-primary);
+    top: 70%;
+    left: 15%;
+}
+
+/* Nuova categoria FINCA WEDDING (Livello 2) */
+.page-alloggio .fincawedding-node {
+    background: linear-gradient(145deg, #e8c0c8, #d4a4b0);
+    color: var(--text-primary);
+    top: 50%;
+    left: 8%;
+}
+
+/* Elementi FINCA WEDDING */
+.page-alloggio .item-wedding-retreat {
+    background: linear-gradient(145deg, #f0d0d8, #dcb4bc);
+    color: var(--text-primary);
+    top: 38%;
+    left: 3%;
+}
+
+/* Elementi RURALE GLAMPING - Nuovo */
+.page-alloggio .item-chimiche {
+    background: linear-gradient(145deg, #cfaaa0, #bb9688);
+    color: var(--text-primary);
+    top: 70%;
+    left: 72%;
+}
+
+/* Elementi SURF HOUSE - Aggiornati */
+.page-alloggio .item-surfhouse-luxury {
+    background: linear-gradient(145deg, #edd0c2, #d9bca8);
+    color: var(--text-primary);
+    top: 42%;
+    left: 92%;
+}
+
+.page-alloggio .item-surfhouse-rurale {
+    background: linear-gradient(145deg, #e5c8b8, #d1b4a0);
+    color: var(--text-primary);
+    top: 58%;
+    left: 92%;
+}
+
+/* Elementi VILLA FINCA - Nuovi */
+.page-alloggio .item-ciguaña {
+    background: linear-gradient(145deg, #d4a8b4, #c08ca0);
+    color: var(--text-primary);
+    top: 32%;
+    left: 62%;
+}
+
+.page-alloggio .item-costaadeje {
+    background: linear-gradient(145deg, #d0a4b0, #bc889c);
+    color: var(--text-primary);
+    top: 32%;
+    left: 75%;
+}
+
+.page-alloggio .item-torviscas {
+    background: linear-gradient(145deg, #cca0ac, #b88498);
+    color: var(--text-primary);
+    top: 18%;
+    left: 60%;
 }
 
 /* =============================================
@@ -703,6 +764,72 @@ header {
     left: 78%;
 }
 
+/* Elementi FOOD & DRINK - Nuovi */
+.page-escursioni .item-cocktailbar {
+    background: linear-gradient(145deg, #97b7a2, #83a38e);
+    color: var(--text-primary);
+    top: 70%;
+    left: 82%;
+}
+
+.page-escursioni .item-cucinatipica {
+    background: linear-gradient(145deg, #93b39e, #7f9f8a);
+    color: var(--text-primary);
+    top: 70%;
+    left: 58%;
+}
+
+.page-escursioni .item-italiana {
+    background: linear-gradient(145deg, #8faf9a, #7b9b86);
+    color: var(--text-primary);
+    top: 82%;
+    left: 88%;
+}
+
+.page-escursioni .item-mediterranea {
+    background: linear-gradient(145deg, #8bab96, #779782);
+    color: var(--text-primary);
+    top: 82%;
+    left: 42%;
+}
+
+.page-escursioni .item-surfbar-food {
+    background: linear-gradient(145deg, #a3c3ae, #8faf9a);
+    color: var(--text-primary);
+    top: 92%;
+    left: 68%;
+}
+
+/* Elementi OCEANO - Nuovi */
+.page-escursioni .item-kayak {
+    background: linear-gradient(145deg, #4787a6, #337392);
+    color: white;
+    top: 28%;
+    left: 70%;
+}
+
+.page-escursioni .item-sottomarino {
+    background: linear-gradient(145deg, #4383a2, #2f6f8e);
+    color: white;
+    top: 28%;
+    left: 85%;
+}
+
+/* Elementi TEIDE - Nuovi */
+.page-escursioni .item-hiking {
+    background: linear-gradient(145deg, #87a294, #738e80);
+    color: white;
+    top: 3%;
+    left: 42%;
+}
+
+.page-escursioni .item-trekking {
+    background: linear-gradient(145deg, #83a090, #6f8c7c);
+    color: white;
+    top: 18%;
+    left: 38%;
+}
+
 /* =============================================
    PAGINA SURFING - Posizioni e Colori
    ============================================= */
@@ -864,6 +991,21 @@ header {
     color: var(--text-primary);
     top: 65%;
     left: 88%;
+}
+
+/* Elementi SURF SPOTS - Nuovi */
+.page-surfing .item-spots-elmedano {
+    background: linear-gradient(145deg, #7fbcd8, #6ba8c4);
+    color: var(--text-primary);
+    top: 38%;
+    left: 92%;
+}
+
+.page-surfing .item-spots-lasamericas {
+    background: linear-gradient(145deg, #7bb8d4, #67a4c0);
+    color: var(--text-primary);
+    top: 52%;
+    left: 94%;
 }
 
 /* =============================================
@@ -1223,7 +1365,8 @@ header {
     .mobile-page-map .mobile-villa { background: linear-gradient(145deg, var(--alloggio-villa), #c99ea8); color: var(--text-primary); }
     .mobile-page-map .mobile-surfhouse-alloggio { background: linear-gradient(145deg, var(--alloggio-surfhouse), #d1b6a8); color: var(--text-primary); }
     .mobile-page-map .mobile-rurale { background: linear-gradient(145deg, var(--alloggio-rurale), #bf9991); color: var(--text-primary); }
-    .mobile-page-map .mobile-apartamento { background: linear-gradient(145deg, var(--alloggio-glamping), #d8b49e); color: var(--text-primary); }
+    .mobile-page-map .mobile-appartamento { background: linear-gradient(145deg, var(--alloggio-glamping), #d8b49e); color: var(--text-primary); }
+    .mobile-page-map .mobile-fincawedding { background: linear-gradient(145deg, #e8c0c8, #d4a4b0); color: var(--text-primary); }
 
     .mobile-page-map .mobile-teide { background: linear-gradient(145deg, var(--escursioni-teide), #5f7e6c); color: white; }
     .mobile-page-map .mobile-oceano { background: linear-gradient(145deg, var(--escursioni-oceano), #2f6f8e); color: white; }

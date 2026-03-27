@@ -75,12 +75,14 @@ const pageLineConfig = {
             { line: 'line-center-ostello', from: 'category-trigger', to: 'node-ostello' },
             { line: 'line-center-rurale', from: 'category-trigger', to: 'node-rurale' },
             { line: 'line-center-surfhouse', from: 'category-trigger', to: 'node-surfhouse' },
-            { line: 'line-center-villa', from: 'category-trigger', to: 'node-villa' }
+            { line: 'line-center-villa', from: 'category-trigger', to: 'node-villa' },
+            { line: 'line-center-fincawedding', from: 'category-trigger', to: 'node-fincawedding' }
         ],
         appartamento: [
             { line: 'line-appartamento-alcala', from: 'node-appartamento', to: 'node-alcala' },
             { line: 'line-appartamento-lasamericas', from: 'node-appartamento', to: 'node-lasamericas' },
-            { line: 'line-appartamento-loscristianos', from: 'node-appartamento', to: 'node-loscristianos' }
+            { line: 'line-appartamento-loscristianos', from: 'node-appartamento', to: 'node-loscristianos' },
+            { line: 'line-appartamento-penthouse', from: 'node-appartamento', to: 'node-penthouse' }
         ],
         ostello: [
             { line: 'line-ostello-gotademar', from: 'node-ostello', to: 'node-gotademar' }
@@ -88,17 +90,25 @@ const pageLineConfig = {
         rurale: [
             { line: 'line-rurale-cueva', from: 'node-rurale', to: 'node-cueva' },
             { line: 'line-rurale-dome', from: 'node-rurale', to: 'node-dome' },
-            { line: 'line-rurale-hotelrural', from: 'node-rurale', to: 'node-hotelrural' }
+            { line: 'line-rurale-hotelrural', from: 'node-rurale', to: 'node-hotelrural' },
+            { line: 'line-rurale-chimiche', from: 'node-rurale', to: 'node-chimiche' }
         ],
         surfhouse: [
-            { line: 'line-surfhouse-main', from: 'node-surfhouse', to: 'node-surfhouse-main' }
+            { line: 'line-surfhouse-luxury', from: 'node-surfhouse', to: 'node-surfhouse-luxury' },
+            { line: 'line-surfhouse-rurale', from: 'node-surfhouse', to: 'node-surfhouse-rurale' }
         ],
         villa: [
             { line: 'line-villa-beachhouse', from: 'node-villa', to: 'node-beachhouse' },
             { line: 'line-villa-atogo', from: 'node-villa', to: 'node-atogo' },
             { line: 'line-villa-taucho', from: 'node-villa', to: 'node-taucho' },
             { line: 'line-villa-fortaleza', from: 'node-villa', to: 'node-fortaleza' },
-            { line: 'line-villa-playaparaiso', from: 'node-villa', to: 'node-playaparaiso' }
+            { line: 'line-villa-playaparaiso', from: 'node-villa', to: 'node-playaparaiso' },
+            { line: 'line-villa-ciguaña', from: 'node-villa', to: 'node-ciguaña' },
+            { line: 'line-villa-costaadeje', from: 'node-villa', to: 'node-costaadeje' },
+            { line: 'line-villa-torviscas', from: 'node-villa', to: 'node-torviscas' }
+        ],
+        fincawedding: [
+            { line: 'line-fincawedding-retreat', from: 'node-fincawedding', to: 'node-wedding-retreat' }
         ]
     },
     escursioni: {
@@ -115,12 +125,16 @@ const pageLineConfig = {
             { line: 'line-teide-stargazing', from: 'node-teide', to: 'node-stargazing' },
             { line: 'line-teide-quad', from: 'node-teide', to: 'node-quad' },
             { line: 'line-teide-bike', from: 'node-teide', to: 'node-bike' },
-            { line: 'line-teide-buggy', from: 'node-teide', to: 'node-buggy' }
+            { line: 'line-teide-buggy', from: 'node-teide', to: 'node-buggy' },
+            { line: 'line-teide-hiking', from: 'node-teide', to: 'node-hiking' },
+            { line: 'line-teide-trekking', from: 'node-teide', to: 'node-trekking' }
         ],
         oceano: [
             { line: 'line-oceano-jetcar', from: 'node-oceano', to: 'node-jetcar' },
             { line: 'line-oceano-jetsky', from: 'node-oceano', to: 'node-jetsky' },
-            { line: 'line-oceano-cetacei', from: 'node-oceano', to: 'node-cetacei' }
+            { line: 'line-oceano-cetacei', from: 'node-oceano', to: 'node-cetacei' },
+            { line: 'line-oceano-kayak', from: 'node-oceano', to: 'node-kayak' },
+            { line: 'line-oceano-sottomarino', from: 'node-oceano', to: 'node-sottomarino' }
         ],
         sky: [
             { line: 'line-sky-parapente', from: 'node-sky', to: 'node-parapente' },
@@ -140,7 +154,12 @@ const pageLineConfig = {
         ],
         fooddrink: [
             { line: 'line-fooddrink-bodegas', from: 'node-fooddrink', to: 'node-bodegas' },
-            { line: 'line-fooddrink-guacinches', from: 'node-fooddrink', to: 'node-guacinches' }
+            { line: 'line-fooddrink-guacinches', from: 'node-fooddrink', to: 'node-guacinches' },
+            { line: 'line-fooddrink-cocktailbar', from: 'node-fooddrink', to: 'node-cocktailbar' },
+            { line: 'line-fooddrink-cucinatipica', from: 'node-fooddrink', to: 'node-cucinatipica' },
+            { line: 'line-fooddrink-italiana', from: 'node-fooddrink', to: 'node-italiana' },
+            { line: 'line-fooddrink-mediterranea', from: 'node-fooddrink', to: 'node-mediterranea' },
+            { line: 'line-fooddrink-surfbar', from: 'node-fooddrink', to: 'node-surfbar-food' }
         ]
     },
     surfing: {
@@ -168,6 +187,10 @@ const pageLineConfig = {
             { line: 'line-callemexico-rentshop', from: 'node-callemexico', to: 'node-callemexico-rentshop' },
             { line: 'line-callemexico-fooddrink', from: 'node-callemexico', to: 'node-callemexico-fooddrink' },
             { line: 'line-callemexico-artevents', from: 'node-callemexico', to: 'node-callemexico-artevents' }
+        ],
+        spots: [
+            { line: 'line-spots-elmedano', from: 'node-spots', to: 'node-spots-elmedano' },
+            { line: 'line-spots-lasamericas', from: 'node-spots', to: 'node-spots-lasamericas' }
         ],
         school: [
             { line: 'line-school-kontraola', from: 'node-school', to: 'node-kontraola' },
@@ -494,7 +517,8 @@ const pageSubNodesData = {
             subs: [
                 { id: 'alcala', name: 'Alcala', href: 'alloggio/alcala.html' },
                 { id: 'lasamericas', name: 'Studio Las Americas', href: 'alloggio/studio-las-americas.html' },
-                { id: 'loscristianos', name: 'Studio Los Cristianos', href: 'alloggio/studio-los-cristianos.html' }
+                { id: 'loscristianos', name: 'Studio Los Cristianos', href: 'alloggio/studio-los-cristianos.html' },
+                { id: 'penthouse', name: 'Penthouse Los Cristianos', href: 'alloggio/penthouse-los-cristianos.html' }
             ]
         },
         ostello: {
@@ -510,14 +534,16 @@ const pageSubNodesData = {
             subs: [
                 { id: 'cueva', name: 'Cueva San Miguel', href: 'alloggio/cueva-san-miguel.html' },
                 { id: 'dome', name: 'Dome Experience', href: 'alloggio/dome-ifonche.html' },
-                { id: 'hotelrural', name: 'Hotel Rural', href: 'alloggio/hotel-rural-arona.html' }
+                { id: 'hotelrural', name: 'Hotel Rural', href: 'alloggio/hotel-rural-arona.html' },
+                { id: 'chimiche', name: 'Finca Chimiche', href: 'alloggio/finca-chimiche.html' }
             ]
         },
         surfhouse: {
             name: 'Surf House',
             class: 'radial-surfhouse',
             subs: [
-                { id: 'surfhouse-main', name: 'Surf House', href: 'alloggio/surf-house.html' }
+                { id: 'surfhouse-luxury', name: 'Surf House Luxury', href: 'alloggio/surf-house-luxury.html' },
+                { id: 'surfhouse-rurale', name: 'Surf House Rurale', href: 'alloggio/surf-house-rurale.html' }
             ]
         },
         villa: {
@@ -528,7 +554,17 @@ const pageSubNodesData = {
                 { id: 'atogo', name: 'Casa Atogo', href: 'alloggio/casa-rural-atogo.html' },
                 { id: 'taucho', name: 'Casa Dolores', href: 'alloggio/casa-rural-taucho.html' },
                 { id: 'fortaleza', name: 'Finca La Fortaleza', href: 'alloggio/finca-la-fortaleza.html' },
-                { id: 'playaparaiso', name: 'Villa Playa Paraiso', href: 'alloggio/villa-playa-paraiso.html' }
+                { id: 'playaparaiso', name: 'Villa Playa Paraiso', href: 'alloggio/villa-playa-paraiso.html' },
+                { id: 'ciguaña', name: 'Finca Ciguaña', href: 'alloggio/finca-ciguaña.html' },
+                { id: 'costaadeje', name: 'Villa Costa Adeje', href: 'alloggio/villa-costa-adeje.html' },
+                { id: 'torviscas', name: 'Villa Torviscas', href: 'alloggio/villa-torviscas.html' }
+            ]
+        },
+        fincawedding: {
+            name: 'Finca Wedding',
+            class: 'radial-fincawedding',
+            subs: [
+                { id: 'wedding-retreat', name: 'Wedding Retreat', href: 'alloggio/finca-wedding-retreat.html' }
             ]
         }
     },
@@ -541,7 +577,9 @@ const pageSubNodesData = {
                 { id: 'stargazing', name: 'Star Gazing', href: '#stargazing' },
                 { id: 'quad', name: 'Quad', href: '#quad' },
                 { id: 'bike', name: 'Bike', href: '#bike' },
-                { id: 'buggy', name: 'Buggy', href: '#buggy' }
+                { id: 'buggy', name: 'Buggy', href: '#buggy' },
+                { id: 'hiking', name: 'Hiking', href: '#hiking' },
+                { id: 'trekking', name: 'Trekking', href: '#trekking' }
             ]
         },
         oceano: {
@@ -550,7 +588,9 @@ const pageSubNodesData = {
             subs: [
                 { id: 'jetcar', name: 'Jet Car', href: '#jetcar' },
                 { id: 'jetsky', name: 'Jet Sky', href: '#jetsky' },
-                { id: 'cetacei', name: 'Cetacei', href: '#cetacei' }
+                { id: 'cetacei', name: 'Balene', href: '#cetacei' },
+                { id: 'kayak', name: 'Kayak', href: '#kayak' },
+                { id: 'sottomarino', name: 'Sottomarino', href: '#sottomarino' }
             ]
         },
         sky: {
@@ -586,7 +626,12 @@ const pageSubNodesData = {
             class: 'radial-fooddrink',
             subs: [
                 { id: 'bodegas', name: 'Bodegas', href: '#bodegas' },
-                { id: 'guacinches', name: 'Guacinches', href: '#guacinches' }
+                { id: 'guacinches', name: 'Guacinches', href: '#guacinches' },
+                { id: 'cocktailbar', name: 'Cocktail Bar', href: '#cocktailbar' },
+                { id: 'cucinatipica', name: 'Cucina Tipica', href: '#cucinatipica' },
+                { id: 'italiana', name: 'Italiana', href: '#italiana' },
+                { id: 'mediterranea', name: 'Mediterranea', href: '#mediterranea' },
+                { id: 'surfbar-food', name: 'Surf Bar', href: '#surfbar-food' }
             ]
         }
     },
@@ -621,7 +666,10 @@ const pageSubNodesData = {
         spots: {
             name: 'Surf Spots',
             class: 'radial-spots',
-            subs: []
+            subs: [
+                { id: 'spots-elmedano', name: 'El Medano', href: '#spots-elmedano' },
+                { id: 'spots-lasamericas', name: 'Las Americas', href: '#spots-lasamericas' }
+            ]
         },
         callemexico: {
             name: 'Calle Mexico',
@@ -862,11 +910,11 @@ function getSubcategoryPositions(page) {
         case 'eventi':
         case 'agency':
             return positions4;
-        case 'alloggio':
         case 'alessandro':
             return positions5;
         case 'escursioni':
         case 'surfing':
+        case 'alloggio':
             return positions6;
         default:
             return positions4;
@@ -882,11 +930,12 @@ function getSubcategoryNodes(page) {
             { id: 'servizi', name: 'Privati<br>Servizi', class: 'mobile-servizi' }
         ],
         alloggio: [
-            { id: 'appartamento', name: 'Appartamento', class: 'mobile-apartamento' },
+            { id: 'appartamento', name: 'Appartamento', class: 'mobile-appartamento' },
             { id: 'ostello', name: 'Ostello', class: 'mobile-ostello' },
             { id: 'rurale', name: 'Rurale<br>Glamping', class: 'mobile-rurale' },
             { id: 'surfhouse', name: 'Surf House', class: 'mobile-surfhouse-alloggio' },
-            { id: 'villa', name: 'Villa Finca', class: 'mobile-villa' }
+            { id: 'villa', name: 'Villa Finca', class: 'mobile-villa' },
+            { id: 'fincawedding', name: 'Finca<br>Wedding', class: 'mobile-fincawedding' }
         ],
         escursioni: [
             { id: 'teide', name: 'Teide', class: 'mobile-teide' },
