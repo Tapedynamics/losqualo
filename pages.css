@@ -394,7 +394,7 @@ header {
 }
 
 .page-alloggio .surfhouse-node {
-    background: linear-gradient(145deg, var(--alloggio-surfhouse), #d1b6a8);
+    background: linear-gradient(145deg, var(--alloggio-surfhouse), #caa4b0);
     color: var(--text-primary);
     top: 50%;
     left: 85%;
@@ -408,7 +408,7 @@ header {
 }
 
 .page-alloggio .appartamento-node {
-    background: linear-gradient(145deg, var(--alloggio-glamping), #d8b49e);
+    background: linear-gradient(145deg, var(--alloggio-glamping), #d1a4af);
     color: var(--text-primary);
     top: 78%;
     left: 28%;
@@ -1363,9 +1363,9 @@ header {
 
     .mobile-page-map .mobile-ostello { background: linear-gradient(145deg, var(--alloggio-ostello), #dcc0c8); color: var(--text-primary); }
     .mobile-page-map .mobile-villa { background: linear-gradient(145deg, var(--alloggio-villa), #c99ea8); color: var(--text-primary); }
-    .mobile-page-map .mobile-surfhouse-alloggio { background: linear-gradient(145deg, var(--alloggio-surfhouse), #d1b6a8); color: var(--text-primary); }
+    .mobile-page-map .mobile-surfhouse-alloggio { background: linear-gradient(145deg, var(--alloggio-surfhouse), #caa4b0); color: var(--text-primary); }
     .mobile-page-map .mobile-rurale { background: linear-gradient(145deg, var(--alloggio-rurale), #bf9991); color: var(--text-primary); }
-    .mobile-page-map .mobile-appartamento { background: linear-gradient(145deg, var(--alloggio-glamping), #d8b49e); color: var(--text-primary); }
+    .mobile-page-map .mobile-appartamento { background: linear-gradient(145deg, var(--alloggio-glamping), #d1a4af); color: var(--text-primary); }
     .mobile-page-map .mobile-fincawedding { background: linear-gradient(145deg, #e8c0c8, #d4a4b0); color: var(--text-primary); }
 
     .mobile-page-map .mobile-teide { background: linear-gradient(145deg, var(--escursioni-teide), #5f7e6c); color: white; }

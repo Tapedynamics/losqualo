@@ -17,6 +17,21 @@ document.addEventListener('DOMContentLoaded', function() {
 let pageState = 'categories';  // Pagine partono con categorie visibili
 let expandedSubcategory = null;
 
+// ===== MEMORIA NAVIGAZIONE (back da prodotto torna alla sub) =====
+function getMacroKey() {
+    const path = window.location.pathname.split('/').pop() || 'index.html';
+    return 'losqualo_lastSub_' + path.replace('.html', '');
+}
+function rememberSub(category) {
+    try { sessionStorage.setItem(getMacroKey(), category); } catch (e) {}
+}
+function recallSub() {
+    try { return sessionStorage.getItem(getMacroKey()); } catch (e) { return null; }
+}
+function clearSub() {
+    try { sessionStorage.removeItem(getMacroKey()); } catch (e) {}
+}
+
 // ===== CONVERT LINE TO PATH =====
 function convertLinesToPaths() {
     const svg = document.getElementById('svg-connections');
@@ -266,13 +281,18 @@ function initPageLines() {
     const observer = new ResizeObserver(() => scheduleUpdate());
     observer.observe(document.querySelector('.page-map') || document.body);
     window.addEventListener('scroll', scheduleUpdate, { passive: true });
+    window.addEventListener('load', scheduleUpdate);
+    window.addEventListener('resize', scheduleUpdate);
+    if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(() => scheduleUpdate());
+    }
 
     // Initial continuous updates for animations, then settle
     let frames = 0;
     function animLoop() {
         updatePageLines();
         frames++;
-        if (frames < 120) requestAnimationFrame(animLoop);
+        if (frames < 180) requestAnimationFrame(animLoop);
     }
     requestAnimationFrame(animLoop);
 }
@@ -319,7 +339,8 @@ function drawCurve(pathId, fromId, toId) {
     const cpX = midX + nx * offset;
     const cpY = midY + ny * offset;
 
-    path.setAttribute('d', `M ${from.x} ${from.y} Q ${cpX} ${cpY} ${to.x} ${to.y}`);
+    const r = (n) => Math.round(n * 100) / 100;
+    path.setAttribute('d', `M ${r(from.x)} ${r(from.y)} Q ${r(cpX)} ${r(cpY)} ${r(to.x)} ${r(to.y)}`);
 }
 
 function updatePageLines() {
@@ -393,6 +414,29 @@ function initPageMap() {
             goPageBack();
         }
     });
+
+    // Memorizza sub di provenienza quando si clicca su un prodotto (livello 3)
+    document.querySelectorAll('.node-secondary').forEach(link => {
+        link.addEventListener('click', function() {
+            const parent = this.closest('.sub-nodes');
+            if (parent && parent.dataset.parent) {
+                rememberSub(parent.dataset.parent);
+            }
+        });
+    });
+
+    // Al caricamento: se c'e' una sub memorizzata, espandila automaticamente
+    const lastSub = recallSub();
+    if (lastSub) {
+        const targetNode = document.querySelector(`.node-primary[data-category="${lastSub}"]`);
+        if (targetNode) {
+            // Salta direttamente a subcategories senza transition intermedia
+            setTimeout(() => {
+                showPageSubcategories(lastSub);
+                targetNode.classList.add('expanded');
+            }, 50);
+        }
+    }
 }
 
 function showPageCategories() {
@@ -455,7 +499,9 @@ function goPageBack() {
         pageMap.dataset.state = 'categories';
         pageState = 'categories';
         expandedSubcategory = null;
+        clearSub();
     } else if (pageState === 'categories') {
+        clearSub();
         window.location.href = 'index.html';
     }
 }

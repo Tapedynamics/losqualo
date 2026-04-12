@@ -46,13 +46,18 @@ function initDynamicLines() {
     const observer = new ResizeObserver(() => scheduleUpdate());
     observer.observe(document.querySelector('.mind-map') || document.body);
     window.addEventListener('scroll', scheduleUpdate, { passive: true });
+    window.addEventListener('load', scheduleUpdate);
+    window.addEventListener('resize', scheduleUpdate);
+    if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(() => scheduleUpdate());
+    }
 
     // Initial continuous updates for animations, then settle
     let frames = 0;
     function animLoop() {
         updateAllLines();
         frames++;
-        if (frames < 120) requestAnimationFrame(animLoop); // 2 seconds of updates
+        if (frames < 180) requestAnimationFrame(animLoop); // 3 seconds of updates
     }
     requestAnimationFrame(animLoop);
 }
@@ -90,7 +95,7 @@ function drawCurve(pathId, fromId, toId) {
     const midY = (from.y + to.y) / 2;
     const dx = to.x - from.x;
     const dy = to.y - from.y;
-    const dist = Math.sqrt(dx * dx + dy * dy);
+    const dist = Math.sqrt(dx * dx + dy * dy) || 1;
     const offset = dist * 0.12;
 
     // Perpendicular offset for gentle curve
@@ -99,7 +104,9 @@ function drawCurve(pathId, fromId, toId) {
     const cpX = midX + nx * offset;
     const cpY = midY + ny * offset;
 
-    path.setAttribute('d', `M ${from.x} ${from.y} Q ${cpX} ${cpY} ${to.x} ${to.y}`);
+    // Round to avoid sub-pixel rendering drift at 100% zoom
+    const r = (n) => Math.round(n * 100) / 100;
+    path.setAttribute('d', `M ${r(from.x)} ${r(from.y)} Q ${r(cpX)} ${r(cpY)} ${r(to.x)} ${r(to.y)}`);
 }
 
 function updateAllLines() {
