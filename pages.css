@@ -203,6 +203,12 @@ header {
     transition: top 0.5s ease, left 0.5s ease, transform 0.5s ease;
 }
 
+/* In stato sub-centered la disposizione radiale e' autoesplicativa:
+   nascondi le linee SVG per ridurre rumore visivo */
+.page-map.sub-centered .connections .line {
+    opacity: 0 !important;
+}
+
 /* ===== COLORI CENTRO PER CATEGORIA ===== */
 .eventi-bg {
     background: linear-gradient(145deg, var(--eventi-main), #c49a30);
