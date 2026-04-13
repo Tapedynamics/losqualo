@@ -3,24 +3,20 @@
 // Non tocca il numero di telefono; solo il parametro ?text=.
 (function () {
     const lang = (navigator.language || 'it').slice(0, 2).toLowerCase();
-    const locale = lang === 'es' ? 'es' : lang === 'en' ? 'en' : 'it';
-    if (locale === 'it') return; // default del sito: niente da fare
+    // Il sito è scritto in IT: default invariato, niente da riscrivere
+    if (lang !== 'en' && lang !== 'es') return;
 
-    const prefixes = {
-        it: 'Ciao! Sono interessato',
-        en: 'Hello! I am interested in',
-        es: '¡Hola! Estoy interesad@ en'
-    };
+    const prefix = lang === 'en'
+        ? 'Hello! I am interested in'
+        : '¡Hola! Estoy interesad@ en';
 
     document.querySelectorAll('a[href*="wa.me"]').forEach(a => {
         try {
             const url = new URL(a.href);
             const text = url.searchParams.get('text');
             if (!text) return;
-            // Sostituisci il prefisso italiano se presente, mantenendo il resto
-            const decoded = decodeURIComponent(text);
-            const replaced = decoded.replace(/^Ciao!\s*Sono\s+interessat[oa]?/i, prefixes[locale]);
-            if (replaced === decoded) return;
+            const replaced = text.replace(/^Ciao!\s*Sono\s+interessat[oa]?/i, prefix);
+            if (replaced === text) return;
             url.searchParams.set('text', replaced);
             a.href = url.toString();
         } catch (e) { /* skip malformed */ }
