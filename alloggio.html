@@ -25,7 +25,6 @@
                 <line class="line main-line" id="line-center-rurale"></line>
                 <line class="line main-line" id="line-center-surfhouse"></line>
                 <line class="line main-line" id="line-center-villa"></line>
-                <line class="line main-line" id="line-center-fincawedding"></line>
 
                 <!-- Linee Appartamento -->
                 <line class="line sub-line" data-category="appartamento" id="line-appartamento-alcala"></line>
@@ -56,8 +55,9 @@
                 <line class="line sub-line" data-category="villa" id="line-villa-costaadeje"></line>
                 <line class="line sub-line" data-category="villa" id="line-villa-torviscas"></line>
 
-                <!-- Linee Finca Wedding -->
-                <line class="line sub-line" data-category="fincawedding" id="line-fincawedding-retreat"></line>
+                <!-- Linee Villa Duque + Finca Playa Paraiso -->
+                <line class="line sub-line" data-category="villa" id="line-villa-duque"></line>
+                <line class="line sub-line" data-category="villa" id="line-villa-fincaplayaparaiso"></line>
             </svg>
 
             <!-- Centro - Categoria -->
@@ -73,7 +73,7 @@
                 <div class="node node-primary appartamento-node" id="node-appartamento" data-category="appartamento">
                     <span>Appartamento</span>
                 </div>
-                <div class="node node-primary ostello-node" id="node-ostello" data-category="ostello">
+                <div class="node node-primary ostello-node disabled-node" id="node-ostello" data-category="ostello">
                     <span>Ostello</span>
                 </div>
                 <div class="node node-primary rurale-node" id="node-rurale" data-category="rurale">
@@ -84,9 +84,6 @@
                 </div>
                 <div class="node node-primary villa-node" id="node-villa" data-category="villa">
                     <span>Villa<br>Finca</span>
-                </div>
-                <div class="node node-primary fincawedding-node" id="node-fincawedding" data-category="fincawedding">
-                    <span>Finca<br>Wedding</span>
                 </div>
             </div>
 
@@ -145,10 +142,10 @@
                     <span>Beach<br>House</span>
                 </a>
                 <a href="alloggio/casa-rural-atogo.html" class="node node-secondary item-atogo" id="node-atogo">
-                    <span>Casa<br>Atogo</span>
+                    <span>Casa Rural<br>Atogo</span>
                 </a>
                 <a href="alloggio/casa-rural-taucho.html" class="node node-secondary item-taucho" id="node-taucho">
-                    <span>Casa<br>Dolores</span>
+                    <span>Casa Rural<br>Taucio</span>
                 </a>
                 <a href="alloggio/finca-la-fortaleza.html" class="node node-secondary item-fortaleza" id="node-fortaleza">
                     <span>Finca La<br>Fortaleza</span>
@@ -159,20 +156,20 @@
                 <a href="alloggio/finca-ciguaña.html" class="node node-secondary item-ciguaña" id="node-ciguaña">
                     <span>Finca<br>Ciguaña</span>
                 </a>
-                <a href="alloggio/villa-costa-adeje.html" class="node node-secondary item-costaadeje" id="node-costaadeje">
+                <div class="node node-secondary item-costaadeje disabled-node" id="node-costaadeje">
                     <span>Villa<br>Costa Adeje</span>
-                </a>
-                <a href="alloggio/villa-torviscas.html" class="node node-secondary item-torviscas" id="node-torviscas">
+                </div>
+                <div class="node node-secondary item-torviscas disabled-node" id="node-torviscas">
                     <span>Villa<br>Torviscas</span>
+                </div>
+                <a href="alloggio/villa-duque.html" class="node node-secondary item-duque" id="node-duque">
+                    <span>Villa<br>Duque</span>
+                </a>
+                <a href="alloggio/finca-playa-paraiso.html" class="node node-secondary item-fincaplayaparaiso" id="node-fincaplayaparaiso">
+                    <span>Finca<br>Playa Paraíso</span>
                 </a>
             </div>
 
-            <!-- Elementi Livello 3 - FINCA WEDDING -->
-            <div class="sub-nodes" data-parent="fincawedding">
-                <a href="alloggio/finca-wedding-retreat.html" class="node node-secondary item-wedding-retreat" id="node-wedding-retreat">
-                    <span>Wedding<br>Retreat</span>
-                </a>
-            </div>
 
             <!-- Pulsante indietro -->
             <button class="back-btn" id="back-btn">

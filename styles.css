@@ -478,6 +478,19 @@ header {
     pointer-events: auto;
 }
 
+/* Nodi inibiti: visibili ma grigi e non cliccabili */
+.disabled-node,
+.node.disabled-node {
+    pointer-events: none !important;
+    opacity: 0.35 !important;
+    filter: grayscale(0.75);
+    cursor: not-allowed;
+}
+.disabled-node:hover {
+    transform: none !important;
+    box-shadow: none !important;
+}
+
 /* ===== FOOTER ===== */
 footer {
     text-align: center;

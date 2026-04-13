@@ -90,8 +90,7 @@ const pageLineConfig = {
             { line: 'line-center-ostello', from: 'category-trigger', to: 'node-ostello' },
             { line: 'line-center-rurale', from: 'category-trigger', to: 'node-rurale' },
             { line: 'line-center-surfhouse', from: 'category-trigger', to: 'node-surfhouse' },
-            { line: 'line-center-villa', from: 'category-trigger', to: 'node-villa' },
-            { line: 'line-center-fincawedding', from: 'category-trigger', to: 'node-fincawedding' }
+            { line: 'line-center-villa', from: 'category-trigger', to: 'node-villa' }
         ],
         appartamento: [
             { line: 'line-appartamento-alcala', from: 'node-appartamento', to: 'node-alcala' },
@@ -120,10 +119,9 @@ const pageLineConfig = {
             { line: 'line-villa-playaparaiso', from: 'node-villa', to: 'node-playaparaiso' },
             { line: 'line-villa-ciguaña', from: 'node-villa', to: 'node-ciguaña' },
             { line: 'line-villa-costaadeje', from: 'node-villa', to: 'node-costaadeje' },
-            { line: 'line-villa-torviscas', from: 'node-villa', to: 'node-torviscas' }
-        ],
-        fincawedding: [
-            { line: 'line-fincawedding-retreat', from: 'node-fincawedding', to: 'node-wedding-retreat' }
+            { line: 'line-villa-torviscas', from: 'node-villa', to: 'node-torviscas' },
+            { line: 'line-villa-duque', from: 'node-villa', to: 'node-duque' },
+            { line: 'line-villa-fincaplayaparaiso', from: 'node-villa', to: 'node-fincaplayaparaiso' }
         ]
     },
     escursioni: {
@@ -669,34 +667,23 @@ const pageSubNodesData = {
             subs: [
                 { id: 'beachhouse', name: 'Beach House', href: 'alloggio/beach-house.html' },
                 { id: 'atogo', name: 'Casa Atogo', href: 'alloggio/casa-rural-atogo.html' },
-                { id: 'taucho', name: 'Casa Dolores', href: 'alloggio/casa-rural-taucho.html' },
+                { id: 'taucho', name: 'Casa Rural Taucio', href: 'alloggio/casa-rural-taucho.html' },
                 { id: 'fortaleza', name: 'Finca La Fortaleza', href: 'alloggio/finca-la-fortaleza.html' },
                 { id: 'playaparaiso', name: 'Villa Playa Paraiso', href: 'alloggio/villa-playa-paraiso.html' },
                 { id: 'ciguaña', name: 'Finca Ciguaña', href: 'alloggio/finca-ciguaña.html' },
-                { id: 'costaadeje', name: 'Villa Costa Adeje', href: 'alloggio/villa-costa-adeje.html' },
-                { id: 'torviscas', name: 'Villa Torviscas', href: 'alloggio/villa-torviscas.html' }
-            ]
-        },
-        fincawedding: {
-            name: 'Finca Wedding',
-            class: 'radial-fincawedding',
-            subs: [
-                { id: 'wedding-retreat', name: 'Wedding Retreat', href: 'alloggio/finca-wedding-retreat.html' }
+                { id: 'duque', name: 'Villa Duque', href: 'alloggio/villa-duque.html' },
+                { id: 'fincaplayaparaiso', name: 'Finca Playa Paraíso', href: 'alloggio/finca-playa-paraiso.html' }
             ]
         }
     },
     escursioni: {
         teide: {
-            name: 'Teide',
+            name: 'Terra',
             class: 'radial-teide',
             subs: [
-                { id: 'jeep', name: 'Jeep', href: '#jeep' },
-                { id: 'stargazing', name: 'Star Gazing', href: '#stargazing' },
+                { id: 'jeep', name: 'Jeep Experience', href: '#jeep-experience' },
                 { id: 'quad', name: 'Quad', href: '#quad' },
-                { id: 'bike', name: 'Bike', href: '#bike' },
-                { id: 'buggy', name: 'Buggy', href: '#buggy' },
-                { id: 'hiking', name: 'Hiking', href: '#hiking' },
-                { id: 'trekking', name: 'Trekking', href: '#trekking' }
+                { id: 'buggy', name: 'Buggy', href: '#buggy' }
             ]
         },
         oceano: {
@@ -711,7 +698,7 @@ const pageSubNodesData = {
             ]
         },
         sky: {
-            name: 'Sky',
+            name: 'Aria',
             class: 'radial-sky',
             subs: [
                 { id: 'parapente', name: 'Parapente', href: '#parapente' },
@@ -1051,13 +1038,12 @@ function getSubcategoryNodes(page) {
             { id: 'ostello', name: 'Ostello', class: 'mobile-ostello' },
             { id: 'rurale', name: 'Rurale<br>Glamping', class: 'mobile-rurale' },
             { id: 'surfhouse', name: 'Surf House', class: 'mobile-surfhouse-alloggio' },
-            { id: 'villa', name: 'Villa Finca', class: 'mobile-villa' },
-            { id: 'fincawedding', name: 'Finca<br>Wedding', class: 'mobile-fincawedding' }
+            { id: 'villa', name: 'Villa Finca', class: 'mobile-villa' }
         ],
         escursioni: [
-            { id: 'teide', name: 'Teide', class: 'mobile-teide' },
+            { id: 'teide', name: 'Terra', class: 'mobile-teide' },
             { id: 'oceano', name: 'Oceano', class: 'mobile-oceano' },
-            { id: 'sky', name: 'Sky', class: 'mobile-sky' },
+            { id: 'sky', name: 'Aria', class: 'mobile-sky' },
             { id: 'sport', name: 'Sport', class: 'mobile-sport' },
             { id: 'private', name: 'Private', class: 'mobile-private' },
             { id: 'fooddrink', name: 'Food & Drink', class: 'mobile-fooddrink' }

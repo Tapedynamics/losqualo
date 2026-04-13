@@ -607,6 +607,20 @@ header {
     left: 60%;
 }
 
+.page-alloggio .item-duque {
+    background: linear-gradient(145deg, #deb2bc, #caa0a8);
+    color: var(--text-primary);
+    top: 45%;
+    left: 72%;
+}
+
+.page-alloggio .item-fincaplayaparaiso {
+    background: linear-gradient(145deg, #e2b8c4, #ce9ca8);
+    color: var(--text-primary);
+    top: 58%;
+    left: 72%;
+}
+
 /* =============================================
    PAGINA ESCURSIONI - Posizioni e Colori
    ============================================= */
