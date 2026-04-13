@@ -474,8 +474,17 @@ function showPageSubcategories(category) {
     pageState = 'subcategories';
     expandedSubcategory = category;
 
+    // Sub al centro: la categoria selezionata sostituisce la macrocategoria
+    pageMap.classList.add('sub-centered');
+    document.querySelectorAll('.node-primary').forEach(n => n.classList.remove('active-center'));
+    const activeNode = document.querySelector(`.node-primary[data-category="${category}"]`);
+    if (activeNode) activeNode.classList.add('active-center');
+
     const subNodes = document.querySelector(`.sub-nodes[data-parent="${category}"]`);
-    if (subNodes) subNodes.classList.add('visible');
+    if (subNodes) {
+        subNodes.classList.add('visible');
+        positionProductsRadially(subNodes);
+    }
 
     document.querySelectorAll(`.sub-line[data-category="${category}"]`).forEach(line => {
         line.classList.add('visible');
@@ -493,12 +502,47 @@ function showPageSubcategories(category) {
 function hideCurrentPageSubcategories() {
     if (expandedSubcategory) {
         const subNodes = document.querySelector(`.sub-nodes[data-parent="${expandedSubcategory}"]`);
-        if (subNodes) subNodes.classList.remove('visible');
+        if (subNodes) {
+            subNodes.classList.remove('visible');
+            resetProductsRadial(subNodes);
+        }
 
         document.querySelectorAll(`.sub-line[data-category="${expandedSubcategory}"]`).forEach(line => {
             line.classList.remove('visible');
         });
     }
+    const pageMap = document.querySelector('.page-map');
+    if (pageMap) pageMap.classList.remove('sub-centered');
+    document.querySelectorAll('.node-primary').forEach(n => n.classList.remove('active-center'));
+}
+
+// Dispone i prodotti radialmente attorno al centro (50%,50%)
+function positionProductsRadially(subNodes) {
+    const children = subNodes.querySelectorAll('.node-secondary');
+    const N = children.length;
+    if (!N) return;
+    const radius = N <= 4 ? 28 : 32; // %
+    children.forEach((el, i) => {
+        const angle = (2 * Math.PI * i / N) - Math.PI / 2;
+        const x = 50 + radius * Math.cos(angle);
+        const y = 50 + radius * Math.sin(angle);
+        el.style.setProperty('top', y + '%', 'important');
+        el.style.setProperty('left', x + '%', 'important');
+        el.style.setProperty('right', 'auto', 'important');
+        el.style.setProperty('bottom', 'auto', 'important');
+        el.style.setProperty('transform', 'translate(-50%, -50%) scale(1)', 'important');
+    });
+}
+
+function resetProductsRadial(subNodes) {
+    const children = subNodes.querySelectorAll('.node-secondary');
+    children.forEach(el => {
+        el.style.removeProperty('top');
+        el.style.removeProperty('left');
+        el.style.removeProperty('right');
+        el.style.removeProperty('bottom');
+        el.style.removeProperty('transform');
+    });
 }
 
 function goPageBack() {

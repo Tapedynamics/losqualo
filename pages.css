@@ -171,6 +171,36 @@ header {
     opacity: 1;
     pointer-events: auto;
     transition: opacity 0.3s ease;
+    top: 20px;
+    left: 20px;
+    bottom: auto;
+    transform: none;
+    z-index: 20;
+}
+.page-map .back-btn:hover {
+    transform: scale(1.03);
+}
+
+/* ===== SUB AL CENTRO (stato sub-centered) ===== */
+.page-map.sub-centered .category-center {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.2);
+    transition: all 0.4s ease;
+}
+.page-map.sub-centered .primary-nodes .node-primary:not(.active-center) {
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transform: scale(0.3) !important;
+}
+.page-map.sub-centered .primary-nodes .node-primary.active-center {
+    top: 50% !important;
+    left: 50% !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: translate(-50%, -50%) scale(1.15) !important;
+    z-index: 10;
+    transition: top 0.5s ease, left 0.5s ease, transform 0.5s ease;
 }
 
 /* ===== COLORI CENTRO PER CATEGORIA ===== */
