@@ -472,7 +472,6 @@ function showPageSubcategories(category) {
     pageState = 'subcategories';
     expandedSubcategory = category;
 
-    // Sub al centro: la categoria selezionata sostituisce la macrocategoria
     pageMap.classList.add('sub-centered');
     document.querySelectorAll('.node-primary').forEach(n => n.classList.remove('active-center'));
     const activeNode = document.querySelector(`.node-primary[data-category="${category}"]`);
@@ -488,7 +487,7 @@ function showPageSubcategories(category) {
         line.classList.add('visible');
     });
 
-    // Animate lines during CSS transitions (cover all staggered delays up to ~1.3s)
+    // Staggered sub-node delays go up to ~1.3s — keep redrawing until everything settles
     let frames = 0;
     function update() {
         updatePageLines();
@@ -496,20 +495,18 @@ function showPageSubcategories(category) {
     }
     requestAnimationFrame(update);
 
-    // Hook transitionend on every animated node so ogni "arrivo" triggera un redraw
     const animated = [activeNode, ...(subNodes ? subNodes.querySelectorAll('.node-secondary') : [])];
     animated.forEach(el => {
         if (!el) return;
         const handler = (e) => {
             if (e.propertyName === 'top' || e.propertyName === 'left' || e.propertyName === 'transform') {
-                updatePageLines();
+                scheduleUpdate();
             }
         };
         el.addEventListener('transitionend', handler);
-        // cleanup hookup: rimuovi dopo 2s per evitare leak
+        // Prevent listener leak if user never re-triggers a transition
         setTimeout(() => el.removeEventListener('transitionend', handler), 2000);
     });
-    // Safety re-sync
     setTimeout(updatePageLines, 1400);
 }
 
@@ -530,7 +527,6 @@ function hideCurrentPageSubcategories() {
     document.querySelectorAll('.node-primary').forEach(n => n.classList.remove('active-center'));
 }
 
-// Dispone i prodotti radialmente attorno al centro (50%,50%)
 function positionProductsRadially(subNodes) {
     const children = subNodes.querySelectorAll('.node-secondary');
     const N = children.length;
