@@ -424,21 +424,21 @@ header {
 
 /* Elementi APPARTAMENTO */
 .page-alloggio .item-alcala {
-    background: linear-gradient(145deg, #f0ceb8, #dcba9c);
+    background: linear-gradient(145deg, #f0c4ce, #d8acb6);
     color: var(--text-primary);
     top: 88%;
     left: 15%;
 }
 
 .page-alloggio .item-lasamericas {
-    background: linear-gradient(145deg, #eccab4, #d8b698);
+    background: linear-gradient(145deg, #ecc0cc, #d4a8b2);
     color: var(--text-primary);
     top: 88%;
     left: 30%;
 }
 
 .page-alloggio .item-loscristianos {
-    background: linear-gradient(145deg, #e8c6b0, #d4b294);
+    background: linear-gradient(145deg, #e8bcc8, #d0a4ae);
     color: var(--text-primary);
     top: 88%;
     left: 45%;
@@ -504,7 +504,7 @@ header {
 
 /* Elementi APPARTAMENTO - Nuovo */
 .page-alloggio .item-penthouse {
-    background: linear-gradient(145deg, #e4c2ac, #d0ae98);
+    background: linear-gradient(145deg, #e4b8c4, #cca0aa);
     color: var(--text-primary);
     top: 70%;
     left: 15%;
@@ -536,14 +536,14 @@ header {
 
 /* Elementi SURF HOUSE - Aggiornati */
 .page-alloggio .item-surfhouse-luxury {
-    background: linear-gradient(145deg, #edd0c2, #d9bca8);
+    background: linear-gradient(145deg, #ebc4cc, #d5a8b4);
     color: var(--text-primary);
     top: 42%;
     left: 92%;
 }
 
 .page-alloggio .item-surfhouse-rurale {
-    background: linear-gradient(145deg, #e5c8b8, #d1b4a0);
+    background: linear-gradient(145deg, #e3bcc4, #cda0ac);
     color: var(--text-primary);
     top: 58%;
     left: 92%;

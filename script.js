@@ -109,7 +109,18 @@ function drawCurve(pathId, fromId, toId) {
     path.setAttribute('d', `M ${r(from.x)} ${r(from.y)} Q ${r(cpX)} ${r(cpY)} ${r(to.x)} ${r(to.y)}`);
 }
 
+function syncSvgViewBox() {
+    const svg = document.getElementById('svg-connections');
+    if (!svg) return;
+    const rect = svg.getBoundingClientRect();
+    const w = Math.max(1, Math.round(rect.width));
+    const h = Math.max(1, Math.round(rect.height));
+    svg.setAttribute('viewBox', `0 0 ${w} ${h}`);
+    svg.setAttribute('preserveAspectRatio', 'none');
+}
+
 function updateAllLines() {
+    syncSvgViewBox();
     lineConnections.main.forEach(conn => {
         drawCurve(conn.line, conn.from, conn.to);
     });
