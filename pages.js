@@ -490,13 +490,15 @@ function showPageSubcategories(category) {
         line.classList.add('visible');
     });
 
-    // Animate lines into position
+    // Animate lines during CSS transitions (extended to cover staggered delays)
     let frames = 0;
     function update() {
         updatePageLines();
-        if (++frames < 30) requestAnimationFrame(update);
+        if (++frames < 70) requestAnimationFrame(update);
     }
     requestAnimationFrame(update);
+    // Re-sync after all transitions settle
+    setTimeout(updatePageLines, 900);
 }
 
 function hideCurrentPageSubcategories() {
