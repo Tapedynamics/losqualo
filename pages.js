@@ -490,15 +490,29 @@ function showPageSubcategories(category) {
         line.classList.add('visible');
     });
 
-    // Animate lines during CSS transitions (extended to cover staggered delays)
+    // Animate lines during CSS transitions (cover all staggered delays up to ~1.3s)
     let frames = 0;
     function update() {
         updatePageLines();
-        if (++frames < 70) requestAnimationFrame(update);
+        if (++frames < 120) requestAnimationFrame(update);
     }
     requestAnimationFrame(update);
-    // Re-sync after all transitions settle
-    setTimeout(updatePageLines, 900);
+
+    // Hook transitionend on every animated node so ogni "arrivo" triggera un redraw
+    const animated = [activeNode, ...(subNodes ? subNodes.querySelectorAll('.node-secondary') : [])];
+    animated.forEach(el => {
+        if (!el) return;
+        const handler = (e) => {
+            if (e.propertyName === 'top' || e.propertyName === 'left' || e.propertyName === 'transform') {
+                updatePageLines();
+            }
+        };
+        el.addEventListener('transitionend', handler);
+        // cleanup hookup: rimuovi dopo 2s per evitare leak
+        setTimeout(() => el.removeEventListener('transitionend', handler), 2000);
+    });
+    // Safety re-sync
+    setTimeout(updatePageLines, 1400);
 }
 
 function hideCurrentPageSubcategories() {
