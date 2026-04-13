@@ -677,9 +677,9 @@ const pageSubNodesData = {
             name: 'Terra',
             class: 'radial-teide',
             subs: [
-                { id: 'jeep', name: 'Jeep Experience', href: '#jeep-experience' },
-                { id: 'quad', name: 'Quad', href: '#quad' },
-                { id: 'buggy', name: 'Buggy', href: '#buggy' }
+                { id: 'jeep', name: 'Jeep Experience', href: 'escursioni/jeep-experience.html' },
+                { id: 'quad', name: 'Quad', href: 'escursioni/quad.html' },
+                { id: 'buggy', name: 'Buggy', href: 'escursioni/buggy.html' }
             ]
         },
         oceano: {
@@ -697,8 +697,8 @@ const pageSubNodesData = {
             name: 'Aria',
             class: 'radial-sky',
             subs: [
-                { id: 'parapente', name: 'Parapente', href: '#parapente' },
-                { id: 'paratrike', name: 'Paratrike', href: '#paratrike' }
+                { id: 'parapente', name: 'Parapendio', href: 'escursioni/parapendio.html' },
+                { id: 'paratrike', name: 'Paratrike', href: 'escursioni/paratrike.html' }
             ]
         },
         sport: {
