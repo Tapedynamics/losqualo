@@ -1479,7 +1479,7 @@ header {
     }
 
     .mobile-page-map[data-state="categories"] .mobile-line {
-        opacity: 1;
+        opacity: 0;
     }
 
     /* ===== RADIAL POPUP COLORS FOR PAGES ===== */

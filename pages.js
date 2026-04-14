@@ -662,13 +662,15 @@ const pageSubNodesData = {
             class: 'radial-villa',
             subs: [
                 { id: 'beachhouse', name: 'Beach House', href: 'alloggio/beach-house.html' },
-                { id: 'atogo', name: 'Casa Atogo', href: 'alloggio/casa-rural-atogo.html' },
+                { id: 'atogo', name: 'Casa Rural Atogo', href: 'alloggio/casa-rural-atogo.html' },
                 { id: 'taucho', name: 'Casa Rural Taucio', href: 'alloggio/casa-rural-taucho.html' },
                 { id: 'fortaleza', name: 'Finca La Fortaleza', href: 'alloggio/finca-la-fortaleza.html' },
                 { id: 'playaparaiso', name: 'Villa Playa Paraiso', href: 'alloggio/villa-playa-paraiso.html' },
                 { id: 'ciguaña', name: 'Finca Ciguaña', href: 'alloggio/finca-ciguaña.html' },
                 { id: 'duque', name: 'Villa Duque', href: 'alloggio/villa-duque.html' },
-                { id: 'fincaplayaparaiso', name: 'Finca Playa Paraíso', href: 'alloggio/finca-playa-paraiso.html' }
+                { id: 'fincaplayaparaiso', name: 'Finca Playa Paraíso', href: 'alloggio/finca-playa-paraiso.html' },
+                { id: 'torviscas', name: 'Villa Torviscas', href: '#', disabled: true },
+                { id: 'costaadeje', name: 'Villa Costa Adeje', href: '#', disabled: true }
             ]
         }
     },
@@ -679,7 +681,11 @@ const pageSubNodesData = {
             subs: [
                 { id: 'jeep', name: 'Jeep Experience', href: 'escursioni/jeep-experience.html' },
                 { id: 'quad', name: 'Quad', href: 'escursioni/quad.html' },
-                { id: 'buggy', name: 'Buggy', href: 'escursioni/buggy.html' }
+                { id: 'buggy', name: 'Buggy', href: 'escursioni/buggy.html' },
+                { id: 'stargazing', name: 'Stargazing', href: '#', disabled: true },
+                { id: 'bike', name: 'Bike', href: '#', disabled: true },
+                { id: 'hiking', name: 'Hiking', href: '#', disabled: true },
+                { id: 'trekking', name: 'Trekking', href: '#', disabled: true }
             ]
         },
         oceano: {
@@ -899,6 +905,7 @@ function createMobilePageMap() {
     subcatNodes.forEach((node, index) => {
         const el = document.createElement('div');
         el.classList.add('mobile-node', 'mobile-node-primary', node.class);
+        if (node.disabled) el.classList.add('disabled-node');
         el.id = `mobile-node-${node.id}`;
         el.dataset.category = node.id;
         el.innerHTML = `<span>${node.name}</span>`;
@@ -1031,7 +1038,7 @@ function getSubcategoryNodes(page) {
         ],
         alloggio: [
             { id: 'appartamento', name: 'Appartamento', class: 'mobile-appartamento' },
-            { id: 'ostello', name: 'Ostello', class: 'mobile-ostello' },
+            { id: 'ostello', name: 'Ostello', class: 'mobile-ostello', disabled: true },
             { id: 'rurale', name: 'Rurale<br>Glamping', class: 'mobile-rurale' },
             { id: 'surfhouse', name: 'Surf House', class: 'mobile-surfhouse-alloggio' },
             { id: 'villa', name: 'Villa Finca', class: 'mobile-villa' }
@@ -1121,8 +1128,9 @@ function openPageRadialPopup(page, category) {
         const y = 50 + (radius / 320 * 100) * Math.sin(radian);
 
         const node = document.createElement('a');
-        node.href = sub.href;
+        node.href = sub.disabled ? '#' : sub.href;
         node.classList.add('radial-node');
+        if (sub.disabled) node.classList.add('disabled-node');
         node.innerHTML = `<span>${sub.name}</span>`;
         node.style.top = `${y}%`;
         node.style.left = `${x}%`;
