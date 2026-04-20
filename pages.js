@@ -936,6 +936,12 @@ function createMobilePageMap() {
         if (frames < 60) requestAnimationFrame(animLoop);
     }
     requestAnimationFrame(animLoop);
+
+    // Se torniamo da una pagina prodotto, riapri il popup della sub di provenienza
+    const lastSubMobile = recallSub();
+    if (lastSubMobile) {
+        setTimeout(() => openPageRadialPopup(currentPage, lastSubMobile), 300);
+    }
 }
 
 function createMobileSVGLines(mobileMap, nodeCount) {
@@ -1134,6 +1140,11 @@ function openPageRadialPopup(page, category) {
         node.innerHTML = `<span>${sub.name}</span>`;
         node.style.top = `${y}%`;
         node.style.left = `${x}%`;
+        if (!sub.disabled) {
+            node.addEventListener('click', function() {
+                rememberSub(category);
+            });
+        }
         popup.appendChild(node);
     });
 
@@ -1151,6 +1162,7 @@ function closePageRadialPopup() {
     if (overlay) {
         overlay.classList.remove('visible');
     }
+    clearSub();
 }
 
 function initMobilePageEvents(mobileMap, currentPage) {
