@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LO SQUALO AGENCY — La nostra offerta</title>
+    <meta name="description" content="LO SQUALO AGENCY: setup ecosistema digitale, ottimizzazione e pack mensili (Base, Standard, Premium) per business locali a Tenerife.">
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --agency-deep: #2F4E5F;
+            --agency-mid: #3E5C6E;
+            --agency-soft: #5A7484;
+            --agency-line: #d8d3c5;
+            --pack-shadow: 0 8px 28px rgba(47, 78, 95, 0.12);
+        }
+
+        body { background: var(--bg-main); }
+
+        /* ===== HEADER ===== */
+        .oferta-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 20px;
+            background: var(--bg-main);
+            border-bottom: 1px solid var(--agency-line);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .oferta-header .back-link {
+            color: var(--agency-mid);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+        .oferta-header .logo-small {
+            font-weight: 700;
+            color: var(--agency-deep);
+            letter-spacing: 1.5px;
+            font-size: 0.95rem;
+        }
+        .lang-switch {
+            display: flex;
+            gap: 4px;
+            background: #fff;
+            border: 1px solid var(--agency-line);
+            border-radius: 999px;
+            padding: 3px;
+        }
+        .lang-switch button {
+            border: none;
+            background: transparent;
+            padding: 5px 11px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--agency-soft);
+            cursor: pointer;
+            border-radius: 999px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .lang-switch button.active {
+            background: var(--agency-deep);
+            color: #fff;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            padding: 60px 22px 50px;
+            text-align: center;
+            background: linear-gradient(180deg, var(--bg-main) 0%, #ECE7DC 100%);
+        }
+        .hero .eyebrow {
+            color: var(--agency-soft);
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+        .hero h1 {
+            font-size: clamp(1.9rem, 5vw, 3rem);
+            color: var(--agency-deep);
+            font-weight: 800;
+            line-height: 1.15;
+            max-width: 820px;
+            margin: 0 auto 18px;
+        }
+        .hero .lead {
+            font-size: clamp(1rem, 2vw, 1.15rem);
+            color: var(--text-secondary);
+            max-width: 680px;
+            margin: 0 auto 28px;
+            line-height: 1.6;
+        }
+        .hero .iva-note {
+            display: inline-block;
+            font-size: 0.75rem;
+            color: var(--agency-soft);
+            background: #fff;
+            padding: 7px 14px;
+            border-radius: 999px;
+            border: 1px solid var(--agency-line);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        /* ===== SECTION BASE ===== */
+        section.block { padding: 60px 22px; }
+        section.block.alt { background: #fff; }
+        section.block .inner { max-width: 1080px; margin: 0 auto; }
+        section.block h2 {
+            font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+            color: var(--agency-deep);
+            font-weight: 700;
+            margin-bottom: 14px;
+            line-height: 1.25;
+        }
+        section.block .section-intro {
+            color: var(--text-secondary);
+            max-width: 720px;
+            margin-bottom: 36px;
+            line-height: 1.65;
+            font-size: 1rem;
+        }
+
+        /* ===== FILOSOFIA BULLETS ===== */
+        .filosofia-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 14px;
+            margin-top: 24px;
+        }
+        .filo-item {
+            background: #fff;
+            border: 1px solid var(--agency-line);
+            border-left: 3px solid var(--agency-mid);
+            padding: 14px 16px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: var(--text-primary);
+        }
+
+        /* ===== SETUP CARDS ===== */
+        .setup-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 18px;
+            margin-top: 30px;
+        }
+        .setup-card {
+            background: #fff;
+            border: 1px solid var(--agency-line);
+            border-radius: 12px;
+            padding: 26px 22px;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .setup-card:hover { transform: translateY(-3px); box-shadow: var(--pack-shadow); }
+        .setup-card .tag {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--agency-soft);
+            margin-bottom: 10px;
+        }
+        .setup-card h3 {
+            font-size: 1.2rem;
+            color: var(--agency-deep);
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .setup-card .price {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--agency-mid);
+            margin: 14px 0 8px;
+        }
+        .setup-card .price-note {
+            font-size: 0.75rem;
+            color: var(--agency-soft);
+            margin-bottom: 16px;
+        }
+        .setup-card p.short {
+            color: var(--text-secondary);
+            font-size: 0.92rem;
+            line-height: 1.55;
+            margin-bottom: 14px;
+        }
+        .setup-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 18px;
+            font-size: 0.85rem;
+        }
+        .setup-card ul li {
+            padding: 5px 0 5px 18px;
+            position: relative;
+            color: var(--text-primary);
+            line-height: 1.5;
+        }
+        .setup-card ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--agency-mid);
+            font-weight: 700;
+        }
+        .setup-card .cta {
+            margin-top: auto;
+            display: inline-block;
+            background: var(--agency-deep);
+            color: #fff;
+            text-align: center;
+            padding: 11px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.3px;
+        }
+        .setup-card .cta:hover { background: var(--agency-mid); }
+
+        /* ===== PACKS MENSUALES ===== */
+        .packs-conditions {
+            background: #FAF7F0;
+            border: 1px dashed var(--agency-soft);
+            border-radius: 10px;
+            padding: 18px 20px;
+            margin-bottom: 30px;
+            font-size: 0.9rem;
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+        .packs-conditions strong { color: var(--agency-deep); }
+
+        .packs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 22px;
+            align-items: stretch;
+        }
+        .pack-card {
+            background: #fff;
+            border: 1px solid var(--agency-line);
+            border-radius: 14px;
+            padding: 30px 24px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .pack-card:hover { transform: translateY(-4px); box-shadow: var(--pack-shadow); }
+        .pack-card.featured {
+            border: 2px solid var(--agency-deep);
+            background: linear-gradient(180deg, #fff 0%, #FAFAF6 100%);
+        }
+        .pack-card.featured::before {
+            content: attr(data-badge);
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--agency-deep);
+            color: #fff;
+            padding: 4px 14px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            border-radius: 999px;
+        }
+        .pack-card .pack-num {
+            color: var(--agency-soft);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 6px;
+        }
+        .pack-card h3 {
+            font-size: 1.5rem;
+            color: var(--agency-deep);
+            font-weight: 800;
+            margin-bottom: 6px;
+            line-height: 1.2;
+        }
+        .pack-card .pack-sub {
+            color: var(--text-secondary);
+            font-size: 0.88rem;
+            line-height: 1.5;
+            margin-bottom: 18px;
+            min-height: 42px;
+        }
+        .pack-card .price-block {
+            background: #FAF7F0;
+            border-radius: 10px;
+            padding: 16px;
+            margin-bottom: 20px;
+        }
+        .pack-card .price-main {
+            font-size: 2.1rem;
+            font-weight: 800;
+            color: var(--agency-deep);
+            line-height: 1;
+        }
+        .pack-card .price-main span {
+            font-size: 0.9rem;
+            color: var(--agency-soft);
+            font-weight: 500;
+        }
+        .pack-card .price-offer {
+            margin-top: 8px;
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+        .pack-card .price-offer strong {
+            color: var(--agency-deep);
+        }
+        .pack-card ul.features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 22px;
+            font-size: 0.88rem;
+        }
+        .pack-card ul.features li {
+            padding: 7px 0 7px 22px;
+            position: relative;
+            line-height: 1.5;
+            color: var(--text-primary);
+        }
+        .pack-card ul.features li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: 7px;
+            color: var(--agency-mid);
+            font-weight: 700;
+        }
+        .pack-card ul.features li.dim {
+            color: var(--text-secondary);
+            opacity: 0.55;
+        }
+        .pack-card ul.features li.dim::before { content: "—"; color: var(--text-secondary); }
+        .pack-card .cta-pack {
+            margin-top: auto;
+            display: block;
+            background: var(--agency-deep);
+            color: #fff;
+            text-align: center;
+            padding: 13px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+        }
+        .pack-card .cta-pack:hover { background: var(--agency-mid); }
+
+        /* ===== UPGRADES ===== */
+        .upgrades-box {
+            background: #FAF7F0;
+            border-radius: 12px;
+            padding: 24px;
+            margin-top: 30px;
+        }
+        .upgrades-box h4 {
+            color: var(--agency-deep);
+            font-size: 1rem;
+            margin-bottom: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .upgrades-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 12px;
+        }
+        .upgrade-item {
+            background: #fff;
+            border: 1px solid var(--agency-line);
+            padding: 14px 16px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+        .upgrade-item .upgrade-price {
+            color: var(--agency-deep);
+            font-weight: 700;
+            font-size: 1rem;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        /* ===== DECISION TREE ===== */
+        .decision-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 14px;
+            margin-top: 28px;
+        }
+        .decision-card {
+            background: #fff;
+            border-left: 4px solid var(--agency-mid);
+            padding: 18px 20px;
+            border-radius: 6px;
+            border-top: 1px solid var(--agency-line);
+            border-right: 1px solid var(--agency-line);
+            border-bottom: 1px solid var(--agency-line);
+        }
+        .decision-card .if {
+            font-size: 0.78rem;
+            color: var(--agency-soft);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+        .decision-card .then {
+            color: var(--agency-deep);
+            font-weight: 700;
+            font-size: 1.05rem;
+            margin-bottom: 4px;
+        }
+        .decision-card .why {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        /* ===== CTA FINAL ===== */
+        .final-cta {
+            background: var(--agency-deep);
+            color: #fff;
+            padding: 70px 22px;
+            text-align: center;
+        }
+        .final-cta h2 {
+            color: #fff;
+            font-size: clamp(1.6rem, 4vw, 2.4rem);
+            font-weight: 800;
+            max-width: 720px;
+            margin: 0 auto 18px;
+            line-height: 1.25;
+        }
+        .final-cta p {
+            color: #D9DEE3;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            line-height: 1.6;
+        }
+        .final-cta .cta-btn {
+            display: inline-block;
+            background: #fff;
+            color: var(--agency-deep);
+            padding: 16px 32px;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            transition: transform 0.2s ease;
+        }
+        .final-cta .cta-btn:hover { transform: scale(1.04); }
+
+        /* ===== FOOTER ===== */
+        footer.oferta-footer {
+            text-align: center;
+            padding: 24px 20px;
+            color: var(--text-secondary);
+            font-size: 0.82rem;
+            background: var(--bg-main);
+        }
+
+        /* ===== MOBILE ===== */
+        @media (max-width: 600px) {
+            .hero { padding: 40px 18px 36px; }
+            section.block { padding: 44px 18px; }
+            .pack-card { padding: 26px 20px; }
+            .pack-card.featured::before { font-size: 0.62rem; padding: 3px 10px; }
+            .oferta-header { padding: 14px 16px; }
+            .oferta-header .back-link, .oferta-header .logo-small { font-size: 0.82rem; }
+            .lang-switch button { padding: 4px 9px; font-size: 0.72rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="oferta-header">
+        <a href="../agency.html" class="back-link" data-i18n="back">&larr; Agency</a>
+        <span class="logo-small">LO SQUALO</span>
+        <div class="lang-switch" role="tablist" aria-label="Language">
+            <button data-lang="it" class="active" type="button">IT</button>
+            <button data-lang="es" type="button">ES</button>
+            <button data-lang="en" type="button">EN</button>
+        </div>
+    </header>
+
+    <section class="hero">
+        <p class="eyebrow" data-i18n="hero.eyebrow">LO SQUALO AGENCY</p>
+        <h1 data-i18n="hero.title">Più di un'agenzia. Un partner strategico per il tuo business.</h1>
+        <p class="lead" data-i18n="hero.lead">Non lavoriamo come semplici fornitori di pubblicazioni. Costruiamo un ecosistema digitale chiaro, professionale e orientato a risultati reali per business locali, ristoranti, alloggi, esperienze turistiche e brand.</p>
+        <span class="iva-note" data-i18n="hero.iva">Tutti i prezzi sono IVA/IGIC esclusa</span>
+    </section>
+
+    <section class="block">
+        <div class="inner">
+            <h2 data-i18n="philo.title">Ogni business ha bisogno di una strategia diversa</h2>
+            <p class="section-intro" data-i18n="philo.intro">Non tutti i business sono nello stesso punto. Alcuni partono da zero, altri hanno profili online disordinati, altri pubblicano senza costanza, altri necessitano una gestione completa. Per questo i nostri servizi non sono formule chiuse: la base è chiara, l'adattamento al business reale.</p>
+            <div class="filosofia-grid">
+                <div class="filo-item" data-i18n="philo.f1">Situazione attuale del business</div>
+                <div class="filo-item" data-i18n="philo.f2">Piattaforme già esistenti</div>
+                <div class="filo-item" data-i18n="philo.f3">Qualità del materiale disponibile</div>
+                <div class="filo-item" data-i18n="philo.f4">Obiettivi commerciali</div>
+                <div class="filo-item" data-i18n="philo.f5">Tipo di cliente ideale</div>
+                <div class="filo-item" data-i18n="philo.f6">Necessità di contenuto e campagne</div>
+                <div class="filo-item" data-i18n="philo.f7">Livello di presenza desiderato</div>
+                <div class="filo-item" data-i18n="philo.f8">Budget disponibile</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="block alt">
+        <div class="inner">
+            <h2 data-i18n="setup.title">Fase 1 — Setup e ottimizzazione dell'ecosistema digitale</h2>
+            <p class="section-intro" data-i18n="setup.intro">Prima di pubblicare, promuovere o lanciare campagne, il business ha bisogno di una base digitale ben costruita. Un ecosistema professionale permette al cliente di trovare il business, capire cosa offre, contattarlo facilmente e percepire un'immagine coerente su tutte le piattaforme.</p>
+
+            <div class="setup-grid">
+                <div class="setup-card">
+                    <span class="tag" data-i18n="setup.minimo.tag">Base essenziale</span>
+                    <h3 data-i18n="setup.minimo.title">Setup Mínimo — Meta + Google</h3>
+                    <div class="price">400€</div>
+                    <div class="price-note" data-i18n="setup.iva">+ IVA/IGIC</div>
+                    <p class="short" data-i18n="setup.minimo.short">Per chi vuole partire con la base essenziale: reti principali e presenza corretta su Google.</p>
+                    <ul>
+                        <li data-i18n="setup.minimo.l1">Creazione/configurazione Instagram + Facebook</li>
+                        <li data-i18n="setup.minimo.l2">Configurazione base Meta</li>
+                        <li data-i18n="setup.minimo.l3">Creazione/ottimizzazione Google Business</li>
+                        <li data-i18n="setup.minimo.l4">Ottimizzazione bio, descrizioni, contatti, orari, link</li>
+                        <li data-i18n="setup.minimo.l5">Piano editoriale ideale + 1 shooting iniziale</li>
+                        <li data-i18n="setup.minimo.l6">Minimo 6 contenuti iniziali distribuiti</li>
+                    </ul>
+                    <a href="https://wa.me/34616794190?text=Ciao!%20Sono%20interessato%20al%20Setup%20Mínimo%20Meta%20%2B%20Google%20(400%E2%82%AC)" class="cta" target="_blank" rel="noopener" data-i18n="setup.cta" data-wa-base="Sono interessato al Setup Mínimo Meta + Google (400€)">Richiedi info</a>
+                </div>
+
+                <div class="setup-card">
+                    <span class="tag" data-i18n="setup.completo.tag">Llave en mano</span>
+                    <h3 data-i18n="setup.completo.title">Setup Ecosistema Completo</h3>
+                    <div class="price">600€</div>
+                    <div class="price-note" data-i18n="setup.iva">+ IVA/IGIC</div>
+                    <p class="short" data-i18n="setup.completo.short">Per chi non ha ancora una struttura digitale professionale o vuole partire con tutti i canali principali ben configurati.</p>
+                    <ul>
+                        <li data-i18n="setup.completo.l1">Tutto quello del Setup Mínimo</li>
+                        <li data-i18n="setup.completo.l2">Creazione/configurazione TikTok</li>
+                        <li data-i18n="setup.completo.l3">Creazione/configurazione YouTube</li>
+                        <li data-i18n="setup.completo.l4">Configurazione WhatsApp Business</li>
+                        <li data-i18n="setup.completo.l5">Catalogo base WhatsApp Business</li>
+                        <li data-i18n="setup.completo.l6">Messaggi base e risposte rapide</li>
+                        <li data-i18n="setup.completo.l7">Ecosistema consegnato pronto all'uso</li>
+                    </ul>
+                    <a href="https://wa.me/34616794190?text=Ciao!%20Sono%20interessato%20al%20Setup%20Ecosistema%20Completo%20(600%E2%82%AC)" class="cta" target="_blank" rel="noopener" data-i18n="setup.cta" data-wa-base="Sono interessato al Setup Ecosistema Completo (600€)">Richiedi info</a>
+                </div>
+
+                <div class="setup-card">
+                    <span class="tag" data-i18n="setup.opt.tag">Hai già profili</span>
+                    <h3 data-i18n="setup.opt.title">Ottimizzazione ecosistema esistente</h3>
+                    <div class="price" data-i18n="setup.opt.price">da 200€</div>
+                    <div class="price-note" data-i18n="setup.opt.priceNote">+ IVA/IGIC · include Meta + Google</div>
+                    <p class="short" data-i18n="setup.opt.short">Per business già online ma con profili disordinati, incompleti o mal collegati.</p>
+                    <ul>
+                        <li data-i18n="setup.opt.l1">Analisi profili esistenti</li>
+                        <li data-i18n="setup.opt.l2">Ottimizzazione Instagram + Facebook + Google Business</li>
+                        <li data-i18n="setup.opt.l3">Revisione bio, descrizioni, CTA</li>
+                        <li data-i18n="setup.opt.l4">Aggiornamento contatti, orari, link, info chiave</li>
+                        <li data-i18n="setup.opt.l5">Allineamento dell'immagine digitale</li>
+                        <li data-i18n="setup.opt.l6">+50€ per ogni profilo extra (TikTok/YT/WA/TripAdvisor/LinkedIn/Pinterest)</li>
+                    </ul>
+                    <a href="https://wa.me/34616794190?text=Ciao!%20Sono%20interessato%20all'Ottimizzazione%20Ecosistema%20Esistente" class="cta" target="_blank" rel="noopener" data-i18n="setup.cta" data-wa-base="Sono interessato all'Ottimizzazione Ecosistema Esistente">Richiedi info</a>
+                </div>
+
+                <div class="setup-card">
+                    <span class="tag" data-i18n="setup.shoot.tag">Add-on</span>
+                    <h3 data-i18n="setup.shoot.title">Extra Shooting</h3>
+                    <div class="price">150€</div>
+                    <div class="price-note" data-i18n="setup.shoot.priceNote">per sessione · + IVA/IGIC</div>
+                    <p class="short" data-i18n="setup.shoot.short">Sessione aggiuntiva per rinforzare il materiale visivo o ampliare il contenuto disponibile.</p>
+                    <ul>
+                        <li data-i18n="setup.shoot.l1">Foto e video brevi</li>
+                        <li data-i18n="setup.shoot.l2">Materiale per reels e stories</li>
+                        <li data-i18n="setup.shoot.l3">Contenuto per Google Business e campagne</li>
+                        <li data-i18n="setup.shoot.l4">Ambiente, team, locale, esperienza, processo</li>
+                        <li data-i18n="setup.shoot.l5">Non include fotografo/videografo esterno o drone</li>
+                    </ul>
+                    <a href="https://wa.me/34616794190?text=Ciao!%20Sono%20interessato%20a%20un%20Extra%20Shooting%20(150%E2%82%AC)" class="cta" target="_blank" rel="noopener" data-i18n="setup.cta" data-wa-base="Sono interessato a un Extra Shooting (150€)">Richiedi info</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="block">
+        <div class="inner">
+            <h2 data-i18n="packs.title">Fase 2 — Pack mensili di presenza e crescita</h2>
+            <p class="section-intro" data-i18n="packs.intro">Dopo il setup o l'ottimizzazione, il business può continuare con un servizio mensile di pubblicazione, presenza digitale e crescita.</p>
+
+            <div class="packs-conditions">
+                <strong data-i18n="packs.cond.title">Condizioni generali</strong> <span data-i18n="packs.cond.body">— Tutti i pack hanno una durata minima iniziale di 3 mesi. Dopo il primo ciclo, rinnovo di 6 in 6 mesi a prezzo pieno con pagamento mensile. Durante i primi 3 mesi puoi scegliere tra pagamento mensile a prezzo pieno o pagamento unico anticipato scontato. Tutti i pack includono report mensile. Tutti i prezzi sono IVA/IGIC esclusa.</span>
+            </div>
+
+            <div class="packs-grid">
+                <div class="pack-card">
+                    <div class="pack-num" data-i18n="packs.p1.num">PACK 1</div>
+                    <h3 data-i18n="packs.p1.title">Base / Pubblicazione contenuti</h3>
+                    <p class="pack-sub" data-i18n="packs.p1.sub">Per business che hanno già contenuto, ma non lo pubblicano con costanza.</p>
+                    <div class="price-block">
+                        <div class="price-main">90€<span data-i18n="packs.month"> /mese</span></div>
+                        <div class="price-offer"><span data-i18n="packs.p1.offer">3 mesi anticipato:</span> <strong>240€</strong> <span data-i18n="packs.p1.save">(risparmi 30€)</span></div>
+                    </div>
+                    <ul class="features">
+                        <li data-i18n="packs.p1.f1">3 contenuti/settimana forniti dal cliente</li>
+                        <li data-i18n="packs.p1.f2">Pubblicazione su Instagram, Facebook, Google Business</li>
+                        <li data-i18n="packs.p1.f3">TikTok / YouTube Shorts opzionali se il formato lo permette</li>
+                        <li data-i18n="packs.p1.f4">Ottimizzazione testi base + CTA semplici</li>
+                        <li data-i18n="packs.p1.f5">Programmazione in orari consigliati</li>
+                        <li data-i18n="packs.p1.f6">Calendario base + report mensile</li>
+                        <li class="dim" data-i18n="packs.p1.x1">No shooting, no templates, no campagne ads</li>
+                    </ul>
+                    <a href="https://wa.me/34616794190?text=Ciao!%20Sono%20interessato%20al%20Pack%201%20-%20Base%20(90%E2%82%AC%2Fmese)" class="cta-pack" target="_blank" rel="noopener" data-i18n="packs.cta" data-wa-base="Sono interessato al Pack 1 - Base (90€/mese)">Scegli Pack 1</a>
+                </div>
+
+                <div class="pack-card featured" data-badge="STANDARD">
+                    <div class="pack-num" data-i18n="packs.p2.num">PACK 2</div>
+                    <h3 data-i18n="packs.p2.title">Standard / Presenza digitale</h3>
+                    <p class="pack-sub" data-i18n="packs.p2.sub">Per business che vogliono un'immagine più professionale e una presenza digitale organizzata.</p>
+                    <div class="price-block">
+                        <div class="price-main">350€<span data-i18n="packs.month"> /mese</span></div>
+                        <div class="price-offer"><span data-i18n="packs.p2.offer">3 mesi anticipato:</span> <strong>900€</strong> <span data-i18n="packs.p2.save">(risparmi 150€)</span></div>
+                    </div>
+                    <ul class="features">
+                        <li data-i18n="packs.p2.f1">8 contenuti madre mensili adattati multi-piattaforma</li>
+                        <li data-i18n="packs.p2.f2">Distribuzione IG + FB + Google Business</li>
+                        <li data-i18n="packs.p2.f3">TikTok / YouTube Shorts opzionali</li>
+                        <li data-i18n="packs.p2.f4">2 template di marca (1 stories/flyer + 1 feed)</li>
+                        <li data-i18n="packs.p2.f5">Mantenimento bio + CTA + calendario editoriale</li>
+                        <li data-i18n="packs.p2.f6">Copywriting ottimizzato</li>
+                        <li data-i18n="packs.p2.f7">Report mensile</li>
+                    </ul>
+                    <a href="https://wa.me/34616794190?text=Ciao!%20Sono%20interessato%20al%20Pack%202%20-%20Standard%20(350%E2%82%AC%2Fmese)" class="cta-pack" target="_blank" rel="noopener" data-i18n="packs.cta" data-wa-base="Sono interessato al Pack 2 - Standard (350€/mese)">Scegli Pack 2</a>
+                </div>
+
+                <div class="pack-card">
+                    <div class="pack-num" data-i18n="packs.p3.num">PACK 3</div>
+                    <h3 data-i18n="packs.p3.title">Premium / Crescita digitale</h3>
+                    <p class="pack-sub" data-i18n="packs.p3.sub">Per business che vogliono una gestione digitale completa: contenuto reale, strategia, campagne, reputazione, influenza locale.</p>
+                    <div class="price-block">
+                        <div class="price-main">550€<span data-i18n="packs.month"> /mese</span></div>
+                        <div class="price-offer"><span data-i18n="packs.p3.offer">3 mesi anticipato:</span> <strong>1.400€</strong> <span data-i18n="packs.p3.save">(risparmi 250€)</span></div>
+                    </div>
+                    <ul class="features">
+                        <li data-i18n="packs.p3.f1">1 shooting mensile da LO SQUALO AGENCY</li>
+                        <li data-i18n="packs.p3.f2">Minimo 3 contenuti madre/settimana + 1 story al giorno</li>
+                        <li data-i18n="packs.p3.f3">Distribuzione completa multi-piattaforma</li>
+                        <li data-i18n="packs.p3.f4">1 campagna mensile Meta Ads o Google Ads</li>
+                        <li data-i18n="packs.p3.f5">1 azione mensile di influencer marketing</li>
+                        <li data-i18n="packs.p3.f6">Community management + risposte recensioni</li>
+                        <li data-i18n="packs.p3.f7">Automazioni base + risposte rapide</li>
+                        <li data-i18n="packs.p3.f8">Consulenza strategica continua + report mensile</li>
+                        <li class="dim" data-i18n="packs.p3.x1">Budget pubblicitario non incluso</li>
+                    </ul>
+                    <a href="https://wa.me/34616794190?text=Ciao!%20Sono%20interessato%20al%20Pack%203%20-%20Premium%20(550%E2%82%AC%2Fmese)" class="cta-pack" target="_blank" rel="noopener" data-i18n="packs.cta" data-wa-base="Sono interessato al Pack 3 - Premium (550€/mese)">Scegli Pack 3</a>
+                </div>
+            </div>
+
+            <div class="upgrades-box">
+                <h4 data-i18n="upgrades.title">Upgrade disponibili sul Pack 2 Standard</h4>
+                <div class="upgrades-grid">
+                    <div class="upgrade-item">
+                        <span class="upgrade-price">+50€/mes</span>
+                        <span data-i18n="upgrades.u1">Risposta a messaggi, commenti e recensioni</span>
+                    </div>
+                    <div class="upgrade-item">
+                        <span class="upgrade-price">+50€/mes</span>
+                        <span data-i18n="upgrades.u2">Creazione e gestione 1 campagna pubblicitaria (budget escluso)</span>
+                    </div>
+                    <div class="upgrade-item">
+                        <span class="upgrade-price">+50€/mes</span>
+                        <span data-i18n="upgrades.u3">Creazione e gestione 1 azione influencer (costi esterni esclusi)</span>
+                    </div>
+                    <div class="upgrade-item">
+                        <span class="upgrade-price">+100€/mes</span>
+                        <span data-i18n="upgrades.u4">Aumento a 3 contenuti madre settimanali</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="block alt">
+        <div class="inner">
+            <h2 data-i18n="decision.title">Quale servizio serve al tuo business?</h2>
+            <p class="section-intro" data-i18n="decision.intro">Una guida rapida per orientarti tra setup e pack mensili.</p>
+            <div class="decision-grid">
+                <div class="decision-card">
+                    <div class="if" data-i18n="decision.d1.if">Se ti serve solo la base essenziale</div>
+                    <div class="then" data-i18n="decision.d1.then">Setup Mínimo — 400€</div>
+                    <div class="why" data-i18n="decision.d1.why">Reti principali, presenza corretta su Google, piano editoriale iniziale, primi contenuti.</div>
+                </div>
+                <div class="decision-card">
+                    <div class="if" data-i18n="decision.d2.if">Se non hai ancora un ecosistema completo</div>
+                    <div class="then" data-i18n="decision.d2.then">Setup Ecosistema Completo — 600€</div>
+                    <div class="why" data-i18n="decision.d2.why">Struttura completa da zero, business pronto per iniziare a lavorare online.</div>
+                </div>
+                <div class="decision-card">
+                    <div class="if" data-i18n="decision.d3.if">Se sei già online ma i profili sono disordinati</div>
+                    <div class="then" data-i18n="decision.d3.then">Ottimizzazione Esistente — da 200€</div>
+                    <div class="why" data-i18n="decision.d3.why">Correzione, ordine e miglioramento di quello che c'è già.</div>
+                </div>
+                <div class="decision-card">
+                    <div class="if" data-i18n="decision.d4.if">Se hai contenuto ma non pubblichi con costanza</div>
+                    <div class="then" data-i18n="decision.d4.then">Pack 1 — Base</div>
+                    <div class="why" data-i18n="decision.d4.why">L'opzione più semplice per mantenere i canali attivi con materiale tuo.</div>
+                </div>
+                <div class="decision-card">
+                    <div class="if" data-i18n="decision.d5.if">Se vuoi ordinare presenza, immagine e coerenza</div>
+                    <div class="then" data-i18n="decision.d5.then">Pack 2 — Standard</div>
+                    <div class="why" data-i18n="decision.d5.why">L'opzione più equilibrata: struttura, contenuti adattati, template, copy.</div>
+                </div>
+                <div class="decision-card">
+                    <div class="if" data-i18n="decision.d6.if">Se vuoi delegare gestione completa e crescita reale</div>
+                    <div class="then" data-i18n="decision.d6.then">Pack 3 — Premium</div>
+                    <div class="why" data-i18n="decision.d6.why">Contenuto proprio, strategia, campagne, presenza giornaliera, influencer e reputazione.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="final-cta">
+        <h2 data-i18n="final.title">Prima ordiniamo l'ecosistema. Poi attiviamo la presenza. Poi cresciamo.</h2>
+        <p data-i18n="final.body">Non vendiamo pubblicazioni sciolte. Costruiamo una struttura digitale adattata al business reale. I pack sono il punto di partenza — la strategia si adatta al cliente, ai suoi obiettivi e al suo mercato.</p>
+        <a href="https://wa.me/34616794190?text=Ciao!%20Vorrei%20parlare%20con%20Lo%20Squalo%20Agency%20della%20mia%20attivit%C3%A0" class="cta-btn" target="_blank" rel="noopener" data-i18n="final.cta" data-wa-base="Vorrei parlare con Lo Squalo Agency della mia attività">Parla con noi su WhatsApp</a>
+    </section>
+
+    <footer class="oferta-footer">
+        <p>&copy; 2024 Lo Squalo Agency · Tenerife · Since 2009</p>
+    </footer>
+
+    <script>
+    (function () {
+        const I18N = {
+            it: {
+                "back": "← Agency",
+                "hero.eyebrow": "LO SQUALO AGENCY",
+                "hero.title": "Più di un'agenzia. Un partner strategico per il tuo business.",
+                "hero.lead": "Non lavoriamo come semplici fornitori di pubblicazioni. Costruiamo un ecosistema digitale chiaro, professionale e orientato a risultati reali per business locali, ristoranti, alloggi, esperienze turistiche e brand.",
+                "hero.iva": "Tutti i prezzi sono IVA/IGIC esclusa",
+
+                "philo.title": "Ogni business ha bisogno di una strategia diversa",
+                "philo.intro": "Non tutti i business sono nello stesso punto. Alcuni partono da zero, altri hanno profili online disordinati, altri pubblicano senza costanza, altri necessitano una gestione completa. Per questo i nostri servizi non sono formule chiuse: la base è chiara, l'adattamento al business reale.",
+                "philo.f1": "Situazione attuale del business",
+                "philo.f2": "Piattaforme già esistenti",
+                "philo.f3": "Qualità del materiale disponibile",
+                "philo.f4": "Obiettivi commerciali",
+                "philo.f5": "Tipo di cliente ideale",
+                "philo.f6": "Necessità di contenuto e campagne",
+                "philo.f7": "Livello di presenza desiderato",
+                "philo.f8": "Budget disponibile",
+
+                "setup.title": "Fase 1 — Setup e ottimizzazione dell'ecosistema digitale",
+                "setup.intro": "Prima di pubblicare, promuovere o lanciare campagne, il business ha bisogno di una base digitale ben costruita. Un ecosistema professionale permette al cliente di trovare il business, capire cosa offre, contattarlo facilmente e percepire un'immagine coerente su tutte le piattaforme.",
+                "setup.iva": "+ IVA/IGIC",
+                "setup.cta": "Richiedi info",
+
+                "setup.minimo.tag": "Base essenziale",
+                "setup.minimo.title": "Setup Mínimo — Meta + Google",
+                "setup.minimo.short": "Per chi vuole partire con la base essenziale: reti principali e presenza corretta su Google.",
+                "setup.minimo.l1": "Creazione/configurazione Instagram + Facebook",
+                "setup.minimo.l2": "Configurazione base Meta",
+                "setup.minimo.l3": "Creazione/ottimizzazione Google Business",
+                "setup.minimo.l4": "Ottimizzazione bio, descrizioni, contatti, orari, link",
+                "setup.minimo.l5": "Piano editoriale ideale + 1 shooting iniziale",
+                "setup.minimo.l6": "Minimo 6 contenuti iniziali distribuiti",
+
+                "setup.completo.tag": "Llave en mano",
+                "setup.completo.title": "Setup Ecosistema Completo",
+                "setup.completo.short": "Per chi non ha ancora una struttura digitale professionale o vuole partire con tutti i canali principali ben configurati.",
+                "setup.completo.l1": "Tutto quello del Setup Mínimo",
+                "setup.completo.l2": "Creazione/configurazione TikTok",
+                "setup.completo.l3": "Creazione/configurazione YouTube",
+                "setup.completo.l4": "Configurazione WhatsApp Business",
+                "setup.completo.l5": "Catalogo base WhatsApp Business",
+                "setup.completo.l6": "Messaggi base e risposte rapide",
+                "setup.completo.l7": "Ecosistema consegnato pronto all'uso",
+
+                "setup.opt.tag": "Hai già profili",
+                "setup.opt.title": "Ottimizzazione ecosistema esistente",
+                "setup.opt.price": "da 200€",
+                "setup.opt.priceNote": "+ IVA/IGIC · include Meta + Google",
+                "setup.opt.short": "Per business già online ma con profili disordinati, incompleti o mal collegati.",
+                "setup.opt.l1": "Analisi profili esistenti",
+                "setup.opt.l2": "Ottimizzazione Instagram + Facebook + Google Business",
+                "setup.opt.l3": "Revisione bio, descrizioni, CTA",
+                "setup.opt.l4": "Aggiornamento contatti, orari, link, info chiave",
+                "setup.opt.l5": "Allineamento dell'immagine digitale",
+                "setup.opt.l6": "+50€ per ogni profilo extra (TikTok/YT/WA/TripAdvisor/LinkedIn/Pinterest)",
+
+                "setup.shoot.tag": "Add-on",
+                "setup.shoot.title": "Extra Shooting",
+                "setup.shoot.priceNote": "per sessione · + IVA/IGIC",
+                "setup.shoot.short": "Sessione aggiuntiva per rinforzare il materiale visivo o ampliare il contenuto disponibile.",
+                "setup.shoot.l1": "Foto e video brevi",
+                "setup.shoot.l2": "Materiale per reels e stories",
+                "setup.shoot.l3": "Contenuto per Google Business e campagne",
+                "setup.shoot.l4": "Ambiente, team, locale, esperienza, processo",
+                "setup.shoot.l5": "Non include fotografo/videografo esterno o drone",
+
+                "packs.title": "Fase 2 — Pack mensili di presenza e crescita",
+                "packs.intro": "Dopo il setup o l'ottimizzazione, il business può continuare con un servizio mensile di pubblicazione, presenza digitale e crescita.",
+                "packs.cond.title": "Condizioni generali",
+                "packs.cond.body": "— Tutti i pack hanno una durata minima iniziale di 3 mesi. Dopo il primo ciclo, rinnovo di 6 in 6 mesi a prezzo pieno con pagamento mensile. Durante i primi 3 mesi puoi scegliere tra pagamento mensile a prezzo pieno o pagamento unico anticipato scontato. Tutti i pack includono report mensile. Tutti i prezzi sono IVA/IGIC esclusa.",
+                "packs.month": " /mese",
+                "packs.cta": "Scegli questo pack",
+
+                "packs.p1.num": "PACK 1",
+                "packs.p1.title": "Base / Pubblicazione contenuti",
+                "packs.p1.sub": "Per business che hanno già contenuto, ma non lo pubblicano con costanza.",
+                "packs.p1.offer": "3 mesi anticipato:",
+                "packs.p1.save": "(risparmi 30€)",
+                "packs.p1.f1": "3 contenuti/settimana forniti dal cliente",
+                "packs.p1.f2": "Pubblicazione su Instagram, Facebook, Google Business",
+                "packs.p1.f3": "TikTok / YouTube Shorts opzionali se il formato lo permette",
+                "packs.p1.f4": "Ottimizzazione testi base + CTA semplici",
+                "packs.p1.f5": "Programmazione in orari consigliati",
+                "packs.p1.f6": "Calendario base + report mensile",
+                "packs.p1.x1": "No shooting, no templates, no campagne ads",
+
+                "packs.p2.num": "PACK 2",
+                "packs.p2.title": "Standard / Presenza digitale",
+                "packs.p2.sub": "Per business che vogliono un'immagine più professionale e una presenza digitale organizzata.",
+                "packs.p2.offer": "3 mesi anticipato:",
+                "packs.p2.save": "(risparmi 150€)",
+                "packs.p2.f1": "8 contenuti madre mensili adattati multi-piattaforma",
+                "packs.p2.f2": "Distribuzione IG + FB + Google Business",
+                "packs.p2.f3": "TikTok / YouTube Shorts opzionali",
+                "packs.p2.f4": "2 template di marca (1 stories/flyer + 1 feed)",
+                "packs.p2.f5": "Mantenimento bio + CTA + calendario editoriale",
+                "packs.p2.f6": "Copywriting ottimizzato",
+                "packs.p2.f7": "Report mensile",
+
+                "packs.p3.num": "PACK 3",
+                "packs.p3.title": "Premium / Crescita digitale",
+                "packs.p3.sub": "Per business che vogliono una gestione digitale completa: contenuto reale, strategia, campagne, reputazione, influenza locale.",
+                "packs.p3.offer": "3 mesi anticipato:",
+                "packs.p3.save": "(risparmi 250€)",
+                "packs.p3.f1": "1 shooting mensile da LO SQUALO AGENCY",
+                "packs.p3.f2": "Minimo 3 contenuti madre/settimana + 1 story al giorno",
+                "packs.p3.f3": "Distribuzione completa multi-piattaforma",
+                "packs.p3.f4": "1 campagna mensile Meta Ads o Google Ads",
+                "packs.p3.f5": "1 azione mensile di influencer marketing",
+                "packs.p3.f6": "Community management + risposte recensioni",
+                "packs.p3.f7": "Automazioni base + risposte rapide",
+                "packs.p3.f8": "Consulenza strategica continua + report mensile",
+                "packs.p3.x1": "Budget pubblicitario non incluso",
+
+                "upgrades.title": "Upgrade disponibili sul Pack 2 Standard",
+                "upgrades.u1": "Risposta a messaggi, commenti e recensioni",
+                "upgrades.u2": "Creazione e gestione 1 campagna pubblicitaria (budget escluso)",
+                "upgrades.u3": "Creazione e gestione 1 azione influencer (costi esterni esclusi)",
+                "upgrades.u4": "Aumento a 3 contenuti madre settimanali",
+
+                "decision.title": "Quale servizio serve al tuo business?",
+                "decision.intro": "Una guida rapida per orientarti tra setup e pack mensili.",
+                "decision.d1.if": "Se ti serve solo la base essenziale",
+                "decision.d1.then": "Setup Mínimo — 400€",
+                "decision.d1.why": "Reti principali, presenza corretta su Google, piano editoriale iniziale, primi contenuti.",
+                "decision.d2.if": "Se non hai ancora un ecosistema completo",
+                "decision.d2.then": "Setup Ecosistema Completo — 600€",
+                "decision.d2.why": "Struttura completa da zero, business pronto per iniziare a lavorare online.",
+                "decision.d3.if": "Se sei già online ma i profili sono disordinati",
+                "decision.d3.then": "Ottimizzazione Esistente — da 200€",
+                "decision.d3.why": "Correzione, ordine e miglioramento di quello che c'è già.",
+                "decision.d4.if": "Se hai contenuto ma non pubblichi con costanza",
+                "decision.d4.then": "Pack 1 — Base",
+                "decision.d4.why": "L'opzione più semplice per mantenere i canali attivi con materiale tuo.",
+                "decision.d5.if": "Se vuoi ordinare presenza, immagine e coerenza",
+                "decision.d5.then": "Pack 2 — Standard",
+                "decision.d5.why": "L'opzione più equilibrata: struttura, contenuti adattati, template, copy.",
+                "decision.d6.if": "Se vuoi delegare gestione completa e crescita reale",
+                "decision.d6.then": "Pack 3 — Premium",
+                "decision.d6.why": "Contenuto proprio, strategia, campagne, presenza giornaliera, influencer e reputazione.",
+
+                "final.title": "Prima ordiniamo l'ecosistema. Poi attiviamo la presenza. Poi cresciamo.",
+                "final.body": "Non vendiamo pubblicazioni sciolte. Costruiamo una struttura digitale adattata al business reale. I pack sono il punto di partenza — la strategia si adatta al cliente, ai suoi obiettivi e al suo mercato.",
+                "final.cta": "Parla con noi su WhatsApp",
+
+                "_wa": { "prefix": "Ciao! ", "talk": "Vorrei parlare con Lo Squalo Agency della mia attività" }
+            },
+
+            es: {
+                "back": "← Agency",
+                "hero.eyebrow": "LO SQUALO AGENCY",
+                "hero.title": "Más que una agencia. Un partner estratégico para tu negocio.",
+                "hero.lead": "No trabajamos como un simple proveedor de publicaciones. Construimos un ecosistema digital claro, profesional y orientado a resultados reales para negocios locales, restaurantes, alojamientos, experiencias turísticas y marcas.",
+                "hero.iva": "Todos los precios son IVA/IGIC no incluido",
+
+                "philo.title": "Cada negocio necesita una estrategia diferente",
+                "philo.intro": "No todos los negocios están en el mismo punto. Algunos empiezan desde cero, otros tienen perfiles online desordenados, otros publican sin constancia, otros necesitan una gestión completa. Por eso nuestros servicios no son fórmulas cerradas: la base es clara, el ajuste es al negocio real.",
+                "philo.f1": "Situación actual del negocio",
+                "philo.f2": "Plataformas ya existentes",
+                "philo.f3": "Calidad del material disponible",
+                "philo.f4": "Objetivos comerciales",
+                "philo.f5": "Tipo de cliente ideal",
+                "philo.f6": "Necesidad de contenido y campañas",
+                "philo.f7": "Nivel de presencia deseado",
+                "philo.f8": "Presupuesto disponible",
+
+                "setup.title": "Primera fase — Setup y optimización del ecosistema digital",
+                "setup.intro": "Antes de publicar, promocionar o hacer campañas, el negocio necesita una base digital bien construida. Un ecosistema profesional permite que el cliente encuentre el negocio, entienda qué ofrece, contacte fácilmente y perciba una imagen coherente en todas las plataformas.",
+                "setup.iva": "+ IVA/IGIC",
+                "setup.cta": "Pedir información",
+
+                "setup.minimo.tag": "Base esencial",
+                "setup.minimo.title": "Setup Mínimo — Meta + Google",
+                "setup.minimo.short": "Para negocios que quieren empezar con la base esencial: redes principales y presencia correcta en Google.",
+                "setup.minimo.l1": "Creación/configuración Instagram + Facebook",
+                "setup.minimo.l2": "Configuración básica de Meta",
+                "setup.minimo.l3": "Creación/optimización Google Business",
+                "setup.minimo.l4": "Optimización de bio, descripciones, contactos, horarios, enlaces",
+                "setup.minimo.l5": "Plan editorial ideal + 1 shooting inicial",
+                "setup.minimo.l6": "Mínimo 6 contenidos iniciales distribuidos",
+
+                "setup.completo.tag": "Llave en mano",
+                "setup.completo.title": "Setup Ecosistema Completo",
+                "setup.completo.short": "Para negocios sin estructura digital profesional o que quieren empezar con todos los canales principales bien configurados.",
+                "setup.completo.l1": "Todo lo del Setup Mínimo",
+                "setup.completo.l2": "Creación/configuración TikTok",
+                "setup.completo.l3": "Creación/configuración YouTube",
+                "setup.completo.l4": "Configuración de WhatsApp Business",
+                "setup.completo.l5": "Catálogo básico WhatsApp Business",
+                "setup.completo.l6": "Mensajes base y respuestas rápidas",
+                "setup.completo.l7": "Ecosistema entregado listo para usar",
+
+                "setup.opt.tag": "Ya tienes perfiles",
+                "setup.opt.title": "Optimización de ecosistema existente",
+                "setup.opt.price": "desde 200€",
+                "setup.opt.priceNote": "+ IVA/IGIC · incluye Meta + Google",
+                "setup.opt.short": "Para negocios que ya están online pero con perfiles desordenados, incompletos o mal conectados.",
+                "setup.opt.l1": "Análisis de perfiles existentes",
+                "setup.opt.l2": "Optimización Instagram + Facebook + Google Business",
+                "setup.opt.l3": "Revisión de bio, descripciones, CTA",
+                "setup.opt.l4": "Actualización de contactos, horarios, enlaces, info clave",
+                "setup.opt.l5": "Alineación de la imagen digital",
+                "setup.opt.l6": "+50€ por cada perfil extra (TikTok/YT/WA/TripAdvisor/LinkedIn/Pinterest)",
+
+                "setup.shoot.tag": "Add-on",
+                "setup.shoot.title": "Extra Shooting",
+                "setup.shoot.priceNote": "por sesión · + IVA/IGIC",
+                "setup.shoot.short": "Sesión adicional para reforzar el material visual o ampliar la cantidad de contenido disponible.",
+                "setup.shoot.l1": "Fotos y vídeos breves",
+                "setup.shoot.l2": "Material para reels y stories",
+                "setup.shoot.l3": "Contenido para Google Business y campañas",
+                "setup.shoot.l4": "Ambiente, equipo, local, experiencia, proceso",
+                "setup.shoot.l5": "No incluye fotógrafo/videógrafo externo o drone",
+
+                "packs.title": "Segunda fase — Packs mensuales de presencia y crecimiento",
+                "packs.intro": "Después del setup o de la optimización, el negocio puede continuar con un servicio mensual de publicación, presencia digital y crecimiento.",
+                "packs.cond.title": "Condiciones generales",
+                "packs.cond.body": "— Todos los packs tienen una duración mínima inicial de 3 meses. Después del primer ciclo, renovación de 6 en 6 meses a precio completo con pago mensual. Durante los primeros 3 meses puedes elegir pago mensual a precio completo o pago único anticipado con descuento. Todos los packs incluyen report mensual. Todos los precios son IVA/IGIC no incluido.",
+                "packs.month": " /mes",
+                "packs.cta": "Elegir este pack",
+
+                "packs.p1.num": "PACK 1",
+                "packs.p1.title": "Base / Publicación de contenidos",
+                "packs.p1.sub": "Para negocios que ya tienen contenido pero no publican con constancia.",
+                "packs.p1.offer": "3 meses anticipado:",
+                "packs.p1.save": "(ahorras 30€)",
+                "packs.p1.f1": "3 contenidos/semana proporcionados por el cliente",
+                "packs.p1.f2": "Publicación en Instagram, Facebook, Google Business",
+                "packs.p1.f3": "TikTok / YouTube Shorts opcionales si el formato lo permite",
+                "packs.p1.f4": "Optimización básica de textos + CTA simples",
+                "packs.p1.f5": "Programación en horarios recomendados",
+                "packs.p1.f6": "Calendario base + report mensual",
+                "packs.p1.x1": "Sin shooting, sin templates, sin campañas",
+
+                "packs.p2.num": "PACK 2",
+                "packs.p2.title": "Standard / Presencia digital",
+                "packs.p2.sub": "Para negocios que quieren una imagen más profesional y una presencia digital organizada.",
+                "packs.p2.offer": "3 meses anticipado:",
+                "packs.p2.save": "(ahorras 150€)",
+                "packs.p2.f1": "8 contenidos madre mensuales adaptados multi-plataforma",
+                "packs.p2.f2": "Distribución IG + FB + Google Business",
+                "packs.p2.f3": "TikTok / YouTube Shorts opcionales",
+                "packs.p2.f4": "2 templates de marca (1 stories/flyer + 1 feed)",
+                "packs.p2.f5": "Mantenimiento bio + CTA + calendario editorial",
+                "packs.p2.f6": "Copywriting optimizado",
+                "packs.p2.f7": "Report mensual",
+
+                "packs.p3.num": "PACK 3",
+                "packs.p3.title": "Premium / Crecimiento digital",
+                "packs.p3.sub": "Para negocios que quieren una gestión digital completa: contenido real, estrategia, campañas, reputación, influencia local.",
+                "packs.p3.offer": "3 meses anticipado:",
+                "packs.p3.save": "(ahorras 250€)",
+                "packs.p3.f1": "1 shooting mensual realizado por LO SQUALO AGENCY",
+                "packs.p3.f2": "Mínimo 3 contenidos madre/semana + 1 story al día",
+                "packs.p3.f3": "Distribución completa multi-plataforma",
+                "packs.p3.f4": "1 campaña mensual Meta Ads o Google Ads",
+                "packs.p3.f5": "1 acción mensual de marketing de influencia",
+                "packs.p3.f6": "Community management + respuesta a reseñas",
+                "packs.p3.f7": "Automatizaciones básicas + respuestas rápidas",
+                "packs.p3.f8": "Consultoría estratégica continuativa + report mensual",
+                "packs.p3.x1": "Presupuesto publicitario no incluido",
+
+                "upgrades.title": "Upgrades disponibles en el Pack 2 Standard",
+                "upgrades.u1": "Respuesta a mensajes, comentarios y reseñas",
+                "upgrades.u2": "Creación y gestión de 1 campaña publicitaria (presupuesto excluido)",
+                "upgrades.u3": "Creación y gestión de 1 acción influencer (costes externos excluidos)",
+                "upgrades.u4": "Aumento a 3 contenidos madre semanales",
+
+                "decision.title": "¿Qué servicio necesita tu negocio?",
+                "decision.intro": "Una guía rápida para orientarte entre setup y packs mensuales.",
+                "decision.d1.if": "Si necesitas solo la base esencial",
+                "decision.d1.then": "Setup Mínimo — 400€",
+                "decision.d1.why": "Redes principales, presencia correcta en Google, plan editorial inicial, primeros contenidos.",
+                "decision.d2.if": "Si todavía no tienes ecosistema completo",
+                "decision.d2.then": "Setup Ecosistema Completo — 600€",
+                "decision.d2.why": "Estructura completa desde cero, negocio listo para empezar a trabajar online.",
+                "decision.d3.if": "Si ya estás online pero los perfiles están desordenados",
+                "decision.d3.then": "Optimización Existente — desde 200€",
+                "decision.d3.why": "Corrección, orden y mejora de lo que ya existe.",
+                "decision.d4.if": "Si tienes contenido pero no publicas con constancia",
+                "decision.d4.then": "Pack 1 — Base",
+                "decision.d4.why": "La opción más simple para mantener los canales activos con material propio.",
+                "decision.d5.if": "Si quieres ordenar presencia, imagen y coherencia",
+                "decision.d5.then": "Pack 2 — Standard",
+                "decision.d5.why": "La opción más equilibrada: estructura, contenidos adaptados, templates, copy.",
+                "decision.d6.if": "Si quieres delegar gestión completa y crecimiento real",
+                "decision.d6.then": "Pack 3 — Premium",
+                "decision.d6.why": "Contenido propio, estrategia, campañas, presencia diaria, influencia y reputación.",
+
+                "final.title": "Primero ordenamos el ecosistema. Después activamos la presencia. Luego crecemos.",
+                "final.body": "No vendemos publicaciones sueltas. Construimos una estructura digital adaptada al negocio real. Los packs son el punto de partida — la estrategia se ajusta al cliente, sus objetivos y su mercado.",
+                "final.cta": "Habla con nosotros por WhatsApp",
+
+                "_wa": { "prefix": "¡Hola! ", "talk": "Estoy interesad@ en hablar con Lo Squalo Agency sobre mi negocio" }
+            },
+
+            en: {
+                "back": "← Agency",
+                "hero.eyebrow": "LO SQUALO AGENCY",
+                "hero.title": "More than an agency. A strategic partner for your business.",
+                "hero.lead": "We don't work as a simple posting provider. We build a clear, professional digital ecosystem oriented to real results — for local businesses, restaurants, accommodations, tourism experiences and brands.",
+                "hero.iva": "All prices are VAT/IGIC excluded",
+
+                "philo.title": "Every business needs a different strategy",
+                "philo.intro": "Not all businesses are at the same point. Some start from zero, others have messy online profiles, others post without consistency, others need full management. That's why our services aren't closed formulas: the base is clear, the fit is to the real business.",
+                "philo.f1": "Current business situation",
+                "philo.f2": "Existing platforms",
+                "philo.f3": "Quality of available material",
+                "philo.f4": "Commercial objectives",
+                "philo.f5": "Ideal customer profile",
+                "philo.f6": "Content & campaign needs",
+                "philo.f7": "Desired presence level",
+                "philo.f8": "Available budget",
+
+                "setup.title": "Phase 1 — Digital ecosystem setup & optimization",
+                "setup.intro": "Before publishing, promoting or running campaigns, a business needs a well-built digital base. A professional ecosystem lets the customer find the business, understand the offer, contact easily and perceive a coherent image across all platforms.",
+                "setup.iva": "+ VAT/IGIC",
+                "setup.cta": "Request info",
+
+                "setup.minimo.tag": "Essential base",
+                "setup.minimo.title": "Minimum Setup — Meta + Google",
+                "setup.minimo.short": "For those who want to start with the essential base: main networks and proper Google presence.",
+                "setup.minimo.l1": "Instagram + Facebook creation/setup",
+                "setup.minimo.l2": "Basic Meta configuration",
+                "setup.minimo.l3": "Google Business creation/optimization",
+                "setup.minimo.l4": "Bio, descriptions, contacts, hours, links optimization",
+                "setup.minimo.l5": "Editorial plan + 1 initial shooting",
+                "setup.minimo.l6": "Minimum 6 initial content pieces distributed",
+
+                "setup.completo.tag": "Turnkey",
+                "setup.completo.title": "Full Ecosystem Setup",
+                "setup.completo.short": "For businesses without a professional digital structure or who want to start with all main channels properly configured.",
+                "setup.completo.l1": "Everything in Minimum Setup",
+                "setup.completo.l2": "TikTok creation/setup",
+                "setup.completo.l3": "YouTube creation/setup",
+                "setup.completo.l4": "WhatsApp Business configuration",
+                "setup.completo.l5": "Basic WhatsApp Business catalog",
+                "setup.completo.l6": "Base messages and quick replies",
+                "setup.completo.l7": "Ecosystem delivered ready to use",
+
+                "setup.opt.tag": "You already have profiles",
+                "setup.opt.title": "Existing ecosystem optimization",
+                "setup.opt.price": "from 200€",
+                "setup.opt.priceNote": "+ VAT/IGIC · includes Meta + Google",
+                "setup.opt.short": "For businesses already online but with messy, incomplete or poorly connected profiles.",
+                "setup.opt.l1": "Existing profile analysis",
+                "setup.opt.l2": "Instagram + Facebook + Google Business optimization",
+                "setup.opt.l3": "Bio, descriptions, CTA review",
+                "setup.opt.l4": "Update of contacts, hours, links, key info",
+                "setup.opt.l5": "Digital image alignment",
+                "setup.opt.l6": "+50€ per extra profile (TikTok/YT/WA/TripAdvisor/LinkedIn/Pinterest)",
+
+                "setup.shoot.tag": "Add-on",
+                "setup.shoot.title": "Extra Shooting",
+                "setup.shoot.priceNote": "per session · + VAT/IGIC",
+                "setup.shoot.short": "Additional session to reinforce visual material or expand available content.",
+                "setup.shoot.l1": "Photos and short videos",
+                "setup.shoot.l2": "Material for reels and stories",
+                "setup.shoot.l3": "Content for Google Business and campaigns",
+                "setup.shoot.l4": "Atmosphere, team, venue, experience, process",
+                "setup.shoot.l5": "Does not include external photographer/videographer or drone",
+
+                "packs.title": "Phase 2 — Monthly presence & growth packs",
+                "packs.intro": "After setup or optimization, the business can continue with a monthly publishing, digital presence and growth service.",
+                "packs.cond.title": "General conditions",
+                "packs.cond.body": "— All packs have an initial minimum duration of 3 months. After the first cycle, renewal every 6 months at full price with monthly billing. During the first 3 months you can choose monthly billing at full price or one-time advance payment with discount. All packs include monthly report. All prices are VAT/IGIC excluded.",
+                "packs.month": " /month",
+                "packs.cta": "Choose this pack",
+
+                "packs.p1.num": "PACK 1",
+                "packs.p1.title": "Base / Content publishing",
+                "packs.p1.sub": "For businesses that already have content but don't publish consistently.",
+                "packs.p1.offer": "3-month upfront:",
+                "packs.p1.save": "(save 30€)",
+                "packs.p1.f1": "3 pieces/week provided by client",
+                "packs.p1.f2": "Publishing on Instagram, Facebook, Google Business",
+                "packs.p1.f3": "TikTok / YouTube Shorts optional if format allows",
+                "packs.p1.f4": "Basic copy optimization + simple CTAs",
+                "packs.p1.f5": "Scheduling at recommended times",
+                "packs.p1.f6": "Base calendar + monthly report",
+                "packs.p1.x1": "No shooting, no templates, no ad campaigns",
+
+                "packs.p2.num": "PACK 2",
+                "packs.p2.title": "Standard / Digital presence",
+                "packs.p2.sub": "For businesses that want a more professional image and an organized digital presence.",
+                "packs.p2.offer": "3-month upfront:",
+                "packs.p2.save": "(save 150€)",
+                "packs.p2.f1": "8 monthly mother-content pieces adapted multi-platform",
+                "packs.p2.f2": "Distribution IG + FB + Google Business",
+                "packs.p2.f3": "TikTok / YouTube Shorts optional",
+                "packs.p2.f4": "2 brand templates (1 stories/flyer + 1 feed)",
+                "packs.p2.f5": "Bio + CTA maintenance + editorial calendar",
+                "packs.p2.f6": "Optimized copywriting",
+                "packs.p2.f7": "Monthly report",
+
+                "packs.p3.num": "PACK 3",
+                "packs.p3.title": "Premium / Digital growth",
+                "packs.p3.sub": "For businesses that want full digital management: real content, strategy, campaigns, reputation, local influence.",
+                "packs.p3.offer": "3-month upfront:",
+                "packs.p3.save": "(save 250€)",
+                "packs.p3.f1": "1 monthly shooting by LO SQUALO AGENCY",
+                "packs.p3.f2": "Minimum 3 mother-content pieces/week + 1 story per day",
+                "packs.p3.f3": "Full multi-platform distribution",
+                "packs.p3.f4": "1 monthly Meta Ads or Google Ads campaign",
+                "packs.p3.f5": "1 monthly influencer marketing action",
+                "packs.p3.f6": "Community management + review responses",
+                "packs.p3.f7": "Basic automations + quick replies",
+                "packs.p3.f8": "Continuous strategic consulting + monthly report",
+                "packs.p3.x1": "Ad budget not included",
+
+                "upgrades.title": "Upgrades available on Pack 2 Standard",
+                "upgrades.u1": "Reply to messages, comments and reviews",
+                "upgrades.u2": "Creation & management of 1 ad campaign (budget excluded)",
+                "upgrades.u3": "Creation & management of 1 influencer action (external costs excluded)",
+                "upgrades.u4": "Increase to 3 mother-content pieces per week",
+
+                "decision.title": "Which service does your business need?",
+                "decision.intro": "A quick guide to navigate setups and monthly packs.",
+                "decision.d1.if": "If you only need the essential base",
+                "decision.d1.then": "Minimum Setup — 400€",
+                "decision.d1.why": "Main networks, proper Google presence, initial editorial plan, first content pieces.",
+                "decision.d2.if": "If you don't have a complete ecosystem yet",
+                "decision.d2.then": "Full Ecosystem Setup — 600€",
+                "decision.d2.why": "Complete structure from scratch, business ready to start working online.",
+                "decision.d3.if": "If you're already online but profiles are messy",
+                "decision.d3.then": "Existing Optimization — from 200€",
+                "decision.d3.why": "Fix, order and improve what's already there.",
+                "decision.d4.if": "If you have content but don't publish consistently",
+                "decision.d4.then": "Pack 1 — Base",
+                "decision.d4.why": "The simplest option to keep channels active with your own material.",
+                "decision.d5.if": "If you want to organize presence, image and coherence",
+                "decision.d5.then": "Pack 2 — Standard",
+                "decision.d5.why": "The most balanced option: structure, adapted content, templates, copy.",
+                "decision.d6.if": "If you want to delegate full management and real growth",
+                "decision.d6.then": "Pack 3 — Premium",
+                "decision.d6.why": "Own content, strategy, campaigns, daily presence, influencer and reputation.",
+
+                "final.title": "First we organize the ecosystem. Then we activate presence. Then we grow.",
+                "final.body": "We don't sell loose posts. We build a digital structure adapted to the real business. Packs are the starting point — strategy adapts to the client, their goals and their market.",
+                "final.cta": "Talk to us on WhatsApp",
+
+                "_wa": { "prefix": "Hello! ", "talk": "I'm interested in talking to Lo Squalo Agency about my business" }
+            }
+        };
+
+        const SUPPORTED = ['it', 'es', 'en'];
+        const STORAGE_KEY = 'losqualo_oferta_lang';
+
+        function detectLang() {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            if (saved && SUPPORTED.includes(saved)) return saved;
+            const browser = (navigator.language || 'it').slice(0, 2).toLowerCase();
+            return SUPPORTED.includes(browser) ? browser : 'it';
+        }
+
+        function applyLang(lang) {
+            const dict = I18N[lang] || I18N.it;
+            document.documentElement.lang = lang;
+            // Apply text content
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (dict[key] !== undefined) el.textContent = dict[key];
+            });
+            // Update wa.me CTAs with lang prefix + base text
+            const waPrefix = (dict._wa && dict._wa.prefix) || '';
+            document.querySelectorAll('a[data-wa-base]').forEach(a => {
+                try {
+                    const base = a.getAttribute('data-wa-base');
+                    const url = new URL(a.href);
+                    url.searchParams.set('text', waPrefix + base);
+                    a.href = url.toString();
+                } catch (e) { /* skip */ }
+            });
+            // Final CTA — special: uses dict._wa.talk
+            const finalCta = document.querySelector('a.cta-btn');
+            if (finalCta && dict._wa && dict._wa.talk) {
+                try {
+                    const url = new URL(finalCta.href);
+                    url.searchParams.set('text', waPrefix + dict._wa.talk);
+                    finalCta.href = url.toString();
+                } catch (e) { /* skip */ }
+            }
+            // Active button state
+            document.querySelectorAll('.lang-switch button').forEach(b => {
+                b.classList.toggle('active', b.dataset.lang === lang);
+            });
+            localStorage.setItem(STORAGE_KEY, lang);
+        }
+
+        document.querySelectorAll('.lang-switch button').forEach(btn => {
+            btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+        });
+
+        applyLang(detectLang());
+    })();
+    </script>
+
+</body>
+</html>
