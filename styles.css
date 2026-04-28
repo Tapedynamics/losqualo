@@ -150,8 +150,6 @@ header {
     height: auto;
     transition: all 0.4s ease-out;
     filter: drop-shadow(0 8px 24px rgba(47, 111, 143, 0.25));
-    /* Rimuove eventuale sfondo bianco del PNG fondendolo con il bg pagina */
-    mix-blend-mode: multiply;
 }
 
 .center-node:hover .tenerife-img {
