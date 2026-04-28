@@ -6,6 +6,13 @@ document.addEventListener('DOMContentLoaded', function() {
     initProgressiveMap();
     initDynamicLines();
     initMobileMenu();
+
+    // Se arriviamo da una pagina interna con ?explore=1, apriamo direttamente la mappa esplosa
+    if (new URLSearchParams(window.location.search).get('explore') === '1') {
+        showCategories();
+        const mobileMap = document.querySelector('.mobile-map');
+        if (mobileMap) showMobileCategories(mobileMap);
+    }
 });
 
 let currentState = 'initial';
@@ -70,16 +77,25 @@ function scheduleUpdate() {
     });
 }
 
+// Per il centro Tenerife usa l'immagine, non il bounding box (che include il testo sotto)
+function getVisualEl(el) {
+    if (!el) return null;
+    if (el.id === 'tenerife-trigger') return el.querySelector('.tenerife-img') || el;
+    return el;
+}
+
 function getElementCenter(elementId) {
     const el = document.getElementById(elementId);
     if (!el) return null;
-    const rect = el.getBoundingClientRect();
+    const vis = getVisualEl(el);
+    const rect = vis.getBoundingClientRect();
     const svg = document.getElementById('svg-connections');
     if (!svg) return null;
     const svgRect = svg.getBoundingClientRect();
     return {
         x: rect.left + rect.width / 2 - svgRect.left,
-        y: rect.top + rect.height / 2 - svgRect.top
+        y: rect.top + rect.height / 2 - svgRect.top,
+        radius: Math.min(rect.width, rect.height) / 2
     };
 }
 
@@ -91,22 +107,31 @@ function drawCurve(pathId, fromId, toId) {
     const to = getElementCenter(toId);
     if (!from || !to) return;
 
-    const midX = (from.x + to.x) / 2;
-    const midY = (from.y + to.y) / 2;
+    // Termina sul BORDO del cerchio (non passa sopra ai nodi)
     const dx = to.x - from.x;
     const dy = to.y - from.y;
     const dist = Math.sqrt(dx * dx + dy * dy) || 1;
-    const offset = dist * 0.12;
+    const ux = dx / dist;
+    const uy = dy / dist;
+    const startX = from.x + ux * from.radius;
+    const startY = from.y + uy * from.radius;
+    const endX = to.x - ux * to.radius;
+    const endY = to.y - uy * to.radius;
 
-    // Perpendicular offset for gentle curve
-    const nx = -dy / dist;
-    const ny = dx / dist;
+    const midX = (startX + endX) / 2;
+    const midY = (startY + endY) / 2;
+    const newDx = endX - startX;
+    const newDy = endY - startY;
+    const newDist = Math.sqrt(newDx * newDx + newDy * newDy) || 1;
+    const offset = newDist * 0.12;
+
+    const nx = -newDy / newDist;
+    const ny = newDx / newDist;
     const cpX = midX + nx * offset;
     const cpY = midY + ny * offset;
 
-    // Round to avoid sub-pixel rendering drift at 100% zoom
     const r = (n) => Math.round(n * 100) / 100;
-    path.setAttribute('d', `M ${r(from.x)} ${r(from.y)} Q ${r(cpX)} ${r(cpY)} ${r(to.x)} ${r(to.y)}`);
+    path.setAttribute('d', `M ${r(startX)} ${r(startY)} Q ${r(cpX)} ${r(cpY)} ${r(endX)} ${r(endY)}`);
 }
 
 function syncSvgViewBox() {
@@ -305,21 +330,46 @@ function updateMobileLines() {
         { path: 'mobile-line-center-alessandro', from: 'mobile-center', to: 'mobile-node-alessandro' }
     ];
 
+    function getRadius(id) {
+        const el = document.getElementById(id);
+        if (!el) return 0;
+        const vis = id === 'mobile-center' ? (el.querySelector('.tenerife-img-mobile') || el) : el;
+        const r = vis.getBoundingClientRect();
+        return Math.min(r.width, r.height) / 2;
+    }
+    function getCenterVisual(id) {
+        const el = document.getElementById(id);
+        if (!el) return null;
+        const vis = id === 'mobile-center' ? (el.querySelector('.tenerife-img-mobile') || el) : el;
+        const r = vis.getBoundingClientRect();
+        return { x: r.left + r.width / 2 - svgRect.left, y: r.top + r.height / 2 - svgRect.top };
+    }
+
     conns.forEach(c => {
         const p = document.getElementById(c.path);
         if (!p) return;
-        const from = getCenter(c.from);
-        const to = getCenter(c.to);
+        const from = getCenterVisual(c.from);
+        const to = getCenterVisual(c.to);
         if (!from || !to) return;
+        const rFrom = getRadius(c.from);
+        const rTo = getRadius(c.to);
 
-        const midX = (from.x + to.x) / 2;
-        const midY = (from.y + to.y) / 2;
         const dx = to.x - from.x;
         const dy = to.y - from.y;
         const dist = Math.sqrt(dx * dx + dy * dy) || 1;
-        const offset = dist * 0.1;
-        const nx = -dy / dist;
-        const ny = dx / dist;
-        p.setAttribute('d', `M ${from.x} ${from.y} Q ${midX + nx * offset} ${midY + ny * offset} ${to.x} ${to.y}`);
+        const ux = dx / dist;
+        const uy = dy / dist;
+        const sx = from.x + ux * rFrom;
+        const sy = from.y + uy * rFrom;
+        const ex = to.x - ux * rTo;
+        const ey = to.y - uy * rTo;
+
+        const midX = (sx + ex) / 2;
+        const midY = (sy + ey) / 2;
+        const newDist = Math.sqrt((ex - sx) ** 2 + (ey - sy) ** 2) || 1;
+        const offset = newDist * 0.1;
+        const nx = -(ey - sy) / newDist;
+        const ny = (ex - sx) / newDist;
+        p.setAttribute('d', `M ${sx} ${sy} Q ${midX + nx * offset} ${midY + ny * offset} ${ex} ${ey}`);
     });
 }

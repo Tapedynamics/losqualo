@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surf House B2B - Lo Squalo Tenerife</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="detail.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .b2b-hero {
+            background: linear-gradient(135deg, #2f6f8f, #1f4a5f);
+            color: white; padding: 70px 24px 60px; text-align: center;
+            border-radius: 0 0 30px 30px;
+        }
+        .b2b-hero h1 { font-size: 2.4rem; margin-bottom: 12px; letter-spacing: 0.5px; }
+        .b2b-hero p { font-size: 1.05rem; opacity: 0.92; max-width: 640px; margin: 0 auto; line-height: 1.6; }
+        .b2b-tag { display: inline-block; padding: 6px 16px; background: rgba(255,255,255,0.18); border-radius: 18px; font-size: 0.78rem; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 18px; }
+
+        .b2b-features {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px; margin-top: 32px;
+        }
+        .b2b-feature {
+            background: white; padding: 26px 22px; border-radius: 16px;
+            box-shadow: 0 6px 20px rgba(47,111,143,0.08);
+            border-left: 4px solid var(--surfing-main);
+        }
+        .b2b-feature h3 {
+            font-size: 1.05rem; color: var(--blu-squalo); margin-bottom: 10px;
+            display: flex; align-items: center; gap: 10px;
+        }
+        .b2b-feature .icon { font-size: 1.6rem; }
+        .b2b-feature p { font-size: 0.93rem; line-height: 1.55; color: var(--text-primary); }
+
+        .delegate-block {
+            background: #f6f4ef; border-radius: 18px; padding: 32px 28px;
+            margin-top: 36px;
+        }
+        .delegate-block h2 { color: var(--blu-squalo); margin-bottom: 14px; }
+        .delegate-list { list-style: none; padding: 0; margin: 18px 0 0; display: grid; gap: 12px; }
+        .delegate-list li {
+            padding: 14px 18px; background: white; border-radius: 12px;
+            display: flex; align-items: center; gap: 14px;
+        }
+        .delegate-list .check {
+            width: 28px; height: 28px; border-radius: 50%; background: #25D366;
+            color: white; display: flex; align-items: center; justify-content: center;
+            font-weight: 700; flex-shrink: 0;
+        }
+
+        .b2b-cta {
+            background: linear-gradient(135deg, var(--surfing-main), var(--blu-squalo));
+            color: white; border-radius: 22px; padding: 36px 28px; text-align: center;
+            margin-top: 36px;
+        }
+        .b2b-cta h2 { font-size: 1.5rem; margin-bottom: 10px; }
+        .b2b-cta p { opacity: 0.92; margin-bottom: 22px; line-height: 1.5; }
+        .b2b-cta a {
+            display: inline-block; padding: 14px 30px; border-radius: 28px;
+            background: #25D366; color: white; text-decoration: none;
+            font-weight: 700; transition: transform 0.2s ease;
+        }
+        .b2b-cta a:hover { transform: translateY(-2px); }
+    </style>
+</head>
+<body>
+    <header class="detail-header">
+        <a href="../surfing.html" class="back-link"><span>&larr;</span> Indietro</a>
+        <span class="logo-small">LO SQUALO</span>
+    </header>
+
+    <section class="b2b-hero">
+        <span class="b2b-tag">Surf House &middot; B2B</span>
+        <h1>Organizzi ritiri, surf camp o gruppi?</h1>
+        <p>Smetti di gestire dieci fornitori in dieci lingue diverse. Noi siamo già qui da <strong>16 anni</strong>: ti consegniamo Tenerife chiavi in mano.</p>
+    </section>
+
+    <div class="detail-container">
+        <section class="detail-section">
+            <h2>Per chi è</h2>
+            <div class="b2b-features">
+                <div class="b2b-feature">
+                    <h3><span class="icon">🧘</span> Ritiri</h3>
+                    <p>Yoga, mindfulness, surf-therapy, retreat aziendali. Location isolate, programma cucito addosso, gestione gruppi 6-30 persone.</p>
+                </div>
+                <div class="b2b-feature">
+                    <h3><span class="icon">🏄</span> Surf Camp</h3>
+                    <p>Pacchetto alloggio + lezioni + transfer + materiale. Operiamo con la scuola partner Ika Ika a Playa de Las Américas.</p>
+                </div>
+                <div class="b2b-feature">
+                    <h3><span class="icon">👥</span> Gruppi & Esperienze</h3>
+                    <p>Team building, viaggi incentive, gruppi privati. Catamarano, escursioni Teide, eventi su misura. Briefing in italiano, spagnolo o inglese.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="delegate-block">
+            <h2>Cosa puoi delegarci</h2>
+            <p>Tu vendi l'esperienza al tuo cliente. A Tenerife pensiamo a tutto noi.</p>
+            <ul class="delegate-list">
+                <li><span class="check">✓</span><span><strong>Logistica completa</strong> — alloggi, transfer aeroporto, transfer interni, materiale.</span></li>
+                <li><span class="check">✓</span><span><strong>Ricerca location</strong> — la villa giusta per il gruppo giusto, mappata sul brief che ci dai.</span></li>
+                <li><span class="check">✓</span><span><strong>Coordinamento generale</strong> — referente unico in zona, problem-solving in tempo reale.</span></li>
+                <li><span class="check">✓</span><span><strong>Surf coaching</strong> — istruttori certificati Ika Ika, livello principiante o avanzato.</span></li>
+                <li><span class="check">✓</span><span><strong>Esperienze extra</strong> — Teide jeep, parapendio, catamarano, cene private, fotografo.</span></li>
+                <li><span class="check">✓</span><span><strong>Branding & social</strong> — copertura foto/video del retreat, contenuto pronto per i tuoi canali.</span></li>
+            </ul>
+        </section>
+
+        <section class="b2b-cta">
+            <h2>Lavoriamo insieme</h2>
+            <p>Mandami il brief del tuo prossimo ritiro: numero di persone, date, livello, budget. Ti rispondo in giornata con una proposta concreta.</p>
+            <a href="https://wa.me/34616794190?text=Ciao%2C%20organizzo%20ritiri%2Fsurf%20camp%20-%20vorrei%20info%20B2B" target="_blank" rel="noopener">Scrivimi su WhatsApp</a>
+        </section>
+    </div>
+
+    <footer style="text-align: center; padding: 24px; color: var(--text-secondary); font-size: 0.7rem;">
+        <p>&copy; <a href="../index.html">Lo Squalo Tenerife</a> &middot; dal 2009</p>
+    </footer>
+    <script src="../whatsapp-i18n.js"></script>
+
+</body>
+</html>

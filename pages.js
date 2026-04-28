@@ -49,41 +49,6 @@ function convertLinesToPaths() {
 
 // ===== CONFIGURAZIONE LINEE PER PAGINA =====
 const pageLineConfig = {
-    eventi: {
-        main: [
-            { line: 'line-center-showcases', from: 'category-trigger', to: 'node-showcases' },
-            { line: 'line-center-consigliati', from: 'category-trigger', to: 'node-consigliati' },
-            { line: 'line-center-movida', from: 'category-trigger', to: 'node-movida' },
-            { line: 'line-center-servizi', from: 'category-trigger', to: 'node-servizi' }
-        ],
-        showcases: [
-            { line: 'line-showcases-boatparty', from: 'node-showcases', to: 'node-boatparty' },
-            { line: 'line-showcases-terraceo', from: 'node-showcases', to: 'node-terraceo' },
-            { line: 'line-showcases-hmc', from: 'node-showcases', to: 'node-hmc' },
-            { line: 'line-showcases-exotica', from: 'node-showcases', to: 'node-exotica' },
-            { line: 'line-showcases-brunch', from: 'node-showcases', to: 'node-brunch' }
-        ],
-        consigliati: [
-            { line: 'line-consigliati-festival', from: 'node-consigliati', to: 'node-festival' },
-            { line: 'line-consigliati-folklore', from: 'node-consigliati', to: 'node-folklore' }
-        ],
-        movida: [
-            { line: 'line-movida-club', from: 'node-movida', to: 'node-club' },
-            { line: 'line-movida-poolparty', from: 'node-movida', to: 'node-poolparty' },
-            { line: 'line-movida-beachclub', from: 'node-movida', to: 'node-beachclub' },
-            { line: 'line-movida-rooftop', from: 'node-movida', to: 'node-rooftop' },
-            { line: 'line-movida-vip', from: 'node-movida', to: 'node-vip' }
-        ],
-        servizi: [
-            { line: 'line-servizi-graphic', from: 'node-servizi', to: 'node-graphic' },
-            { line: 'line-servizi-photo', from: 'node-servizi', to: 'node-photo' },
-            { line: 'line-servizi-venue', from: 'node-servizi', to: 'node-venue' },
-            { line: 'line-servizi-decoration', from: 'node-servizi', to: 'node-decoration' },
-            { line: 'line-servizi-shows', from: 'node-servizi', to: 'node-shows' },
-            { line: 'line-servizi-sound', from: 'node-servizi', to: 'node-sound' },
-            { line: 'line-servizi-catering', from: 'node-servizi', to: 'node-catering' }
-        ]
-    },
     alloggio: {
         main: [
             { line: 'line-center-appartamento', from: 'category-trigger', to: 'node-appartamento' },
@@ -118,8 +83,6 @@ const pageLineConfig = {
             { line: 'line-villa-fortaleza', from: 'node-villa', to: 'node-fortaleza' },
             { line: 'line-villa-playaparaiso', from: 'node-villa', to: 'node-playaparaiso' },
             { line: 'line-villa-ciguaña', from: 'node-villa', to: 'node-ciguaña' },
-            { line: 'line-villa-costaadeje', from: 'node-villa', to: 'node-costaadeje' },
-            { line: 'line-villa-torviscas', from: 'node-villa', to: 'node-torviscas' },
             { line: 'line-villa-duque', from: 'node-villa', to: 'node-duque' },
             { line: 'line-villa-fincaplayaparaiso', from: 'node-villa', to: 'node-fincaplayaparaiso' }
         ]
@@ -129,41 +92,31 @@ const pageLineConfig = {
             { line: 'line-center-teide', from: 'category-trigger', to: 'node-teide' },
             { line: 'line-center-oceano', from: 'category-trigger', to: 'node-oceano' },
             { line: 'line-center-sky', from: 'category-trigger', to: 'node-sky' },
-            { line: 'line-center-sport', from: 'category-trigger', to: 'node-sport' },
-            { line: 'line-center-private', from: 'category-trigger', to: 'node-private' },
             { line: 'line-center-fooddrink', from: 'category-trigger', to: 'node-fooddrink' }
         ],
         teide: [
             { line: 'line-teide-jeep', from: 'node-teide', to: 'node-jeep' },
             { line: 'line-teide-stargazing', from: 'node-teide', to: 'node-stargazing' },
             { line: 'line-teide-quad', from: 'node-teide', to: 'node-quad' },
-            { line: 'line-teide-bike', from: 'node-teide', to: 'node-bike' },
-            { line: 'line-teide-buggy', from: 'node-teide', to: 'node-buggy' },
-            { line: 'line-teide-hiking', from: 'node-teide', to: 'node-hiking' },
-            { line: 'line-teide-trekking', from: 'node-teide', to: 'node-trekking' }
+            { line: 'line-teide-buggy', from: 'node-teide', to: 'node-buggy' }
         ],
         oceano: [
             { line: 'line-oceano-jetcar', from: 'node-oceano', to: 'node-jetcar' },
             { line: 'line-oceano-jetsky', from: 'node-oceano', to: 'node-jetsky' },
             { line: 'line-oceano-cetacei', from: 'node-oceano', to: 'node-cetacei' },
             { line: 'line-oceano-kayak', from: 'node-oceano', to: 'node-kayak' },
-            { line: 'line-oceano-sottomarino', from: 'node-oceano', to: 'node-sottomarino' }
+            { line: 'line-oceano-surf', from: 'node-oceano', to: 'node-surf' },
+            { line: 'line-oceano-diving', from: 'node-oceano', to: 'node-diving' },
+            { line: 'line-oceano-kite', from: 'node-oceano', to: 'node-kite' },
+            { line: 'line-oceano-wind', from: 'node-oceano', to: 'node-wind' },
+            { line: 'line-oceano-fishing', from: 'node-oceano', to: 'node-fishing' },
+            { line: 'line-oceano-yacht', from: 'node-oceano', to: 'node-yacht' },
+            { line: 'line-oceano-barco', from: 'node-oceano', to: 'node-barco' },
+            { line: 'line-oceano-catamarano', from: 'node-oceano', to: 'node-catamarano' }
         ],
         sky: [
             { line: 'line-sky-parapente', from: 'node-sky', to: 'node-parapente' },
             { line: 'line-sky-paratrike', from: 'node-sky', to: 'node-paratrike' }
-        ],
-        sport: [
-            { line: 'line-sport-kite', from: 'node-sport', to: 'node-kite' },
-            { line: 'line-sport-wind', from: 'node-sport', to: 'node-wind' },
-            { line: 'line-sport-surf', from: 'node-sport', to: 'node-surf' },
-            { line: 'line-sport-fishing', from: 'node-sport', to: 'node-fishing' },
-            { line: 'line-sport-diving', from: 'node-sport', to: 'node-diving' }
-        ],
-        private: [
-            { line: 'line-private-catamarano', from: 'node-private', to: 'node-catamarano' },
-            { line: 'line-private-barco', from: 'node-private', to: 'node-barco' },
-            { line: 'line-private-yacht', from: 'node-private', to: 'node-yacht' }
         ],
         fooddrink: [
             { line: 'line-fooddrink-bodegas', from: 'node-fooddrink', to: 'node-bodegas' },
@@ -179,7 +132,6 @@ const pageLineConfig = {
         main: [
             { line: 'line-center-surfbar', from: 'category-trigger', to: 'node-surfbar' },
             { line: 'line-center-surfhouse', from: 'category-trigger', to: 'node-surfhouse' },
-            { line: 'line-center-elmedano', from: 'category-trigger', to: 'node-elmedano' },
             { line: 'line-center-spots', from: 'category-trigger', to: 'node-spots' },
             { line: 'line-center-callemexico', from: 'category-trigger', to: 'node-callemexico' },
             { line: 'line-center-school', from: 'category-trigger', to: 'node-school' }
@@ -190,27 +142,6 @@ const pageLineConfig = {
             { line: 'line-surfhouse-reservacama', from: 'node-surfhouse', to: 'node-reservacama' },
             { line: 'line-surfhouse-reservahab', from: 'node-surfhouse', to: 'node-reservahab' },
             { line: 'line-surfhouse-gallery', from: 'node-surfhouse', to: 'node-gallery' }
-        ],
-        elmedano: [
-            { line: 'line-elmedano-rentshop', from: 'node-elmedano', to: 'node-elmedano-rentshop' },
-            { line: 'line-elmedano-school', from: 'node-elmedano', to: 'node-elmedano-school' },
-            { line: 'line-elmedano-fooddrink', from: 'node-elmedano', to: 'node-elmedano-fooddrink' }
-        ],
-        callemexico: [
-            { line: 'line-callemexico-rentshop', from: 'node-callemexico', to: 'node-callemexico-rentshop' },
-            { line: 'line-callemexico-fooddrink', from: 'node-callemexico', to: 'node-callemexico-fooddrink' },
-            { line: 'line-callemexico-artevents', from: 'node-callemexico', to: 'node-callemexico-artevents' }
-        ],
-        spots: [
-            { line: 'line-spots-elmedano', from: 'node-spots', to: 'node-spots-elmedano' },
-            { line: 'line-spots-lasamericas', from: 'node-spots', to: 'node-spots-lasamericas' }
-        ],
-        school: [
-            { line: 'line-school-kontraola', from: 'node-school', to: 'node-kontraola' },
-            { line: 'line-school-k16', from: 'node-school', to: 'node-k16' },
-            { line: 'line-school-ikaika', from: 'node-school', to: 'node-ikaika' },
-            { line: 'line-school-franz', from: 'node-school', to: 'node-franz' },
-            { line: 'line-school-vils', from: 'node-school', to: 'node-vils' }
         ]
     },
     agency: {
@@ -246,27 +177,15 @@ const pageLineConfig = {
             { line: 'line-start-modelli', from: 'node-start', to: 'node-modelli' },
             { line: 'line-start-tavolacalda', from: 'node-start', to: 'node-tavolacalda' }
         ]
-    },
-    alessandro: {
-        main: [
-            { line: 'line-center-chisono', from: 'category-trigger', to: 'node-chisono' },
-            { line: 'line-center-perche', from: 'category-trigger', to: 'node-perche' },
-            { line: 'line-center-esperienza', from: 'category-trigger', to: 'node-esperienza' },
-            { line: 'line-center-ruolo', from: 'category-trigger', to: 'node-ruolo' },
-            { line: 'line-center-highlights', from: 'category-trigger', to: 'node-highlights' }
-        ]
     }
 };
 
-// Rileva la pagina corrente dal body class
 function getCurrentPage() {
     const body = document.body;
-    if (body.classList.contains('page-eventi')) return 'eventi';
     if (body.classList.contains('page-alloggio')) return 'alloggio';
     if (body.classList.contains('page-escursioni')) return 'escursioni';
     if (body.classList.contains('page-surfing')) return 'surfing';
     if (body.classList.contains('page-agency')) return 'agency';
-    if (body.classList.contains('page-alessandro')) return 'alessandro';
     return null;
 }
 
@@ -303,16 +222,25 @@ function scheduleUpdate() {
     });
 }
 
+// Per il centro categoria usa l'icona, non il bounding box (che include click-hint sotto)
+function getVisualEl(el) {
+    if (!el) return null;
+    if (el.id === 'category-trigger') return el.querySelector('.category-icon') || el;
+    return el;
+}
+
 function getElementCenter(elementId) {
     const el = document.getElementById(elementId);
     if (!el) return null;
-    const rect = el.getBoundingClientRect();
+    const vis = getVisualEl(el);
+    const rect = vis.getBoundingClientRect();
     const svg = document.getElementById('svg-connections');
     if (!svg) return null;
     const svgRect = svg.getBoundingClientRect();
     return {
         x: rect.left + rect.width / 2 - svgRect.left,
-        y: rect.top + rect.height / 2 - svgRect.top
+        y: rect.top + rect.height / 2 - svgRect.top,
+        radius: Math.min(rect.width, rect.height) / 2
     };
 }
 
@@ -324,21 +252,31 @@ function drawCurve(pathId, fromId, toId) {
     const to = getElementCenter(toId);
     if (!from || !to) return;
 
-    const midX = (from.x + to.x) / 2;
-    const midY = (from.y + to.y) / 2;
+    // Termina sul BORDO del cerchio (non passa sopra ai nodi)
     const dx = to.x - from.x;
     const dy = to.y - from.y;
     const dist = Math.sqrt(dx * dx + dy * dy) || 1;
-    const offset = dist * 0.12;
+    const ux = dx / dist;
+    const uy = dy / dist;
+    const startX = from.x + ux * from.radius;
+    const startY = from.y + uy * from.radius;
+    const endX = to.x - ux * to.radius;
+    const endY = to.y - uy * to.radius;
 
-    // Perpendicular offset for gentle curve
-    const nx = -dy / dist;
-    const ny = dx / dist;
+    const midX = (startX + endX) / 2;
+    const midY = (startY + endY) / 2;
+    const newDx = endX - startX;
+    const newDy = endY - startY;
+    const newDist = Math.sqrt(newDx * newDx + newDy * newDy) || 1;
+    const offset = newDist * 0.12;
+
+    const nx = -newDy / newDist;
+    const ny = newDx / newDist;
     const cpX = midX + nx * offset;
     const cpY = midY + ny * offset;
 
     const r = (n) => Math.round(n * 100) / 100;
-    path.setAttribute('d', `M ${r(from.x)} ${r(from.y)} Q ${r(cpX)} ${r(cpY)} ${r(to.x)} ${r(to.y)}`);
+    path.setAttribute('d', `M ${r(startX)} ${r(startY)} Q ${r(cpX)} ${r(cpY)} ${r(endX)} ${r(endY)}`);
 }
 
 function syncSvgViewBox() {
@@ -567,7 +505,7 @@ function goPageBack() {
         clearSub();
     } else if (pageState === 'categories') {
         clearSub();
-        window.location.href = 'index.html';
+        window.location.href = 'index.html?explore=1';
     }
 }
 
@@ -576,51 +514,6 @@ let mobilePageState = 'categories';
 
 // Dati per popup radiale mobile per pagina
 const pageSubNodesData = {
-    eventi: {
-        showcases: {
-            name: 'Showcases',
-            class: 'radial-showcases',
-            subs: [
-                { id: 'boatparty', name: 'Boat Party', href: '#boatparty' },
-                { id: 'terraceo', name: 'Terraceo', href: '#terraceo' },
-                { id: 'hmc', name: 'H.M.C', href: '#hmc' },
-                { id: 'exotica', name: 'Exotica', href: '#exotica' },
-                { id: 'brunch', name: "Let's Brunch", href: '#brunch' }
-            ]
-        },
-        consigliati: {
-            name: 'Consigliati',
-            class: 'radial-consigliati',
-            subs: [
-                { id: 'festival', name: 'Festival', href: '#festival' },
-                { id: 'folklore', name: 'Folklore', href: '#folklore' }
-            ]
-        },
-        movida: {
-            name: 'Movida &<br>Nightlife',
-            class: 'radial-movida',
-            subs: [
-                { id: 'club', name: 'Club', href: '#club' },
-                { id: 'poolparty', name: 'Pool Party', href: '#poolparty' },
-                { id: 'beachclub', name: 'Beach Club', href: '#beachclub' },
-                { id: 'rooftop', name: 'Rooftop', href: '#rooftop' },
-                { id: 'vip', name: 'VIP Service', href: '#vip' }
-            ]
-        },
-        servizi: {
-            name: 'Privati<br>Servizi',
-            class: 'radial-servizi',
-            subs: [
-                { id: 'graphic', name: 'Graphic Design', href: '#graphic' },
-                { id: 'photo', name: 'Photo Video', href: '#photo' },
-                { id: 'venue', name: 'Venue', href: '#venue' },
-                { id: 'decoration', name: 'Decoration', href: '#decoration' },
-                { id: 'shows', name: 'Shows', href: '#shows' },
-                { id: 'sound', name: 'Sound & Lights', href: '#sound' },
-                { id: 'catering', name: 'Catering', href: '#catering' }
-            ]
-        }
-    },
     alloggio: {
         appartamento: {
             name: 'Appartamento',
@@ -658,19 +551,17 @@ const pageSubNodesData = {
             ]
         },
         villa: {
-            name: 'Villa Finca',
+            name: 'Villa y<br>Casa Rural',
             class: 'radial-villa',
             subs: [
                 { id: 'beachhouse', name: 'Beach House', href: 'alloggio/beach-house.html' },
                 { id: 'atogo', name: 'Casa Rural Atogo', href: 'alloggio/casa-rural-atogo.html' },
-                { id: 'taucho', name: 'Casa Rural Taucio', href: 'alloggio/casa-rural-taucho.html' },
+                { id: 'taucho', name: 'Casa Rural Taucho', href: 'alloggio/casa-rural-taucho.html' },
                 { id: 'fortaleza', name: 'Finca La Fortaleza', href: 'alloggio/finca-la-fortaleza.html' },
                 { id: 'playaparaiso', name: 'Villa Playa Paraiso', href: 'alloggio/villa-playa-paraiso.html' },
                 { id: 'ciguaña', name: 'Finca Ciguaña', href: 'alloggio/finca-ciguaña.html' },
                 { id: 'duque', name: 'Villa Duque', href: 'alloggio/villa-duque.html' },
-                { id: 'fincaplayaparaiso', name: 'Finca Playa Paraíso', href: 'alloggio/finca-playa-paraiso.html' },
-                { id: 'torviscas', name: 'Villa Torviscas', href: '#', disabled: true },
-                { id: 'costaadeje', name: 'Villa Costa Adeje', href: '#', disabled: true }
+                { id: 'fincaplayaparaiso', name: 'Finca Playa Paraíso', href: 'alloggio/finca-playa-paraiso.html' }
             ]
         }
     },
@@ -682,10 +573,7 @@ const pageSubNodesData = {
                 { id: 'jeep', name: 'Jeep Experience', href: 'escursioni/jeep-experience.html' },
                 { id: 'quad', name: 'Quad', href: 'escursioni/quad.html' },
                 { id: 'buggy', name: 'Buggy', href: 'escursioni/buggy.html' },
-                { id: 'stargazing', name: 'Stargazing', href: '#', disabled: true },
-                { id: 'bike', name: 'Bike', href: '#', disabled: true },
-                { id: 'hiking', name: 'Hiking', href: '#', disabled: true },
-                { id: 'trekking', name: 'Trekking', href: '#', disabled: true }
+                { id: 'stargazing', name: 'Stargazing', href: '#', disabled: true }
             ]
         },
         oceano: {
@@ -696,7 +584,14 @@ const pageSubNodesData = {
                 { id: 'jetsky', name: 'Jet Sky', href: '#jetsky' },
                 { id: 'cetacei', name: 'Balene', href: '#cetacei' },
                 { id: 'kayak', name: 'Kayak', href: '#kayak' },
-                { id: 'sottomarino', name: 'Sottomarino', href: '#sottomarino' }
+                { id: 'surf', name: 'Surf', href: 'surfing/ika-ika.html' },
+                { id: 'diving', name: 'Diving', href: '#diving' },
+                { id: 'kite', name: 'Kite', href: '#kite' },
+                { id: 'wind', name: 'Wind', href: '#wind' },
+                { id: 'fishing', name: 'Fishing', href: '#fishing' },
+                { id: 'yacht', name: 'Yacht Privato', href: 'escursioni/yacht.html' },
+                { id: 'barco', name: 'Barco sin Pilota', href: 'escursioni/barco-sin-pilota.html' },
+                { id: 'catamarano', name: 'Catamarano', href: 'escursioni/catamarano.html' }
             ]
         },
         sky: {
@@ -705,26 +600,6 @@ const pageSubNodesData = {
             subs: [
                 { id: 'parapente', name: 'Parapendio', href: 'escursioni/parapendio.html' },
                 { id: 'paratrike', name: 'Paratrike', href: 'escursioni/paratrike.html' }
-            ]
-        },
-        sport: {
-            name: 'Sport',
-            class: 'radial-sport',
-            subs: [
-                { id: 'kite', name: 'Kite', href: '#kite' },
-                { id: 'wind', name: 'Wind', href: '#wind' },
-                { id: 'surf', name: 'Surf', href: '#surf' },
-                { id: 'fishing', name: 'Fishing', href: '#fishing' },
-                { id: 'diving', name: 'Diving', href: '#diving' }
-            ]
-        },
-        private: {
-            name: 'Private',
-            class: 'radial-private',
-            subs: [
-                { id: 'catamarano', name: 'Catamarano', href: '#catamarano' },
-                { id: 'barco', name: 'Barco sin Licencia', href: '#barco' },
-                { id: 'yacht', name: 'Yacht', href: '#yacht' }
             ]
         },
         fooddrink: {
@@ -742,59 +617,15 @@ const pageSubNodesData = {
         }
     },
     surfing: {
-        surfbar: {
-            name: 'Surfbar<br>Franchise',
-            class: 'radial-surfbar',
-            subs: [
-                { id: 'surfbar-franchise', name: 'Surf Bar Franchise', href: 'surfing/surf-bar-franchise.html' }
-            ]
-        },
         surfhouse: {
             name: 'Surf House',
             class: 'radial-surfhouse',
             subs: [
-                { id: 'b2b', name: 'B2B', href: '#b2b' },
-                { id: 'surfcamp', name: 'Surf Camp', href: '#surfcamp' },
-                { id: 'reservacama', name: 'Reserva Cama', href: '#reservacama' },
-                { id: 'reservahab', name: 'Reserva Habitacion', href: '#reservahab' },
+                { id: 'b2b', name: 'B2B', href: 'surfing/surf-house-b2b.html' },
+                { id: 'surfcamp', name: 'Surf Camp', href: 'surfing/surf-camp.html' },
+                { id: 'reservacama', name: 'Reserva Cama', href: 'alloggio/gota-de-mar.html' },
+                { id: 'reservahab', name: 'Reserva Habitacion', href: 'alloggio/surf-house-rurale.html' },
                 { id: 'gallery', name: 'Gallery', href: '#gallery' }
-            ]
-        },
-        elmedano: {
-            name: 'El Medano<br>Surf/Kite',
-            class: 'radial-elmedano',
-            subs: [
-                { id: 'elmedano-rentshop', name: 'Rent Shop', href: '#elmedano-rentshop' },
-                { id: 'elmedano-school', name: 'School', href: '#elmedano-school' },
-                { id: 'elmedano-fooddrink', name: 'Food & Drink', href: '#elmedano-fooddrink' }
-            ]
-        },
-        spots: {
-            name: 'Surf Spots',
-            class: 'radial-spots',
-            subs: [
-                { id: 'spots-elmedano', name: 'El Medano', href: '#spots-elmedano' },
-                { id: 'spots-lasamericas', name: 'Las Americas', href: '#spots-lasamericas' }
-            ]
-        },
-        callemexico: {
-            name: 'Calle Mexico',
-            class: 'radial-callemexico',
-            subs: [
-                { id: 'callemexico-rentshop', name: 'Rent Shop', href: '#callemexico-rentshop' },
-                { id: 'callemexico-fooddrink', name: 'Food & Drink', href: '#callemexico-fooddrink' },
-                { id: 'callemexico-artevents', name: 'Art & Events', href: '#callemexico-artevents' }
-            ]
-        },
-        school: {
-            name: 'School',
-            class: 'radial-school',
-            subs: [
-                { id: 'kontraola', name: 'Kontraola', href: '#kontraola' },
-                { id: 'k16', name: 'K16', href: '#k16' },
-                { id: 'ikaika', name: 'Ika Ika', href: 'surfing/ika-ika.html' },
-                { id: 'franz', name: 'Franz', href: '#franz' },
-                { id: 'vils', name: "Vil's", href: '#vils' }
             ]
         }
     },
@@ -879,12 +710,10 @@ function createMobilePageMap() {
     mobileMap.dataset.state = 'categories';
 
     const categoryInfo = {
-        eventi: { name: 'EVENTI', class: 'eventi-bg' },
         alloggio: { name: 'ALLOGGIO', class: 'alloggio-bg' },
         escursioni: { name: 'ESCURSIONI<br>& ATTIVITA', class: 'escursioni-bg' },
         surfing: { name: 'SURFING<br>TENERIFE', class: 'surfing-bg' },
-        agency: { name: 'AGENCY', class: 'agency-bg' },
-        alessandro: { name: 'ALESSANDRO', class: 'alessandro-bg' }
+        agency: { name: 'AGENCY', class: 'agency-bg' }
     };
 
     const info = categoryInfo[currentPage];
@@ -903,7 +732,11 @@ function createMobilePageMap() {
     const subcatNodes = getSubcategoryNodes(currentPage);
 
     subcatNodes.forEach((node, index) => {
-        const el = document.createElement('div');
+        const el = document.createElement(node.href ? 'a' : 'div');
+        if (node.href) {
+            el.href = node.href;
+            if (/^https?:/.test(node.href)) { el.target = '_blank'; el.rel = 'noopener'; }
+        }
         el.classList.add('mobile-node', 'mobile-node-primary', node.class);
         if (node.disabled) el.classList.add('disabled-node');
         el.id = `mobile-node-${node.id}`;
@@ -969,9 +802,12 @@ function updateMobileLines(mobileMap) {
     if (!center) return;
 
     const svgRect = svg.getBoundingClientRect();
-    const centerRect = center.getBoundingClientRect();
+    // Usa l'icona della categoria, non il bounding box completo
+    const centerVis = center.querySelector('.category-icon-mobile') || center;
+    const centerRect = centerVis.getBoundingClientRect();
     const centerX = centerRect.left + centerRect.width / 2 - svgRect.left;
     const centerY = centerRect.top + centerRect.height / 2 - svgRect.top;
+    const centerRadius = Math.min(centerRect.width, centerRect.height) / 2;
 
     nodes.forEach((node, index) => {
         const path = svg.querySelector(`#mobile-line-${index}`);
@@ -980,17 +816,25 @@ function updateMobileLines(mobileMap) {
         const nodeRect = node.getBoundingClientRect();
         const nodeX = nodeRect.left + nodeRect.width / 2 - svgRect.left;
         const nodeY = nodeRect.top + nodeRect.height / 2 - svgRect.top;
+        const nodeRadius = Math.min(nodeRect.width, nodeRect.height) / 2;
 
-        const midX = (centerX + nodeX) / 2;
-        const midY = (centerY + nodeY) / 2;
         const dx = nodeX - centerX;
         const dy = nodeY - centerY;
         const dist = Math.sqrt(dx * dx + dy * dy) || 1;
-        const offset = dist * 0.1;
-        const nx = -dy / dist;
-        const ny = dx / dist;
+        const ux = dx / dist;
+        const uy = dy / dist;
+        const sx = centerX + ux * centerRadius;
+        const sy = centerY + uy * centerRadius;
+        const ex = nodeX - ux * nodeRadius;
+        const ey = nodeY - uy * nodeRadius;
 
-        path.setAttribute('d', `M ${centerX} ${centerY} Q ${midX + nx * offset} ${midY + ny * offset} ${nodeX} ${nodeY}`);
+        const midX = (sx + ex) / 2;
+        const midY = (sy + ey) / 2;
+        const newDist = Math.sqrt((ex - sx) ** 2 + (ey - sy) ** 2) || 1;
+        const offset = newDist * 0.1;
+        const nx = -(ey - sy) / newDist;
+        const ny = (ex - sx) / newDist;
+        path.setAttribute('d', `M ${sx} ${sy} Q ${midX + nx * offset} ${midY + ny * offset} ${ex} ${ey}`);
     });
 }
 
@@ -1020,14 +864,11 @@ function getSubcategoryPositions(page) {
     ];
 
     switch (page) {
-        case 'eventi':
         case 'agency':
             return positions4;
-        case 'alessandro':
-            return positions5;
+        case 'alloggio':
         case 'escursioni':
         case 'surfing':
-        case 'alloggio':
             return positions6;
         default:
             return positions4;
@@ -1036,47 +877,31 @@ function getSubcategoryPositions(page) {
 
 function getSubcategoryNodes(page) {
     const nodes = {
-        eventi: [
-            { id: 'showcases', name: 'Showcases', class: 'mobile-showcases' },
-            { id: 'consigliati', name: 'Consigliati', class: 'mobile-consigliati' },
-            { id: 'movida', name: 'Movida &<br>Nightlife', class: 'mobile-movida' },
-            { id: 'servizi', name: 'Privati<br>Servizi', class: 'mobile-servizi' }
-        ],
         alloggio: [
             { id: 'appartamento', name: 'Appartamento', class: 'mobile-appartamento' },
-            { id: 'ostello', name: 'Ostello', class: 'mobile-ostello', disabled: true },
+            { id: 'ostello', name: 'Ostello', class: 'mobile-ostello', href: 'alloggio/gota-de-mar.html' },
             { id: 'rurale', name: 'Rurale<br>Glamping', class: 'mobile-rurale' },
             { id: 'surfhouse', name: 'Surf House', class: 'mobile-surfhouse-alloggio' },
-            { id: 'villa', name: 'Villa Finca', class: 'mobile-villa' }
+            { id: 'villa', name: 'Villa y<br>Casa Rural', class: 'mobile-villa' }
         ],
         escursioni: [
             { id: 'teide', name: 'Terra', class: 'mobile-teide' },
             { id: 'oceano', name: 'Oceano', class: 'mobile-oceano' },
             { id: 'sky', name: 'Aria', class: 'mobile-sky' },
-            { id: 'sport', name: 'Sport', class: 'mobile-sport' },
-            { id: 'private', name: 'Private', class: 'mobile-private' },
             { id: 'fooddrink', name: 'Food & Drink', class: 'mobile-fooddrink' }
         ],
         surfing: [
-            { id: 'surfbar', name: 'Surfbar<br>Franchise', class: 'mobile-surfbar' },
+            { id: 'surfbar', name: 'Surfbar<br>Franchise', class: 'mobile-surfbar', href: 'surfing/surf-bar-franchise.html' },
             { id: 'surfhouse', name: 'Surf House', class: 'mobile-surfhouse' },
-            { id: 'elmedano', name: 'El Medano', class: 'mobile-elmedano' },
-            { id: 'spots', name: 'Surf Spots', class: 'mobile-spots' },
-            { id: 'callemexico', name: 'Calle Mexico', class: 'mobile-callemexico' },
-            { id: 'school', name: 'School', class: 'mobile-school' }
+            { id: 'spots', name: 'Surf Spots', class: 'mobile-spots', href: 'surfing/spots.html' },
+            { id: 'callemexico', name: 'Calle Mexico', class: 'mobile-callemexico', href: 'https://t.mtrbio.com/callemexicotenerife' },
+            { id: 'school', name: 'School', class: 'mobile-school', href: 'surfing/ika-ika.html' }
         ],
         agency: [
             { id: 'smm', name: 'SMM &<br>Marketing', class: 'mobile-smm' },
             { id: 'grafic', name: 'Grafic<br>Design', class: 'mobile-grafic' },
             { id: 'artists', name: 'Artists<br>Management', class: 'mobile-artists' },
             { id: 'start', name: 'Start<br>Business', class: 'mobile-start' }
-        ],
-        alessandro: [
-            { id: 'chisono', name: 'Chi Sono', class: 'mobile-chisono' },
-            { id: 'perche', name: 'Perche<br>Tenerife', class: 'mobile-perche' },
-            { id: 'esperienza', name: 'La Mia<br>Esperienza', class: 'mobile-esperienza' },
-            { id: 'ruolo', name: 'Il Mio<br>Ruolo', class: 'mobile-ruolo' },
-            { id: 'highlights', name: 'Highlights', class: 'mobile-highlights' }
         ]
     };
 
@@ -1150,7 +975,7 @@ function openPageRadialPopup(page, category) {
 
     const closeBtn = document.createElement('button');
     closeBtn.classList.add('radial-close');
-    closeBtn.textContent = 'X Chiudi';
+    closeBtn.innerHTML = '&larr; Indietro';
     closeBtn.addEventListener('click', closePageRadialPopup);
     popup.appendChild(closeBtn);
 
@@ -1177,7 +1002,9 @@ function initMobilePageEvents(mobileMap, currentPage) {
     });
 
     primaryNodes.forEach(node => {
-        node.addEventListener('click', function() {
+        node.addEventListener('click', function(e) {
+            // Se ha un href reale (link diretto), lascia che il browser navighi
+            if (this.tagName === 'A' && this.getAttribute('href')) return;
             const category = this.dataset.category;
             if (mobilePageState === 'categories') {
                 openPageRadialPopup(currentPage, category);
@@ -1197,6 +1024,6 @@ function showMobilePageCategories(mobileMap) {
 
 function goMobilePageBack(mobileMap) {
     if (mobilePageState === 'categories') {
-        window.location.href = 'index.html';
+        window.location.href = 'index.html?explore=1';
     }
 }

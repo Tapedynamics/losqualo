@@ -6,35 +6,66 @@
     <title>Buggy Experience - Lo Squalo Tenerife</title>
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../alloggio/detail.css">
-    <style>:root { --detail-accent: #6F8E7C; --detail-accent-dark: #567362; --detail-accent-light: #e4ece7; }</style>
+    <style>:root { --detail-accent: #6F8E7C; --detail-accent-dark: #567362; --detail-accent-light: #e4ece7; }
+        .tag-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+        .tag-row span {
+            background: linear-gradient(135deg, #d4a93c, #b88520); color: white;
+            padding: 6px 16px; border-radius: 18px; font-size: 0.78rem;
+            font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase;
+        }
+    </style>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="detail-header">
-        <a href="../escursioni.html" class="back-link"><span>&larr;</span> Escursioni</a>
+        <a href="../escursioni.html" class="back-link"><span>&larr;</span> Indietro</a>
         <span class="logo-small">LO SQUALO</span>
     </header>
 
     <section class="detail-hero">
-        <img src="foto/buggy/drive-01.jpg" alt="Buggy Experience Tenerife">
+        <img loading="lazy" decoding="async" src="foto/buggy/drive-02.jpg" alt="Buggy Experience Tenerife">
         <div class="detail-hero-overlay">
             <h1>Buggy Experience</h1>
-            <p class="location">Tenerife Sud — Costa & paesaggi vulcanici</p>
+            <p class="location">Off-Road &middot; Stargazing &middot; Tenerife Sud</p>
         </div>
     </section>
 
     <div class="quick-info">
         <div class="quick-info-item"><span class="icon">🏎️</span><span>Buggy 2 posti</span></div>
-        <div class="quick-info-item"><span class="icon">🌅</span><span>Sunset disponibile</span></div>
+        <div class="quick-info-item"><span class="icon">🌋</span><span>Off-road vulcanico</span></div>
+        <div class="quick-info-item"><span class="icon">⭐</span><span>Stargazing notturno</span></div>
         <div class="quick-info-item"><span class="icon">🚐</span><span>Pick-up incluso</span></div>
-        <div class="quick-info-item"><span class="icon">🛡️</span><span>Assicurazione</span></div>
     </div>
 
     <div class="detail-container">
         <section class="detail-section">
             <h2>L'esperienza</h2>
-            <p>Vivi Tenerife in modo attivo e diverso con un'esperienza in buggy 2 posti tra costa, paesaggi vulcanici e scorci panoramici del sud dell'isola. Un'attività pensata per chi cerca avventura, libertà e divertimento, con il giusto equilibrio tra guida, scoperta del territorio e soste nei punti più suggestivi.</p>
-            <p>L'esperienza inizia con un briefing introduttivo e si svolge con mezzi preparati per offrire una guida sicura e coinvolgente. Durante il percorso si attraversano zone costiere e strade panoramiche, con tappe che possono includere luoghi come El Puertito e Playa San Juan, oltre a una versione speciale sunset pensata per godersi la luce del tramonto sull'oceano.</p>
+            <div class="tag-row">
+                <span>Off-road</span>
+                <span>Stargazing</span>
+                <span>Sunset</span>
+            </div>
+            <p style="margin-top: 16px;">Tenerife è un'isola vulcanica: questo significa <strong>strade sterrate, sentieri di lava, paesaggi marziani</strong>. Il modo giusto per attraversarla è in buggy: due posti, motore reattivo, niente vetri tra te e il vento.</p>
+            <p>Il percorso costiero standard tocca <strong>El Puertito</strong>, <strong>Playa San Juan</strong> e gli scorci più scenografici del sud. Per chi vuole spingersi oltre, esistono varianti <em>off-road</em> che entrano nei tracciati più tecnici, e una versione <em>stargazing</em> serale per godersi il cielo del Teide — uno dei migliori al mondo per osservazione astronomica grazie alla quota e alla bassissima inquinamento luminoso.</p>
+            <p>L'attività inizia con un briefing introduttivo: i mezzi sono preparati per garantire una guida sicura e coinvolgente, le guide esperte fanno la differenza tra una "gita" e un'esperienza vera.</p>
+        </section>
+
+        <section class="detail-section">
+            <h2>Le tre formule</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3><span class="icon">🌅</span> Sunset Tour</h3>
+                    <p>Partenza nel tardo pomeriggio, percorso costiero con pause foto, arrivo allo spot del tramonto sull'oceano. Durata ~2h.</p>
+                </div>
+                <div class="feature-card">
+                    <h3><span class="icon">🌋</span> Off-Road</h3>
+                    <p>Tour tecnico tra sentieri vulcanici e strade sterrate. Versione adrenalinica, richiede patente B. Durata ~2.5h.</p>
+                </div>
+                <div class="feature-card">
+                    <h3><span class="icon">⭐</span> Stargazing</h3>
+                    <p>Esperienza serale: si guida verso una zona buia, sosta con mappa stellare, vista sulla Via Lattea. Durata ~3h.</p>
+                </div>
+            </div>
         </section>
 
         <section class="detail-section">
@@ -45,7 +76,7 @@
                 <span class="highlight-tag">🚐 Pick-up e drop-off gratuiti</span>
                 <span class="highlight-tag">📋 Briefing iniziale</span>
                 <span class="highlight-tag">🛡️ Assicurazione inclusa</span>
-                <span class="highlight-tag">🏖️ Sosta in spiaggia</span>
+                <span class="highlight-tag">🏖️ Sosta panoramica</span>
             </div>
         </section>
 
@@ -56,30 +87,37 @@
                 <span class="highlight-tag">👥 Amici</span>
                 <span class="highlight-tag">⚡ Escursione dinamica</span>
                 <span class="highlight-tag">🌊 Costa sud</span>
+                <span class="highlight-tag">🔭 Astrofili</span>
             </div>
-            <p style="margin-top: 20px;">Buggy Paradise presenta l'attività con forte focus su sicurezza e divertimento, con guide esperte e mezzi mantenuti per garantire un'esperienza fluida e adrenalinica.</p>
+            <p style="margin-top: 20px; color: var(--text-secondary); font-size: 0.92rem;">Operiamo con partner certificati Active Tenerife: forte focus su sicurezza, mezzi sempre revisionati, guide esperte. Più info sulle attività off-road dell'isola: <a href="https://active-tenerife.com/" target="_blank" rel="noopener" style="color: var(--blu-squalo);">active-tenerife.com</a></p>
         </section>
     </div>
 
     <section class="gallery-section">
         <h2>Galleria</h2>
         <div class="gallery-scroll">
-            <div class="gallery-item"><img src="foto/buggy/drive-01.jpg" alt="Buggy Experience Tenerife"></div>
-            <div class="gallery-item"><img src="foto/buggy/drive-02.jpg" alt="Buggy - percorso costiero"></div>
-            <div class="gallery-item"><img src="foto/buggy/drive-03.jpg" alt="Buggy - paesaggio vulcanico"></div>
+            <div class="gallery-item"><img loading="lazy" decoding="async" src="foto/buggy/drive-01.jpg" alt="Buggy Experience Tenerife"></div>
+            <div class="gallery-item"><img loading="lazy" decoding="async" src="foto/buggy/drive-02.jpg" alt="Buggy - percorso costiero"></div>
+            <div class="gallery-item"><img loading="lazy" decoding="async" src="foto/buggy/drive-03.jpg" alt="Buggy - paesaggio vulcanico"></div>
+            <div class="gallery-item"><img loading="lazy" decoding="async" src="foto/buggy/drive-04.jpg" alt="Buggy - off-road"></div>
+            <div class="gallery-item"><img loading="lazy" decoding="async" src="foto/buggy/drive-05.jpg" alt="Buggy - sosta panoramica"></div>
+            <div class="gallery-item"><img loading="lazy" decoding="async" src="foto/buggy/drive-06.jpg" alt="Buggy - sterrato"></div>
+            <div class="gallery-item"><img loading="lazy" decoding="async" src="foto/buggy/drive-07.jpg" alt="Buggy - costa sud"></div>
+            <div class="gallery-item"><img loading="lazy" decoding="async" src="foto/buggy/drive-08.jpg" alt="Buggy - tramonto"></div>
+            <div class="gallery-item"><img loading="lazy" decoding="async" src="foto/buggy/drive-09.jpg" alt="Buggy - gruppo"></div>
         </div>
     </section>
 
     <section class="cta-section">
         <h2>Prenota la tua avventura in Buggy</h2>
-        <p>Contattaci per disponibilità e orari</p>
+        <p>Sunset, off-road o stargazing — dimmi quale formula ti chiama e ti organizzo tutto.</p>
         <a href="https://wa.me/34616794190?text=Ciao!%20Sono%20interessato%20al%20Buggy%20Experience" class="cta-button" target="_blank">
             <span>💬</span> Contattaci su WhatsApp
         </a>
     </section>
 
     <footer class="detail-footer">
-        <p>&copy; 2026 <a href="../index.html">Lo Squalo - Tenerife Experience</a> | Since 2009</p>
+        <p>&copy; <a href="../index.html">Lo Squalo Tenerife</a> &middot; dal 2009</p>
     </footer>
     <script src="../whatsapp-i18n.js"></script>
 </body>

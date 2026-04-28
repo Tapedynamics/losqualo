@@ -3,68 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alessandro - Lo Squalo Tenerife</title>
+    <title>Alessandro Biagini - Lo Squalo Tenerife</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="pages.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { background: var(--bg-main); }
+
+        .ale-header {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 15px 20px; position: sticky; top: 0; background: var(--bg-main);
+            z-index: 100; border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        .ale-header .back-link {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: var(--blu-squalo); text-decoration: none; font-size: 0.85rem;
+            font-weight: 500; padding: 8px 15px; border: 2px solid var(--blu-squalo);
+            border-radius: 20px; transition: all 0.25s ease;
+        }
+        .ale-header .back-link:hover { background: var(--blu-squalo); color: white; }
+        .ale-header .logo-small {
+            font-size: 1rem; font-weight: 700; color: var(--blu-squalo); letter-spacing: 2px;
+        }
+
+        .ale-hero {
+            background: linear-gradient(135deg, var(--alessandro-main), var(--blu-squalo));
+            padding: 60px 24px 80px; text-align: center; color: white;
+            border-radius: 0 0 30px 30px; position: relative;
+        }
+        .ale-photo {
+            width: 180px; height: 180px; border-radius: 50%; margin: 0 auto 24px;
+            background: linear-gradient(145deg, #8ba7b6, #6a8695);
+            border: 6px solid rgba(255,255,255,0.4);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 4rem; font-weight: 700; color: white; letter-spacing: 2px;
+            overflow: hidden;
+        }
+        .ale-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .ale-name { font-size: 2.2rem; font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; }
+        .ale-role { font-size: 0.95rem; font-weight: 400; opacity: 0.9; letter-spacing: 2px; text-transform: uppercase; }
+
+        .ale-container { max-width: 720px; margin: -40px auto 0; padding: 0 24px 60px; position: relative; z-index: 2; }
+
+        .ale-card {
+            background: white; border-radius: 24px; padding: 40px 32px;
+            box-shadow: 0 18px 48px rgba(47,111,143,0.12); margin-bottom: 32px;
+        }
+        .ale-card h2 {
+            font-size: 1.3rem; font-weight: 700; color: var(--blu-squalo);
+            margin-bottom: 16px; letter-spacing: 0.5px;
+        }
+        .ale-card p {
+            font-size: 1.02rem; line-height: 1.7; color: var(--text-primary);
+            margin-bottom: 16px;
+        }
+        .ale-card p:last-child { margin-bottom: 0; }
+        .ale-card strong { color: var(--blu-squalo); font-weight: 600; }
+
+        .ale-tags {
+            display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px;
+        }
+        .ale-tags span {
+            background: #f5f0e8; color: var(--blu-squalo); padding: 6px 14px;
+            border-radius: 16px; font-size: 0.8rem; font-weight: 500;
+        }
+
+        .ale-cta-row {
+            display: flex; gap: 14px; flex-wrap: wrap; justify-content: center;
+            margin-top: 8px;
+        }
+        .ale-btn {
+            display: inline-flex; align-items: center; gap: 10px;
+            padding: 14px 26px; border-radius: 30px; text-decoration: none;
+            font-size: 0.95rem; font-weight: 600; letter-spacing: 0.5px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease; border: none;
+            cursor: pointer;
+        }
+        .ale-btn-primary {
+            background: #25D366; color: white;
+            box-shadow: 0 8px 22px rgba(37,211,102,0.35);
+        }
+        .ale-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(37,211,102,0.45); }
+        .ale-btn-icon {
+            background: white; color: var(--blu-squalo); border: 2px solid var(--blu-squalo);
+            width: 52px; height: 52px; padding: 0; border-radius: 50%; justify-content: center;
+        }
+        .ale-btn-icon:hover { background: var(--blu-squalo); color: white; }
+        .ale-btn-icon svg { width: 22px; height: 22px; }
+
+        .ale-socials {
+            display: flex; gap: 14px; justify-content: center; margin-top: 24px; flex-wrap: wrap;
+        }
+
+        @media (max-width: 600px) {
+            .ale-hero { padding: 48px 20px 70px; }
+            .ale-photo { width: 150px; height: 150px; font-size: 3.4rem; }
+            .ale-name { font-size: 1.8rem; }
+            .ale-role { font-size: 0.85rem; }
+            .ale-card { padding: 28px 22px; }
+            .ale-card h2 { font-size: 1.15rem; }
+            .ale-card p { font-size: 0.96rem; }
+        }
+    </style>
 </head>
-<body class="page-alessandro">
-    <div class="container">
-        <header>
-            <a href="index.html" class="back-home">&larr; Home</a>
-            <h1 class="logo">LO SQUALO</h1>
-            <span class="tagline">since 2009</span>
-        </header>
+<body>
+    <header class="ale-header">
+        <a href="index.html?explore=1" class="back-link"><span>&larr;</span> Indietro</a>
+        <span class="logo-small">LO SQUALO</span>
+    </header>
 
-        <main class="page-map" data-state="categories">
-            <!-- SVG per le linee dinamiche -->
-            <svg class="connections" id="svg-connections">
-                <!-- Linee: Centro -> Sotto-categorie -->
-                <line class="line main-line" id="line-center-chisono"></line>
-                <line class="line main-line" id="line-center-perche"></line>
-                <line class="line main-line" id="line-center-esperienza"></line>
-                <line class="line main-line" id="line-center-ruolo"></line>
-                <line class="line main-line" id="line-center-highlights"></line>
-            </svg>
+    <section class="ale-hero">
+        <div class="ale-photo">
+            <!-- Sostituire src con foto reale: assets/alessandro.jpg -->
+            <img loading="lazy" decoding="async" src="assets/alessandro.jpg" alt="Alessandro Biagini" onerror="this.parentElement.innerHTML='AB';this.parentElement.style.fontSize='4rem';">
+        </div>
+        <h1 class="ale-name">Alessandro Biagini</h1>
+        <p class="ale-role">Lo Squalo &middot; Tenerife Experience</p>
+    </section>
 
-            <!-- Centro - Categoria -->
-            <div class="center-node category-center" id="category-trigger">
-                <div class="category-icon alessandro-bg">
-                    <span>ALESSANDRO</span>
-                </div>
-                <span class="click-hint">Clicca per esplorare</span>
+    <main class="ale-container">
+        <article class="ale-card">
+            <h2>Chi sono</h2>
+            <p>Professionista multidisciplinare con base a Tenerife, attivo <strong>dal 2009</strong> nei settori eventi, hospitality, turismo, marketing digitale e brand experience.</p>
+            <p>Gestisco diversi progetti sotto l'identità <strong>Lo Squalo &ndash; Tenerife Experience</strong>, un hub che unisce esperienze, promotion, social media, consulenza e creazione di contenuti.</p>
+            <div class="ale-tags">
+                <span>Eventi</span>
+                <span>Hospitality</span>
+                <span>Turismo</span>
+                <span>Marketing Digitale</span>
+                <span>Brand Experience</span>
+                <span>Content Creation</span>
             </div>
+        </article>
 
-            <!-- Sotto-categorie (Livello 2) - No livello 3 per questa pagina -->
-            <div class="primary-nodes">
-                <a href="#chisono" class="node node-primary chisono-node" id="node-chisono" data-category="chisono">
-                    <span>Chi Sono</span>
-                </a>
-                <a href="#perche" class="node node-primary perche-node" id="node-perche" data-category="perche">
-                    <span>Perche<br>Tenerife</span>
-                </a>
-                <a href="#esperienza" class="node node-primary esperienza-node" id="node-esperienza" data-category="esperienza">
-                    <span>La Mia<br>Esperienza</span>
-                </a>
-                <a href="#ruolo" class="node node-primary ruolo-node" id="node-ruolo" data-category="ruolo">
-                    <span>Il Mio<br>Ruolo Oggi</span>
-                </a>
-                <a href="#highlights" class="node node-primary highlights-node" id="node-highlights" data-category="highlights">
-                    <span>Highlights</span>
+        <article class="ale-card" style="text-align: center;">
+            <h2>Contattami</h2>
+            <p style="margin-bottom: 24px;">Per collaborazioni, esperienze o consulenza: scrivimi direttamente su WhatsApp.</p>
+            <div class="ale-cta-row">
+                <a href="https://wa.me/34616794190" target="_blank" rel="noopener" class="ale-btn ale-btn-primary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    Scrivi su WhatsApp
                 </a>
             </div>
+            <div class="ale-socials">
+                <a href="https://www.instagram.com/alessandrobiagini_losqualo/" target="_blank" rel="noopener" class="ale-btn ale-btn-icon" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+                <a href="https://www.facebook.com/alessandrobiaginilosqualo" target="_blank" rel="noopener" class="ale-btn ale-btn-icon" aria-label="Facebook">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                </a>
+            </div>
+        </article>
+    </main>
 
-            <!-- Pulsante indietro -->
-            <button class="back-btn" id="back-btn">
-                <span>&larr;</span> Indietro
-            </button>
-        </main>
+    <footer style="text-align: center; padding: 18px; color: var(--text-secondary); font-size: 0.7rem; letter-spacing: 0.5px;">
+        <p>&copy; Lo Squalo Tenerife &middot; dal 2009</p>
+    </footer>
+    <script src="whatsapp-i18n.js"></script>
 
-        <footer>
-            <p>&copy; 2024 Lo Squalo - Tenerife Experience | Since 2009</p>
-        </footer>
-    </div>
-
-    <script src="pages.js"></script>
 </body>
 </html>

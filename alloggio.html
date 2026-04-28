@@ -11,7 +11,7 @@
 <body class="page-alloggio">
     <div class="container">
         <header>
-            <a href="index.html" class="back-home">&larr; Home</a>
+            <a href="index.html?explore=1" class="back-home">&larr; Home</a>
             <h1 class="logo">LO SQUALO</h1>
             <span class="tagline">since 2009</span>
         </header>
@@ -52,8 +52,6 @@
                 <line class="line sub-line" data-category="villa" id="line-villa-fortaleza"></line>
                 <line class="line sub-line" data-category="villa" id="line-villa-playaparaiso"></line>
                 <line class="line sub-line" data-category="villa" id="line-villa-ciguaña"></line>
-                <line class="line sub-line" data-category="villa" id="line-villa-costaadeje"></line>
-                <line class="line sub-line" data-category="villa" id="line-villa-torviscas"></line>
 
                 <!-- Linee Villa Duque + Finca Playa Paraiso -->
                 <line class="line sub-line" data-category="villa" id="line-villa-duque"></line>
@@ -73,9 +71,9 @@
                 <div class="node node-primary appartamento-node" id="node-appartamento" data-category="appartamento">
                     <span>Appartamento</span>
                 </div>
-                <div class="node node-primary ostello-node disabled-node" id="node-ostello" data-category="ostello">
+                <a href="alloggio/gota-de-mar.html" class="node node-primary ostello-node unavailable-node" id="node-ostello">
                     <span>Ostello</span>
-                </div>
+                </a>
                 <div class="node node-primary rurale-node" id="node-rurale" data-category="rurale">
                     <span>Rurale<br>Glamping</span>
                 </div>
@@ -83,7 +81,7 @@
                     <span>Surf<br>House</span>
                 </div>
                 <div class="node node-primary villa-node" id="node-villa" data-category="villa">
-                    <span>Villa<br>Finca</span>
+                    <span>Villa y<br>Casa Rural</span>
                 </div>
             </div>
 
@@ -145,7 +143,7 @@
                     <span>Casa Rural<br>Atogo</span>
                 </a>
                 <a href="alloggio/casa-rural-taucho.html" class="node node-secondary item-taucho" id="node-taucho">
-                    <span>Casa Rural<br>Taucio</span>
+                    <span>Casa Rural<br>Taucho</span>
                 </a>
                 <a href="alloggio/finca-la-fortaleza.html" class="node node-secondary item-fortaleza" id="node-fortaleza">
                     <span>Finca La<br>Fortaleza</span>
@@ -156,12 +154,6 @@
                 <a href="alloggio/finca-ciguaña.html" class="node node-secondary item-ciguaña" id="node-ciguaña">
                     <span>Finca<br>Ciguaña</span>
                 </a>
-                <div class="node node-secondary item-costaadeje disabled-node" id="node-costaadeje">
-                    <span>Villa<br>Costa Adeje</span>
-                </div>
-                <div class="node node-secondary item-torviscas disabled-node" id="node-torviscas">
-                    <span>Villa<br>Torviscas</span>
-                </div>
                 <a href="alloggio/villa-duque.html" class="node node-secondary item-duque" id="node-duque">
                     <span>Villa<br>Duque</span>
                 </a>
@@ -177,7 +169,7 @@
         </main>
 
         <footer>
-            <p>&copy; 2024 Lo Squalo - Tenerife Experience | Since 2009</p>
+            <p>&copy; Lo Squalo Tenerife &middot; dal 2009</p>
         </footer>
     </div>
 

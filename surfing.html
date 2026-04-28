@@ -11,7 +11,7 @@
 <body class="page-surfing">
     <div class="container">
         <header>
-            <a href="index.html" class="back-home">&larr; Home</a>
+            <a href="index.html?explore=1" class="back-home">&larr; Home</a>
             <h1 class="logo">LO SQUALO</h1>
             <span class="tagline">since 2009</span>
         </header>
@@ -22,7 +22,6 @@
                 <!-- Linee: Centro -> Sotto-categorie -->
                 <line class="line main-line" id="line-center-surfbar"></line>
                 <line class="line main-line" id="line-center-surfhouse"></line>
-                <line class="line main-line" id="line-center-elmedano"></line>
                 <line class="line main-line" id="line-center-spots"></line>
                 <line class="line main-line" id="line-center-callemexico"></line>
                 <line class="line main-line" id="line-center-school"></line>
@@ -33,27 +32,6 @@
                 <line class="line sub-line" data-category="surfhouse" id="line-surfhouse-reservacama"></line>
                 <line class="line sub-line" data-category="surfhouse" id="line-surfhouse-reservahab"></line>
                 <line class="line sub-line" data-category="surfhouse" id="line-surfhouse-gallery"></line>
-
-                <!-- Linee El Medano -->
-                <line class="line sub-line" data-category="elmedano" id="line-elmedano-rentshop"></line>
-                <line class="line sub-line" data-category="elmedano" id="line-elmedano-school"></line>
-                <line class="line sub-line" data-category="elmedano" id="line-elmedano-fooddrink"></line>
-
-                <!-- Linee Calle Mexico -->
-                <line class="line sub-line" data-category="callemexico" id="line-callemexico-rentshop"></line>
-                <line class="line sub-line" data-category="callemexico" id="line-callemexico-fooddrink"></line>
-                <line class="line sub-line" data-category="callemexico" id="line-callemexico-artevents"></line>
-
-                <!-- Linee Surf Spots -->
-                <line class="line sub-line" data-category="spots" id="line-spots-elmedano"></line>
-                <line class="line sub-line" data-category="spots" id="line-spots-lasamericas"></line>
-
-                <!-- Linee School -->
-                <line class="line sub-line" data-category="school" id="line-school-kontraola"></line>
-                <line class="line sub-line" data-category="school" id="line-school-k16"></line>
-                <line class="line sub-line" data-category="school" id="line-school-ikaika"></line>
-                <line class="line sub-line" data-category="school" id="line-school-franz"></line>
-                <line class="line sub-line" data-category="school" id="line-school-vils"></line>
             </svg>
 
             <!-- Centro - Categoria -->
@@ -66,97 +44,39 @@
 
             <!-- Sotto-categorie (Livello 2) -->
             <div class="primary-nodes">
-                <a href="surfing/surf-bar-franchise.html" class="node node-primary surfbar-node" id="node-surfbar" data-category="surfbar">
+                <a href="surfing/surf-bar-franchise.html" class="node node-primary surfbar-node" id="node-surfbar">
                     <span>Surfbar<br>Franchise</span>
                 </a>
                 <div class="node node-primary surfhouse-node" id="node-surfhouse" data-category="surfhouse">
                     <span>Surf<br>House</span>
                 </div>
-                <div class="node node-primary elmedano-node" id="node-elmedano" data-category="elmedano">
-                    <span>El Medano<br>Surf/Kite</span>
-                </div>
-                <div class="node node-primary spots-node" id="node-spots" data-category="spots">
+                <a href="surfing/spots.html" class="node node-primary spots-node" id="node-spots">
                     <span>Surf<br>Spots</span>
-                </div>
-                <div class="node node-primary callemexico-node" id="node-callemexico" data-category="callemexico">
+                </a>
+                <a href="https://t.mtrbio.com/callemexicotenerife" target="_blank" rel="noopener" class="node node-primary callemexico-node" id="node-callemexico">
                     <span>Calle<br>Mexico</span>
-                </div>
-                <div class="node node-primary school-node" id="node-school" data-category="school">
+                </a>
+                <a href="surfing/ika-ika.html" class="node node-primary school-node" id="node-school">
                     <span>School</span>
-                </div>
+                </a>
             </div>
 
             <!-- Elementi Livello 3 - SURF HOUSE -->
             <div class="sub-nodes" data-parent="surfhouse">
-                <a href="#b2b" class="node node-secondary item-b2b" id="node-b2b">
+                <a href="surfing/surf-house-b2b.html" class="node node-secondary item-b2b" id="node-b2b">
                     <span>B2B</span>
                 </a>
-                <a href="#surfcamp" class="node node-secondary item-surfcamp" id="node-surfcamp">
+                <a href="surfing/surf-camp.html" class="node node-secondary item-surfcamp" id="node-surfcamp">
                     <span>Surf<br>Camp</span>
                 </a>
-                <a href="#reservacama" class="node node-secondary item-reservacama" id="node-reservacama">
+                <a href="alloggio/gota-de-mar.html" class="node node-secondary item-reservacama" id="node-reservacama">
                     <span>Reserva<br>Cama</span>
                 </a>
-                <a href="#reservahab" class="node node-secondary item-reservahab" id="node-reservahab">
+                <a href="alloggio/surf-house-rurale.html" class="node node-secondary item-reservahab" id="node-reservahab">
                     <span>Reserva<br>Habitacion</span>
                 </a>
                 <a href="#gallery" class="node node-secondary item-gallery" id="node-gallery">
                     <span>Gallery</span>
-                </a>
-            </div>
-
-            <!-- Elementi Livello 3 - EL MEDANO -->
-            <div class="sub-nodes" data-parent="elmedano">
-                <a href="#elmedano-rentshop" class="node node-secondary item-elmedano-rentshop" id="node-elmedano-rentshop">
-                    <span>Rent<br>Shop</span>
-                </a>
-                <a href="#elmedano-school" class="node node-secondary item-elmedano-school" id="node-elmedano-school">
-                    <span>School</span>
-                </a>
-                <a href="#elmedano-fooddrink" class="node node-secondary item-elmedano-fooddrink" id="node-elmedano-fooddrink">
-                    <span>Food &<br>Drink</span>
-                </a>
-            </div>
-
-            <!-- Elementi Livello 3 - SURF SPOTS -->
-            <div class="sub-nodes" data-parent="spots">
-                <a href="#spots-elmedano" class="node node-secondary item-spots-elmedano" id="node-spots-elmedano">
-                    <span>El<br>Medano</span>
-                </a>
-                <a href="#spots-lasamericas" class="node node-secondary item-spots-lasamericas" id="node-spots-lasamericas">
-                    <span>Las<br>Americas</span>
-                </a>
-            </div>
-
-            <!-- Elementi Livello 3 - CALLE MEXICO -->
-            <div class="sub-nodes" data-parent="callemexico">
-                <a href="#callemexico-rentshop" class="node node-secondary item-callemexico-rentshop" id="node-callemexico-rentshop">
-                    <span>Rent<br>Shop</span>
-                </a>
-                <a href="#callemexico-fooddrink" class="node node-secondary item-callemexico-fooddrink" id="node-callemexico-fooddrink">
-                    <span>Food &<br>Drink</span>
-                </a>
-                <a href="#callemexico-artevents" class="node node-secondary item-callemexico-artevents" id="node-callemexico-artevents">
-                    <span>Art &<br>Events</span>
-                </a>
-            </div>
-
-            <!-- Elementi Livello 3 - SCHOOL -->
-            <div class="sub-nodes" data-parent="school">
-                <a href="#kontraola" class="node node-secondary item-kontraola" id="node-kontraola">
-                    <span>Kontraola</span>
-                </a>
-                <a href="#k16" class="node node-secondary item-k16" id="node-k16">
-                    <span>K16</span>
-                </a>
-                <a href="surfing/ika-ika.html" class="node node-secondary item-ikaika" id="node-ikaika">
-                    <span>Ika Ika</span>
-                </a>
-                <a href="#franz" class="node node-secondary item-franz" id="node-franz">
-                    <span>Franz</span>
-                </a>
-                <a href="#vils" class="node node-secondary item-vils" id="node-vils">
-                    <span>Vil's</span>
                 </a>
             </div>
 
@@ -167,7 +87,7 @@
         </main>
 
         <footer>
-            <p>&copy; 2024 Lo Squalo - Tenerife Experience | Since 2009</p>
+            <p>&copy; Lo Squalo Tenerife &middot; dal 2009</p>
         </footer>
     </div>
 

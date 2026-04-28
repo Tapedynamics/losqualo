@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surf Spots - Lo Squalo Tenerife</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="detail.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .spots-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px; margin-top: 24px;
+        }
+        .spot-card {
+            background: white; border-radius: 18px; padding: 28px 24px;
+            box-shadow: 0 8px 28px rgba(47,111,143,0.10);
+            border-top: 4px solid var(--surfing-main);
+        }
+        .spot-card h3 {
+            font-size: 1.3rem; font-weight: 700; color: var(--blu-squalo);
+            margin-bottom: 6px; letter-spacing: 0.3px;
+        }
+        .spot-card .spot-loc {
+            font-size: 0.78rem; color: var(--text-secondary); text-transform: uppercase;
+            letter-spacing: 1px; margin-bottom: 18px;
+        }
+        .spot-card p { font-size: 0.95rem; line-height: 1.6; margin-bottom: 14px; color: var(--text-primary); }
+        .spot-meta {
+            display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px;
+        }
+        .spot-meta span {
+            background: rgba(95,166,198,0.12); color: var(--blu-squalo);
+            padding: 5px 12px; border-radius: 14px; font-size: 0.78rem; font-weight: 500;
+        }
+        .spot-tip {
+            margin-top: 14px; padding: 12px 14px; background: #fff8ed;
+            border-left: 3px solid #d4a93c; border-radius: 8px;
+            font-size: 0.88rem; line-height: 1.55;
+        }
+        .spot-tip strong { color: #8a6520; display: block; margin-bottom: 4px; font-size: 0.78rem; letter-spacing: 0.5px; text-transform: uppercase; }
+
+        .surf-cta {
+            background: linear-gradient(135deg, var(--surfing-main), var(--blu-squalo));
+            color: white; border-radius: 22px; padding: 36px 28px; text-align: center;
+            margin-top: 36px;
+        }
+        .surf-cta h2 { font-size: 1.5rem; margin-bottom: 10px; }
+        .surf-cta p { opacity: 0.92; margin-bottom: 22px; line-height: 1.5; }
+        .surf-cta a {
+            display: inline-block; padding: 14px 30px; border-radius: 28px;
+            background: white; color: var(--blu-squalo); text-decoration: none;
+            font-weight: 700; letter-spacing: 0.5px; transition: transform 0.2s ease;
+        }
+        .surf-cta a:hover { transform: translateY(-2px); }
+    </style>
+</head>
+<body>
+    <header class="detail-header">
+        <a href="../surfing.html" class="back-link">
+            <span>&larr;</span> Indietro
+        </a>
+        <span class="logo-small">LO SQUALO</span>
+    </header>
+
+    <section class="detail-hero" style="background: linear-gradient(135deg, #5fa6c6, #2f6f8f); height: 36vh; min-height: 280px; display: flex; align-items: flex-end;">
+        <div class="detail-hero-overlay" style="background: linear-gradient(transparent, rgba(0,0,0,0.55));">
+            <h1>Surf Spots Tenerife</h1>
+            <p class="location">Le onde migliori della costa sud — selezione Lo Squalo</p>
+        </div>
+    </section>
+
+    <div class="detail-container">
+        <section class="detail-section">
+            <h2>Dove cavalchiamo</h2>
+            <p>Tenerife sud è una zona vulcanica con fondali di lava e correnti che generano onde consistenti tutto l'anno. Le condizioni cambiano molto da spot a spot: di seguito la nostra mappa operativa, quella che usiamo ogni giorno per portarti dove c'è onda buona <em>oggi</em>.</p>
+
+            <div class="spots-grid">
+
+                <div class="spot-card">
+                    <h3>La Izquierda</h3>
+                    <p class="spot-loc">Playa de Las Américas</p>
+                    <p>La sinistra più famosa dell'isola. Onda potente, lunga, con sezioni veloci. Spot da intermedio in su, fondale roccioso vulcanico.</p>
+                    <div class="spot-meta">
+                        <span>Mancina</span>
+                        <span>Reef break</span>
+                        <span>Intermedio / Avanzato</span>
+                        <span>NW – W swell</span>
+                    </div>
+                    <div class="spot-tip">
+                        <strong>Tip Lo Squalo</strong>
+                        Marea bassa che cresce è la finestra migliore. Si entra sul rip della punta a sinistra: scarpine consigliate.
+                    </div>
+                </div>
+
+                <div class="spot-card">
+                    <h3>Playa Honda</h3>
+                    <p class="spot-loc">Las Américas centro</p>
+                    <p>Beach break sabbioso, perfetto per principianti e progressione. Onde più morbide, scuole presenti tutto l'anno (qui opera <strong>Ika Ika</strong>).</p>
+                    <div class="spot-meta">
+                        <span>Beach break</span>
+                        <span>Principiante</span>
+                        <span>Tutte le maree</span>
+                        <span>Funziona ogni giorno</span>
+                    </div>
+                    <div class="spot-tip">
+                        <strong>Tip Lo Squalo</strong>
+                        Spot d'ingresso ideale per la prima settimana di surf: lezione + tavola soft a noleggio, niente paura del fondale.
+                    </div>
+                </div>
+
+                <div class="spot-card">
+                    <h3>El Médano</h3>
+                    <p class="spot-loc">Costa est, zona Granadilla</p>
+                    <p>Il regno del vento. Spot principale per windsurf, kitesurf e wing. Onda media-piccola con vento sempre presente.</p>
+                    <div class="spot-meta">
+                        <span>Windswell</span>
+                        <span>Beach break</span>
+                        <span>Principiante / Intermedio</span>
+                        <span>Tutto l'anno</span>
+                    </div>
+                    <div class="spot-tip">
+                        <strong>Tip Lo Squalo</strong>
+                        Per chi viene a Tenerife per il vento, qui è l'unica fermata. Surf classico solo nei rari giorni di calma.
+                    </div>
+                </div>
+
+                <div class="spot-card">
+                    <h3>Playa Paraíso</h3>
+                    <p class="spot-loc">Costa Adeje</p>
+                    <p>Spot tranquillo, riservato, lontano dalla folla di Las Américas. Reef break con onda medio-piccola adatta a chi cerca sessioni rilassate.</p>
+                    <div class="spot-meta">
+                        <span>Reef break</span>
+                        <span>Intermedio</span>
+                        <span>SW – W swell</span>
+                        <span>Bassa folla</span>
+                    </div>
+                    <div class="spot-tip">
+                        <strong>Tip Lo Squalo</strong>
+                        Ottimo da abbinare a soggiorno in <strong>Villa Playa Paraíso</strong>: 5 minuti dall'acqua, surf-and-relax pacchetto chiavi in mano.
+                    </div>
+                </div>
+
+                <div class="spot-card">
+                    <h3>La Caleta</h3>
+                    <p class="spot-loc">Costa Adeje nord</p>
+                    <p>Onda meno conosciuta, spot da locals. Reef break con sinistra e destra. Funziona bene con swell forte da nord-ovest.</p>
+                    <div class="spot-meta">
+                        <span>Reef break</span>
+                        <span>Avanzato</span>
+                        <span>NW swell forte</span>
+                        <span>Niente principianti</span>
+                    </div>
+                    <div class="spot-tip">
+                        <strong>Tip Lo Squalo</strong>
+                        Spot tecnico, rispetta il line-up locale. Ti accompagniamo solo se sei già autonomo.
+                    </div>
+                </div>
+
+                <div class="spot-card">
+                    <h3>Las Galletas</h3>
+                    <p class="spot-loc">Sud-est, Arona</p>
+                    <p>Bahia protetta con onda dolce, fondale misto. Funziona quando il sud-ovest è troppo grosso e il west scarica.</p>
+                    <div class="spot-meta">
+                        <span>Reef + sand</span>
+                        <span>Tutti i livelli</span>
+                        <span>S – SW swell</span>
+                        <span>Backup spot</span>
+                    </div>
+                    <div class="spot-tip">
+                        <strong>Tip Lo Squalo</strong>
+                        Ottimo "piano B" nei giorni di mare grosso a Las Américas. Anche perfetto per longboard.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="surf-cta">
+            <h2>Non sai dove andare oggi?</h2>
+            <p>Ti diciamo noi dov'è onda buona — letteralmente, ogni giorno. Surf check, tavola, transfer e (se vuoi) lezione con <strong>Ika Ika</strong>. Tutto incluso, zero stress.</p>
+            <a href="https://wa.me/34616794190?text=Ciao%20Squalo%2C%20info%20surf%20spots%20a%20Tenerife" target="_blank" rel="noopener">Scrivici su WhatsApp</a>
+        </section>
+    </div>
+
+    <footer style="text-align: center; padding: 24px; color: var(--text-secondary); font-size: 0.7rem;">
+        <p>&copy; <a href="../index.html">Lo Squalo Tenerife</a> &middot; dal 2009</p>
+    </footer>
+    <script src="../whatsapp-i18n.js"></script>
+
+</body>
+</html>

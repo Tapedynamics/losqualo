@@ -19,7 +19,7 @@
     --alloggio-surfhouse: #DFB5BF;
     --alloggio-ostello: #EAD2D8;
     --alloggio-villa: #D9AEB7;
-    --alloggio-rurale: #CFA9A1;
+    --alloggio-rurale: #DCB0BA;
     --alloggio-glamping: #E5BAC4;
 
     --escursioni-main: #4F8C8C;
@@ -29,10 +29,10 @@
     --escursioni-food: #8FAF9A;
 
     --surfing-main: #5FA6C6;
-    --surfing-callemexico: #4E9BB8;
+    --surfing-callemexico: #5FA6C6;
     --surfing-spots: #6FB6D6;
-    --surfing-elmedano: #3F8FB0;
-    --surfing-surfbar: #2F6F8F;
+    --surfing-elmedano: #5FA6C6;
+    --surfing-surfbar: #5FA6C6;
     --surfing-surfhouse: #7FBEDB;
     --surfing-camp: #6AAED6;
 
@@ -146,10 +146,12 @@ header {
 }
 
 .tenerife-img {
-    width: 140px;
+    width: 160px;
     height: auto;
     transition: all 0.4s ease-out;
     filter: drop-shadow(0 8px 24px rgba(47, 111, 143, 0.25));
+    /* Rimuove eventuale sfondo bianco del PNG fondendolo con il bg pagina */
+    mix-blend-mode: multiply;
 }
 
 .center-node:hover .tenerife-img {
@@ -159,13 +161,14 @@ header {
 
 .center-text {
     display: block;
-    margin-top: 10px;
+    margin-top: 16px;
     color: var(--blu-squalo);
-    font-size: 0.85rem;
-    font-weight: 600;
+    font-size: 1.25rem;
+    font-weight: 700;
     text-align: center;
-    line-height: 1.3;
-    letter-spacing: 1px;
+    line-height: 1.2;
+    letter-spacing: 4px;
+    text-transform: uppercase;
 }
 
 /* Animazione floating */
@@ -178,19 +181,34 @@ header {
     50% { transform: translate(-50%, -50%) translateY(-8px); }
 }
 
-/* Hint per cliccare */
+/* Hint per cliccare — stile bottone */
 .click-hint {
-    display: block;
-    margin-top: 15px;
-    font-size: 0.75rem;
-    color: var(--text-secondary);
-    opacity: 0.8;
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 24px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: white;
+    background: var(--blu-squalo);
+    border-radius: 24px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    opacity: 0.95;
+    box-shadow: 0 6px 18px rgba(47, 111, 143, 0.35);
     animation: pulse-hint 2.5s ease-in-out infinite;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.center-node:hover .click-hint {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 10px 24px rgba(47, 111, 143, 0.45);
+    opacity: 1;
 }
 
 @keyframes pulse-hint {
-    0%, 100% { opacity: 0.3; }
-    50% { opacity: 0.9; }
+    0%, 100% { transform: scale(1); box-shadow: 0 6px 18px rgba(47, 111, 143, 0.35); }
+    50% { transform: scale(1.04); box-shadow: 0 10px 28px rgba(47, 111, 143, 0.55); }
 }
 
 .mind-map:not([data-state="initial"]) .click-hint {
@@ -489,6 +507,64 @@ header {
 .disabled-node:hover {
     transform: none !important;
     box-shadow: none !important;
+}
+
+/* Nodi "non disponibili" ma cliccabili (mostrano scheda con messaggio) */
+.unavailable-node,
+.node.unavailable-node {
+    opacity: 0.55 !important;
+    filter: grayscale(0.4);
+    position: relative;
+}
+.unavailable-node::after {
+    content: 'i'; font-style: italic; font-family: serif; font-weight: 700;
+    position: absolute; top: -6px; right: -6px;
+    width: 22px; height: 22px; border-radius: 50%;
+    background: var(--blu-squalo); color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.85rem; box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* ===== BRAND BUTTON FLOATING ===== */
+.brand-button {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 50;
+    padding: 13px 24px;
+    background: linear-gradient(135deg, #2f6f8f, #1f4a5f);
+    color: white;
+    border-radius: 28px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.78rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    box-shadow: 0 8px 24px rgba(47, 111, 143, 0.35);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.brand-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(47, 111, 143, 0.5);
+}
+.brand-button .brand-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #25D366;
+    box-shadow: 0 0 0 3px rgba(37, 211, 102, 0.25);
+}
+
+@media (max-width: 768px) {
+    .brand-button {
+        bottom: 14px;
+        right: 14px;
+        padding: 11px 20px;
+        font-size: 0.72rem;
+    }
 }
 
 /* ===== FOOTER ===== */

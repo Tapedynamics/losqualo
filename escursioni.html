@@ -11,7 +11,7 @@
 <body class="page-escursioni">
     <div class="container">
         <header>
-            <a href="index.html" class="back-home">&larr; Home</a>
+            <a href="index.html?explore=1" class="back-home">&larr; Home</a>
             <h1 class="logo">LO SQUALO</h1>
             <span class="tagline">since 2009</span>
         </header>
@@ -23,41 +23,31 @@
                 <line class="line main-line" id="line-center-teide"></line>
                 <line class="line main-line" id="line-center-oceano"></line>
                 <line class="line main-line" id="line-center-sky"></line>
-                <line class="line main-line" id="line-center-sport"></line>
-                <line class="line main-line" id="line-center-private"></line>
                 <line class="line main-line" id="line-center-fooddrink"></line>
 
                 <!-- Linee Teide -->
                 <line class="line sub-line" data-category="teide" id="line-teide-jeep"></line>
                 <line class="line sub-line" data-category="teide" id="line-teide-stargazing"></line>
                 <line class="line sub-line" data-category="teide" id="line-teide-quad"></line>
-                <line class="line sub-line" data-category="teide" id="line-teide-bike"></line>
                 <line class="line sub-line" data-category="teide" id="line-teide-buggy"></line>
-                <line class="line sub-line" data-category="teide" id="line-teide-hiking"></line>
-                <line class="line sub-line" data-category="teide" id="line-teide-trekking"></line>
 
                 <!-- Linee Oceano -->
                 <line class="line sub-line" data-category="oceano" id="line-oceano-jetcar"></line>
                 <line class="line sub-line" data-category="oceano" id="line-oceano-jetsky"></line>
                 <line class="line sub-line" data-category="oceano" id="line-oceano-cetacei"></line>
                 <line class="line sub-line" data-category="oceano" id="line-oceano-kayak"></line>
-                <line class="line sub-line" data-category="oceano" id="line-oceano-sottomarino"></line>
+                <line class="line sub-line" data-category="oceano" id="line-oceano-surf"></line>
+                <line class="line sub-line" data-category="oceano" id="line-oceano-diving"></line>
+                <line class="line sub-line" data-category="oceano" id="line-oceano-kite"></line>
+                <line class="line sub-line" data-category="oceano" id="line-oceano-wind"></line>
+                <line class="line sub-line" data-category="oceano" id="line-oceano-fishing"></line>
+                <line class="line sub-line" data-category="oceano" id="line-oceano-yacht"></line>
+                <line class="line sub-line" data-category="oceano" id="line-oceano-barco"></line>
+                <line class="line sub-line" data-category="oceano" id="line-oceano-catamarano"></line>
 
                 <!-- Linee Sky -->
                 <line class="line sub-line" data-category="sky" id="line-sky-parapente"></line>
                 <line class="line sub-line" data-category="sky" id="line-sky-paratrike"></line>
-
-                <!-- Linee Sport -->
-                <line class="line sub-line" data-category="sport" id="line-sport-kite"></line>
-                <line class="line sub-line" data-category="sport" id="line-sport-wind"></line>
-                <line class="line sub-line" data-category="sport" id="line-sport-surf"></line>
-                <line class="line sub-line" data-category="sport" id="line-sport-fishing"></line>
-                <line class="line sub-line" data-category="sport" id="line-sport-diving"></line>
-
-                <!-- Linee Private -->
-                <line class="line sub-line" data-category="private" id="line-private-catamarano"></line>
-                <line class="line sub-line" data-category="private" id="line-private-barco"></line>
-                <line class="line sub-line" data-category="private" id="line-private-yacht"></line>
 
                 <!-- Linee Food & Drink -->
                 <line class="line sub-line" data-category="fooddrink" id="line-fooddrink-bodegas"></line>
@@ -88,12 +78,6 @@
                 <div class="node node-primary sky-node" id="node-sky" data-category="sky">
                     <span>Aria</span>
                 </div>
-                <div class="node node-primary sport-node" id="node-sport" data-category="sport">
-                    <span>Sport</span>
-                </div>
-                <div class="node node-primary private-node" id="node-private" data-category="private">
-                    <span>Private</span>
-                </div>
                 <div class="node node-primary fooddrink-node" id="node-fooddrink" data-category="fooddrink">
                     <span>Food &<br>Drink</span>
                 </div>
@@ -110,18 +94,9 @@
                 <a href="escursioni/quad.html" class="node node-secondary item-quad" id="node-quad">
                     <span>Quad</span>
                 </a>
-                <div class="node node-secondary item-bike disabled-node" id="node-bike">
-                    <span>Bike</span>
-                </div>
                 <a href="escursioni/buggy.html" class="node node-secondary item-buggy" id="node-buggy">
                     <span>Buggy</span>
                 </a>
-                <div class="node node-secondary item-hiking disabled-node" id="node-hiking">
-                    <span>Hiking</span>
-                </div>
-                <div class="node node-secondary item-trekking disabled-node" id="node-trekking">
-                    <span>Trekking</span>
-                </div>
             </div>
 
             <!-- Elementi Livello 3 - OCEANO -->
@@ -138,8 +113,29 @@
                 <a href="#kayak" class="node node-secondary item-kayak" id="node-kayak">
                     <span>Kayak</span>
                 </a>
-                <a href="#sottomarino" class="node node-secondary item-sottomarino" id="node-sottomarino">
-                    <span>Sottomarino</span>
+                <a href="surfing/ika-ika.html" class="node node-secondary item-surf" id="node-surf">
+                    <span>Surf</span>
+                </a>
+                <a href="#diving" class="node node-secondary item-diving" id="node-diving">
+                    <span>Diving</span>
+                </a>
+                <a href="#kite" class="node node-secondary item-kite" id="node-kite">
+                    <span>Kite</span>
+                </a>
+                <a href="#wind" class="node node-secondary item-wind" id="node-wind">
+                    <span>Wind</span>
+                </a>
+                <a href="#fishing" class="node node-secondary item-fishing" id="node-fishing">
+                    <span>Fishing</span>
+                </a>
+                <a href="escursioni/yacht.html" class="node node-secondary item-yacht" id="node-yacht">
+                    <span>Yacht<br>Privato</span>
+                </a>
+                <a href="escursioni/barco-sin-pilota.html" class="node node-secondary item-barco" id="node-barco">
+                    <span>Barco sin<br>Licencia</span>
+                </a>
+                <a href="escursioni/catamarano.html" class="node node-secondary item-catamarano" id="node-catamarano">
+                    <span>Catamarano</span>
                 </a>
             </div>
 
@@ -150,38 +146,6 @@
                 </a>
                 <a href="escursioni/paratrike.html" class="node node-secondary item-paratrike" id="node-paratrike">
                     <span>Paratrike</span>
-                </a>
-            </div>
-
-            <!-- Elementi Livello 3 - SPORT -->
-            <div class="sub-nodes" data-parent="sport">
-                <a href="#kite" class="node node-secondary item-kite" id="node-kite">
-                    <span>Kite</span>
-                </a>
-                <a href="#wind" class="node node-secondary item-wind" id="node-wind">
-                    <span>Wind</span>
-                </a>
-                <a href="#surf" class="node node-secondary item-surf" id="node-surf">
-                    <span>Surf</span>
-                </a>
-                <a href="#fishing" class="node node-secondary item-fishing" id="node-fishing">
-                    <span>Fishing</span>
-                </a>
-                <a href="#diving" class="node node-secondary item-diving" id="node-diving">
-                    <span>Diving</span>
-                </a>
-            </div>
-
-            <!-- Elementi Livello 3 - PRIVATE -->
-            <div class="sub-nodes" data-parent="private">
-                <a href="#catamarano" class="node node-secondary item-catamarano" id="node-catamarano">
-                    <span>Catamarano</span>
-                </a>
-                <a href="#barco" class="node node-secondary item-barco" id="node-barco">
-                    <span>Barco sin<br>Licencia</span>
-                </a>
-                <a href="#yacht" class="node node-secondary item-yacht" id="node-yacht">
-                    <span>Yacht</span>
                 </a>
             </div>
 
@@ -217,7 +181,7 @@
         </main>
 
         <footer>
-            <p>&copy; 2024 Lo Squalo - Tenerife Experience | Since 2009</p>
+            <p>&copy; Lo Squalo Tenerife &middot; dal 2009</p>
         </footer>
     </div>
 

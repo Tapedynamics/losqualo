@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yacht Privato - Lo Squalo Tenerife</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../alloggio/detail.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --detail-accent: #2f6f8f; --detail-accent-dark: #1f4a5f; }
+        .opt-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 22px; margin-top: 20px; }
+        .opt-card { background: white; border-radius: 18px; overflow: hidden; box-shadow: 0 8px 24px rgba(47,111,143,0.10); }
+        .opt-card .opt-photo { height: 200px; overflow: hidden; }
+        .opt-card .opt-photo img { width: 100%; height: 100%; object-fit: cover; }
+        .opt-card .opt-body { padding: 22px 24px; }
+        .opt-card h3 { color: var(--blu-squalo); margin-bottom: 6px; }
+        .opt-card .price { font-size: 0.85rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; font-weight: 600; }
+        .opt-card p { font-size: 0.92rem; line-height: 1.55; }
+    </style>
+</head>
+<body>
+    <header class="detail-header">
+        <a href="../escursioni.html" class="back-link"><span>&larr;</span> Indietro</a>
+        <span class="logo-small">LO SQUALO</span>
+    </header>
+
+    <section class="detail-hero">
+        <img loading="lazy" decoding="async" src="foto/yacht/luxury-04.jpg" alt="Yacht Privato Tenerife">
+        <div class="detail-hero-overlay">
+            <h1>Yacht Privato</h1>
+            <p class="location">Tenerife Sud &middot; Costa Adeje &middot; 12 pax</p>
+        </div>
+    </section>
+
+    <div class="quick-info">
+        <div class="quick-info-item"><span class="icon">🛥️</span><span>Fino a 12 ospiti</span></div>
+        <div class="quick-info-item"><span class="icon">⏱️</span><span>4h / 6h / day charter</span></div>
+        <div class="quick-info-item"><span class="icon">🏊</span><span>Snorkeling</span></div>
+        <div class="quick-info-item"><span class="icon">🍽️</span><span>Catering on board</span></div>
+    </div>
+
+    <div class="detail-container">
+        <section class="detail-section">
+            <h2>L'esperienza</h2>
+            <p>Mezzogiorno, 12 ospiti, l'oceano davanti e niente altro intorno. Lo yacht privato è il modo giusto per vivere Tenerife dal mare: niente itinerari fissi, decidi tu dove fermarti, dove tuffarti, dove pranzare.</p>
+            <p>Disponibili <strong>due opzioni</strong> di noleggio — <em>Fun Yacht</em> per chi vuole comfort senza esagerare, <em>Luxury Yacht</em> per chi cerca l'esperienza top di gamma. Entrambe con skipper certificato, cucina a bordo e attrezzatura snorkeling inclusa.</p>
+        </section>
+
+        <section class="detail-section">
+            <h2>Le due opzioni</h2>
+            <div class="opt-grid">
+                <div class="opt-card">
+                    <div class="opt-photo"><img loading="lazy" decoding="async" src="foto/yacht/fun-01.jpg" alt="Fun Yacht"></div>
+                    <div class="opt-body">
+                        <h3>Fun Yacht</h3>
+                        <p class="price">12 pax &middot; Tutto incluso</p>
+                        <p>Yacht da diporto pronto per la giornata: pranzo, bevande, attrezzatura snorkeling, skipper esperto. Ottimo rapporto qualità/prezzo per gruppi di amici.</p>
+                    </div>
+                </div>
+                <div class="opt-card">
+                    <div class="opt-photo"><img loading="lazy" decoding="async" src="foto/yacht/luxury-04.jpg" alt="Luxury Yacht"></div>
+                    <div class="opt-body">
+                        <h3>Luxury Yacht</h3>
+                        <p class="price">12 pax &middot; Premium</p>
+                        <p>Yacht di alto gamma con interni curati, equipaggio professionale, catering a richiesta. Ideale per occasioni speciali — anniversari, addii al celibato, eventi aziendali.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="detail-section">
+            <h2>Itinerari possibili</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3><span class="icon">🐬</span> Avvistamento cetacei</h3>
+                    <p>Tenerife è una delle migliori zone al mondo per balene pilota e delfini in mare aperto.</p>
+                </div>
+                <div class="feature-card">
+                    <h3><span class="icon">🏖️</span> Cale segrete</h3>
+                    <p>Spiagge accessibili solo via mare lungo la costa di Adeje. Perfette per snorkeling.</p>
+                </div>
+                <div class="feature-card">
+                    <h3><span class="icon">🌅</span> Sunset cruise</h3>
+                    <p>Partenza nel tardo pomeriggio, aperitivo a bordo, tramonto al largo. Mood relax.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <section class="cta-section">
+        <h2>Riserva il tuo yacht</h2>
+        <p>Dimmi quando, quanti siete e quale opzione preferisci. Ti rispondo con prezzi e disponibilità.</p>
+        <a href="https://wa.me/34616794190?text=Ciao!%20Vorrei%20info%20Yacht%20Privato%20Tenerife" class="cta-button" target="_blank">
+            <span>💬</span> Contattaci su WhatsApp
+        </a>
+    </section>
+
+    <footer class="detail-footer">
+        <p>&copy; <a href="../index.html">Lo Squalo Tenerife</a> &middot; dal 2009</p>
+    </footer>
+    <script src="../whatsapp-i18n.js"></script>
+
+</body>
+</html>

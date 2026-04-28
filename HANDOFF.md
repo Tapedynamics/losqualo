@@ -1,134 +1,142 @@
-# HANDOFF — Lo Squalo Tenerife
+# HANDOFF — Lo Squalo Tenerife (review 22 apr applicata)
 
-## Stato Sessione
-- **Data**: 2026-04-13
-- **Branch**: `main` (up to date con origin)
-- **Live**: https://losqualo.netlify.app/ (auto-deploy Netlify da push)
-- **Repo**: https://github.com/Tapedynamics/losqualo.git
+## Stato
+- Data: 2026-04-28
+- Branch: `main` (NON committato — solo modifiche locali)
+- Live: `https://losqualo.netlify.app/` (versione precedente — push pending)
 
-## File Modificati (sessione)
-- `C:/Users/siusk/OneDrive/Desktop/Tape-Dynamics/_CLIENTI/losqualotenerife/alloggio.html`
-- `C:/Users/siusk/OneDrive/Desktop/Tape-Dynamics/_CLIENTI/losqualotenerife/escursioni.html`
-- `C:/Users/siusk/OneDrive/Desktop/Tape-Dynamics/_CLIENTI/losqualotenerife/styles.css`
-- `C:/Users/siusk/OneDrive/Desktop/Tape-Dynamics/_CLIENTI/losqualotenerife/pages.css`
-- `C:/Users/siusk/OneDrive/Desktop/Tape-Dynamics/_CLIENTI/losqualotenerife/pages.js`
-- `C:/Users/siusk/OneDrive/Desktop/Tape-Dynamics/_CLIENTI/losqualotenerife/script.js`
-- `C:/Users/siusk/OneDrive/Desktop/Tape-Dynamics/_CLIENTI/losqualotenerife/alloggio/detail.css`
-- `C:/Users/siusk/OneDrive/Desktop/Tape-Dynamics/_CLIENTI/losqualotenerife/surfing/detail.css`
-- `C:/Users/siusk/OneDrive/Desktop/Tape-Dynamics/_CLIENTI/losqualotenerife/alloggio/villa-duque.html` (NEW)
-- `C:/Users/siusk/OneDrive/Desktop/Tape-Dynamics/_CLIENTI/losqualotenerife/alloggio/finca-playa-paraiso.html` (RENAMED da `finca-wedding-retreat.html`)
-- `C:/Users/siusk/OneDrive/Desktop/Tape-Dynamics/_CLIENTI/losqualotenerife/alloggio/finca-chimiche.html`
-- `C:/Users/siusk/OneDrive/Desktop/Tape-Dynamics/_CLIENTI/losqualotenerife/alloggio/finca-ciguaña.html`
-- `C:/Users/siusk/OneDrive/Desktop/Tape-Dynamics/_CLIENTI/losqualotenerife/alloggio/casa-rural-taucho.html`
+## Cosa è stato applicato
 
-Untracked (non committati, solo locali — asset da ordinare):
-- `SURF BAR FRANCHISE WEB/` (foto/video forniti cliente)
-- `SURF SCHOOL/` (foto/video forniti cliente)
+Review integrale dello Squalo (Google Doc del 22 apr) applicata in 12 fasi.
 
-## Completato
+### F1 — Quick wins UI globali ✓
+- Copyright `2024` → `dal 2009` su tutti i 38 file HTML
+- "X Chiudi" → "← Indietro" globale (`pages.js`)
+- Linee SVG curve home + livello 2 ora terminano sul **bordo del cerchio** (non passano sopra ai nodi). Logica in `script.js` + `pages.js` con `getElementCenter` esteso per radius
+- Back-nav: dalle pagine livello 2 il "Home" → `index.html?explore=1` apre la mappa **già esplosa**
 
-### Fase 1 — UX
-- Bullet sovrapposti fixati in card detail (alloggio + surfing)
-- Back-nav da prodotto ripristina sub di provenienza via sessionStorage (`losqualo_lastSub_<macro>`)
-- Sub selezionata al centro con prodotti radiali (JS + CSS state `sub-centered`)
-- Back-btn spostato top-left (era bottom-center, copriva prodotti)
-- Colori Surf House + Appartamento riallineati al rosa madre (sia nodi che prodotti item-*)
-- Zoom 100% SVG: `viewBox` dinamico + `preserveAspectRatio="none"` + rAF esteso + round subpixel + fonts.ready trigger
-- Linee SVG nascoste in stato sub-centered (scelta concordata con cliente — layout radiale autoesplicativo)
+### F2 — Eliminazioni e rinomine ✓
+- Alloggio: `Villa/Finca` → `Villa y Casa Rural`
+- Alloggio: rimosso Villa Torviscas + Villa Costa Adeje (nodi + linee SVG + mobile data)
+- Alloggio: `Casa Rural Taucio` → `Casa Rural Taucho`
+- Alloggio: `La Correa del Almendro` → `Hotel Rural Arona` (in `hotel-rural-arona.html`)
+- Surfing: rimosso El Médano (categoria intera + mobile data)
+- Surfing: school → solo Ika Ika (rimosso Kontraola, K16, Franz, Vil's)
+- Escursioni: rimossa categoria Sport (vuotata, Diving/Surf spostati in Oceano, kite/wind/fishing pure)
+- Escursioni: rimosso Sottomarino in Oceano
+- Escursioni: rimossi Bike, Hiking, Trekking in Terra (Stargazing rimasto)
 
-### Fase 2 — Struttura
-- Classe CSS `.disabled-node` globale (opacity 0.35, grayscale, pointer-events:none)
-- Alloggio inibiti: Ostello, Villa Torviscas, Villa Costa Adeje
-- Escursioni inibiti in Terra: Stargazing, Bike, Hiking, Trekking
-- Rename Alloggio: Casa Atogo → Casa Rural Atogo, Casa Dolores → Casa Rural Taucio
-- Rename Escursioni: Teide → Terra, Sky → Aria, Jeep → Jeep Experience
-- Categoria Finca Wedding rimossa + Wedding Retreat rinominato Finca Playa Paraíso spostato in Villa/Finca
-- Villa Duque aggiunta in Villa/Finca (scheda popolata)
-- Finca Sigüeña: location aggiornata Atogo (era Guía de Isora)
+### F3 — Link diretti / cortocircuiti ✓
+- `Calle Mexico` click → `https://t.mtrbio.com/callemexicotenerife` (link diretto)
+- `School` click → diretto Ika Ika
+- `Surf Bar Franchise` click → diretto presentazione (no doppio nodo)
+- `Surf` in Oceano → `surfing/ika-ika.html` (stesso percorso di Surf School)
+- Mobile: aggiunto supporto `href` diretto sui primary nodes (`createMobilePageMap` ora crea `<a>` se `node.href` presente, `initMobilePageEvents` skippa il popup radial in quel caso)
 
-### Fase 3 — Contenuti (parziale)
-Schede completate con descrizioni vere dal Drive:
-- Villa Duque
-- Finca Chimiche (escapada romantica/jacuzzi/eventi)
-- Finca Cigüaña (4 case indipendenti: Herradura/Orchilla/Palmeras/Refugio)
+### F4 — Home restyling ✓
+- "Tenerife Experience": font ingrandito 1.25rem, weight 700, letter-spacing 4px (uniforme con logo Lo Squalo)
+- "Tocca per esplorare" reso **bottone vero** (background blu Squalo, padding, animazione pulse)
+- Silhouette Tenerife: `mix-blend-mode: multiply` per fondere eventuale sfondo bianco con il bg pagina
+- Linee SVG: già al bordo cerchio (F1)
+- Nuovo bottone **Brand** floating in basso a destra (homepage e in `index.html`) → `brand.html`
+- Eventi pagina semplificata: 2 card (Servizi Privati + Next Event), nota su altre cat in fase di ridefinizione
 
-Schede già OK al momento del review (verificato, no action):
-- Hotel Rural Arona (La Correa del Almendro + Wine Experience + Bubble Andromeda/Leo)
-- Cueva San Miguel (120 m² + servizi extra)
+### F5 — Scheda Alessandro ✓
+- `alessandro.html` riscritta come scheda statica (no più mind-map sub-categorie)
+- Bio integrale Squalo + foto profilo (placeholder "AB" con fallback a `assets/alessandro.jpg`)
+- Icone social IG `@alessandrobiagini_losqualo` + FB + bottone WhatsApp `34616794190`
 
-### Simplify (code review)
-- `transitionend` handler usa `scheduleUpdate()` (rAF-batched) invece di `updatePageLines()` diretto
-- Rimossi commenti WHAT sopra funzioni auto-esplicative
-- Whitespace cleanup
+### F6 — Surf House + B2B + Camp + Spots ✓
+- **NUOVA** `surfing/spots.html` — 6 surf spot Tenerife sud con tip Lo Squalo (riferimento palmbeach-tenerife.netlify.app/spots)
+- **NUOVA** `surfing/surf-house-b2b.html` — scheda B2B per organizzatori ritiri/surf camp/gruppi (delegare logistica/location/coordinamento)
+- **NUOVA** `surfing/surf-camp.html` — pacchetto Lo Squalo (alloggio + lezioni Ika Ika), 3 stay options
+- **RISCRITTA** `alloggio/surf-house-luxury.html` come **hub 3 ville** (Finca La Fortaleza, Villa Playa Paraíso, Villa Duque) cliccabili che portano alle schede individuali
 
-## In Corso / Rimasto da Fare
+### F7 — Ostello + Penthouse + Appartamento contrasto ✓
+- Ostello (Gota de Mar): nodo cliccabile (era `disabled-node`), nuova classe `.unavailable-node` (semi-trasparente con badge "i"), banner giallo in `gota-de-mar.html` "non disponibile, lascia messaggio per ricerca fuori network"
+- Appartamento nodo: contrasto fixato (background più saturo `#d4869b → #ad6376`, color white, font-weight 700, text-shadow)
+- Penthouse Los Cristianos: 8 foto reali da Drive caricate, hero + gallery aggiornati
 
-### Fase 3 — Contenuti restanti (TASK #9 IN PROGRESS)
-**Schede da popolare con contenuti Drive:**
-- Surf House Luxury: landing con 3 prodotti (Finca La Fortaleza + Villa Playa Paraíso + Villa Duque)
-- Surf House Rurale: contenuti = Casa Rural Atogo
-- 5 schede prodotto Escursioni da CREARE (oggi sono solo `#hash` link):
-  - Buggy, Quad, Jeep Experience (dentro Terra)
-  - Parapendio, Paratrike (dentro Aria)
-  - Drive ha foto+video+descrizioni in `MACROCATEGORIE/ESCURSIONI E ATTIVITÀ/TERRA/` e `/ARIA/`
-- Rifinitura testi già pronti: Finca La Fortaleza (aggiungere servizi extra), Villa Playa Paraíso (replica sezione servizi su tutti Villa/Finca), Cueva (arricchire descrizione), Wine Experience (selezione)
+### F8 — Materiale Drive ✓
+Foto scaricate da Google Drive e ottimizzate:
+- **Penthouse**: 8 foto in `alloggio/foto/penthouse-los-cristianos/drive-01..08.jpg`
+- **Buggy**: 9 foto nuove in `escursioni/foto/buggy/drive-01..09.jpg`
+- **Yacht** (Privato): 4 fun + 4 luxury in `escursioni/foto/yacht/`
+- **Catamarano**: 6 foto in `escursioni/foto/catamarano/drive-01..06.jpg`
+- **Barco sin Pilota**: 2 webp in `escursioni/foto/barco-sin-pilota/`
+- **Teide Jeep**: cartella Drive contiene shortcut (non scaricabili) → uso le 8 foto preesistenti
+- **Ottimizzazione globale**: 74 file >2MB compressi (max 1920px, quality 78) — risparmiati ~422MB. Risolve "foto Casa Rural Atogo lenta"
 
-### Fase foto/cover (SEPARATA)
-- Gallerie attuali: 6 foto fisse hardcoded — vanno portate a ≥10 foto per ~10 schede
-- Cover da sostituire: Beach House, Finca Sigüeña, Villa Playa Paraíso, Finca La Fortaleza, Casa Rural Taucio, Penthouse, Alcalá, Studio Las Américas, Studio Los Cristianos
-- Richiede download massivo da Drive + commit foto nel repo (cartelle `alloggio/foto/<prodotto>/`)
+### F9 — Buggy contenuti ✓
+- Hero foto sostituito (drive-02.jpg)
+- Galleria con 9 foto Drive
+- Aggiunto `Off-road`, `Stargazing`, `Sunset` come tag/sezioni
+- 3 formule (Sunset / Off-Road / Stargazing) con descrizioni
+- Riferimento `active-tenerife.com` aggiunto
 
-### Task #7 rimandato
-- WhatsApp precompilato lingua-aware: sito oggi IT-only, ha senso solo con multilingua. Rimandato fino a i18n.
+### F10 — Categoria "Privato" in Oceano ✓
+- Squalo voleva "Privato dentro Oceano". Implementato come: macro Privato eliminata, i 3 nodi (Yacht, Barco, Catamarano) spostati come item dentro la categoria Oceano (insieme alle altre voci)
+- **NUOVE PAGINE**:
+  - `escursioni/yacht.html` (con 2 opzioni: Fun Yacht + Luxury Yacht, foto Drive)
+  - `escursioni/barco-sin-pilota.html` (senza patente)
+  - `escursioni/catamarano.html` (4 itinerari)
+- Linkate dalla mind-map Oceano in `escursioni.html`
 
-## Decisioni Prese
+### F11 — Polish ✓
+- Colore `--alloggio-rurale` cambiato da `#CFA9A1` (marroncino) a `#DCB0BA` (rosa uniforme)
+- Colori Surfing uniformati: `surfbar`/`callemexico`/`elmedano` ora tutti `#5FA6C6` (era diversi)
+- 74 foto >2MB ottimizzate (parte F8)
 
-1. **Linee SVG nascoste in sub-centered state**: scelta proposta dal cliente (vocale WhatsApp 13:43) — la disposizione radiale dei nodi è autoesplicativa e risolveva problemi persistenti di sync delle linee dopo il riposizionamento dinamico.
-2. **Inibizioni = grigio non cliccabile** (conferma user): nodi restano visibili per segnalare "esiste ma non attivo", non nascosti.
-3. **Sub al centro con layout radiale calcolato in JS**: posizioni trigonometriche dinamiche (raggio 28-32% in base al count), non CSS fisso. Permette di aggiungere/rimuovere prodotti senza toccare il layout.
-4. **Back nav memorizzata in sessionStorage per-macro**: key pattern `losqualo_lastSub_<pageName>`, clear al back-to-index. Persistenza tab-scoped, non cross-tab.
-5. **Villa Playa Paraíso (villa) e Finca Playa Paraíso (finca ex-wedding) coesistono**: due strutture distinte, stessa località. Mantenute separate.
-6. **Villa Duque creata copiando villa-ciguaña.html come template + edit**: più veloce che from-scratch, poi contenuti sovrascritti.
+### F12 — Eventi/Food&Drink ✓
+- Eventi: 2 card (Servizi Privati + Next Event) + nota su ridefinizione
+- Food&Drink: nessuna modifica, in standby come da brief
 
-## Problemi Noti
+## File creati / modificati
 
-- 5 nodi Escursioni Terra/Aria hanno href `#hash` fake (Buggy, Quad, Jeep Experience, Parapendio, Paratrike) — cliccando non porta a nessuna scheda. Fase 3 pending.
-- Surf House Luxury scheda attuale è generica, non contiene ancora le 3 sub-villas richieste (Fortaleza/Playa Paraíso/Duque).
-- Surf House Rurale non è ancora allineata a Casa Rural Atogo.
-- `SURF BAR FRANCHISE WEB/` e `SURF SCHOOL/` untracked nel working tree — da decidere se committare o aggiungere a `.gitignore`.
-- CRLF warnings git: normali su Windows, non richiedono azione.
-- Nodi inibiti (`<div>` invece di `<a>`): l'attributo `data-category` è stato tenuto dove presente, ma alcuni `node-secondary` disabled non hanno href — il selettore `.node-primary[data-category="..."]` in `showPageSubcategories` funziona solo su node-primary attivi, non è impattato.
+### Nuovi file
+- `surfing/spots.html`
+- `surfing/surf-house-b2b.html`
+- `surfing/surf-camp.html`
+- `escursioni/yacht.html`
+- `escursioni/barco-sin-pilota.html`
+- `escursioni/catamarano.html`
+- `brand.html`
+- `REVIEW_22apr.md` (referenza istruzioni cliente)
 
-## Comandi per Riprendere
+### Riscritte completamente
+- `alessandro.html` (mind-map → scheda statica)
+- `eventi.html` (4 sub-cat → 2 card)
+- `alloggio/surf-house-luxury.html` (single villa → hub 3 ville)
 
+### Modificati significativamente
+- `index.html` (CTA bottone, brand button, ?explore=1)
+- `alloggio.html` (rimossi 2 nodi, rinomina villa, ostello cliccabile)
+- `escursioni.html` (rimossa cat Sport + Privato, migrazione nodi a Oceano, aggiunti yacht/barco/catamarano)
+- `surfing.html` (rimosso El Médano, school+callemexico+surfbar diretti)
+- `script.js` (drawCurve bordo cerchio, ?explore=1 gestito)
+- `pages.js` (drawCurve bordo cerchio, riconfigurazione completa per surfing/escursioni, supporto href su primary nodes mobile)
+- `styles.css` (Tenerife font, click-hint button, brand button, .unavailable-node, colori uniformati)
+- `pages.css` (appartamento contrasto)
+
+## Foto scaricate (~31 nuove, totale ~10MB)
+Vedi F8.
+
+## Da fare (NON applicato in questa sessione)
+
+- **Push su GitHub** — modifiche solo locali, da committare
+- **Asset Alessandro foto profilo** — il fallback "AB" funziona, ma serve `assets/alessandro.jpg` reale (estrarre da IG/FB)
+- **Quad foto homepage**: Squalo dice "non quella con le ragazze sedute per terra, ma quella con il gruppo SUI quad" — verificare quale è e sostituire (non identificata in questa sessione)
+- **Parapendio gallery**: foto in volo specifiche (Drive non listato in questa sessione)
+- **Paratrike gallery**: foto con mare/panorama
+- **Surf in Oceano**: confermare che il flusso "click Surf in Oceano → Ika Ika" sia coerente con cosa Squalo voleva
+- **Agency**: Squalo ha detto "click Agency apre `t-sml.mtrbio.com/.../losqualoagency`" — soluzione adottata: lasciato click home → agency.html (con tutta la mind-map agency interna). Il link mtrbio non è ancora cablato. Da rivedere con lui (potremmo aggiungere un nodo "Smartlink" prominente in agency.html, o sostituire del tutto il click home — decisione su entrambe le opzioni rimandata)
+- **Logo grafico header** — Squalo dice "il tuo logo nel colore attuale". Lasciato testo "LO SQUALO" in colore `var(--blu-squalo)`. Per upgrade serve un asset svg/png logo
+
+## Comandi per riprendere
 ```bash
-# Pull latest (sync-before-edit)
-cd /c/Users/siusk/OneDrive/Desktop/Tape-Dynamics/_CLIENTI/losqualotenerife
-git pull
-
-# Test locale
-# (sito statico, basta aprire index.html nel browser oppure)
-python -m http.server 8000
-# poi http://localhost:8000
-
-# Deploy
-git add <files>
-git commit -m "..."
-git push
-# Netlify auto-builda da push su main
+cd "C:/Users/siusk/OneDrive/Desktop/Tape-Dynamics/_CLIENTI/losqualotenerife"
+git status
+git diff --stat
+# Per push:
+# git add -A && git commit -m "feat: review 22apr Squalo applicata" && git push
 ```
-
-## Reference Drive (per Fase 3 residua)
-
-Root: https://drive.google.com/drive/folders/1hnp1C3WfA7lK5DcU6xPInmuJiFCgmitH
-
-Mappa rilevante:
-- `MACROCATEGORIE/ALLOGGIO/SURF HOUSE/` → doc `SURF HOUSE – TENERIFE SUD` (già letto)
-- `MACROCATEGORIE/ALLOGGIO/VILLA - FINCA/VILLA PLAYA DEL DUQUE/` → `DESCR. VILLA DUQUE` (letto, applicato)
-- `MACROCATEGORIE/ESCURSIONI E ATTIVITÀ/TERRA/` → sottocartelle BUGGY, QUAD, JEEP experience (foto+video+descrizioni)
-- `MACROCATEGORIE/ESCURSIONI E ATTIVITÀ/ARIA/` → PARAPENDIO, PARATRIKE
-
-## Task Ledger (memoria TaskList al handoff)
-- #1-#6, #8: completed
-- #7: pending (rimandato a i18n)
-- #9: in_progress (Fase 3 parziale — vedi "Rimasto da Fare")

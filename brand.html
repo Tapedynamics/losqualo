@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Lo Squalo - Tenerife Experience</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { background: var(--bg-main); }
+        .brand-page { max-width: 720px; margin: 0 auto; padding: 30px 24px 80px; }
+        .brand-back {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: var(--blu-squalo); text-decoration: none; font-size: 0.85rem;
+            font-weight: 500; padding: 8px 18px; border: 2px solid var(--blu-squalo);
+            border-radius: 22px; transition: all 0.25s ease;
+        }
+        .brand-back:hover { background: var(--blu-squalo); color: white; }
+
+        .brand-hero {
+            text-align: center; margin: 36px 0 28px;
+        }
+        .brand-hero h1 {
+            font-size: 2rem; color: var(--blu-squalo); letter-spacing: 4px;
+            margin-bottom: 8px; font-weight: 700;
+        }
+        .brand-hero .sub {
+            font-size: 0.85rem; color: var(--text-secondary);
+            letter-spacing: 2px; text-transform: uppercase;
+        }
+        .brand-hero p {
+            margin-top: 18px; font-size: 1rem; color: var(--text-primary);
+            line-height: 1.6; max-width: 540px; margin-left: auto; margin-right: auto;
+        }
+
+        .social-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 14px; margin-top: 32px;
+        }
+        .social-card {
+            background: white; padding: 22px 20px; border-radius: 16px;
+            box-shadow: 0 6px 20px rgba(47,111,143,0.10);
+            text-decoration: none; color: inherit; display: flex;
+            align-items: center; gap: 14px;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            border-left: 4px solid var(--blu-squalo);
+        }
+        .social-card:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(47,111,143,0.18); }
+        .social-icon {
+            width: 48px; height: 48px; border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            color: white; flex-shrink: 0;
+        }
+        .social-card .label { font-size: 0.7rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px; }
+        .social-card .handle { font-size: 0.95rem; font-weight: 600; color: var(--blu-squalo); }
+
+        .icon-ig { background: linear-gradient(135deg, #fa7e1e, #d62976 50%, #962fbf); }
+        .icon-fb { background: #1877F2; }
+        .icon-wa { background: #25D366; }
+        .icon-tiktok { background: #000; }
+        .icon-yt { background: #FF0000; }
+        .icon-mtrbio { background: linear-gradient(135deg, #2f6f8f, #5fa6c6); }
+
+        .social-icon svg { width: 24px; height: 24px; fill: white; }
+
+        .brand-section {
+            margin-top: 40px; background: white; padding: 28px;
+            border-radius: 18px; box-shadow: 0 6px 20px rgba(47,111,143,0.08);
+        }
+        .brand-section h2 { color: var(--blu-squalo); margin-bottom: 12px; font-size: 1.2rem; }
+        .brand-section p { font-size: 0.95rem; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="brand-page">
+        <a href="index.html?explore=1" class="brand-back"><span>&larr;</span> Indietro</a>
+
+        <div class="brand-hero">
+            <h1>BRAND LO SQUALO</h1>
+            <span class="sub">Tenerife Experience &middot; since 2009</span>
+            <p>Tutte le nostre voci, in un posto solo. Seguici dove preferisci e scrivici quando ti serve.</p>
+        </div>
+
+        <div class="social-grid">
+
+            <a href="https://www.instagram.com/losqualo.tenerife/" target="_blank" rel="noopener" class="social-card">
+                <div class="social-icon icon-ig">
+                    <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </div>
+                <div>
+                    <div class="label">Instagram</div>
+                    <div class="handle">@losqualo.tenerife</div>
+                </div>
+            </a>
+
+            <a href="https://www.instagram.com/losqualoagency/" target="_blank" rel="noopener" class="social-card">
+                <div class="social-icon icon-ig">
+                    <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </div>
+                <div>
+                    <div class="label">Instagram</div>
+                    <div class="handle">@losqualoagency</div>
+                </div>
+            </a>
+
+            <a href="https://www.instagram.com/alessandrobiagini_losqualo/" target="_blank" rel="noopener" class="social-card">
+                <div class="social-icon icon-ig">
+                    <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </div>
+                <div>
+                    <div class="label">Alessandro &middot; IG</div>
+                    <div class="handle">@alessandrobiagini_losqualo</div>
+                </div>
+            </a>
+
+            <a href="https://www.facebook.com/alessandrobiaginilosqualo" target="_blank" rel="noopener" class="social-card">
+                <div class="social-icon icon-fb">
+                    <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                </div>
+                <div>
+                    <div class="label">Facebook</div>
+                    <div class="handle">Alessandro Biagini Lo Squalo</div>
+                </div>
+            </a>
+
+            <a href="https://wa.me/34616794190" target="_blank" rel="noopener" class="social-card">
+                <div class="social-icon icon-wa">
+                    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                </div>
+                <div>
+                    <div class="label">WhatsApp</div>
+                    <div class="handle">+34 616 794 190</div>
+                </div>
+            </a>
+
+            <a href="https://t.mtrbio.com/losqualotenerife" target="_blank" rel="noopener" class="social-card">
+                <div class="social-icon icon-mtrbio">
+                    <svg viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
+                </div>
+                <div>
+                    <div class="label">Smartlink</div>
+                    <div class="handle">Tutti i link Lo Squalo</div>
+                </div>
+            </a>
+
+        </div>
+
+        <section class="brand-section">
+            <h2>Cos'è "Lo Squalo"</h2>
+            <p>Hub multidisciplinare attivo a Tenerife dal 2009. Eventi, hospitality, marketing, agency, surf experience: facciamo da cabina di regia per chi vuole vivere o lavorare sull'isola — turisti, brand, business locali.</p>
+        </section>
+    </div>
+
+    <footer style="text-align: center; padding: 24px; color: var(--text-secondary); font-size: 0.7rem;">
+        <p>&copy; Lo Squalo Tenerife &middot; dal 2009</p>
+    </footer>
+    <script src="whatsapp-i18n.js"></script>
+
+</body>
+</html>

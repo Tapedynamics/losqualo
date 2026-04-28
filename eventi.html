@@ -5,162 +5,111 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eventi - Lo Squalo Tenerife</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="pages.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { background: var(--bg-main); }
+        .ev-header {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 18px 22px; position: sticky; top: 0; background: var(--bg-main);
+            z-index: 100; border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        .ev-header .back-link {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: var(--blu-squalo); text-decoration: none; font-size: 0.85rem;
+            font-weight: 500; padding: 8px 16px; border: 2px solid var(--blu-squalo);
+            border-radius: 22px; transition: all 0.25s ease;
+        }
+        .ev-header .back-link:hover { background: var(--blu-squalo); color: white; }
+        .ev-header .logo-small {
+            font-size: 1rem; font-weight: 700; color: var(--blu-squalo); letter-spacing: 2px;
+        }
+
+        .ev-hero {
+            background: linear-gradient(135deg, #d4a93c, #b88520);
+            color: white; padding: 70px 24px 70px; text-align: center;
+            border-radius: 0 0 30px 30px;
+        }
+        .ev-hero h1 { font-size: 2.4rem; margin-bottom: 12px; letter-spacing: 1px; }
+        .ev-hero p { font-size: 1.05rem; opacity: 0.95; max-width: 580px; margin: 0 auto; line-height: 1.55; }
+
+        .ev-container { max-width: 880px; margin: -30px auto 0; padding: 0 22px 60px; position: relative; z-index: 2; }
+
+        .ev-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 22px; margin-bottom: 28px;
+        }
+        .ev-card {
+            background: white; border-radius: 22px; padding: 36px 28px;
+            box-shadow: 0 12px 36px rgba(47,111,143,0.10);
+            text-decoration: none; color: inherit;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            display: flex; flex-direction: column; min-height: 240px;
+        }
+        .ev-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 44px rgba(47,111,143,0.18);
+        }
+        .ev-card .ev-icon {
+            width: 56px; height: 56px; border-radius: 14px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.8rem; margin-bottom: 18px;
+        }
+        .ev-card.servizi .ev-icon { background: linear-gradient(145deg, #d4a93c, #b88520); color: white; }
+        .ev-card.next .ev-icon { background: linear-gradient(145deg, #2f6f8f, #1f4a5f); color: white; }
+        .ev-card h2 { font-size: 1.3rem; color: var(--blu-squalo); margin-bottom: 10px; letter-spacing: 0.3px; }
+        .ev-card p { font-size: 0.95rem; line-height: 1.6; color: var(--text-primary); flex: 1; }
+        .ev-card .ev-cta {
+            margin-top: 20px; color: var(--blu-squalo); font-weight: 600;
+            font-size: 0.88rem; display: flex; align-items: center; gap: 6px;
+        }
+
+        .ev-note {
+            background: #f6f4ef; padding: 22px 24px; border-radius: 16px;
+            font-size: 0.9rem; color: var(--text-secondary); line-height: 1.55; text-align: center;
+            margin-top: 12px;
+        }
+        .ev-note strong { color: var(--blu-squalo); }
+    </style>
 </head>
-<body class="page-eventi">
-    <div class="container">
-        <header>
-            <a href="index.html" class="back-home">← Home</a>
-            <h1 class="logo">LO SQUALO</h1>
-            <span class="tagline">since 2009</span>
-        </header>
+<body>
+    <header class="ev-header">
+        <a href="index.html?explore=1" class="back-link"><span>&larr;</span> Indietro</a>
+        <span class="logo-small">LO SQUALO</span>
+    </header>
 
-        <main class="page-map" data-state="categories">
-            <!-- SVG per le linee dinamiche -->
-            <svg class="connections" id="svg-connections">
-                <!-- Linee: Centro -> Sotto-categorie -->
-                <line class="line main-line" id="line-center-showcases"></line>
-                <line class="line main-line" id="line-center-consigliati"></line>
-                <line class="line main-line" id="line-center-movida"></line>
-                <line class="line main-line" id="line-center-servizi"></line>
+    <section class="ev-hero">
+        <h1>Eventi</h1>
+        <p>Organizziamo, promuoviamo e segnaliamo. Tutta la nostra attività eventi a Tenerife, due porte d'ingresso.</p>
+    </section>
 
-                <!-- Linee Showcases -->
-                <line class="line sub-line" data-category="showcases" id="line-showcases-boatparty"></line>
-                <line class="line sub-line" data-category="showcases" id="line-showcases-terraceo"></line>
-                <line class="line sub-line" data-category="showcases" id="line-showcases-hmc"></line>
-                <line class="line sub-line" data-category="showcases" id="line-showcases-exotica"></line>
-                <line class="line sub-line" data-category="showcases" id="line-showcases-brunch"></line>
+    <main class="ev-container">
 
-                <!-- Linee Consigliati -->
-                <line class="line sub-line" data-category="consigliati" id="line-consigliati-festival"></line>
-                <line class="line sub-line" data-category="consigliati" id="line-consigliati-folklore"></line>
+        <div class="ev-grid">
+            <a href="https://wa.me/34616794190?text=Ciao%2C%20vorrei%20info%20sui%20servizi%20privati%20per%20il%20mio%20evento" target="_blank" rel="noopener" class="ev-card servizi">
+                <div class="ev-icon">🎉</div>
+                <h2>Servizi Privati</h2>
+                <p>Organizzi un compleanno, un addio al celibato, un party aziendale? Ti consegniamo l'evento chiavi in mano: location, catering, decorazione, suono, fotografo, shows. Briefing in italiano, spagnolo o inglese.</p>
+                <span class="ev-cta">Scrivici su WhatsApp →</span>
+            </a>
 
-                <!-- Linee Movida -->
-                <line class="line sub-line" data-category="movida" id="line-movida-club"></line>
-                <line class="line sub-line" data-category="movida" id="line-movida-poolparty"></line>
-                <line class="line sub-line" data-category="movida" id="line-movida-beachclub"></line>
-                <line class="line sub-line" data-category="movida" id="line-movida-rooftop"></line>
-                <line class="line sub-line" data-category="movida" id="line-movida-vip"></line>
+            <a href="#next-event" class="ev-card next">
+                <div class="ev-icon">📅</div>
+                <h2>Next Event</h2>
+                <p>Il prossimo evento Lo Squalo. Calendario in aggiornamento — torna a trovarci o seguici sui social per essere il primo a saperlo.</p>
+                <span class="ev-cta">In arrivo →</span>
+            </a>
+        </div>
 
-                <!-- Linee Servizi -->
-                <line class="line sub-line" data-category="servizi" id="line-servizi-graphic"></line>
-                <line class="line sub-line" data-category="servizi" id="line-servizi-photo"></line>
-                <line class="line sub-line" data-category="servizi" id="line-servizi-venue"></line>
-                <line class="line sub-line" data-category="servizi" id="line-servizi-decoration"></line>
-                <line class="line sub-line" data-category="servizi" id="line-servizi-shows"></line>
-                <line class="line sub-line" data-category="servizi" id="line-servizi-sound"></line>
-                <line class="line sub-line" data-category="servizi" id="line-servizi-catering"></line>
-            </svg>
+        <p class="ev-note">
+            <strong>Il resto della sezione Eventi</strong> &mdash; showcases, festival, movida, nightlife &mdash; è in fase di ridefinizione. Te lo presenteremo quando sarà pronto.
+        </p>
 
-            <!-- Centro - Categoria -->
-            <div class="center-node category-center" id="category-trigger">
-                <div class="category-icon eventi-bg">
-                    <span>EVENTI</span>
-                </div>
-                <span class="click-hint">Clicca per esplorare</span>
-            </div>
+    </main>
 
-            <!-- Sotto-categorie (Livello 2) -->
-            <div class="primary-nodes">
-                <div class="node node-primary showcases-node" id="node-showcases" data-category="showcases">
-                    <span>Showcases</span>
-                </div>
-                <div class="node node-primary consigliati-node" id="node-consigliati" data-category="consigliati">
-                    <span>Consigliati</span>
-                </div>
-                <div class="node node-primary movida-node" id="node-movida" data-category="movida">
-                    <span>Movida &<br>Nightlife</span>
-                </div>
-                <div class="node node-primary servizi-node" id="node-servizi" data-category="servizi">
-                    <span>Privati<br>Servizi</span>
-                </div>
-            </div>
+    <footer style="text-align: center; padding: 24px; color: var(--text-secondary); font-size: 0.7rem;">
+        <p>&copy; Lo Squalo Tenerife &middot; dal 2009</p>
+    </footer>
+    <script src="whatsapp-i18n.js"></script>
 
-            <!-- Elementi Livello 3 - SHOWCASES -->
-            <div class="sub-nodes" data-parent="showcases">
-                <a href="#boatparty" class="node node-secondary item-boatparty" id="node-boatparty">
-                    <span>Boat<br>Party</span>
-                </a>
-                <a href="#terraceo" class="node node-secondary item-terraceo" id="node-terraceo">
-                    <span>Terraceo</span>
-                </a>
-                <a href="#hmc" class="node node-secondary item-hmc" id="node-hmc">
-                    <span>H.M.C</span>
-                </a>
-                <a href="#exotica" class="node node-secondary item-exotica" id="node-exotica">
-                    <span>Exotica</span>
-                </a>
-                <a href="#brunch" class="node node-secondary item-brunch" id="node-brunch">
-                    <span>Let's<br>Brunch</span>
-                </a>
-            </div>
-
-            <!-- Elementi Livello 3 - CONSIGLIATI -->
-            <div class="sub-nodes" data-parent="consigliati">
-                <a href="#festival" class="node node-secondary item-festival" id="node-festival">
-                    <span>Festival</span>
-                </a>
-                <a href="#folklore" class="node node-secondary item-folklore" id="node-folklore">
-                    <span>Folklore</span>
-                </a>
-            </div>
-
-            <!-- Elementi Livello 3 - MOVIDA & NIGHTLIFE -->
-            <div class="sub-nodes" data-parent="movida">
-                <a href="#club" class="node node-secondary item-club" id="node-club">
-                    <span>Club</span>
-                </a>
-                <a href="#poolparty" class="node node-secondary item-poolparty" id="node-poolparty">
-                    <span>Pool<br>Party</span>
-                </a>
-                <a href="#beachclub" class="node node-secondary item-beachclub" id="node-beachclub">
-                    <span>Beach<br>Club</span>
-                </a>
-                <a href="#rooftop" class="node node-secondary item-rooftop" id="node-rooftop">
-                    <span>Rooftop</span>
-                </a>
-                <a href="#vip" class="node node-secondary item-vip" id="node-vip">
-                    <span>VIP<br>Service</span>
-                </a>
-            </div>
-
-            <!-- Elementi Livello 3 - PRIVATI SERVIZI -->
-            <div class="sub-nodes" data-parent="servizi">
-                <a href="#graphic" class="node node-secondary item-graphic" id="node-graphic">
-                    <span>Graphic<br>Design</span>
-                </a>
-                <a href="#photo" class="node node-secondary item-photo" id="node-photo">
-                    <span>Photo<br>Video</span>
-                </a>
-                <a href="#venue" class="node node-secondary item-venue" id="node-venue">
-                    <span>Venue</span>
-                </a>
-                <a href="#decoration" class="node node-secondary item-decoration" id="node-decoration">
-                    <span>Decoration</span>
-                </a>
-                <a href="#shows" class="node node-secondary item-shows" id="node-shows">
-                    <span>Shows</span>
-                </a>
-                <a href="#sound" class="node node-secondary item-sound" id="node-sound">
-                    <span>Sound &<br>Lights</span>
-                </a>
-                <a href="#catering" class="node node-secondary item-catering" id="node-catering">
-                    <span>Catering</span>
-                </a>
-            </div>
-
-            <!-- Pulsante indietro -->
-            <button class="back-btn" id="back-btn">
-                <span>←</span> Indietro
-            </button>
-        </main>
-
-        <footer>
-            <p>&copy; 2024 Lo Squalo - Tenerife Experience | Since 2009</p>
-        </footer>
-    </div>
-
-    <script src="pages.js"></script>
 </body>
 </html>

@@ -7,288 +7,184 @@
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="detail.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .hub-hero {
+            position: relative; height: 50vh; min-height: 360px; overflow: hidden;
+            border-radius: 0 0 30px 30px;
+        }
+        .hub-hero img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .hub-hero-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(47,111,143,0.55) 100%);
+            display: flex; flex-direction: column; justify-content: flex-end;
+            padding: 40px 30px; color: white;
+        }
+        .hub-hero-overlay h1 { font-size: 2.4rem; letter-spacing: 0.5px; margin-bottom: 10px; }
+        .hub-hero-overlay p { font-size: 1.05rem; opacity: 0.95; max-width: 660px; line-height: 1.55; }
+        .hub-tag {
+            display: inline-block; padding: 5px 14px; background: rgba(255,255,255,0.22);
+            border-radius: 16px; font-size: 0.75rem; letter-spacing: 1.5px;
+            text-transform: uppercase; margin-bottom: 14px; width: fit-content;
+        }
+
+        .hub-intro { padding: 36px 24px 0; max-width: 720px; margin: 0 auto; }
+        .hub-intro h2 { color: var(--blu-squalo); margin-bottom: 12px; }
+        .hub-intro p { font-size: 1rem; line-height: 1.65; color: var(--text-primary); margin-bottom: 14px; }
+
+        .villa-grid {
+            max-width: 1200px; margin: 32px auto; padding: 0 24px;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 22px;
+        }
+        .villa-card {
+            background: white; border-radius: 22px; overflow: hidden;
+            box-shadow: 0 10px 28px rgba(47,111,143,0.10);
+            text-decoration: none; color: inherit;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            display: flex; flex-direction: column;
+        }
+        .villa-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 40px rgba(47,111,143,0.18);
+        }
+        .villa-card .vc-photo {
+            width: 100%; height: 220px; overflow: hidden; position: relative;
+        }
+        .villa-card .vc-photo img {
+            width: 100%; height: 100%; object-fit: cover; display: block;
+            transition: transform 0.5s ease;
+        }
+        .villa-card:hover .vc-photo img { transform: scale(1.05); }
+        .villa-card .vc-body { padding: 22px 22px 24px; flex: 1; display: flex; flex-direction: column; }
+        .villa-card h3 {
+            font-size: 1.2rem; color: var(--blu-squalo); margin-bottom: 6px; letter-spacing: 0.3px;
+        }
+        .villa-card .vc-loc {
+            font-size: 0.78rem; color: var(--text-secondary); text-transform: uppercase;
+            letter-spacing: 1px; margin-bottom: 14px;
+        }
+        .villa-card p { font-size: 0.92rem; line-height: 1.55; color: var(--text-primary); margin-bottom: 18px; flex: 1; }
+        .villa-card .vc-meta {
+            display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px;
+        }
+        .villa-card .vc-meta span {
+            background: rgba(95,166,198,0.12); color: var(--blu-squalo);
+            padding: 4px 10px; border-radius: 12px; font-size: 0.74rem; font-weight: 500;
+        }
+        .villa-card .vc-cta {
+            color: var(--blu-squalo); font-weight: 600; font-size: 0.9rem;
+            display: flex; align-items: center; gap: 6px;
+        }
+
+        .package-bar {
+            background: linear-gradient(135deg, var(--surfing-main), var(--blu-squalo));
+            color: white; max-width: 1200px; margin: 36px auto; padding: 28px 30px;
+            border-radius: 22px; display: flex; flex-wrap: wrap;
+            justify-content: space-between; align-items: center; gap: 18px;
+        }
+        .package-bar h3 { font-size: 1.2rem; margin-bottom: 6px; }
+        .package-bar p { opacity: 0.92; font-size: 0.95rem; }
+        .package-bar a {
+            display: inline-block; padding: 13px 26px; border-radius: 26px;
+            background: #25D366; color: white; text-decoration: none;
+            font-weight: 700; transition: transform 0.2s ease;
+        }
+        .package-bar a:hover { transform: translateY(-2px); }
+
+        @media (max-width: 600px) {
+            .hub-hero-overlay h1 { font-size: 1.8rem; }
+            .hub-hero-overlay p { font-size: 0.95rem; }
+        }
+    </style>
 </head>
 <body>
-    <!-- Header -->
     <header class="detail-header">
-        <a href="../alloggio.html" class="back-link">
-            <span>&larr;</span> Alloggio
-        </a>
+        <a href="../alloggio.html" class="back-link"><span>&larr;</span> Indietro</a>
         <span class="logo-small">LO SQUALO</span>
     </header>
 
-    <!-- Hero -->
-    <section class="detail-hero">
-        <img src="foto/villa-playa-paraiso/drive-51.jpg" alt="Surf House Luxury">
-        <div class="detail-hero-overlay">
+    <section class="hub-hero">
+        <img loading="lazy" decoding="async" src="foto/villa-playa-paraiso/drive-51.jpg" alt="Surf House Luxury">
+        <div class="hub-hero-overlay">
+            <span class="hub-tag">Pacchetto Lo Squalo</span>
             <h1>Surf House Luxury</h1>
-            <p class="location">Playa de Las Americas</p>
+            <p>Tre ville premium nel sud di Tenerife — pensate per chi vuole il meglio del surf senza rinunciare al comfort. Scegli la base che ti rappresenta.</p>
         </div>
     </section>
 
-    <!-- Quick Info -->
-    <div class="quick-info">
-        <div class="quick-info-item">
-            <span class="icon">&#128101;</span>
-            <span>Fino a 8 persone</span>
-        </div>
-        <div class="quick-info-item">
-            <span class="icon">&#128716;</span>
-            <span>4 camere</span>
-        </div>
-        <div class="quick-info-item">
-            <span class="icon">&#127946;</span>
-            <span>Vicino ai break</span>
-        </div>
-        <div class="quick-info-item">
-            <span class="icon">&#127944;</span>
-            <span>Piscina privata</span>
-        </div>
-    </div>
-
-    <div class="detail-container">
-        <!-- Descrizione -->
-        <section class="detail-section">
-            <h2>Descrizione</h2>
-            <p>La migliore combinazione possibile: la cultura del surf nell'involucro di un alloggio di lusso. Questa Surf House e' pensata per chi non vuole scegliere tra la vita in acqua e il comfort a terra. Interni firmati da designer, materiali di pregio e una curazione estetica che trasforma ogni stanza in uno spazio da vivere intensamente.</p>
-            <p>A Playa de Las Americas, epicentro del surf nel sud di Tenerife, con accesso rapido ai migliori break dell'isola. La piscina privata, il garage per le tavole e gli spazi comuni ampi la rendono la base perfetta per gruppi di surfer che vogliono il meglio.</p>
-        </section>
-
-        <!-- Posizione -->
-        <section class="detail-section">
-            <h2>Posizione</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <h3><span class="icon">&#128205;</span> Playa de Las Americas</h3>
-                    <ul>
-                        <li>A 5 minuti dai principali spot surf del sud</li>
-                        <li>Vicino a La Pinta, El Camison e Los Tramps</li>
-                        <li>Negozi surf, noleggio e riparazione tavole nelle vicinanze</li>
-                        <li>Facile accesso in auto verso El Medano e Los Gigantes</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Caratteristiche -->
-        <section class="detail-section">
-            <h2>Caratteristiche</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <h3><span class="icon">&#127968;</span> Spazi interni</h3>
-                    <ul>
-                        <li>4 camere da letto con arredi designer</li>
-                        <li>3 bagni completi con finiture premium</li>
-                        <li>Soggiorno open space con cucina a vista</li>
-                        <li>Sala cinema con proiettore</li>
-                    </ul>
-                </div>
-                <div class="feature-card">
-                    <h3><span class="icon">&#127944;</span> Piscina e outdoor</h3>
-                    <ul>
-                        <li>Piscina privata con zona relax e lettini</li>
-                        <li>Terrazza attrezzata con cucina esterna e BBQ</li>
-                        <li>Doccia esterna per risciacquo muta</li>
-                        <li>Garage con rastrelliera per tavole</li>
-                    </ul>
-                </div>
-                <div class="feature-card">
-                    <h3><span class="icon">&#11088;</span> Servizi premium</h3>
-                    <ul>
-                        <li>WiFi fibra ottica ad alta velocita'</li>
-                        <li>Aria condizionata centralizzata</li>
-                        <li>Servizio pulizia quotidiano su richiesta</li>
-                        <li>Concierge surf: lezioni, noleggio, tour</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- Gallery -->
-    <section class="gallery-section">
-        <h2>Galleria</h2>
-        <div class="gallery-scroll">
-            <div class="gallery-item"><img src="foto/villa-playa-paraiso/drive-51.jpg" alt="Villa Playa Paraíso - piscina"></div>
-            <div class="gallery-item"><img src="foto/villa-playa-paraiso/drive-15.jpg" alt="Villa Playa Paraíso - esterni"></div>
-            <div class="gallery-item"><img src="foto/villa-playa-paraiso/drive-18.jpg" alt="Villa Playa Paraíso - spazi"></div>
-            <div class="gallery-item"><img src="foto/finca-la-fortaleza/piscinacasa.webp" alt="Finca La Fortaleza - piscina"></div>
-            <div class="gallery-item"><img src="foto/finca-la-fortaleza/piscina.webp" alt="Finca La Fortaleza - esterno"></div>
-            <div class="gallery-item"><img src="foto/finca-la-fortaleza/sala-grande.webp" alt="Finca La Fortaleza - living"></div>
-            <div class="gallery-item"><img src="foto/villa-playa-paraiso/drive-21.jpg" alt="Villa Playa Paraíso - interni"></div>
-            <div class="gallery-item"><img src="foto/finca-la-fortaleza/hab.webp" alt="Finca La Fortaleza - camera"></div>
-        </div>
+    <section class="hub-intro">
+        <h2>Le tre ville incluse</h2>
+        <p>Una formula nata per surfer esigenti, gruppi di amici e famiglie che vogliono <strong>una settimana di onde</strong> con il livello di servizio di un boutique hotel. Tutte e tre sono <strong>vicine ai migliori break del sud</strong>, hanno piscina privata e spazio per attrezzatura.</p>
+        <p>Clicca sulla villa per la scheda completa.</p>
     </section>
 
-    <div class="detail-container">
-        <section class="detail-section">
-            <h2>Le Villa incluse nel pacchetto Luxury</h2>
-            <p>La proposta Surf House Luxury si compone di tre ville selezionate — ciascuna con la propria identità ma accomunate dalla qualità premium e dalla posizione strategica per il surf di Tenerife.</p>
-            <div class="features-grid">
-                <a href="finca-la-fortaleza.html" class="feature-card" style="text-decoration:none; color:inherit; cursor:pointer;">
-                    <h3><span class="icon">🏞️</span> Finca La Fortaleza</h3>
-                    <p>Finca di lusso a San Miguel con vista mare e spazi ampi. Perfetta per gruppi che cercano autenticità con comfort premium.</p>
-                </a>
-                <a href="villa-playa-paraiso.html" class="feature-card" style="text-decoration:none; color:inherit; cursor:pointer;">
-                    <h3><span class="icon">🌅</span> Villa Playa Paraíso</h3>
-                    <p>Villa di lusso a Playa Paraíso con piscina privata, zona relax e servizi extra premium. Design curato e vista mare.</p>
-                </a>
-                <a href="villa-duque.html" class="feature-card" style="text-decoration:none; color:inherit; cursor:pointer;">
-                    <h3><span class="icon">⭐</span> Villa Duque</h3>
-                    <p>Villa esclusiva a El Duque, Costa Adeje. Fino a 16-20 ospiti, ampi spazi interni ed esterni, piscina privata.</p>
-                </a>
+    <section class="villa-grid">
+
+        <a href="finca-la-fortaleza.html" class="villa-card">
+            <div class="vc-photo">
+                <img loading="lazy" decoding="async" src="foto/finca-la-fortaleza/piscinacasa.webp" alt="Finca La Fortaleza">
             </div>
-        </section>
-
-        <!-- Scheda dettagliata Finca La Fortaleza -->
-        <section class="detail-section" id="finca-la-fortaleza">
-            <h2>🏞️ Scheda: Finca La Fortaleza</h2>
-            <p class="location" style="margin-bottom:20px;"><strong>San Miguel de Abona, Tenerife Sur</strong> — Aldea Blanca, Calle Camino la Hoya 74 · Registro turistico VV·38·4·0098969 · Rating Booking 9.7</p>
-
-            <div class="quick-info" style="margin-bottom:25px;">
-                <div class="quick-info-item"><span class="icon">👥</span><span>Fino a 16 ospiti</span></div>
-                <div class="quick-info-item"><span class="icon">🛏️</span><span>5 camere · 4 bagni</span></div>
-                <div class="quick-info-item"><span class="icon">🏊</span><span>Piscina salata climatizzata</span></div>
-                <div class="quick-info-item"><span class="icon">♿</span><span>Accessibile</span></div>
-            </div>
-
-            <p>Villa privata di lusso immersa nel contesto naturale e autentico di San Miguel de Abona. Pensata per gruppi che cercano spazio, tranquillità e posizione strategica nel sud di Tenerife, con vista oceano e un equilibrio raro tra natura, comfort e accessibilità.</p>
-
-            <div class="features-grid" style="margin-top:20px;">
-                <div class="feature-card">
-                    <h3><span class="icon">🏠</span> Struttura</h3>
-                    <ul>
-                        <li>5 dormitori, fino a 16 ospiti</li>
-                        <li>4 bagni interni + 1 esterno con doccia</li>
-                        <li>Cucina completamente attrezzata</li>
-                        <li>Zona living ampia e luminosa</li>
-                        <li>Balcone panoramico vista oceano</li>
-                    </ul>
+            <div class="vc-body">
+                <h3>Finca La Fortaleza</h3>
+                <p class="vc-loc">San Miguel de Abona</p>
+                <p>Finca storica con piscina, vista oceano, fino a 16 ospiti. Vibe rurale ma a 15 min dai break. Top per gruppi grandi.</p>
+                <div class="vc-meta">
+                    <span>16 ospiti</span>
+                    <span>5 camere</span>
+                    <span>Piscina</span>
                 </div>
-                <div class="feature-card">
-                    <h3><span class="icon">🏊</span> Esterni</h3>
-                    <ul>
-                        <li>Piscina salata climatizzata</li>
-                        <li>Grande terrazza e zona solarium</li>
-                        <li>Parcheggio privato ampio</li>
-                        <li>TV e WiFi gratuito</li>
-                    </ul>
-                </div>
-                <div class="feature-card">
-                    <h3><span class="icon">📍</span> Posizione strategica</h3>
-                    <ul>
-                        <li>✈️ 6 km Aeroporto Sud (TFS)</li>
-                        <li>🏖️ 10 km Playa de las Américas</li>
-                        <li>🌴 39 km Puerto de la Cruz</li>
-                        <li>Connessione rapida a spiagge e surf spots</li>
-                    </ul>
-                </div>
-                <div class="feature-card">
-                    <h3><span class="icon">🌊</span> Attività in zona</h3>
-                    <ul>
-                        <li>Surf, windsurf, kite a El Médano</li>
-                        <li>Senderismo: Barranco del Infierno, Ruta de los Sentidos</li>
-                        <li>Golf del Sur (27) · Amarilla Golf (18)</li>
-                        <li>Playa de San Blas, La Tejita (Montaña Roja)</li>
-                    </ul>
-                </div>
+                <span class="vc-cta">Scopri di più →</span>
             </div>
-
-            <div class="highlights-grid" style="margin-top:20px;">
-                <span class="highlight-tag">👥 Gruppi organizzati</span>
-                <span class="highlight-tag">🏄 Surf camp</span>
-                <span class="highlight-tag">🧘 Retreat sportivi/benessere</span>
-                <span class="highlight-tag">🎒 Tour operator</span>
-                <span class="highlight-tag">✓ Capacità reale 16 pax</span>
-                <span class="highlight-tag">✓ Accessibile</span>
-            </div>
-
-            <p style="margin-top:20px;"><a href="finca-la-fortaleza.html" style="color:inherit; font-weight:600;">→ Scheda completa Finca La Fortaleza</a></p>
-        </section>
-
-        <!-- Scheda Villa Playa Paraíso -->
-        <section class="detail-section" id="villa-playa-paraiso">
-            <h2>🌅 Scheda: Villa Playa Paraíso</h2>
-            <p class="location" style="margin-bottom:20px;"><strong>Playa Paraíso, Costa Adeje, Tenerife Sur</strong> — Lusso esclusivo B2B</p>
-
-            <div class="quick-info" style="margin-bottom:25px;">
-                <div class="quick-info-item"><span class="icon">👥</span><span>Fino a 22 ospiti</span></div>
-                <div class="quick-info-item"><span class="icon">🛏️</span><span>8 camere · 5 bagni</span></div>
-                <div class="quick-info-item"><span class="icon">🏊</span><span>Piscina con trampolino</span></div>
-                <div class="quick-info-item"><span class="icon">⭐</span><span>Lusso B2B</span></div>
-            </div>
-
-            <p>Villa di lusso in posizione privilegiata a Playa Paraíso. Ideale per gruppi numerosi, tour operator, ritiri aziendali ed eventi privati. Due piani indipendenti, ampi spazi interni ed esterni, finiture di pregio e un contesto residenziale esclusivo.</p>
-
-            <div class="features-grid" style="margin-top:20px;">
-                <div class="feature-card">
-                    <h3><span class="icon">🏠</span> Struttura</h3>
-                    <ul>
-                        <li>Piano terra: 4 camere, fino a 14 ospiti</li>
-                        <li>Primo piano: 4 camere, fino a 10 ospiti</li>
-                        <li>5 bagni (4 interni + 1 esterno piscina)</li>
-                        <li>Cucina attrezzata, soggiorno open space</li>
-                    </ul>
-                </div>
-                <div class="feature-card">
-                    <h3><span class="icon">🏊</span> Esterni</h3>
-                    <ul>
-                        <li>Piscina privata con trampolino</li>
-                        <li>Terrazza e zona relax con lettini</li>
-                        <li>BBQ e cucina esterna</li>
-                        <li>Parcheggio privato</li>
-                    </ul>
-                </div>
-                <div class="feature-card">
-                    <h3><span class="icon">📍</span> Posizione</h3>
-                    <ul>
-                        <li>Playa Paraíso, zona residenziale esclusiva</li>
-                        <li>A pochi minuti da Las Américas e Costa Adeje</li>
-                        <li>Accesso rapido ai surf spot del sud</li>
-                        <li>Aeroporto TFS a ~25 min</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="highlights-grid" style="margin-top:20px;">
-                <span class="highlight-tag">👥 Gruppi grandi</span>
-                <span class="highlight-tag">🏢 Tour operator B2B</span>
-                <span class="highlight-tag">🎉 Eventi privati</span>
-                <span class="highlight-tag">🏄 Surf camp luxury</span>
-                <span class="highlight-tag">✓ Fino a 22 pax</span>
-            </div>
-
-            <p style="margin-top:20px;"><a href="villa-playa-paraiso.html" style="color:inherit; font-weight:600;">→ Scheda completa Villa Playa Paraíso</a></p>
-        </section>
-
-        <!-- Ideale per -->
-        <section class="detail-section">
-            <h2>Ideale per</h2>
-            <div class="highlights-grid">
-                <span class="highlight-tag">&#127940; Surfer</span>
-                <span class="highlight-tag">&#128101; Gruppi</span>
-                <span class="highlight-tag">&#11088; Luxury</span>
-                <span class="highlight-tag">&#127754; Ocean lifestyle</span>
-                <span class="highlight-tag">&#127944; Piscina</span>
-                <span class="highlight-tag">&#127960;&#65039; Design</span>
-            </div>
-            <p style="margin-top: 20px;">Per gruppi di amici o famiglie che vogliono combinare sessioni di surf intense con serate di relax e comfort assoluto. La surf house definitiva di Tenerife.</p>
-        </section>
-    </div>
-
-    <!-- CTA -->
-    <section class="cta-section">
-        <h2>Interessato a questo alloggio?</h2>
-        <p>Contattaci per disponibilita' e prezzi</p>
-        <a href="https://wa.me/34616794190?text=Ciao!%20Sono%20interessato%20alla%20Surf%20House%20Luxury" class="cta-button" target="_blank">
-            <span>&#128172;</span> Contattaci su WhatsApp
         </a>
+
+        <a href="villa-playa-paraiso.html" class="villa-card">
+            <div class="vc-photo">
+                <img loading="lazy" decoding="async" src="foto/villa-playa-paraiso/drive-51.jpg" alt="Villa Playa Paraíso">
+            </div>
+            <div class="vc-body">
+                <h3>Villa Playa Paraíso</h3>
+                <p class="vc-loc">Costa Adeje</p>
+                <p>Villa moderna con piscina sul tetto, design contemporaneo, 5 minuti a piedi dallo spot Playa Paraíso. Pacchetto surf + relax.</p>
+                <div class="vc-meta">
+                    <span>10 ospiti</span>
+                    <span>4 camere</span>
+                    <span>Pool sul tetto</span>
+                </div>
+                <span class="vc-cta">Scopri di più →</span>
+            </div>
+        </a>
+
+        <a href="villa-duque.html" class="villa-card">
+            <div class="vc-photo">
+                <img loading="lazy" decoding="async" src="foto/villa-duque/drive-01.jpg" alt="Villa Duque" onerror="this.style.background='linear-gradient(135deg,#5fa6c6,#2f6f8f)';this.removeAttribute('src');">
+            </div>
+            <div class="vc-body">
+                <h3>Villa Duque</h3>
+                <p class="vc-loc">Costa Adeje &middot; Bahia del Duque</p>
+                <p>Villa lussuosa nella zona più esclusiva di Adeje. Comfort hotellier, posizione strategica per surf-trip su tutta la costa sud.</p>
+                <div class="vc-meta">
+                    <span>8 ospiti</span>
+                    <span>Bahía del Duque</span>
+                    <span>Premium</span>
+                </div>
+                <span class="vc-cta">Scopri di più →</span>
+            </div>
+        </a>
+
     </section>
 
-    <!-- Footer -->
-    <footer class="detail-footer">
-        <p>&copy; 2026 <a href="../index.html">Lo Squalo - Tenerife Experience</a> | Since 2009</p>
+    <section class="package-bar">
+        <div>
+            <h3>Vuoi il pacchetto completo?</h3>
+            <p>Villa + lezioni Ika Ika + transfer giornaliero allo spot. Una settimana, zero pensieri.</p>
+        </div>
+        <a href="https://wa.me/34616794190?text=Ciao%2C%20info%20Surf%20House%20Luxury" target="_blank" rel="noopener">Scrivimi su WhatsApp</a>
+    </section>
+
+    <footer style="text-align: center; padding: 24px; color: var(--text-secondary); font-size: 0.7rem;">
+        <p>&copy; <a href="../index.html">Lo Squalo Tenerife</a> &middot; dal 2009</p>
     </footer>
     <script src="../whatsapp-i18n.js"></script>
+
 </body>
 </html>
