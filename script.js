@@ -250,7 +250,7 @@ function createMobileMiniMap() {
         { id: 'alloggio', name: 'ALLOGGIO', cls: 'mobile-alloggio', href: 'alloggio.html' },
         { id: 'escursioni', name: 'ESCURSIONI<br>& ATTIVITA', cls: 'mobile-escursioni', href: 'escursioni.html' },
         { id: 'surfing', name: 'SURFING<br>TENERIFE', cls: 'mobile-surfing', href: 'surfing.html' },
-        { id: 'agency', name: 'AGENCY', cls: 'mobile-agency', href: 'agency.html' },
+        { id: 'agency', name: 'AGENCY', cls: 'mobile-agency', href: 'agency/oferta.html' },
         { id: 'alessandro', name: 'ALESSANDRO', cls: 'mobile-alessandro', href: 'alessandro.html' }
     ];
 
