@@ -83,13 +83,35 @@ header {
     letter-spacing: 4px;
 }
 
+.logo-link {
+    display: inline-block;
+    text-decoration: none;
+    line-height: 0;
+}
+
+.logo-mark {
+    display: inline-block;
+    width: 200px;
+    height: 56px;
+    background-color: var(--blu-squalo);
+    -webkit-mask: url('assets/logo-squalo.png') no-repeat center / contain;
+    mask: url('assets/logo-squalo.png') no-repeat center / contain;
+}
+
+.logo-mark--mini {
+    width: 70px;
+    height: 20px;
+    vertical-align: middle;
+    background-color: var(--text-secondary);
+}
+
 .tagline {
     display: block;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     color: var(--text-secondary);
     letter-spacing: 3px;
-    margin-top: 4px;
-    text-transform: lowercase;
+    margin-top: 6px;
+    text-transform: uppercase;
 }
 
 /* ===== MIND MAP CONTAINER ===== */
@@ -125,6 +147,7 @@ header {
     height: auto;
     transition: all 0.4s ease-out;
     filter: drop-shadow(0 8px 24px rgba(47, 111, 143, 0.25));
+    animation: tenerife-pulse 4s ease-in-out infinite;
 }
 
 .center-node:hover .tenerife-img {
@@ -132,16 +155,9 @@ header {
     filter: drop-shadow(0 12px 32px rgba(47, 111, 143, 0.35));
 }
 
-.center-text {
-    display: block;
-    margin-top: 16px;
-    color: var(--blu-squalo);
-    font-size: 1.25rem;
-    font-weight: 700;
-    text-align: center;
-    line-height: 1.2;
-    letter-spacing: 4px;
-    text-transform: uppercase;
+@keyframes tenerife-pulse {
+    0%, 100% { transform: scale(1); filter: drop-shadow(0 8px 24px rgba(47, 111, 143, 0.25)); }
+    50% { transform: scale(1.05); filter: drop-shadow(0 12px 32px rgba(47, 111, 143, 0.4)); }
 }
 
 /* Animazione floating */
@@ -154,17 +170,18 @@ header {
     50% { transform: translate(-50%, -50%) translateY(-8px); }
 }
 
-/* Hint per cliccare — stile bottone */
+/* Hint per cliccare — stile bottone con contrasto invertito (chiaro su scuro) */
 .click-hint {
     display: inline-block;
     margin-top: 20px;
-    padding: 10px 24px;
-    font-size: 0.78rem;
-    font-weight: 600;
+    padding: 12px 28px;
+    font-size: 0.85rem;
+    font-weight: 700;
     color: white;
     background: var(--blu-squalo);
+    border: 2px solid white;
     border-radius: 24px;
-    letter-spacing: 1.5px;
+    letter-spacing: 1.8px;
     text-transform: uppercase;
     opacity: 0.95;
     box-shadow: 0 6px 18px rgba(47, 111, 143, 0.35);
@@ -187,6 +204,30 @@ header {
 .mind-map:not([data-state="initial"]) .click-hint {
     opacity: 0;
     pointer-events: none;
+}
+
+/* Prompt "Cosa stai cercando?" appare dopo l'espansione */
+.explore-prompt {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 8px 22px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--blu-squalo);
+    letter-spacing: 1px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease 0.3s;
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+.mind-map[data-state="categories"] .explore-prompt,
+.mind-map[data-state="subcategories"] .explore-prompt {
+    opacity: 1;
 }
 
 /* ===== FLOAT ANIMATION — nodi come sfere galleggianti =====
@@ -528,7 +569,8 @@ header {
 .brand-button {
     position: fixed;
     bottom: 24px;
-    right: 24px;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 50;
     padding: 13px 24px;
     background: linear-gradient(135deg, #2f6f8f, #1f4a5f);
@@ -546,7 +588,7 @@ header {
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 .brand-button:hover {
-    transform: translateY(-3px);
+    transform: translateX(-50%) translateY(-3px);
     box-shadow: 0 12px 32px rgba(47, 111, 143, 0.5);
 }
 .brand-button .brand-dot {
@@ -560,7 +602,6 @@ header {
 @media (max-width: 768px) {
     .brand-button {
         bottom: 14px;
-        right: 14px;
         padding: 11px 20px;
         font-size: 0.72rem;
     }
@@ -598,6 +639,8 @@ footer {
     .container { padding: 15px; }
     header { padding: 15px; }
     .logo { font-size: 1.3rem; }
+    .logo-mark { width: 150px; height: 42px; }
+    .tagline { font-size: 0.7rem; letter-spacing: 2px; }
 
     .mobile-map {
         display: block;

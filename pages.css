@@ -413,50 +413,40 @@ header {
    PAGINA ALLOGGIO - Posizioni e Colori
    ============================================= */
 
-/* Sotto-categorie (Livello 2) - 6 nodi */
-.page-alloggio .ostello-node {
-    background: linear-gradient(145deg, var(--alloggio-ostello), #dcc0c8);
-    color: var(--text-primary);
-    top: 18%;
-    left: 20%;
-}
-
+/* Sotto-categorie (Livello 2) - 5 nodi pentagonali clockwise da Villa */
 .page-alloggio .villa-node {
     background: linear-gradient(145deg, var(--alloggio-villa), #c99ea8);
     color: var(--text-primary);
-    top: 18%;
-    left: 72%;
-}
-
-.page-alloggio .surfhouse-node {
-    background: linear-gradient(145deg, var(--alloggio-surfhouse), #caa4b0);
-    color: var(--text-primary);
-    top: 50%;
-    left: 85%;
-}
-
-.page-alloggio .rurale-node {
-    background: linear-gradient(145deg, var(--alloggio-rurale), #bf9991);
-    color: var(--text-primary);
-    top: 78%;
-    left: 65%;
+    top: 10%;
+    left: 50%;
 }
 
 .page-alloggio .appartamento-node {
-    background: linear-gradient(145deg, #d4869b, #ad6376);
-    color: white;
-    font-weight: 700;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.18);
-    top: 78%;
-    left: 28%;
+    background: linear-gradient(145deg, var(--alloggio-villa), #c99ea8);
+    color: var(--text-primary);
+    top: 34%;
+    left: 84%;
 }
 
-/* Elementi OSTELLO */
-.page-alloggio .item-gotademar {
-    background: linear-gradient(145deg, #e8d4dc, #d4b8c0);
+.page-alloggio .rurale-node {
+    background: linear-gradient(145deg, var(--alloggio-rurale), #c99ea8);
     color: var(--text-primary);
-    top: 5%;
-    left: 15%;
+    top: 78%;
+    left: 75%;
+}
+
+.page-alloggio .surfhouse-node {
+    background: linear-gradient(145deg, var(--alloggio-surfhouse), #c99ea8);
+    color: var(--text-primary);
+    top: 78%;
+    left: 25%;
+}
+
+.page-alloggio .coliving-node {
+    background: linear-gradient(145deg, var(--alloggio-ostello), #c99ea8);
+    color: var(--text-primary);
+    top: 34%;
+    left: 16%;
 }
 
 /* Elementi APPARTAMENTO */
@@ -532,7 +522,7 @@ header {
     left: 88%;
 }
 
-.page-alloggio .item-playaparaiso {
+.page-alloggio .item-paraiso {
     background: linear-gradient(145deg, #e2b8c4, #ce9ca8);
     color: var(--text-primary);
     top: 32%;
@@ -587,7 +577,7 @@ header {
 }
 
 /* Elementi VILLA FINCA - Nuovi */
-.page-alloggio .item-ciguaña {
+.page-alloggio .item-ciguana {
     background: linear-gradient(145deg, #d4a8b4, #c08ca0);
     color: var(--text-primary);
     top: 32%;
@@ -595,10 +585,10 @@ header {
 }
 
 .page-alloggio .item-costaadeje {
-    background: linear-gradient(145deg, #d0a4b0, #bc889c);
+    background: linear-gradient(145deg, #f4c8d2, #dcb0ba);
     color: var(--text-primary);
-    top: 32%;
-    left: 75%;
+    top: 78%;
+    left: 5%;
 }
 
 .page-alloggio .item-torviscas {
@@ -615,11 +605,27 @@ header {
     left: 72%;
 }
 
-.page-alloggio .item-fincaplayaparaiso {
+.page-alloggio .item-fincaparaiso {
     background: linear-gradient(145deg, #e2b8c4, #ce9ca8);
     color: var(--text-primary);
     top: 58%;
     left: 72%;
+}
+
+/* Elementi SURF HOUSE - nuovo Ostello */
+.page-alloggio .item-surfhouse-ostello {
+    background: linear-gradient(145deg, var(--alloggio-ostello), #c99ea8);
+    color: var(--text-primary);
+    top: 58%;
+    left: 12%;
+}
+
+/* Elementi COLIVING */
+.page-alloggio .item-blueparadise {
+    background: linear-gradient(145deg, var(--alloggio-ostello), #c99ea8);
+    color: var(--text-primary);
+    top: 22%;
+    left: 6%;
 }
 
 /* =============================================

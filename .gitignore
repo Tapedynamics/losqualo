@@ -1,0 +1,10 @@
+# Local Netlify folder
+.netlify
+
+# Local raw material (binari pesanti, non versionati)
+/SURF BAR FRANCHISE WEB/
+/SURF SCHOOL/
+/reel-promo-experience-60s/
+
+# Editor configs
+/.claude/settings.local.json

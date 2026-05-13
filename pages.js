@@ -51,20 +51,28 @@ function convertLinesToPaths() {
 const pageLineConfig = {
     alloggio: {
         main: [
+            { line: 'line-center-villa', from: 'category-trigger', to: 'node-villa' },
             { line: 'line-center-appartamento', from: 'category-trigger', to: 'node-appartamento' },
-            { line: 'line-center-ostello', from: 'category-trigger', to: 'node-ostello' },
             { line: 'line-center-rurale', from: 'category-trigger', to: 'node-rurale' },
             { line: 'line-center-surfhouse', from: 'category-trigger', to: 'node-surfhouse' },
-            { line: 'line-center-villa', from: 'category-trigger', to: 'node-villa' }
+            { line: 'line-center-coliving', from: 'category-trigger', to: 'node-coliving' }
+        ],
+        villa: [
+            { line: 'line-villa-fortaleza', from: 'node-villa', to: 'node-fortaleza' },
+            { line: 'line-villa-paraiso', from: 'node-villa', to: 'node-paraiso' },
+            { line: 'line-villa-duque', from: 'node-villa', to: 'node-duque' },
+            { line: 'line-villa-beachhouse', from: 'node-villa', to: 'node-beachhouse' },
+            { line: 'line-villa-ciguana', from: 'node-villa', to: 'node-ciguana' },
+            { line: 'line-villa-fincaparaiso', from: 'node-villa', to: 'node-fincaparaiso' },
+            { line: 'line-villa-atogo', from: 'node-villa', to: 'node-atogo' },
+            { line: 'line-villa-taucho', from: 'node-villa', to: 'node-taucho' }
         ],
         appartamento: [
+            { line: 'line-appartamento-costaadeje', from: 'node-appartamento', to: 'node-costaadeje' },
             { line: 'line-appartamento-alcala', from: 'node-appartamento', to: 'node-alcala' },
             { line: 'line-appartamento-lasamericas', from: 'node-appartamento', to: 'node-lasamericas' },
             { line: 'line-appartamento-loscristianos', from: 'node-appartamento', to: 'node-loscristianos' },
             { line: 'line-appartamento-penthouse', from: 'node-appartamento', to: 'node-penthouse' }
-        ],
-        ostello: [
-            { line: 'line-ostello-gotademar', from: 'node-ostello', to: 'node-gotademar' }
         ],
         rurale: [
             { line: 'line-rurale-cueva', from: 'node-rurale', to: 'node-cueva' },
@@ -74,17 +82,11 @@ const pageLineConfig = {
         ],
         surfhouse: [
             { line: 'line-surfhouse-luxury', from: 'node-surfhouse', to: 'node-surfhouse-luxury' },
-            { line: 'line-surfhouse-rurale', from: 'node-surfhouse', to: 'node-surfhouse-rurale' }
+            { line: 'line-surfhouse-rurale', from: 'node-surfhouse', to: 'node-surfhouse-rurale' },
+            { line: 'line-surfhouse-ostello', from: 'node-surfhouse', to: 'node-surfhouse-ostello' }
         ],
-        villa: [
-            { line: 'line-villa-beachhouse', from: 'node-villa', to: 'node-beachhouse' },
-            { line: 'line-villa-atogo', from: 'node-villa', to: 'node-atogo' },
-            { line: 'line-villa-taucho', from: 'node-villa', to: 'node-taucho' },
-            { line: 'line-villa-fortaleza', from: 'node-villa', to: 'node-fortaleza' },
-            { line: 'line-villa-playaparaiso', from: 'node-villa', to: 'node-playaparaiso' },
-            { line: 'line-villa-ciguaña', from: 'node-villa', to: 'node-ciguaña' },
-            { line: 'line-villa-duque', from: 'node-villa', to: 'node-duque' },
-            { line: 'line-villa-fincaplayaparaiso', from: 'node-villa', to: 'node-fincaplayaparaiso' }
+        coliving: [
+            { line: 'line-coliving-blueparadise', from: 'node-coliving', to: 'node-blueparadise' }
         ]
     },
     escursioni: {
@@ -515,25 +517,33 @@ let mobilePageState = 'categories';
 // Dati per popup radiale mobile per pagina
 const pageSubNodesData = {
     alloggio: {
+        villa: {
+            name: 'Villa<br>Casa Rurale',
+            class: 'radial-villa',
+            subs: [
+                { id: 'fortaleza', name: 'La Fortaleza', href: 'alloggio/finca-la-fortaleza.html' },
+                { id: 'paraiso', name: 'Villa Paraiso', href: 'alloggio/villa-paraiso.html' },
+                { id: 'duque', name: 'Villa Duque', href: 'alloggio/villa-duque.html' },
+                { id: 'beachhouse', name: 'Beach House', href: 'alloggio/beach-house.html' },
+                { id: 'ciguana', name: 'Finca Ciguaña', href: 'alloggio/finca-ciguaña.html' },
+                { id: 'fincaparaiso', name: 'Finca Paraiso', href: 'alloggio/finca-paraiso.html' },
+                { id: 'atogo', name: 'Casa Atogo', href: 'alloggio/casa-atogo.html' },
+                { id: 'taucho', name: 'Casa Taucho', href: 'alloggio/casa-taucho.html' }
+            ]
+        },
         appartamento: {
             name: 'Appartamento',
             class: 'radial-appartamento',
             subs: [
+                { id: 'costaadeje', name: 'Costa Adeje', href: 'alloggio/costa-adeje.html' },
                 { id: 'alcala', name: 'Alcala', href: 'alloggio/alcala.html' },
                 { id: 'lasamericas', name: 'Studio Las Americas', href: 'alloggio/studio-las-americas.html' },
                 { id: 'loscristianos', name: 'Studio Los Cristianos', href: 'alloggio/studio-los-cristianos.html' },
                 { id: 'penthouse', name: 'Penthouse Los Cristianos', href: 'alloggio/penthouse-los-cristianos.html' }
             ]
         },
-        ostello: {
-            name: 'Ostello',
-            class: 'radial-ostello',
-            subs: [
-                { id: 'gotademar', name: 'Gota de Mar', href: 'alloggio/gota-de-mar.html' }
-            ]
-        },
         rurale: {
-            name: 'Rurale<br>Glamping',
+            name: 'Glamping',
             class: 'radial-rurale',
             subs: [
                 { id: 'cueva', name: 'Cueva San Miguel', href: 'alloggio/cueva-san-miguel.html' },
@@ -547,21 +557,15 @@ const pageSubNodesData = {
             class: 'radial-surfhouse',
             subs: [
                 { id: 'surfhouse-luxury', name: 'Surf House Luxury', href: 'alloggio/surf-house-luxury.html' },
-                { id: 'surfhouse-rurale', name: 'Surf House Rurale', href: 'alloggio/surf-house-rurale.html' }
+                { id: 'surfhouse-rurale', name: 'Surf House Rurale', href: 'alloggio/surf-house-rurale.html' },
+                { id: 'surfhouse-ostello', name: 'Ostello', href: 'alloggio/gota-de-mar.html' }
             ]
         },
-        villa: {
-            name: 'Villa y<br>Casa Rural',
-            class: 'radial-villa',
+        coliving: {
+            name: 'Coliving<br>Coworking',
+            class: 'radial-coliving',
             subs: [
-                { id: 'beachhouse', name: 'Beach House', href: 'alloggio/beach-house.html' },
-                { id: 'atogo', name: 'Casa Rural Atogo', href: 'alloggio/casa-rural-atogo.html' },
-                { id: 'taucho', name: 'Casa Rural Taucho', href: 'alloggio/casa-rural-taucho.html' },
-                { id: 'fortaleza', name: 'Finca La Fortaleza', href: 'alloggio/finca-la-fortaleza.html' },
-                { id: 'playaparaiso', name: 'Villa Playa Paraiso', href: 'alloggio/villa-playa-paraiso.html' },
-                { id: 'ciguaña', name: 'Finca Ciguaña', href: 'alloggio/finca-ciguaña.html' },
-                { id: 'duque', name: 'Villa Duque', href: 'alloggio/villa-duque.html' },
-                { id: 'fincaplayaparaiso', name: 'Finca Playa Paraíso', href: 'alloggio/finca-playa-paraiso.html' }
+                { id: 'blueparadise', name: 'Blue Paradise', href: 'alloggio/coliving-coworking.html' }
             ]
         }
     },
@@ -622,7 +626,7 @@ const pageSubNodesData = {
             class: 'radial-surfhouse',
             subs: [
                 { id: 'b2b', name: 'B2B', href: 'surfing/surf-house-b2b.html' },
-                { id: 'surfcamp', name: 'Surf Camp', href: 'surfing/surf-camp.html' },
+                { id: 'surfcamp', name: 'Full Experience', href: 'surfing/full-experience.html' },
                 { id: 'reservacama', name: 'Reserva Cama', href: 'alloggio/gota-de-mar.html' },
                 { id: 'reservahab', name: 'Reserva Habitacion', href: 'alloggio/surf-house-rurale.html' },
                 { id: 'gallery', name: 'Gallery', href: '#gallery' }
