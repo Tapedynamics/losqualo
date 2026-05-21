@@ -231,7 +231,7 @@ function createMobileMiniMap() {
     center.id = 'mobile-center';
     center.innerHTML = `
         <img src="tenerife.png" alt="Tenerife" class="tenerife-img-mobile">
-        <span class="center-text-mobile">TENERIFE<br>EXPERIENCE</span>
+        <span class="center-text-mobile">Tenerife Experience</span>
         <span class="click-hint-mobile">Tocca per esplorare</span>
     `;
     mobileMap.appendChild(center);

@@ -558,7 +558,7 @@ const pageSubNodesData = {
             subs: [
                 { id: 'surfhouse-luxury', name: 'Surf House Luxury', href: 'alloggio/surf-house-luxury.html' },
                 { id: 'surfhouse-rurale', name: 'Surf House Rurale', href: 'alloggio/surf-house-rurale.html' },
-                { id: 'surfhouse-ostello', name: 'Ostello', href: 'alloggio/gota-de-mar.html' }
+                { id: 'surfhouse-ostello', name: 'Ostello', href: 'alloggio/banana-surf-hostel.html' }
             ]
         },
         coliving: {
@@ -627,7 +627,7 @@ const pageSubNodesData = {
             subs: [
                 { id: 'b2b', name: 'B2B', href: 'surfing/surf-house-b2b.html' },
                 { id: 'surfcamp', name: 'Full Experience', href: 'surfing/full-experience.html' },
-                { id: 'reservacama', name: 'Reserva Cama', href: 'alloggio/gota-de-mar.html' },
+                { id: 'reservacama', name: 'Reserva Cama', href: 'alloggio/banana-surf-hostel.html' },
                 { id: 'reservahab', name: 'Reserva Habitacion', href: 'alloggio/surf-house-rurale.html' },
                 { id: 'gallery', name: 'Gallery', href: '#gallery' }
             ]
@@ -882,11 +882,11 @@ function getSubcategoryPositions(page) {
 function getSubcategoryNodes(page) {
     const nodes = {
         alloggio: [
+            { id: 'villa', name: 'Villa y<br>Casa Rural', class: 'mobile-villa' },
             { id: 'appartamento', name: 'Appartamento', class: 'mobile-appartamento' },
-            { id: 'ostello', name: 'Ostello', class: 'mobile-ostello', href: 'alloggio/gota-de-mar.html' },
             { id: 'rurale', name: 'Rurale<br>Glamping', class: 'mobile-rurale' },
             { id: 'surfhouse', name: 'Surf House', class: 'mobile-surfhouse-alloggio' },
-            { id: 'villa', name: 'Villa y<br>Casa Rural', class: 'mobile-villa' }
+            { id: 'coliving', name: 'Coliving<br>Coworking', class: 'mobile-coliving' }
         ],
         escursioni: [
             { id: 'teide', name: 'Terra', class: 'mobile-teide' },
