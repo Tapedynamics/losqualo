@@ -418,55 +418,26 @@ header {
    ============================================= */
 
 /* Sotto-categorie (Livello 2) - 5 nodi pentagonali clockwise da Villa */
-/* 7 nodi disposti a eptagono attorno al centro (raggio ~38%) */
-.page-alloggio .villa-node {
+/* 7 nodi primari alloggio: stessa palette rosa, solo posizione cambia */
+.page-alloggio .villa-node,
+.page-alloggio .casarurale-node,
+.page-alloggio .appartamento-node,
+.page-alloggio .rurale-node,
+.page-alloggio .surfhouse-node,
+.page-alloggio .ostello-node,
+.page-alloggio .coliving-node {
     background: linear-gradient(145deg, var(--alloggio-villa), #c99ea8);
     color: var(--text-primary);
-    top: 12%;
-    left: 50%;
 }
 
-.page-alloggio .casarurale-node {
-    background: linear-gradient(145deg, #d8b39e, #bf9a82);
-    color: var(--text-primary);
-    top: 26%;
-    left: 80%;
-}
-
-.page-alloggio .appartamento-node {
-    background: linear-gradient(145deg, #f4cad4, #e0b0bc);
-    color: var(--text-primary);
-    top: 58%;
-    left: 87%;
-}
-
-.page-alloggio .rurale-node {
-    background: linear-gradient(145deg, var(--alloggio-rurale), #c99ea8);
-    color: var(--text-primary);
-    top: 84%;
-    left: 66%;
-}
-
-.page-alloggio .surfhouse-node {
-    background: linear-gradient(145deg, var(--alloggio-surfhouse), #c99ea8);
-    color: var(--text-primary);
-    top: 84%;
-    left: 34%;
-}
-
-.page-alloggio .ostello-node {
-    background: linear-gradient(145deg, #f5e4b8, #e5cf8c);
-    color: var(--text-primary);
-    top: 58%;
-    left: 13%;
-}
-
-.page-alloggio .coliving-node {
-    background: linear-gradient(145deg, var(--alloggio-ostello), #c99ea8);
-    color: var(--text-primary);
-    top: 26%;
-    left: 20%;
-}
+/* Eptagono attorno al centro (raggio ~38%) */
+.page-alloggio .villa-node       { top: 12%; left: 50%; }
+.page-alloggio .casarurale-node  { top: 26%; left: 80%; }
+.page-alloggio .appartamento-node{ top: 58%; left: 87%; }
+.page-alloggio .rurale-node      { top: 84%; left: 66%; }
+.page-alloggio .surfhouse-node   { top: 84%; left: 34%; }
+.page-alloggio .ostello-node     { top: 58%; left: 13%; }
+.page-alloggio .coliving-node    { top: 26%; left: 20%; }
 
 /* Elementi APPARTAMENTO */
 .page-alloggio .item-alcala {
@@ -1445,13 +1416,17 @@ header {
     .mobile-page-map .mobile-servizi { background: linear-gradient(145deg, var(--eventi-servizi), #a87a2a); color: white; }
 
     .mobile-page-map .mobile-ostello { background: linear-gradient(145deg, var(--alloggio-ostello), #dcc0c8); color: var(--text-primary); }
-    .mobile-page-map .mobile-villa { background: linear-gradient(145deg, var(--alloggio-villa), #c99ea8); color: var(--text-primary); }
-    .mobile-page-map .mobile-casarurale { background: linear-gradient(145deg, #d8b39e, #bf9a82); color: var(--text-primary); }
-    .mobile-page-map .mobile-surfhouse-alloggio { background: linear-gradient(145deg, var(--alloggio-surfhouse), #caa4b0); color: var(--text-primary); }
-    .mobile-page-map .mobile-rurale { background: linear-gradient(145deg, var(--alloggio-rurale), #bf9991); color: var(--text-primary); }
-    .mobile-page-map .mobile-ostello { background: linear-gradient(145deg, #f5e4b8, #e5cf8c); color: var(--text-primary); }
-    .mobile-page-map .mobile-appartamento { background: linear-gradient(145deg, var(--alloggio-glamping), #d1a4af); color: var(--text-primary); }
-    .mobile-page-map .mobile-coliving { background: linear-gradient(145deg, var(--alloggio-ostello), #c99ea8); color: var(--text-primary); }
+    /* Tutti i nodi alloggio mobile: stessa palette rosa */
+    .mobile-page-map .mobile-villa,
+    .mobile-page-map .mobile-casarurale,
+    .mobile-page-map .mobile-appartamento,
+    .mobile-page-map .mobile-rurale,
+    .mobile-page-map .mobile-surfhouse-alloggio,
+    .mobile-page-map .mobile-ostello,
+    .mobile-page-map .mobile-coliving {
+        background: linear-gradient(145deg, var(--alloggio-villa), #c99ea8);
+        color: var(--text-primary);
+    }
     .mobile-page-map .mobile-fincawedding { background: linear-gradient(145deg, #e8c0c8, #d4a4b0); color: var(--text-primary); }
 
     .mobile-page-map .mobile-teide { background: linear-gradient(145deg, var(--escursioni-teide), #5f7e6c); color: white; }
