@@ -146,6 +146,8 @@
     line-height: 1.7;
     color: var(--text-secondary);
     margin-bottom: 15px;
+    text-align: justify;
+    hyphens: auto;
 }
 
 .detail-section ul {
@@ -213,6 +215,11 @@
 .feature-card ul {
     font-size: 0.85rem;
     color: var(--text-secondary);
+}
+
+.feature-card p {
+    text-align: justify;
+    hyphens: auto;
 }
 
 .feature-card ul {

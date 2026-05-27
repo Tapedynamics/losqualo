@@ -22,20 +22,24 @@
             <svg class="connections" id="svg-connections">
                 <!-- Linee: Centro -> Sotto-categorie -->
                 <line class="line main-line" id="line-center-villa"></line>
+                <line class="line main-line" id="line-center-casarurale"></line>
                 <line class="line main-line" id="line-center-appartamento"></line>
                 <line class="line main-line" id="line-center-rurale"></line>
                 <line class="line main-line" id="line-center-surfhouse"></line>
+                <line class="line main-line" id="line-center-ostello"></line>
                 <line class="line main-line" id="line-center-coliving"></line>
 
-                <!-- Linee Villa-Casa Rurale -->
+                <!-- Linee Villa -->
                 <line class="line sub-line" data-category="villa" id="line-villa-fortaleza"></line>
                 <line class="line sub-line" data-category="villa" id="line-villa-paraiso"></line>
                 <line class="line sub-line" data-category="villa" id="line-villa-duque"></line>
                 <line class="line sub-line" data-category="villa" id="line-villa-beachhouse"></line>
-                <line class="line sub-line" data-category="villa" id="line-villa-ciguana"></line>
-                <line class="line sub-line" data-category="villa" id="line-villa-fincaparaiso"></line>
-                <line class="line sub-line" data-category="villa" id="line-villa-atogo"></line>
-                <line class="line sub-line" data-category="villa" id="line-villa-taucho"></line>
+
+                <!-- Linee Rurale (Casa Rurale / Finca) -->
+                <line class="line sub-line" data-category="casarurale" id="line-casarurale-ciguana"></line>
+                <line class="line sub-line" data-category="casarurale" id="line-casarurale-fincaparaiso"></line>
+                <line class="line sub-line" data-category="casarurale" id="line-casarurale-atogo"></line>
+                <line class="line sub-line" data-category="casarurale" id="line-casarurale-taucho"></line>
 
                 <!-- Linee Appartamento -->
                 <line class="line sub-line" data-category="appartamento" id="line-appartamento-costaadeje"></line>
@@ -44,7 +48,7 @@
                 <line class="line sub-line" data-category="appartamento" id="line-appartamento-loscristianos"></line>
                 <line class="line sub-line" data-category="appartamento" id="line-appartamento-penthouse"></line>
 
-                <!-- Linee Rurale/Glamping -->
+                <!-- Linee Glamping -->
                 <line class="line sub-line" data-category="rurale" id="line-rurale-cueva"></line>
                 <line class="line sub-line" data-category="rurale" id="line-rurale-dome"></line>
                 <line class="line sub-line" data-category="rurale" id="line-rurale-hotelrural"></line>
@@ -53,7 +57,9 @@
                 <!-- Linee Surf House -->
                 <line class="line sub-line" data-category="surfhouse" id="line-surfhouse-luxury"></line>
                 <line class="line sub-line" data-category="surfhouse" id="line-surfhouse-rurale"></line>
-                <line class="line sub-line" data-category="surfhouse" id="line-surfhouse-ostello"></line>
+
+                <!-- Linee Ostello -->
+                <line class="line sub-line" data-category="ostello" id="line-ostello-banana"></line>
 
                 <!-- Linee Coliving -->
                 <line class="line sub-line" data-category="coliving" id="line-coliving-blueparadise"></line>
@@ -68,10 +74,13 @@
                 <span class="click-hint">Clicca per esplorare</span>
             </div>
 
-            <!-- Sotto-categorie (Livello 2) -->
+            <!-- Sotto-categorie (Livello 2) - 7 nodi -->
             <div class="primary-nodes">
                 <div class="node node-primary villa-node" id="node-villa" data-category="villa">
-                    <span>Villa<br>Casa Rurale</span>
+                    <span>Villa</span>
+                </div>
+                <div class="node node-primary casarurale-node" id="node-casarurale" data-category="casarurale">
+                    <span>Rurale</span>
                 </div>
                 <div class="node node-primary appartamento-node" id="node-appartamento" data-category="appartamento">
                     <span>Appartamento</span>
@@ -82,9 +91,44 @@
                 <div class="node node-primary surfhouse-node" id="node-surfhouse" data-category="surfhouse">
                     <span>Surf<br>House</span>
                 </div>
+                <div class="node node-primary ostello-node" id="node-ostello" data-category="ostello">
+                    <span>Ostello</span>
+                </div>
                 <div class="node node-primary coliving-node" id="node-coliving" data-category="coliving">
                     <span>Coliving<br>Coworking</span>
                 </div>
+            </div>
+
+            <!-- Elementi Livello 3 - VILLA -->
+            <div class="sub-nodes" data-parent="villa">
+                <a href="alloggio/finca-la-fortaleza.html" class="node node-secondary item-fortaleza" id="node-fortaleza">
+                    <span>La<br>Fortaleza</span>
+                </a>
+                <a href="alloggio/villa-paraiso.html" class="node node-secondary item-paraiso" id="node-paraiso">
+                    <span>Villa<br>Paraiso</span>
+                </a>
+                <a href="alloggio/villa-duque.html" class="node node-secondary item-duque" id="node-duque">
+                    <span>Villa<br>Duque</span>
+                </a>
+                <a href="alloggio/beach-house.html" class="node node-secondary item-beachhouse" id="node-beachhouse">
+                    <span>Beach<br>House</span>
+                </a>
+            </div>
+
+            <!-- Elementi Livello 3 - CASA RURALE (Rurale) -->
+            <div class="sub-nodes" data-parent="casarurale">
+                <a href="alloggio/finca-ciguaña.html" class="node node-secondary item-ciguana" id="node-ciguana">
+                    <span>Finca<br>Ciguaña</span>
+                </a>
+                <a href="alloggio/finca-paraiso.html" class="node node-secondary item-fincaparaiso" id="node-fincaparaiso">
+                    <span>Finca<br>Paraiso</span>
+                </a>
+                <a href="alloggio/casa-atogo.html" class="node node-secondary item-atogo" id="node-atogo">
+                    <span>Casa<br>Atogo</span>
+                </a>
+                <a href="alloggio/casa-taucho.html" class="node node-secondary item-taucho" id="node-taucho">
+                    <span>Casa<br>Taucho</span>
+                </a>
             </div>
 
             <!-- Elementi Livello 3 - APPARTAMENTO -->
@@ -106,7 +150,7 @@
                 </a>
             </div>
 
-            <!-- Elementi Livello 3 - RURALE GLAMPING -->
+            <!-- Elementi Livello 3 - GLAMPING -->
             <div class="sub-nodes" data-parent="rurale">
                 <a href="alloggio/cueva-san-miguel.html" class="node node-secondary item-cueva" id="node-cueva">
                     <span>Cueva<br>San Miguel</span>
@@ -130,8 +174,12 @@
                 <a href="alloggio/surf-house-rurale.html" class="node node-secondary item-surfhouse-rurale" id="node-surfhouse-rurale">
                     <span>Surf House<br>Rurale</span>
                 </a>
-                <a href="alloggio/banana-surf-hostel.html" class="node node-secondary item-surfhouse-ostello" id="node-surfhouse-ostello">
-                    <span>Ostello</span>
+            </div>
+
+            <!-- Elementi Livello 3 - OSTELLO -->
+            <div class="sub-nodes" data-parent="ostello">
+                <a href="alloggio/banana-surf-hostel.html" class="node node-secondary item-banana" id="node-banana">
+                    <span>Banana<br>Surf Hostel</span>
                 </a>
             </div>
 
@@ -142,34 +190,6 @@
                 </a>
                 <a href="alloggio/cactus-coliving.html" class="node node-secondary item-cactus" id="node-cactus">
                     <span>Cactus<br>Coliving</span>
-                </a>
-            </div>
-
-            <!-- Elementi Livello 3 - VILLA / CASA RURALE -->
-            <div class="sub-nodes" data-parent="villa">
-                <a href="alloggio/finca-la-fortaleza.html" class="node node-secondary item-fortaleza" id="node-fortaleza">
-                    <span>La<br>Fortaleza</span>
-                </a>
-                <a href="alloggio/villa-paraiso.html" class="node node-secondary item-paraiso" id="node-paraiso">
-                    <span>Villa<br>Paraiso</span>
-                </a>
-                <a href="alloggio/villa-duque.html" class="node node-secondary item-duque" id="node-duque">
-                    <span>Villa<br>Duque</span>
-                </a>
-                <a href="alloggio/beach-house.html" class="node node-secondary item-beachhouse" id="node-beachhouse">
-                    <span>Beach<br>House</span>
-                </a>
-                <a href="alloggio/finca-ciguaña.html" class="node node-secondary item-ciguana" id="node-ciguana">
-                    <span>Finca<br>Ciguaña</span>
-                </a>
-                <a href="alloggio/finca-paraiso.html" class="node node-secondary item-fincaparaiso" id="node-fincaparaiso">
-                    <span>Finca<br>Paraiso</span>
-                </a>
-                <a href="alloggio/casa-atogo.html" class="node node-secondary item-atogo" id="node-atogo">
-                    <span>Casa<br>Atogo</span>
-                </a>
-                <a href="alloggio/casa-taucho.html" class="node node-secondary item-taucho" id="node-taucho">
-                    <span>Casa<br>Taucho</span>
                 </a>
             </div>
 

@@ -52,20 +52,24 @@ const pageLineConfig = {
     alloggio: {
         main: [
             { line: 'line-center-villa', from: 'category-trigger', to: 'node-villa' },
+            { line: 'line-center-casarurale', from: 'category-trigger', to: 'node-casarurale' },
             { line: 'line-center-appartamento', from: 'category-trigger', to: 'node-appartamento' },
             { line: 'line-center-rurale', from: 'category-trigger', to: 'node-rurale' },
             { line: 'line-center-surfhouse', from: 'category-trigger', to: 'node-surfhouse' },
+            { line: 'line-center-ostello', from: 'category-trigger', to: 'node-ostello' },
             { line: 'line-center-coliving', from: 'category-trigger', to: 'node-coliving' }
         ],
         villa: [
             { line: 'line-villa-fortaleza', from: 'node-villa', to: 'node-fortaleza' },
             { line: 'line-villa-paraiso', from: 'node-villa', to: 'node-paraiso' },
             { line: 'line-villa-duque', from: 'node-villa', to: 'node-duque' },
-            { line: 'line-villa-beachhouse', from: 'node-villa', to: 'node-beachhouse' },
-            { line: 'line-villa-ciguana', from: 'node-villa', to: 'node-ciguana' },
-            { line: 'line-villa-fincaparaiso', from: 'node-villa', to: 'node-fincaparaiso' },
-            { line: 'line-villa-atogo', from: 'node-villa', to: 'node-atogo' },
-            { line: 'line-villa-taucho', from: 'node-villa', to: 'node-taucho' }
+            { line: 'line-villa-beachhouse', from: 'node-villa', to: 'node-beachhouse' }
+        ],
+        casarurale: [
+            { line: 'line-casarurale-ciguana', from: 'node-casarurale', to: 'node-ciguana' },
+            { line: 'line-casarurale-fincaparaiso', from: 'node-casarurale', to: 'node-fincaparaiso' },
+            { line: 'line-casarurale-atogo', from: 'node-casarurale', to: 'node-atogo' },
+            { line: 'line-casarurale-taucho', from: 'node-casarurale', to: 'node-taucho' }
         ],
         appartamento: [
             { line: 'line-appartamento-costaadeje', from: 'node-appartamento', to: 'node-costaadeje' },
@@ -82,8 +86,10 @@ const pageLineConfig = {
         ],
         surfhouse: [
             { line: 'line-surfhouse-luxury', from: 'node-surfhouse', to: 'node-surfhouse-luxury' },
-            { line: 'line-surfhouse-rurale', from: 'node-surfhouse', to: 'node-surfhouse-rurale' },
-            { line: 'line-surfhouse-ostello', from: 'node-surfhouse', to: 'node-surfhouse-ostello' }
+            { line: 'line-surfhouse-rurale', from: 'node-surfhouse', to: 'node-surfhouse-rurale' }
+        ],
+        ostello: [
+            { line: 'line-ostello-banana', from: 'node-ostello', to: 'node-banana' }
         ],
         coliving: [
             { line: 'line-coliving-blueparadise', from: 'node-coliving', to: 'node-blueparadise' },
@@ -519,13 +525,19 @@ let mobilePageState = 'categories';
 const pageSubNodesData = {
     alloggio: {
         villa: {
-            name: 'Villa<br>Casa Rurale',
+            name: 'Villa',
             class: 'radial-villa',
             subs: [
                 { id: 'fortaleza', name: 'La Fortaleza', href: 'alloggio/finca-la-fortaleza.html' },
                 { id: 'paraiso', name: 'Villa Paraiso', href: 'alloggio/villa-paraiso.html' },
                 { id: 'duque', name: 'Villa Duque', href: 'alloggio/villa-duque.html' },
-                { id: 'beachhouse', name: 'Beach House', href: 'alloggio/beach-house.html' },
+                { id: 'beachhouse', name: 'Beach House', href: 'alloggio/beach-house.html' }
+            ]
+        },
+        casarurale: {
+            name: 'Rurale',
+            class: 'radial-casarurale',
+            subs: [
                 { id: 'ciguana', name: 'Finca Ciguaña', href: 'alloggio/finca-ciguaña.html' },
                 { id: 'fincaparaiso', name: 'Finca Paraiso', href: 'alloggio/finca-paraiso.html' },
                 { id: 'atogo', name: 'Casa Atogo', href: 'alloggio/casa-atogo.html' },
@@ -558,8 +570,14 @@ const pageSubNodesData = {
             class: 'radial-surfhouse',
             subs: [
                 { id: 'surfhouse-luxury', name: 'Surf House Luxury', href: 'alloggio/surf-house-luxury.html' },
-                { id: 'surfhouse-rurale', name: 'Surf House Rurale', href: 'alloggio/surf-house-rurale.html' },
-                { id: 'surfhouse-ostello', name: 'Ostello', href: 'alloggio/banana-surf-hostel.html' }
+                { id: 'surfhouse-rurale', name: 'Surf House Rurale', href: 'alloggio/surf-house-rurale.html' }
+            ]
+        },
+        ostello: {
+            name: 'Ostello',
+            class: 'radial-ostello',
+            subs: [
+                { id: 'banana', name: 'Banana Surf Hostel', href: 'alloggio/banana-surf-hostel.html' }
             ]
         },
         coliving: {
@@ -884,10 +902,12 @@ function getSubcategoryPositions(page) {
 function getSubcategoryNodes(page) {
     const nodes = {
         alloggio: [
-            { id: 'villa', name: 'Villa y<br>Casa Rural', class: 'mobile-villa' },
+            { id: 'villa', name: 'Villa', class: 'mobile-villa' },
+            { id: 'casarurale', name: 'Rurale', class: 'mobile-casarurale' },
             { id: 'appartamento', name: 'Appartamento', class: 'mobile-appartamento' },
-            { id: 'rurale', name: 'Rurale<br>Glamping', class: 'mobile-rurale' },
+            { id: 'rurale', name: 'Glamping', class: 'mobile-rurale' },
             { id: 'surfhouse', name: 'Surf House', class: 'mobile-surfhouse-alloggio' },
+            { id: 'ostello', name: 'Ostello', class: 'mobile-ostello' },
             { id: 'coliving', name: 'Coliving<br>Coworking', class: 'mobile-coliving' }
         ],
         escursioni: [

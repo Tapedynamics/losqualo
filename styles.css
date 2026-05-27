@@ -515,15 +515,15 @@ header {
 /* ===== PULSANTE INDIETRO ===== */
 .back-btn {
     position: absolute;
-    bottom: 22px;
+    bottom: 8px;
     left: 50%;
     transform: translateX(-50%);
-    padding: 12px 28px;
+    padding: 15px 36px;
     background: white;
     border: 1.5px solid #ddd;
     border-radius: 30px;
     font-family: 'Poppins', sans-serif;
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     font-weight: 500;
     color: var(--text-primary);
     cursor: pointer;
