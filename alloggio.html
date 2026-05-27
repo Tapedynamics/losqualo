@@ -24,7 +24,6 @@
                 <line class="line main-line" id="line-center-villa"></line>
                 <line class="line main-line" id="line-center-casarurale"></line>
                 <line class="line main-line" id="line-center-appartamento"></line>
-                <line class="line main-line" id="line-center-rurale"></line>
                 <line class="line main-line" id="line-center-surfhouse"></line>
                 <line class="line main-line" id="line-center-ostello"></line>
                 <line class="line main-line" id="line-center-coliving"></line>
@@ -35,11 +34,15 @@
                 <line class="line sub-line" data-category="villa" id="line-villa-duque"></line>
                 <line class="line sub-line" data-category="villa" id="line-villa-beachhouse"></line>
 
-                <!-- Linee Rurale (Casa Rurale / Finca) -->
+                <!-- Linee Rurale (Casa Rurale / Finca / Glamping) -->
                 <line class="line sub-line" data-category="casarurale" id="line-casarurale-ciguana"></line>
                 <line class="line sub-line" data-category="casarurale" id="line-casarurale-fincaparaiso"></line>
                 <line class="line sub-line" data-category="casarurale" id="line-casarurale-atogo"></line>
                 <line class="line sub-line" data-category="casarurale" id="line-casarurale-taucho"></line>
+                <line class="line sub-line" data-category="casarurale" id="line-casarurale-cueva"></line>
+                <line class="line sub-line" data-category="casarurale" id="line-casarurale-dome"></line>
+                <line class="line sub-line" data-category="casarurale" id="line-casarurale-hotelrural"></line>
+                <line class="line sub-line" data-category="casarurale" id="line-casarurale-chimiche"></line>
 
                 <!-- Linee Appartamento -->
                 <line class="line sub-line" data-category="appartamento" id="line-appartamento-costaadeje"></line>
@@ -47,12 +50,6 @@
                 <line class="line sub-line" data-category="appartamento" id="line-appartamento-lasamericas"></line>
                 <line class="line sub-line" data-category="appartamento" id="line-appartamento-loscristianos"></line>
                 <line class="line sub-line" data-category="appartamento" id="line-appartamento-penthouse"></line>
-
-                <!-- Linee Glamping -->
-                <line class="line sub-line" data-category="rurale" id="line-rurale-cueva"></line>
-                <line class="line sub-line" data-category="rurale" id="line-rurale-dome"></line>
-                <line class="line sub-line" data-category="rurale" id="line-rurale-hotelrural"></line>
-                <line class="line sub-line" data-category="rurale" id="line-rurale-chimiche"></line>
 
                 <!-- Linee Surf House -->
                 <line class="line sub-line" data-category="surfhouse" id="line-surfhouse-luxury"></line>
@@ -74,7 +71,7 @@
                 <span class="click-hint">Clicca per esplorare</span>
             </div>
 
-            <!-- Sotto-categorie (Livello 2) - 7 nodi -->
+            <!-- Sotto-categorie (Livello 2) - 6 nodi -->
             <div class="primary-nodes">
                 <div class="node node-primary villa-node" id="node-villa" data-category="villa">
                     <span>Villa</span>
@@ -84,9 +81,6 @@
                 </div>
                 <div class="node node-primary appartamento-node" id="node-appartamento" data-category="appartamento">
                     <span>Appartamento</span>
-                </div>
-                <div class="node node-primary rurale-node" id="node-rurale" data-category="rurale">
-                    <span>Glamping</span>
                 </div>
                 <div class="node node-primary surfhouse-node" id="node-surfhouse" data-category="surfhouse">
                     <span>Surf<br>House</span>
@@ -115,7 +109,7 @@
                 </a>
             </div>
 
-            <!-- Elementi Livello 3 - CASA RURALE (Rurale) -->
+            <!-- Elementi Livello 3 - RURALE (Casa Rurale + Finca + Glamping) -->
             <div class="sub-nodes" data-parent="casarurale">
                 <a href="alloggio/finca-ciguaña.html" class="node node-secondary item-ciguana" id="node-ciguana">
                     <span>Finca<br>Ciguaña</span>
@@ -128,6 +122,18 @@
                 </a>
                 <a href="alloggio/casa-taucho.html" class="node node-secondary item-taucho" id="node-taucho">
                     <span>Casa<br>Taucho</span>
+                </a>
+                <a href="alloggio/cueva-san-miguel.html" class="node node-secondary item-cueva" id="node-cueva">
+                    <span>Cueva<br>San Miguel</span>
+                </a>
+                <a href="alloggio/dome-ifonche.html" class="node node-secondary item-dome" id="node-dome">
+                    <span>Dome<br>Experience</span>
+                </a>
+                <a href="alloggio/hotel-rural-arona.html" class="node node-secondary item-hotelrural" id="node-hotelrural">
+                    <span>Hotel<br>Rural</span>
+                </a>
+                <a href="alloggio/finca-chimiche.html" class="node node-secondary item-chimiche" id="node-chimiche">
+                    <span>Finca<br>Chimiche</span>
                 </a>
             </div>
 
@@ -147,22 +153,6 @@
                 </a>
                 <a href="alloggio/penthouse.html" class="node node-secondary item-penthouse" id="node-penthouse">
                     <span>Penthouse</span>
-                </a>
-            </div>
-
-            <!-- Elementi Livello 3 - GLAMPING -->
-            <div class="sub-nodes" data-parent="rurale">
-                <a href="alloggio/cueva-san-miguel.html" class="node node-secondary item-cueva" id="node-cueva">
-                    <span>Cueva<br>San Miguel</span>
-                </a>
-                <a href="alloggio/dome-ifonche.html" class="node node-secondary item-dome" id="node-dome">
-                    <span>Dome<br>Experience</span>
-                </a>
-                <a href="alloggio/hotel-rural-arona.html" class="node node-secondary item-hotelrural" id="node-hotelrural">
-                    <span>Hotel<br>Rural</span>
-                </a>
-                <a href="alloggio/finca-chimiche.html" class="node node-secondary item-chimiche" id="node-chimiche">
-                    <span>Finca<br>Chimiche</span>
                 </a>
             </div>
 

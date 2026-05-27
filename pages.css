@@ -418,11 +418,10 @@ header {
    ============================================= */
 
 /* Sotto-categorie (Livello 2) - 5 nodi pentagonali clockwise da Villa */
-/* 7 nodi primari alloggio: stessa palette rosa, solo posizione cambia */
+/* 6 nodi primari alloggio: stessa palette rosa, solo posizione cambia */
 .page-alloggio .villa-node,
 .page-alloggio .casarurale-node,
 .page-alloggio .appartamento-node,
-.page-alloggio .rurale-node,
 .page-alloggio .surfhouse-node,
 .page-alloggio .ostello-node,
 .page-alloggio .coliving-node {
@@ -430,14 +429,13 @@ header {
     color: var(--text-primary);
 }
 
-/* Eptagono attorno al centro (raggio ~38%) */
-.page-alloggio .villa-node       { top: 12%; left: 50%; }
-.page-alloggio .casarurale-node  { top: 26%; left: 80%; }
-.page-alloggio .appartamento-node{ top: 58%; left: 87%; }
-.page-alloggio .rurale-node      { top: 84%; left: 66%; }
-.page-alloggio .surfhouse-node   { top: 84%; left: 34%; }
-.page-alloggio .ostello-node     { top: 58%; left: 13%; }
-.page-alloggio .coliving-node    { top: 26%; left: 20%; }
+/* Esagono attorno al centro (raggio ~38%) */
+.page-alloggio .villa-node       { top: 12%; left: 50%;   }
+.page-alloggio .casarurale-node  { top: 31%; left: 82.9%; }
+.page-alloggio .appartamento-node{ top: 69%; left: 82.9%; }
+.page-alloggio .surfhouse-node   { top: 88%; left: 50%;   }
+.page-alloggio .ostello-node     { top: 69%; left: 17.1%; }
+.page-alloggio .coliving-node    { top: 31%; left: 17.1%; }
 
 /* Elementi APPARTAMENTO */
 .page-alloggio .item-alcala {
@@ -1420,7 +1418,6 @@ header {
     .mobile-page-map .mobile-villa,
     .mobile-page-map .mobile-casarurale,
     .mobile-page-map .mobile-appartamento,
-    .mobile-page-map .mobile-rurale,
     .mobile-page-map .mobile-surfhouse-alloggio,
     .mobile-page-map .mobile-ostello,
     .mobile-page-map .mobile-coliving {

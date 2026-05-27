@@ -54,7 +54,6 @@ const pageLineConfig = {
             { line: 'line-center-villa', from: 'category-trigger', to: 'node-villa' },
             { line: 'line-center-casarurale', from: 'category-trigger', to: 'node-casarurale' },
             { line: 'line-center-appartamento', from: 'category-trigger', to: 'node-appartamento' },
-            { line: 'line-center-rurale', from: 'category-trigger', to: 'node-rurale' },
             { line: 'line-center-surfhouse', from: 'category-trigger', to: 'node-surfhouse' },
             { line: 'line-center-ostello', from: 'category-trigger', to: 'node-ostello' },
             { line: 'line-center-coliving', from: 'category-trigger', to: 'node-coliving' }
@@ -69,7 +68,11 @@ const pageLineConfig = {
             { line: 'line-casarurale-ciguana', from: 'node-casarurale', to: 'node-ciguana' },
             { line: 'line-casarurale-fincaparaiso', from: 'node-casarurale', to: 'node-fincaparaiso' },
             { line: 'line-casarurale-atogo', from: 'node-casarurale', to: 'node-atogo' },
-            { line: 'line-casarurale-taucho', from: 'node-casarurale', to: 'node-taucho' }
+            { line: 'line-casarurale-taucho', from: 'node-casarurale', to: 'node-taucho' },
+            { line: 'line-casarurale-cueva', from: 'node-casarurale', to: 'node-cueva' },
+            { line: 'line-casarurale-dome', from: 'node-casarurale', to: 'node-dome' },
+            { line: 'line-casarurale-hotelrural', from: 'node-casarurale', to: 'node-hotelrural' },
+            { line: 'line-casarurale-chimiche', from: 'node-casarurale', to: 'node-chimiche' }
         ],
         appartamento: [
             { line: 'line-appartamento-costaadeje', from: 'node-appartamento', to: 'node-costaadeje' },
@@ -77,12 +80,6 @@ const pageLineConfig = {
             { line: 'line-appartamento-lasamericas', from: 'node-appartamento', to: 'node-lasamericas' },
             { line: 'line-appartamento-loscristianos', from: 'node-appartamento', to: 'node-loscristianos' },
             { line: 'line-appartamento-penthouse', from: 'node-appartamento', to: 'node-penthouse' }
-        ],
-        rurale: [
-            { line: 'line-rurale-cueva', from: 'node-rurale', to: 'node-cueva' },
-            { line: 'line-rurale-dome', from: 'node-rurale', to: 'node-dome' },
-            { line: 'line-rurale-hotelrural', from: 'node-rurale', to: 'node-hotelrural' },
-            { line: 'line-rurale-chimiche', from: 'node-rurale', to: 'node-chimiche' }
         ],
         surfhouse: [
             { line: 'line-surfhouse-luxury', from: 'node-surfhouse', to: 'node-surfhouse-luxury' },
@@ -541,7 +538,11 @@ const pageSubNodesData = {
                 { id: 'ciguana', name: 'Finca Ciguaña', href: 'alloggio/finca-ciguaña.html' },
                 { id: 'fincaparaiso', name: 'Finca Paraiso', href: 'alloggio/finca-paraiso.html' },
                 { id: 'atogo', name: 'Casa Atogo', href: 'alloggio/casa-atogo.html' },
-                { id: 'taucho', name: 'Casa Taucho', href: 'alloggio/casa-taucho.html' }
+                { id: 'taucho', name: 'Casa Taucho', href: 'alloggio/casa-taucho.html' },
+                { id: 'cueva', name: 'Cueva San Miguel', href: 'alloggio/cueva-san-miguel.html' },
+                { id: 'dome', name: 'Dome Experience', href: 'alloggio/dome-ifonche.html' },
+                { id: 'hotelrural', name: 'Hotel Rural', href: 'alloggio/hotel-rural-arona.html' },
+                { id: 'chimiche', name: 'Finca Chimiche', href: 'alloggio/finca-chimiche.html' }
             ]
         },
         appartamento: {
@@ -553,16 +554,6 @@ const pageSubNodesData = {
                 { id: 'lasamericas', name: 'Studio Las Americas', href: 'alloggio/studio-las-americas.html' },
                 { id: 'loscristianos', name: 'Studio Los Cristianos', href: 'alloggio/studio-los-cristianos.html' },
                 { id: 'penthouse', name: 'Penthouse', href: 'alloggio/penthouse.html' }
-            ]
-        },
-        rurale: {
-            name: 'Glamping',
-            class: 'radial-rurale',
-            subs: [
-                { id: 'cueva', name: 'Cueva San Miguel', href: 'alloggio/cueva-san-miguel.html' },
-                { id: 'dome', name: 'Dome Experience', href: 'alloggio/dome-ifonche.html' },
-                { id: 'hotelrural', name: 'Hotel Rural', href: 'alloggio/hotel-rural-arona.html' },
-                { id: 'chimiche', name: 'Finca Chimiche', href: 'alloggio/finca-chimiche.html' }
             ]
         },
         surfhouse: {
@@ -901,7 +892,6 @@ function getSubcategoryPositions(page) {
         case 'agency':
             return positions4;
         case 'alloggio':
-            return positions7;
         case 'escursioni':
         case 'surfing':
             return positions6;
@@ -916,7 +906,6 @@ function getSubcategoryNodes(page) {
             { id: 'villa', name: 'Villa', class: 'mobile-villa' },
             { id: 'casarurale', name: 'Rurale', class: 'mobile-casarurale' },
             { id: 'appartamento', name: 'Appartamento', class: 'mobile-appartamento' },
-            { id: 'rurale', name: 'Glamping', class: 'mobile-rurale' },
             { id: 'surfhouse', name: 'Surf House', class: 'mobile-surfhouse-alloggio' },
             { id: 'ostello', name: 'Ostello', class: 'mobile-ostello' },
             { id: 'coliving', name: 'Coliving<br>Coworking', class: 'mobile-coliving' }
