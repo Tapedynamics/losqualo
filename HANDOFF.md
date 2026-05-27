@@ -1,142 +1,86 @@
-# HANDOFF — Lo Squalo Tenerife (review 22 apr applicata)
+# HANDOFF — Lo Squalo Tenerife
 
-## Stato
-- Data: 2026-04-28
-- Branch: `main` (NON committato — solo modifiche locali)
-- Live: `https://losqualo.netlify.app/` (versione precedente — push pending)
+## Stato Sessione
+- Data: 2026-05-27, ~13:30
+- Branch git: `main`
+- Ultimo commit: `a8a3af5` — "feat: review Squalo 27mag — Cactus Coliving + Penthouse rename + Tenerife Stars + galleria"
+- **Committato E pushato** su `github.com/Tapedynamics/losqualo.git`. Netlify ha ribuildato: deploy live verificato su `https://losqualo.netlify.app/`.
 
-## Cosa è stato applicato
+## File Modificati / Creati
+Tutti in `C:/Users/siusk/OneDrive/Desktop/Tape-Dynamics/_CLIENTI/losqualotenerife/`:
 
-Review integrale dello Squalo (Google Doc del 22 apr) applicata in 12 fasi.
+Modificati:
+- `alloggio.html` — nodo Cactus aggiunto, label Penthouse pulito, link → `penthouse.html`
+- `escursioni.html` — nodo Stargazing riabilitato e linkato a Tenerife Stars
+- `pages.js` — coliving subs (+cactus), penthouse name/href, stargazing name/href
+- `pages.css` — `.item-cactus` posizione/colore
+- `alloggio/villa-paraiso.html` — galleria spostata sotto la sezione caratteristiche
+- `alloggio/finca-la-fortaleza.html` — galleria spostata sotto la sezione caratteristiche
 
-### F1 — Quick wins UI globali ✓
-- Copyright `2024` → `dal 2009` su tutti i 38 file HTML
-- "X Chiudi" → "← Indietro" globale (`pages.js`)
-- Linee SVG curve home + livello 2 ora terminano sul **bordo del cerchio** (non passano sopra ai nodi). Logica in `script.js` + `pages.js` con `getElementCenter` esteso per radius
-- Back-nav: dalle pagine livello 2 il "Home" → `index.html?explore=1` apre la mappa **già esplosa**
+Creati:
+- `alloggio/cactus-coliving.html` — scheda Cactus Coliving (scrape cactuscoliving.com)
+- `escursioni/tenerife-stars.html` — scheda Tenerife Stars con dettagli PDF
 
-### F2 — Eliminazioni e rinomine ✓
-- Alloggio: `Villa/Finca` → `Villa y Casa Rural`
-- Alloggio: rimosso Villa Torviscas + Villa Costa Adeje (nodi + linee SVG + mobile data)
-- Alloggio: `Casa Rural Taucio` → `Casa Rural Taucho`
-- Alloggio: `La Correa del Almendro` → `Hotel Rural Arona` (in `hotel-rural-arona.html`)
-- Surfing: rimosso El Médano (categoria intera + mobile data)
-- Surfing: school → solo Ika Ika (rimosso Kontraola, K16, Franz, Vil's)
-- Escursioni: rimossa categoria Sport (vuotata, Diving/Surf spostati in Oceano, kite/wind/fishing pure)
-- Escursioni: rimosso Sottomarino in Oceano
-- Escursioni: rimossi Bike, Hiking, Trekking in Terra (Stargazing rimasto)
+Rinominati:
+- `alloggio/penthouse-los-cristianos.html` → `alloggio/penthouse.html` (rename con `git mv`, H1/title/alt/WA aggiornati, hero copertina = drive-05.jpg = 5ª foto galleria come da PDF)
 
-### F3 — Link diretti / cortocircuiti ✓
-- `Calle Mexico` click → `https://t.mtrbio.com/callemexicotenerife` (link diretto)
-- `School` click → diretto Ika Ika
-- `Surf Bar Franchise` click → diretto presentazione (no doppio nodo)
-- `Surf` in Oceano → `surfing/ika-ika.html` (stesso percorso di Surf School)
-- Mobile: aggiunto supporto `href` diretto sui primary nodes (`createMobilePageMap` ora crea `<a>` se `node.href` presente, `initMobilePageEvents` skippa il popup radial in quel caso)
+Non committato (escluso volutamente): `.claude/settings.local.json`.
 
-### F4 — Home restyling ✓
-- "Tenerife Experience": font ingrandito 1.25rem, weight 700, letter-spacing 4px (uniforme con logo Lo Squalo)
-- "Tocca per esplorare" reso **bottone vero** (background blu Squalo, padding, animazione pulse)
-- Silhouette Tenerife: `mix-blend-mode: multiply` per fondere eventuale sfondo bianco con il bg pagina
-- Linee SVG: già al bordo cerchio (F1)
-- Nuovo bottone **Brand** floating in basso a destra (homepage e in `index.html`) → `brand.html`
-- Eventi pagina semplificata: 2 card (Servizi Privati + Next Event), nota su altre cat in fase di ridefinizione
+## Completato — PDF 27 mag `AGGIORNAMENTI SITO TENERIFE EXPERIENCE.pdf`
+Applicate le sezioni che non richiedono Google Drive:
 
-### F5 — Scheda Alessandro ✓
-- `alessandro.html` riscritta come scheda statica (no più mind-map sub-categorie)
-- Bio integrale Squalo + foto profilo (placeholder "AB" con fallback a `assets/alessandro.jpg`)
-- Icone social IG `@alessandrobiagini_losqualo` + FB + bottone WhatsApp `34616794190`
+- **Sez.3 Coliving / Coworking** — aggiunta scheda Cactus Coliving distinta da Blue Paradise (foto/community/yoga/3 sedi: Valle San Lorenzo + Adeje + La Gomera; prezzi 686-1058€/mese, sconti 28+ e 60+ giorni). Nodo SVG + line + sub-node nel mind-map alloggio.
+- **Sez.4-5 Banana Surf Hostel** — già LIVE dal 21 mag (commit `0b83d42`).
+- **Sez.6 Galleria sotto tab caratteristiche** — verificate 17 schede target (Villa/Casa Rurale + Rurale/Glamping + Appartamento). 14 erano già con gallery in posizione corretta (tra DC1 e DC2 o subito dopo l'unico DC); spostata in `villa-paraiso.html` e `finca-la-fortaleza.html` dove era buried al fondo. Solo riordino DOM, niente foto nuove.
+- **Sez.9 Penthouse Los Cristianos → Penthouse** — file rinominato, H1/title/alt/WhatsApp aggiornati, hero = 5ª foto galleria come da PDF, link in alloggio.html + pages.js aggiornati.
+- **Sez.10+11 Tenerife Stars** — scheda nuova con i dettagli PDF (Roques de García 45-60 min + menu base panino pollo/yogurt/frutta/dolce/acqua/succo + varianti vegetariano/vegano/bambini + bagno-caffetteria fino 19:30 + no alcolici Parco). Sito ufficiale `tenerifestars.com`. Nodo stargazing in `escursioni.html` riabilitato (rimosso `disabled-node`, convertito da `<div>` ad `<a>`, label "Star<br>Gazing" → "Tenerife<br>Stars"). `pages.js` sub voce aggiornata.
 
-### F6 — Surf House + B2B + Camp + Spots ✓
-- **NUOVA** `surfing/spots.html` — 6 surf spot Tenerife sud con tip Lo Squalo (riferimento palmbeach-tenerife.netlify.app/spots)
-- **NUOVA** `surfing/surf-house-b2b.html` — scheda B2B per organizzatori ritiri/surf camp/gruppi (delegare logistica/location/coordinamento)
-- **NUOVA** `surfing/surf-camp.html` — pacchetto Lo Squalo (alloggio + lezioni Ika Ika), 3 stay options
-- **RISCRITTA** `alloggio/surf-house-luxury.html` come **hub 3 ville** (Finca La Fortaleza, Villa Playa Paraíso, Villa Duque) cliccabili che portano alle schede individuali
+Verifica live post-deploy (curl) OK:
+- `https://losqualo.netlify.app/alloggio/cactus-coliving.html` → 200
+- `https://losqualo.netlify.app/alloggio/penthouse.html` → 200 (title/H1 = "Penthouse")
+- `https://losqualo.netlify.app/alloggio/penthouse-los-cristianos.html` → 404 (corretto)
+- `https://losqualo.netlify.app/escursioni/tenerife-stars.html` → 200 (title/H1 = "Tenerife Stars")
+- `https://losqualo.netlify.app/alloggio.html` → contiene `node-cactus` + `node-penthouse`
+- `https://losqualo.netlify.app/escursioni.html` → `node-stargazing` linkato a tenerife-stars
 
-### F7 — Ostello + Penthouse + Appartamento contrasto ✓
-- Ostello (Gota de Mar): nodo cliccabile (era `disabled-node`), nuova classe `.unavailable-node` (semi-trasparente con badge "i"), banner giallo in `gota-de-mar.html` "non disponibile, lascia messaggio per ricerca fuori network"
-- Appartamento nodo: contrasto fixato (background più saturo `#d4869b → #ad6376`, color white, font-weight 700, text-shadow)
-- Penthouse Los Cristianos: 8 foto reali da Drive caricate, hero + gallery aggiornati
+## In Corso / Rimasto da Fare
+**Sezioni PDF 27 mag che richiedono Google Drive — NON applicate**:
 
-### F8 — Materiale Drive ✓
-Foto scaricate da Google Drive e ottimizzate:
-- **Penthouse**: 8 foto in `alloggio/foto/penthouse-los-cristianos/drive-01..08.jpg`
-- **Buggy**: 9 foto nuove in `escursioni/foto/buggy/drive-01..09.jpg`
-- **Yacht** (Privato): 4 fun + 4 luxury in `escursioni/foto/yacht/`
-- **Catamarano**: 6 foto in `escursioni/foto/catamarano/drive-01..06.jpg`
-- **Barco sin Pilota**: 2 webp in `escursioni/foto/barco-sin-pilota/`
-- **Teide Jeep**: cartella Drive contiene shortcut (non scaricabili) → uso le 8 foto preesistenti
-- **Ottimizzazione globale**: 74 file >2MB compressi (max 1920px, quality 78) — risparmiati ~422MB. Risolve "foto Casa Rural Atogo lenta"
+- **Sez.7 Foto e servizi extra** — aggiungere foto disponibili e integrare servizi mancanti. Da scaricare foto dalle 3 cartelle Drive citate nel PDF 20 mag.
+- **Sez.8 Costa Adeje** — valorizzare foto piscina (copertina = piscina). Foto da Drive. La scheda costa-adeje.html attualmente NON ha gallery-section.
+- **Sez.6 Foto galleria** — la posizione DOM è ora corretta su tutte le 17 schede, ma la richiesta del cliente di gallerie "più ricche" su Villa/Rurale/Appartamento richiede foto extra dal Drive.
 
-### F9 — Buggy contenuti ✓
-- Hero foto sostituito (drive-02.jpg)
-- Galleria con 9 foto Drive
-- Aggiunto `Off-road`, `Stargazing`, `Sunset` come tag/sezioni
-- 3 formule (Sunset / Off-Road / Stargazing) con descrizioni
-- Riferimento `active-tenerife.com` aggiunto
+Decisioni aperte (eredità sessioni precedenti, non risposte da Daniele):
+1. `alloggio/gota-de-mar.html` — file orfano (nessun link lo punta), NON eliminato per regola anti-distruttivi. Decidere se cancellarlo.
+2. Foto Drive (Sez.7/8): scaricare via gdrive MCP o le carica Daniele a mano?
 
-### F10 — Categoria "Privato" in Oceano ✓
-- Squalo voleva "Privato dentro Oceano". Implementato come: macro Privato eliminata, i 3 nodi (Yacht, Barco, Catamarano) spostati come item dentro la categoria Oceano (insieme alle altre voci)
-- **NUOVE PAGINE**:
-  - `escursioni/yacht.html` (con 2 opzioni: Fun Yacht + Luxury Yacht, foto Drive)
-  - `escursioni/barco-sin-pilota.html` (senza patente)
-  - `escursioni/catamarano.html` (4 itinerari)
-- Linkate dalla mind-map Oceano in `escursioni.html`
+## Decisioni Prese
+- **Rename Penthouse via `git mv`** — preserva history, evita duplicazione. File precedente non esiste più (404 confermato).
+- **`foto/penthouse-los-cristianos/` lasciato come nome cartella** — non rinominato (cartella interna, user non la vede), per non rompere 9 reference.
+- **Hero Penthouse** — `drive-05.jpg` come hero (PDF: "copertina = 5ª foto galleria"). Galleria mantiene drive-01..08 nello stesso ordine.
+- **Cactus posizionato a top:48% left:6%** in mappa alloggio (sotto Blue Paradise top:22% left:6%, vicino al nodo coliving al centro top:34% left:16%).
+- **Tenerife Stars sotto categoria "Terra" (Teide)**, non "Sky" (aria con parapente/paratrike). Il PDF dice "Escursioni e Attività > Sky / Stelle / Stargazing" ma nel sito esistente il nodo stargazing era già sotto Teide come disabled — riabilitato dove era.
+- **Galleria spostata SOLO in villa-paraiso e finca-la-fortaleza** — analisi struttura: 14 schede su 17 avevano già la gallery nella posizione corretta (subito dopo le sezioni descrittive). Costa Adeje non ha gallery → niente da spostare.
 
-### F11 — Polish ✓
-- Colore `--alloggio-rurale` cambiato da `#CFA9A1` (marroncino) a `#DCB0BA` (rosa uniforme)
-- Colori Surfing uniformati: `surfbar`/`callemexico`/`elmedano` ora tutti `#5FA6C6` (era diversi)
-- 74 foto >2MB ottimizzate (parte F8)
+## Problemi Noti
+- `alloggio/gota-de-mar.html` orfano (vedi decisione aperta #1) + cartella `foto/penthouse-los-cristianos/` mantenuta col vecchio nome (non visibile all'utente, scelta intenzionale).
+- Costa Adeje (`alloggio/costa-adeje.html`) non ha gallery-section. Quando arriveranno le foto da Drive (Sez.8) andrà aggiunta.
+- Tag balance verificato su tutti i file modificati (div/section paired). QA visiva via Playwright/HTTP server non eseguita (server locale negato dall'auto mode); verifica fatta via curl post-deploy.
+- Nessun test automatico nel progetto (sito statico).
 
-### F12 — Eventi/Food&Drink ✓
-- Eventi: 2 card (Servizi Privati + Next Event) + nota su ridefinizione
-- Food&Drink: nessuna modifica, in standby come da brief
-
-## File creati / modificati
-
-### Nuovi file
-- `surfing/spots.html`
-- `surfing/surf-house-b2b.html`
-- `surfing/surf-camp.html`
-- `escursioni/yacht.html`
-- `escursioni/barco-sin-pilota.html`
-- `escursioni/catamarano.html`
-- `brand.html`
-- `REVIEW_22apr.md` (referenza istruzioni cliente)
-
-### Riscritte completamente
-- `alessandro.html` (mind-map → scheda statica)
-- `eventi.html` (4 sub-cat → 2 card)
-- `alloggio/surf-house-luxury.html` (single villa → hub 3 ville)
-
-### Modificati significativamente
-- `index.html` (CTA bottone, brand button, ?explore=1)
-- `alloggio.html` (rimossi 2 nodi, rinomina villa, ostello cliccabile)
-- `escursioni.html` (rimossa cat Sport + Privato, migrazione nodi a Oceano, aggiunti yacht/barco/catamarano)
-- `surfing.html` (rimosso El Médano, school+callemexico+surfbar diretti)
-- `script.js` (drawCurve bordo cerchio, ?explore=1 gestito)
-- `pages.js` (drawCurve bordo cerchio, riconfigurazione completa per surfing/escursioni, supporto href su primary nodes mobile)
-- `styles.css` (Tenerife font, click-hint button, brand button, .unavailable-node, colori uniformati)
-- `pages.css` (appartamento contrasto)
-
-## Foto scaricate (~31 nuove, totale ~10MB)
-Vedi F8.
-
-## Da fare (NON applicato in questa sessione)
-
-- **Push su GitHub** — modifiche solo locali, da committare
-- **Asset Alessandro foto profilo** — il fallback "AB" funziona, ma serve `assets/alessandro.jpg` reale (estrarre da IG/FB)
-- **Quad foto homepage**: Squalo dice "non quella con le ragazze sedute per terra, ma quella con il gruppo SUI quad" — verificare quale è e sostituire (non identificata in questa sessione)
-- **Parapendio gallery**: foto in volo specifiche (Drive non listato in questa sessione)
-- **Paratrike gallery**: foto con mare/panorama
-- **Surf in Oceano**: confermare che il flusso "click Surf in Oceano → Ika Ika" sia coerente con cosa Squalo voleva
-- **Agency**: Squalo ha detto "click Agency apre `t-sml.mtrbio.com/.../losqualoagency`" — soluzione adottata: lasciato click home → agency.html (con tutta la mind-map agency interna). Il link mtrbio non è ancora cablato. Da rivedere con lui (potremmo aggiungere un nodo "Smartlink" prominente in agency.html, o sostituire del tutto il click home — decisione su entrambe le opzioni rimandata)
-- **Logo grafico header** — Squalo dice "il tuo logo nel colore attuale". Lasciato testo "LO SQUALO" in colore `var(--blu-squalo)`. Per upgrade serve un asset svg/png logo
-
-## Comandi per riprendere
+## Comandi per Riprendere
 ```bash
 cd "C:/Users/siusk/OneDrive/Desktop/Tape-Dynamics/_CLIENTI/losqualotenerife"
 git status
-git diff --stat
-# Per push:
-# git add -A && git commit -m "feat: review 22apr Squalo applicata" && git push
+git log --oneline -5
+
+# QA visiva locale (Playwright è in node_modules root del workspace):
+python -m http.server 8899 --bind 127.0.0.1   # server statico
+# poi screenshot via script Playwright puntando a http://127.0.0.1:8899/
+
+# Deploy: il repo è collegato a Netlify via GitHub.
+# git push origin main  → Netlify ribuilda in automatico.
+# Verifica post-deploy:
+curl -s "https://losqualo.netlify.app/?cb=$(date +%s)" | grep -oE '<title>[^<]+</title>'
 ```
+Nessun build step / npm install: sito statico HTML+CSS+JS vanilla, zero dipendenze.
