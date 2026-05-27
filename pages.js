@@ -86,7 +86,8 @@ const pageLineConfig = {
             { line: 'line-surfhouse-ostello', from: 'node-surfhouse', to: 'node-surfhouse-ostello' }
         ],
         coliving: [
-            { line: 'line-coliving-blueparadise', from: 'node-coliving', to: 'node-blueparadise' }
+            { line: 'line-coliving-blueparadise', from: 'node-coliving', to: 'node-blueparadise' },
+            { line: 'line-coliving-cactus', from: 'node-coliving', to: 'node-cactus' }
         ]
     },
     escursioni: {
@@ -539,7 +540,7 @@ const pageSubNodesData = {
                 { id: 'alcala', name: 'Alcala', href: 'alloggio/alcala.html' },
                 { id: 'lasamericas', name: 'Studio Las Americas', href: 'alloggio/studio-las-americas.html' },
                 { id: 'loscristianos', name: 'Studio Los Cristianos', href: 'alloggio/studio-los-cristianos.html' },
-                { id: 'penthouse', name: 'Penthouse Los Cristianos', href: 'alloggio/penthouse-los-cristianos.html' }
+                { id: 'penthouse', name: 'Penthouse', href: 'alloggio/penthouse.html' }
             ]
         },
         rurale: {
@@ -565,7 +566,8 @@ const pageSubNodesData = {
             name: 'Coliving<br>Coworking',
             class: 'radial-coliving',
             subs: [
-                { id: 'blueparadise', name: 'Blue Paradise', href: 'alloggio/coliving-coworking.html' }
+                { id: 'blueparadise', name: 'Blue Paradise', href: 'alloggio/coliving-coworking.html' },
+                { id: 'cactus', name: 'Cactus Coliving', href: 'alloggio/cactus-coliving.html' }
             ]
         }
     },
@@ -577,7 +579,7 @@ const pageSubNodesData = {
                 { id: 'jeep', name: 'Jeep Experience', href: 'escursioni/jeep-experience.html' },
                 { id: 'quad', name: 'Quad', href: 'escursioni/quad.html' },
                 { id: 'buggy', name: 'Buggy', href: 'escursioni/buggy.html' },
-                { id: 'stargazing', name: 'Stargazing', href: '#', disabled: true }
+                { id: 'stargazing', name: 'Tenerife Stars', href: 'escursioni/tenerife-stars.html' }
             ]
         },
         oceano: {

@@ -630,6 +630,13 @@ header {
     left: 6%;
 }
 
+.page-alloggio .item-cactus {
+    background: linear-gradient(145deg, var(--alloggio-ostello), #c99ea8);
+    color: var(--text-primary);
+    top: 48%;
+    left: 4%;
+}
+
 /* =============================================
    PAGINA ESCURSIONI - Posizioni e Colori
    ============================================= */
