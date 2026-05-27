@@ -168,13 +168,13 @@ header {
     display: none;
 }
 
-/* Pulsante indietro - in basso, centrato (coerente con la home) */
+/* Pulsante indietro - sotto al cerchio dei prodotti (lascia spazio al radial) */
 .page-map .back-btn {
     opacity: 1;
     pointer-events: auto;
     transition: opacity 0.3s ease;
     top: auto;
-    bottom: 8px;
+    bottom: -50px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 20;
