@@ -34,7 +34,7 @@
             position: relative;
             width: min(460px, 88vw);
             height: min(460px, 88vw);
-            margin: 88px auto 0;
+            margin: 40px auto 0;
         }
 
         .brand-radial-center {
@@ -44,9 +44,6 @@
             transform: translate(-50%, -50%);
             width: 38%;
             height: 38%;
-            border-radius: 50%;
-            background: white;
-            box-shadow: 0 10px 30px rgba(47, 111, 143, 0.18);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -79,12 +76,12 @@
         }
         .brand-node svg { width: 50%; height: 50%; fill: white; }
 
-        /* Posizioni radiali (4 nodi disposti a croce, raggio 38%) */
+        /* Posizioni radiali (4 nodi disposti a croce, leggermente alzati) */
         /* Usiamo nth-of-type perche' brand-radial-center e' un <div> mentre i nodi sono <a> */
-        .brand-node:nth-of-type(1) { top: 12%; left: 50%; }   /* Top - mtrbio */
-        .brand-node:nth-of-type(2) { top: 50%; left: 88%; }   /* Right - WhatsApp */
-        .brand-node:nth-of-type(3) { top: 88%; left: 50%; }   /* Bottom - IG */
-        .brand-node:nth-of-type(4) { top: 50%; left: 12%; }   /* Left - Facebook */
+        .brand-node:nth-of-type(1) { top: 5%;  left: 50%; }   /* Top - mtrbio */
+        .brand-node:nth-of-type(2) { top: 42%; left: 88%; }   /* Right - WhatsApp */
+        .brand-node:nth-of-type(3) { top: 78%; left: 50%; }   /* Bottom - IG */
+        .brand-node:nth-of-type(4) { top: 42%; left: 12%; }   /* Left - Facebook */
 
         /* Colori nodi per rete */
         .node-ig { background: linear-gradient(135deg, #fa7e1e, #d62976 55%, #962fbf); }
@@ -96,8 +93,8 @@
             .brand-intro h1 { font-size: 1.3rem; }
             /* Lascia spazio in fondo al pulsante Home flottante */
             .brand-page { padding-bottom: 170px; }
-            /* Alza un po' il nodo in basso per evitare overlap col bottone Home */
-            .brand-node:nth-of-type(3) { top: 80%; }
+            /* Alza il nodo in basso per evitare overlap col bottone Home */
+            .brand-node:nth-of-type(3) { top: 72%; }
         }
     </style>
 </head>
