@@ -215,8 +215,7 @@ header {
 
 .mind-map:not([data-state="initial"]) .click-hint,
 .mind-map:not([data-state="initial"]) .explore-btn {
-    opacity: 0;
-    pointer-events: none;
+    display: none;
 }
 
 /* Prompt "Cosa stai cercando?" appare dopo l'espansione */
@@ -748,7 +747,8 @@ footer {
         color: var(--text-secondary);
     }
 
-    .mobile-map[data-state="categories"] .click-hint-mobile { display: none; }
+    .mobile-map[data-state="categories"] .click-hint-mobile,
+    .mobile-map[data-state="categories"] .center-text-mobile { display: none; }
 
     .mobile-node {
         position: absolute;

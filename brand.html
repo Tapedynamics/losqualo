@@ -51,66 +51,39 @@
             align-items: center;
             justify-content: center;
             z-index: 5;
-            animation: brand-float 5s ease-in-out infinite;
         }
         .brand-radial-center .logo-mark {
             width: 78%;
             height: 38%;
         }
 
-        @keyframes brand-float {
-            0%, 100% { transform: translate(-50%, -50%) translateY(0); }
-            50% { transform: translate(-50%, -50%) translateY(-8px); }
-        }
-
         .brand-node {
             position: absolute;
-            width: 27%;
-            height: 27%;
+            width: 18%;
+            height: 18%;
             border-radius: 50%;
             transform: translate(-50%, -50%);
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 5px;
             text-decoration: none;
             color: white;
             box-shadow: 0 8px 22px rgba(0, 0, 0, 0.16);
             border: 1px solid rgba(255, 255, 255, 0.35);
             transition: transform 0.25s ease, box-shadow 0.25s ease;
-            animation: node-float 5s ease-in-out infinite;
         }
         .brand-node:hover {
-            transform: translate(-50%, -50%) scale(1.07);
+            transform: translate(-50%, -50%) scale(1.1);
             box-shadow: 0 14px 32px rgba(0, 0, 0, 0.24);
             z-index: 10;
         }
-        .brand-node svg { width: 26px; height: 26px; fill: white; }
-        .brand-node .node-label {
-            font-size: 0.6rem;
-            font-weight: 600;
-            letter-spacing: 0.4px;
-            text-align: center;
-            line-height: 1.15;
-            padding: 0 4px;
-        }
+        .brand-node svg { width: 50%; height: 50%; fill: white; }
 
-        @keyframes node-float {
-            0%, 100% { translate: 0 0; }
-            50% { translate: 0 -9px; }
-        }
-        @media (prefers-reduced-motion: reduce) {
-            .brand-radial-center, .brand-node { animation: none !important; }
-        }
-
-        /* Posizioni radiali (6 nodi, raggio 38%) */
-        .brand-node:nth-child(1) { top: 12%;  left: 50%;   animation-delay: 0s;   }
-        .brand-node:nth-child(2) { top: 31%;  left: 82.9%; animation-delay: 0.6s; }
-        .brand-node:nth-child(3) { top: 69%;  left: 82.9%; animation-delay: 1.2s; }
-        .brand-node:nth-child(4) { top: 88%;  left: 50%;   animation-delay: 1.8s; }
-        .brand-node:nth-child(5) { top: 69%;  left: 17.1%; animation-delay: 2.4s; }
-        .brand-node:nth-child(6) { top: 31%;  left: 17.1%; animation-delay: 3s;   }
+        /* Posizioni radiali (4 nodi disposti a croce, raggio 38%) */
+        .brand-node:nth-child(1) { top: 12%; left: 50%; }   /* Top */
+        .brand-node:nth-child(2) { top: 50%; left: 88%; }   /* Right */
+        .brand-node:nth-child(3) { top: 88%; left: 50%; }   /* Bottom */
+        .brand-node:nth-child(4) { top: 50%; left: 12%; }   /* Left */
 
         /* Colori nodi per rete */
         .node-ig { background: linear-gradient(135deg, #fa7e1e, #d62976 55%, #962fbf); }
@@ -119,8 +92,6 @@
         .node-mtrbio { background: linear-gradient(135deg, #2f6f8f, #5fa6c6); }
 
         @media (max-width: 768px) {
-            .brand-node svg { width: 22px; height: 22px; }
-            .brand-node .node-label { font-size: 0.52rem; }
             .brand-intro h1 { font-size: 1.3rem; }
         }
     </style>
@@ -140,34 +111,20 @@
                 <span class="logo-mark" aria-label="Lo Squalo"></span>
             </div>
 
-            <a href="https://www.instagram.com/losqualo.tenerife/" target="_blank" rel="noopener" class="brand-node node-ig">
+            <a href="https://www.instagram.com/losqualo.tenerife/" target="_blank" rel="noopener" class="brand-node node-ig" title="Instagram Lo Squalo" aria-label="Instagram Lo Squalo">
                 <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                <span class="node-label">Instagram<br>Lo Squalo</span>
             </a>
 
-            <a href="https://www.instagram.com/losqualoagency/" target="_blank" rel="noopener" class="brand-node node-ig">
-                <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                <span class="node-label">Instagram<br>Agency</span>
-            </a>
-
-            <a href="https://www.instagram.com/alessandrobiagini_losqualo/" target="_blank" rel="noopener" class="brand-node node-ig">
-                <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                <span class="node-label">Alessandro<br>Biagini</span>
-            </a>
-
-            <a href="https://www.facebook.com/alessandrobiaginilosqualo" target="_blank" rel="noopener" class="brand-node node-fb">
+            <a href="https://www.facebook.com/alessandrobiaginilosqualo" target="_blank" rel="noopener" class="brand-node node-fb" title="Facebook" aria-label="Facebook">
                 <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                <span class="node-label">Facebook</span>
             </a>
 
-            <a href="https://wa.me/34616794190" target="_blank" rel="noopener" class="brand-node node-wa">
+            <a href="https://wa.me/34616794190" target="_blank" rel="noopener" class="brand-node node-wa" title="WhatsApp" aria-label="WhatsApp">
                 <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                <span class="node-label">WhatsApp</span>
             </a>
 
-            <a href="https://t.mtrbio.com/losqualotenerife" target="_blank" rel="noopener" class="brand-node node-mtrbio">
+            <a href="https://t.mtrbio.com/losqualotenerife" target="_blank" rel="noopener" class="brand-node node-mtrbio" title="Tutti i link (mtrbio)" aria-label="Tutti i link">
                 <svg viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
-                <span class="node-label">Tutti i link</span>
             </a>
         </div>
 

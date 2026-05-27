@@ -154,13 +154,10 @@ function updateAllLines() {
 // ===== MAPPA PROGRESSIVA =====
 function initProgressiveMap() {
     const tenerife = document.getElementById('tenerife-trigger');
-    const backBtn = document.getElementById('back-btn');
 
     tenerife.addEventListener('click', function() {
         if (currentState === 'initial') showCategories();
     });
-
-    backBtn.addEventListener('click', goBack);
 
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') goBack();
@@ -265,11 +262,6 @@ function createMobileMiniMap() {
         mobileMap.appendChild(el);
     });
 
-    const backBtn = document.createElement('button');
-    backBtn.classList.add('mobile-back-btn');
-    backBtn.innerHTML = '&larr; Indietro';
-    mobileMap.appendChild(backBtn);
-
     main.parentNode.insertBefore(mobileMap, main.nextSibling);
     initMobileMapEvents(mobileMap);
     setTimeout(() => updateMobileLines(), 100);
@@ -277,14 +269,9 @@ function createMobileMiniMap() {
 
 function initMobileMapEvents(mobileMap) {
     const center = mobileMap.querySelector('.center-node-mobile');
-    const backBtn = mobileMap.querySelector('.mobile-back-btn');
 
     center.addEventListener('click', function() {
         if (mobileState === 'initial') showMobileCategories(mobileMap);
-    });
-
-    backBtn.addEventListener('click', function() {
-        goMobileBack(mobileMap);
     });
 }
 
