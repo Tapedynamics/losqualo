@@ -887,10 +887,21 @@ function getSubcategoryPositions(page) {
         { top: '78%', left: '75%' }
     ];
 
+    const positions7 = [
+        { top: '12%', left: '50%' },
+        { top: '28%', left: '78%' },
+        { top: '55%', left: '88%' },
+        { top: '82%', left: '70%' },
+        { top: '82%', left: '30%' },
+        { top: '55%', left: '12%' },
+        { top: '28%', left: '22%' }
+    ];
+
     switch (page) {
         case 'agency':
             return positions4;
         case 'alloggio':
+            return positions7;
         case 'escursioni':
         case 'surfing':
             return positions6;

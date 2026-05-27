@@ -120,6 +120,8 @@ header {
 .page-map[data-state="subcategories"] .primary-nodes .node:nth-child(5) { transition-delay: 0.28s; }
 .page-map[data-state="categories"] .primary-nodes .node:nth-child(6),
 .page-map[data-state="subcategories"] .primary-nodes .node:nth-child(6) { transition-delay: 0.35s; }
+.page-map[data-state="categories"] .primary-nodes .node:nth-child(7),
+.page-map[data-state="subcategories"] .primary-nodes .node:nth-child(7) { transition-delay: 0.42s; }
 
 /* Sub-nodes nascosti di default */
 .page-map .sub-nodes {
