@@ -24,11 +24,9 @@
                 <line class="line main-line" id="line-center-teide"></line>
                 <line class="line main-line" id="line-center-oceano"></line>
                 <line class="line main-line" id="line-center-sky"></line>
-                <line class="line main-line" id="line-center-fooddrink"></line>
 
                 <!-- Linee Teide -->
                 <line class="line sub-line" data-category="teide" id="line-teide-jeep"></line>
-                <line class="line sub-line" data-category="teide" id="line-teide-stargazing"></line>
                 <line class="line sub-line" data-category="teide" id="line-teide-quad"></line>
                 <line class="line sub-line" data-category="teide" id="line-teide-buggy"></line>
 
@@ -49,15 +47,7 @@
                 <!-- Linee Sky -->
                 <line class="line sub-line" data-category="sky" id="line-sky-parapente"></line>
                 <line class="line sub-line" data-category="sky" id="line-sky-paratrike"></line>
-
-                <!-- Linee Food & Drink -->
-                <line class="line sub-line" data-category="fooddrink" id="line-fooddrink-bodegas"></line>
-                <line class="line sub-line" data-category="fooddrink" id="line-fooddrink-guacinches"></line>
-                <line class="line sub-line" data-category="fooddrink" id="line-fooddrink-cocktailbar"></line>
-                <line class="line sub-line" data-category="fooddrink" id="line-fooddrink-cucinatipica"></line>
-                <line class="line sub-line" data-category="fooddrink" id="line-fooddrink-italiana"></line>
-                <line class="line sub-line" data-category="fooddrink" id="line-fooddrink-mediterranea"></line>
-                <line class="line sub-line" data-category="fooddrink" id="line-fooddrink-surfbar"></line>
+                <line class="line sub-line" data-category="sky" id="line-sky-stargazing"></line>
             </svg>
 
             <!-- Centro - Categoria -->
@@ -74,13 +64,10 @@
                     <span>Terra</span>
                 </div>
                 <div class="node node-primary oceano-node" id="node-oceano" data-category="oceano">
-                    <span>Oceano</span>
+                    <span>Acqua</span>
                 </div>
                 <div class="node node-primary sky-node" id="node-sky" data-category="sky">
                     <span>Aria</span>
-                </div>
-                <div class="node node-primary fooddrink-node" id="node-fooddrink" data-category="fooddrink">
-                    <span>Food &<br>Drink</span>
                 </div>
             </div>
 
@@ -88,9 +75,6 @@
             <div class="sub-nodes" data-parent="teide">
                 <a href="escursioni/jeep-experience.html" class="node node-secondary item-jeep" id="node-jeep">
                     <span>Jeep<br>Experience</span>
-                </a>
-                <a href="escursioni/tenerife-stars.html" class="node node-secondary item-stargazing" id="node-stargazing">
-                    <span>Tenerife<br>Stars</span>
                 </a>
                 <a href="escursioni/quad.html" class="node node-secondary item-quad" id="node-quad">
                     <span>Quad</span>
@@ -140,7 +124,7 @@
                 </a>
             </div>
 
-            <!-- Elementi Livello 3 - SKY -->
+            <!-- Elementi Livello 3 - SKY (Aria) -->
             <div class="sub-nodes" data-parent="sky">
                 <a href="escursioni/parapendio.html" class="node node-secondary item-parapente" id="node-parapente">
                     <span>Parapendio</span>
@@ -148,30 +132,8 @@
                 <a href="escursioni/paratrike.html" class="node node-secondary item-paratrike" id="node-paratrike">
                     <span>Paratrike</span>
                 </a>
-            </div>
-
-            <!-- Elementi Livello 3 - FOOD & DRINK -->
-            <div class="sub-nodes" data-parent="fooddrink">
-                <a href="#bodegas" class="node node-secondary item-bodegas" id="node-bodegas">
-                    <span>Bodegas</span>
-                </a>
-                <a href="#guacinches" class="node node-secondary item-guacinches" id="node-guacinches">
-                    <span>Guacinches</span>
-                </a>
-                <a href="#cocktailbar" class="node node-secondary item-cocktailbar" id="node-cocktailbar">
-                    <span>Cocktail<br>Bar</span>
-                </a>
-                <a href="#cucinatipica" class="node node-secondary item-cucinatipica" id="node-cucinatipica">
-                    <span>Cucina<br>Tipica</span>
-                </a>
-                <a href="#italiana" class="node node-secondary item-italiana" id="node-italiana">
-                    <span>Italiana</span>
-                </a>
-                <a href="#mediterranea" class="node node-secondary item-mediterranea" id="node-mediterranea">
-                    <span>Mediterranea</span>
-                </a>
-                <a href="#surfbar-food" class="node node-secondary item-surfbar-food" id="node-surfbar-food">
-                    <span>Surf Bar</span>
+                <a href="escursioni/tenerife-stars.html" class="node node-secondary item-stargazing" id="node-stargazing">
+                    <span>Tenerife<br>Stars</span>
                 </a>
             </div>
 

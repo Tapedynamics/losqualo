@@ -97,12 +97,10 @@ const pageLineConfig = {
         main: [
             { line: 'line-center-teide', from: 'category-trigger', to: 'node-teide' },
             { line: 'line-center-oceano', from: 'category-trigger', to: 'node-oceano' },
-            { line: 'line-center-sky', from: 'category-trigger', to: 'node-sky' },
-            { line: 'line-center-fooddrink', from: 'category-trigger', to: 'node-fooddrink' }
+            { line: 'line-center-sky', from: 'category-trigger', to: 'node-sky' }
         ],
         teide: [
             { line: 'line-teide-jeep', from: 'node-teide', to: 'node-jeep' },
-            { line: 'line-teide-stargazing', from: 'node-teide', to: 'node-stargazing' },
             { line: 'line-teide-quad', from: 'node-teide', to: 'node-quad' },
             { line: 'line-teide-buggy', from: 'node-teide', to: 'node-buggy' }
         ],
@@ -122,7 +120,15 @@ const pageLineConfig = {
         ],
         sky: [
             { line: 'line-sky-parapente', from: 'node-sky', to: 'node-parapente' },
-            { line: 'line-sky-paratrike', from: 'node-sky', to: 'node-paratrike' }
+            { line: 'line-sky-paratrike', from: 'node-sky', to: 'node-paratrike' },
+            { line: 'line-sky-stargazing', from: 'node-sky', to: 'node-stargazing' }
+        ]
+    },
+    eventi: {
+        main: [
+            { line: 'line-center-fooddrink', from: 'category-trigger', to: 'node-fooddrink' },
+            { line: 'line-center-servizi', from: 'category-trigger', to: 'node-servizi' },
+            { line: 'line-center-nextevent', from: 'category-trigger', to: 'node-nextevent' }
         ],
         fooddrink: [
             { line: 'line-fooddrink-bodegas', from: 'node-fooddrink', to: 'node-bodegas' },
@@ -190,6 +196,7 @@ function getCurrentPage() {
     const body = document.body;
     if (body.classList.contains('page-alloggio')) return 'alloggio';
     if (body.classList.contains('page-escursioni')) return 'escursioni';
+    if (body.classList.contains('page-eventi')) return 'eventi';
     if (body.classList.contains('page-surfing')) return 'surfing';
     if (body.classList.contains('page-agency')) return 'agency';
     return null;
@@ -587,12 +594,11 @@ const pageSubNodesData = {
             subs: [
                 { id: 'jeep', name: 'Jeep Experience', href: 'escursioni/jeep-experience.html' },
                 { id: 'quad', name: 'Quad', href: 'escursioni/quad.html' },
-                { id: 'buggy', name: 'Buggy', href: 'escursioni/buggy.html' },
-                { id: 'stargazing', name: 'Tenerife Stars', href: 'escursioni/tenerife-stars.html' }
+                { id: 'buggy', name: 'Buggy', href: 'escursioni/buggy.html' }
             ]
         },
         oceano: {
-            name: 'Oceano',
+            name: 'Acqua',
             class: 'radial-oceano',
             subs: [
                 { id: 'jetcar', name: 'Jet Car', href: '#jetcar' },
@@ -614,15 +620,18 @@ const pageSubNodesData = {
             class: 'radial-sky',
             subs: [
                 { id: 'parapente', name: 'Parapendio', href: 'escursioni/parapendio.html' },
-                { id: 'paratrike', name: 'Paratrike', href: 'escursioni/paratrike.html' }
+                { id: 'paratrike', name: 'Paratrike', href: 'escursioni/paratrike.html' },
+                { id: 'stargazing', name: 'Tenerife Stars', href: 'escursioni/tenerife-stars.html' }
             ]
-        },
+        }
+    },
+    eventi: {
         fooddrink: {
             name: 'Food & Drink',
             class: 'radial-fooddrink',
             subs: [
                 { id: 'bodegas', name: 'Bodegas', href: '#bodegas' },
-                { id: 'guacinches', name: 'Guacinches', href: '#guacinches' },
+                { id: 'guacinches', name: 'Guachinches', href: '#guacinches' },
                 { id: 'cocktailbar', name: 'Cocktail Bar', href: '#cocktailbar' },
                 { id: 'cucinatipica', name: 'Cucina Tipica', href: '#cucinatipica' },
                 { id: 'italiana', name: 'Italiana', href: '#italiana' },
@@ -727,6 +736,7 @@ function createMobilePageMap() {
     const categoryInfo = {
         alloggio: { name: 'ALLOGGIO', class: 'alloggio-bg' },
         escursioni: { name: 'ESCURSIONI<br>& ATTIVITA', class: 'escursioni-bg' },
+        eventi: { name: 'EVENTI', class: 'eventi-bg' },
         surfing: { name: 'SURFING<br>TENERIFE', class: 'surfing-bg' },
         agency: { name: 'AGENCY', class: 'agency-bg' }
     };
@@ -888,11 +898,19 @@ function getSubcategoryPositions(page) {
         { top: '28%', left: '22%' }
     ];
 
+    const positions3 = [
+        { top: '20%', left: '50%' },
+        { top: '74%', left: '26%' },
+        { top: '74%', left: '74%' }
+    ];
+
     switch (page) {
         case 'agency':
             return positions4;
-        case 'alloggio':
         case 'escursioni':
+        case 'eventi':
+            return positions3;
+        case 'alloggio':
         case 'surfing':
             return positions6;
         default:
@@ -912,9 +930,13 @@ function getSubcategoryNodes(page) {
         ],
         escursioni: [
             { id: 'teide', name: 'Terra', class: 'mobile-teide' },
-            { id: 'oceano', name: 'Oceano', class: 'mobile-oceano' },
-            { id: 'sky', name: 'Aria', class: 'mobile-sky' },
-            { id: 'fooddrink', name: 'Food & Drink', class: 'mobile-fooddrink' }
+            { id: 'oceano', name: 'Acqua', class: 'mobile-oceano' },
+            { id: 'sky', name: 'Aria', class: 'mobile-sky' }
+        ],
+        eventi: [
+            { id: 'fooddrink', name: 'Food & Drink', class: 'mobile-fooddrink' },
+            { id: 'servizi', name: 'Servizi Privati', class: 'mobile-servizi', href: 'https://wa.me/34616794190?text=Ciao%2C%20vorrei%20info%20sui%20servizi%20privati%20per%20il%20mio%20evento' },
+            { id: 'nextevent', name: 'Next Event', class: 'mobile-nextevent', href: '#next-event' }
         ],
         surfing: [
             { id: 'surfbar', name: 'Surfbar<br>Franchise', class: 'mobile-surfbar', href: 'surfing/surf-bar-franchise.html' },
