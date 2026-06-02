@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surf House Luxury - Lo Squalo Tenerife</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/alloggio/detail.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .hub-hero {
+            position: relative; height: 50vh; min-height: 360px; overflow: hidden;
+            border-radius: 0 0 30px 30px;
+        }
+        .hub-hero img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .hub-hero-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(47,111,143,0.55) 100%);
+            display: flex; flex-direction: column; justify-content: flex-end;
+            padding: 40px 30px; color: white;
+        }
+        .hub-hero-overlay h1 { font-size: 2.4rem; letter-spacing: 0.5px; margin-bottom: 10px; }
+        .hub-hero-overlay p { font-size: 1.05rem; opacity: 0.95; max-width: 660px; line-height: 1.55; }
+        .hub-tag {
+            display: inline-block; padding: 5px 14px; background: rgba(255,255,255,0.22);
+            border-radius: 16px; font-size: 0.75rem; letter-spacing: 1.5px;
+            text-transform: uppercase; margin-bottom: 14px; width: fit-content;
+        }
+
+        .hub-intro { padding: 36px 24px 0; max-width: 720px; margin: 0 auto; }
+        .hub-intro h2 { color: var(--blu-squalo); margin-bottom: 12px; }
+        .hub-intro p { font-size: 1rem; line-height: 1.65; color: var(--text-primary); margin-bottom: 14px; }
+
+        .villa-grid {
+            max-width: 1200px; margin: 32px auto; padding: 0 24px;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 22px;
+        }
+        .villa-card {
+            background: white; border-radius: 22px; overflow: hidden;
+            box-shadow: 0 10px 28px rgba(47,111,143,0.10);
+            text-decoration: none; color: inherit;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            display: flex; flex-direction: column;
+        }
+        .villa-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 40px rgba(47,111,143,0.18);
+        }
+        .villa-card .vc-photo {
+            width: 100%; height: 220px; overflow: hidden; position: relative;
+        }
+        .villa-card .vc-photo img {
+            width: 100%; height: 100%; object-fit: cover; display: block;
+            transition: transform 0.5s ease;
+        }
+        .villa-card:hover .vc-photo img { transform: scale(1.05); }
+        .villa-card .vc-body { padding: 22px 22px 24px; flex: 1; display: flex; flex-direction: column; }
+        .villa-card h3 {
+            font-size: 1.2rem; color: var(--blu-squalo); margin-bottom: 6px; letter-spacing: 0.3px;
+        }
+        .villa-card .vc-loc {
+            font-size: 0.78rem; color: var(--text-secondary); text-transform: uppercase;
+            letter-spacing: 1px; margin-bottom: 14px;
+        }
+        .villa-card p { font-size: 0.92rem; line-height: 1.55; color: var(--text-primary); margin-bottom: 18px; flex: 1; }
+        .villa-card .vc-meta {
+            display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px;
+        }
+        .villa-card .vc-meta span {
+            background: rgba(95,166,198,0.12); color: var(--blu-squalo);
+            padding: 4px 10px; border-radius: 12px; font-size: 0.74rem; font-weight: 500;
+        }
+        .villa-card .vc-cta {
+            color: var(--blu-squalo); font-weight: 600; font-size: 0.9rem;
+            display: flex; align-items: center; gap: 6px;
+        }
+
+        .package-bar {
+            background: linear-gradient(135deg, var(--surfing-main), var(--blu-squalo));
+            color: white; max-width: 1200px; margin: 36px auto; padding: 28px 30px;
+            border-radius: 22px; display: flex; flex-wrap: wrap;
+            justify-content: space-between; align-items: center; gap: 18px;
+        }
+        .package-bar h3 { font-size: 1.2rem; margin-bottom: 6px; }
+        .package-bar p { opacity: 0.92; font-size: 0.95rem; }
+        .package-bar a {
+            display: inline-block; padding: 13px 26px; border-radius: 26px;
+            background: #25D366; color: white; text-decoration: none;
+            font-weight: 700; transition: transform 0.2s ease;
+        }
+        .package-bar a:hover { transform: translateY(-2px); }
+
+        @media (max-width: 600px) {
+            .hub-hero-overlay h1 { font-size: 1.8rem; }
+            .hub-hero-overlay p { font-size: 0.95rem; }
+        }
+    </style>
+</head>
+<body>
+    <header class="detail-header">
+        <a href="../alloggio.html" class="back-link"><span>&larr;</span> Back</a>
+        <span class="logo-small">LO SQUALO</span>
+    </header>
+
+    <section class="hub-hero">
+        <img loading="lazy" decoding="async" src="/alloggio/foto/finca-la-fortaleza/hero.webp" alt="Surf House Luxury">
+        <div class="hub-hero-overlay">
+            <span class="hub-tag">Lo Squalo Package</span>
+            <h1>Surf House Luxury</h1>
+            <p>Three premium villas in the south of Tenerife — designed for those who want the best of surfing without giving up comfort. Choose the base that suits you.</p>
+        </div>
+    </section>
+
+    <section class="hub-intro">
+        <h2>The three villas included</h2>
+        <p>A formula created for demanding surfers, groups of friends and families who want <strong>a week of waves</strong> with the service level of a boutique hotel. All three are <strong>close to the best breaks in the south</strong>, with a private pool and space for equipment.</p>
+        <p>Click on a villa for the full details.</p>
+    </section>
+
+    <section class="villa-grid">
+
+        <a href="finca-la-fortaleza.html" class="villa-card">
+            <div class="vc-photo">
+                <img loading="lazy" decoding="async" src="/alloggio/foto/finca-la-fortaleza/piscinacasa.webp" alt="La Fortaleza">
+            </div>
+            <div class="vc-body">
+                <h3>La Fortaleza</h3>
+                <p class="vc-loc">San Miguel de Abona</p>
+                <p>Finca with heated pool, ocean view, up to 16 guests. Rural vibe but 15 min from the breaks. Top choice for large groups.</p>
+                <div class="vc-meta">
+                    <span>16 guests</span>
+                    <span>5 bedrooms</span>
+                    <span>Pool</span>
+                </div>
+                <span class="vc-cta">Discover more →</span>
+            </div>
+        </a>
+
+        <a href="villa-paraiso.html" class="villa-card">
+            <div class="vc-photo">
+                <img loading="lazy" decoding="async" src="/alloggio/foto/villa-paraiso/drive-51.jpg" alt="Villa Paraiso">
+            </div>
+            <div class="vc-body">
+                <h3>Villa Paraiso</h3>
+                <p class="vc-loc">Playa Paraíso</p>
+                <p>Modern villa over two levels, pool with diving board and garden, up to 20 guests (10 per floor). Contemporary spaces just minutes from the spot.</p>
+                <div class="vc-meta">
+                    <span>20 guests</span>
+                    <span>8 bedrooms</span>
+                    <span>10 per level</span>
+                </div>
+                <span class="vc-cta">Discover more →</span>
+            </div>
+        </a>
+
+        <a href="villa-duque.html" class="villa-card">
+            <div class="vc-photo">
+                <img loading="lazy" decoding="async" src="/alloggio/foto/villa-duque/drive-01.jpg" alt="Villa Duque">
+            </div>
+            <div class="vc-body">
+                <h3>Villa Duque</h3>
+                <p class="vc-loc">El Duque · Costa Adeje</p>
+                <p>Premium villa in the exclusive El Duque area. Capacity 16-20 guests, private pool, modern spaces for large groups.</p>
+                <div class="vc-meta">
+                    <span>16-20 guests</span>
+                    <span>Private pool</span>
+                    <span>Premium</span>
+                </div>
+                <span class="vc-cta">Discover more →</span>
+            </div>
+        </a>
+
+    </section>
+
+    <section class="package-bar">
+        <div>
+            <h3>Full Experience</h3>
+            <p>Accommodation + surf + activities + private services. Tailor-made around your group.</p>
+        </div>
+        <a href="../surfing/full-experience.html">Discover the package →</a>
+    </section>
+
+    <footer style="text-align: center; padding: 24px; color: var(--text-secondary); font-size: 0.7rem;">
+        <p>&copy; <a href="../index.html">Lo Squalo Tenerife</a> &middot; since 2009</p>
+    </footer>
+    <script src="/whatsapp-i18n.js"></script>
+
+    <script src="/lang-switch.js"></script>
+</body>
+</html>

@@ -1,6 +1,18 @@
 // Lo Squalo - Pagine Categoria (Livello 2)
 // Mini Mind Map per ogni categoria
 
+// i18n nomi nodi: solo le copie EN/ES (categoria alloggi) traducono i nomi
+// generici delle categorie; i nomi propri (Villa Paraiso, Cactus...) restano.
+var PAGE_LANG = (document.documentElement.lang || 'it').slice(0, 2).toLowerCase();
+var NAME_I18N = {
+    en: { 'Rurale': 'Rural', 'Appartamento': 'Apartment', 'Ostello': 'Hostel', 'Surf House Rurale': 'Surf House Rural' },
+    es: { 'Rurale': 'Rural', 'Appartamento': 'Apartamento', 'Ostello': 'Hostel', 'Surf House Rurale': 'Surf House Rural' }
+};
+function tName(name) {
+    if (PAGE_LANG !== 'it' && NAME_I18N[PAGE_LANG] && NAME_I18N[PAGE_LANG][name]) return NAME_I18N[PAGE_LANG][name];
+    return name;
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     convertLinesToPaths();
     initPageMap();
@@ -766,7 +778,7 @@ function createMobilePageMap() {
         if (node.disabled) el.classList.add('disabled-node');
         el.id = `mobile-node-${node.id}`;
         el.dataset.category = node.id;
-        el.innerHTML = `<span>${node.name}</span>`;
+        el.innerHTML = `<span>${tName(node.name)}</span>`;
         el.style.top = subcatPositions[index].top;
         el.style.left = subcatPositions[index].left;
         mobileMap.appendChild(el);
@@ -993,7 +1005,7 @@ function openPageRadialPopup(page, category) {
 
     const center = document.createElement('div');
     center.classList.add('radial-center', data.class);
-    center.innerHTML = `<span>${data.name}</span>`;
+    center.innerHTML = `<span>${tName(data.name)}</span>`;
     popup.appendChild(center);
 
     const numSubs = data.subs.length;
@@ -1010,7 +1022,7 @@ function openPageRadialPopup(page, category) {
         node.href = sub.disabled ? '#' : sub.href;
         node.classList.add('radial-node');
         if (sub.disabled) node.classList.add('disabled-node');
-        node.innerHTML = `<span>${sub.name}</span>`;
+        node.innerHTML = `<span>${tName(sub.name)}</span>`;
         node.style.top = `${y}%`;
         node.style.left = `${x}%`;
         if (!sub.disabled) {
