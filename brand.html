@@ -39,7 +39,9 @@
 
         .brand-radial-center {
             position: absolute;
-            top: 50%;
+            /* I 6 nodi formano un esagono alzato (centroide y ~= 42%, non 50%):
+               il logo va al centro dell'anello, non al centro del box. */
+            top: 42%;
             left: 50%;
             transform: translate(-50%, -50%);
             width: 38%;
@@ -99,6 +101,8 @@
             .brand-page { padding-bottom: 170px; }
             /* Alza il nodo in basso (Facebook) per evitare overlap col bottone Home */
             .brand-node:nth-of-type(4) { top: 72%; }
+            /* Nodo basso a 72% -> centroide anello ~41%: riallinea il logo */
+            .brand-radial-center { top: 41%; }
         }
     </style>
 </head>

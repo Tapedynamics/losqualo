@@ -8,3 +8,6 @@
 
 # Editor configs
 /.claude/settings.local.json
+
+# Scratch: image scraping working dir (harvest JSON + scripts)
+/_scrape/
