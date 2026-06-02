@@ -970,6 +970,8 @@ footer {
     .radial-surfhouse-alloggio { background: linear-gradient(145deg, var(--alloggio-surfhouse), #d1b6a8); color: var(--text-primary); }
     .radial-rurale { background: linear-gradient(145deg, var(--alloggio-rurale), #bf9991); color: var(--text-primary); }
     .radial-apartamento { background: linear-gradient(145deg, var(--alloggio-glamping), #d8b49e); color: var(--text-primary); }
+    /* "Appartamento": label lunga, riduci il font nel cerchio centrale del popup radiale */
+    .radial-apartamento span { font-size: 0.52rem; letter-spacing: -0.2px; }
     .radial-coliving { background: linear-gradient(145deg, var(--alloggio-ostello), #c99ea8); color: var(--text-primary); }
     .radial-escursioni { background: linear-gradient(145deg, var(--escursioni-main), #3f7a7a); color: white; }
     .radial-teide { background: linear-gradient(145deg, var(--escursioni-teide), #5f7e6c); color: white; }
