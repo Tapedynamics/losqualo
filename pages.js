@@ -533,7 +533,7 @@ const pageSubNodesData = {
         },
         casarurale: {
             name: 'Rurale',
-            class: 'radial-casarurale',
+            class: 'radial-rurale',
             subs: [
                 { id: 'ciguana', name: 'Finca Ciguaña', href: 'alloggio/finca-ciguaña.html' },
                 { id: 'fincaparaiso', name: 'Finca Paraiso', href: 'alloggio/finca-paraiso.html' },
@@ -547,7 +547,7 @@ const pageSubNodesData = {
         },
         appartamento: {
             name: 'Appartamento',
-            class: 'radial-appartamento',
+            class: 'radial-apartamento',
             subs: [
                 { id: 'costaadeje', name: 'Costa Adeje', href: 'alloggio/costa-adeje.html' },
                 { id: 'alcala', name: 'Alcala', href: 'alloggio/alcala.html' },
