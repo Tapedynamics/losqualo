@@ -1013,10 +1013,13 @@ footer {
 
 /* ===== Ricerca servizi in home ===== */
 .home-search {
-    position: relative;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 148px;
     z-index: 60;
     width: min(440px, 88vw);
-    margin: -40px auto 120px;
+    margin: 0;
 }
 .home-search-input {
     width: 100%;
@@ -1038,11 +1041,12 @@ footer {
 }
 .home-search-results {
     list-style: none;
-    margin: 8px 0 0;
+    margin: 0 0 8px;
     padding: 6px;
     position: absolute;
     left: 0;
     right: 0;
+    bottom: 100%;
     background: #fff;
     border-radius: 18px;
     box-shadow: 0 16px 40px rgba(47, 111, 143, 0.18);
@@ -1082,7 +1086,7 @@ footer {
     text-align: center;
 }
 @media (max-width: 768px) {
-    .home-search { margin: 12px auto 120px; }
+    .home-search { bottom: 128px; margin: 0; }
 }
 
 /* ===== Switcher lingua IT/EN/ES ===== */
