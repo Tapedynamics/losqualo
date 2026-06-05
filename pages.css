@@ -757,39 +757,18 @@ header {
 }
 
 /* Elementi SPORT */
-.page-escursioni .item-kite {
-    background: linear-gradient(145deg, #5f9c9c, #4b8888);
-    color: white;
-    top: 38%;
-    left: 92%;
-}
-
-.page-escursioni .item-wind {
-    background: linear-gradient(145deg, #5b9898, #478484);
-    color: white;
-    top: 50%;
-    left: 94%;
-}
-
 .page-escursioni .item-surf {
     background: linear-gradient(145deg, #579494, #438080);
     color: white;
-    top: 62%;
-    left: 92%;
-}
-
-.page-escursioni .item-fishing {
-    background: linear-gradient(145deg, #539090, #3f7c7c);
-    color: white;
-    top: 55%;
-    left: 70%;
+    top: 60%;
+    left: 88%;
 }
 
 .page-escursioni .item-diving {
     background: linear-gradient(145deg, #4f8c8c, #3b7878);
     color: white;
-    top: 38%;
-    left: 72%;
+    top: 45%;
+    left: 90%;
 }
 
 /* Elementi PRIVATE */
@@ -869,8 +848,8 @@ header {
 .page-escursioni .item-kayak {
     background: linear-gradient(145deg, #4787a6, #337392);
     color: white;
-    top: 28%;
-    left: 70%;
+    top: 30%;
+    left: 88%;
 }
 
 .page-escursioni .item-sottomarino {
