@@ -394,8 +394,10 @@ function initPageMap() {
         });
     });
 
-    // Al caricamento: se c'e' una sub memorizzata, espandila automaticamente
-    const lastSub = recallSub();
+    // Al caricamento: ?cat=<categoria> apre direttamente quella subcategory (deep-link
+    // es. da "Reserva Cama" -> alloggio.html?cat=ostello). Altrimenti usa la sub memorizzata.
+    const urlCat = new URLSearchParams(window.location.search).get('cat');
+    const lastSub = urlCat || recallSub();
     if (lastSub) {
         const targetNode = document.querySelector(`.node-primary[data-category="${lastSub}"]`);
         if (targetNode) {
@@ -653,7 +655,7 @@ const pageSubNodesData = {
             subs: [
                 { id: 'b2b', name: 'B2B', href: 'surfing/surf-house-b2b.html' },
                 { id: 'surfcamp', name: 'Full Experience', href: 'surfing/full-experience.html' },
-                { id: 'reservacama', name: 'Reserva Cama', href: 'alloggio/banana-surf-hostel.html' },
+                { id: 'reservacama', name: 'Reserva Cama', href: 'alloggio.html?cat=ostello' },
                 { id: 'reservahab', name: 'Reserva Habitacion', href: 'alloggio/surf-house-rurale.html' },
                 { id: 'gallery', name: 'Gallery', href: '#gallery' }
             ]

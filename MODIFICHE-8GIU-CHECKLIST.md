@@ -35,14 +35,14 @@
 - [ ] 6a — 🔒 Aggiungere foto piscina (cartella Drive). FUORI GOAL.
 
 ## 7. FULL EXPERIENCE
-- [ ] 7a — ❌ Bottone "Full Experience" in fondo offerte Surf House → deve aprire WhatsApp. Ora `surf-house-luxury.html:181` punta a `full-experience.html`.
+- [x] 7a — ✅ FATTO (10 giu) Bottoni "Full Experience" in `surf-house-luxury.html` e `surf-house-rurale.html` → ora WhatsApp.
 
 ## 8. APPARTAMENTO — aggiungere (dati scrapati → `_scrape/airbnb-8giu.json`)
 - [~] 8a — ⚠️ SCHEDA FATTA `alloggio/fanabe.html` (4 pax · 3 cam · ★4.76). MANCA: cablaggio nodo mind-map.
 - [~] 8b — ⚠️ SCHEDA FATTA `alloggio/atico.html` (8 pax · 4 cam · ★4.6). MANCA: cablaggio nodo.
 
 ## 9. SURF HOUSE (dentro SURFING TENERIFE)
-- [ ] 9a — ⚠️ Reserva cama → categoria **Ostello** in Alloggio. Ora `pages.js:656` → `banana-surf-hostel.html` (ostello specifico, non il nodo "Ostello"). DA CONFERMARE.
+- [x] 9a — ✅ FATTO (10 giu) Reserva Cama → nodo Ostello generico. Aggiunto handler `?cat=` in `pages.js` (deep-link categoria); link `surfing.html` + `pages.js` → `alloggio.html?cat=ostello`.
 - [x] 9b — ✅ Reserva habitación → Surf House Rural. `pages.js:657` → `surf-house-rurale.html`.
 - [ ] 9c — ❌ Percorso indietro: non cambiare macrocategoria, tornare al nodo Surf House dentro Surfing Tenerife.
 - [ ] 9d — ❌ Eliminare nodo Gallery. Ancora presente `surfing.html:79`, `pages.js:658`.
