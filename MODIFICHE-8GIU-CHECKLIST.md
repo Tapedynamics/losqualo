@@ -26,10 +26,10 @@
 - [ ] 4a — 👁️ Eliminare foto doppie galleria. `finca-chimiche.html` ha `drive-01..12` (nomi unici) → doppioni VISIVI, serve occhio sulle immagini.
 
 ## 5. VILLA — aggiungere 3 strutture
-- DATI SCRAPATI (Apify, 10 giu) → `_scrape/airbnb-8giu.json`
-- [ ] 5a — ❌ Villa A&R · rooms/50462587 · Villa Costa Adeje · 16 pax · 8 cam · ★4.77 (71) · 97 foto
-- [ ] 5b — ❌ Villa Golf · rooms/1427388743472881171 · Casa Amarilla Golf · 7 pax · 4 cam · ★4.64 (11) · 40 foto
-- [ ] 5c — ❌ Villa One · rooms/50496300 · Casa Costa del Silencio · 6 pax · 4 cam · ★4.71 (82) · 71 foto
+- DATI SCRAPATI (Apify, 10 giu) → `_scrape/airbnb-8giu.json`. Schede generate via `_scrape/gen_pages.py` (13 foto locali cad. in `alloggio/foto/<slug>/`).
+- [~] 5a — ⚠️ SCHEDA FATTA `alloggio/villa-ar.html` (16 pax · 8 cam · ★4.77). MANCA: cablaggio nodo mind-map (visivo).
+- [~] 5b — ⚠️ SCHEDA FATTA `alloggio/villa-golf.html` (7 pax · 4 cam · ★4.64). MANCA: cablaggio nodo.
+- [~] 5c — ⚠️ SCHEDA FATTA `alloggio/villa-one.html` (6 pax · 4 cam · ★4.71). MANCA: cablaggio nodo.
 
 ## 6. VILLA PARAISO
 - [ ] 6a — 🔒 Aggiungere foto piscina (cartella Drive). FUORI GOAL.
@@ -38,8 +38,8 @@
 - [ ] 7a — ❌ Bottone "Full Experience" in fondo offerte Surf House → deve aprire WhatsApp. Ora `surf-house-luxury.html:181` punta a `full-experience.html`.
 
 ## 8. APPARTAMENTO — aggiungere (dati scrapati → `_scrape/airbnb-8giu.json`)
-- [ ] 8a — ❌ Fañabé · rooms/1312221509069968032 · Costa Adeje · 4 pax · 3 cam · ★4.76 (21) · 43 foto
-- [ ] 8b — ❌ Ático · rooms/45855070 · Costa Adeje · 8 pax · 4 cam · ★4.6 (15) · 44 foto
+- [~] 8a — ⚠️ SCHEDA FATTA `alloggio/fanabe.html` (4 pax · 3 cam · ★4.76). MANCA: cablaggio nodo mind-map.
+- [~] 8b — ⚠️ SCHEDA FATTA `alloggio/atico.html` (8 pax · 4 cam · ★4.6). MANCA: cablaggio nodo.
 
 ## 9. SURF HOUSE (dentro SURFING TENERIFE)
 - [ ] 9a — ⚠️ Reserva cama → categoria **Ostello** in Alloggio. Ora `pages.js:656` → `banana-surf-hostel.html` (ostello specifico, non il nodo "Ostello"). DA CONFERMARE.
