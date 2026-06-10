@@ -83,11 +83,12 @@
 - [ ] 14b — 🔒 Parapendio: galleria + Hero da Drive. FUORI GOAL.
 - [ ] 14c — 🔒 Paratrike: galleria + Hero da Drive. FUORI GOAL.
 
-## 15. EVENTI
-- [ ] 15a — ❌ Rinominare nodo → "Eventi e Servizi Privati".
-- [ ] 15b — ❌ Struttura interna: SOLO Venue, Car Rent & Transfer, Food & Drink, Suono e Luci, Music & Show, Feste e Movida, Tips. (nessuno presente in `pages.js`)
-- [ ] 15c — ❌ Eliminare tutto il contenuto attuale Eventi. Vecchia struttura `pages.js:634`.
-- [ ] 15d — ❌ Tutti i nodi Eventi devono mandare a WhatsApp.
+## 15. EVENTI  → ⚠️ VISIVO, deployato 10 giu, da confermare a vista
+- [x] 15a — ✅ Nodo rinominato "Eventi e Servizi Privati" (home `index.html` + centro `eventi.html`).
+- [x] 15b — ✅ Struttura piatta 7 nodi: Venue, Car Rent & Transfer, Food & Drink, Suono e Luci, Music & Show, Feste e Movida, Tips. (`eventi.html` + `pages.js` main/mobile, `pages.css` eptagono)
+- [x] 15c — ✅ Rimossa vecchia struttura Eventi (Food&Drink espandibile + Servizi + Next Event + sub-nodi).
+- [x] 15d — ✅ Tutti i 7 nodi → WhatsApp (desktop + mobile).
+- ⚠️ DA CONFERMARE A VISTA: posizioni eptagono desktop + mobile, leggibilità centro 3-righe, label home lunga.
 
 ---
 

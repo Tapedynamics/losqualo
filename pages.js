@@ -135,18 +135,13 @@ const pageLineConfig = {
     },
     eventi: {
         main: [
+            { line: 'line-center-venue', from: 'category-trigger', to: 'node-venue' },
+            { line: 'line-center-carrent', from: 'category-trigger', to: 'node-carrent' },
             { line: 'line-center-fooddrink', from: 'category-trigger', to: 'node-fooddrink' },
-            { line: 'line-center-servizi', from: 'category-trigger', to: 'node-servizi' },
-            { line: 'line-center-nextevent', from: 'category-trigger', to: 'node-nextevent' }
-        ],
-        fooddrink: [
-            { line: 'line-fooddrink-bodegas', from: 'node-fooddrink', to: 'node-bodegas' },
-            { line: 'line-fooddrink-guacinches', from: 'node-fooddrink', to: 'node-guacinches' },
-            { line: 'line-fooddrink-cocktailbar', from: 'node-fooddrink', to: 'node-cocktailbar' },
-            { line: 'line-fooddrink-cucinatipica', from: 'node-fooddrink', to: 'node-cucinatipica' },
-            { line: 'line-fooddrink-italiana', from: 'node-fooddrink', to: 'node-italiana' },
-            { line: 'line-fooddrink-mediterranea', from: 'node-fooddrink', to: 'node-mediterranea' },
-            { line: 'line-fooddrink-surfbar', from: 'node-fooddrink', to: 'node-surfbar-food' }
+            { line: 'line-center-suonoluci', from: 'category-trigger', to: 'node-suonoluci' },
+            { line: 'line-center-musicshow', from: 'category-trigger', to: 'node-musicshow' },
+            { line: 'line-center-festemovida', from: 'category-trigger', to: 'node-festemovida' },
+            { line: 'line-center-tips', from: 'category-trigger', to: 'node-tips' }
         ]
     },
     surfing: {
@@ -916,8 +911,9 @@ function getSubcategoryPositions(page) {
         case 'agency':
             return positions4;
         case 'escursioni':
-        case 'eventi':
             return positions3;
+        case 'eventi':
+            return positions7;
         case 'alloggio':
         case 'surfing':
             return positions6;
@@ -942,9 +938,13 @@ function getSubcategoryNodes(page) {
             { id: 'sky', name: 'Aria', class: 'mobile-sky' }
         ],
         eventi: [
-            { id: 'fooddrink', name: 'Food & Drink', class: 'mobile-fooddrink' },
-            { id: 'servizi', name: 'Servizi Privati', class: 'mobile-servizi', href: 'https://wa.me/34616794190?text=Ciao%2C%20vorrei%20info%20sui%20servizi%20privati%20per%20il%20mio%20evento' },
-            { id: 'nextevent', name: 'Next Event', class: 'mobile-nextevent', href: '#next-event' }
+            { id: 'venue', name: 'Venue', class: 'mobile-venue', href: 'https://wa.me/34616794190?text=Ciao%2C%20vorrei%20info%20su%20Venue%20per%20il%20mio%20evento' },
+            { id: 'carrent', name: 'Car Rent<br>& Transfer', class: 'mobile-carrent', href: 'https://wa.me/34616794190?text=Ciao%2C%20vorrei%20info%20su%20Car%20Rent%20%26%20Transfer' },
+            { id: 'fooddrink', name: 'Food &<br>Drink', class: 'mobile-fooddrink', href: 'https://wa.me/34616794190?text=Ciao%2C%20vorrei%20info%20su%20Food%20%26%20Drink%20per%20il%20mio%20evento' },
+            { id: 'suonoluci', name: 'Suono<br>e Luci', class: 'mobile-suonoluci', href: 'https://wa.me/34616794190?text=Ciao%2C%20vorrei%20info%20su%20Suono%20e%20Luci' },
+            { id: 'musicshow', name: 'Music<br>& Show', class: 'mobile-musicshow', href: 'https://wa.me/34616794190?text=Ciao%2C%20vorrei%20info%20su%20Music%20%26%20Show' },
+            { id: 'festemovida', name: 'Feste e<br>Movida', class: 'mobile-festemovida', href: 'https://wa.me/34616794190?text=Ciao%2C%20vorrei%20info%20su%20Feste%20e%20Movida' },
+            { id: 'tips', name: 'Tips', class: 'mobile-tips', href: 'https://wa.me/34616794190?text=Ciao%2C%20vorrei%20qualche%20tip%20per%20il%20mio%20evento%20a%20Tenerife' }
         ],
         surfing: [
             { id: 'surfbar', name: 'Surfbar<br>Franchise', class: 'mobile-surfbar', href: 'surfing/surf-bar-franchise.html' },

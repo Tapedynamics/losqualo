@@ -20,64 +20,46 @@
         <main class="page-map" data-state="categories">
             <!-- SVG per le linee dinamiche -->
             <svg class="connections" id="svg-connections">
-                <!-- Linee: Centro -> Sotto-categorie -->
+                <!-- Linee: Centro -> 7 nodi (tutti link diretti) -->
+                <line class="line main-line" id="line-center-venue"></line>
+                <line class="line main-line" id="line-center-carrent"></line>
                 <line class="line main-line" id="line-center-fooddrink"></line>
-                <line class="line main-line" id="line-center-servizi"></line>
-                <line class="line main-line" id="line-center-nextevent"></line>
-
-                <!-- Linee Food & Drink -->
-                <line class="line sub-line" data-category="fooddrink" id="line-fooddrink-bodegas"></line>
-                <line class="line sub-line" data-category="fooddrink" id="line-fooddrink-guacinches"></line>
-                <line class="line sub-line" data-category="fooddrink" id="line-fooddrink-cocktailbar"></line>
-                <line class="line sub-line" data-category="fooddrink" id="line-fooddrink-cucinatipica"></line>
-                <line class="line sub-line" data-category="fooddrink" id="line-fooddrink-italiana"></line>
-                <line class="line sub-line" data-category="fooddrink" id="line-fooddrink-mediterranea"></line>
-                <line class="line sub-line" data-category="fooddrink" id="line-fooddrink-surfbar"></line>
+                <line class="line main-line" id="line-center-suonoluci"></line>
+                <line class="line main-line" id="line-center-musicshow"></line>
+                <line class="line main-line" id="line-center-festemovida"></line>
+                <line class="line main-line" id="line-center-tips"></line>
             </svg>
 
             <!-- Centro - Categoria -->
             <div class="center-node category-center" id="category-trigger">
                 <div class="category-icon eventi-bg">
-                    <span>EVENTI</span>
+                    <span>Eventi e<br>Servizi<br>Privati</span>
                 </div>
                 <span class="click-hint">Clicca per esplorare</span>
             </div>
 
-            <!-- Sotto-categorie (Livello 2) -->
+            <!-- 7 nodi piatti, tutti link diretti a WhatsApp -->
             <div class="primary-nodes">
-                <div class="node node-primary fooddrink-node" id="node-fooddrink" data-category="fooddrink">
-                    <span>Food &<br>Drink</span>
-                </div>
-                <a href="https://wa.me/34616794190?text=Ciao%2C%20vorrei%20info%20sui%20servizi%20privati%20per%20il%20mio%20evento" target="_blank" rel="noopener" class="node node-primary servizi-node" id="node-servizi">
-                    <span>Servizi<br>Privati</span>
+                <a href="https://wa.me/34616794190?text=Ciao%2C%20vorrei%20info%20su%20Venue%20per%20il%20mio%20evento" target="_blank" rel="noopener" class="node node-primary venue-node" id="node-venue">
+                    <span>Venue</span>
                 </a>
-                <a href="#next-event" class="node node-primary nextevent-node" id="node-nextevent">
-                    <span>Next<br>Event</span>
+                <a href="https://wa.me/34616794190?text=Ciao%2C%20vorrei%20info%20su%20Car%20Rent%20%26%20Transfer" target="_blank" rel="noopener" class="node node-primary carrent-node" id="node-carrent">
+                    <span>Car Rent<br>&amp; Transfer</span>
                 </a>
-            </div>
-
-            <!-- Elementi Livello 3 - FOOD & DRINK -->
-            <div class="sub-nodes" data-parent="fooddrink">
-                <a href="#bodegas" class="node node-secondary item-bodegas" id="node-bodegas">
-                    <span>Bodegas</span>
+                <a href="https://wa.me/34616794190?text=Ciao%2C%20vorrei%20info%20su%20Food%20%26%20Drink%20per%20il%20mio%20evento" target="_blank" rel="noopener" class="node node-primary fooddrink-node" id="node-fooddrink">
+                    <span>Food &amp;<br>Drink</span>
                 </a>
-                <a href="#guacinches" class="node node-secondary item-guacinches" id="node-guacinches">
-                    <span>Guachinches</span>
+                <a href="https://wa.me/34616794190?text=Ciao%2C%20vorrei%20info%20su%20Suono%20e%20Luci" target="_blank" rel="noopener" class="node node-primary suonoluci-node" id="node-suonoluci">
+                    <span>Suono<br>e Luci</span>
                 </a>
-                <a href="#cocktailbar" class="node node-secondary item-cocktailbar" id="node-cocktailbar">
-                    <span>Cocktail<br>Bar</span>
+                <a href="https://wa.me/34616794190?text=Ciao%2C%20vorrei%20info%20su%20Music%20%26%20Show" target="_blank" rel="noopener" class="node node-primary musicshow-node" id="node-musicshow">
+                    <span>Music<br>&amp; Show</span>
                 </a>
-                <a href="#cucinatipica" class="node node-secondary item-cucinatipica" id="node-cucinatipica">
-                    <span>Cucina<br>Tipica</span>
+                <a href="https://wa.me/34616794190?text=Ciao%2C%20vorrei%20info%20su%20Feste%20e%20Movida" target="_blank" rel="noopener" class="node node-primary festemovida-node" id="node-festemovida">
+                    <span>Feste e<br>Movida</span>
                 </a>
-                <a href="#italiana" class="node node-secondary item-italiana" id="node-italiana">
-                    <span>Italiana</span>
-                </a>
-                <a href="#mediterranea" class="node node-secondary item-mediterranea" id="node-mediterranea">
-                    <span>Mediterranea</span>
-                </a>
-                <a href="#surfbar-food" class="node node-secondary item-surfbar-food" id="node-surfbar-food">
-                    <span>Surf Bar</span>
+                <a href="https://wa.me/34616794190?text=Ciao%2C%20vorrei%20qualche%20tip%20per%20il%20mio%20evento%20a%20Tenerife" target="_blank" rel="noopener" class="node node-primary tips-node" id="node-tips">
+                    <span>Tips</span>
                 </a>
             </div>
 

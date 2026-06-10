@@ -291,6 +291,52 @@ header {
     left: 26%;
 }
 
+/* ===== Nuova struttura EVENTI E SERVIZI PRIVATI — 7 nodi piatti (eptagono) ===== */
+.page-eventi .category-icon.eventi-bg span { font-size: 0.66rem; line-height: 1.15; }
+
+.page-eventi .venue-node {
+    background: linear-gradient(145deg, var(--eventi-main), #c49a30);
+    color: var(--text-primary);
+    top: 17%;
+    left: 50%;
+}
+.page-eventi .carrent-node {
+    background: linear-gradient(145deg, var(--eventi-showcases), #b88520);
+    color: var(--text-primary);
+    top: 29%;
+    left: 75%;
+}
+.page-eventi .fooddrink-node {
+    background: linear-gradient(145deg, var(--eventi-tips), #d4b358);
+    color: var(--text-primary);
+    top: 57%;
+    left: 81%;
+}
+.page-eventi .suonoluci-node {
+    background: linear-gradient(145deg, var(--eventi-servizi), #a87a2a);
+    color: white;
+    top: 80%;
+    left: 64%;
+}
+.page-eventi .musicshow-node {
+    background: linear-gradient(145deg, var(--eventi-main), #c49a30);
+    color: var(--text-primary);
+    top: 80%;
+    left: 36%;
+}
+.page-eventi .festemovida-node {
+    background: linear-gradient(145deg, var(--eventi-showcases), #b88520);
+    color: var(--text-primary);
+    top: 57%;
+    left: 19%;
+}
+.page-eventi .tips-node {
+    background: linear-gradient(145deg, var(--eventi-tips), #d4b358);
+    color: var(--text-primary);
+    top: 29%;
+    left: 25%;
+}
+
 /* Elementi SHOWCASES (Livello 3) */
 .page-eventi .item-boatparty {
     background: linear-gradient(145deg, #e8c060, #d4ac4c);
