@@ -990,6 +990,14 @@ header {
     left: 72%;
 }
 
+/* Full Experience: nodo primario (11 giu, pt9e) - slot mid-sinistra, simmetrico a Spots */
+.page-surfing .fullexp-node {
+    background: linear-gradient(145deg, var(--surfing-spots), #3e8ba8);
+    color: white;
+    top: 50%;
+    left: 16%;
+}
+
 .page-surfing .elmedano-node {
     background: linear-gradient(145deg, var(--surfing-elmedano), #2f7fa0);
     color: white;
@@ -1026,13 +1034,6 @@ header {
     left: 62%;
 }
 
-.page-surfing .item-surfcamp {
-    background: linear-gradient(145deg, #8bc2dc, #77aec8);
-    color: var(--text-primary);
-    top: 3%;
-    left: 78%;
-}
-
 .page-surfing .item-reservacama {
     background: linear-gradient(145deg, #87bed8, #73aac4);
     color: var(--text-primary);
@@ -1045,13 +1046,6 @@ header {
     color: var(--text-primary);
     top: 28%;
     left: 85%;
-}
-
-.page-surfing .item-gallery {
-    background: linear-gradient(145deg, #7fb6d0, #6ba2bc);
-    color: var(--text-primary);
-    top: 28%;
-    left: 70%;
 }
 
 /* Elementi EL MEDANO */
@@ -1430,6 +1424,7 @@ header {
     .mobile-page-map .mobile-spots { background: linear-gradient(145deg, var(--surfing-spots), #5fa6c6); color: var(--text-primary); }
     .mobile-page-map .mobile-callemexico { background: linear-gradient(145deg, var(--surfing-callemexico), #3e8ba8); color: white; }
     .mobile-page-map .mobile-school { background: linear-gradient(145deg, var(--surfing-camp), #5a9ec6); color: var(--text-primary); }
+    .mobile-page-map .mobile-fullexp { background: linear-gradient(145deg, var(--surfing-spots), #3e8ba8); color: white; }
 
     .mobile-page-map .mobile-portfolio { background: linear-gradient(145deg, var(--agency-smm), #3f5f70); color: white; }
     .mobile-page-map .mobile-servizi { background: linear-gradient(145deg, var(--agency-start), #4a6474); color: white; }

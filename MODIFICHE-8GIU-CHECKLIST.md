@@ -44,9 +44,9 @@
 ## 9. SURF HOUSE (dentro SURFING TENERIFE)
 - [x] 9a — ✅ FATTO (10 giu) Reserva Cama → nodo Ostello generico. Aggiunto handler `?cat=` in `pages.js` (deep-link categoria); link `surfing.html` + `pages.js` → `alloggio.html?cat=ostello`.
 - [x] 9b — ✅ Reserva habitación → Surf House Rural. `pages.js:657` → `surf-house-rurale.html`.
-- [ ] 9c — ❌ Percorso indietro: non cambiare macrocategoria, tornare al nodo Surf House dentro Surfing Tenerife.
-- [ ] 9d — ❌ Eliminare nodo Gallery. Ancora presente `surfing.html:79`, `pages.js:658`.
-- [ ] 9e — ❌ Spostare Full Experience da Surf House a Surfing Tenerife, visibile all'apertura macro. Ora `pages.js:655` sotto Surf House.
+- [x] 9c — ✅ FATTO (11 giu) Indietro di `surfing/surf-house-b2b.html` → `../surfing.html?cat=surfhouse` (deep-link deterministico, riapre sempre Surf House nel macro, mai cambio macrocategoria).
+- [x] 9d — ✅ FATTO (11 giu) Nodo Gallery eliminato ovunque (surfing.html + pageLineConfig + pageSubNodesData + linea SVG + CSS item-gallery).
+- [x] 9e — ✅ FATTO (11 giu) Full Experience spostato da sub Surf House a NODO PRIMARIO di Surfing Tenerife (`surfing/full-experience.html`), visibile all'apertura macro (slot mid-sx, esagono a 6). Validato a vista.
 
 ## 10. ALESSANDRO
 - [ ] 10a — 🖼️❌ Foto profilo (da IG/FB). `assets/alessandro.jpg` NON esiste → mostra fallback "AB". FUORI GOAL (asset esterno).
@@ -106,9 +106,6 @@
 - **1a/b/c** 👁️ Search box home: misura+posizione (`styles.css:1015`)
 - **3a** Traduzione nodo Alloggio per lingua ES/EN (`en/es/index.html`, dict `pages.js:7-10`)
 - **4a** 👁️ Finca Chimiche: doppioni foto (visivi, `alloggio/foto/finca-chimiche/`)
-- **9c** Back-path Surf House non cambi macrocategoria
-- **9d** Eliminare nodo Gallery (`surfing.html:79`, `pages.js`)
-- **9e** Spostare Full Experience da Surf House al macro Surfing Tenerife
 - **12b** 🖼️ Quad: hero con foto coi quad (nessuna cartella Drive dedicata — serve foto)
 
 ### FUORI GOAL (confermato)
@@ -117,4 +114,4 @@
 ### ⚠️ Da confermare A VISTA (deployati, posizioni/hero alla cieca)
 - Eventi (15) eptagono · Acqua (13) nodi Charter/BoatParty · hero=drive-01 di Jeep/Parapendio/Paratrike (12a,14b,14c) · mapping foto Armani/Salita yacht (13e)
 
-**Bottom line** (agg. 11 giu): ~37/38 task FATTI e live. Cablaggio 5 alloggio + Agency (pt11) CHIUSI. Restano: **9c/d/e** Surf House (restructure mind-map) + 3 visivi (1, 4, 12b) + 1 i18n (3). Tutto il pesante Drive è CHIUSO.
+**Bottom line** (agg. 11 giu): tutti i restructure mind-map CHIUSI (cablaggio 5 alloggio + Agency pt11 + Surf House 9c/d/e). Restano SOLO: 3 visivi (**1** search box, **4** Finca Chimiche doppioni, **12b** Quad hero — servono occhio/foto) + **3** i18n nodo Alloggio ES/EN. Tutto il pesante Drive è CHIUSO.

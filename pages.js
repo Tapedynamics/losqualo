@@ -152,16 +152,15 @@ const pageLineConfig = {
         main: [
             { line: 'line-center-surfbar', from: 'category-trigger', to: 'node-surfbar' },
             { line: 'line-center-surfhouse', from: 'category-trigger', to: 'node-surfhouse' },
+            { line: 'line-center-fullexp', from: 'category-trigger', to: 'node-fullexp' },
             { line: 'line-center-spots', from: 'category-trigger', to: 'node-spots' },
             { line: 'line-center-callemexico', from: 'category-trigger', to: 'node-callemexico' },
             { line: 'line-center-school', from: 'category-trigger', to: 'node-school' }
         ],
         surfhouse: [
             { line: 'line-surfhouse-b2b', from: 'node-surfhouse', to: 'node-b2b' },
-            { line: 'line-surfhouse-surfcamp', from: 'node-surfhouse', to: 'node-surfcamp' },
             { line: 'line-surfhouse-reservacama', from: 'node-surfhouse', to: 'node-reservacama' },
-            { line: 'line-surfhouse-reservahab', from: 'node-surfhouse', to: 'node-reservahab' },
-            { line: 'line-surfhouse-gallery', from: 'node-surfhouse', to: 'node-gallery' }
+            { line: 'line-surfhouse-reservahab', from: 'node-surfhouse', to: 'node-reservahab' }
         ]
     },
     agency: {
@@ -637,10 +636,8 @@ const pageSubNodesData = {
             class: 'radial-surfhouse',
             subs: [
                 { id: 'b2b', name: 'B2B', href: 'surfing/surf-house-b2b.html' },
-                { id: 'surfcamp', name: 'Full Experience', href: 'surfing/full-experience.html' },
                 { id: 'reservacama', name: 'Reserva Cama', href: 'alloggio.html?cat=ostello' },
-                { id: 'reservahab', name: 'Reserva Habitacion', href: 'alloggio/surf-house-rurale.html' },
-                { id: 'gallery', name: 'Gallery', href: '#gallery' }
+                { id: 'reservahab', name: 'Reserva Habitacion', href: 'alloggio/surf-house-rurale.html' }
             ]
         }
     },
@@ -908,7 +905,8 @@ function getSubcategoryNodes(page) {
             { id: 'surfhouse', name: 'Surf House', class: 'mobile-surfhouse' },
             { id: 'spots', name: 'Surf Spots', class: 'mobile-spots', href: 'surfing/spots.html' },
             { id: 'callemexico', name: 'Calle Mexico', class: 'mobile-callemexico', href: 'https://t.mtrbio.com/callemexicotenerife' },
-            { id: 'school', name: 'School', class: 'mobile-school', href: 'surfing/ika-ika.html' }
+            { id: 'school', name: 'School', class: 'mobile-school', href: 'surfing/ika-ika.html' },
+            { id: 'fullexp', name: 'Full<br>Experience', class: 'mobile-fullexp', href: 'surfing/full-experience.html' }
         ],
         agency: [
             { id: 'portfolio', name: 'Portfolio', class: 'mobile-portfolio', href: 'https://t.mtrbio.com/losqualoagency' },
