@@ -19,8 +19,8 @@
 ## 2. BRAND — Descrizione "Cos'è Lo Squalo"
 - [x] 2a — ✅ FATTO (10 giu) Sostituito con testo esatto PDF. `brand.html:115`.
 
-## 3. ALLOGGIO — Traduzioni
-- [ ] 3a — ❌ Il nodo Alloggio resta IT in ES/EN. Tradurre il nodo in base alla lingua. (`en/es/index.html` traducono la landing ma puntano allo stesso `alloggio.html` IT)
+## 3. ALLOGGIO — Traduzioni → ✅ FATTO (11 giu)
+- [x] 3a — ✅ Il nodo Alloggio era GIÀ tradotto e live (`en/alloggio.html`=ACCOMMODATION/Rural/Apartment/Hostel, `es/alloggio.html`=ALOJAMIENTO/Rural/Apartamento/Hostel; landing EN/ES linkano correttamente la copia in lingua). Coerenza completata: portati i 5 nodi nuovi (Villa A&R/Golf/One + Fañabé/Ático) in `en/es/alloggio.html` + create 10 schede tradotte (`en/alloggio/` e `es/alloggio/`, ora 27 schede per lingua), path img root-assoluti condivisi. Validato a vista (EN Villa espanso) + switcher IT/EN/ES OK. Fix del 404 mobile EN/ES.
 
 ## 4. RURALE / GLAMPING — Finca Chimiche
 - [ ] 4a — 👁️ Eliminare foto doppie galleria. `finca-chimiche.html` ha `drive-01..12` (nomi unici) → doppioni VISIVI, serve occhio sulle immagini.
@@ -104,7 +104,6 @@
 
 ### ❌ RIMASTI DA FARE (in scope) — tutti restructure mind-map o visivi
 - **1a/b/c** 👁️ Search box home: misura+posizione (`styles.css:1015`)
-- **3a** Traduzione nodo Alloggio per lingua ES/EN (`en/es/index.html`, dict `pages.js:7-10`)
 - **4a** 👁️ Finca Chimiche: doppioni foto (visivi, `alloggio/foto/finca-chimiche/`)
 - **12b** 🖼️ Quad: hero con foto coi quad (nessuna cartella Drive dedicata — serve foto)
 
@@ -114,4 +113,4 @@
 ### ⚠️ Da confermare A VISTA (deployati, posizioni/hero alla cieca)
 - Eventi (15) eptagono · Acqua (13) nodi Charter/BoatParty · hero=drive-01 di Jeep/Parapendio/Paratrike (12a,14b,14c) · mapping foto Armani/Salita yacht (13e)
 
-**Bottom line** (agg. 11 giu): tutti i restructure mind-map CHIUSI (cablaggio 5 alloggio + Agency pt11 + Surf House 9c/d/e). Restano SOLO: 3 visivi (**1** search box, **4** Finca Chimiche doppioni, **12b** Quad hero — servono occhio/foto) + **3** i18n nodo Alloggio ES/EN. Tutto il pesante Drive è CHIUSO.
+**Bottom line** (agg. 11 giu): tutto il CODABILE è CHIUSO (cablaggio 5 alloggio + Agency pt11 + Surf House 9c/d/e + i18n pt3 EN/ES con 10 schede tradotte). Restano SOLO 3 task VISIVI/ASSET che richiedono Daniele: **1** search box (tarare a vista), **4** Finca Chimiche doppioni (guardare foto), **12b** Quad hero (serve foto coi quad). Tutto il pesante Drive è CHIUSO.
