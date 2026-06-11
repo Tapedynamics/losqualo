@@ -51,15 +51,13 @@
 ## 10. ALESSANDRO
 - [ ] 10a — 🖼️❌ Foto profilo (da IG/FB). `assets/alessandro.jpg` NON esiste → mostra fallback "AB". FUORI GOAL (asset esterno).
 
-## 11. AGENCY
-- [ ] 11a — ❌ Agency deve aprire struttura a nodi, non scheda. Ora `index.html:62` → `agency/oferta.html`.
-- [ ] 11b — ❌ Eliminare nodi: SMM & Marketing, Graphic Design, Artist Management, Start Business. Presenti `pages.js:662-696`.
-- [ ] 11c — ❌ Nuovo nodo Portfolio → `https://t.mtrbio.com/losqualoagency`
-- [ ] 11d — ❌ Nuovo nodo Servizi e Prezzi (= scheda `oferta.html` attuale)
-- [ ] 11e — ❌ Nuovo nodo Contact & Social:
-  - IG `instagram.com/losqualoagency` · FB `facebook.com/losqualoagency`
-  - Email `agency.losqualotenerife@gmail.com` · TikTok `tiktok.com/@agencylosqualotenerife`
-  - Google `share.google/EPTc7zGdCKpWTuL87`
+## 11. AGENCY → ✅ FATTO (11 giu) restructure completo
+- [x] 11a — ✅ Agency (home) apre `agency.html` (mappa a nodi), non più `agency/oferta.html`. `index.html`.
+- [x] 11b — ✅ Eliminati i 4 nodi SMM/Graphic Design/Artist Management/Start Business (HTML+pages.js+pages.css).
+- [x] 11c — ✅ Nodo Portfolio → `https://t.mtrbio.com/losqualoagency` (leaf, _blank).
+- [x] 11d — ✅ Nodo Servizi e Prezzi → riusa `agency/oferta.html` (leaf).
+- [x] 11e — ✅ Nodo Contact & Social (espandibile) → 5 sub: Instagram/Facebook/TikTok/Google/Email (+mailto). Validato a vista (fan attorno al nodo, nessuna sovrapposizione).
+- Nuova struttura: 3 nodi primari (positions3 mobile). Vecchia CSS/dati agency rimossa pulita (no orfani).
 
 ## 12. ESCURSIONI E ATTIVITÀ
 - [x] 12a — ✅ FATTO (10 giu, Drive ON) Jeep: hero + 14 foto Drive. ⚠️ Hero=drive-01, conferma a vista la "bella foto".
@@ -111,7 +109,6 @@
 - **9c** Back-path Surf House non cambi macrocategoria
 - **9d** Eliminare nodo Gallery (`surfing.html:79`, `pages.js`)
 - **9e** Spostare Full Experience da Surf House al macro Surfing Tenerife
-- **11a/b/c/d/e** Agency → struttura a nodi (Portfolio/Servizi e Prezzi/Contact&Social), eliminare 4 vecchi
 - **12b** 🖼️ Quad: hero con foto coi quad (nessuna cartella Drive dedicata — serve foto)
 
 ### FUORI GOAL (confermato)
@@ -120,4 +117,4 @@
 ### ⚠️ Da confermare A VISTA (deployati, posizioni/hero alla cieca)
 - Eventi (15) eptagono · Acqua (13) nodi Charter/BoatParty · hero=drive-01 di Jeep/Parapendio/Paratrike (12a,14b,14c) · mapping foto Armani/Salita yacht (13e)
 
-**Bottom line** (agg. 11 giu): ~35/38 task FATTI e live. Cablaggio 5 alloggio CHIUSO. Restano: **9c/d/e** Surf House + **11** Agency (restructure mind-map) + 3 visivi (1, 4, 12b) + 1 i18n (3). Tutto il pesante Drive è CHIUSO.
+**Bottom line** (agg. 11 giu): ~37/38 task FATTI e live. Cablaggio 5 alloggio + Agency (pt11) CHIUSI. Restano: **9c/d/e** Surf House (restructure mind-map) + 3 visivi (1, 4, 12b) + 1 i18n (3). Tutto il pesante Drive è CHIUSO.

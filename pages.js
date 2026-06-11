@@ -166,36 +166,16 @@ const pageLineConfig = {
     },
     agency: {
         main: [
-            { line: 'line-center-smm', from: 'category-trigger', to: 'node-smm' },
-            { line: 'line-center-grafic', from: 'category-trigger', to: 'node-grafic' },
-            { line: 'line-center-artists', from: 'category-trigger', to: 'node-artists' },
-            { line: 'line-center-start', from: 'category-trigger', to: 'node-start' }
+            { line: 'line-center-portfolio', from: 'category-trigger', to: 'node-portfolio' },
+            { line: 'line-center-servizi', from: 'category-trigger', to: 'node-servizi' },
+            { line: 'line-center-contact', from: 'category-trigger', to: 'node-contact' }
         ],
-        smm: [
-            { line: 'line-smm-marketing', from: 'node-smm', to: 'node-marketing' },
-            { line: 'line-smm-consulenza', from: 'node-smm', to: 'node-smm-consulenza' },
-            { line: 'line-smm-gestione', from: 'node-smm', to: 'node-gestione' },
-            { line: 'line-smm-ads', from: 'node-smm', to: 'node-ads' },
-            { line: 'line-smm-web', from: 'node-smm', to: 'node-web' }
-        ],
-        grafic: [
-            { line: 'line-grafic-flyer', from: 'node-grafic', to: 'node-flyer' },
-            { line: 'line-grafic-fotovideo', from: 'node-grafic', to: 'node-fotovideo' },
-            { line: 'line-grafic-logo', from: 'node-grafic', to: 'node-logo' },
-            { line: 'line-grafic-kitmarca', from: 'node-grafic', to: 'node-kitmarca' }
-        ],
-        artists: [
-            { line: 'line-artists-livemusic', from: 'node-artists', to: 'node-livemusic' },
-            { line: 'line-artists-djs', from: 'node-artists', to: 'node-djs' },
-            { line: 'line-artists-shows', from: 'node-artists', to: 'node-agency-shows' },
-            { line: 'line-artists-setrecording', from: 'node-artists', to: 'node-setrecording' },
-            { line: 'line-artists-djschool', from: 'node-artists', to: 'node-djschool' }
-        ],
-        start: [
-            { line: 'line-start-consulenza', from: 'node-start', to: 'node-start-consulenza' },
-            { line: 'line-start-affiancamento', from: 'node-start', to: 'node-affiancamento' },
-            { line: 'line-start-modelli', from: 'node-start', to: 'node-modelli' },
-            { line: 'line-start-tavolacalda', from: 'node-start', to: 'node-tavolacalda' }
+        contact: [
+            { line: 'line-contact-instagram', from: 'node-contact', to: 'node-instagram' },
+            { line: 'line-contact-facebook', from: 'node-contact', to: 'node-facebook' },
+            { line: 'line-contact-tiktok', from: 'node-contact', to: 'node-tiktok' },
+            { line: 'line-contact-google', from: 'node-contact', to: 'node-google' },
+            { line: 'line-contact-email', from: 'node-contact', to: 'node-email' }
         ]
     }
 };
@@ -665,46 +645,15 @@ const pageSubNodesData = {
         }
     },
     agency: {
-        smm: {
-            name: 'SMM &<br>Marketing',
-            class: 'radial-smm',
+        contact: {
+            name: 'Contact<br>& Social',
+            class: 'radial-contact',
             subs: [
-                { id: 'marketing', name: 'Marketing', href: '#marketing' },
-                { id: 'smm-consulenza', name: 'Consulenza', href: '#smm-consulenza' },
-                { id: 'gestione', name: 'Gestione', href: '#gestione' },
-                { id: 'ads', name: 'Ads', href: '#ads' },
-                { id: 'web', name: 'Web', href: '#web' }
-            ]
-        },
-        grafic: {
-            name: 'Grafic Design',
-            class: 'radial-grafic',
-            subs: [
-                { id: 'flyer', name: 'Flyer Menu', href: '#flyer' },
-                { id: 'fotovideo', name: 'Foto Video', href: '#fotovideo' },
-                { id: 'logo', name: 'Logo', href: '#logo' },
-                { id: 'kitmarca', name: 'Kit Marca', href: '#kitmarca' }
-            ]
-        },
-        artists: {
-            name: 'Artists<br>Management',
-            class: 'radial-artists',
-            subs: [
-                { id: 'livemusic', name: 'Live Music', href: '#livemusic' },
-                { id: 'djs', name: 'DJs', href: '#djs' },
-                { id: 'agency-shows', name: 'Shows', href: '#agency-shows' },
-                { id: 'setrecording', name: 'Set Recording', href: '#setrecording' },
-                { id: 'djschool', name: 'DJ School', href: '#djschool' }
-            ]
-        },
-        start: {
-            name: 'Start Business',
-            class: 'radial-start',
-            subs: [
-                { id: 'start-consulenza', name: 'Consulenza', href: '#start-consulenza' },
-                { id: 'affiancamento', name: 'Affiancamento', href: '#affiancamento' },
-                { id: 'modelli', name: 'Modelli', href: '#modelli' },
-                { id: 'tavolacalda', name: 'Tavola Calda', href: '#tavolacalda' }
+                { id: 'instagram', name: 'Instagram', href: 'https://instagram.com/losqualoagency' },
+                { id: 'facebook', name: 'Facebook', href: 'https://facebook.com/losqualoagency' },
+                { id: 'tiktok', name: 'TikTok', href: 'https://tiktok.com/@agencylosqualotenerife' },
+                { id: 'google', name: 'Google', href: 'https://share.google/EPTc7zGdCKpWTuL87' },
+                { id: 'email', name: 'Email', href: 'mailto:agency.losqualotenerife@gmail.com' }
             ]
         }
     }
@@ -917,7 +866,7 @@ function getSubcategoryPositions(page) {
 
     switch (page) {
         case 'agency':
-            return positions4;
+            return positions3;
         case 'escursioni':
             return positions3;
         case 'eventi':
@@ -962,10 +911,9 @@ function getSubcategoryNodes(page) {
             { id: 'school', name: 'School', class: 'mobile-school', href: 'surfing/ika-ika.html' }
         ],
         agency: [
-            { id: 'smm', name: 'SMM &<br>Marketing', class: 'mobile-smm' },
-            { id: 'grafic', name: 'Grafic<br>Design', class: 'mobile-grafic' },
-            { id: 'artists', name: 'Artists<br>Management', class: 'mobile-artists' },
-            { id: 'start', name: 'Start<br>Business', class: 'mobile-start' }
+            { id: 'portfolio', name: 'Portfolio', class: 'mobile-portfolio', href: 'https://t.mtrbio.com/losqualoagency' },
+            { id: 'servizi', name: 'Servizi<br>e Prezzi', class: 'mobile-servizi', href: 'agency/oferta.html' },
+            { id: 'contact', name: 'Contact<br>& Social', class: 'mobile-contact' }
         ]
     };
 

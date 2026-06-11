@@ -1153,163 +1153,62 @@ header {
    PAGINA AGENCY - Posizioni e Colori
    ============================================= */
 
-/* Sotto-categorie (Livello 2) - 4 nodi */
-.page-agency .smm-node {
+/* Sotto-categorie (Livello 2) - 3 nodi (11 giu: restructure pt11) */
+.page-agency .portfolio-node {
     background: linear-gradient(145deg, var(--agency-smm), #3f5f70);
     color: white;
     top: 20%;
+    left: 50%;
+}
+
+.page-agency .servizi-node {
+    background: linear-gradient(145deg, var(--agency-start), #4a6474);
+    color: white;
+    top: 72%;
     left: 25%;
 }
 
-.page-agency .grafic-node {
-    background: linear-gradient(145deg, var(--agency-start), #4a6474);
-    color: white;
-    top: 20%;
-    left: 68%;
-}
-
-.page-agency .artists-node {
+.page-agency .contact-node {
     background: linear-gradient(145deg, var(--agency-artists), #1f3e4f);
     color: white;
     top: 72%;
-    left: 22%;
+    left: 72%;
 }
 
-.page-agency .start-node {
-    background: linear-gradient(145deg, var(--agency-main), #2e4a5a);
-    color: white;
-    top: 72%;
-    left: 70%;
-}
-
-/* Elementi SMM & MARKETING */
-.page-agency .item-marketing {
+/* Elementi CONTACT & SOCIAL (fan attorno al nodo Contact) */
+.page-agency .item-instagram {
     background: linear-gradient(145deg, #5f7f90, #4b6b7c);
     color: white;
-    top: 5%;
-    left: 10%;
+    top: 42%;
+    left: 72%;
 }
 
-.page-agency .item-smm-consulenza {
+.page-agency .item-facebook {
     background: linear-gradient(145deg, #5b7b8c, #476778);
     color: white;
-    top: 5%;
-    left: 25%;
+    top: 40%;
+    left: 90%;
 }
 
-.page-agency .item-gestione {
+.page-agency .item-tiktok {
     background: linear-gradient(145deg, #577788, #436374);
     color: white;
-    top: 18%;
-    left: 8%;
+    top: 82%;
+    left: 92%;
 }
 
-.page-agency .item-ads {
+.page-agency .item-google {
     background: linear-gradient(145deg, #537384, #3f5f70);
     color: white;
-    top: 32%;
-    left: 10%;
+    top: 60%;
+    left: 94%;
 }
 
-.page-agency .item-web {
+.page-agency .item-email {
     background: linear-gradient(145deg, #4f6f80, #3b5b6c);
     color: white;
-    top: 32%;
-    left: 25%;
-}
-
-/* Elementi GRAFIC DESIGN */
-.page-agency .item-flyer {
-    background: linear-gradient(145deg, #6a8494, #567080);
-    color: white;
-    top: 5%;
-    left: 60%;
-}
-
-.page-agency .item-fotovideo {
-    background: linear-gradient(145deg, #668090, #526c7c);
-    color: white;
-    top: 5%;
-    left: 78%;
-}
-
-.page-agency .item-logo {
-    background: linear-gradient(145deg, #627c8c, #4e6878);
-    color: white;
-    top: 18%;
-    left: 85%;
-}
-
-.page-agency .item-kitmarca {
-    background: linear-gradient(145deg, #5e7888, #4a6474);
-    color: white;
-    top: 32%;
-    left: 82%;
-}
-
-/* Elementi ARTISTS MANAGEMENT */
-.page-agency .item-livemusic {
-    background: linear-gradient(145deg, #3f5e6f, #2b4a5b);
-    color: white;
-    top: 60%;
-    left: 5%;
-}
-
-.page-agency .item-djs {
-    background: linear-gradient(145deg, #3b5a6b, #274657);
-    color: white;
-    top: 75%;
-    left: 5%;
-}
-
-.page-agency .item-agency-shows {
-    background: linear-gradient(145deg, #375667, #234253);
-    color: white;
-    top: 88%;
-    left: 12%;
-}
-
-.page-agency .item-setrecording {
-    background: linear-gradient(145deg, #335263, #1f3e4f);
-    color: white;
-    top: 88%;
-    left: 28%;
-}
-
-.page-agency .item-djschool {
-    background: linear-gradient(145deg, #2f4e5f, #1b3a4b);
-    color: white;
-    top: 75%;
-    left: 38%;
-}
-
-/* Elementi START BUSINESS */
-.page-agency .item-start-consulenza {
-    background: linear-gradient(145deg, #4e6c7e, #3a586a);
-    color: white;
-    top: 60%;
-    left: 88%;
-}
-
-.page-agency .item-affiancamento {
-    background: linear-gradient(145deg, #4a687a, #365466);
-    color: white;
-    top: 75%;
-    left: 88%;
-}
-
-.page-agency .item-modelli {
-    background: linear-gradient(145deg, #466476, #324e62);
-    color: white;
-    top: 88%;
-    left: 82%;
-}
-
-.page-agency .item-tavolacalda {
-    background: linear-gradient(145deg, #426072, #2e4c5e);
-    color: white;
-    top: 88%;
-    left: 65%;
+    top: 92%;
+    left: 74%;
 }
 
 /* =============================================
@@ -1532,10 +1431,9 @@ header {
     .mobile-page-map .mobile-callemexico { background: linear-gradient(145deg, var(--surfing-callemexico), #3e8ba8); color: white; }
     .mobile-page-map .mobile-school { background: linear-gradient(145deg, var(--surfing-camp), #5a9ec6); color: var(--text-primary); }
 
-    .mobile-page-map .mobile-smm { background: linear-gradient(145deg, var(--agency-smm), #3f5f70); color: white; }
-    .mobile-page-map .mobile-grafic { background: linear-gradient(145deg, var(--agency-start), #4a6474); color: white; }
-    .mobile-page-map .mobile-artists { background: linear-gradient(145deg, var(--agency-artists), #1f3e4f); color: white; }
-    .mobile-page-map .mobile-start { background: linear-gradient(145deg, var(--agency-main), #2e4a5a); color: white; }
+    .mobile-page-map .mobile-portfolio { background: linear-gradient(145deg, var(--agency-smm), #3f5f70); color: white; }
+    .mobile-page-map .mobile-servizi { background: linear-gradient(145deg, var(--agency-start), #4a6474); color: white; }
+    .mobile-page-map .mobile-contact { background: linear-gradient(145deg, var(--agency-artists), #1f3e4f); color: white; }
 
     .mobile-page-map .mobile-chisono { background: linear-gradient(145deg, var(--alessandro-main), #5a7585); color: white; }
     .mobile-page-map .mobile-perche { background: linear-gradient(145deg, #7b97a6, #6a8695); color: white; }
