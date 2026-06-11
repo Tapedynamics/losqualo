@@ -90,19 +90,35 @@
 
 ---
 
-## Riepilogo avanzamento
+## Riepilogo avanzamento — aggiornato 10 giu (Drive ON)
 
-**Totale task PDF: 38** (atomizzati)
+### ✅ FATTI E LIVE su losqualo.netlify.app
+- **2** Brand desc · **6** Villa Paraiso foto piscina · **7** Full Experience→WA
+- **9a** Reserva Cama→Ostello · **9b** Reserva Habitación (già ok)
+- **12a** Jeep gallery+hero · **12c** Buggy no-Stargazing
+- **13a/b/c/d/e/f/g/h** TUTTO Acqua: Charter Privato (hub Yacht+Catamarano+Barco), Boat Party, yacht "Le opzioni" + no Ocean Peak + modelli con foto/prezzi, colori azzurri
+- **14a/b/c** Stargazing+Parapendio+Paratrike gallery+hero
+- **15a/b/c/d** Eventi e Servizi Privati (7 nodi piatti → WhatsApp)
 
-| Categoria | Conteggio |
-|-----------|-----------|
-| ✅ Fatto | 1 (9b) |
-| ⚠️ Parziale | 3 (9a, 13d, 13f) |
-| ❌ Da fare (in scope) | 22 |
-| 👁️ Check visivo (in scope) | 4 (1a,1b,1c,4a) |
-| 🔒 Drive (FUORI GOAL) | 7 (6, 12a, 13e, 13h-foto, 14a, 14b, 14c) |
-| 🖼️ Asset esterno (FUORI GOAL) | 2 (10, 12b) |
+### ⚠️ SCHEDE FATTE ma manca il CABLAGGIO nodo nel mind-map
+- **5a/b/c** Villa A&R/Golf/One — pagine `alloggio/villa-{ar,golf,one}.html` LIVE ma NON nei nodi mappa Villa
+- **8a/b** Fañabé/Ático — pagine `alloggio/{fanabe,atico}.html` LIVE ma NON nei nodi mappa Appartamento
 
-**Conclusione**: il blocco 8 giugno è sostanzialmente NON lavorato. Solo Reserva habitación (9b) era già corretto.
+### ❌ RIMASTI DA FARE (in scope) — tutti restructure mind-map o visivi
+- **1a/b/c** 👁️ Search box home: misura+posizione (`styles.css:1015`)
+- **3a** Traduzione nodo Alloggio per lingua ES/EN (`en/es/index.html`, dict `pages.js:7-10`)
+- **4a** 👁️ Finca Chimiche: doppioni foto (visivi, `alloggio/foto/finca-chimiche/`)
+- **5/8 cablaggio** Aggiungere 5 nodi alloggio in mappa Villa(3)+Appartamento(2): `alloggio.html` + `pages.js` subs/lines + `pages.css` posizioni
+- **9c** Back-path Surf House non cambi macrocategoria
+- **9d** Eliminare nodo Gallery (`surfing.html:79`, `pages.js`)
+- **9e** Spostare Full Experience da Surf House al macro Surfing Tenerife
+- **11a/b/c/d/e** Agency → struttura a nodi (Portfolio/Servizi e Prezzi/Contact&Social), eliminare 4 vecchi
+- **12b** 🖼️ Quad: hero con foto coi quad (nessuna cartella Drive dedicata — serve foto)
 
-**Scope del goal (escludendo 🔒 e 🖼️): ~28 task** → 1 fatto, 2 parziali, 25 da completare.
+### FUORI GOAL (confermato)
+- **10** Foto profilo Alessandro (IG/FB) — `assets/alessandro.jpg` non esiste, fallback "AB"
+
+### ⚠️ Da confermare A VISTA (deployati, posizioni/hero alla cieca)
+- Eventi (15) eptagono · Acqua (13) nodi Charter/BoatParty · hero=drive-01 di Jeep/Parapendio/Paratrike (12a,14b,14c) · mapping foto Armani/Salita yacht (13e)
+
+**Bottom line**: ~30/38 task FATTI e live. Restano 4 restructure mind-map (cablaggio 5 alloggio, 9c/d/e, 11) + 3 visivi (1, 4, 12b) + 1 i18n (3). Tutto il pesante Drive è CHIUSO.
