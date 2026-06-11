@@ -688,6 +688,43 @@ header {
     left: 4%;
 }
 
+/* Elementi VILLA - Nuovi (8 giu: cablaggio schede Airbnb) */
+.page-alloggio .item-villaar {
+    background: linear-gradient(145deg, #dcb0ba, #c8949e);
+    color: var(--text-primary);
+    top: 58%;
+    left: 62%;
+}
+
+.page-alloggio .item-villagolf {
+    background: linear-gradient(145deg, #e0b4be, #cc98a2);
+    color: var(--text-primary);
+    top: 70%;
+    left: 52%;
+}
+
+.page-alloggio .item-villaone {
+    background: linear-gradient(145deg, #d8acb6, #c49098);
+    color: var(--text-primary);
+    top: 80%;
+    left: 42%;
+}
+
+/* Elementi APPARTAMENTO - Nuovi (8 giu: cablaggio schede Airbnb) */
+.page-alloggio .item-fanabe {
+    background: linear-gradient(145deg, #f0c4ce, #d8acb6);
+    color: var(--text-primary);
+    top: 88%;
+    left: 60%;
+}
+
+.page-alloggio .item-atico {
+    background: linear-gradient(145deg, #ecc0cc, #d4a8b2);
+    color: var(--text-primary);
+    top: 88%;
+    left: 75%;
+}
+
 /* =============================================
    PAGINA ESCURSIONI - Posizioni e Colori
    ============================================= */

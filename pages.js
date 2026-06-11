@@ -74,7 +74,10 @@ const pageLineConfig = {
             { line: 'line-villa-fortaleza', from: 'node-villa', to: 'node-fortaleza' },
             { line: 'line-villa-paraiso', from: 'node-villa', to: 'node-paraiso' },
             { line: 'line-villa-duque', from: 'node-villa', to: 'node-duque' },
-            { line: 'line-villa-beachhouse', from: 'node-villa', to: 'node-beachhouse' }
+            { line: 'line-villa-beachhouse', from: 'node-villa', to: 'node-beachhouse' },
+            { line: 'line-villa-villaar', from: 'node-villa', to: 'node-villaar' },
+            { line: 'line-villa-villagolf', from: 'node-villa', to: 'node-villagolf' },
+            { line: 'line-villa-villaone', from: 'node-villa', to: 'node-villaone' }
         ],
         casarurale: [
             { line: 'line-casarurale-ciguana', from: 'node-casarurale', to: 'node-ciguana' },
@@ -91,7 +94,9 @@ const pageLineConfig = {
             { line: 'line-appartamento-alcala', from: 'node-appartamento', to: 'node-alcala' },
             { line: 'line-appartamento-lasamericas', from: 'node-appartamento', to: 'node-lasamericas' },
             { line: 'line-appartamento-loscristianos', from: 'node-appartamento', to: 'node-loscristianos' },
-            { line: 'line-appartamento-penthouse', from: 'node-appartamento', to: 'node-penthouse' }
+            { line: 'line-appartamento-penthouse', from: 'node-appartamento', to: 'node-penthouse' },
+            { line: 'line-appartamento-fanabe', from: 'node-appartamento', to: 'node-fanabe' },
+            { line: 'line-appartamento-atico', from: 'node-appartamento', to: 'node-atico' }
         ],
         surfhouse: [
             { line: 'line-surfhouse-luxury', from: 'node-surfhouse', to: 'node-surfhouse-luxury' },
@@ -540,7 +545,10 @@ const pageSubNodesData = {
                 { id: 'fortaleza', name: 'La Fortaleza', href: 'alloggio/finca-la-fortaleza.html' },
                 { id: 'paraiso', name: 'Villa Paraiso', href: 'alloggio/villa-paraiso.html' },
                 { id: 'duque', name: 'Villa Duque', href: 'alloggio/villa-duque.html' },
-                { id: 'beachhouse', name: 'Beach House', href: 'alloggio/beach-house.html' }
+                { id: 'beachhouse', name: 'Beach House', href: 'alloggio/beach-house.html' },
+                { id: 'villaar', name: 'Villa A&R', href: 'alloggio/villa-ar.html' },
+                { id: 'villagolf', name: 'Villa Golf', href: 'alloggio/villa-golf.html' },
+                { id: 'villaone', name: 'Villa One', href: 'alloggio/villa-one.html' }
             ]
         },
         casarurale: {
@@ -565,7 +573,9 @@ const pageSubNodesData = {
                 { id: 'alcala', name: 'Alcala', href: 'alloggio/alcala.html' },
                 { id: 'lasamericas', name: 'Studio Las Americas', href: 'alloggio/studio-las-americas.html' },
                 { id: 'loscristianos', name: 'Studio Los Cristianos', href: 'alloggio/studio-los-cristianos.html' },
-                { id: 'penthouse', name: 'Penthouse', href: 'alloggio/penthouse.html' }
+                { id: 'penthouse', name: 'Penthouse', href: 'alloggio/penthouse.html' },
+                { id: 'fanabe', name: 'Fañabé', href: 'alloggio/fanabe.html' },
+                { id: 'atico', name: 'Ático', href: 'alloggio/atico.html' }
             ]
         },
         surfhouse: {
