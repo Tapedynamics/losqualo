@@ -32,7 +32,7 @@
 - [~] 5c — ⚠️ SCHEDA FATTA `alloggio/villa-one.html` (6 pax · 4 cam · ★4.71). MANCA: cablaggio nodo.
 
 ## 6. VILLA PARAISO
-- [ ] 6a — 🔒 Aggiungere foto piscina (cartella Drive). FUORI GOAL.
+- [x] 6a — ✅ FATTO (10 giu, Drive ON) 8 foto piscina aggiunte in cima alla gallery. `alloggio/foto/villa-paraiso-pool/`.
 
 ## 7. FULL EXPERIENCE
 - [x] 7a — ✅ FATTO (10 giu) Bottoni "Full Experience" in `surf-house-luxury.html` e `surf-house-rurale.html` → ora WhatsApp.
@@ -62,7 +62,7 @@
   - Google `share.google/EPTc7zGdCKpWTuL87`
 
 ## 12. ESCURSIONI E ATTIVITÀ
-- [ ] 12a — 🔒 Jeep Experience: galleria da Drive + scegliere Hero 1. FUORI GOAL (foto Drive).
+- [x] 12a — ✅ FATTO (10 giu, Drive ON) Jeep: hero + 14 foto Drive. ⚠️ Hero=drive-01, conferma a vista la "bella foto".
 - [ ] 12b — 🖼️ Quad: cambiare Hero 1 con foto dove si vedono i quad. Serve foto adatta.
 - [x] 12c — ✅ FATTO (10 giu) Buggy: rimossa versione Stargazing ovunque (location, quick-info, tag, descrizione, "Le due formule", Astrofili, CTA). `escursioni/buggy.html`.
 
@@ -79,9 +79,9 @@
   - Foto: cartella Drive (fuori goal).
 
 ## 14. ARIA
-- [ ] 14a — 🔒 Stargazing: foto da Drive. FUORI GOAL.
-- [ ] 14b — 🔒 Parapendio: galleria + Hero da Drive. FUORI GOAL.
-- [ ] 14c — 🔒 Paratrike: galleria + Hero da Drive. FUORI GOAL.
+- [x] 14a — ✅ FATTO (10 giu, Drive ON) Stargazing: hero + galleria 15 foto in `tenerife-stars.html` (nodo Aria Stargazing → Tenerife Stars).
+- [x] 14b — ✅ FATTO Parapendio: hero + 12 foto Drive. ⚠️ Hero=drive-01, conferma a vista.
+- [x] 14c — ✅ FATTO Paratrike: hero + 12 foto Drive. ⚠️ Hero=drive-01, conferma a vista.
 
 ## 15. EVENTI  → ⚠️ VISIVO, deployato 10 giu, da confermare a vista
 - [x] 15a — ✅ Nodo rinominato "Eventi e Servizi Privati" (home `index.html` + centro `eventi.html`).
