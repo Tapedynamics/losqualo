@@ -27,9 +27,9 @@
 
 ## 5. VILLA — aggiungere 3 strutture
 - DATI SCRAPATI (Apify, 10 giu) → `_scrape/airbnb-8giu.json`. Schede generate via `_scrape/gen_pages.py` (13 foto locali cad. in `alloggio/foto/<slug>/`).
-- [~] 5a — ⚠️ SCHEDA FATTA `alloggio/villa-ar.html` (16 pax · 8 cam · ★4.77). MANCA: cablaggio nodo mind-map (visivo).
-- [~] 5b — ⚠️ SCHEDA FATTA `alloggio/villa-golf.html` (7 pax · 4 cam · ★4.64). MANCA: cablaggio nodo.
-- [~] 5c — ⚠️ SCHEDA FATTA `alloggio/villa-one.html` (6 pax · 4 cam · ★4.71). MANCA: cablaggio nodo.
+- [x] 5a — ✅ FATTO (11 giu) `alloggio/villa-ar.html` (16 pax · 8 cam · ★4.77) CABLATA nel nodo Villa (desktop+mobile). Posizioni validate a vista.
+- [x] 5b — ✅ FATTO (11 giu) `alloggio/villa-golf.html` (7 pax · 4 cam · ★4.64) CABLATA nel nodo Villa.
+- [x] 5c — ✅ FATTO (11 giu) `alloggio/villa-one.html` (6 pax · 4 cam · ★4.71) CABLATA nel nodo Villa.
 
 ## 6. VILLA PARAISO
 - [x] 6a — ✅ FATTO (10 giu, Drive ON) 8 foto piscina aggiunte in cima alla gallery. `alloggio/foto/villa-paraiso-pool/`.
@@ -38,8 +38,8 @@
 - [x] 7a — ✅ FATTO (10 giu) Bottoni "Full Experience" in `surf-house-luxury.html` e `surf-house-rurale.html` → ora WhatsApp.
 
 ## 8. APPARTAMENTO — aggiungere (dati scrapati → `_scrape/airbnb-8giu.json`)
-- [~] 8a — ⚠️ SCHEDA FATTA `alloggio/fanabe.html` (4 pax · 3 cam · ★4.76). MANCA: cablaggio nodo mind-map.
-- [~] 8b — ⚠️ SCHEDA FATTA `alloggio/atico.html` (8 pax · 4 cam · ★4.6). MANCA: cablaggio nodo.
+- [x] 8a — ✅ FATTO (11 giu) `alloggio/fanabe.html` (4 pax · 3 cam · ★4.76) CABLATA nel nodo Appartamento (desktop+mobile).
+- [x] 8b — ✅ FATTO (11 giu) `alloggio/atico.html` (8 pax · 4 cam · ★4.6) CABLATA nel nodo Appartamento.
 
 ## 9. SURF HOUSE (dentro SURFING TENERIFE)
 - [x] 9a — ✅ FATTO (10 giu) Reserva Cama → nodo Ostello generico. Aggiunto handler `?cat=` in `pages.js` (deep-link categoria); link `surfing.html` + `pages.js` → `alloggio.html?cat=ostello`.
@@ -100,15 +100,14 @@
 - **14a/b/c** Stargazing+Parapendio+Paratrike gallery+hero
 - **15a/b/c/d** Eventi e Servizi Privati (7 nodi piatti → WhatsApp)
 
-### ⚠️ SCHEDE FATTE ma manca il CABLAGGIO nodo nel mind-map
-- **5a/b/c** Villa A&R/Golf/One — pagine `alloggio/villa-{ar,golf,one}.html` LIVE ma NON nei nodi mappa Villa
-- **8a/b** Fañabé/Ático — pagine `alloggio/{fanabe,atico}.html` LIVE ma NON nei nodi mappa Appartamento
+### ✅ CABLAGGIO 5 NODI ALLOGGIO — FATTO E LIVE (11 giu)
+- **5a/b/c** Villa A&R/Golf/One + **8a/b** Fañabé/Ático cablati in mappa (commit `b2c41fd`). Posizioni validate via screenshot headless deterministico. 5 schede target verificate 200.
+- ⚠️ Pre-esistente (non introdotto): nodo `loscristianos` (Appartamento, 88%/45%) cade dietro il bottone HOME quando la categoria è espansa — da nudge in un eventuale pass visivo.
 
 ### ❌ RIMASTI DA FARE (in scope) — tutti restructure mind-map o visivi
 - **1a/b/c** 👁️ Search box home: misura+posizione (`styles.css:1015`)
 - **3a** Traduzione nodo Alloggio per lingua ES/EN (`en/es/index.html`, dict `pages.js:7-10`)
 - **4a** 👁️ Finca Chimiche: doppioni foto (visivi, `alloggio/foto/finca-chimiche/`)
-- **5/8 cablaggio** Aggiungere 5 nodi alloggio in mappa Villa(3)+Appartamento(2): `alloggio.html` + `pages.js` subs/lines + `pages.css` posizioni
 - **9c** Back-path Surf House non cambi macrocategoria
 - **9d** Eliminare nodo Gallery (`surfing.html:79`, `pages.js`)
 - **9e** Spostare Full Experience da Surf House al macro Surfing Tenerife
@@ -121,4 +120,4 @@
 ### ⚠️ Da confermare A VISTA (deployati, posizioni/hero alla cieca)
 - Eventi (15) eptagono · Acqua (13) nodi Charter/BoatParty · hero=drive-01 di Jeep/Parapendio/Paratrike (12a,14b,14c) · mapping foto Armani/Salita yacht (13e)
 
-**Bottom line**: ~30/38 task FATTI e live. Restano 4 restructure mind-map (cablaggio 5 alloggio, 9c/d/e, 11) + 3 visivi (1, 4, 12b) + 1 i18n (3). Tutto il pesante Drive è CHIUSO.
+**Bottom line** (agg. 11 giu): ~35/38 task FATTI e live. Cablaggio 5 alloggio CHIUSO. Restano: **9c/d/e** Surf House + **11** Agency (restructure mind-map) + 3 visivi (1, 4, 12b) + 1 i18n (3). Tutto il pesante Drive è CHIUSO.
