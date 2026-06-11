@@ -48,8 +48,8 @@
 - [x] 9d — ✅ FATTO (11 giu) Nodo Gallery eliminato ovunque (surfing.html + pageLineConfig + pageSubNodesData + linea SVG + CSS item-gallery).
 - [x] 9e — ✅ FATTO (11 giu) Full Experience spostato da sub Surf House a NODO PRIMARIO di Surfing Tenerife (`surfing/full-experience.html`), visibile all'apertura macro (slot mid-sx, esagono a 6). Validato a vista.
 
-## 10. ALESSANDRO
-- [ ] 10a — 🖼️❌ Foto profilo (da IG/FB). `assets/alessandro.jpg` NON esiste → mostra fallback "AB". FUORI GOAL (asset esterno).
+## 10. ALESSANDRO → ✅ FATTO (11 giu)
+- [x] 10a — ✅ Foto profilo fornita da Daniele (_INBOX 11 giu). Croppata a quadrato sul viso + scalata 480px (ffmpeg) → `assets/alessandro.jpg`. L'`<img>` in `alessandro.html` la carica (fallback "AB" ora non scatta più). Validato a vista.
 
 ## 11. AGENCY → ✅ FATTO (11 giu) restructure completo
 - [x] 11a — ✅ Agency (home) apre `agency.html` (mappa a nodi), non più `agency/oferta.html`. `index.html`.
@@ -107,8 +107,7 @@
 - **4a** 👁️ Finca Chimiche: doppioni foto (visivi, `alloggio/foto/finca-chimiche/`)
 - **12b** 🖼️ Quad: hero con foto coi quad (nessuna cartella Drive dedicata — serve foto)
 
-### FUORI GOAL (confermato)
-- **10** Foto profilo Alessandro (IG/FB) — `assets/alessandro.jpg` non esiste, fallback "AB"
+### ✅ pt10 FATTO (11 giu) — foto Alessandro fornita e pubblicata (`assets/alessandro.jpg`)
 
 ### ⚠️ Da confermare A VISTA (deployati, posizioni/hero alla cieca)
 - Eventi (15) eptagono · Acqua (13) nodi Charter/BoatParty · hero=drive-01 di Jeep/Parapendio/Paratrike (12a,14b,14c) · mapping foto Armani/Salita yacht (13e)
