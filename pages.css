@@ -839,6 +839,20 @@ header {
     left: 8%;
 }
 
+/* CHARTER PRIVATO + BOAT PARTY (nuovi, azzurri allineati ad Acqua) */
+.page-escursioni .item-charter {
+    background: linear-gradient(145deg, #3f9fd0, #2f7fb0);
+    color: white;
+    top: 78%;
+    left: 8%;
+}
+.page-escursioni .item-boatparty {
+    background: linear-gradient(145deg, #4aa6d6, #2f8fc0);
+    color: white;
+    top: 88%;
+    left: 10%;
+}
+
 /* Elementi FOOD & DRINK */
 .page-eventi .item-bodegas {
     background: linear-gradient(145deg, #9fbfaa, #8bab96);

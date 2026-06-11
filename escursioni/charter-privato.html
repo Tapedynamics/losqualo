@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charter Privato - Lo Squalo Tenerife</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../alloggio/detail.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --detail-accent: #2f8fd0; --detail-accent-dark: #1f6aa0; --detail-accent-light: #d6ecf8; }
+        .opt-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 22px; margin-top: 20px; }
+        .opt-card { background: white; border-radius: 18px; overflow: hidden; box-shadow: 0 8px 24px rgba(47,143,208,0.12); display:flex; flex-direction:column; }
+        .opt-card .opt-photo { height: 200px; overflow: hidden; }
+        .opt-card .opt-photo img { width: 100%; height: 100%; object-fit: cover; }
+        .opt-card .opt-body { padding: 22px 24px; display:flex; flex-direction:column; flex:1; }
+        .opt-card h3 { color: var(--detail-accent-dark); margin-bottom: 6px; }
+        .opt-card .price { font-size: 0.82rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; font-weight: 600; }
+        .opt-card p { font-size: 0.92rem; line-height: 1.55; }
+        .opt-card .opt-cta { margin-top: auto; padding-top: 14px; }
+        .opt-card .opt-cta a { display:inline-block; color: var(--detail-accent-dark); font-weight:700; text-decoration:none; }
+    </style>
+</head>
+<body>
+    <header class="detail-header">
+        <a href="../escursioni.html" class="back-link"><span>&larr;</span> Indietro</a>
+        <span class="logo-small">LO SQUALO</span>
+    </header>
+
+    <section class="detail-hero">
+        <img loading="lazy" decoding="async" src="foto/yacht/model-sunshine.jpg" alt="Charter Privato Tenerife">
+        <div class="detail-hero-overlay">
+            <h1>Charter Privato</h1>
+            <p class="location">Tenerife dal mare &middot; esperienze private</p>
+        </div>
+    </section>
+
+    <div class="detail-container">
+        <section class="detail-section">
+            <h2>Tenerife dal mare</h2>
+            <p>Scopri Tenerife dal mare con esperienze private e uscite esclusive in barca. Scegli tra charter privato per gruppi, uscite premium al tramonto o esperienze personalizzate con open bar, catering, attività acquatiche e servizio professionale a bordo.</p>
+        </section>
+
+        <section class="detail-section">
+            <h2>Le opzioni</h2>
+            <div class="opt-grid">
+                <div class="opt-card">
+                    <div class="opt-photo"><img loading="lazy" decoding="async" src="foto/yacht/luxury-04.jpg" alt="Yacht Privato"></div>
+                    <div class="opt-body">
+                        <h3>Yacht Privato</h3>
+                        <p class="price">Fino a 12 pax &middot; Fun &amp; Luxury &middot; modelli premium</p>
+                        <p>Giornata privata a bordo: itinerario libero, attività acquatiche, cucina a bordo e skipper certificato. Disponibili più modelli, da Fun Yacht ai charter premium Lady Sunshine, Champagne e Armani.</p>
+                        <div class="opt-cta"><a href="yacht.html">Scopri gli yacht →</a></div>
+                    </div>
+                </div>
+                <div class="opt-card">
+                    <div class="opt-photo"><img loading="lazy" decoding="async" src="foto/catamarano/drive-01.jpg" alt="Catamarano"></div>
+                    <div class="opt-body">
+                        <h3>Catamarano</h3>
+                        <p class="price">Gruppi &middot; stabilità &middot; comfort</p>
+                        <p>Navigazione comoda e stabile, perfetta per gruppi e famiglie. Soste bagno, snorkel e relax lungo la costa di Tenerife.</p>
+                        <div class="opt-cta"><a href="catamarano.html">Scopri il catamarano →</a></div>
+                    </div>
+                </div>
+                <div class="opt-card">
+                    <div class="opt-photo"><img loading="lazy" decoding="async" src="foto/barco-sin-pilota/drive-01.webp" alt="Barco sin piloto"></div>
+                    <div class="opt-body">
+                        <h3>Barco sin piloto</h3>
+                        <p class="price">Senza licenza &middot; autonomia &middot; piccoli gruppi</p>
+                        <p>Noleggio di imbarcazione senza patente nautica: guida tu, in autonomia, lungo la costa. Ideale per piccoli gruppi che vogliono libertà sul mare.</p>
+                        <div class="opt-cta"><a href="barco-sin-pilota.html">Scopri il barco →</a></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <section class="cta-section">
+        <h2>Organizza il tuo charter</h2>
+        <p>Dimmi quando, quanti siete e quale esperienza preferisci. Ti rispondo con prezzi e disponibilità.</p>
+        <a href="https://wa.me/34616794190?text=Ciao!%20Vorrei%20info%20sul%20Charter%20Privato%20a%20Tenerife" class="cta-button" target="_blank">
+            <span>💬</span> Contattaci su WhatsApp
+        </a>
+    </section>
+
+    <footer class="detail-footer">
+        <p>&copy; <a href="../index.html">Lo Squalo Tenerife</a> &middot; dal 2009</p>
+    </footer>
+    <script src="../whatsapp-i18n.js"></script>
+</body>
+</html>

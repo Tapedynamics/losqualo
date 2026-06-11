@@ -67,16 +67,14 @@
 - [x] 12c — ✅ FATTO (10 giu) Buggy: rimossa versione Stargazing ovunque (location, quick-info, tag, descrizione, "Le due formule", Astrofili, CTA). `escursioni/buggy.html`.
 
 ## 13. ACQUA — Charter Privato
-- [ ] 13a — ❌ Creare categoria "Charter Privato" dentro Acqua.
+- [x] 13a — ✅ FATTO (10 giu) Nodo "Charter Privato" in Acqua → pagina hub `charter-privato.html`. ⚠️ posizioni nodi da confermare a vista.
 - [x] 13b — ✅ FATTO (10 giu) Yacht: "Le due opzioni"→"Le opzioni" + testo "due opzioni"→"più opzioni". `escursioni/yacht.html`.
 - [x] 13c — ✅ FATTO (10 giu) Rimosso blocco "Charter Privato – Ocean Peak" + galleria Ocean Peak. `escursioni/yacht.html`.
-- [ ] 13d — ⚠️ Sistemare prodotti Yacht come Luxury/Fun. Struttura ok, ma nuovi prodotti = Drive (13e).
-- [ ] 13e — 🔒 Prodotti Yacht (Sunshine Yacht, Champagne, Armani) foto+desc da Drive doc. FUORI GOAL.
-- [ ] 13f — ⚠️ Charter Privato interno: Catamarano + Barco sin piloto. Esistono (`pages.js:620-621`) ma non raggruppati.
-- [ ] 13g — ❌ Colori nodi azzurri (allineati ad Acqua).
-- [ ] 13h — ❌(nodo+desc) / 🔒(foto) Nodo Boat Party + descrizione:
-  - *"Ogni settimana, 3 ore di festa in alto mare con DJ set e open bar. Scopri l'offerta!"*
-  - Foto: cartella Drive (fuori goal).
+- [x] 13d — ✅ FATTO (10 giu) Yacht "I modelli" in formato opt-photo come Fun/Luxury (foto + prezzi).
+- [x] 13e — ✅ FATTO (Drive ON) Foto modelli (Sunshine/Champagne/Armani/Salita) da OCEAN PEAK + prezzi dal doc Drive. ⚠️ mapping foto Armani/Salita da confermare (PDF aveva ID Armani errato).
+- [x] 13f — ✅ FATTO Charter Privato contiene Yacht + Catamarano + Barco (pagina hub `charter-privato.html`). Rimossi i 3 nodi singoli da Acqua.
+- [x] 13g — ✅ FATTO Colori nodi Charter/Boat Party azzurri (`pages.css`).
+- [x] 13h — ✅ FATTO Nodo Boat Party → `boat-party.html` con descrizione PDF + 8 foto Drive.
 
 ## 14. ARIA
 - [x] 14a — ✅ FATTO (10 giu, Drive ON) Stargazing: hero + galleria 15 foto in `tenerife-stars.html` (nodo Aria Stargazing → Tenerife Stars).

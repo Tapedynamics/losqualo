@@ -123,9 +123,8 @@ const pageLineConfig = {
             { line: 'line-oceano-kayak', from: 'node-oceano', to: 'node-kayak' },
             { line: 'line-oceano-surf', from: 'node-oceano', to: 'node-surf' },
             { line: 'line-oceano-diving', from: 'node-oceano', to: 'node-diving' },
-            { line: 'line-oceano-yacht', from: 'node-oceano', to: 'node-yacht' },
-            { line: 'line-oceano-barco', from: 'node-oceano', to: 'node-barco' },
-            { line: 'line-oceano-catamarano', from: 'node-oceano', to: 'node-catamarano' }
+            { line: 'line-oceano-charter', from: 'node-oceano', to: 'node-charter' },
+            { line: 'line-oceano-boatparty', from: 'node-oceano', to: 'node-boatparty' }
         ],
         sky: [
             { line: 'line-sky-parapente', from: 'node-sky', to: 'node-parapente' },
@@ -613,9 +612,8 @@ const pageSubNodesData = {
                 { id: 'kayak', name: 'Kayak', href: 'escursioni/kayak.html' },
                 { id: 'surf', name: 'Surf', href: 'surfing/ika-ika.html' },
                 { id: 'diving', name: 'Diving', href: 'escursioni/diving.html' },
-                { id: 'yacht', name: 'Yacht Privato', href: 'escursioni/yacht.html' },
-                { id: 'barco', name: 'Barco sin Pilota', href: 'escursioni/barco-sin-pilota.html' },
-                { id: 'catamarano', name: 'Catamarano', href: 'escursioni/catamarano.html' }
+                { id: 'charter', name: 'Charter Privato', href: 'escursioni/charter-privato.html' },
+                { id: 'boatparty', name: 'Boat Party', href: 'escursioni/boat-party.html' }
             ]
         },
         sky: {
