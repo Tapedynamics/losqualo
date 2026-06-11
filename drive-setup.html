@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Condividere le cartelle Drive — Lo Squalo</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{ --bg:#F6F4EF; --blu:#2F6F8F; --blu-d:#1f4a5f; --txt:#2E2E2E; --txt2:#6B6B6B; --card:#fff; }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Poppins',system-ui,sans-serif;background:var(--bg);color:var(--txt);line-height:1.6;padding:24px 16px}
+  .wrap{max-width:680px;margin:0 auto}
+  header{text-align:center;margin-bottom:28px}
+  .logo{display:inline-block;width:54px;height:54px;border-radius:50%;background:var(--blu);color:#fff;font-weight:700;line-height:54px;font-size:1.4rem;margin-bottom:12px}
+  h1{font-size:1.5rem;color:var(--blu-d);margin-bottom:6px}
+  .sub{color:var(--txt2);font-size:.95rem}
+  .card{background:var(--card);border-radius:16px;padding:22px 22px;margin-bottom:18px;box-shadow:0 6px 20px rgba(47,111,143,.08)}
+  .why{border-left:4px solid var(--blu)}
+  h2{font-size:1.05rem;color:var(--blu-d);margin-bottom:12px}
+  .email-box{display:flex;flex-wrap:wrap;align-items:center;gap:10px;background:#eaf2f6;border:1px dashed var(--blu);border-radius:12px;padding:14px 16px;margin:10px 0}
+  .email-box code{font-size:1.15rem;font-weight:600;color:var(--blu-d);word-break:break-all}
+  button.copy{background:var(--blu);color:#fff;border:0;border-radius:10px;padding:8px 16px;font-weight:600;cursor:pointer;font-family:inherit}
+  button.copy:active{transform:scale(.97)}
+  ol{margin:8px 0 0 0;padding-left:0;counter-reset:step;list-style:none}
+  ol li{position:relative;padding:10px 0 10px 44px;border-bottom:1px solid #f0ece4}
+  ol li:last-child{border-bottom:0}
+  ol li::before{counter-increment:step;content:counter(step);position:absolute;left:0;top:9px;width:30px;height:30px;background:var(--blu);color:#fff;border-radius:50%;text-align:center;line-height:30px;font-weight:600;font-size:.9rem}
+  .tag{display:inline-block;background:#eaf2f6;color:var(--blu-d);border-radius:20px;padding:3px 12px;font-size:.8rem;font-weight:600;margin:2px 4px 2px 0}
+  .note{font-size:.88rem;color:var(--txt2);margin-top:10px}
+  strong{color:var(--blu-d)}
+  footer{text-align:center;color:var(--txt2);font-size:.8rem;margin-top:24px}
+  .ok{color:#1f8a4c;font-weight:600}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="logo">LS</div>
+    <h1>Come condividere le cartelle Drive</h1>
+    <p class="sub">Guida rapida per Alessandro · Lo Squalo Tenerife</p>
+  </header>
+
+  <div class="card why">
+    <h2>Perché serve</h2>
+    <p>Per aggiornare il sito con le foto giuste (gallerie, hero, nuove strutture) il sistema deve poter <strong>leggere direttamente</strong> le cartelle Drive che mandi negli aggiornamenti. Condividere ogni cartella con la mail qui sotto rende il lavoro più veloce e senza errori.</p>
+  </div>
+
+  <div class="card">
+    <h2>1 · La mail con cui condividere</h2>
+    <div class="email-box">
+      <code id="mail">siusky.dc@gmail.com</code>
+      <button class="copy" onclick="cp()">Copia</button>
+    </div>
+    <p class="note">Permesso sufficiente: <strong>Visualizzatore</strong> (sola lettura). Non serve dare modifica.</p>
+  </div>
+
+  <div class="card">
+    <h2>2 · Da computer</h2>
+    <ol>
+      <li>Apri <strong>Google Drive</strong> e vai sulla cartella da condividere.</li>
+      <li>Clic <strong>destro</strong> sulla cartella → <strong>Condividi</strong> (icona omino +).</li>
+      <li>Nel campo <em>"Aggiungi persone"</em> incolla la mail: <strong>siusky.dc@gmail.com</strong></li>
+      <li>Lascia il ruolo su <strong>Visualizzatore</strong>.</li>
+      <li>Premi <strong>Invia</strong>. <span class="ok">Fatto ✓</span></li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h2>3 · Da telefono (app Drive)</h2>
+    <ol>
+      <li>Apri l'app <strong>Google Drive</strong>.</li>
+      <li>Sulla cartella tocca i <strong>tre puntini</strong> (⋮).</li>
+      <li>Tocca <strong>Condividi</strong> → <strong>Aggiungi persone</strong>.</li>
+      <li>Scrivi <strong>siusky.dc@gmail.com</strong> e lascia <strong>Visualizzatore</strong>.</li>
+      <li>Tocca <strong>Invia</strong>. <span class="ok">Fatto ✓</span></li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h2>4 · Quali cartelle</h2>
+    <p>Condividi <strong>ogni cartella di foto</strong> che citi nei PDF di aggiornamento del sito. Per esempio quelle dell'ultimo blocco:</p>
+    <p style="margin-top:10px">
+      <span class="tag">Villa Paraiso · piscina</span>
+      <span class="tag">Jeep Experience</span>
+      <span class="tag">Stargazing</span>
+      <span class="tag">Parapendio</span>
+      <span class="tag">Paratrike</span>
+      <span class="tag">Boat Party</span>
+      <span class="tag">Ocean Peak / Acqua</span>
+      <span class="tag">Yacht · modelli</span>
+    </p>
+    <p class="note">Regola semplice: <strong>se in un PDF c'è un link a una cartella Drive, condividila</strong> con la mail sopra. Una volta condivisa resta accessibile anche per i prossimi aggiornamenti.</p>
+  </div>
+
+  <div class="card why">
+    <h2>Consiglio</h2>
+    <p>Puoi anche condividere <strong>una sola cartella "madre"</strong> che contiene tutte le altre: le sottocartelle vengono condivise in automatico. Così basta farlo una volta.</p>
+  </div>
+
+  <footer>© Lo Squalo Tenerife · dal 2009 — pagina interna, non indicizzata</footer>
+</div>
+<script>
+function cp(){navigator.clipboard.writeText('siusky.dc@gmail.com').then(function(){var b=document.querySelector('.copy');b.textContent='Copiato ✓';setTimeout(function(){b.textContent='Copia'},1500)})}
+</script>
+</body>
+</html>
