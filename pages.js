@@ -599,7 +599,7 @@ const pageSubNodesData = {
                 { id: 'jetsky', name: 'Jet Sky', href: 'escursioni/jet-sky.html' },
                 { id: 'cetacei', name: 'Balene', href: 'escursioni/balene.html' },
                 { id: 'kayak', name: 'Kayak', href: 'escursioni/kayak.html' },
-                { id: 'surf', name: 'Surf', href: 'surfing/ika-ika.html' },
+                { id: 'surf', name: 'Surf', href: 'surfing/ika-ika.html?from=escursioni' },
                 { id: 'diving', name: 'Diving', href: 'escursioni/diving.html' },
                 { id: 'charter', name: 'Charter Privato', href: 'escursioni/charter-privato.html' },
                 { id: 'boatparty', name: 'Boat Party', href: 'escursioni/boat-party.html' }
@@ -611,7 +611,7 @@ const pageSubNodesData = {
             subs: [
                 { id: 'parapente', name: 'Parapendio', href: 'escursioni/parapendio.html' },
                 { id: 'paratrike', name: 'Paratrike', href: 'escursioni/paratrike.html' },
-                { id: 'stargazing', name: 'Tenerife Stars', href: 'escursioni/tenerife-stars.html' }
+                { id: 'stargazing', name: 'Stargazing', href: 'escursioni/tenerife-stars.html' }
             ]
         }
     },

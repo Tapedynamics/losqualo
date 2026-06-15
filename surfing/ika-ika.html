@@ -11,7 +11,7 @@
 <body>
     <!-- Header -->
     <header class="detail-header">
-        <a href="../surfing.html" class="back-link">
+        <a href="../surfing.html" class="back-link" id="back-link">
             <span>&larr;</span> Indietro
         </a>
         <span class="logo-small">LO SQUALO</span>
@@ -161,6 +161,16 @@
     <footer class="detail-footer">
         <p>&copy; <a href="../index.html">Lo Squalo Tenerife</a> &middot; dal 2009</p>
     </footer>
+    <script>
+        // Back context-aware: IKA IKA è raggiunta da Surfing>School e da Escursioni>Acqua>Surf.
+        // Con ?from=escursioni il back torna a Escursioni con la sub Acqua aperta; altrimenti a Surfing.
+        (function () {
+            if (new URLSearchParams(location.search).get('from') === 'escursioni') {
+                var back = document.getElementById('back-link');
+                if (back) back.setAttribute('href', '../escursioni.html?cat=oceano');
+            }
+        })();
+    </script>
     <script src="../whatsapp-i18n.js"></script>
 </body>
 </html>

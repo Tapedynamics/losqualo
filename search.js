@@ -50,7 +50,7 @@
         { name: 'Catamarano', cat: 'Escursioni', href: 'escursioni/catamarano.html', kw: 'acqua mare catamarano' },
         { name: 'Parapendio', cat: 'Escursioni', href: 'escursioni/parapendio.html', kw: 'aria volo parapendio paragliding' },
         { name: 'Paratrike', cat: 'Escursioni', href: 'escursioni/paratrike.html', kw: 'aria volo paratrike' },
-        { name: 'Tenerife Stars', cat: 'Escursioni', href: 'escursioni/tenerife-stars.html', kw: 'aria stelle stargazing teide notte astronomia' },
+        { name: 'Stargazing', cat: 'Escursioni', href: 'escursioni/tenerife-stars.html', kw: 'aria stelle stargazing tenerife stars teide notte astronomia' },
 
         // Surfing
         { name: 'Surf Bar Franchise', cat: 'Surfing', href: 'surfing/surf-bar-franchise.html', kw: 'surf bar franchise' },
