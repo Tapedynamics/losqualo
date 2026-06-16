@@ -103,7 +103,8 @@ const pageLineConfig = {
             { line: 'line-surfhouse-rurale', from: 'node-surfhouse', to: 'node-surfhouse-rurale' }
         ],
         ostello: [
-            { line: 'line-ostello-banana', from: 'node-ostello', to: 'node-banana' }
+            { line: 'line-ostello-banana', from: 'node-ostello', to: 'node-banana' },
+            { line: 'line-ostello-sisters', from: 'node-ostello', to: 'node-sisters' }
         ],
         coliving: [
             { line: 'line-coliving-blueparadise', from: 'node-coliving', to: 'node-blueparadise' },
@@ -569,7 +570,8 @@ const pageSubNodesData = {
             name: 'Ostello',
             class: 'radial-ostello',
             subs: [
-                { id: 'banana', name: 'Banana Surf Hostel', href: 'alloggio/banana-surf-hostel.html' }
+                { id: 'banana', name: 'Banana Surf Hostel', href: 'alloggio/banana-surf-hostel.html' },
+                { id: 'sisters', name: 'Sisters Hostel', href: 'alloggio/sisters-hostel.html' }
             ]
         },
         coliving: {
@@ -597,7 +599,7 @@ const pageSubNodesData = {
             subs: [
                 { id: 'jetcar', name: 'Jet Car', href: 'escursioni/jet-car.html' },
                 { id: 'jetsky', name: 'Jet Sky', href: 'escursioni/jet-sky.html' },
-                { id: 'cetacei', name: 'Balene', href: 'escursioni/balene.html' },
+                { id: 'cetacei', name: 'Balene e Delfini', href: 'escursioni/balene.html' },
                 { id: 'kayak', name: 'Kayak', href: 'escursioni/kayak.html' },
                 { id: 'surf', name: 'Surf', href: 'surfing/ika-ika.html?from=escursioni' },
                 { id: 'diving', name: 'Diving', href: 'escursioni/diving.html' },

@@ -37,6 +37,7 @@
         { name: 'Surf House Rurale', cat: 'Alloggio', href: 'alloggio/surf-house-rurale.html', kw: 'surf house rurale' },
         // Alloggio — Ostello
         { name: 'Banana Surf Hostel', cat: 'Alloggio', href: 'alloggio/banana-surf-hostel.html', kw: 'ostello hostel surf los cristianos letti castello' },
+        { name: 'Sisters Hostel', cat: 'Alloggio', href: 'alloggio/sisters-hostel.html', kw: 'ostello hostel women only donne adeje aqualand siam park giardino' },
         // Alloggio — Coliving
         { name: 'Blue Paradise', cat: 'Alloggio', href: 'alloggio/coliving-coworking.html', kw: 'coliving coworking nomadi digitali santa cruz' },
         { name: 'Cactus Coliving', cat: 'Alloggio', href: 'alloggio/cactus-coliving.html', kw: 'coliving coworking nomadi digitali gomera' },
@@ -48,6 +49,7 @@
         { name: 'Yacht Privato', cat: 'Escursioni', href: 'escursioni/yacht.html', kw: 'acqua mare barca yacht' },
         { name: 'Barco sin Pilota', cat: 'Escursioni', href: 'escursioni/barco-sin-pilota.html', kw: 'acqua mare barca senza licenza' },
         { name: 'Catamarano', cat: 'Escursioni', href: 'escursioni/catamarano.html', kw: 'acqua mare catamarano' },
+        { name: 'Balene e Delfini', cat: 'Escursioni', href: 'escursioni/balene.html', kw: 'acqua mare whale watching balene delfini cetacei avvistamento' },
         { name: 'Parapendio', cat: 'Escursioni', href: 'escursioni/parapendio.html', kw: 'aria volo parapendio paragliding' },
         { name: 'Paratrike', cat: 'Escursioni', href: 'escursioni/paratrike.html', kw: 'aria volo paratrike' },
         { name: 'Stargazing', cat: 'Escursioni', href: 'escursioni/tenerife-stars.html', kw: 'aria stelle stargazing tenerife stars teide notte astronomia' },
