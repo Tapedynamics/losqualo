@@ -638,8 +638,8 @@ const pageSubNodesData = {
             class: 'radial-surfhouse',
             subs: [
                 { id: 'b2b', name: 'B2B', href: 'surfing/surf-house-b2b.html' },
-                { id: 'reservacama', name: 'Reserva Cama', href: 'alloggio.html?cat=ostello' },
-                { id: 'reservahab', name: 'Reserva Habitacion', href: 'alloggio/surf-house-rurale.html' }
+                { id: 'reservacama', name: 'Prenota Letto', href: 'alloggio.html?cat=ostello' },
+                { id: 'reservahab', name: 'Prenota Camera', href: 'alloggio/surf-house-rurale.html' }
             ]
         }
     },
