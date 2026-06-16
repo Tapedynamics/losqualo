@@ -998,6 +998,13 @@ header {
     left: 16%;
 }
 
+/* Punto 2 (15giu) — Full Experience rimpicciolito a dimensione "scheda villa" (node-secondary 75px) */
+.page-surfing .fullexp-node {
+    width: 75px;
+    height: 75px;
+    font-size: 0.65rem;
+}
+
 .page-surfing .elmedano-node {
     background: linear-gradient(145deg, var(--surfing-elmedano), #2f7fa0);
     color: white;
@@ -1518,4 +1525,31 @@ header {
         background: linear-gradient(145deg, #7a96a6, #668290);
         color: white;
     }
+}
+
+/* ===== BLOCCO 15giu — uniformità colori nodi (override, source-order in coda) ===== */
+
+/* Punto 10 — Acqua: nodi piccoli uniformati al tono della categoria */
+.page-escursioni .item-jetcar,
+.page-escursioni .item-jetsky,
+.page-escursioni .item-cetacei,
+.page-escursioni .item-kayak,
+.page-escursioni .item-surf,
+.page-escursioni .item-diving,
+.page-escursioni .item-charter,
+.page-escursioni .item-boatparty {
+    background: linear-gradient(145deg, var(--escursioni-oceano), #2f6f8e);
+    color: white;
+}
+
+/* Punto 12 — Eventi: 7 nodi uniformati al tono principale Eventi */
+.page-eventi .venue-node,
+.page-eventi .carrent-node,
+.page-eventi .fooddrink-node,
+.page-eventi .suonoluci-node,
+.page-eventi .musicshow-node,
+.page-eventi .festemovida-node,
+.page-eventi .tips-node {
+    background: linear-gradient(145deg, var(--eventi-main), #c49a30);
+    color: var(--text-primary);
 }
