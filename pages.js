@@ -754,8 +754,11 @@ function createMobilePageMap() {
     }
     requestAnimationFrame(animLoop);
 
-    // Se torniamo da una pagina prodotto, riapri il popup della sub di provenienza
-    const lastSubMobile = recallSub();
+    // Deep-link ?cat=<categoria> (es. da "Prenota Letto" -> alloggio.html?cat=ostello):
+    // apre direttamente il popup di quella subcategory anche su mobile. Altrimenti, se
+    // torniamo da una pagina prodotto, riapri il popup della sub di provenienza.
+    const urlCatMobile = new URLSearchParams(window.location.search).get('cat');
+    const lastSubMobile = urlCatMobile || recallSub();
     if (lastSubMobile) {
         setTimeout(() => openPageRadialPopup(currentPage, lastSubMobile), 300);
     }
