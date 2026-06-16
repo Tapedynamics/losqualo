@@ -1425,6 +1425,18 @@ header {
     .mobile-page-map .mobile-fooddrink { background: linear-gradient(145deg, var(--escursioni-food), #7f9f8a); color: var(--text-primary); }
     .mobile-page-map .mobile-nextevent { background: linear-gradient(145deg, var(--eventi-tips), #d4b358); color: var(--text-primary); }
 
+    /* Punto 12 (mobile) — Eventi: 7 nodi eptagono uniformati al tono principale Eventi (override classi mobile nuove) */
+    .mobile-page-map .mobile-venue,
+    .mobile-page-map .mobile-carrent,
+    .mobile-page-map .mobile-fooddrink,
+    .mobile-page-map .mobile-suonoluci,
+    .mobile-page-map .mobile-musicshow,
+    .mobile-page-map .mobile-festemovida,
+    .mobile-page-map .mobile-tips {
+        background: linear-gradient(145deg, var(--eventi-main), #c49a30);
+        color: var(--text-primary);
+    }
+
     .mobile-page-map .mobile-surfbar { background: linear-gradient(145deg, var(--surfing-surfbar), #1f5f7f); color: white; }
     .mobile-page-map .mobile-surfhouse { background: linear-gradient(145deg, var(--surfing-surfhouse), #6faecb); color: var(--text-primary); }
     .mobile-page-map .mobile-elmedano { background: linear-gradient(145deg, var(--surfing-elmedano), #2f7fa0); color: white; }
