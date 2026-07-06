@@ -500,6 +500,15 @@ function goPageBack() {
     const pageMap = document.querySelector('.page-map');
 
     if (pageState === 'subcategories') {
+        // Percorso Surf in Tenerife -> Surf House -> Prenota Letto: il deep-link
+        // alloggio.html?cat=ostello&from=surfhouse apre l'Ostello dentro Alloggio, ma il back
+        // deve ricostruire il percorso di partenza e tornare a Surf House (non restare in Alloggio).
+        const fromParam = new URLSearchParams(window.location.search).get('from');
+        if (fromParam === 'surfhouse' && expandedSubcategory === 'ostello') {
+            clearSub();
+            window.location.href = 'surfing.html?cat=surfhouse';
+            return;
+        }
         hideCurrentPageSubcategories();
         document.querySelectorAll('.node-primary').forEach(n => n.classList.remove('expanded'));
         pageMap.dataset.state = 'categories';
@@ -514,6 +523,7 @@ function goPageBack() {
 
 // ===== MOBILE PAGE MENU =====
 let mobilePageState = 'categories';
+let currentRadialCategory = null;
 
 // Dati per popup radiale mobile per pagina
 const pageSubNodesData = {
@@ -638,8 +648,8 @@ const pageSubNodesData = {
             class: 'radial-surfhouse',
             subs: [
                 { id: 'b2b', name: 'B2B', href: 'surfing/surf-house-b2b.html' },
-                { id: 'reservacama', name: 'Prenota Letto', href: 'alloggio.html?cat=ostello' },
-                { id: 'reservahab', name: 'Prenota Camera', href: 'alloggio/surf-house-rurale.html' }
+                { id: 'reservacama', name: 'Prenota Letto', href: 'alloggio.html?cat=ostello&from=surfhouse' },
+                { id: 'reservahab', name: 'Prenota Camera', href: 'alloggio/surf-house-rurale.html?from=surfhouse' }
             ]
         }
     },
@@ -947,6 +957,10 @@ function createPageRadialOverlay() {
 function openPageRadialPopup(page, category) {
     const overlay = document.getElementById('radial-overlay');
     const popup = document.getElementById('radial-popup');
+    currentRadialCategory = category;
+    // Reset + classe categoria sul popup: consente override colore dei nodi per categoria
+    // (es. Aria -> nodi azzurri invece del verde di default escursioni).
+    popup.className = 'radial-popup radial-cat-' + category;
 
     if (!pageSubNodesData[page] || !pageSubNodesData[page][category]) {
         popup.innerHTML = `<div class="radial-center"><span>Coming<br>Soon</span></div>`;
@@ -1003,6 +1017,12 @@ function closePageRadialPopup() {
         overlay.classList.remove('visible');
     }
     clearSub();
+    // Percorso Surf in Tenerife -> Surf House -> Prenota Letto (mobile): il popup Ostello viene
+    // aperto via deep-link ?cat=ostello&from=surfhouse; chiudendolo si torna a Surf House.
+    const fromParam = new URLSearchParams(window.location.search).get('from');
+    if (fromParam === 'surfhouse' && currentRadialCategory === 'ostello') {
+        window.location.href = 'surfing.html?cat=surfhouse';
+    }
 }
 
 function initMobilePageEvents(mobileMap, currentPage) {

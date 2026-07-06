@@ -1520,6 +1520,12 @@ header {
         color: white;
     }
 
+    /* Aria (sky): i nodi interni devono restare azzurri come la categoria, non verdi */
+    .page-escursioni .radial-popup.radial-cat-sky .radial-node {
+        background: linear-gradient(145deg, #8fb9d4, #7ba5c0);
+        color: var(--text-primary);
+    }
+
     /* SURFING level 3 nodes */
     .page-surfing .radial-node {
         background: linear-gradient(145deg, #5ab2d6, #4698bc);

@@ -11,7 +11,7 @@
 <body>
     <!-- Header -->
     <header class="detail-header">
-        <a href="../alloggio.html" class="back-link">
+        <a href="../alloggio.html" class="back-link" id="back-link">
             <span>&larr;</span> Indietro
         </a>
         <span class="logo-small">LO SQUALO</span>
@@ -165,6 +165,17 @@
     <footer class="detail-footer">
         <p>&copy; <a href="../index.html">Lo Squalo Tenerife</a> &middot; dal 2009</p>
     </footer>
+    <script>
+        // Back context-aware: Surf House Rurale è raggiunta da Alloggio>Surf House e da
+        // Surf in Tenerife>Surf House>Prenota Camera. Con ?from=surfhouse il back torna al
+        // percorso di partenza (Surf in Tenerife con Surf House aperta); altrimenti ad Alloggio.
+        (function () {
+            if (new URLSearchParams(location.search).get('from') === 'surfhouse') {
+                var back = document.getElementById('back-link');
+                if (back) back.setAttribute('href', '../surfing.html?cat=surfhouse');
+            }
+        })();
+    </script>
     <script src="../whatsapp-i18n.js"></script>
     <script src="/lang-switch.js"></script>
 </body>
