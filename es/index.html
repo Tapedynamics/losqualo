@@ -3,35 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lo Squalo Tenerife — Alojamiento</title>
-    <meta name="description" content="Villas, casas rurales, apartamentos, surf houses, hostel y coliving en Tenerife. Lo Squalo — desde 2009.">
+    <title>Lo Squalo - Tenerife Experience</title>
+    <meta name="description" content="Alojamiento, excursiones, surfing, eventos y servicios de agencia en Tenerife. Lo Squalo — tu hub en la isla desde 2009.">
     <link rel="stylesheet" href="/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body { background: var(--bg-main); }
-        .land { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 40px 24px 90px; }
-        .land .logo-mark { width: 220px; height: 62px; margin-bottom: 6px; }
-        .land .since { font-size: 0.78rem; letter-spacing: 3px; color: var(--text-secondary); text-transform: uppercase; margin-bottom: 40px; }
-        .land h1 { font-size: 2rem; color: var(--blu-squalo); letter-spacing: 1px; margin-bottom: 14px; font-weight: 700; }
-        .land p { font-size: 1.05rem; color: var(--text-primary); line-height: 1.6; max-width: 540px; margin: 0 auto 34px; }
-        .land .cta {
-            display: inline-flex; align-items: center; gap: 10px;
-            background: linear-gradient(135deg, var(--blu-squalo), #1f4a5f); color: #fff;
-            text-decoration: none; font-weight: 600; font-size: 1rem;
-            padding: 16px 30px; border-radius: 30px; box-shadow: 0 10px 30px rgba(47,111,143,0.30);
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
-        }
-        .land .cta:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(47,111,143,0.40); }
-    </style>
+
+    <link rel="canonical" href="https://losqualotenerife.com/es/index.html">
+    <link rel="alternate" hreflang="it" href="https://losqualotenerife.com/index.html">
+    <link rel="alternate" hreflang="en" href="https://losqualotenerife.com/en/index.html">
+    <link rel="alternate" hreflang="es" href="https://losqualotenerife.com/es/index.html">
+    <link rel="alternate" hreflang="x-default" href="https://losqualotenerife.com/index.html">
 </head>
 <body>
-    <main class="land">
-        <span class="logo-mark" aria-label="Lo Squalo"></span>
-        <span class="since">&copy; desde 2009</span>
-        <h1>Alojamiento en Tenerife</h1>
-        <p>Villas, casas rurales, apartamentos, surf houses, hostel y coliving — seleccionados en toda la isla por Lo Squalo, tu hub en Tenerife desde 2009.</p>
-        <a href="alloggio.html" class="cta"><span>&#127968;</span> Explorar alojamiento &rarr;</a>
-    </main>
+    <div class="container">
+        <header>
+            <a href="index.html" class="logo-link" aria-label="Lo Squalo">
+                <span class="logo-mark"></span>
+            </a>
+            <span class="tagline">&copy; desde 2009</span>
+        </header>
+
+        <main class="mind-map" data-state="initial">
+            <!-- SVG per le linee dinamiche -->
+            <svg class="connections" id="svg-connections">
+                <!-- Linee principali: Tenerife -> Categorie -->
+                <line class="line main-line" id="line-tenerife-eventi"></line>
+                <line class="line main-line" id="line-tenerife-alloggio"></line>
+                <line class="line main-line" id="line-tenerife-escursioni"></line>
+                <line class="line main-line" id="line-tenerife-surfing"></line>
+                <line class="line main-line" id="line-tenerife-agency"></line>
+                <line class="line main-line" id="line-tenerife-alessandro"></line>
+            </svg>
+
+            <!-- Centro - Tenerife -->
+            <div class="center-node" id="tenerife-trigger">
+                <img loading="lazy" decoding="async" src="/tenerife.png" alt="Tenerife" class="tenerife-img">
+                <span class="explore-btn">Tenerife Experience</span>
+                <span class="click-hint">Haz clic para explorar</span>
+                <span class="explore-prompt">¿Qué estás buscando?</span>
+            </div>
+
+            <!-- ===== 6 CATEGORIE PRINCIPALI (link diretti) ===== -->
+            <div class="primary-nodes">
+                <!-- EVENTI - Giallo/Oro -->
+                <a href="eventi.html" class="node node-primary eventi" id="node-eventi">
+                    <span>EVENTOS Y<br>SERVICIOS PRIVADOS</span>
+                </a>
+
+                <!-- ALLOGGIO - Rosa -->
+                <a href="alloggio.html" class="node node-primary alloggio" id="node-alloggio">
+                    <span>ALOJAMIENTO</span>
+                </a>
+
+                <!-- ESCURSIONI & ATTIVITÀ - Verde acqua -->
+                <a href="escursioni.html" class="node node-primary escursioni" id="node-escursioni">
+                    <span>EXCURSIONES<br>&amp; ACTIVIDADES</span>
+                </a>
+
+                <!-- SURFING TENERIFE - Blu oceano -->
+                <a href="surfing.html" class="node node-primary surfing" id="node-surfing">
+                    <span>SURFING<br>TENERIFE</span>
+                </a>
+
+                <!-- AGENCY B2B - Blu scuro -->
+                <a href="agency.html" class="node node-primary agency" id="node-agency">
+                    <span>AGENCY</span>
+                </a>
+
+                <!-- ALESSANDRO - Grigio blu -->
+                <a href="alessandro.html" class="node node-primary alessandro" id="node-alessandro">
+                    <span>ALESSANDRO</span>
+                </a>
+            </div>
+
+        </main>
+
+        <div class="home-search" id="home-search">
+            <input type="text" id="service-search" class="home-search-input" placeholder="Busca un servicio…" autocomplete="off" aria-label="Busca un servicio">
+            <ul class="home-search-results" id="search-results" role="listbox"></ul>
+        </div>
+
+        <!-- brand.html esiste solo in italiano: link assoluto -->
+        <a href="/brand.html" class="brand-button brand-button--center">
+            <span class="brand-dot"></span> Brand
+        </a>
+    </div>
+
+    <script src="/script.js"></script>
+    <script src="/search.js"></script>
     <script src="/lang-switch.js"></script>
 </body>
 </html>

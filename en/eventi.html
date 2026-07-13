@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - Lo Squalo Tenerife</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/pages.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="canonical" href="https://losqualotenerife.com/en/eventi.html">
+    <link rel="alternate" hreflang="it" href="https://losqualotenerife.com/eventi.html">
+    <link rel="alternate" hreflang="en" href="https://losqualotenerife.com/en/eventi.html">
+    <link rel="alternate" hreflang="es" href="https://losqualotenerife.com/es/eventi.html">
+    <link rel="alternate" hreflang="x-default" href="https://losqualotenerife.com/eventi.html">
+</head>
+<body class="page-eventi">
+    <div class="container">
+        <header>
+            <a href="index.html" class="logo-link" aria-label="Lo Squalo">
+                <span class="logo-mark"></span>
+            </a>
+            <span class="tagline">&copy; since 2009</span>
+        </header>
+
+        <main class="page-map" data-state="categories">
+            <!-- SVG per le linee dinamiche -->
+            <svg class="connections" id="svg-connections">
+                <!-- Linee: Centro -> 7 nodi (tutti link diretti) -->
+                <line class="line main-line" id="line-center-venue"></line>
+                <line class="line main-line" id="line-center-carrent"></line>
+                <line class="line main-line" id="line-center-fooddrink"></line>
+                <line class="line main-line" id="line-center-suonoluci"></line>
+                <line class="line main-line" id="line-center-musicshow"></line>
+                <line class="line main-line" id="line-center-festemovida"></line>
+                <line class="line main-line" id="line-center-tips"></line>
+            </svg>
+
+            <!-- Centro - Categoria -->
+            <div class="center-node category-center" id="category-trigger">
+                <div class="category-icon eventi-bg">
+                    <span>Events and<br>Private<br>Services</span>
+                </div>
+                <span class="click-hint">Click to explore</span>
+            </div>
+
+            <!-- 7 nodi piatti, tutti link diretti a WhatsApp -->
+            <div class="primary-nodes">
+                <a href="https://wa.me/34616794190?text=Hi%2C%20I'd%20like%20info%20about%20Venues%20for%20my%20event" target="_blank" rel="noopener" class="node node-primary venue-node" id="node-venue">
+                    <span>Venue</span>
+                </a>
+                <a href="https://wa.me/34616794190?text=Hi%2C%20I'd%20like%20info%20about%20Car%20Rent%20%26%20Transfer" target="_blank" rel="noopener" class="node node-primary carrent-node" id="node-carrent">
+                    <span>Car Rent<br>&amp; Transfer</span>
+                </a>
+                <a href="https://wa.me/34616794190?text=Hi%2C%20I'd%20like%20info%20about%20Food%20%26%20Drink%20for%20my%20event" target="_blank" rel="noopener" class="node node-primary fooddrink-node" id="node-fooddrink">
+                    <span>Food &amp;<br>Drink</span>
+                </a>
+                <a href="https://wa.me/34616794190?text=Hi%2C%20I'd%20like%20info%20about%20Sound%20%26%20Lighting" target="_blank" rel="noopener" class="node node-primary suonoluci-node" id="node-suonoluci">
+                    <span>Sound &amp;<br>Lighting</span>
+                </a>
+                <a href="https://wa.me/34616794190?text=Hi%2C%20I'd%20like%20info%20about%20Music%20%26%20Show" target="_blank" rel="noopener" class="node node-primary musicshow-node" id="node-musicshow">
+                    <span>Music<br>&amp; Show</span>
+                </a>
+                <a href="https://wa.me/34616794190?text=Hi%2C%20I'd%20like%20info%20about%20Parties%20%26%20Nightlife" target="_blank" rel="noopener" class="node node-primary festemovida-node" id="node-festemovida">
+                    <span>Parties &amp;<br>Nightlife</span>
+                </a>
+                <a href="https://wa.me/34616794190?text=Hi%2C%20I'd%20love%20some%20tips%20for%20my%20event%20in%20Tenerife" target="_blank" rel="noopener" class="node node-primary tips-node" id="node-tips">
+                    <span>Tips</span>
+                </a>
+            </div>
+
+            <!-- Pulsante indietro -->
+            <button class="back-btn" id="back-btn">
+                <span>&larr;</span> Back
+            </button>
+        </main>
+
+        <a href="index.html?explore=1" class="home-button">
+            <span>&larr;</span> Home
+        </a>
+    </div>
+
+    <script src="/pages.js"></script>
+    <script src="/whatsapp-i18n.js"></script>
+    <script src="/lang-switch.js"></script>
+</body>
+</html>

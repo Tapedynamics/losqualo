@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surf Spots - Lo Squalo Tenerife</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/surfing/detail.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .spots-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px; margin-top: 24px;
+        }
+        .spot-card {
+            background: white; border-radius: 18px; padding: 28px 24px;
+            box-shadow: 0 8px 28px rgba(47,111,143,0.10);
+            border-top: 4px solid var(--surfing-main);
+        }
+        .spot-card h3 {
+            font-size: 1.3rem; font-weight: 700; color: var(--blu-squalo);
+            margin-bottom: 6px; letter-spacing: 0.3px;
+        }
+        .spot-card .spot-loc {
+            font-size: 0.78rem; color: var(--text-secondary); text-transform: uppercase;
+            letter-spacing: 1px; margin-bottom: 18px;
+        }
+        .spot-card p { font-size: 0.95rem; line-height: 1.6; margin-bottom: 14px; color: var(--text-primary); }
+        .spot-meta {
+            display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px;
+        }
+        .spot-meta span {
+            background: rgba(95,166,198,0.12); color: var(--blu-squalo);
+            padding: 5px 12px; border-radius: 14px; font-size: 0.78rem; font-weight: 500;
+        }
+        .spot-tip {
+            margin-top: 14px; padding: 12px 14px; background: #fff8ed;
+            border-left: 3px solid #d4a93c; border-radius: 8px;
+            font-size: 0.88rem; line-height: 1.55;
+        }
+        .spot-tip strong { color: #8a6520; display: block; margin-bottom: 4px; font-size: 0.78rem; letter-spacing: 0.5px; text-transform: uppercase; }
+        .zone-heading {
+            font-size: 1.45rem; font-weight: 700; color: var(--blu-squalo);
+            margin: 40px 0 4px; letter-spacing: 0.2px;
+        }
+        .zone-heading:first-of-type { margin-top: 24px; }
+        .zone-lead { font-size: 0.98rem; line-height: 1.6; color: var(--text-primary); }
+
+        .surf-cta {
+            background: linear-gradient(135deg, var(--surfing-main), var(--blu-squalo));
+            color: white; border-radius: 22px; padding: 36px 28px; text-align: center;
+            margin-top: 36px;
+        }
+        .surf-cta h2 { font-size: 1.5rem; margin-bottom: 10px; }
+        .surf-cta p { opacity: 0.92; margin-bottom: 22px; line-height: 1.5; }
+        .surf-cta a {
+            display: inline-block; padding: 14px 30px; border-radius: 28px;
+            background: white; color: var(--blu-squalo); text-decoration: none;
+            font-weight: 700; letter-spacing: 0.5px; transition: transform 0.2s ease;
+        }
+        .surf-cta a:hover { transform: translateY(-2px); }
+    </style>
+
+    <link rel="canonical" href="https://losqualotenerife.com/es/surfing/spots.html">
+    <link rel="alternate" hreflang="it" href="https://losqualotenerife.com/surfing/spots.html">
+    <link rel="alternate" hreflang="en" href="https://losqualotenerife.com/en/surfing/spots.html">
+    <link rel="alternate" hreflang="es" href="https://losqualotenerife.com/es/surfing/spots.html">
+    <link rel="alternate" hreflang="x-default" href="https://losqualotenerife.com/surfing/spots.html">
+</head>
+<body>
+    <header class="detail-header">
+        <a href="../surfing.html" class="back-link">
+            <span>&larr;</span> Volver
+        </a>
+        <span class="logo-small">LO SQUALO</span>
+    </header>
+
+    <section class="detail-hero" style="background: linear-gradient(135deg, #5fa6c6, #2f6f8f); height: 36vh; min-height: 280px; display: flex; align-items: flex-end;">
+        <div class="detail-hero-overlay" style="background: linear-gradient(transparent, rgba(0,0,0,0.55));">
+            <h1>Surf Spots Tenerife</h1>
+            <p class="location">Las mejores olas de la costa sur — selección Lo Squalo</p>
+        </div>
+    </section>
+
+    <div class="detail-container">
+        <section class="detail-section">
+            <h2>Surf Spots en el Sur de Tenerife</h2>
+            <p>El sur de Tenerife es una de las zonas más surfeadas de la isla: una gran variedad de olas a lo largo de la costa, aptas tanto para quien empieza como para surfistas con experiencia. Aquí tienes nuestro mapa operativo, zona por zona: el mismo que usamos cada día para llevarte donde hay buena ola <em>hoy</em>.</p>
+
+            <h3 class="zone-heading">Playa de Las Américas</h3>
+            <p class="zone-lead">El epicentro del surf en el sur de Tenerife. Aquí el surf forma parte de la identidad del lugar: escuelas, surf shops, bares, ambiente internacional y olas para distintos niveles. Dentro de la zona se concentran varios picos importantes.</p>
+
+            <div class="spots-grid">
+
+                <div class="spot-card">
+                    <h3>La Fitenia</h3>
+                    <p class="spot-loc">Las Américas · junto al muelle</p>
+                    <p>Pico situado cerca de un muelle, frente al restaurante San Borondón. Funciona sobre todo en verano con mar del sur, suroeste o sureste. No suele estar demasiado concurrido.</p>
+                    <div class="spot-meta">
+                        <span>Derecha e izquierda</span>
+                        <span>Verano</span>
+                        <span>Principiante / Intermedio</span>
+                        <span>S – SW – SE</span>
+                    </div>
+                    <div class="spot-tip">
+                        <strong>Tip Lo Squalo</strong>
+                        Ambiente relajado, perfecto también para el after-surf.
+                    </div>
+                </div>
+
+                <div class="spot-card">
+                    <h3>Yefrys</h3>
+                    <p class="spot-loc">Playa de Las Américas</p>
+                    <p>Ola menos concurrida, apta para surfistas avanzados. Es una derecha larga que exige buena lectura de la ola y salida rápida del pico. Funciona en invierno, aunque también puede entrar en verano.</p>
+                    <div class="spot-meta">
+                        <span>Derecha larga</span>
+                        <span>Invierno (también verano)</span>
+                        <span>Avanzado</span>
+                        <span>Fondo volcánico</span>
+                    </div>
+                    <div class="spot-tip">
+                        <strong>Tip Lo Squalo</strong>
+                        Fondo volcánico que hay que respetar: se necesita buena lectura y salida rápida del pico.
+                    </div>
+                </div>
+
+                <div class="spot-card">
+                    <h3>El Dedo</h3>
+                    <p class="spot-loc">Playa de Las Américas</p>
+                    <p>Ola de invierno, muy local y solo apta para quien tiene un nivel alto. Rompe directamente sobre las rocas y puede tener corriente fuerte.</p>
+                    <div class="spot-meta">
+                        <span>Ola de invierno</span>
+                        <span>Avanzado</span>
+                        <span>Muy local</span>
+                        <span>Corriente fuerte</span>
+                    </div>
+                    <div class="spot-tip">
+                        <strong>Tip Lo Squalo</strong>
+                        Recomendable entrar solo con guía o con un contacto local.
+                    </div>
+                </div>
+
+                <div class="spot-card">
+                    <h3>Piscinas</h3>
+                    <p class="spot-loc">Playa de Las Américas</p>
+                    <p>Pico ideal para quien empieza a surfear, sobre todo con condiciones pequeñas. En los días más grandes puede volverse bastante más exigente.</p>
+                    <div class="spot-meta">
+                        <span>Condiciones pequeñas</span>
+                        <span>Principiante</span>
+                        <span>Progresión</span>
+                    </div>
+                    <div class="spot-tip">
+                        <strong>Tip Lo Squalo</strong>
+                        Excelente para las primeras sesiones en días pequeños; más técnico cuando entra tamaño.
+                    </div>
+                </div>
+
+                <div class="spot-card">
+                    <h3>La Derecha</h3>
+                    <p class="spot-loc">Playa de Las Américas</p>
+                    <p>Derecha potente y técnica. Un pico muy respetado por la comunidad local.</p>
+                    <div class="spot-meta">
+                        <span>Derecha</span>
+                        <span>Potente y técnica</span>
+                        <span>Avanzado</span>
+                        <span>Respetada por los locales</span>
+                    </div>
+                    <div class="spot-tip">
+                        <strong>Tip Lo Squalo</strong>
+                        No recomendable sin el nivel adecuado o sin alguien de la zona.
+                    </div>
+                </div>
+
+                <div class="spot-card">
+                    <h3>El Medio</h3>
+                    <p class="spot-loc">Playa de Las Américas</p>
+                    <p>Uno de los picos más populares de Playa de Las Américas. Aquí se imparten muchas clases de surf. La bahía tiene un fondo rocoso bastante regular, con una zona más accesible para principiantes y picos más técnicos para surfistas avanzados.</p>
+                    <div class="spot-meta">
+                        <span>Beach / reef</span>
+                        <span>Todos los niveles</span>
+                        <span>Muchas escuelas</span>
+                        <span>Picos técnicos</span>
+                    </div>
+                    <div class="spot-tip">
+                        <strong>Tip Lo Squalo</strong>
+                        Zona accesible para quien empieza y picos más técnicos un poco más allá para los avanzados.
+                    </div>
+                </div>
+
+                <div class="spot-card">
+                    <h3>The Spanish Left</h3>
+                    <p class="spot-loc">Playa de Las Américas</p>
+                    <p>Ola mítica y muy conocida, potente y técnica. Apta para surfistas expertos y muy respetada a nivel local.</p>
+                    <div class="spot-meta">
+                        <span>Izquierda mítica</span>
+                        <span>Potente y técnica</span>
+                        <span>Expertos</span>
+                        <span>Muy respetada</span>
+                    </div>
+                    <div class="spot-tip">
+                        <strong>Tip Lo Squalo</strong>
+                        Para muchos visitantes, lo mejor es contemplarla desde el paseo marítimo.
+                    </div>
+                </div>
+
+            </div>
+
+            <h3 class="zone-heading">Otras zonas de la costa sur</h3>
+            <p class="zone-lead">Más allá de Las Américas, la costa sur ofrece picos para cada condición: desde los backups protegidos hasta el reino del viento en El Médano.</p>
+
+            <div class="spots-grid">
+
+                <div class="spot-card">
+                    <h3>Playa de Las Galletas</h3>
+                    <p class="spot-loc">Sureste · cerca de El Médano</p>
+                    <p>Pico muy local. El acceso y la lectura de la zona no siempre son sencillos. Puede ofrecer buenas olas lejos del gentío.</p>
+                    <div class="spot-meta">
+                        <span>Muy local</span>
+                        <span>Lejos del gentío</span>
+                        <span>Acceso complicado</span>
+                    </div>
+                    <div class="spot-tip">
+                        <strong>Tip Lo Squalo</strong>
+                        Recomendable ir con un contacto local.
+                    </div>
+                </div>
+
+                <div class="spot-card">
+                    <h3>Playa de El Médano</h3>
+                    <p class="spot-loc">Costa este · Granadilla</p>
+                    <p>Conocida sobre todo por el windsurf y el kitesurf gracias al viento constante, pero en determinadas condiciones también ofrece olas interesantes. Incluye zonas como La Machacona, La Tejita y El Cabezo.</p>
+                    <div class="spot-meta">
+                        <span>Windsurf / Kitesurf</span>
+                        <span>Viento constante</span>
+                        <span>Olas en ciertas condiciones</span>
+                    </div>
+                    <div class="spot-tip">
+                        <strong>Tip Lo Squalo</strong>
+                        Ojo con el viento, las corrientes y la convivencia con los riders de wind/kite.
+                    </div>
+                </div>
+
+                <div class="spot-card">
+                    <h3>Playa de La Tejita</h3>
+                    <p class="spot-loc">Junto a la Montaña Roja</p>
+                    <p>Situada en un entorno natural protegido, al pie de la Montaña Roja. Ofrece olas con fondo de arena y un ambiente mucho más natural.</p>
+                    <div class="spot-meta">
+                        <span>Beach break</span>
+                        <span>Fondo de arena</span>
+                        <span>Entorno natural</span>
+                    </div>
+                    <div class="spot-tip">
+                        <strong>Tip Lo Squalo</strong>
+                        Ideal para quien busca surf y paisaje en la misma sesión.
+                    </div>
+                </div>
+
+                <div class="spot-card">
+                    <h3>Playa de Alcalá</h3>
+                    <p class="spot-loc">Costa oeste del sur</p>
+                    <p>Zona de la costa oeste del sur de Tenerife, con olas de calidad y menos gente. Algunos picos son muy locales y técnicos.</p>
+                    <div class="spot-meta">
+                        <span>Olas de calidad</span>
+                        <span>Menos concurrida</span>
+                        <span>Picos locales y técnicos</span>
+                    </div>
+                    <div class="spot-tip">
+                        <strong>Tip Lo Squalo</strong>
+                        Sin el nivel o sin un contacto local, mejor observarlos desde el paseo.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="surf-cta">
+            <h2>¿No sabes dónde ir hoy?</h2>
+            <p>Nosotros te decimos dónde hay buena ola — literalmente, cada día. Surf check, tabla, traslado y (si quieres) clase con <strong>Ika Ika</strong>. Todo incluido, cero estrés.</p>
+            <a href="https://wa.me/34616794190?text=%C2%A1Hola%20Squalo%21%20Informaci%C3%B3n%20sobre%20surf%20spots%20en%20Tenerife" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+        </section>
+    </div>
+
+    <footer style="text-align: center; padding: 24px; color: var(--text-secondary); font-size: 0.7rem;">
+        <p>&copy; <a href="../index.html">Lo Squalo Tenerife</a> &middot; desde 2009</p>
+    </footer>
+    <script src="/whatsapp-i18n.js"></script>
+    <script src="/lang-switch.js"></script>
+
+</body>
+</html>

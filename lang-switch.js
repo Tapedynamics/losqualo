@@ -1,11 +1,14 @@
-// Lo Squalo — Switcher lingua IT/EN/ES + hreflang
-// Da includere SOLO nelle pagine che esistono in tutte e 3 le lingue
-// (home/mini-landing + categoria alloggi). Calcola i 3 URL equivalenti dal
-// path corrente (prefisso '' / '/en' / '/es') e:
-//  1. inietta i <link rel="alternate" hreflang> nel <head> (it/en/es + x-default)
-//  2. renderizza le pillole switcher (fixed, alto-destra) con lo stato attivo.
+// Lo Squalo — Switcher lingua IT/EN/ES
+// Il sito pubblico e' specchiato in 3 lingue: IT nella root, EN sotto /en/, ES
+// sotto /es/, con gli STESSI nomi di file. Lo switcher si limita quindi a
+// scambiare il prefisso di lingua del path corrente, restando sulla stessa
+// pagina. Da includere in ogni pagina pubblica (NON in brand.html e nelle
+// pagine interne, che esistono solo in italiano).
+//
+// NB: canonical e hreflang NON si iniettano piu' da qui — sono statici nel <head>
+// di ogni pagina (piu' affidabili per i motori di ricerca) e allineati al dominio
+// reale losqualotenerife.com. Vedi anche sitemap.xml.
 (function () {
-    const ORIGIN = 'https://losqualo.netlify.app';
     const LANGS = ['it', 'en', 'es'];
 
     // path logico = path senza prefisso lingua, sempre con /index.html per la home
@@ -16,23 +19,8 @@
     if (path === '' || path === '/') path = '/index.html';
     const logical = path; // es. /alloggio/villa-paraiso.html
 
-    const urlFor = (lang) => ORIGIN + (lang === 'it' ? '' : '/' + lang) + logical;
     const hrefFor = (lang) => (lang === 'it' ? '' : '/' + lang) + logical;
 
-    // 1) hreflang nel <head>
-    const head = document.head;
-    LANGS.forEach((lang) => {
-        const l = document.createElement('link');
-        l.rel = 'alternate';
-        l.hreflang = lang;
-        l.href = urlFor(lang);
-        head.appendChild(l);
-    });
-    const xd = document.createElement('link');
-    xd.rel = 'alternate'; xd.hreflang = 'x-default'; xd.href = urlFor('it');
-    head.appendChild(xd);
-
-    // 2) switcher UI
     const wrap = document.createElement('div');
     wrap.className = 'lang-switch';
     wrap.setAttribute('aria-label', 'Lingua');

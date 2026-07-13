@@ -1571,3 +1571,14 @@ header {
     background: linear-gradient(145deg, var(--eventi-main), #c49a30);
     color: var(--text-primary);
 }
+
+/* Nodi alloggio collegati alla mappa (posizione calcolata da positionProductsRadially) */
+.page-alloggio .item-villacostaadeje,
+.page-alloggio .item-villatorviscas {
+    background: linear-gradient(145deg, #e2b8c4, #ce9ca8);
+    color: var(--text-primary);
+}
+.page-alloggio .item-surfhousemain {
+    background: linear-gradient(145deg, #dcb0ba, #c8949e);
+    color: var(--text-primary);
+}

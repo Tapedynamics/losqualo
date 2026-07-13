@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excursions & Activities - Lo Squalo Tenerife</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/pages.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="canonical" href="https://losqualotenerife.com/en/escursioni.html">
+    <link rel="alternate" hreflang="it" href="https://losqualotenerife.com/escursioni.html">
+    <link rel="alternate" hreflang="en" href="https://losqualotenerife.com/en/escursioni.html">
+    <link rel="alternate" hreflang="es" href="https://losqualotenerife.com/es/escursioni.html">
+    <link rel="alternate" hreflang="x-default" href="https://losqualotenerife.com/escursioni.html">
+</head>
+<body class="page-escursioni">
+    <div class="container">
+        <header>
+            <a href="index.html" class="logo-link" aria-label="Lo Squalo">
+                <span class="logo-mark"></span>
+            </a>
+            <span class="tagline">&copy; since 2009</span>
+        </header>
+
+        <main class="page-map" data-state="categories">
+            <!-- SVG for the dynamic lines -->
+            <svg class="connections" id="svg-connections">
+                <!-- Lines: Center -> Sub-categories -->
+                <line class="line main-line" id="line-center-teide"></line>
+                <line class="line main-line" id="line-center-oceano"></line>
+                <line class="line main-line" id="line-center-sky"></line>
+
+                <!-- Teide lines -->
+                <line class="line sub-line" data-category="teide" id="line-teide-jeep"></line>
+                <line class="line sub-line" data-category="teide" id="line-teide-quad"></line>
+                <line class="line sub-line" data-category="teide" id="line-teide-buggy"></line>
+
+                <!-- Ocean lines -->
+                <line class="line sub-line" data-category="oceano" id="line-oceano-jetcar"></line>
+                <line class="line sub-line" data-category="oceano" id="line-oceano-jetsky"></line>
+                <line class="line sub-line" data-category="oceano" id="line-oceano-cetacei"></line>
+                <line class="line sub-line" data-category="oceano" id="line-oceano-kayak"></line>
+                <line class="line sub-line" data-category="oceano" id="line-oceano-surf"></line>
+                <line class="line sub-line" data-category="oceano" id="line-oceano-diving"></line>
+                <line class="line sub-line" data-category="oceano" id="line-oceano-charter"></line>
+                <line class="line sub-line" data-category="oceano" id="line-oceano-boatparty"></line>
+
+                <!-- Sky lines -->
+                <line class="line sub-line" data-category="sky" id="line-sky-parapente"></line>
+                <line class="line sub-line" data-category="sky" id="line-sky-paratrike"></line>
+                <line class="line sub-line" data-category="sky" id="line-sky-stargazing"></line>
+            </svg>
+
+            <!-- Center - Category -->
+            <div class="center-node category-center" id="category-trigger">
+                <div class="category-icon escursioni-bg">
+                    <span>EXCURSIONS<br>& ACTIVITIES</span>
+                </div>
+                <span class="click-hint">Click to explore</span>
+            </div>
+
+            <!-- Sub-categories (Level 2) -->
+            <div class="primary-nodes">
+                <div class="node node-primary teide-node" id="node-teide" data-category="teide">
+                    <span>Land</span>
+                </div>
+                <div class="node node-primary oceano-node" id="node-oceano" data-category="oceano">
+                    <span>Water</span>
+                </div>
+                <div class="node node-primary sky-node" id="node-sky" data-category="sky">
+                    <span>Air</span>
+                </div>
+            </div>
+
+            <!-- Level 3 items - TEIDE -->
+            <div class="sub-nodes" data-parent="teide">
+                <a href="escursioni/jeep-experience.html" class="node node-secondary item-jeep" id="node-jeep">
+                    <span>Jeep<br>Experience</span>
+                </a>
+                <a href="escursioni/quad.html" class="node node-secondary item-quad" id="node-quad">
+                    <span>Quad</span>
+                </a>
+                <a href="escursioni/buggy.html" class="node node-secondary item-buggy" id="node-buggy">
+                    <span>Buggy</span>
+                </a>
+            </div>
+
+            <!-- Level 3 items - OCEAN -->
+            <div class="sub-nodes" data-parent="oceano">
+                <a href="escursioni/jet-car.html" class="node node-secondary item-jetcar" id="node-jetcar">
+                    <span>Jet Car</span>
+                </a>
+                <a href="escursioni/jet-sky.html" class="node node-secondary item-jetsky" id="node-jetsky">
+                    <span>Jet Ski</span>
+                </a>
+                <a href="escursioni/balene.html" class="node node-secondary item-cetacei" id="node-cetacei">
+                    <span>Whales<br>&amp; Dolphins</span>
+                </a>
+                <a href="escursioni/kayak.html" class="node node-secondary item-kayak" id="node-kayak">
+                    <span>Kayak</span>
+                </a>
+                <a href="surfing/ika-ika.html?from=escursioni" class="node node-secondary item-surf" id="node-surf">
+                    <span>Surf</span>
+                </a>
+                <a href="escursioni/diving.html" class="node node-secondary item-diving" id="node-diving">
+                    <span>Diving</span>
+                </a>
+                <a href="escursioni/charter-privato.html" class="node node-secondary item-charter" id="node-charter">
+                    <span>Private<br>Charter</span>
+                </a>
+                <a href="escursioni/boat-party.html" class="node node-secondary item-boatparty" id="node-boatparty">
+                    <span>Boat<br>Party</span>
+                </a>
+            </div>
+
+            <!-- Level 3 items - SKY (Air) -->
+            <div class="sub-nodes" data-parent="sky">
+                <a href="escursioni/parapendio.html" class="node node-secondary item-parapente" id="node-parapente">
+                    <span>Paragliding</span>
+                </a>
+                <a href="escursioni/paratrike.html" class="node node-secondary item-paratrike" id="node-paratrike">
+                    <span>Paratrike</span>
+                </a>
+                <a href="escursioni/tenerife-stars.html" class="node node-secondary item-stargazing" id="node-stargazing">
+                    <span>Stargazing</span>
+                </a>
+            </div>
+
+            <!-- Back button -->
+            <button class="back-btn" id="back-btn">
+                <span>&larr;</span> Back
+            </button>
+        </main>
+
+        <a href="index.html?explore=1" class="home-button">
+            <span>&larr;</span> Home
+        </a>
+    </div>
+
+    <script src="/pages.js"></script>
+    <script src="/lang-switch.js"></script>
+</body>
+</html>

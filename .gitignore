@@ -11,3 +11,9 @@
 
 # Scratch: image scraping working dir (harvest JSON + scripts)
 /_scrape/
+
+# Materiale interno: il sito e' pubblicato dalla root del repo, quindi qualsiasi
+# file qui dentro sarebbe servito pubblicamente. Tenere fuori i doc di lavoro.
+/_INBOX/
+/MODIFICHE-*.md
+/proposta-borsa-realestate.html

@@ -1,6 +1,41 @@
 // Lo Squalo - Tenerife Experience
 // Interactive Mind Map - Home Page
 
+// Lingua della pagina corrente: la home vive in 3 copie (/, /en/, /es/) e questo
+// script e' condiviso. Le stringhe della mini-mappa mobile sono generate in JS,
+// quindi vanno tradotte qui; quelle desktop stanno gia' nell'HTML.
+const LANG = (document.documentElement.lang || 'it').slice(0, 2).toLowerCase();
+const UI = {
+    it: {
+        center: 'Tenerife Experience',
+        hint: 'Tocca per esplorare',
+        nodes: {
+            eventi: 'EVENTI', alloggio: 'ALLOGGIO',
+            escursioni: 'ESCURSIONI<br>& ATTIVITA', surfing: 'SURFING<br>TENERIFE',
+            agency: 'AGENCY', alessandro: 'ALESSANDRO'
+        }
+    },
+    en: {
+        center: 'Tenerife Experience',
+        hint: 'Tap to explore',
+        nodes: {
+            eventi: 'EVENTS', alloggio: 'ACCOMMODATION',
+            escursioni: 'EXCURSIONS<br>& ACTIVITIES', surfing: 'SURFING<br>TENERIFE',
+            agency: 'AGENCY', alessandro: 'ALESSANDRO'
+        }
+    },
+    es: {
+        center: 'Tenerife Experience',
+        hint: 'Toca para explorar',
+        nodes: {
+            eventi: 'EVENTOS', alloggio: 'ALOJAMIENTO',
+            escursioni: 'EXCURSIONES<br>& ACTIVIDADES', surfing: 'SURFING<br>TENERIFE',
+            agency: 'AGENCY', alessandro: 'ALESSANDRO'
+        }
+    }
+};
+const t = UI[LANG] || UI.it;
+
 document.addEventListener('DOMContentLoaded', function() {
     convertLinesToPaths();
     initProgressiveMap();
@@ -227,9 +262,9 @@ function createMobileMiniMap() {
     center.classList.add('center-node-mobile');
     center.id = 'mobile-center';
     center.innerHTML = `
-        <img src="tenerife.png" alt="Tenerife" class="tenerife-img-mobile">
-        <span class="center-text-mobile">Tenerife Experience</span>
-        <span class="click-hint-mobile">Tocca per esplorare</span>
+        <img src="/tenerife.png" alt="Tenerife" class="tenerife-img-mobile">
+        <span class="center-text-mobile">${t.center}</span>
+        <span class="click-hint-mobile">${t.hint}</span>
     `;
     mobileMap.appendChild(center);
 
@@ -242,13 +277,14 @@ function createMobileMiniMap() {
         alessandro: { top: '78%', left: '75%' }
     };
 
+    // href relativi: dentro /en/ o /es/ puntano alle pagine della stessa lingua
     const nodes = [
-        { id: 'eventi', name: 'EVENTI', cls: 'mobile-eventi', href: 'eventi.html' },
-        { id: 'alloggio', name: 'ALLOGGIO', cls: 'mobile-alloggio', href: 'alloggio.html' },
-        { id: 'escursioni', name: 'ESCURSIONI<br>& ATTIVITA', cls: 'mobile-escursioni', href: 'escursioni.html' },
-        { id: 'surfing', name: 'SURFING<br>TENERIFE', cls: 'mobile-surfing', href: 'surfing.html' },
-        { id: 'agency', name: 'AGENCY', cls: 'mobile-agency', href: 'agency.html' },
-        { id: 'alessandro', name: 'ALESSANDRO', cls: 'mobile-alessandro', href: 'alessandro.html' }
+        { id: 'eventi', name: t.nodes.eventi, cls: 'mobile-eventi', href: 'eventi.html' },
+        { id: 'alloggio', name: t.nodes.alloggio, cls: 'mobile-alloggio', href: 'alloggio.html' },
+        { id: 'escursioni', name: t.nodes.escursioni, cls: 'mobile-escursioni', href: 'escursioni.html' },
+        { id: 'surfing', name: t.nodes.surfing, cls: 'mobile-surfing', href: 'surfing.html' },
+        { id: 'agency', name: t.nodes.agency, cls: 'mobile-agency', href: 'agency.html' },
+        { id: 'alessandro', name: t.nodes.alessandro, cls: 'mobile-alessandro', href: 'alessandro.html' }
     ];
 
     nodes.forEach(node => {

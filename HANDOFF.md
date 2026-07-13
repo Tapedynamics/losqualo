@@ -1,105 +1,76 @@
-# HANDOFF — Lo Squalo Tenerife
+# HANDOFF — Lo Squalo (losqualotenerife)
 
 ## Stato Sessione
-- Data: 2026-06-10 (sessione lunga, Drive attivato a metà)
-- Branch git: `main`
-- Ultimo commit: `f52f28d` (drive-setup.html). Tutto committato e pushato su `github.com/Tapedynamics/losqualo.git`.
-- Deploy: push → Netlify ribuilda auto. Tutto verificato live su `https://losqualo.netlify.app/`.
-- Lavoro = applicazione PDF `_INBOX/losqualotenerife/AGGIUSTAMENTI SITO – TENERIFE EXPERIENCE - 8 giugno 2026.pdf` (15 sezioni).
+- Data/ora: 15/06/2026
+- Branch git: `main` — allineato a `origin/main` (push fatto)
+- Ultimo commit: `12420bf` "Fix back IKA IKA context-aware + rename Tenerife Stars -> Stargazing"
+- Deploy: git→Netlify (`losqualo.netlify.app`) — **build andata, fix VERIFICATI live**
 
-## ⭐ FONTE DI VERITÀ DEI PUNTI PDF (NON PERDERE)
-**`MODIFICHE-8GIU-CHECKLIST.md`** (root progetto) = stato punto-per-punto di TUTTE le modifiche del PDF.
-LEGGERLA PER PRIMA. Ogni punto del PDF è atomizzato e marcato ✅/⚠️/❌ con file e righe.
-Il riepilogo in fondo alla checklist elenca esattamente cosa è fatto e cosa resta.
+## File Modificati (committati + deployati)
+- `C:\Users\siusk\OneDrive\Desktop\Tape-Dynamics\_CLIENTI\losqualotenerife\escursioni.html`
+- `C:\Users\siusk\OneDrive\Desktop\Tape-Dynamics\_CLIENTI\losqualotenerife\pages.js`
+- `C:\Users\siusk\OneDrive\Desktop\Tape-Dynamics\_CLIENTI\losqualotenerife\surfing\ika-ika.html`
+- `C:\Users\siusk\OneDrive\Desktop\Tape-Dynamics\_CLIENTI\losqualotenerife\escursioni\tenerife-stars.html`
+- `C:\Users\siusk\OneDrive\Desktop\Tape-Dynamics\_CLIENTI\losqualotenerife\search.js`
 
-## Completato e LIVE in questa sessione
-Vedi checklist per dettaglio. In sintesi (✅ deployati e verificati):
-- pt2 Brand desc · pt7 Full Experience→WA · pt9a Reserva Cama→Ostello (deep-link `?cat=`)
-- pt12c Buggy no-Stargazing · pt13b/c Yacht "Le opzioni" + no Ocean Peak
-- pt15 Eventi → "Eventi e Servizi Privati" (7 nodi piatti → WhatsApp, eptagono)
-- **5 schede alloggio** (pt5/8): Villa A&R/Golf/One + Fañabé/Ático (scrape Airbnb Apify, foto locali)
-- **Drive ON** (seconda metà sessione):
-  - pt6 Villa Paraiso +8 foto piscina
-  - pt12a Jeep hero+14 foto · pt14a/b/c Stargazing(tenerife-stars)+Parapendio+Paratrike
-  - pt13a/d/e/f/g/h Acqua: nodo Charter Privato (hub `charter-privato.html` = Yacht+Catamarano+Barco),
-    nodo Boat Party (`boat-party.html`+8 foto), yacht "I modelli" con foto OCEAN PEAK + prezzi, colori azzurri
-- `drive-setup.html` — pagina standalone istruzioni per Alessandro (condividere cartelle Drive con `siusky.dc@gmail.com`)
+Untracked NON deployati (ignorabili): `MODIFICHE-14GIU-PIANO.md` (il piano sorgente), `proposta-borsa-realestate.html`. Modificato non committato: `.claude/settings.local.json`.
 
-## In Corso / Rimasto da Fare (vedi checklist per righe esatte)
-Tutti restructure mind-map (posizioni nodi hand-tuned = VISIVO) o puri visivi:
-1. **Cablaggio 5 nodi alloggio** (completa pt5/8): le 5 schede esistono ma non hanno il nodo nella mappa.
-   - `alloggio.html`: +3 `<a>` in `data-parent="villa"` (~riga 97), +2 in `data-parent="appartamento"` (~riga 141), classi `item-villaar/villagolf/villaone/fanabe/atico`.
-   - `pages.js`: subs in `pageSubNodesData.alloggio.villa.subs` (~543) e `.appartamento.subs` (~567); lines in arrays `villa:` (~73) e `appartamento:` (~89); +SVG `<line>` in `alloggio.html`.
-   - `pages.css`: posizioni `top%/left%` per i 5 `.page-alloggio .item-*` (vedi 460-620, layout radiale).
-2. **pt9c/d/e** Surf House (`surfing.html` + `pages.js`):
-   - 9d: eliminare nodo Gallery (`node-gallery` `surfing.html:79`, `pages.js` subs+line `line-surfhouse-gallery`).
-   - 9e: spostare nodo Full Experience da Surf House al macro Surfing Tenerife, visibile all'apertura.
-   - 9c: back-path non deve cambiare macrocategoria, tornare al nodo Surf House.
-3. **pt11** Agency (`index.html:62`, `agency/oferta.html`, `pages.js` ~662 subs/~170 lines/~951 mobile, `pages.css` ~882):
-   - 11a Agency apre struttura a nodi (ora apre scheda `agency/oferta.html`).
-   - 11b eliminare nodi SMM/Graphic Design/Artist Management/Start Business.
-   - 11c nodo Portfolio → `https://t.mtrbio.com/losqualoagency`.
-   - 11d nodo Servizi e Prezzi → riusare scheda `agency/oferta.html`.
-   - 11e nodo Contact & Social → IG `instagram.com/losqualoagency`, FB `facebook.com/losqualoagency`, Email `agency.losqualotenerife@gmail.com`, TikTok `tiktok.com/@agencylosqualotenerife`, Google `share.google/EPTc7zGdCKpWTuL87`.
-4. **pt3** Traduzione nodo Alloggio per lingua ES/EN (`en/index.html`+`es/index.html` linkano stesso `alloggio.html` IT; dict in `pages.js:7-10`).
-5. **pt1** 👁️ Search box home: misura = bottone "Tenerife Experience", equidistante (`styles.css:1015` `.home-search`).
-6. **pt4** 👁️ Finca Chimiche doppioni foto (visivi, guardare `alloggio/foto/finca-chimiche/drive-01..12`).
-7. **pt12b** 🖼️ Quad hero con foto coi quad (nessuna cartella Drive dedicata — serve foto).
+## Completato
+- **SYNC** verificato (`0 0` vs origin/main) prima di editare.
+- **Pt 4 — Back IKA IKA context-aware** (bug certo). IKA IKA è raggiunta da Surfing>School e da Escursioni>Acqua>Surf. Fix in 3 file:
+  - `escursioni.html`: nodo Surf → `surfing/ika-ika.html?from=escursioni`
+  - `pages.js`: sub mobile `surf` (pageSubNodesData.escursioni.oceano) → stesso href con `?from=escursioni`
+  - `surfing/ika-ika.html`: anchor back ha `id="back-link"`; script inline (prima di `whatsapp-i18n.js`) che con `?from=escursioni` riscrive l'href in `../escursioni.html?cat=oceano` (riapre la sub Acqua via handler `pages.js:377`); altrimenti resta default `../surfing.html`.
+- **Pt 2a — Rename "Tenerife Stars" → "Stargazing"**: nodo/label (`escursioni.html`), sub mobile (`pages.js`), `<title>`+`<h1>`+`alt` (`tenerife-stars.html`), voce indicizzata (`search.js`). Tenuti invariati di proposito: filename `tenerife-stars.html`, link esterno `tenerifestars.com`, CTA "Tenerife Stars" (`tenerife-stars.html:123/126`) = nome proprio operatore esterno.
+- **Sentinel**: PASS 5/5, zero critici/alti, nessuna regressione (verificati entrambi i percorsi back, selettori CSS/SVG coerenti).
+- **Verifica post-deploy** (cache-bust) OK: title `Stargazing al Teide…`, `from=escursioni` in escursioni.html, `back-link`+`cat=oceano` in ika-ika.html, `name: 'Stargazing'` in search.js.
+- **Notifica WhatsApp al boss** inviata via Jarvis (`sendToBoss`, consegnata, sid `SM051ea713…`).
 
-### FUORI GOAL
-- pt10 foto profilo Alessandro (IG/FB) — `assets/alessandro.jpg` non esiste, fallback "AB".
+## In Corso / Rimasto da Fare (dal piano `MODIFICHE-14GIU-PIANO.md`)
+Codice — fattibile senza cliente:
+- **Pt 7 — Sisters Hostel**: aggiungere 2° nodo al ramo Ostello + creare pagina **placeholder**. Dettaglio nel piano (righe 58-66): `alloggio.html` (line SVG + node `item-sisters`), `pages.js:106` (pageLineConfig.alloggio.ostello) + `pages.js:572` (subs), creare `alloggio/sisters-hostel.html` copia di `alloggio/banana-surf-hostel.html` con "Info in arrivo" + CTA WhatsApp. Contenuto reale pendente (vedi sotto).
 
-### Da confermare A VISTA (deployati alla cieca, posizioni/hero)
-Eventi (15) eptagono · Acqua (13) nodi Charter/BoatParty · hero=drive-01 di Jeep/Parapendio/Paratrike · mapping foto yacht Armani/Salita (13e) · le 5 schede alloggio (contenuti).
+Asset — serve occhio sulle foto:
+- **Pt 2b — Hero Stargazing = galassia (no luna)**: scegliere foto galassia tra le 15 in `escursioni/foto/stargazing/drive-01..15`, settare hero `tenerife-stars.html:19`. Se assente, ri-scaricare cartella Drive STARGAZING `1fmDEVvf4gSO5DyFdoCNRaeEsbgSWq2zQ` con `_scrape/fetch_folder.py`.
+- **Pt 1 — Paratrike**: ri-scaricare cartella Drive PARATRIKE `1Ur_wLf8lZxm2M2F8PhrvsZUmpo582GeC` (`PYTHONUTF8=1 python _scrape/fetch_folder.py "<ID>" "escursioni/foto/paratrike" 12`), sostituire gallery + scegliere hero panoramico del volo. ⚠️ Se Drive == foto attuali → è solo cache (hard-refresh, niente fix).
 
-## PIPELINE DRIVE (riutilizzabile — script in `_scrape/`)
-Le cartelle Drive link-shared NON sono enumerabili via MCP `search_files` (parentId torna vuoto).
-SOLUZIONE trovata e funzionante:
-- **Enumerare**: `https://drive.google.com/embeddedfolderview?id=<FOLDER_ID>#list` → HTML semplice con
-  `id="entry-<FILE_ID>"` e `flip-entry-title">NOME`. Script: `_scrape/scrape_folder.py <folderId>`.
-- **Scaricare singolo file**: `curl -sL "https://drive.google.com/uc?export=download&id=<FILE_ID>"` (funziona anche per file solo-link).
-- **Pipeline completa** (scrape+download+resize 1600px/q82 come drive-NN): `_scrape/fetch_folder.py <folderId> <outdir> <count>`.
-- **Download ID specifici** (manifest JSON): `_scrape/dl_drive.py <manifest.json>`.
-- **Ricostruire gallery+hero pagina**: `_scrape/set_gallery.py <html> <foto_subdir> <count> "<AltLabel>" [hero_idx]`.
-- MCP Drive (`read_file_content`) usato per leggere il doc yacht (testo, OK in context). NON usare download_file_content per immagini (base64 in context = inutile).
+Verify-first sul live (probabile cache, basta hard-refresh lato cliente):
+- **Pt 5a** — Agency 3 nodi: già a codice/deployato.
+- **Pt 6** — Eventi nodi colorati: già a codice/deployato.
+- **Pt 5b** — Contact mantiene colore da aperto: atteso ok, confermare a video.
 
-Folder IDs già usati (dal PDF): Parapendio `1ApKfrnx5mZE9bzq8W44krZS-yS-XFfdt`, Paratrike `1Ur_wLf8lZxm2M2F8PhrvsZUmpo582GeC`, Jeep `1cmYLxvsHA5UyA9KWWBPREQ3gY86HB84B`, Villa Paraiso piscina `1NRT2t_-ZNP-yEY5BoVRcIfIA-MHHFAan`, Stargazing `1fmDEVvf4gSO5DyFdoCNRaeEsbgSWq2zQ`, Boat Party `1IEVncrx91vKK5bbyABpJNXztFmfNI8Cw`, OCEAN PEAK `17VqOJgt4tvFfvIN3E1AAw1YHflFjIcqc`, doc yacht `18PbRgRq5K7uabQjmdZD8PkRnk3QqXXUkdkcBAGDND0w`.
-
-## File principali creati questa sessione
-- `MODIFICHE-8GIU-CHECKLIST.md` (FONTE DI VERITÀ punti PDF)
-- `drive-setup.html` (istruzioni Alessandro, noindex)
-- `alloggio/{villa-ar,villa-golf,villa-one,fanabe,atico}.html` + `alloggio/foto/<slug>/` (13 foto cad)
-- `alloggio/foto/villa-paraiso-pool/` (8 foto)
-- `escursioni/charter-privato.html`, `escursioni/boat-party.html` + `escursioni/foto/boat-party/`
-- `escursioni/foto/{parapendio,paratrike,jeep,stargazing}/drive-NN.jpg` + `escursioni/foto/yacht/model-*.jpg`
-- `_scrape/*.py` (pipeline Drive + Airbnb) — cartella GITIGNORED
+Bloccati — dipendono da Lo Squalo:
+- **Pt 3 — Quad "ragazze sul quad"**: nessuna foto esiste, niente cartella Drive Quad → deve mandare la foto. (Decisione: lasciato com'è.)
+- **Pt 7 contenuto Sisters Hostel**: galleria + descrizione + link/sito + camere/contatto.
+- **Pt 1 Paratrike**: confermare quali foto considera "vecchie" se Drive coincide con online.
 
 ## Decisioni Prese
-- Deploy a blocchi con conferma (scelta Daniele). Visivi → deploy poi conferma a vista.
-- Foto schede alloggio = scaricate LOCALI (no hotlink CDN). Scrape Airbnb via Apify actor `tri_angle~airbnb-rooms-urls-scraper` (locale `it-IT`). Token in `_AZIENDA/api-reference.md`.
-- pt9a Reserva Cama → nodo Ostello GENERICO (scelta Daniele) via deep-link `?cat=ostello` (nuovo handler URL param in `pages.js` init).
-- pt13: Yacht+Catamarano+Barco dentro UN nodo "Charter Privato" (scelta Daniele) — implementato come pagina hub (mind-map è a 3 livelli, niente 4° livello).
-- Feedback hero/galleria 5 schede (Daniele): villa-golf hero=7a foto, villa-one -2 foto, fanabe hero=penultima, atico hero=ultima (tutti swap, niente foto perse).
+- **Rename**: rinominata solo l'esperienza ("Stargazing"); MANTENUTI filename, link `tenerifestars.com` e CTA "Tenerife Stars" perché è il nome proprio dell'operatore esterno di prenotazione (non un refuso da sostituire). Keyword search.js tiene "tenerife stars" → la ricerca trova ancora la pagina.
+- **Back IKA IKA**: scelto pattern `?from=escursioni` + deep-link `?cat=oceano` (già gestito da `pages.js:377`), coerente con Surf House 9c (commit `afe08e6`). Surfing>School resta default invariato.
+- **Deploy**: solo i 5 file toccati; esclusi untracked (piano, proposta) e settings.local.json.
+- **Notifica**: usato `sendToBoss` (coda Opzione A) e non Twilio diretto, per coerenza con l'architettura Jarvis.
 
 ## Problemi Noti
-- Nessun test automatico (sito statico vanilla).
-- Dead data residuo in `pages.js`/`pages.css` dopo restructure eventi+acqua (sub orfani `pageSubNodesData.eventi.fooddrink`, classi CSS vecchie `item-yacht/barco/catamarano`, `showcases-node` ecc.). Innocui, non rimossi per minimizzare rischio.
-- `search.js` può indicizzare voci eventi/acqua vecchie con anchor non più esistenti (innocuo, no 404).
-- Netlify Pretty URLs toglie `.html` (gotcha): `?cat=ostello` → `/alloggio?cat=ostello`, query preservata.
-- Posizioni nodi nuovi (Eventi eptagono, Acqua Charter/BoatParty) e hero=drive-01 NON validati a vista.
-- Warning git "LF will be replaced by CRLF" su Windows (innocuo).
+- Nessun bug/test fallito introdotto. Sentinel PASS.
+- Note minori PRE-ESISTENTI (non azione): (1) su mobile `createMobilePageMap` ignora `?cat=` e usa solo `recallSub()`/sessionStorage → un deep-link diretto condiviso `escursioni.html?cat=oceano` su mobile non apre la sub Acqua; nel flusso reale (click→ritorno) funziona. (2) lo script back in ika-ika gestisce solo `from=escursioni` (unico secondo percorso).
+- Durante la verifica post-deploy: curl separati possono colpire edge-node Netlify con cache diversa (un grep ha dato 0 falso); verificare sempre con tutti i pattern in UNA sola response.
 
 ## Comandi per Riprendere
 ```bash
 cd "C:/Users/siusk/OneDrive/Desktop/Tape-Dynamics/_CLIENTI/losqualotenerife"
-cat MODIFICHE-8GIU-CHECKLIST.md   # <-- LEGGERE PRIMA: stato punti PDF
-git status && git log --oneline -10
+git fetch origin && git status
+git rev-list --left-right --count HEAD...origin/main   # atteso 0 0
 
-# Scaricare foto da una cartella Drive (esempio):
-PYTHONUTF8=1 python _scrape/fetch_folder.py "<FOLDER_ID>" "escursioni/foto/<nome>" 12
-
-# Deploy: push -> Netlify auto. Verifica build:
+# Deploy futuro (git→Netlify, NO netlify CLI):
 git add <files> && git commit -m "..." && git push origin main
-for i in $(seq 1 18); do v=$(curl -s -o /dev/null -w "%{http_code}" "https://losqualo.netlify.app/<page>?cb=$(date +%s)"); [ "$v" = 200 ] && echo OK && break; sleep 7; done
+# Verifica post-deploy (cache-bust, tutti i pattern in 1 response):
+curl -s "https://losqualo.netlify.app/<page>?cb=$(date +%s)" | grep -oE '<title>[^<]+</title>'
+
+# Re-scaricare foto Drive (Pt 1 / Pt 2b):
+PYTHONUTF8=1 python _scrape/fetch_folder.py "<FOLDER_ID>" "<destdir>" <N>
+
+# Notifica boss via Jarvis (td-05):
+ssh hetzner-turn 'docker exec -i jarvis node -e "let d=\"\";process.stdin.on(\"data\",c=>d+=c).on(\"end\",()=>{require(\"/app/src/services/outboundQueue\").sendToBoss(d.trim()).then(r=>console.log(JSON.stringify(r)))})"' <<'EOF'
+<messaggio>
+EOF
 ```
-Sito statico, zero dipendenze/build. Apify token + altre key in `_AZIENDA/api-reference.md`.

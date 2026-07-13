@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surfing Tenerife - Lo Squalo Tenerife</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/pages.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="canonical" href="https://losqualotenerife.com/es/surfing.html">
+    <link rel="alternate" hreflang="it" href="https://losqualotenerife.com/surfing.html">
+    <link rel="alternate" hreflang="en" href="https://losqualotenerife.com/en/surfing.html">
+    <link rel="alternate" hreflang="es" href="https://losqualotenerife.com/es/surfing.html">
+    <link rel="alternate" hreflang="x-default" href="https://losqualotenerife.com/surfing.html">
+</head>
+<body class="page-surfing">
+    <div class="container">
+        <header>
+            <a href="index.html" class="logo-link" aria-label="Lo Squalo">
+                <span class="logo-mark"></span>
+            </a>
+            <span class="tagline">&copy; since 2009</span>
+        </header>
+
+        <main class="page-map" data-state="categories">
+            <!-- SVG per le linee dinamiche -->
+            <svg class="connections" id="svg-connections">
+                <!-- Linee: Centro -> Sotto-categorie -->
+                <line class="line main-line" id="line-center-surfbar"></line>
+                <line class="line main-line" id="line-center-surfhouse"></line>
+                <line class="line main-line" id="line-center-fullexp"></line>
+                <line class="line main-line" id="line-center-spots"></line>
+                <line class="line main-line" id="line-center-callemexico"></line>
+                <line class="line main-line" id="line-center-school"></line>
+
+                <!-- Linee Surf House -->
+                <line class="line sub-line" data-category="surfhouse" id="line-surfhouse-b2b"></line>
+                <line class="line sub-line" data-category="surfhouse" id="line-surfhouse-reservacama"></line>
+                <line class="line sub-line" data-category="surfhouse" id="line-surfhouse-reservahab"></line>
+            </svg>
+
+            <!-- Centro - Categoria -->
+            <div class="center-node category-center" id="category-trigger">
+                <div class="category-icon surfing-bg">
+                    <span>SURFING<br>TENERIFE</span>
+                </div>
+                <span class="click-hint">Haz clic para explorar</span>
+            </div>
+
+            <!-- Sotto-categorie (Livello 2) -->
+            <div class="primary-nodes">
+                <a href="surfing/surf-bar-franchise.html" class="node node-primary surfbar-node" id="node-surfbar">
+                    <span>Surfbar<br>Franchise</span>
+                </a>
+                <div class="node node-primary surfhouse-node" id="node-surfhouse" data-category="surfhouse">
+                    <span>Surf<br>House</span>
+                </div>
+                <a href="surfing/full-experience.html" class="node node-primary fullexp-node" id="node-fullexp">
+                    <span>Full<br>Experience</span>
+                </a>
+                <a href="surfing/spots.html" class="node node-primary spots-node" id="node-spots">
+                    <span>Surf<br>Spots</span>
+                </a>
+                <a href="https://t.mtrbio.com/callemexicotenerife" target="_blank" rel="noopener" class="node node-primary callemexico-node" id="node-callemexico">
+                    <span>Calle<br>Mexico</span>
+                </a>
+                <a href="surfing/ika-ika.html" class="node node-primary school-node" id="node-school">
+                    <span>School</span>
+                </a>
+            </div>
+
+            <!-- Elementi Livello 3 - SURF HOUSE -->
+            <div class="sub-nodes" data-parent="surfhouse">
+                <a href="surfing/surf-house-b2b.html" class="node node-secondary item-b2b" id="node-b2b">
+                    <span>B2B</span>
+                </a>
+                <a href="alloggio.html?cat=ostello&from=surfhouse" class="node node-secondary item-reservacama" id="node-reservacama">
+                    <span>Reserva<br>Cama</span>
+                </a>
+                <a href="alloggio/surf-house-rurale.html?from=surfhouse" class="node node-secondary item-reservahab" id="node-reservahab">
+                    <span>Reserva<br>Habitación</span>
+                </a>
+            </div>
+
+            <!-- Pulsante indietro -->
+            <button class="back-btn" id="back-btn">
+                <span>&larr;</span> Atrás
+            </button>
+        </main>
+
+        <a href="index.html?explore=1" class="home-button">
+            <span>&larr;</span> Inicio
+        </a>
+    </div>
+
+    <script src="/pages.js"></script>
+    <script src="/lang-switch.js"></script>
+</body>
+</html>
