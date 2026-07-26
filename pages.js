@@ -1,16 +1,120 @@
 // Lo Squalo - Pagine Categoria (Livello 2)
 // Mini Mind Map per ogni categoria
 
-// i18n nomi nodi: solo le copie EN/ES (categoria alloggi) traducono i nomi
-// generici delle categorie; i nomi propri (Villa Paraiso, Cactus...) restano.
+// i18n nomi nodi: le strutture dati qui sotto sono scritte in italiano e sono
+// condivise dalle 3 copie del sito (/, /en/, /es/), quindi ogni nome generico
+// mostrato a schermo va tradotto. I nomi propri (Villa Paraiso, Cactus, Jet Car)
+// restano invariati e semplicemente non compaiono nel dizionario.
+// Le traduzioni ricalcano ESATTAMENTE quelle gia' presenti nell'HTML desktop
+// delle pagine EN/ES: mobile e desktop devono chiamare le cose allo stesso modo.
 var PAGE_LANG = (document.documentElement.lang || 'it').slice(0, 2).toLowerCase();
 var NAME_I18N = {
-    en: { 'Rurale': 'Rural', 'Appartamento': 'Apartment', 'Ostello': 'Hostel', 'Surf House Rurale': 'Surf House Rural' },
-    es: { 'Rurale': 'Rural', 'Appartamento': 'Apartamento', 'Ostello': 'Hostel', 'Surf House Rurale': 'Surf House Rural' }
+    en: {
+        // centro mappa categoria
+        'ALLOGGIO': 'ACCOMMODATION',
+        'ESCURSIONI<br>& ATTIVITA': 'EXCURSIONS<br>& ACTIVITIES',
+        'EVENTI': 'EVENTS',
+        // sottocategorie alloggio
+        'Rurale': 'Rural',
+        'Appartamento': 'Apartment',
+        'Ostello': 'Hostel',
+        'Surf House Rurale': 'Surf House Rural',
+        // sottocategorie escursioni
+        'Terra': 'Land',
+        'Acqua': 'Water',
+        'Aria': 'Air',
+        // sottocategorie eventi
+        'Suono<br>e Luci': 'Sound &<br>Lighting',
+        'Feste e<br>Movida': 'Parties &<br>Nightlife',
+        // sottocategorie agency
+        'Servizi<br>e Prezzi': 'Services<br>& Pricing',
+        'Contact<br>& Social': 'Contact<br>& Social',
+        // nodi di terzo livello
+        'Balene e Delfini': 'Whales & Dolphins',
+        'Charter Privato': 'Private Charter',
+        'Parapendio': 'Paragliding',
+        'Jet Sky': 'Jet Ski',
+        'Prenota Letto': 'Book a Bed',
+        'Prenota Camera': 'Book a Room',
+        'Cucina Tipica': 'Local Cuisine',
+        'Italiana': 'Italian',
+        'Mediterranea': 'Mediterranean'
+    },
+    es: {
+        'ALLOGGIO': 'ALOJAMIENTO',
+        'ESCURSIONI<br>& ATTIVITA': 'EXCURSIONES<br>Y ACTIVIDADES',
+        'EVENTI': 'EVENTOS',
+        'Rurale': 'Rural',
+        'Appartamento': 'Apartamento',
+        'Ostello': 'Hostel',
+        'Surf House Rurale': 'Surf House Rural',
+        'Terra': 'Tierra',
+        'Acqua': 'Agua',
+        'Aria': 'Aire',
+        'Suono<br>e Luci': 'Sonido e<br>Iluminación',
+        'Feste e<br>Movida': 'Fiestas y<br>Movida',
+        'Servizi<br>e Prezzi': 'Servicios<br>y Precios',
+        'Contact<br>& Social': 'Contacto<br>& Social',
+        'Balene e Delfini': 'Ballenas y Delfines',
+        'Charter Privato': 'Chárter Privado',
+        'Parapendio': 'Parapente',
+        'Diving': 'Buceo',
+        'Prenota Letto': 'Reserva Cama',
+        'Prenota Camera': 'Reserva Habitación',
+        'Cucina Tipica': 'Cocina Típica',
+        'Italiana': 'Italiana',
+        'Mediterranea': 'Mediterránea'
+    }
 };
 function tName(name) {
     if (PAGE_LANG !== 'it' && NAME_I18N[PAGE_LANG] && NAME_I18N[PAGE_LANG][name]) return NAME_I18N[PAGE_LANG][name];
     return name;
+}
+
+// Stringhe di interfaccia generate in JS (bottoni, stati vuoti): non esistono
+// nell'HTML, quindi senza questo dizionario resterebbero italiane in ogni lingua.
+var UI_I18N = {
+    it: { back: '&larr; Indietro', comingSoon: 'Prossima-<br>mente' },
+    en: { back: '&larr; Back', comingSoon: 'Coming<br>Soon' },
+    es: { back: '&larr; Volver', comingSoon: 'Próxima-<br>mente' }
+};
+var UI = UI_I18N[PAGE_LANG] || UI_I18N.it;
+
+// Testo precompilato dei link WhatsApp della pagina Eventi (nodi mobile).
+// Ricalca parola per parola quello gia' presente nell'HTML di eventi.html
+// nelle tre lingue: stesso nodo, stesso messaggio, su desktop e su mobile.
+var WA_EVENTI_I18N = {
+    it: {
+        venue: 'Ciao, vorrei info su Venue per il mio evento',
+        carrent: 'Ciao, vorrei info su Car Rent & Transfer',
+        fooddrink: 'Ciao, vorrei info su Food & Drink per il mio evento',
+        suonoluci: 'Ciao, vorrei info su Suono e Luci',
+        musicshow: 'Ciao, vorrei info su Music & Show',
+        festemovida: 'Ciao, vorrei info su Feste e Movida',
+        tips: 'Ciao, vorrei qualche tip per il mio evento a Tenerife'
+    },
+    en: {
+        venue: "Hi, I'd like info about Venues for my event",
+        carrent: "Hi, I'd like info about Car Rent & Transfer",
+        fooddrink: "Hi, I'd like info about Food & Drink for my event",
+        suonoluci: "Hi, I'd like info about Sound & Lighting",
+        musicshow: "Hi, I'd like info about Music & Show",
+        festemovida: "Hi, I'd like info about Parties & Nightlife",
+        tips: "Hi, I'd love some tips for my event in Tenerife"
+    },
+    es: {
+        venue: '¡Hola! Quería información sobre Venue para mi evento',
+        carrent: '¡Hola! Quería información sobre Car Rent & Transfer',
+        fooddrink: '¡Hola! Quería información sobre Food & Drink para mi evento',
+        suonoluci: '¡Hola! Quería información sobre Sonido e Iluminación',
+        musicshow: '¡Hola! Quería información sobre Music & Show',
+        festemovida: '¡Hola! Quería información sobre Fiestas y Movida',
+        tips: '¡Hola! Quería algunos consejos para mi evento en Tenerife'
+    }
+};
+function waEventi(key) {
+    var set = WA_EVENTI_I18N[PAGE_LANG] || WA_EVENTI_I18N.it;
+    return 'https://wa.me/34616794190?text=' + encodeURIComponent(set[key]);
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -717,7 +821,7 @@ function createMobilePageMap() {
     center.id = 'mobile-category-center';
     center.innerHTML = `
         <div class="category-icon-mobile ${info.class}">
-            <span>${info.name}</span>
+            <span>${tName(info.name)}</span>
         </div>
     `;
     mobileMap.appendChild(center);
@@ -743,7 +847,7 @@ function createMobilePageMap() {
 
     const backBtn = document.createElement('button');
     backBtn.classList.add('mobile-back-btn');
-    backBtn.innerHTML = '&larr; Indietro';
+    backBtn.innerHTML = UI.back;
     mobileMap.appendChild(backBtn);
 
     main.parentNode.insertBefore(mobileMap, main.nextSibling);
@@ -907,13 +1011,13 @@ function getSubcategoryNodes(page) {
             { id: 'sky', name: 'Aria', class: 'mobile-sky' }
         ],
         eventi: [
-            { id: 'venue', name: 'Venue', class: 'mobile-venue', href: 'https://wa.me/34616794190?text=Ciao%2C%20vorrei%20info%20su%20Venue%20per%20il%20mio%20evento' },
-            { id: 'carrent', name: 'Car Rent<br>& Transfer', class: 'mobile-carrent', href: 'https://wa.me/34616794190?text=Ciao%2C%20vorrei%20info%20su%20Car%20Rent%20%26%20Transfer' },
-            { id: 'fooddrink', name: 'Food &<br>Drink', class: 'mobile-fooddrink', href: 'https://wa.me/34616794190?text=Ciao%2C%20vorrei%20info%20su%20Food%20%26%20Drink%20per%20il%20mio%20evento' },
-            { id: 'suonoluci', name: 'Suono<br>e Luci', class: 'mobile-suonoluci', href: 'https://wa.me/34616794190?text=Ciao%2C%20vorrei%20info%20su%20Suono%20e%20Luci' },
-            { id: 'musicshow', name: 'Music<br>& Show', class: 'mobile-musicshow', href: 'https://wa.me/34616794190?text=Ciao%2C%20vorrei%20info%20su%20Music%20%26%20Show' },
-            { id: 'festemovida', name: 'Feste e<br>Movida', class: 'mobile-festemovida', href: 'https://wa.me/34616794190?text=Ciao%2C%20vorrei%20info%20su%20Feste%20e%20Movida' },
-            { id: 'tips', name: 'Tips', class: 'mobile-tips', href: 'https://wa.me/34616794190?text=Ciao%2C%20vorrei%20qualche%20tip%20per%20il%20mio%20evento%20a%20Tenerife' }
+            { id: 'venue', name: 'Venue', class: 'mobile-venue', href: waEventi('venue') },
+            { id: 'carrent', name: 'Car Rent<br>& Transfer', class: 'mobile-carrent', href: waEventi('carrent') },
+            { id: 'fooddrink', name: 'Food &<br>Drink', class: 'mobile-fooddrink', href: waEventi('fooddrink') },
+            { id: 'suonoluci', name: 'Suono<br>e Luci', class: 'mobile-suonoluci', href: waEventi('suonoluci') },
+            { id: 'musicshow', name: 'Music<br>& Show', class: 'mobile-musicshow', href: waEventi('musicshow') },
+            { id: 'festemovida', name: 'Feste e<br>Movida', class: 'mobile-festemovida', href: waEventi('festemovida') },
+            { id: 'tips', name: 'Tips', class: 'mobile-tips', href: waEventi('tips') }
         ],
         surfing: [
             { id: 'surfbar', name: 'Surfbar<br>Franchise', class: 'mobile-surfbar', href: 'surfing/surf-bar-franchise.html' },
@@ -963,7 +1067,7 @@ function openPageRadialPopup(page, category) {
     popup.className = 'radial-popup radial-cat-' + category;
 
     if (!pageSubNodesData[page] || !pageSubNodesData[page][category]) {
-        popup.innerHTML = `<div class="radial-center"><span>Coming<br>Soon</span></div>`;
+        popup.innerHTML = `<div class="radial-center"><span>${UI.comingSoon}</span></div>`;
         overlay.classList.add('visible');
         return;
     }
@@ -1004,7 +1108,7 @@ function openPageRadialPopup(page, category) {
 
     const closeBtn = document.createElement('button');
     closeBtn.classList.add('radial-close');
-    closeBtn.innerHTML = '&larr; Indietro';
+    closeBtn.innerHTML = UI.back;
     closeBtn.addEventListener('click', closePageRadialPopup);
     popup.appendChild(closeBtn);
 

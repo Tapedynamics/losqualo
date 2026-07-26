@@ -83,7 +83,7 @@
         { name: 'Quad', cat: 'Escursioni', href: 'escursioni/quad.html', kw: 'terra quad off road land tierra' },
         { name: 'Buggy', cat: 'Escursioni', href: 'escursioni/buggy.html', kw: 'terra buggy off road land tierra' },
         { name: 'Yacht Privato', i18n: { en: 'Private Yacht', es: 'Yate Privado' }, cat: 'Escursioni', href: 'escursioni/yacht.html', kw: 'acqua mare barca yacht water sea boat agua mar barco yate' },
-        { name: 'Barco sin Pilota', i18n: { en: 'Boat without Skipper', es: 'Barco sin Patrón' }, cat: 'Escursioni', href: 'escursioni/barco-sin-pilota.html', kw: 'acqua mare barca senza licenza water sea boat no licence agua mar barco sin licencia' },
+        { name: 'Barco sin Pilota', i18n: { en: 'Boat without Skipper', es: 'Barco sin Piloto' }, cat: 'Escursioni', href: 'escursioni/barco-sin-pilota.html', kw: 'acqua mare barca senza licenza patron water sea boat no licence agua mar barco sin licencia' },
         { name: 'Catamarano', i18n: { en: 'Catamaran', es: 'Catamarán' }, cat: 'Escursioni', href: 'escursioni/catamarano.html', kw: 'acqua mare catamarano water sea catamaran agua mar catamaran' },
         { name: 'Balene e Delfini', i18n: { en: 'Whales & Dolphins', es: 'Ballenas y Delfines' }, cat: 'Escursioni', href: 'escursioni/balene.html', kw: 'acqua mare whale watching balene delfini cetacei avvistamento whales dolphins ballenas delfines avistamiento' },
         { name: 'Parapendio', i18n: { en: 'Paragliding', es: 'Parapente' }, cat: 'Escursioni', href: 'escursioni/parapendio.html', kw: 'aria volo parapendio paragliding air flight aire vuelo parapente' },

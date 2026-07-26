@@ -21,9 +21,11 @@
 
     const hrefFor = (lang) => (lang === 'it' ? '' : '/' + lang) + logical;
 
+    const LABEL = { it: 'Lingua', en: 'Language', es: 'Idioma' };
+
     const wrap = document.createElement('div');
     wrap.className = 'lang-switch';
-    wrap.setAttribute('aria-label', 'Lingua');
+    wrap.setAttribute('aria-label', LABEL[cur] || LABEL.it);
     wrap.innerHTML = LANGS.map((lang) =>
         `<a href="${hrefFor(lang)}" class="lang-pill${lang === cur ? ' active' : ''}"${lang === cur ? ' aria-current="true"' : ''}>${lang.toUpperCase()}</a>`
     ).join('');
