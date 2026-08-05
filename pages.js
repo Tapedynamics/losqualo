@@ -114,7 +114,7 @@ var WA_EVENTI_I18N = {
 };
 function waEventi(key) {
     var set = WA_EVENTI_I18N[PAGE_LANG] || WA_EVENTI_I18N.it;
-    return 'https://wa.me/34616794190?text=' + encodeURIComponent(set[key]);
+    return 'https://wa.me/34613594910?text=' + encodeURIComponent(set[key]);
 }
 
 document.addEventListener('DOMContentLoaded', function() {

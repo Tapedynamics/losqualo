@@ -30,9 +30,9 @@
 
     // Link WhatsApp "servizi privati": testo precompilato per lingua
     const WA_EVENTI = {
-        it: 'https://wa.me/34616794190?text=Ciao%2C%20vorrei%20info%20sui%20servizi%20privati%20per%20il%20mio%20evento',
-        en: 'https://wa.me/34616794190?text=Hello!%20I%27d%20like%20info%20about%20private%20services%20for%20my%20event',
-        es: 'https://wa.me/34616794190?text=%C2%A1Hola!%20Quisiera%20info%20sobre%20los%20servicios%20privados%20para%20mi%20evento'
+        it: 'https://wa.me/34613594910?text=Ciao%2C%20vorrei%20info%20sui%20servizi%20privati%20per%20il%20mio%20evento',
+        en: 'https://wa.me/34613594910?text=Hello!%20I%27d%20like%20info%20about%20private%20services%20for%20my%20event',
+        es: 'https://wa.me/34613594910?text=%C2%A1Hola!%20Quisiera%20info%20sobre%20los%20servicios%20privados%20para%20mi%20evento'
     };
 
     const SERVICES = [
