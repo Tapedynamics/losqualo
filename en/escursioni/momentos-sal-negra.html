@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romantic dinner in Tenerife | Momentos Sal Negra</title>
+    <meta name="description" content="A gastronomic experience for two with a Vintage ride, seafront dinner and return included. Only 3 Momentos available each day.">
+    <meta property="og:title" content="Romantic dinner in Tenerife | Momentos Sal Negra">
+    <meta property="og:description" content="A gastronomic experience for two with a Vintage ride, seafront dinner and return included. Only 3 Momentos available each day.">
+    <meta property="og:image" content="https://losqualotenerife.com/escursioni/foto/momentos/momentos-hero-vintage-car-tramonto-16x9.webp">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/alloggio/detail.css">
+    <style>:root { --detail-accent: #D4956A; --detail-accent-dark: #9A5F2E; --detail-accent-light: #F7EBE0; }</style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="canonical" href="https://losqualotenerife.com/en/escursioni/momentos-sal-negra.html">
+    <link rel="alternate" hreflang="it" href="https://losqualotenerife.com/escursioni/momentos-sal-negra.html">
+    <link rel="alternate" hreflang="en" href="https://losqualotenerife.com/en/escursioni/momentos-sal-negra.html">
+    <link rel="alternate" hreflang="es" href="https://losqualotenerife.com/es/escursioni/momentos-sal-negra.html">
+    <link rel="alternate" hreflang="x-default" href="https://losqualotenerife.com/escursioni/momentos-sal-negra.html">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BBHX7ZZLEH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-BBHX7ZZLEH');
+    </script>
+    <style>
+        /* ===== MOMENTOS — stili propri della pagina (Documento 03, punto 4) ===== */
+        .mo-hero { height: 78vh; min-height: 480px; max-height: none; }
+        /* l'overlay condiviso parte trasparente: qui il testo è alto e la Vintage Car è bianca */
+        .mo-hero .detail-hero-overlay { padding: 110px 30px 36px; background: linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,0.55) 30%, rgba(0,0,0,0.82) 100%); }
+        .mo-hero .detail-hero-overlay h1, .mo-kicker, .mo-sub { text-shadow: 0 2px 10px rgba(0,0,0,0.6); }
+        .mo-kicker { font-size: 1.05rem; font-weight: 500; letter-spacing: 0.04em; margin-bottom: 8px; }
+        .mo-hero h1 { font-size: 2rem; line-height: 1.2; max-width: 760px; }
+        .mo-sub { font-size: 1.05rem; margin-top: 8px; }
+        .mo-facts { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 20px; padding: 0; list-style: none; }
+        .mo-facts li { background: rgba(255,255,255,0.92); color: var(--text-primary); border-radius: 30px; padding: 8px 14px; font-size: 0.9rem; font-weight: 500; }
+
+        .mo-section { padding: 30px 20px; margin-bottom: 10px; }
+        .mo-section h2 { font-size: 1.3rem; font-weight: 600; color: var(--text-primary); margin-bottom: 18px; padding-bottom: 8px; border-bottom: 3px solid var(--detail-accent); display: inline-block; }
+        .mo-section > p { font-size: 0.95rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 12px; }
+
+        /* colonne esplicite per fascia: auto-fit lasciava una card orfana a 768px */
+        .mo-steps { display: grid; grid-template-columns: 1fr; gap: 16px; counter-reset: step; padding: 0; list-style: none; }
+        .mo-steps li { background: white; border-radius: 15px; padding: 20px; box-shadow: 0 3px 15px rgba(0,0,0,0.05); font-size: 0.92rem; color: var(--text-primary); line-height: 1.5; }
+        .mo-steps li::before { counter-increment: step; content: counter(step); display: inline-flex; width: 32px; height: 32px; align-items: center; justify-content: center; border-radius: 50%; background: var(--detail-accent); color: var(--text-primary); font-weight: 700; margin-bottom: 10px; }
+
+        .mo-cards { display: grid; grid-template-columns: 1fr; gap: 16px; }
+        .mo-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 3px 15px rgba(0,0,0,0.05); border: 3px solid transparent; transition: border-color 0.2s ease, transform 0.2s ease; }
+        .mo-card.is-selected { border-color: var(--blu-squalo); }
+        .mo-card img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block; }
+        .mo-card-body { padding: 18px; }
+        .mo-card h3 { font-size: 1.05rem; font-weight: 600; color: var(--text-primary); margin-bottom: 6px; }
+        .mo-card .mo-time { font-size: 0.9rem; color: var(--text-primary); margin-bottom: 4px; }
+        .mo-card .mo-price { font-size: 1.3rem; font-weight: 700; color: var(--blu-squalo); margin-bottom: 6px; }
+        .mo-card .mo-price small { font-size: 0.8rem; font-weight: 500; color: var(--text-primary); }
+        .mo-card p { font-size: 0.88rem; line-height: 1.6; color: var(--text-secondary); margin-bottom: 12px; }
+        .mo-card .mo-for2 { font-size: 0.8rem; font-weight: 500; color: var(--text-primary); margin-bottom: 12px; }
+        .mo-select { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 10px 22px; border-radius: 30px; border: 2px solid var(--blu-squalo); background: white; color: var(--blu-squalo); font: inherit; font-size: 0.9rem; font-weight: 600; cursor: pointer; }
+        .mo-card.is-selected .mo-select { background: var(--blu-squalo); color: white; }
+        .mo-card.is-soon { opacity: 0.85; }
+        .mo-soon { display: inline-block; min-height: 44px; line-height: 24px; padding: 10px 22px; border-radius: 30px; background: var(--detail-accent-light); color: var(--text-primary); font-size: 0.9rem; font-weight: 600; }
+        .mo-note { margin-top: 14px; font-size: 0.86rem; line-height: 1.6; color: var(--text-primary); }
+        .mo-choice { margin-top: 16px; font-size: 0.9rem; color: var(--text-primary); }
+
+        .mo-split { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: center; }
+        .mo-split img { width: 100%; border-radius: 15px; display: block; }
+        .mo-split .mo-text p { font-size: 0.95rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 12px; }
+
+        .mo-occasions { display: flex; flex-wrap: wrap; gap: 10px; padding: 0; list-style: none; }
+        .mo-occasions li { background: var(--detail-accent-light); color: var(--text-primary); border-radius: 30px; padding: 8px 16px; font-size: 0.88rem; }
+
+        .mo-conditions { padding: 0; list-style: none; columns: 2; column-gap: 24px; }
+        .mo-conditions li { break-inside: avoid; position: relative; padding: 5px 0 5px 18px; font-size: 0.9rem; line-height: 1.5; color: var(--text-primary); }
+        .mo-conditions li::before { content: ''; position: absolute; left: 0; top: 0.75em; width: 6px; height: 6px; border-radius: 50%; background: var(--detail-accent); }
+
+        .mo-cta-note { font-size: 0.82rem; line-height: 1.5; color: var(--text-primary); max-width: 560px; margin: 14px auto 0; }
+        .cta-section .mo-cta-note { color: var(--text-primary); }
+        .mo-sticky { display: none; }
+
+        @media (min-width: 601px) {
+            .mo-steps { grid-template-columns: repeat(2, 1fr); }
+            .mo-cards { grid-template-columns: repeat(3, 1fr); }
+        }
+        @media (min-width: 1025px) {
+            .mo-steps { grid-template-columns: repeat(4, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .mo-hero { height: 72vh; }
+            .mo-hero h1 { font-size: 1.5rem; }
+            .mo-split { grid-template-columns: 1fr; }
+            .mo-conditions { columns: 1; }
+            .mo-sticky { display: block; position: fixed; left: 0; right: 0; bottom: 0; padding: 10px 15px calc(10px + env(safe-area-inset-bottom)); background: rgba(246,244,239,0.96); box-shadow: 0 -4px 20px rgba(0,0,0,0.08); z-index: 900; }
+            .mo-sticky .cta-button { width: 100%; justify-content: center; }
+            body { padding-bottom: 84px; }
+        }
+    </style>
+</head>
+<body>
+    <header class="detail-header">
+        <a href="../escursioni.html" class="back-link"><span>&larr;</span> Back</a>
+        <span class="logo-small">LO SQUALO</span>
+    </header>
+
+    <section class="detail-hero mo-hero">
+        <img decoding="async" src="/escursioni/foto/momentos/momentos-hero-vintage-car-tramonto-16x9.webp" alt="Vintage Car at sunset, Momentos Sal Negra experience in Tenerife">
+        <div class="detail-hero-overlay">
+            <p class="mo-kicker">La cena empieza antes de llegar</p>
+            <h1>Romantic dinner with a Vintage experience for two in Tenerife</h1>
+            <p class="mo-sub">A gastronomic experience for two, Vintage ride included</p>
+            <ul class="mo-facts">
+                <li>For 2 people</li>
+                <li>From 90 € per couple *</li>
+                <li>Only 3 experiences a day</li>
+                <li>Advance booking required</li>
+            </ul>
+            <a href="#" class="cta-button mo-wa" target="_blank" rel="noopener"><span>💬</span> Book on WhatsApp</a>
+        </div>
+    </section>
+
+    <div class="detail-container">
+        <section class="mo-section">
+            <h2>How it works</h2>
+            <ol class="mo-steps">
+                <li>Choose date, time slot and menu</li>
+                <li>Confirm on WhatsApp</li>
+                <li>Advance payment</li>
+                <li>Enjoy the experience</li>
+            </ol>
+            <p class="mo-note">Sending a request does not confirm the booking. The experience is confirmed only after availability has been checked and advance payment received.</p>
+        </section>
+
+        <section class="mo-section" id="fasce">
+            <h2>Choose your time slot</h2>
+            <div class="mo-cards mo-cards-fasce">
+                <div class="mo-card" data-fascia="Aperitivo">
+                    <div class="mo-card-body">
+                        <h3>Aperitivo</h3>
+                        <p class="mo-time">Pickup 17:30 · back around 19:30</p>
+                        <p>Sunset light along the coast, arriving at Sal Negra with the sun still on the sea.</p>
+                        <button type="button" class="mo-select">Select</button>
+                    </div>
+                </div>
+                <div class="mo-card" data-fascia="Dinner">
+                    <div class="mo-card-body">
+                        <h3>Dinner</h3>
+                        <p class="mo-time">Pickup 19:30 · back around 21:30</p>
+                        <p>A ride at dusk and dinner as the evening begins.</p>
+                        <button type="button" class="mo-select">Select</button>
+                    </div>
+                </div>
+                <div class="mo-card" data-fascia="Late Dinner">
+                    <div class="mo-card-body">
+                        <h3>Late Dinner</h3>
+                        <p class="mo-time">Pickup 21:30 · back around 23:30</p>
+                        <p>The lights of the coast, the restaurant at its quietest hour.</p>
+                        <button type="button" class="mo-select">Select</button>
+                    </div>
+                </div>
+            </div>
+            <p class="mo-note">The exact meeting time is agreed with you before confirmation, depending on sunset, season and availability.</p>
+        </section>
+
+        <section class="mo-section" id="menu">
+            <h2>Choose your menu</h2>
+            <div class="mo-cards mo-cards-menu">
+                <div class="mo-card" data-menu="Momento Paella">
+                    <img loading="lazy" decoding="async" src="/escursioni/foto/momentos/momentos-paella-di-mare.webp" alt="Momento Paella — seafood paella for two">
+                    <div class="mo-card-body">
+                        <h3>Momento Paella</h3>
+                        <p class="mo-price">90 € <small>per couple *</small></p>
+                        <p>Paella for two, 1 litre of sangria, Vintage experience.</p>
+                        <p class="mo-for2">For two people</p>
+                        <button type="button" class="mo-select">Select</button>
+                    </div>
+                </div>
+                <div class="mo-card" data-menu="Momento Dinner">
+                    <img loading="lazy" decoding="async" src="/escursioni/foto/momentos/momentos-dinner-spaghetti-frutti-di-mare.webp" alt="Momento Dinner — seafood spaghetti">
+                    <div class="mo-card-body">
+                        <h3>Momento Dinner</h3>
+                        <p class="mo-price">130 € <small>per couple *</small></p>
+                        <p>Bottle of cava, red tuna tartare, seafood spaghetti, Vintage experience.</p>
+                        <p class="mo-for2">For two people</p>
+                        <button type="button" class="mo-select">Select</button>
+                    </div>
+                </div>
+                <div class="mo-card is-soon">
+                    <img loading="lazy" decoding="async" src="/escursioni/foto/momentos/momentos-signature-crudite-di-mare.webp" alt="Momento Signature — seafood crudité">
+                    <div class="mo-card-body">
+                        <h3>Momento Signature</h3>
+                        <p>Sal Negra's signature menu. Dishes and price to be announced.</p>
+                        <p class="mo-for2">For two people</p>
+                        <span class="mo-soon">Coming soon</span>
+                    </div>
+                </div>
+            </div>
+            <p class="mo-note">Packages include only the dishes and drinks listed. Any additional consumption is paid separately, directly at the restaurant.</p>
+            <p class="price-note" data-price-note></p>
+            <p class="mo-choice" id="mo-choice">Choose a time slot and a menu: they will already be written in your WhatsApp message.</p>
+            <p class="mo-note">Number of people: 2. For 3 people or more, check availability and supplement on WhatsApp.</p>
+            <p><a href="#" class="cta-button mo-wa" target="_blank" rel="noopener"><span>💬</span> Book on WhatsApp</a></p>
+            <p class="mo-cta-note" style="margin-left:0">Sending a request does not confirm the booking. The experience is confirmed only after availability has been checked and advance payment received.</p>
+        </section>
+
+        <section class="mo-section">
+            <h2>The Vintage experience</h2>
+            <div class="mo-split">
+                <div class="mo-text">
+                    <p>We meet at the agreed point and the Momento begins there: an unhurried ride in the Vintage Car along the coast, all the way to the Sal Negra restaurant, right on the seafront.</p>
+                    <p>After dinner, the return is included in the experience: same car, same calm, back to the meeting point.</p>
+                    <p>The Vintage experience is available mainly in the area between Los Cristianos and Playa de Las Américas. The exact meeting and return point is confirmed after the booking has been checked.</p>
+                </div>
+                <img loading="lazy" decoding="async" src="/escursioni/foto/momentos/momentos-vintage-dettaglio-logo.webp" alt="Detail of the Vintage Car with the logo">
+            </div>
+        </section>
+
+        <section class="mo-section">
+            <h2>For moments worth remembering</h2>
+            <ul class="mo-occasions">
+                <li>First date</li>
+                <li>Anniversary</li>
+                <li>Birthday</li>
+                <li>Romantic surprise</li>
+                <li>Honeymoon</li>
+                <li>Proposal</li>
+                <li>Celebration</li>
+                <li>A different evening on holiday</li>
+            </ul>
+        </section>
+
+        <section class="mo-section">
+            <h2>Photo shoot</h2>
+            <div class="mo-split">
+                <img loading="lazy" decoding="async" src="/escursioni/foto/momentos/momentos-vintage-in-movimento.webp" alt="The Vintage Car on the move along the coast">
+                <div class="mo-text">
+                    <p>Want to take home the pictures of your Momento? A photo shoot is available on request, supplement to be confirmed.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mo-section">
+            <h2>Terms</h2>
+            <ul class="mo-conditions">
+                <li>Experience for two people</li>
+                <li>Advance booking and payment required</li>
+                <li>Maximum three experiences a day</li>
+                <li>Availability to be confirmed</li>
+                <li>Extra consumption not included</li>
+                <li>Optional photo shoot</li>
+                <li>Vintage experience cannot be purchased separately</li>
+                <li>Meeting point subject to confirmation</li>
+                <li>Los Cristianos – Playa de Las Américas area</li>
+                <li>Changes and cancellations up to 48 hours before, subject to conditions; within 48 hours and no-shows are non-refundable</li>
+            </ul>
+        </section>
+    </div>
+
+    <section class="cta-section">
+        <h2>Book your Momento</h2>
+        <p>Send us date, time slot and menu: we check availability and confirm meeting point and time.</p>
+        <a href="#" class="cta-button mo-wa" target="_blank" rel="noopener"><span>💬</span> Book on WhatsApp</a>
+        <p class="mo-cta-note">Sending a request does not confirm the booking. The experience is confirmed only after availability has been checked and advance payment received.</p>
+    </section>
+
+    <div class="mo-sticky">
+        <a href="#" class="cta-button mo-wa" target="_blank" rel="noopener"><span>💬</span> Book on WhatsApp</a>
+    </div>
+
+    <footer class="detail-footer">
+        <p>&copy; <a href="../index.html">Lo Squalo Tenerife</a> &middot; since 2009</p>
+    </footer>
+    <script src="/lang-switch.js"></script>
+    <script src="/price-note.js"></script>
+    <script>
+    // Momentos: fascia e menu scelti dalle card entrano nel messaggio WhatsApp (numero diretto 190,
+    // unica eccezione del sito — Documento 03, punto 4). Nessun invio automatico: apre solo WhatsApp.
+    (function () {
+        var NUMERO = '34616794190';
+        var state = { fascia: '', menu: '' };
+
+        function provenienza() {
+            var q = new URLSearchParams(location.search);
+            var src = (q.get('utm_source') || '').toLowerCase();
+            var ref = (document.referrer || '').toLowerCase();
+            if (src.indexOf('instagram') > -1 || ref.indexOf('instagram') > -1) return 'Instagram';
+            if (src.indexOf('facebook') > -1 || src === 'fb' || ref.indexOf('facebook') > -1) return 'Facebook';
+            if (src.indexOf('google') > -1 || ref.indexOf('google') > -1) return 'Google';
+            return 'Web';
+        }
+
+        function messaggio() {
+            return [
+                'Hi, I would like to check availability for Momentos Sal Negra.',
+                'Name:',
+                'Date:',
+                'Time slot: ' + (state.fascia || 'Aperitivo / Dinner / Late Dinner'),
+                'Menu: ' + state.menu,
+                'Number of people: 2',
+                'Hotel or accommodation:',
+                'Occasion:',
+                'Photo shoot: Yes / No',
+                'Allergies or intolerances:',
+                'Notes:',
+                'I understand the request is confirmed only after availability has been checked and advance payment received.',
+                'Source: ' + provenienza()
+            ].join('\n');
+        }
+
+        function aggiornaLink() {
+            var href = 'https://wa.me/' + NUMERO + '?text=' + encodeURIComponent(messaggio());
+            var links = document.querySelectorAll('.mo-wa');
+            for (var i = 0; i < links.length; i++) links[i].href = href;
+            var out = document.getElementById('mo-choice');
+            if (out) {
+                out.textContent = (state.fascia || state.menu)
+                    ? 'In your WhatsApp message: time slot ' + (state.fascia || '—') + ', menu ' + (state.menu || '—') + '.'
+                    : 'Choose a time slot and a menu: they will already be written in your WhatsApp message.';
+            }
+        }
+
+        function seleziona(gruppo, attr) {
+            var cards = document.querySelectorAll('.' + gruppo + ' .mo-card[data-' + attr + ']');
+            for (var i = 0; i < cards.length; i++) {
+                (function (card) {
+                    var btn = card.querySelector('.mo-select');
+                    if (!btn) return;
+                    btn.addEventListener('click', function () {
+                        for (var j = 0; j < cards.length; j++) cards[j].classList.remove('is-selected');
+                        card.classList.add('is-selected');
+                        state[attr] = card.getAttribute('data-' + attr);
+                        aggiornaLink();
+                    });
+                })(cards[i]);
+            }
+        }
+
+        seleziona('mo-cards-fasce', 'fascia');
+        seleziona('mo-cards-menu', 'menu');
+        aggiornaLink();
+    })();
+    </script>
+</body>
+</html>

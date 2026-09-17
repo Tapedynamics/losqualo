@@ -403,6 +403,58 @@
     box-shadow: 0 8px 30px rgba(47, 111, 143, 0.4);
 }
 
+/* ===== BLOCCO PREZZO (Documento 03, punti 2-3) ===== */
+.price-block {
+    max-width: 1200px;
+    margin: 0 auto 10px;
+    padding: 0 20px;
+}
+
+.price-card {
+    padding: 22px 24px;
+    background: white;
+    border-radius: 15px;
+    border-left: 5px solid var(--detail-accent);
+    box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+}
+
+.price-main {
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--text-primary);
+}
+
+.price-amount {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: var(--blu-squalo);
+    margin-right: 6px;
+}
+
+.price-avail {
+    margin: 8px 0 0;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+/* nota obbligatoria: mai sotto il 75% del testo normale, mai grigio chiaro, a capo completa */
+.price-note {
+    margin: 12px 0 0;
+    font-size: 0.82rem;
+    line-height: 1.5;
+    color: var(--text-primary);
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+.price-card .cta-button {
+    margin-top: 16px;
+    padding: 12px 26px;
+    font-size: 0.95rem;
+}
+
 /* ===== FOOTER DETAIL ===== */
 .detail-footer {
     text-align: center;
@@ -437,6 +489,15 @@
     .quick-info-item {
         padding: 6px 12px;
         font-size: 0.8rem;
+    }
+
+    /* stesso rientro laterale della quick-info qui sopra */
+    .price-block {
+        padding: 0 15px;
+    }
+
+    .price-card {
+        padding: 18px 16px;
     }
 
     .detail-section {

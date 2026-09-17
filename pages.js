@@ -176,8 +176,7 @@ const pageLineConfig = {
         ],
         villa: [
             { line: 'line-villa-fortaleza', from: 'node-villa', to: 'node-fortaleza' },
-            { line: 'line-villa-paraiso', from: 'node-villa', to: 'node-paraiso' },
-            { line: 'line-villa-duque', from: 'node-villa', to: 'node-duque' },
+            { line: 'line-villa-ladyluxury', from: 'node-villa', to: 'node-ladyluxury' },
             { line: 'line-villa-beachhouse', from: 'node-villa', to: 'node-beachhouse' },
             { line: 'line-villa-villaar', from: 'node-villa', to: 'node-villaar' },
             { line: 'line-villa-villagolf', from: 'node-villa', to: 'node-villagolf' },
@@ -191,7 +190,6 @@ const pageLineConfig = {
             { line: 'line-casarurale-cueva', from: 'node-casarurale', to: 'node-cueva' },
             { line: 'line-casarurale-dome', from: 'node-casarurale', to: 'node-dome' },
             { line: 'line-casarurale-hotelrural', from: 'node-casarurale', to: 'node-hotelrural' },
-            { line: 'line-casarurale-chimiche', from: 'node-casarurale', to: 'node-chimiche' }
         ],
         appartamento: [
             { line: 'line-appartamento-costaadeje', from: 'node-appartamento', to: 'node-costaadeje' },
@@ -234,7 +232,8 @@ const pageLineConfig = {
             { line: 'line-oceano-surf', from: 'node-oceano', to: 'node-surf' },
             { line: 'line-oceano-diving', from: 'node-oceano', to: 'node-diving' },
             { line: 'line-oceano-charter', from: 'node-oceano', to: 'node-charter' },
-            { line: 'line-oceano-boatparty', from: 'node-oceano', to: 'node-boatparty' }
+            { line: 'line-oceano-boatparty', from: 'node-oceano', to: 'node-boatparty' },
+            { line: 'line-oceano-momentos', from: 'node-oceano', to: 'node-momentos' }
         ],
         sky: [
             { line: 'line-sky-parapente', from: 'node-sky', to: 'node-parapente' },
@@ -637,12 +636,11 @@ const pageSubNodesData = {
             class: 'radial-villa',
             subs: [
                 { id: 'fortaleza', name: 'La Fortaleza', href: 'alloggio/finca-la-fortaleza.html' },
-                { id: 'paraiso', name: 'Villa Paraiso', href: 'alloggio/villa-paraiso.html' },
-                { id: 'duque', name: 'Villa Duque', href: 'alloggio/villa-duque.html' },
                 { id: 'beachhouse', name: 'Beach House', href: 'alloggio/beach-house.html' },
                 { id: 'villaar', name: 'Villa A&R', href: 'alloggio/villa-ar.html' },
                 { id: 'villagolf', name: 'Villa Golf', href: 'alloggio/villa-golf.html' },
-                { id: 'villaone', name: 'Villa One', href: 'alloggio/villa-one.html' }
+                { id: 'villaone', name: 'Villa One', href: 'alloggio/villa-one.html' },
+                { id: 'ladyluxury', name: 'Villa Lady Luxury', href: 'alloggio/villa-lady-luxury.html' }
             ]
         },
         casarurale: {
@@ -656,7 +654,6 @@ const pageSubNodesData = {
                 { id: 'cueva', name: 'Cueva San Miguel', href: 'alloggio/cueva-san-miguel.html' },
                 { id: 'dome', name: 'Dome Experience', href: 'alloggio/dome-ifonche.html' },
                 { id: 'hotelrural', name: 'Hotel Rural', href: 'alloggio/hotel-rural-arona.html' },
-                { id: 'chimiche', name: 'Finca Chimiche', href: 'alloggio/finca-chimiche.html' }
             ]
         },
         appartamento: {
@@ -718,7 +715,8 @@ const pageSubNodesData = {
                 { id: 'surf', name: 'Surf', href: 'surfing/ika-ika.html?from=escursioni' },
                 { id: 'diving', name: 'Diving', href: 'escursioni/diving.html' },
                 { id: 'charter', name: 'Charter Privato', href: 'escursioni/charter-privato.html' },
-                { id: 'boatparty', name: 'Boat Party', href: 'escursioni/boat-party.html' }
+                { id: 'boatparty', name: 'Boat Party', href: 'escursioni/boat-party.html' },
+                { id: 'momentos', name: 'Momentos Sal Negra', href: 'escursioni/momentos-sal-negra.html' }
             ]
         },
         sky: {

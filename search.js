@@ -47,10 +47,9 @@
 
         // Alloggio — Villa
         { name: 'La Fortaleza', cat: 'Alloggio', href: 'alloggio/finca-la-fortaleza.html', kw: 'villa finca lusso luxury lujo' },
-        { name: 'Villa Paraiso', cat: 'Alloggio', href: 'alloggio/villa-paraiso.html', kw: 'villa piscina playa paraiso pool' },
-        { name: 'Villa Duque', cat: 'Alloggio', href: 'alloggio/villa-duque.html', kw: 'villa palestra gym gimnasio' },
         { name: 'Beach House', cat: 'Alloggio', href: 'alloggio/beach-house.html', kw: 'villa mare spiaggia sea beach mar playa' },
         { name: 'Villa Costa Adeje', cat: 'Alloggio', href: 'alloggio/villa-costa-adeje.html', kw: 'villa lusso costa adeje luxury lujo' },
+        { name: 'Villa Lady Luxury', cat: 'Alloggio', href: 'alloggio/villa-lady-luxury.html', kw: 'villa lusso costa adeje luxury lujo piscina pool 6 persone' },
         { name: 'Villa Torviscas', cat: 'Alloggio', href: 'alloggio/villa-torviscas.html', kw: 'villa torviscas alto residenziale residential residencial' },
         // Alloggio — Rurale
         { name: 'Finca Ciguaña', cat: 'Alloggio', href: 'alloggio/finca-ciguaña.html', kw: 'rurale finca campagna rural countryside campo' },
@@ -60,7 +59,6 @@
         { name: 'Cueva San Miguel', cat: 'Alloggio', href: 'alloggio/cueva-san-miguel.html', kw: 'rurale grotta glamping rural cave cueva' },
         { name: 'Dome Experience', cat: 'Alloggio', href: 'alloggio/dome-ifonche.html', kw: 'glamping dome ifonche cupola domo' },
         { name: 'Hotel Rural', cat: 'Alloggio', href: 'alloggio/hotel-rural-arona.html', kw: 'rurale hotel arona rural' },
-        { name: 'Finca Chimiche', cat: 'Alloggio', href: 'alloggio/finca-chimiche.html', kw: 'rurale finca rural' },
         // Alloggio — Appartamento
         { name: 'Costa Adeje', cat: 'Alloggio', href: 'alloggio/costa-adeje.html', kw: 'appartamento piscina adeje apartment pool apartamento' },
         { name: 'Alcalá', cat: 'Alloggio', href: 'alloggio/alcala.html', kw: 'appartamento alcala apartment apartamento' },
@@ -81,6 +79,7 @@
         // Escursioni
         { name: 'Jeep Experience', cat: 'Escursioni', href: 'escursioni/jeep-experience.html', kw: 'terra teide jeep tour 4x4 land tierra' },
         { name: 'Quad', cat: 'Escursioni', href: 'escursioni/quad.html', kw: 'terra quad off road land tierra' },
+        { name: 'Momentos Sal Negra', cat: 'Escursioni', href: 'escursioni/momentos-sal-negra.html', kw: 'cena romantica coppia vintage sal negra dinner romantic cena romantica pareja paella' },
         { name: 'Buggy', cat: 'Escursioni', href: 'escursioni/buggy.html', kw: 'terra buggy off road land tierra' },
         { name: 'Yacht Privato', i18n: { en: 'Private Yacht', es: 'Yate Privado' }, cat: 'Escursioni', href: 'escursioni/yacht.html', kw: 'acqua mare barca yacht water sea boat agua mar barco yate' },
         { name: 'Barco sin Pilota', i18n: { en: 'Boat without Skipper', es: 'Barco sin Piloto' }, cat: 'Escursioni', href: 'escursioni/barco-sin-pilota.html', kw: 'acqua mare barca senza licenza patron water sea boat no licence agua mar barco sin licencia' },
