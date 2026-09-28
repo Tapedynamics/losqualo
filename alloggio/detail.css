@@ -37,9 +37,10 @@
     text-decoration: none;
     font-size: 0.85rem;
     font-weight: 500;
+    min-height: 44px; /* area di tocco minima (TD-Gate L2: 34px su mobile) */
     padding: 8px 15px;
     border: 2px solid var(--blu-squalo);
-    border-radius: 20px;
+    border-radius: 22px;
     transition: all 0.3s ease;
 }
 
