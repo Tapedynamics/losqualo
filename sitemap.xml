@@ -610,11 +610,11 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://losqualotenerife.com/eventi.html"/>
   </url>
   <url>
-    <loc>https://losqualotenerife.com/en/index.html</loc>
-    <xhtml:link rel="alternate" hreflang="it" href="https://losqualotenerife.com/index.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://losqualotenerife.com/en/index.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://losqualotenerife.com/es/index.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://losqualotenerife.com/index.html"/>
+    <loc>https://losqualotenerife.com/en/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://losqualotenerife.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://losqualotenerife.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://losqualotenerife.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://losqualotenerife.com/"/>
   </url>
   <url>
     <loc>https://losqualotenerife.com/en/surfing/full-experience.html</loc>
@@ -1037,11 +1037,11 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://losqualotenerife.com/eventi.html"/>
   </url>
   <url>
-    <loc>https://losqualotenerife.com/es/index.html</loc>
-    <xhtml:link rel="alternate" hreflang="it" href="https://losqualotenerife.com/index.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://losqualotenerife.com/en/index.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://losqualotenerife.com/es/index.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://losqualotenerife.com/index.html"/>
+    <loc>https://losqualotenerife.com/es/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://losqualotenerife.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://losqualotenerife.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://losqualotenerife.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://losqualotenerife.com/"/>
   </url>
   <url>
     <loc>https://losqualotenerife.com/es/surfing/full-experience.html</loc>
@@ -1226,11 +1226,11 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://losqualotenerife.com/eventi.html"/>
   </url>
   <url>
-    <loc>https://losqualotenerife.com/index.html</loc>
-    <xhtml:link rel="alternate" hreflang="it" href="https://losqualotenerife.com/index.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://losqualotenerife.com/en/index.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://losqualotenerife.com/es/index.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://losqualotenerife.com/index.html"/>
+    <loc>https://losqualotenerife.com/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://losqualotenerife.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://losqualotenerife.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://losqualotenerife.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://losqualotenerife.com/"/>
   </url>
   <url>
     <loc>https://losqualotenerife.com/surfing/full-experience.html</loc>

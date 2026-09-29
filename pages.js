@@ -620,7 +620,7 @@ function goPageBack() {
         clearSub();
     } else if (pageState === 'categories') {
         clearSub();
-        window.location.href = 'index.html?explore=1';
+        window.location.href = './?explore=1';
     }
 }
 
@@ -1161,6 +1161,6 @@ function showMobilePageCategories(mobileMap) {
 
 function goMobilePageBack(mobileMap) {
     if (mobilePageState === 'categories') {
-        window.location.href = 'index.html?explore=1';
+        window.location.href = './?explore=1';
     }
 }

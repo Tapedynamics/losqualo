@@ -121,7 +121,10 @@
 
     function go(svc) {
         if (!svc) return;
-        if (svc.ext) { window.open(svc.href, '_blank', 'noopener'); }
+        if (svc.ext) {
+            if (window.lsqTrackWa && /wa\.me/.test(svc.href)) window.lsqTrackWa(svc.href, 'home_search');
+            window.open(svc.href, '_blank', 'noopener');
+        }
         else { window.location.href = svc.href; }
     }
 
