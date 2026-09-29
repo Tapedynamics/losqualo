@@ -62,7 +62,7 @@
         if (link.getAttribute('data-cta')) return link.getAttribute('data-cta');
         if (link.classList.contains('wa-fab')) return 'floating_button';
         if (link.closest('[class*="sticky"]')) return 'sticky_bar';
-        if (link.classList.contains('node')) return 'mindmap_node';
+        if (link.classList.contains('node') || link.classList.contains('mobile-node')) return 'mindmap_node';
         if (link.closest('header, [class*="hero"]')) return 'hero';
         if (link.closest('footer')) return 'footer';
         if (link.getAttribute('data-i18n')) return link.getAttribute('data-i18n');
@@ -71,7 +71,7 @@
 
     function linkService(link) {
         if (link.getAttribute('data-service')) return link.getAttribute('data-service');
-        if (link.classList.contains('node') && link.id) return service + '/' + link.id.replace(/^node-/, '');
+        if ((link.classList.contains('node') || link.classList.contains('mobile-node')) && link.id) return service + '/' + link.id.replace(/^(mobile-)?node-/, '');
         return service;
     }
 
