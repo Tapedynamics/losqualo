@@ -11,7 +11,7 @@ const UI = {
         hint: 'Tocca per esplorare',
         nodes: {
             eventi: 'EVENTI', alloggio: 'ALLOGGIO',
-            escursioni: 'ESCURSIONI<br>& ATTIVITA', surfing: 'SURFING<br>TENERIFE',
+            escursioni: 'ESCURSIONI<br>ED ESPERIENZE', surfing: 'SURFING<br>TENERIFE',
             agency: 'AGENCY', alessandro: 'ALESSANDRO'
         }
     },
@@ -20,7 +20,7 @@ const UI = {
         hint: 'Tap to explore',
         nodes: {
             eventi: 'EVENTS', alloggio: 'ACCOMMODATION',
-            escursioni: 'EXCURSIONS<br>& ACTIVITIES', surfing: 'SURFING<br>TENERIFE',
+            escursioni: 'EXCURSIONS<br>AND EXPERIENCES', surfing: 'SURFING<br>TENERIFE',
             agency: 'AGENCY', alessandro: 'ALESSANDRO'
         }
     },
@@ -29,7 +29,7 @@ const UI = {
         hint: 'Toca para explorar',
         nodes: {
             eventi: 'EVENTOS', alloggio: 'ALOJAMIENTO',
-            escursioni: 'EXCURSIONES<br>& ACTIVIDADES', surfing: 'SURFING<br>TENERIFE',
+            escursioni: 'EXCURSIONES<br>Y EXPERIENCIAS', surfing: 'SURFING<br>TENERIFE',
             agency: 'AGENCY', alessandro: 'ALESSANDRO'
         }
     }

@@ -12,7 +12,7 @@ var NAME_I18N = {
     en: {
         // centro mappa categoria
         'ALLOGGIO': 'ACCOMMODATION',
-        'ESCURSIONI<br>& ATTIVITA': 'EXCURSIONS<br>& ACTIVITIES',
+        'ESCURSIONI<br>ED ESPERIENZE': 'EXCURSIONS<br>AND EXPERIENCES',
         'EVENTI': 'EVENTS',
         // sottocategorie alloggio
         'Rurale': 'Rural',
@@ -32,6 +32,8 @@ var NAME_I18N = {
         // nodi di terzo livello
         'Balene e Delfini': 'Whales & Dolphins',
         'Charter Privato': 'Private Charter',
+        'Catamarano': 'Catamaran',
+        'Barco sin Pilota': 'Boat without Skipper',
         'Parapendio': 'Paragliding',
         'Jet Sky': 'Jet Ski',
         'Prenota Letto': 'Book a Bed',
@@ -42,7 +44,7 @@ var NAME_I18N = {
     },
     es: {
         'ALLOGGIO': 'ALOJAMIENTO',
-        'ESCURSIONI<br>& ATTIVITA': 'EXCURSIONES<br>Y ACTIVIDADES',
+        'ESCURSIONI<br>ED ESPERIENZE': 'EXCURSIONES<br>Y EXPERIENCIAS',
         'EVENTI': 'EVENTOS',
         'Rurale': 'Rural',
         'Appartamento': 'Apartamento',
@@ -57,6 +59,9 @@ var NAME_I18N = {
         'Contact<br>& Social': 'Contacto<br>& Social',
         'Balene e Delfini': 'Ballenas y Delfines',
         'Charter Privato': 'Chárter Privado',
+        'Catamarano': 'Catamarán',
+        'Yacht': 'Yate',
+        'Barco sin Pilota': 'Barco sin Piloto',
         'Parapendio': 'Parapente',
         'Diving': 'Buceo',
         'Prenota Letto': 'Reserva Cama',
@@ -222,7 +227,8 @@ const pageLineConfig = {
         teide: [
             { line: 'line-teide-jeep', from: 'node-teide', to: 'node-jeep' },
             { line: 'line-teide-quad', from: 'node-teide', to: 'node-quad' },
-            { line: 'line-teide-buggy', from: 'node-teide', to: 'node-buggy' }
+            { line: 'line-teide-buggy', from: 'node-teide', to: 'node-buggy' },
+            { line: 'line-teide-momentos', from: 'node-teide', to: 'node-momentos' }
         ],
         oceano: [
             { line: 'line-oceano-jetcar', from: 'node-oceano', to: 'node-jetcar' },
@@ -233,7 +239,9 @@ const pageLineConfig = {
             { line: 'line-oceano-diving', from: 'node-oceano', to: 'node-diving' },
             { line: 'line-oceano-charter', from: 'node-oceano', to: 'node-charter' },
             { line: 'line-oceano-boatparty', from: 'node-oceano', to: 'node-boatparty' },
-            { line: 'line-oceano-momentos', from: 'node-oceano', to: 'node-momentos' }
+            { line: 'line-oceano-catamarano', from: 'node-oceano', to: 'node-catamarano' },
+            { line: 'line-oceano-yacht', from: 'node-oceano', to: 'node-yacht' },
+            { line: 'line-oceano-barco', from: 'node-oceano', to: 'node-barco' }
         ],
         sky: [
             { line: 'line-sky-parapente', from: 'node-sky', to: 'node-parapente' },
@@ -249,7 +257,8 @@ const pageLineConfig = {
             { line: 'line-center-suonoluci', from: 'category-trigger', to: 'node-suonoluci' },
             { line: 'line-center-musicshow', from: 'category-trigger', to: 'node-musicshow' },
             { line: 'line-center-festemovida', from: 'category-trigger', to: 'node-festemovida' },
-            { line: 'line-center-tips', from: 'category-trigger', to: 'node-tips' }
+            { line: 'line-center-tips', from: 'category-trigger', to: 'node-tips' },
+            { line: 'line-center-momentos', from: 'category-trigger', to: 'node-momentos' }
         ]
     },
     surfing: {
@@ -647,7 +656,7 @@ const pageSubNodesData = {
             name: 'Rurale',
             class: 'radial-rurale',
             subs: [
-                { id: 'ciguana', name: 'Finca Ciguaña', href: 'alloggio/finca-ciguaña.html' },
+                { id: 'ciguana', name: 'Finca Ciguaña', href: (PAGE_LANG === 'it' ? '' : '/' + PAGE_LANG) + '/alloggio/finca-cigua%C3%B1a.html' },
                 { id: 'fincaparaiso', name: 'Finca Paraiso', href: 'alloggio/finca-paraiso.html' },
                 { id: 'atogo', name: 'Casa Atogo', href: 'alloggio/casa-atogo.html' },
                 { id: 'taucho', name: 'Casa Taucho', href: 'alloggio/casa-taucho.html' },
@@ -701,7 +710,8 @@ const pageSubNodesData = {
             subs: [
                 { id: 'jeep', name: 'Jeep Experience', href: 'escursioni/jeep-experience.html' },
                 { id: 'quad', name: 'Quad', href: 'escursioni/quad.html' },
-                { id: 'buggy', name: 'Buggy', href: 'escursioni/buggy.html' }
+                { id: 'buggy', name: 'Buggy', href: 'escursioni/buggy.html' },
+                { id: 'momentos', name: 'Momentos Sal Negra', href: 'escursioni/momentos-sal-negra.html' }
             ]
         },
         oceano: {
@@ -716,7 +726,9 @@ const pageSubNodesData = {
                 { id: 'diving', name: 'Diving', href: 'escursioni/diving.html' },
                 { id: 'charter', name: 'Charter Privato', href: 'escursioni/charter-privato.html' },
                 { id: 'boatparty', name: 'Boat Party', href: 'escursioni/boat-party.html' },
-                { id: 'momentos', name: 'Momentos Sal Negra', href: 'escursioni/momentos-sal-negra.html' }
+                { id: 'catamarano', name: 'Catamarano', href: 'escursioni/catamarano.html' },
+                { id: 'yacht', name: 'Yacht', href: 'escursioni/yacht.html' },
+                { id: 'barco', name: 'Barco sin Pilota', href: 'escursioni/barco-sin-pilota.html' }
             ]
         },
         sky: {
@@ -806,7 +818,7 @@ function createMobilePageMap() {
 
     const categoryInfo = {
         alloggio: { name: 'ALLOGGIO', class: 'alloggio-bg' },
-        escursioni: { name: 'ESCURSIONI<br>& ATTIVITA', class: 'escursioni-bg' },
+        escursioni: { name: 'ESCURSIONI<br>ED ESPERIENZE', class: 'escursioni-bg' },
         eventi: { name: 'EVENTI', class: 'eventi-bg' },
         surfing: { name: 'SURFING<br>TENERIFE', class: 'surfing-bg' },
         agency: { name: 'AGENCY', class: 'agency-bg' }
@@ -969,7 +981,8 @@ function getSubcategoryPositions(page) {
         { top: '82%', left: '70%' },
         { top: '82%', left: '30%' },
         { top: '55%', left: '12%' },
-        { top: '28%', left: '22%' }
+        { top: '28%', left: '22%' },
+        { top: '98%', left: '50%' }
     ];
 
     const positions3 = [
@@ -1015,7 +1028,8 @@ function getSubcategoryNodes(page) {
             { id: 'suonoluci', name: 'Suono<br>e Luci', class: 'mobile-suonoluci', href: waEventi('suonoluci') },
             { id: 'musicshow', name: 'Music<br>& Show', class: 'mobile-musicshow', href: waEventi('musicshow') },
             { id: 'festemovida', name: 'Feste e<br>Movida', class: 'mobile-festemovida', href: waEventi('festemovida') },
-            { id: 'tips', name: 'Tips', class: 'mobile-tips', href: waEventi('tips') }
+            { id: 'tips', name: 'Tips', class: 'mobile-tips', href: waEventi('tips') },
+            { id: 'momentos', name: 'Momentos<br>Sal Negra', class: 'mobile-momentos', href: 'escursioni/momentos-sal-negra.html' }
         ],
         surfing: [
             { id: 'surfbar', name: 'Surfbar<br>Franchise', class: 'mobile-surfbar', href: 'surfing/surf-bar-franchise.html' },
