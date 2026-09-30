@@ -274,9 +274,10 @@
     </div>
 
     <footer class="detail-footer">
-        <p>&copy; <a href="../index.html">Lo Squalo Tenerife</a> &middot; desde 2009</p>
+        <p>&copy; <a href="../">Lo Squalo Tenerife</a> &middot; desde 2009</p>
     </footer>
     <script src="/lang-switch.js"></script>
+    <script src="/track.js"></script>
     <script src="/price-note.js"></script>
     <script>
     // Momentos: fascia e menu scelti dalle card entrano nel messaggio WhatsApp (numero diretto 190,
@@ -358,11 +359,7 @@
             'currency': 'EUR',
             'transport_type': 'beacon'
         });
-        // Evento per Google Analytics
-        gtag('event', 'whatsapp_click', {
-            'page': 'momentos_sal_negra',
-            'transport_type': 'beacon'
-        });
+        // whatsapp_click per GA4 lo manda /track.js (con pagina, servizio, lingua, CTA, sorgente)
     });
     </script>
 </body>

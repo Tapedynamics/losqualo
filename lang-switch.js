@@ -11,12 +11,12 @@
 (function () {
     const LANGS = ['it', 'en', 'es'];
 
-    // path logico = path senza prefisso lingua, sempre con /index.html per la home
+    // path logico = path senza prefisso lingua; la home e' sempre / (URL canonica, /index.html fa 301)
     let path = location.pathname;
     let cur = 'it';
     if (path.startsWith('/en/') || path === '/en') { cur = 'en'; path = path.replace(/^\/en/, ''); }
     else if (path.startsWith('/es/') || path === '/es') { cur = 'es'; path = path.replace(/^\/es/, ''); }
-    if (path === '' || path === '/') path = '/index.html';
+    if (path === '' || path === '/index.html') path = '/';
     const logical = path; // es. /alloggio/villa-paraiso.html
 
     const hrefFor = (lang) => (lang === 'it' ? '' : '/' + lang) + logical;
