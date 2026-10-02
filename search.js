@@ -41,7 +41,6 @@
         { name: 'Escursioni ed Esperienze', i18n: { en: 'Excursions and Experiences', es: 'Excursiones y Experiencias' }, cat: 'Categoria', href: 'escursioni.html', kw: 'tour attivita avventura terra aria acqua excursions activities adventure land air water excursiones actividades aventura tierra aire agua' },
         { name: 'Eventi', i18n: { en: 'Events', es: 'Eventos' }, cat: 'Categoria', href: 'eventi.html', kw: 'feste party food drink servizi privati events private services parties eventos fiestas servicios privados' },
         { name: 'Surfing Tenerife', cat: 'Categoria', href: 'surfing.html', kw: 'surf onde scuola spot waves school olas escuela' },
-        { name: 'Agency', cat: 'Categoria', href: 'agency/oferta.html', kw: 'b2b marketing grafica artisti business graphics artists artistas' },
         { name: 'Alessandro', cat: 'Info', href: 'alessandro.html', kw: 'fondatore chi siamo about founder who we are fundador quienes somos' },
         { name: 'Brand / Reti Sociali', i18n: { en: 'Brand / Social Networks', es: 'Brand / Redes Sociales' }, cat: 'Brand', href: '/brand.html', kw: 'social instagram facebook tiktok youtube whatsapp link reti sociali social networks redes sociales' },
 

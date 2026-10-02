@@ -12,7 +12,7 @@ const UI = {
         nodes: {
             eventi: 'EVENTI', alloggio: 'ALLOGGIO',
             escursioni: 'ESCURSIONI<br>ED ESPERIENZE', surfing: 'SURFING<br>TENERIFE',
-            agency: 'AGENCY', alessandro: 'ALESSANDRO'
+            alessandro: 'ALESSANDRO'
         }
     },
     en: {
@@ -21,7 +21,7 @@ const UI = {
         nodes: {
             eventi: 'EVENTS', alloggio: 'ACCOMMODATION',
             escursioni: 'EXCURSIONS<br>AND EXPERIENCES', surfing: 'SURFING<br>TENERIFE',
-            agency: 'AGENCY', alessandro: 'ALESSANDRO'
+            alessandro: 'ALESSANDRO'
         }
     },
     es: {
@@ -30,7 +30,7 @@ const UI = {
         nodes: {
             eventi: 'EVENTOS', alloggio: 'ALOJAMIENTO',
             escursioni: 'EXCURSIONES<br>Y EXPERIENCIAS', surfing: 'SURFING<br>TENERIFE',
-            agency: 'AGENCY', alessandro: 'ALESSANDRO'
+            alessandro: 'ALESSANDRO'
         }
     }
 };
@@ -74,7 +74,6 @@ const lineConnections = {
         { line: 'line-tenerife-alloggio', from: 'tenerife-trigger', to: 'node-alloggio' },
         { line: 'line-tenerife-escursioni', from: 'tenerife-trigger', to: 'node-escursioni' },
         { line: 'line-tenerife-surfing', from: 'tenerife-trigger', to: 'node-surfing' },
-        { line: 'line-tenerife-agency', from: 'tenerife-trigger', to: 'node-agency' },
         { line: 'line-tenerife-alessandro', from: 'tenerife-trigger', to: 'node-alessandro' }
     ]
 };
@@ -249,7 +248,7 @@ function createMobileMiniMap() {
     svg.classList.add('mobile-svg');
     svg.id = 'mobile-svg-connections';
 
-    const categories = ['eventi', 'alloggio', 'escursioni', 'surfing', 'agency', 'alessandro'];
+    const categories = ['eventi', 'alloggio', 'escursioni', 'surfing', 'alessandro'];
     categories.forEach(cat => {
         const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
         path.classList.add('mobile-line', 'mobile-main-line');
@@ -273,8 +272,7 @@ function createMobileMiniMap() {
         alloggio: { top: '22%', left: '75%' },
         escursioni: { top: '50%', left: '12%' },
         surfing: { top: '50%', left: '88%' },
-        agency: { top: '78%', left: '25%' },
-        alessandro: { top: '78%', left: '75%' }
+        alessandro: { top: '78%', left: '50%' }
     };
 
     // href relativi: dentro /en/ o /es/ puntano alle pagine della stessa lingua
@@ -283,7 +281,6 @@ function createMobileMiniMap() {
         { id: 'alloggio', name: t.nodes.alloggio, cls: 'mobile-alloggio', href: 'alloggio.html' },
         { id: 'escursioni', name: t.nodes.escursioni, cls: 'mobile-escursioni', href: 'escursioni.html' },
         { id: 'surfing', name: t.nodes.surfing, cls: 'mobile-surfing', href: 'surfing.html' },
-        { id: 'agency', name: t.nodes.agency, cls: 'mobile-agency', href: 'agency.html' },
         { id: 'alessandro', name: t.nodes.alessandro, cls: 'mobile-alessandro', href: 'alessandro.html' }
     ];
 
@@ -349,7 +346,6 @@ function updateMobileLines() {
         { path: 'mobile-line-center-alloggio', from: 'mobile-center', to: 'mobile-node-alloggio' },
         { path: 'mobile-line-center-escursioni', from: 'mobile-center', to: 'mobile-node-escursioni' },
         { path: 'mobile-line-center-surfing', from: 'mobile-center', to: 'mobile-node-surfing' },
-        { path: 'mobile-line-center-agency', from: 'mobile-center', to: 'mobile-node-agency' },
         { path: 'mobile-line-center-alessandro', from: 'mobile-center', to: 'mobile-node-alessandro' }
     ];
 

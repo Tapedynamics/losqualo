@@ -4,3 +4,11 @@ https://losqualo.netlify.app/*  https://losqualotenerife.com/:splat  301!
 /index.html     /      301!
 /en/index.html  /en/   301!
 /es/index.html  /es/   301!
+
+# Sezione Agency eliminata (richiesta Alessandro 02/10/2026)
+/agency.html     /      301!
+/agency/*        /      301!
+/en/agency.html  /en/   301!
+/en/agency/*     /en/   301!
+/es/agency.html  /es/   301!
+/es/agency/*     /es/   301!

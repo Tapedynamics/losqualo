@@ -1,20 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://losqualotenerife.com/agency/oferta.html</loc>
-    <xhtml:link rel="alternate" hreflang="it" href="https://losqualotenerife.com/agency/oferta.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://losqualotenerife.com/en/agency/oferta.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://losqualotenerife.com/es/agency/oferta.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://losqualotenerife.com/agency/oferta.html"/>
-  </url>
-  <url>
-    <loc>https://losqualotenerife.com/agency.html</loc>
-    <xhtml:link rel="alternate" hreflang="it" href="https://losqualotenerife.com/agency.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://losqualotenerife.com/en/agency.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://losqualotenerife.com/es/agency.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://losqualotenerife.com/agency.html"/>
-  </url>
-  <url>
     <loc>https://losqualotenerife.com/alessandro.html</loc>
     <xhtml:link rel="alternate" hreflang="it" href="https://losqualotenerife.com/alessandro.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://losqualotenerife.com/en/alessandro.html"/>
@@ -230,20 +216,6 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://losqualotenerife.com/en/alloggio.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://losqualotenerife.com/es/alloggio.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://losqualotenerife.com/alloggio.html"/>
-  </url>
-  <url>
-    <loc>https://losqualotenerife.com/en/agency/oferta.html</loc>
-    <xhtml:link rel="alternate" hreflang="it" href="https://losqualotenerife.com/agency/oferta.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://losqualotenerife.com/en/agency/oferta.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://losqualotenerife.com/es/agency/oferta.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://losqualotenerife.com/agency/oferta.html"/>
-  </url>
-  <url>
-    <loc>https://losqualotenerife.com/en/agency.html</loc>
-    <xhtml:link rel="alternate" hreflang="it" href="https://losqualotenerife.com/agency.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://losqualotenerife.com/en/agency.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://losqualotenerife.com/es/agency.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://losqualotenerife.com/agency.html"/>
   </url>
   <url>
     <loc>https://losqualotenerife.com/en/alessandro.html</loc>
@@ -650,20 +622,6 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://losqualotenerife.com/en/surfing.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://losqualotenerife.com/es/surfing.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://losqualotenerife.com/surfing.html"/>
-  </url>
-  <url>
-    <loc>https://losqualotenerife.com/es/agency/oferta.html</loc>
-    <xhtml:link rel="alternate" hreflang="it" href="https://losqualotenerife.com/agency/oferta.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://losqualotenerife.com/en/agency/oferta.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://losqualotenerife.com/es/agency/oferta.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://losqualotenerife.com/agency/oferta.html"/>
-  </url>
-  <url>
-    <loc>https://losqualotenerife.com/es/agency.html</loc>
-    <xhtml:link rel="alternate" hreflang="it" href="https://losqualotenerife.com/agency.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://losqualotenerife.com/en/agency.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://losqualotenerife.com/es/agency.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://losqualotenerife.com/agency.html"/>
   </url>
   <url>
     <loc>https://losqualotenerife.com/es/alessandro.html</loc>
