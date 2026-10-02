@@ -74,6 +74,7 @@
         // Alloggio — Coliving
         { name: 'Blue Paradise', cat: 'Alloggio', href: 'alloggio/coliving-coworking.html', kw: 'coliving coworking nomadi digitali santa cruz digital nomads nomadas digitales' },
         { name: 'Cactus Coliving', cat: 'Alloggio', href: 'alloggio/cactus-coliving.html', kw: 'coliving coworking nomadi digitali gomera digital nomads nomadas digitales' },
+        { name: 'Bencomo Coliving', cat: 'Alloggio', href: 'alloggio/bencomo-coliving.html', kw: 'coliving coworking nomadi digitali santa ursula nord teide piscina sauna digital nomads nomadas digitales' },
 
         // Escursioni
         { name: 'Jeep Experience', cat: 'Escursioni', href: 'escursioni/jeep-experience.html', kw: 'terra teide jeep tour 4x4 land tierra' },

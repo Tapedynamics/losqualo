@@ -693,6 +693,13 @@ header {
     left: 4%;
 }
 
+.page-alloggio .item-bencomo {
+    background: linear-gradient(145deg, var(--alloggio-ostello), #c99ea8);
+    color: var(--text-primary);
+    top: 8%;
+    left: 12%;
+}
+
 /* Elementi VILLA - Nuovi (8 giu: cablaggio schede Airbnb) */
 .page-alloggio .item-villaar {
     background: linear-gradient(145deg, #dcb0ba, #c8949e);

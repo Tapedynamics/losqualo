@@ -215,7 +215,8 @@ const pageLineConfig = {
         ],
         coliving: [
             { line: 'line-coliving-blueparadise', from: 'node-coliving', to: 'node-blueparadise' },
-            { line: 'line-coliving-cactus', from: 'node-coliving', to: 'node-cactus' }
+            { line: 'line-coliving-cactus', from: 'node-coliving', to: 'node-cactus' },
+            { line: 'line-coliving-bencomo', from: 'node-coliving', to: 'node-bencomo' }
         ]
     },
     escursioni: {
@@ -699,7 +700,8 @@ const pageSubNodesData = {
             class: 'radial-coliving',
             subs: [
                 { id: 'blueparadise', name: 'Blue Paradise', href: 'alloggio/coliving-coworking.html' },
-                { id: 'cactus', name: 'Cactus Coliving', href: 'alloggio/cactus-coliving.html' }
+                { id: 'cactus', name: 'Cactus Coliving', href: 'alloggio/cactus-coliving.html' },
+                { id: 'bencomo', name: 'Bencomo Coliving', href: 'alloggio/bencomo-coliving.html' }
             ]
         }
     },

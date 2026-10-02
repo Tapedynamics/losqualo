@@ -102,4 +102,26 @@
         var all = document.querySelectorAll('a[href*="wa.me"], a[href*="api.whatsapp.com"]');
         window.lsqTrackWa(link.href, position(link), linkService(link), Array.prototype.indexOf.call(all, link) + 1);
     });
+
+    // Link in uscita verso un sistema di prenotazione del partner (richiesta Alessandro 01/10/2026,
+    // Bencomo -> MangoBeds): stesso contesto di whatsapp_click, piu' il partner di destinazione.
+    document.addEventListener('click', function (e) {
+        var link = e.target.closest && e.target.closest('a[data-booking-partner]');
+        if (!link || typeof gtag !== 'function') return;
+        var a = load() || { source: '(direct)', medium: '(none)', campaign: '', gclid: '' };
+        var params = {
+            page: page,
+            page_path: path,
+            service: service,
+            language: lang,
+            cta_position: position(link),
+            booking_partner: link.getAttribute('data-booking-partner'),
+            lead_source: a.source,
+            lead_medium: a.medium,
+            transport_type: 'beacon'
+        };
+        if (a.campaign) params.lead_campaign = a.campaign;
+        if (a.gclid) params.lead_gclid = a.gclid;
+        gtag('event', 'booking_click', params);
+    });
 })();
