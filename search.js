@@ -123,7 +123,7 @@
         if (!svc) return;
         if (svc.ext) {
             if (window.lsqTrackWa && /wa\.me/.test(svc.href)) window.lsqTrackWa(svc.href, 'home_search', 'eventi/servizi_privati');
-            window.open(svc.href, '_blank', 'noopener');
+            window.open(window.lsqWaHref ? window.lsqWaHref(svc.href) : svc.href, '_blank', 'noopener');
         }
         else { window.location.href = svc.href; }
     }

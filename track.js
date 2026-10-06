@@ -32,7 +32,8 @@
             source: q.get('utm_source') || (gclid ? 'google' : ''),
             medium: q.get('utm_medium') || (gclid ? 'cpc' : ''),
             campaign: q.get('utm_campaign') || '',
-            gclid: gclid || ''
+            gclid: gclid || '',
+            utm: !!q.get('utm_source')
         });
     } else if (document.referrer) {
         var host = '';
@@ -75,6 +76,23 @@
         return service;
     }
 
+    // Provenienza nel messaggio precompilato (richiesta Alessandro 03/10/2026, QR/NFC dei partner):
+    // solo se l'arrivo salvato aveva un utm_source esplicito, non per referrer o gclid.
+    // "¡Hola! Quería info..." -> "Hola, vengo desde Bencomo. Quería info..."
+    var VENGO = { it: 'Ciao, vengo da ', en: "Hi, I'm coming from ", es: 'Hola, vengo desde ' };
+    window.lsqWaHref = function (href) {
+        var a = load();
+        if (!a || !a.utm || !a.source) return href;
+        try { var u = new URL(href); } catch (e) { return href; }
+        var name = a.source.replace(/[_-]+/g, ' ');
+        name = name.charAt(0).toUpperCase() + name.slice(1);
+        var text = (u.searchParams.get('text') || '').replace(/^\s*[¡!]?\s*(hola|ciao|hi|hello)\b[\s!,.]*/i, '');
+        // encodeURIComponent e non searchParams.set: quest'ultimo codifica gli spazi come "+"
+        u.searchParams.delete('text');
+        var rest = u.searchParams.toString();
+        return href.split('?')[0] + '?' + (rest ? rest + '&' : '') + 'text=' + encodeURIComponent(VENGO[lang] + name + '.' + (text ? ' ' + text : ''));
+    };
+
     // Anche per WhatsApp aperto da JS senza <a> (ricerca in home: search.js)
     window.lsqTrackWa = function (href, ctaPosition, svc, index) {
         if (typeof gtag !== 'function') return;
@@ -99,6 +117,9 @@
     document.addEventListener('click', function (e) {
         var link = e.target.closest && e.target.closest('a[href*="wa.me"], a[href*="api.whatsapp.com"]');
         if (!link) return;
+        // riscrive dall'originale, cosi' un secondo clic non raddoppia la provenienza
+        if (!link.hasAttribute('data-wa-orig')) link.setAttribute('data-wa-orig', link.href);
+        link.href = window.lsqWaHref(link.getAttribute('data-wa-orig'));
         var all = document.querySelectorAll('a[href*="wa.me"], a[href*="api.whatsapp.com"]');
         window.lsqTrackWa(link.href, position(link), linkService(link), Array.prototype.indexOf.call(all, link) + 1);
     });
