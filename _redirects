@@ -55,3 +55,10 @@ https://losqualotenerife.netlify.app/*  https://losqualotenerife.com/:splat  301
 /es/alloggio/finca-chimiche  /es/alloggio.html  301!
 /es/alloggio/gota-de-mar.html  /es/alloggio.html  301!
 /es/alloggio/gota-de-mar  /es/alloggio.html  301!
+
+/surfing/surf-school.html  /surfing/ika-ika.html  301!
+/surfing/surf-school  /surfing/ika-ika.html  301!
+/en/surfing/surf-school.html  /en/surfing/ika-ika.html  301!
+/en/surfing/surf-school  /en/surfing/ika-ika.html  301!
+/es/surfing/surf-school.html  /es/surfing/ika-ika.html  301!
+/es/surfing/surf-school  /es/surfing/ika-ika.html  301!
