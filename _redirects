@@ -13,3 +13,6 @@ https://losqualotenerife.netlify.app/*  https://losqualotenerife.com/:splat  301
 /en/agency/*     /en/   301!
 /es/agency.html  /es/   301!
 /es/agency/*     /es/   301!
+
+/AGENTS.md  /  301!
+/CLAUDE.md  /  301!
