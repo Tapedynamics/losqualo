@@ -56,7 +56,6 @@
         { name: 'Casa Atogo', cat: 'Alloggio', href: 'alloggio/casa-atogo.html', kw: 'rurale ritiri surf camp rural retreats retiros' },
         { name: 'Casa Taucho', cat: 'Alloggio', href: 'alloggio/casa-taucho.html', kw: 'rurale casa rural house' },
         { name: 'Cueva San Miguel', cat: 'Alloggio', href: 'alloggio/cueva-san-miguel.html', kw: 'rurale grotta glamping rural cave cueva' },
-        { name: 'Dome Experience', cat: 'Alloggio', href: 'alloggio/dome-ifonche.html', kw: 'glamping dome ifonche cupola domo' },
         { name: 'Hotel Rural', cat: 'Alloggio', href: 'alloggio/hotel-rural-arona.html', kw: 'rurale hotel arona rural' },
         // Alloggio — Appartamento
         { name: 'Costa Adeje', cat: 'Alloggio', href: 'alloggio/costa-adeje.html', kw: 'appartamento piscina adeje apartment pool apartamento' },

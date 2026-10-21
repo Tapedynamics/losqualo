@@ -191,7 +191,6 @@ const pageLineConfig = {
             { line: 'line-casarurale-atogo', from: 'node-casarurale', to: 'node-atogo' },
             { line: 'line-casarurale-taucho', from: 'node-casarurale', to: 'node-taucho' },
             { line: 'line-casarurale-cueva', from: 'node-casarurale', to: 'node-cueva' },
-            { line: 'line-casarurale-dome', from: 'node-casarurale', to: 'node-dome' },
             { line: 'line-casarurale-hotelrural', from: 'node-casarurale', to: 'node-hotelrural' },
         ],
         appartamento: [
@@ -659,7 +658,6 @@ const pageSubNodesData = {
                 { id: 'atogo', name: 'Casa Atogo', href: 'alloggio/casa-atogo.html' },
                 { id: 'taucho', name: 'Casa Taucho', href: 'alloggio/casa-taucho.html' },
                 { id: 'cueva', name: 'Cueva San Miguel', href: 'alloggio/cueva-san-miguel.html' },
-                { id: 'dome', name: 'Dome Experience', href: 'alloggio/dome-ifonche.html' },
                 { id: 'hotelrural', name: 'Hotel Rural', href: 'alloggio/hotel-rural-arona.html' },
             ]
         },

@@ -537,13 +537,6 @@ header {
     left: 55%;
 }
 
-.page-alloggio .item-dome {
-    background: linear-gradient(145deg, #d7b0a8, #c3948c);
-    color: var(--text-primary);
-    top: 88%;
-    left: 70%;
-}
-
 .page-alloggio .item-hotelrural {
     background: linear-gradient(145deg, #d3aca4, #bf9088);
     color: var(--text-primary);

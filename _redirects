@@ -23,3 +23,10 @@ https://losqualotenerife.netlify.app/*  https://losqualotenerife.com/:splat  301
 /en/escursioni/barco-sin-pilota  /en/escursioni/charter-privato.html  301!
 /es/escursioni/barco-sin-pilota.html  /es/escursioni/charter-privato.html  301!
 /es/escursioni/barco-sin-pilota  /es/escursioni/charter-privato.html  301!
+
+/alloggio/dome-ifonche.html  /alloggio.html  301!
+/alloggio/dome-ifonche  /alloggio.html  301!
+/en/alloggio/dome-ifonche.html  /en/alloggio.html  301!
+/en/alloggio/dome-ifonche  /en/alloggio.html  301!
+/es/alloggio/dome-ifonche.html  /es/alloggio.html  301!
+/es/alloggio/dome-ifonche  /es/alloggio.html  301!
