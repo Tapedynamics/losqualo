@@ -23,6 +23,49 @@ Il sito esiste in tre copie con gli stessi nomi di file:
 - Nomi dei file identici nelle tre lingue (lo switcher di lingua `lang-switch.js` scambia solo il prefisso `/en/` o `/es/`).
 - Uniche eccezioni: `brand.html` e le pagine interne, che esistono solo in italiano.
 
+## Mappa del sito
+
+```
+index.html            home: mappa a nodi (Tenerife al centro) + ricerca
+├─ eventi.html        categoria → schede in eventi/
+├─ alloggio.html      categoria → schede in alloggio/   (ville, appartamenti, ostelli, coliving, surf house)
+├─ escursioni.html    categoria → schede in escursioni/ (mare, terra, aria; es. balene.html, quad.html)
+├─ surfing.html       categoria → schede in surfing/    (ika-ika.html, spots.html, ...)
+└─ alessandro.html    chi siamo
+```
+
+Tre livelli: **home** (5 nodi principali) → **pagina di categoria** (sottocategorie, e sotto ognuna le schede) → **scheda** (una villa, un'escursione).
+
+File condivisi:
+
+| File | Cosa fa |
+|---|---|
+| `styles.css` + `script.js` | home e mappa a nodi |
+| `pages.css` + `pages.js` | pagine di categoria (mini mappa, popup su mobile) |
+| `alloggio/detail.css` | stile delle schede alloggio, escursioni ed eventi |
+| `surfing/detail.css` | stile delle schede surf |
+| `search.js` | indice della ricerca in home, una riga per servizio |
+| `lang-switch.js`, `track.js`, `price-note.js` | lingua, conteggio clic WhatsApp, nota prezzi |
+| `assets/` | logo, foto di Alessandro, avatar WhatsApp |
+| `<sezione>/foto/<nome-scheda>/` | foto di ogni scheda (`01.jpg`, `02.jpg`, ...), condivise dalle tre lingue |
+
+## Com'è fatta una scheda
+
+Copia sempre una scheda esistente della stessa sezione. Dall'alto in basso:
+
+1. `<head>`: titolo, description, canonical + 4 hreflang, Google Analytics, CSS, i tre script comuni.
+2. `.detail-hero`: foto grande con nome e località.
+3. `.quick-info`: 3-4 dati rapidi (durata, persone, zona...).
+4. `.price-block`: prezzo (`.price-amount`) con asterisco, disponibilità, e sotto `<p class="price-note" data-price-note></p>`.
+5. `.detail-section` / `.features-grid`: descrizione e cosa è incluso.
+6. `.gallery-section`: galleria (`.gallery-item`).
+7. `.cta-section`: bottone WhatsApp (`.cta-button`) con messaggio precompilato.
+8. `.detail-footer` e `.back-link`: ritorno alla categoria.
+
+Percorsi: nelle pagine italiane i link sono relativi (`../styles.css`, `foto/balene/01.jpg`); nelle pagine `en/` ed `es/` sono assoluti dalla radice (`/styles.css`, `/escursioni/foto/balene/01.jpg`). Le foto non si duplicano per lingua.
+
+Per una voce del menu senza pagina il collegamento è `href="#"`: diventa una scheda vera solo quando esistono i tre file.
+
 ## Quando aggiungi o togli una pagina
 
 Una pagina nuova (per esempio `escursioni/nuova.html`) richiede tutti questi passi:
