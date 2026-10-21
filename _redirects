@@ -16,3 +16,10 @@ https://losqualotenerife.netlify.app/*  https://losqualotenerife.com/:splat  301
 
 /AGENTS.md  /  301!
 /CLAUDE.md  /  301!
+
+/escursioni/barco-sin-pilota.html  /escursioni/charter-privato.html  301!
+/escursioni/barco-sin-pilota  /escursioni/charter-privato.html  301!
+/en/escursioni/barco-sin-pilota.html  /en/escursioni/charter-privato.html  301!
+/en/escursioni/barco-sin-pilota  /en/escursioni/charter-privato.html  301!
+/es/escursioni/barco-sin-pilota.html  /es/escursioni/charter-privato.html  301!
+/es/escursioni/barco-sin-pilota  /es/escursioni/charter-privato.html  301!

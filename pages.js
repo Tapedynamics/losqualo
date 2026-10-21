@@ -33,7 +33,6 @@ var NAME_I18N = {
         'Balene e Delfini': 'Whales & Dolphins',
         'Charter Privato': 'Private Charter',
         'Catamarano': 'Catamaran',
-        'Barco sin Pilota': 'Boat without Skipper',
         'Parapendio': 'Paragliding',
         'Jet Sky': 'Jet Ski',
         'Prenota Letto': 'Book a Bed',
@@ -61,7 +60,6 @@ var NAME_I18N = {
         'Charter Privato': 'Chárter Privado',
         'Catamarano': 'Catamarán',
         'Yacht': 'Yate',
-        'Barco sin Pilota': 'Barco sin Piloto',
         'Parapendio': 'Parapente',
         'Diving': 'Buceo',
         'Prenota Letto': 'Reserva Cama',
@@ -241,8 +239,7 @@ const pageLineConfig = {
             { line: 'line-oceano-charter', from: 'node-oceano', to: 'node-charter' },
             { line: 'line-oceano-boatparty', from: 'node-oceano', to: 'node-boatparty' },
             { line: 'line-oceano-catamarano', from: 'node-oceano', to: 'node-catamarano' },
-            { line: 'line-oceano-yacht', from: 'node-oceano', to: 'node-yacht' },
-            { line: 'line-oceano-barco', from: 'node-oceano', to: 'node-barco' }
+            { line: 'line-oceano-yacht', from: 'node-oceano', to: 'node-yacht' }
         ],
         sky: [
             { line: 'line-sky-parapente', from: 'node-sky', to: 'node-parapente' },
@@ -729,8 +726,7 @@ const pageSubNodesData = {
                 { id: 'charter', name: 'Charter Privato', href: 'escursioni/charter-privato.html' },
                 { id: 'boatparty', name: 'Boat Party', href: 'escursioni/boat-party.html' },
                 { id: 'catamarano', name: 'Catamarano', href: 'escursioni/catamarano.html' },
-                { id: 'yacht', name: 'Yacht', href: 'escursioni/yacht.html' },
-                { id: 'barco', name: 'Barco sin Pilota', href: 'escursioni/barco-sin-pilota.html' }
+                { id: 'yacht', name: 'Yacht', href: 'escursioni/yacht.html' }
             ]
         },
         sky: {
