@@ -53,7 +53,6 @@
         // Alloggio — Rurale
         { name: 'Finca Ciguaña', cat: 'Alloggio', href: 'alloggio/finca-ciguaña.html', kw: 'rurale finca campagna rural countryside campo' },
         { name: 'Finca Paraiso', cat: 'Alloggio', href: 'alloggio/finca-paraiso.html', kw: 'rurale finca rural' },
-        { name: 'Casa Atogo', cat: 'Alloggio', href: 'alloggio/casa-atogo.html', kw: 'rurale ritiri surf camp rural retreats retiros' },
         { name: 'Casa Taucho', cat: 'Alloggio', href: 'alloggio/casa-taucho.html', kw: 'rurale casa rural house' },
         { name: 'Cueva San Miguel', cat: 'Alloggio', href: 'alloggio/cueva-san-miguel.html', kw: 'rurale grotta glamping rural cave cueva' },
         { name: 'Hotel Rural', cat: 'Alloggio', href: 'alloggio/hotel-rural-arona.html', kw: 'rurale hotel arona rural' },
@@ -65,8 +64,6 @@
         { name: 'Penthouse', cat: 'Alloggio', href: 'alloggio/penthouse.html', kw: 'appartamento attico los cristianos apartment atico apartamento' },
         // Alloggio — Surf House
         { name: 'Surf House Luxury', cat: 'Alloggio', href: 'alloggio/surf-house-luxury.html', kw: 'surf house lusso luxury lujo' },
-        { name: 'Surf House Rurale', i18n: { en: 'Surf House Rural', es: 'Surf House Rural' }, cat: 'Alloggio', href: 'alloggio/surf-house-rurale.html', kw: 'surf house rurale rural' },
-        { name: 'Surf House', cat: 'Alloggio', href: 'alloggio/surf-house.html', kw: 'surf house kite wind camp el medano piscina pool gruppi grupos' },
         // Alloggio — Ostello
         { name: 'Banana Surf Hostel', cat: 'Alloggio', href: 'alloggio/banana-surf-hostel.html', kw: 'ostello hostel surf los cristianos letti castello bunk beds literas albergue' },
         { name: 'Sisters Hostel', cat: 'Alloggio', href: 'alloggio/sisters-hostel.html', kw: 'ostello hostel women only donne adeje aqualand siam park giardino garden jardin mujeres albergue' },

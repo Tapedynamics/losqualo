@@ -552,12 +552,6 @@ header {
     left: 60%;
 }
 
-.page-alloggio .item-atogo {
-    background: linear-gradient(145deg, #e0b4be, #cc98a2);
-    color: var(--text-primary);
-    top: 5%;
-    left: 75%;
-}
 
 .page-alloggio .item-taucho {
     background: linear-gradient(145deg, #dcb0ba, #c8949e);
@@ -620,12 +614,6 @@ header {
     left: 92%;
 }
 
-.page-alloggio .item-surfhouse-rurale {
-    background: linear-gradient(145deg, #e3bcc4, #cda0ac);
-    color: var(--text-primary);
-    top: 58%;
-    left: 92%;
-}
 
 /* Elementi VILLA FINCA - Nuovi */
 .page-alloggio .item-ciguana {
@@ -1053,12 +1041,6 @@ header {
     left: 88%;
 }
 
-.page-surfing .item-reservahab {
-    background: linear-gradient(145deg, #83bad4, #6fa6c0);
-    color: var(--text-primary);
-    top: 28%;
-    left: 85%;
-}
 
 /* Elementi EL MEDANO */
 .page-surfing .item-elmedano-rentshop {
@@ -1594,9 +1576,5 @@ header {
 .page-alloggio .item-villatorviscas,
 .page-alloggio .item-ladyluxury {
     background: linear-gradient(145deg, #e2b8c4, #ce9ca8);
-    color: var(--text-primary);
-}
-.page-alloggio .item-surfhousemain {
-    background: linear-gradient(145deg, #dcb0ba, #c8949e);
     color: var(--text-primary);
 }

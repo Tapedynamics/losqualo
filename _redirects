@@ -62,3 +62,25 @@ https://losqualotenerife.netlify.app/*  https://losqualotenerife.com/:splat  301
 /en/surfing/surf-school  /en/surfing/ika-ika.html  301!
 /es/surfing/surf-school.html  /es/surfing/ika-ika.html  301!
 /es/surfing/surf-school  /es/surfing/ika-ika.html  301!
+
+# Casa Atogo e proposte Surf House associate rimosse dal catalogo
+/alloggio/casa-atogo  /alloggio.html  301!
+/alloggio/casa-atogo.html  /alloggio.html  301!
+/alloggio/surf-house-rurale  /alloggio.html  301!
+/alloggio/surf-house-rurale.html  /alloggio.html  301!
+/alloggio/surf-house  /alloggio.html  301!
+/alloggio/surf-house.html  /alloggio.html  301!
+/en/alloggio/casa-atogo  /en/alloggio.html  301!
+/en/alloggio/casa-atogo.html  /en/alloggio.html  301!
+/en/alloggio/surf-house-rurale  /en/alloggio.html  301!
+/en/alloggio/surf-house-rurale.html  /en/alloggio.html  301!
+/en/alloggio/surf-house  /en/alloggio.html  301!
+/en/alloggio/surf-house.html  /en/alloggio.html  301!
+/es/alloggio/casa-atogo  /es/alloggio.html  301!
+/es/alloggio/casa-atogo.html  /es/alloggio.html  301!
+/es/alloggio/surf-house-rurale  /es/alloggio.html  301!
+/es/alloggio/surf-house-rurale.html  /es/alloggio.html  301!
+/es/alloggio/surf-house  /es/alloggio.html  301!
+/es/alloggio/surf-house.html  /es/alloggio.html  301!
+/alloggio/VILLA%20-%20FINCA/CASA%20RURAL%20-%20ATOGO/CASA%20RURAL%20%E2%80%93%20ATOGO.docx  /alloggio.html  301!
+/alloggio/SURF%20HOUSE/SURF%20HOUSE%20%E2%80%93%20TENERIFE%20SUD.docx  /alloggio.html  301!

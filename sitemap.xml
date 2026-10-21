@@ -50,13 +50,6 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://losqualotenerife.com/alloggio/bencomo-coliving.html"/>
   </url>
   <url>
-    <loc>https://losqualotenerife.com/alloggio/casa-atogo.html</loc>
-    <xhtml:link rel="alternate" hreflang="it" href="https://losqualotenerife.com/alloggio/casa-atogo.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://losqualotenerife.com/en/alloggio/casa-atogo.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://losqualotenerife.com/es/alloggio/casa-atogo.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://losqualotenerife.com/alloggio/casa-atogo.html"/>
-  </url>
-  <url>
     <loc>https://losqualotenerife.com/alloggio/casa-taucho.html</loc>
     <xhtml:link rel="alternate" hreflang="it" href="https://losqualotenerife.com/alloggio/casa-taucho.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://losqualotenerife.com/en/alloggio/casa-taucho.html"/>
@@ -153,20 +146,6 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://losqualotenerife.com/en/alloggio/surf-house-luxury.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://losqualotenerife.com/es/alloggio/surf-house-luxury.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://losqualotenerife.com/alloggio/surf-house-luxury.html"/>
-  </url>
-  <url>
-    <loc>https://losqualotenerife.com/alloggio/surf-house-rurale.html</loc>
-    <xhtml:link rel="alternate" hreflang="it" href="https://losqualotenerife.com/alloggio/surf-house-rurale.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://losqualotenerife.com/en/alloggio/surf-house-rurale.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://losqualotenerife.com/es/alloggio/surf-house-rurale.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://losqualotenerife.com/alloggio/surf-house-rurale.html"/>
-  </url>
-  <url>
-    <loc>https://losqualotenerife.com/alloggio/surf-house.html</loc>
-    <xhtml:link rel="alternate" hreflang="it" href="https://losqualotenerife.com/alloggio/surf-house.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://losqualotenerife.com/en/alloggio/surf-house.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://losqualotenerife.com/es/alloggio/surf-house.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://losqualotenerife.com/alloggio/surf-house.html"/>
   </url>
   <url>
     <loc>https://losqualotenerife.com/alloggio/villa-ar.html</loc>
@@ -267,13 +246,6 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://losqualotenerife.com/alloggio/bencomo-coliving.html"/>
   </url>
   <url>
-    <loc>https://losqualotenerife.com/en/alloggio/casa-atogo.html</loc>
-    <xhtml:link rel="alternate" hreflang="it" href="https://losqualotenerife.com/alloggio/casa-atogo.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://losqualotenerife.com/en/alloggio/casa-atogo.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://losqualotenerife.com/es/alloggio/casa-atogo.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://losqualotenerife.com/alloggio/casa-atogo.html"/>
-  </url>
-  <url>
     <loc>https://losqualotenerife.com/en/alloggio/casa-taucho.html</loc>
     <xhtml:link rel="alternate" hreflang="it" href="https://losqualotenerife.com/alloggio/casa-taucho.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://losqualotenerife.com/en/alloggio/casa-taucho.html"/>
@@ -370,20 +342,6 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://losqualotenerife.com/en/alloggio/surf-house-luxury.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://losqualotenerife.com/es/alloggio/surf-house-luxury.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://losqualotenerife.com/alloggio/surf-house-luxury.html"/>
-  </url>
-  <url>
-    <loc>https://losqualotenerife.com/en/alloggio/surf-house-rurale.html</loc>
-    <xhtml:link rel="alternate" hreflang="it" href="https://losqualotenerife.com/alloggio/surf-house-rurale.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://losqualotenerife.com/en/alloggio/surf-house-rurale.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://losqualotenerife.com/es/alloggio/surf-house-rurale.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://losqualotenerife.com/alloggio/surf-house-rurale.html"/>
-  </url>
-  <url>
-    <loc>https://losqualotenerife.com/en/alloggio/surf-house.html</loc>
-    <xhtml:link rel="alternate" hreflang="it" href="https://losqualotenerife.com/alloggio/surf-house.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://losqualotenerife.com/en/alloggio/surf-house.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://losqualotenerife.com/es/alloggio/surf-house.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://losqualotenerife.com/alloggio/surf-house.html"/>
   </url>
   <url>
     <loc>https://losqualotenerife.com/en/alloggio/villa-ar.html</loc>
@@ -659,13 +617,6 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://losqualotenerife.com/alloggio/bencomo-coliving.html"/>
   </url>
   <url>
-    <loc>https://losqualotenerife.com/es/alloggio/casa-atogo.html</loc>
-    <xhtml:link rel="alternate" hreflang="it" href="https://losqualotenerife.com/alloggio/casa-atogo.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://losqualotenerife.com/en/alloggio/casa-atogo.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://losqualotenerife.com/es/alloggio/casa-atogo.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://losqualotenerife.com/alloggio/casa-atogo.html"/>
-  </url>
-  <url>
     <loc>https://losqualotenerife.com/es/alloggio/casa-taucho.html</loc>
     <xhtml:link rel="alternate" hreflang="it" href="https://losqualotenerife.com/alloggio/casa-taucho.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://losqualotenerife.com/en/alloggio/casa-taucho.html"/>
@@ -762,20 +713,6 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://losqualotenerife.com/en/alloggio/surf-house-luxury.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://losqualotenerife.com/es/alloggio/surf-house-luxury.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://losqualotenerife.com/alloggio/surf-house-luxury.html"/>
-  </url>
-  <url>
-    <loc>https://losqualotenerife.com/es/alloggio/surf-house-rurale.html</loc>
-    <xhtml:link rel="alternate" hreflang="it" href="https://losqualotenerife.com/alloggio/surf-house-rurale.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://losqualotenerife.com/en/alloggio/surf-house-rurale.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://losqualotenerife.com/es/alloggio/surf-house-rurale.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://losqualotenerife.com/alloggio/surf-house-rurale.html"/>
-  </url>
-  <url>
-    <loc>https://losqualotenerife.com/es/alloggio/surf-house.html</loc>
-    <xhtml:link rel="alternate" hreflang="it" href="https://losqualotenerife.com/alloggio/surf-house.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://losqualotenerife.com/en/alloggio/surf-house.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://losqualotenerife.com/es/alloggio/surf-house.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://losqualotenerife.com/alloggio/surf-house.html"/>
   </url>
   <url>
     <loc>https://losqualotenerife.com/es/alloggio/villa-ar.html</loc>

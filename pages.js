@@ -18,7 +18,6 @@ var NAME_I18N = {
         'Rurale': 'Rural',
         'Appartamento': 'Apartment',
         'Ostello': 'Hostel',
-        'Surf House Rurale': 'Surf House Rural',
         // sottocategorie escursioni
         'Terra': 'Land',
         'Acqua': 'Water',
@@ -36,7 +35,6 @@ var NAME_I18N = {
         'Parapendio': 'Paragliding',
         'Jet Sky': 'Jet Ski',
         'Prenota Letto': 'Book a Bed',
-        'Prenota Camera': 'Book a Room',
         'Cucina Tipica': 'Local Cuisine',
         'Italiana': 'Italian',
         'Mediterranea': 'Mediterranean'
@@ -48,7 +46,6 @@ var NAME_I18N = {
         'Rurale': 'Rural',
         'Appartamento': 'Apartamento',
         'Ostello': 'Hostel',
-        'Surf House Rurale': 'Surf House Rural',
         'Terra': 'Tierra',
         'Acqua': 'Agua',
         'Aria': 'Aire',
@@ -63,7 +60,6 @@ var NAME_I18N = {
         'Parapendio': 'Parapente',
         'Diving': 'Buceo',
         'Prenota Letto': 'Reserva Cama',
-        'Prenota Camera': 'Reserva Habitación',
         'Cucina Tipica': 'Cocina Típica',
         'Italiana': 'Italiana',
         'Mediterranea': 'Mediterránea'
@@ -188,7 +184,6 @@ const pageLineConfig = {
         casarurale: [
             { line: 'line-casarurale-ciguana', from: 'node-casarurale', to: 'node-ciguana' },
             { line: 'line-casarurale-fincaparaiso', from: 'node-casarurale', to: 'node-fincaparaiso' },
-            { line: 'line-casarurale-atogo', from: 'node-casarurale', to: 'node-atogo' },
             { line: 'line-casarurale-taucho', from: 'node-casarurale', to: 'node-taucho' },
             { line: 'line-casarurale-cueva', from: 'node-casarurale', to: 'node-cueva' },
             { line: 'line-casarurale-hotelrural', from: 'node-casarurale', to: 'node-hotelrural' },
@@ -204,7 +199,6 @@ const pageLineConfig = {
         ],
         surfhouse: [
             { line: 'line-surfhouse-luxury', from: 'node-surfhouse', to: 'node-surfhouse-luxury' },
-            { line: 'line-surfhouse-rurale', from: 'node-surfhouse', to: 'node-surfhouse-rurale' }
         ],
         ostello: [
             { line: 'line-ostello-banana', from: 'node-ostello', to: 'node-banana' },
@@ -270,7 +264,6 @@ const pageLineConfig = {
         surfhouse: [
             { line: 'line-surfhouse-b2b', from: 'node-surfhouse', to: 'node-b2b' },
             { line: 'line-surfhouse-reservacama', from: 'node-surfhouse', to: 'node-reservacama' },
-            { line: 'line-surfhouse-reservahab', from: 'node-surfhouse', to: 'node-reservahab' }
         ]
     },
     agency: {
@@ -655,7 +648,6 @@ const pageSubNodesData = {
             subs: [
                 { id: 'ciguana', name: 'Finca Ciguaña', href: (PAGE_LANG === 'it' ? '' : '/' + PAGE_LANG) + '/alloggio/finca-cigua%C3%B1a.html' },
                 { id: 'fincaparaiso', name: 'Finca Paraiso', href: 'alloggio/finca-paraiso.html' },
-                { id: 'atogo', name: 'Casa Atogo', href: 'alloggio/casa-atogo.html' },
                 { id: 'taucho', name: 'Casa Taucho', href: 'alloggio/casa-taucho.html' },
                 { id: 'cueva', name: 'Cueva San Miguel', href: 'alloggio/cueva-san-miguel.html' },
                 { id: 'hotelrural', name: 'Hotel Rural', href: 'alloggio/hotel-rural-arona.html' },
@@ -679,7 +671,6 @@ const pageSubNodesData = {
             class: 'radial-surfhouse',
             subs: [
                 { id: 'surfhouse-luxury', name: 'Surf House Luxury', href: 'alloggio/surf-house-luxury.html' },
-                { id: 'surfhouse-rurale', name: 'Surf House Rurale', href: 'alloggio/surf-house-rurale.html' }
             ]
         },
         ostello: {
@@ -759,7 +750,6 @@ const pageSubNodesData = {
             subs: [
                 { id: 'b2b', name: 'B2B', href: 'surfing/surf-house-b2b.html' },
                 { id: 'reservacama', name: 'Prenota Letto', href: 'alloggio.html?cat=ostello&from=surfhouse' },
-                { id: 'reservahab', name: 'Prenota Camera', href: 'alloggio/surf-house-rurale.html?from=surfhouse' }
             ]
         }
     },
