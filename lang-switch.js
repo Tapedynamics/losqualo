@@ -19,15 +19,22 @@
     if (path === '' || path === '/index.html') path = '/';
     const logical = path; // es. /alloggio/villa-paraiso.html
 
-    const hrefFor = (lang) => (lang === 'it' ? '' : '/' + lang) + logical;
+    // Mantiene provenienza, categoria e ancoraggio nel cambio lingua.
+    const suffix = location.search + location.hash;
+    const hrefFor = (lang) => (lang === 'it' ? '' : '/' + lang) + logical + suffix;
 
     const LABEL = { it: 'Lingua', en: 'Language', es: 'Idioma' };
 
     const wrap = document.createElement('div');
     wrap.className = 'lang-switch';
     wrap.setAttribute('aria-label', LABEL[cur] || LABEL.it);
-    wrap.innerHTML = LANGS.map((lang) =>
-        `<a href="${hrefFor(lang)}" class="lang-pill${lang === cur ? ' active' : ''}"${lang === cur ? ' aria-current="true"' : ''}>${lang.toUpperCase()}</a>`
-    ).join('');
+    LANGS.forEach((lang) => {
+        const link = document.createElement('a');
+        link.setAttribute('href', hrefFor(lang));
+        link.className = `lang-pill${lang === cur ? ' active' : ''}`;
+        if (lang === cur) link.setAttribute('aria-current', 'true');
+        link.textContent = lang.toUpperCase();
+        wrap.appendChild(link);
+    });
     document.body.appendChild(wrap);
 })();
