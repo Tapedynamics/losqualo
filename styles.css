@@ -131,6 +131,25 @@ header {
 }
 .line, .mobile-line { display: none !important; }
 
+/* Pulsanti della home: mantengono l'aspetto dei nodi originali. */
+button.center-node,
+button.center-node-mobile {
+    appearance: none;
+    background: transparent;
+    border: 0;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+}
+
+.mind-map .center-node:focus-visible,
+.mind-map .primary-nodes .node:focus-visible,
+.mobile-map .center-node-mobile:focus-visible,
+.mobile-map .mobile-node:focus-visible {
+    outline: 3px solid var(--blu-squalo);
+    outline-offset: 6px;
+}
+
 /* ===== NODO CENTRALE - TENERIFE ===== */
 .center-node {
     position: absolute;

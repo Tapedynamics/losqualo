@@ -9,6 +9,7 @@ const UI = {
     it: {
         center: 'Tenerife Experience',
         hint: 'Tocca per esplorare',
+        exploreLabel: 'Tenerife Experience: esplora le sezioni',
         nodes: {
             eventi: 'EVENTI', alloggio: 'ALLOGGIO',
             escursioni: 'ESCURSIONI<br>ED ESPERIENZE', surfing: 'SURFING<br>TENERIFE',
@@ -18,6 +19,7 @@ const UI = {
     en: {
         center: 'Tenerife Experience',
         hint: 'Tap to explore',
+        exploreLabel: 'Tenerife Experience: explore the sections',
         nodes: {
             eventi: 'EVENTS', alloggio: 'ACCOMMODATION',
             escursioni: 'EXCURSIONS<br>AND EXPERIENCES', surfing: 'SURFING<br>TENERIFE',
@@ -27,6 +29,7 @@ const UI = {
     es: {
         center: 'Tenerife Experience',
         hint: 'Toca para explorar',
+        exploreLabel: 'Tenerife Experience: explora las secciones',
         nodes: {
             eventi: 'EVENTOS', alloggio: 'ALOJAMIENTO',
             escursioni: 'EXCURSIONES<br>Y EXPERIENCIAS', surfing: 'SURFING<br>TENERIFE',
@@ -185,24 +188,48 @@ function updateAllLines() {
     });
 }
 
+// Mantiene allineati stato visivo, tastiera e tecnologie assistive nei due layout.
+function setHomeMapExpanded(expanded) {
+    const desktop = document.querySelector('.mind-map');
+    const mobile = document.querySelector('.mobile-map');
+    const active = document.activeElement;
+    const restoreFocus = !expanded && ((desktop && desktop.contains(active)) || (mobile && mobile.contains(active)));
+    currentState = expanded ? 'categories' : 'initial';
+    if (restoreFocus) {
+        const trigger = window.innerWidth <= 768 && mobile ? mobile.querySelector('.center-node-mobile') : document.getElementById('tenerife-trigger');
+        if (trigger) trigger.focus({ preventScroll: true });
+    }
+
+    if (desktop) {
+        desktop.dataset.state = currentState;
+        desktop.querySelector('.center-node').setAttribute('aria-expanded', String(expanded));
+        desktop.querySelector('.primary-nodes').inert = !expanded;
+    }
+    if (mobile) {
+        mobile.dataset.state = currentState;
+        mobile.querySelector('.center-node-mobile').setAttribute('aria-expanded', String(expanded));
+        mobile.querySelectorAll('.mobile-node-primary').forEach(node => { node.inert = !expanded; });
+    }
+    document.querySelectorAll('.main-line, .mobile-main-line').forEach(line => line.classList.toggle('visible', expanded));
+}
+
 // ===== MAPPA PROGRESSIVA =====
 function initProgressiveMap() {
     const tenerife = document.getElementById('tenerife-trigger');
+    setHomeMapExpanded(false);
 
     tenerife.addEventListener('click', function() {
         if (currentState === 'initial') showCategories();
+        else goBack();
     });
 
     document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') goBack();
+        if (e.key === 'Escape' && e.target instanceof Element && e.target.closest('.mind-map, .mobile-map')) goBack();
     });
 }
 
 function showCategories() {
-    const mindMap = document.querySelector('.mind-map');
-    mindMap.dataset.state = 'categories';
-    currentState = 'categories';
-    document.querySelectorAll('.main-line').forEach(line => line.classList.add('visible'));
+    setHomeMapExpanded(true);
     // Animate lines into position
     let frames = 0;
     function update() {
@@ -213,25 +240,38 @@ function showCategories() {
 }
 
 function goBack() {
-    if (currentState === 'categories') {
-        const mindMap = document.querySelector('.mind-map');
-        mindMap.dataset.state = 'initial';
-        currentState = 'initial';
-        document.querySelectorAll('.main-line').forEach(line => line.classList.remove('visible'));
-    }
+    if (currentState === 'categories') setHomeMapExpanded(false);
 }
 
 // ===== MOBILE MINI-MAP =====
-let mobileState = 'initial';
-
 function initMobileMenu() {
+    // Il browser puo spostare il focus sul body quando il vecchio layout viene nascosto.
+    let lastMapFocus = null;
+    document.addEventListener('focusin', function(e) {
+        lastMapFocus = e.target.closest('.mind-map, .mobile-map') ? e.target : null;
+    });
+    document.addEventListener('pointerdown', function(e) {
+        if (!e.target.closest('.mind-map, .mobile-map')) lastMapFocus = null;
+    });
     if (window.innerWidth <= 768) createMobileMiniMap();
     window.addEventListener('resize', function() {
+        const desktop = document.querySelector('.mind-map');
+        const mobile = document.querySelector('.mobile-map');
+        const active = document.activeElement === document.body ? lastMapFocus : document.activeElement;
         if (window.innerWidth <= 768) {
-            if (!document.querySelector('.mobile-map')) createMobileMiniMap();
-        } else {
-            const m = document.querySelector('.mobile-map');
-            if (m) m.remove();
+            const transferFocus = desktop && desktop.contains(active);
+            if (!mobile) createMobileMiniMap();
+            if (transferFocus) {
+                const target = document.getElementById(active.id.startsWith('node-') ? 'mobile-' + active.id : 'mobile-center');
+                if (target) target.focus({ preventScroll: true });
+            }
+        } else if (mobile) {
+            const transferFocus = mobile.contains(active);
+            mobile.remove();
+            if (transferFocus) {
+                const target = document.getElementById(active.id.startsWith('mobile-node-') ? active.id.replace('mobile-', '') : 'tenerife-trigger');
+                if (target) target.focus({ preventScroll: true });
+            }
         }
     });
 }
@@ -242,7 +282,7 @@ function createMobileMiniMap() {
 
     const mobileMap = document.createElement('div');
     mobileMap.classList.add('mobile-map');
-    mobileMap.dataset.state = 'initial';
+    mobileMap.dataset.state = currentState;
 
     const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     svg.classList.add('mobile-svg');
@@ -257,7 +297,11 @@ function createMobileMiniMap() {
     });
     mobileMap.appendChild(svg);
 
-    const center = document.createElement('div');
+    const center = document.createElement('button');
+    center.type = 'button';
+    center.setAttribute('aria-label', t.exploreLabel);
+    center.setAttribute('aria-expanded', String(currentState === 'categories'));
+    center.setAttribute('aria-controls', categories.map(cat => `mobile-node-${cat}`).join(' '));
     center.classList.add('center-node-mobile');
     center.id = 'mobile-center';
     center.innerHTML = `
@@ -289,6 +333,7 @@ function createMobileMiniMap() {
         el.href = node.href;
         el.classList.add('mobile-node', 'mobile-node-primary', node.cls);
         el.id = `mobile-node-${node.id}`;
+        el.inert = currentState !== 'categories';
         el.innerHTML = `<span>${node.name}</span>`;
         el.style.top = positions[node.id].top;
         el.style.left = positions[node.id].left;
@@ -297,6 +342,7 @@ function createMobileMiniMap() {
 
     main.parentNode.insertBefore(mobileMap, main.nextSibling);
     initMobileMapEvents(mobileMap);
+    setHomeMapExpanded(currentState === 'categories');
     setTimeout(() => updateMobileLines(), 100);
 }
 
@@ -304,14 +350,13 @@ function initMobileMapEvents(mobileMap) {
     const center = mobileMap.querySelector('.center-node-mobile');
 
     center.addEventListener('click', function() {
-        if (mobileState === 'initial') showMobileCategories(mobileMap);
+        if (currentState === 'initial') showMobileCategories(mobileMap);
+        else goMobileBack(mobileMap);
     });
 }
 
 function showMobileCategories(mobileMap) {
-    mobileMap.dataset.state = 'categories';
-    mobileState = 'categories';
-    mobileMap.querySelectorAll('.mobile-main-line').forEach(l => l.classList.add('visible'));
+    setHomeMapExpanded(true);
     // Animate lines
     let frames = 0;
     function update() {
@@ -322,11 +367,7 @@ function showMobileCategories(mobileMap) {
 }
 
 function goMobileBack(mobileMap) {
-    if (mobileState === 'categories') {
-        mobileMap.dataset.state = 'initial';
-        mobileState = 'initial';
-        mobileMap.querySelectorAll('.mobile-main-line').forEach(l => l.classList.remove('visible'));
-    }
+    goBack();
 }
 
 function updateMobileLines() {
