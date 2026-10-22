@@ -47,6 +47,8 @@
         // Alloggio — Villa
         { name: 'La Fortaleza', cat: 'Alloggio', href: 'alloggio/finca-la-fortaleza.html', kw: 'villa finca lusso luxury lujo' },
         { name: 'Beach House', cat: 'Alloggio', href: 'alloggio/beach-house.html', kw: 'villa mare spiaggia sea beach mar playa' },
+        { name: 'Villa A&R', cat: 'Alloggio', href: 'alloggio/villa-ar.html', kw: 'villa a&r villa ar villa a r alloggio accommodation alojamiento' },
+        { name: 'Villa One', cat: 'Alloggio', href: 'alloggio/villa-one.html', kw: 'villa one alloggio accommodation alojamiento' },
         { name: 'Villa Costa Adeje', cat: 'Alloggio', href: 'alloggio/villa-costa-adeje.html', kw: 'villa lusso costa adeje luxury lujo' },
         { name: 'Villa Lady Luxury', cat: 'Alloggio', href: 'alloggio/villa-lady-luxury.html', kw: 'villa lusso costa adeje luxury lujo piscina pool 6 persone' },
         { name: 'Villa Torviscas', cat: 'Alloggio', href: 'alloggio/villa-torviscas.html', kw: 'villa torviscas alto residenziale residential residencial' },
@@ -62,6 +64,8 @@
         { name: 'Studio Las Américas', cat: 'Alloggio', href: 'alloggio/studio-las-americas.html', kw: 'appartamento studio playa las americas apartment apartamento' },
         { name: 'Studio Los Cristianos', cat: 'Alloggio', href: 'alloggio/studio-los-cristianos.html', kw: 'appartamento studio los cristianos apartment apartamento' },
         { name: 'Penthouse', cat: 'Alloggio', href: 'alloggio/penthouse.html', kw: 'appartamento attico los cristianos apartment atico apartamento' },
+        { name: 'Fañabé', cat: 'Alloggio', href: 'alloggio/fanabe.html', kw: 'fanabe appartamento apartment apartamento' },
+        { name: 'Ático', cat: 'Alloggio', href: 'alloggio/atico.html', kw: 'atico attico penthouse appartamento apartment apartamento' },
         // Alloggio — Surf House
         { name: 'Surf House Luxury', cat: 'Alloggio', href: 'alloggio/surf-house-luxury.html', kw: 'surf house lusso luxury lujo' },
         // Alloggio — Ostello
@@ -80,6 +84,9 @@
         { name: 'Charter Privato', i18n: { en: 'Private Charter', es: 'Chárter Privado' }, cat: 'Escursioni', href: 'escursioni/charter-privato.html', kw: 'charter chárter charter privato private charter charter privado chárter privado barca privata private boat barco privado' },
         { name: 'Kayak & Snorkeling', i18n: { es: 'Kayak y Snorkel' }, cat: 'Escursioni', href: 'escursioni/kayak.html', kw: 'kayak canoa canoe snorkeling snorkelling snorkel esnorquel esnórquel' },
         { name: 'Jet Ski Experience', cat: 'Escursioni', href: 'escursioni/jet-sky.html', kw: "jet ski jetski jet sky moto d'acqua moto d’acqua moto acqua moto acquatica water scooter moto de agua motos de agua moto acuática" },
+        { name: 'Jet Car Experience', cat: 'Escursioni', href: 'escursioni/jet-car.html', kw: 'jet car jetcar auto acqua water car coche acuatico coche de agua' },
+        { name: 'Diving', i18n: { es: 'Buceo' }, cat: 'Escursioni', href: 'escursioni/diving.html', kw: 'diving scuba diving immersione immersioni sub buceo inmersion inmersiones' },
+        { name: 'Boat Party', cat: 'Escursioni', href: 'escursioni/boat-party.html', kw: 'boat party festa in barca feste in barca boat parties fiesta en barco fiestas en barco' },
         { name: 'Yacht Privato', i18n: { en: 'Private Yacht', es: 'Yate Privado' }, cat: 'Escursioni', href: 'escursioni/yacht.html', kw: 'acqua mare barca yacht water sea boat agua mar barco yate' },
         { name: 'Catamarano', i18n: { en: 'Catamaran', es: 'Catamarán' }, cat: 'Escursioni', href: 'escursioni/catamarano.html', kw: 'acqua mare catamarano water sea catamaran agua mar catamaran' },
         { name: 'Balene e Delfini', i18n: { en: 'Whales & Dolphins', es: 'Ballenas y Delfines' }, cat: 'Escursioni', href: 'escursioni/balene.html', kw: 'acqua mare whale watching balene delfini cetacei avvistamento whales dolphins ballenas delfines avistamiento' },
