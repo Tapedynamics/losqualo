@@ -424,6 +424,15 @@ function initPageMap() {
     const categoryTrigger = document.getElementById('category-trigger');
     const backBtn = document.getElementById('back-btn');
     if (!categoryTrigger || !backBtn) return;
+
+    // Mantiene i comandi fuori dalla mappa trasformata e fissi rispetto alla finestra.
+    const header = document.querySelector('header');
+    const homeButton = document.querySelector('.home-button');
+    if (header && homeButton) {
+        if (backBtn.parentElement !== header) header.appendChild(backBtn);
+        if (homeButton.parentElement !== header) header.appendChild(homeButton);
+    }
+
     const primaryNodes = document.querySelectorAll('.node-primary');
 
     // Click sul centro

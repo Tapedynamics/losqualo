@@ -1578,3 +1578,44 @@ header {
     background: linear-gradient(145deg, #e2b8c4, #ce9ca8);
     color: var(--text-primary);
 }
+
+/* Navigazione delle mappe separata dai nodi. */
+header > .back-btn {
+    display: none;
+}
+
+@media (min-width: 769px) {
+    header > .back-btn,
+    header > .home-button {
+        position: fixed;
+        left: max(20px, env(safe-area-inset-left, 0px));
+        right: auto;
+        bottom: auto;
+        transform: none;
+        min-width: 156px;
+        min-height: 48px;
+        white-space: nowrap;
+        justify-content: center;
+    }
+
+    header > .back-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        top: max(20px, env(safe-area-inset-top, 0px));
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    header > .home-button {
+        top: calc(max(20px, env(safe-area-inset-top, 0px)) + 64px);
+    }
+
+    header > .back-btn:hover {
+        transform: scale(1.03);
+    }
+
+    header > .home-button:hover {
+        transform: translateY(-3px);
+    }
+}
