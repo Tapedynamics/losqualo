@@ -1171,3 +1171,25 @@ footer {
     .wa-fab { transition: none; }
     .wa-fab:hover { transform: none; }
 }
+
+/* Titoli principali di pagina, separati dalle mappe interattive. */
+header > .site-page-title {
+    margin: 12px auto 0;
+    max-width: min(44rem, calc(100vw - 400px));
+    padding: 0 8px;
+    font-family: inherit;
+    font-size: clamp(1.05rem, 1.4vw, 1.3rem);
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: 0;
+    color: var(--blu-squalo);
+    text-wrap: balance;
+}
+@media (max-width: 768px) {
+    header > .site-page-title {
+        max-width: 26rem;
+        margin-top: 10px;
+        font-size: 1rem;
+        line-height: 1.35;
+    }
+}
