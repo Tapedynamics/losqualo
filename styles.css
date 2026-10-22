@@ -1193,3 +1193,27 @@ header > .site-page-title {
         line-height: 1.35;
     }
 }
+
+/* Introduzioni leggibili, esterne alle mappe interattive. */
+.site-intro {
+    flex: 0 0 auto;
+    width: min(44rem, calc(100% - 40px));
+    margin: 24px auto 0;
+    padding-bottom: calc(210px + env(safe-area-inset-bottom, 0px));
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+.site-intro p + p {
+    margin-top: 0.75rem;
+}
+@media (max-width: 768px) {
+    .site-intro {
+        width: 100%;
+        max-width: 34rem;
+        margin-top: 12px;
+        padding: 0 8px calc(210px + env(safe-area-inset-bottom, 0px));
+        font-size: 0.9rem;
+        line-height: 1.65;
+    }
+}
